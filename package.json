@@ -4,7 +4,7 @@
   "description": "REBORN TR root",
   "private": true,
   "config": {
-    "mode": "main"
+    "mode": "dev"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,10 +16,10 @@
     "build:footer": "cd footer && gulp prod --rebornVersion %npm_package_version%",
     "build": "npm run build:common && npm run build:cel && npm run build:suiviconso && npm run build:header && npm run build:headerCel && npm run build:footer",
     "version": "",
-    "postversion": "node changelog-update.js && git commit -a -m \"Update changelog\" && git push origin main && git push origin --tags && git checkout master && git fetch origin && git reset --hard origin/master && git merge main && git push origin master && npm run deploy:master && npm run bumpTagDist",
+    "postversion": "node changelog-update.js && git commit -a -m \"Update changelog\" && git push origin dev && git push origin --tags && git checkout main && git fetch origin && git reset --hard origin/main && git merge dev && git push origin main && npm run deploy:main && npm run bumpTagDist",
     "bumpTagDist": "cd .publish && git tag -a %npm_package_version% -m \"Bump version %npm_package_version%\" && git push --tags",
-    "deploy:main": "npm run build && gulp deploy:main",
-    "deploy:master": "npm run build && gulp deploy:master"
+    "deploy:dev": "npm run build && gulp deploy:dev",
+    "deploy:main": "npm run build && gulp deploy:main"
   },
   "main": "index.js",
   "author": "",
