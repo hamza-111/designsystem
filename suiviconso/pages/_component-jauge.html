@@ -1,0 +1,539 @@
+
+<!-- TODO : rendre variable générique a plus de 2 couleurs-->
+<!--to common--><!DOCTYPE html><!--[if IE 8]><html data-debug lang="fr" class="oldie ie8 no-js"><![endif]-->
+<!--[if IE 9]><html data-debug lang="fr" class="oldie ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js" data-debug lang="fr"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://google.com">
+    <!-- Open Graph-->
+    <meta property="og:url" content="http://google.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your website title">
+    <meta property="og:description" content="Your description">
+    <meta property="og:image" content="http://essayspeechwala.com/wp-content/uploads/2016/03/Lion.jpg">
+    <title>composant kit jauge</title>
+    <!-- COMMON-->
+    <link rel="stylesheet" href="../css/suiviconso.css">
+    <link rel="stylesheet" href="../css/allSuivieConso.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/css.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <link rel="stylesheet" href="../css/kit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+      
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <!-- Fav and touch icons-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon/apple-touch-icon-57x57.png">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <script src="../js/haut/modernizr-custom.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="../js/haut/init.js"></script>
+    <script>
+      E.bannerApp = {
+        iOS:     'app-id=1104269908',
+        Android: 'app-id=com.engie.particuliers'
+      }
+      
+      
+    </script>
+  </head>
+  <body class="u-theme-genBlue" data-e-no-scroll>
+    <div class="l-wrapper l-wrapper--siteFull" id="backToTop">
+      <main class="l-wrapper l-wrapper--mainFull u-bg-white l-wrapper--main l-wrapper--headerv3" id="siteContent" role="main" data-e-sticky-container-main>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px; text-align:center;">Page valorisation Jauge standar</h2>
+            <div data-demo-html="1">
+              <div class="l-row">
+                <div class="l-col-medium-8">
+                          <!--.c-jauge-->
+                          <div class="c-jauge c-jauge__theme">
+                            <div class="c-jauge__main">
+                              <div class="c-jauge__wording">
+                                <div class="c-jauge__title"><span class="c-jauge__color">Projection </span><span> de la régularisation à la fin de votre plan de mensualisation</span></div>
+                                <div class="c-jauge__desc">La relève de votre consommation effectuée le 18 février 2019  projette une consommation annuelle inférieure à celle estimée dans votre plan de mensualisation :</div>
+                                <div class="c-jauge__price c-jauge__color">- 175 € sur la régularisation prochaine</div>
+                              </div>
+                            </div>
+                            <div class="c-jauge__jauge">
+                              <div class="c-jauge__projection">     
+                                <div class="u-hide c-jauge__projectionPrice"><span class="c-jauge__bg">+ 240 € TTC
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC </span>
+                                    </div></span><span class="c-jauge__color">Projection</span></div>
+                                <div class="c-jauge--nth-3 u-margin-t-80">
+                                  <div class="c-jauge__cube c-jauge__cubeFin">680 € TTC
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div><span class="c-jauge__cubeFinMonth">Juillet</span><span class="c-jauge__cubeFinLabel">Consommation prévue</span>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube c-jauge__cubeReleve">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div><span class="c-jauge__cubeReleveMonth">Février</span><span class="c-jauge__cubeReleveLabel">Relevé</span>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                    <div class="c-jauge--active"></div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube c-jauge__cubeDebut">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div><span class="c-jauge__cubeDebutMonth">Aout</span><span class="c-jauge__cubeDebutLabel">Début du plan</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="c-jauge__boutton">
+                              <div class="c-jauge__bouttonTxt">Vous voulez revoir votre plan de mensualisation ?</div>
+                              <div class="c-jauge__btn"><a class="c-baseBtn c-baseBtn--empty" href="#"><span class="c-baseBtn__content">Contacter le service client</span><span class="c-baseBtn__iconRight icon icon-external-page"></span></a>
+                              </div>
+                            </div><a class="c-jauge__ancre">Mentions légales</a>
+                          </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>jauge default, utiliser la classe <code>c-jauge--nth-5 </code>, <code>c-jauge--nth-6 </code> etc pour le niveau de la jauge active </p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;1&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="1" data-e-toggle-target="1"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px; text-align:center;">Page valorisation Jauge green</h2>
+            <div data-demo-html="2">
+              <div class="l-row">
+                <div class="l-col-medium-8">
+                          <!--.c-jauge-->
+                          <div class="c-jauge c-jauge__theme c-jauge__theme--green">
+                            <div class="c-jauge__main">
+                              <div class="c-jauge__wording">
+                                <div class="c-jauge__title"><span class="c-jauge__color">Projection </span><span> de la régularisation à la fin de votre plan de mensualisation</span></div>
+                                <div class="c-jauge__desc">La relève de votre consommation effectuée le 18 février 2019  projette une consommation annuelle inférieure à celle estimée dans votre plan de mensualisation :</div>
+                                <div class="c-jauge__price c-jauge__color">- 175 € sur la régularisation prochaine</div>
+                              </div>
+                            </div>
+                            <div class="c-jauge__jauge">
+                              <div class="c-jauge__projection">     
+                                <div class="c-jauge__projectionPrice"><span class="c-jauge__bg">+ 240 € TTC
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC </span>
+                                    </div></span><span class="c-jauge__color">Projection</span></div>
+                                <div class="c-jauge--nth-5 u-margin-t-80">
+                                  <div class="c-jauge__cube c-jauge__cubeFin">680 € TTC
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div><span class="c-jauge__cubeFinMonth">Juillet</span><span class="c-jauge__cubeFinLabel">Consommation prévue</span>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube c-jauge__cubeReleve">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div><span class="c-jauge__cubeReleveMonth">Février</span><span class="c-jauge__cubeReleveLabel">Relevé</span>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                    <div class="c-jauge--active"></div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube c-jauge__cubeDebut">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div><span class="c-jauge__cubeDebutMonth">Aout</span><span class="c-jauge__cubeDebutLabel">Début du plan</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="c-jauge__boutton">
+                              <div class="c-jauge__bouttonTxt">Vous voulez revoir votre plan de mensualisation ?</div>
+                              <div class="c-jauge__btn"><a class="c-baseBtn c-baseBtn--empty" href="#"><span class="c-baseBtn__content">Contacter le service client</span><span class="c-baseBtn__iconRight icon icon-external-page"></span></a>
+                              </div>
+                            </div><a class="c-jauge__ancre">Mentions légales</a>
+                          </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>use class theme <code>c-jauge__theme--green</code></p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;2&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="2" data-e-toggle-target="2"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px; text-align:center;">Page valorisation Jauge coral</h2>
+            <div data-demo-html="3">
+              <div class="l-row">
+                <div class="l-col-medium-8">
+                          <!--.c-jauge-->
+                          <div class="c-jauge c-jauge__theme c-jauge__theme--coral">
+                            <div class="c-jauge__main">
+                              <div class="c-jauge__wording">
+                                <div class="c-jauge__title"><span class="c-jauge__color">Projection </span><span> de la régularisation à la fin de votre plan de mensualisation</span></div>
+                                <div class="c-jauge__desc">La relève de votre consommation effectuée le 18 février 2019  projette une consommation annuelle inférieure à celle estimée dans votre plan de mensualisation :</div>
+                                <div class="c-jauge__price c-jauge__color">- 175 € sur la régularisation prochaine</div>
+                              </div>
+                            </div>
+                            <div class="c-jauge__jauge">
+                              <div class="c-jauge__projection">     
+                                <div class="c-jauge__projectionPrice"><span class="c-jauge__bg">+ 240 € TTC
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC </span>
+                                    </div></span><span class="c-jauge__color">Projection</span></div>
+                                <div class="c-jauge--nth-7 u-margin-t-80">
+                                  <div class="c-jauge__cube c-jauge__cubeFin">680 € TTC
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div><span class="c-jauge__cubeFinMonth">Juillet</span><span class="c-jauge__cubeFinLabel">Consommation prévue</span>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube c-jauge__cubeReleve">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div><span class="c-jauge__cubeReleveMonth">Février</span><span class="c-jauge__cubeReleveLabel">Relevé</span>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                    <div class="c-jauge--active"></div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube c-jauge__cubeDebut">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div><span class="c-jauge__cubeDebutMonth">Aout</span><span class="c-jauge__cubeDebutLabel">Début du plan</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="c-jauge__boutton">
+                              <div class="c-jauge__bouttonTxt">Vous voulez revoir votre plan de mensualisation ?</div>
+                              <div class="c-jauge__btn"><a class="c-baseBtn c-baseBtn--empty" href="#"><span class="c-baseBtn__content">Contacter le service client</span><span class="c-baseBtn__iconRight icon icon-external-page"></span></a>
+                              </div>
+                            </div><a class="c-jauge__ancre">Mentions légales</a>
+                          </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>use class theme <code>c-jauge__theme--coral</code></p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;3&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="3" data-e-toggle-target="3"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px; text-align:center;">Page valorisation Jauge blue</h2>
+            <div data-demo-html="4">
+              <div class="l-row">
+                <div class="l-col-medium-8">
+                          <!--.c-jauge-->
+                          <div class="c-jauge c-jauge__theme c-jauge__theme--blue">
+                            <div class="c-jauge__main">
+                              <div class="c-jauge__wording">
+                                <div class="c-jauge__title"><span class="c-jauge__color">Projection </span><span> de la régularisation à la fin de votre plan de mensualisation</span></div>
+                                <div class="c-jauge__desc">La relève de votre consommation effectuée le 18 février 2019  projette une consommation annuelle inférieure à celle estimée dans votre plan de mensualisation :</div>
+                                <div class="c-jauge__price c-jauge__color">- 175 € sur la régularisation prochaine</div>
+                              </div>
+                            </div>
+                            <div class="c-jauge__jauge">
+                              <div class="c-jauge__projection">     
+                                <div class="c-jauge__projectionPrice"><span class="c-jauge__bg">+ 240 € TTC
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC </span>
+                                    </div></span><span class="c-jauge__color">Projection</span></div>
+                                <div class="c-jauge--nth-5 u-margin-t-80">
+                                  <div class="c-jauge__cube c-jauge__cubeFin">680 € TTC
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div><span class="c-jauge__cubeFinMonth">Juillet</span><span class="c-jauge__cubeFinLabel">Consommation prévue</span>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube c-jauge__cubeReleve">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div><span class="c-jauge__cubeReleveMonth">Février</span><span class="c-jauge__cubeReleveLabel">Relevé</span>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26 € TTC</span>
+                                    </div>
+                                    <div class="c-jauge--active"></div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div>
+                                  </div>
+                                  <div class="c-jauge__cube c-jauge__cubeDebut">
+                                    <div class="c-jauge__tooltip"> <span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                      <hr><span class="c-jauge__tooltipTime">Au 13 juillet 2019</span><span class="c-jauge__tooltipPrice">26€ TTC</span>
+                                    </div><span class="c-jauge__cubeDebutMonth">Aout</span><span class="c-jauge__cubeDebutLabel">Début du plan</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="c-jauge__boutton">
+                              <div class="c-jauge__bouttonTxt">Vous voulez revoir votre plan de mensualisation ?</div>
+                              <div class="c-jauge__btn"><a class="c-baseBtn c-baseBtn--empty" href="#"><span class="c-baseBtn__content">Contacter le service client</span><span class="c-baseBtn__iconRight icon icon-external-page"></span></a>
+                              </div>
+                            </div><a class="c-jauge__ancre">Mentions légales</a>
+                          </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>use class theme<code>c-jauge__theme--blue</code></p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;4&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="4" data-e-toggle-target="4"><code class="html"></code></pre>
+              </div>
+            </div>
+      </main>
+    </div>
+  </body>
+  <!-- COMMON-->
+  <script src="../js/bas/vendors.js"></script>
+  <script src="../js/bas/suiviconso.js"></script>
+</html>

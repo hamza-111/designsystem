@@ -1,9 +1,0 @@
-mixin openPopup(data)
-  - var data = data || {}
-  - var href = data.href || "#"
-  - var label = data.label || ""
-  - var title = data.title || false
-  - var windowName = data.windowName || "popup"
-
-  a(href=href title=title data-e-popup=windowName)&attributes(attributes)!=label
-    block

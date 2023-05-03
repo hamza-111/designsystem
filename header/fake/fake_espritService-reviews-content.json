@@ -1,0 +1,77 @@
+[
+  {
+    "class": "com.gdfsuez.digital.bos4.espritservice.Avis",
+    "id": 56077108,
+    "date": "2016-06-06T00:00:00Z",
+    "identifiantAvis": "432737",
+    "nbrVoteNegatif": 0,
+    "nbrVotePositif": 0,
+    "nombreEtoiles": 5,
+    "note": 5,
+    "service": {
+      "class": "Service",
+      "id": 13
+    },
+    "verbatim": "test maxime simu chaudière. 06/06 10:50"
+  },
+  {
+    "class": "com.gdfsuez.digital.bos4.espritservice.Avis",
+    "id": 56077104,
+    "date": "2016-06-06T00:00:00Z",
+    "identifiantAvis": "432732",
+    "nbrVoteNegatif": 0,
+    "nbrVotePositif": 0,
+    "nombreEtoiles": 5,
+    "note": 5,
+    "service": {
+      "class": "Service",
+      "id": 13
+    },
+    "verbatim": "sans commentaire"
+  },
+  {
+    "class": "com.gdfsuez.digital.bos4.espritservice.Avis",
+    "id": 56077099,
+    "date": "2016-06-06T00:00:00Z",
+    "identifiantAvis": "432735",
+    "nbrVoteNegatif": 2,
+    "nbrVotePositif": 5,
+    "nombreEtoiles": 3,
+    "note": 3,
+    "service": {
+      "class": "Service",
+      "id": 13
+    },
+    "verbatim": "Test avec des votes"
+  },
+  {
+    "class": "com.gdfsuez.digital.bos4.espritservice.Avis",
+    "id": 56077100,
+    "date": "2016-06-01T00:00:00Z",
+    "identifiantAvis": "431599",
+    "nbrVoteNegatif": 0,
+    "nbrVotePositif": 0,
+    "nombreEtoiles": 5,
+    "note": 5,
+    "service": {
+      "class": "Service",
+      "id": 13
+    },
+    "verbatim": "test maxime"
+  },
+  {
+    "class": "com.gdfsuez.digital.bos4.espritservice.Avis",
+    "id": 56077105,
+    "date": "2016-05-31T00:00:00Z",
+    "identifiantAvis": "431236",
+    "nbrVoteNegatif": 0,
+    "nbrVotePositif": 0,
+    "nombreEtoiles": 5,
+    "note": 5,
+    "service": {
+      "class": "Service",
+      "id": 13
+    },
+    "verbatim": "test double affichage popin lors de la validation"
+  }
+]

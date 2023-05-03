@@ -1,0 +1,1033 @@
+
+<!-- TODO : rendre variable générique a plus de 2 couleurs-->
+<!--to common--><!DOCTYPE html><!--[if IE 8]><html data-debug lang="fr" class="oldie ie8 no-js"><![endif]-->
+<!--[if IE 9]><html data-debug lang="fr" class="oldie ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js" data-debug lang="fr"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Parcours service FEL / PA">
+    <link rel="canonical" href="http://google.com">
+    <!-- Open Graph-->
+    <meta property="og:url" content="http://google.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your website title">
+    <meta property="og:description" content="Your description">
+    <meta property="og:image" content="http://essayspeechwala.com/wp-content/uploads/2016/03/Lion.jpg">
+    <title>Parcours service FEL / PA</title>
+    <!-- COMMON-->
+    <link rel="stylesheet" href="../css/suiviconso.css">
+    <link rel="stylesheet" href="../css/allSuivieConso.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/css.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <link rel="stylesheet" href="../css/kit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+      
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <!-- Fav and touch icons-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon/apple-touch-icon-57x57.png">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <script src="../js/haut/modernizr-custom.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="../js/haut/init.js"></script>
+    <script>
+      E.bannerApp = {
+        iOS:     'app-id=1104269908',
+        Android: 'app-id=com.engie.particuliers'
+      }
+      
+      
+    </script>
+  </head>
+  <body class="u-theme-genBlue" data-e-no-scroll>
+    <div class="l-wrapper l-wrapper--siteFull" id="backToTop">
+      <main class="l-wrapper l-wrapper--mainFull u-bg-white l-wrapper--main l-wrapper--headerv3" id="siteContent" role="main" data-e-sticky-container-main>
+        <div class="c-wysiwyg">
+          <h2 style="margin:30px 0 0;">Timeline FEL</h2>
+          <!-- .c-timeLine
+          - La barre de progression 'c-progressBar__line' est manipulée dynamiquement à travers son css "scaleX" via son attribut style
+          - Les panneaux de progression 'c-progressStep' sont positionnés verticalement le long de la barre de progression dynamiquement à travers leur css "left" via leur attribut style
+          - Accessibilité : ARIA de la progressbar : https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_progressbar_role
+          -->
+          <div class="c-timeLine u-hideSmall">
+            <div class="c-progress">
+              <div class="c-progressBar" role="progressbar" aria-valuenow="50" aria-valuemin="0" and="and" aria-valuemax="100">
+                <div class="c-progressBar__line" style="-ms-transform: scaleX(0.5); -webkit-transform: scaleX(0.5); transform: scaleX(0.5)"></div>
+              </div>
+              <div class="c-progressStep is-previous" style="left: 0%;">
+                <div class="c-progressStep__value">1</div>
+                <div class="c-progressStep__legend">Mon identité</div>
+              </div>
+              <div class="c-progressStep is-current" style="left: 50%;">
+                <div class="c-progressStep__value">2</div>
+                <div class="c-progressStep__legend">vérification par sms</div>
+              </div>
+              <div class="c-progressStep" style="left: 100%;">
+                <div class="c-progressStep__value">3</div>
+                <div class="c-progressStep__legend">saisi code</div>
+              </div>
+            </div>
+          </div>
+          <!-- END - .c-timeLine-->
+        </div>
+            <div data-demo-html="1">
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>
+    - Nouveaux Style de timeline plus <br>
+    - Vous pouvez ajouter un timeline plus grand dans la version mobile tout on utilisons la class .u-theme-magenta
+    </p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;1&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="1" data-e-toggle-target="1"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2>Facture en ligne</h2>
+        </div>
+            <div data-demo-html="2">
+              <div class="l-wrapper u-bg-grey-light u-padding-a-50">
+                <div class="c-column c-column--50-50">
+                  <div class="c-column__col u-hideSmall"><img class="u-padding-r-50" src="../images/contrib/textImage.jpg" alt=""></div>
+                  <div class="c-column__col">
+                    <div class="c-wysiwyg u-margin-b-50">
+                      <h2> Facture en ligne</h2>
+                      <p>Activez gratuitement l’option Facture en ligne : Une solution rapide, facile et pratique pour en finir avec la paperasse*.<br><a href="#" data-e-modal-open="factureEnLigne">En savoir plus</a></p>
+                    </div>
+                    <!-- .c-radioMat--><span class="c-radioMat">
+                      <input class="c-radioMat__field" type="radio" id="radioMat1" name="radio" value="radio value"/>
+                      <label class="c-radioMat__label c-radioMat__labelPadding" for="radioMat1"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg">Je souscris et je valide les <a href="#">conditions générales de ventes de la facture en ligne</a></span>
+                      </label></span>
+                    <!-- end .c-radioMat-->
+                    <!-- .c-radioMat--><span class="c-radioMat">
+                      <input class="c-radioMat__field" type="radio" id="radioMat2" name="radio" value="radio value"/>
+                      <label class="c-radioMat__label c-radioMat__labelPadding" for="radioMat2"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg">non merci</span>
+                      </label></span>
+                    <!-- end .c-radioMat-->
+                  </div>
+                </div>
+              </div>
+              <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;factureEnLigne&quot;}">
+                <div class="c-modal__overlay">
+                  <div class="c-modal__content c-modal__content--large c-modalCel--FEL" data-e-modal-content="data-e-modal-content">
+                    <button class="c-modalCloseButton" type="button" data-e-modal-close="data-e-modal-close"><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                    <div class="c-modal__main"><img src="../images/contrib/facture_fel_popin.jpg" alt="">
+                      <div class="u-padding-a-50">
+                        <h2 class="u-heading-2 u-textCenter u-margin-b-50">Facture en ligne</h2><ul class="c-advantages__group l-wrapper--large u-theme-coral">
+<li class="c-advantages__item"><span class="c-advantages__icon u-theme-color icon icon-factureenligne"></span>
+<div class="c-advantages__text c-wysiwyg">Vous accédez à vos factures en quelques clics n’importe où, 24h/24 et 7j/7 pendant 5 ans.</div>
+</li>
+<li class="c-advantages__item"><span class="c-advantages__icon u-theme-color icon icon-accountTR"></span>
+<div class="c-advantages__text c-wysiwyg">Vous vous simplifiez la vie, toutes vos factures sont déjà rangées dans votre Espace Client sécurisé.</div>
+</li>
+<li class="c-advantages__item"><span class="c-advantages__icon u-theme-color icon icon-thumbs-o-up"></span>
+<div class="c-advantages__text c-wysiwyg">Vos factures papier ne s’accumulent plus à la maison, vous gagnez de la place !</div>
+</li>
+</ul>
+                        <div class="l-wrapper">
+                          <!-- .c-arrowBox-->
+                          <div class="c-arrowBox c-arrowBox--largePadding c-arrowBox--black c-arrowBox--arrowTop">
+                            <div class="c-arrowBox__wrapper">
+                              <div class="c-arrowBox__content">
+                                <div class="c-wysiwyg l-wrapper--medium">
+                                  <p><b>Bon à savoir :</b></p>
+                                  <ul>
+                                    <li><span class="u-list__item u-list__item--check u-theme-color-before">Vous pouvez modifier votre e-mail de contact, à tout moment, dans votre Espace Client, rubrique "Mon Profil".</span></li>
+                                    <li><span class="u-list__item u-list__item--check u-theme-color-before">Vous ne recevrez plus de factures papier.</span></li>
+                                    <li><span class="u-list__item u-list__item--check u-theme-color-before">Vos factures seront accessibles dans votre Espace Client  sécurisé pendant 5 ans et ne porteront plus la mention "duplicata". Vous pourrez donc les utiliser comme justificatif de domicile.</span></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- end .c-arrowBox-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Facture en ligne</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;2&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="2" data-e-toggle-target="2"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">pictoBlock - variantes :</h2>
+            <div data-demo-html="3">
+              <div class="l-wrapper--medium">
+                <div class="u-bg-grey-light u-padding-a-10">
+                  <div class="c-pictoBlock c-pictoBlock--topToLeft u-color-success">
+                    <div class="c-pictoBlock__icon">
+                      <div class="icon icon-thin_check u-fontSize-30"></div>
+                    </div>
+                    <div class="c-pictoBlock__content"><strong class="u-textCenter">Message de succès</strong>
+                    </div>
+                  </div>
+                </div>
+                <div class="u-bg-grey-light u-padding-a-10">
+                  <div class="c-pictoBlock c-pictoBlock--topToLeft u-color-error">
+                    <div class="c-pictoBlock__icon">
+                      <div class="icon icon-close u-fontSize-30"></div>
+                    </div>
+                    <div class="c-pictoBlock__content"><strong class="u-textCenter">Message d'erreur</strong>
+                    </div>
+                  </div>
+                </div>
+                <div class="c-pictoBlock c-pictoBlock--absoluteIcon c-pictoBlock--topToLeft is-valid l-wrapper--small u-padding-spacer">
+                  <div class="c-pictoBlock__icon">
+                    <div class="icon icon-contact-mail2 u-fontSize-70 u-color-greyMedium2"></div>
+                    <div class="c-pictoBlock__validIcon icon icon-thin_check"></div>
+                  </div>
+                  <div class="c-pictoBlock__content"><span class="c-inputMat" data-e-field-validation='{"typing":false,"validations":{"customError":"Erreur type customError","patternMismatch":"format de mail incorrect","valueMissing":"champs obligatoire"}}'><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" name="email" type="email" autocapitalize="off" required="required" pattern="^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+([\.]{1})[0-9a-zA-Z\._-]+$" placeholder="Saisissez votre email"/>
+                        <label class="c-inputMat__label">Email
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                </div>
+                <div class="c-pictoBlock c-pictoBlock--absoluteIcon c-pictoBlock--topToLeft l-wrapper--small u-padding-spacer">
+                  <div class="c-pictoBlock__icon">
+                    <div class="icon icon-contact-mail2 u-fontSize-70 u-color-greyMedium2"></div>
+                    <div class="c-pictoBlock__validIcon icon icon-thin_check"></div>
+                  </div>
+                  <div class="c-pictoBlock__content">
+                    <p class="u-color-grey">Email</p>
+                    <p><b>johndoe@wanadoo.com</b></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;3&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="3" data-e-toggle-target="3"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant wysiwyg</h2>
+            <div data-demo-html="4">
+              <div class="c-wysiwyg l-wrapper--medium">
+                <h3 class="u-textCenter">Vous souhaitez activer le service Facture en ligne</h3>
+                <p class="u-textCenter">Pour souscrire, il vous suffit d'abord d’opter pour le <b>prélèvement automatique</b>. <br/>Finis les oublis ou les relances de paiements, votre compte est automatiquement prélevé 14 jours après l'édition de votre facture</p>
+                <p class="u-textCenter"><b>En complément des avantages de la Facture en ligne, vous bénéficierez aussi de ceux du Prélèvement automatique</b></p>
+                <p class="u-textCenter u-theme-green"><a class="u-link u-link--arrow u-theme-color u-bg-grey-light u-bg-hover" href="#">Non merci</a><a class="u-link u-link--arrow u-theme-bg u-theme-bg-hover" href="#">Continuer</a></p>
+                <p class="u-textCenter"><span class="u-fontSize-small"><b>Pour continuer munissez-vous de votre IBAN.</b></span></p>
+                <p class="u-textCenter"><a class="u-link u-theme-color u-theme-color-hover" href="#">Ajouter de nouvelles coordonnées bancaires</a></p>
+              </div>
+              <div class="c-wysiwyg l-wrapper--medium c-wysiwyg--marge">
+                <h2>Titre niveau h2</h2>
+                <h3>Titre niveau h3</h3>
+                <h4>Titre niveau h4</h4>
+                <p>Lorem <a href="#" class="u-link">ipsum dolor</a> sit amet <b>consectetur adipisicing elit</b>. Quaerat, magnam excepturi eos architecto blanditiis deserunt! Nesciunt, deleniti! Dignissimos eum provident officiis, necessitatibus facilis blanditiis. Maiores fugiat inventore deleniti voluptatum aperiam?</p>
+                <p>Lorem <a href="#" class=" u-link u-link--standard">ipsum dolor</a> sit amet consectetur adipisicing elit. Quaerat, magnam excepturi eos architecto blanditiis deserunt! Nesciunt, deleniti! Dignissimos eum provident officiis, necessitatibus facilis blanditiis. Maiores fugiat inventore deleniti voluptatum aperiam?</p>
+                <p><a class="u-link u-link--arrow" href="#">Lien bouton</a><a class="u-link u-link--arrow u-link--secondary" href="#">Lien bouton secondaire</a><a class="u-link u-link--download" href="#">Lien télécharger</a></p>
+                <hr/>
+                <h2>Styles</h2>
+                <p>ipsum<sup>exposant</sup></p>
+                <p>ipsum<sub>indice</sub></p>
+                <p><b>texte en gras</b></p>
+                <p><i>texte en italique</i></p>
+                <p><span class="u-textUppercase">texte majuscule</span></p>
+                <hr/>
+                <h2>Tailles</h2>
+                <p><span class="u-fontSize-titan">Taille très grande (24px)</span></p>
+                <p><span class="u-fontSize-huge">Taille très grande (21px)</span></p>
+                <p><span class="u-fontSize-large">Taille plus grande (18px)</span></p>
+                <p><span class="u-fontSize-default">Taille par défaut (15px)</span></p>
+                <p><span class="u-fontSize-small">Taille plus petite (13px)</span></p>
+                <hr/>
+                <h2>Alignement</h2>
+                <p class="u-textLeft">Texte aligné à gauche.</p>
+                <p class="u-textRight">Texte aligné à droite.</p>
+                <p class="u-textCenter">Texte centré.</p>
+                <hr/>
+                <h2>Liens</h2>
+                <p><a class="u-link" href="#">Lien normal</a></p>
+                <p><a class="u-link u-link--externalLink" href="#" target="_blank" rel="noopener noreferrer">Lien externe</a></p>
+                <p><a class="u-link u-link--download" href="#">Lien télécharger</a></p>
+                <p><a class="u-link u-link--arrow" href="#">Lien bouton</a></p>
+                <p><a class="u-link u-link--arrow u-link--secondary" href="#">Lien bouton secondaire</a></p>
+                <hr/>
+                <h2>Listes</h2>
+                <ul>
+                  <li><span class="u-list__item">Liste 'carré'</span></li>
+                  <li><span class="u-list__item">Liste 'carré'</span></li>
+                  <li><span class="u-list__item"><a class="u-link u-link--externalLink" href="#" target="_blank" rel="noopener noreferrer">Lien externe</a></span></li>
+                  <li>
+                    <ul>
+                      <li><span class="u-list__item u-list__item--check">Liste 'check'</span></li>
+                      <li><span class="u-list__item u-list__item--check">Liste 'check'</span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul>
+                  <li><span class="u-list__item u-list__item--check">Liste 'check'</span></li>
+                  <li><span class="u-list__item u-list__item--check">Liste 'check'</span></li>
+                </ul>
+                <ol>
+                  <li><span class="u-list__item">Liste ordonnée</span></li>
+                  <li><span class="u-list__item">Liste ordonnée</span></li>
+                </ol>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Ajouter la classe <code>c-wysiwyg--marge</code> au composant pour le doter de marges</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;4&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="4" data-e-toggle-target="4"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant separator - pour créer des espaces entre composants :</h2>
+            <div data-demo-html="5">
+              <div class="l-wrapper--medium">
+                <!-- .c-separatorMarge-->
+                <div class="c-separatorMarge"></div>
+                <!-- END .c-separatorMarge-->
+                <!-- .c-separator-->
+                <div class="c-separator"></div>
+                <!-- END .c-separator-->
+                <!-- .c-separatorMarge-->
+                <div class="c-separatorMarge"></div>
+                <!-- END .c-separatorMarge-->
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;5&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="5" data-e-toggle-target="5"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant stepByStep</h2>
+            <div data-demo-html="6">
+              <!-- .c-stepByStep-->
+              <div class="c-stepByStep">
+                <!-- .c-carousel-->
+                <div class="c-carousel c-carousel--slide c-stepByStep__content" id="demo-fel" data-slick-delayed='{"mobileFirst":true,"arrows":true,"dots":true,"speed":600,"autoplaySpeed":3000,"draggable":true,"infinite":false,"responsive":[{"breakpoint":767,"settings":"unslick"}]}'>
+                  <!-- .c-stepByStep__elem-->
+                  <div class="c-stepByStep__elem">
+                    <div class="c-stepByStep__elemImg"><img src="../images/contrib/illu-souscription-fel.png" alt=""/></div>
+                    <div class="c-stepByStep__elemText">
+                      <div class="c-wysiwyg">
+                        <p>Souscrire au Prélèvement automatique puis à la Facture en ligne</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end .c-stepByStep__elem-->
+                  <!-- .c-stepByStep__elem-->
+                  <div class="c-stepByStep__elem">
+                    <div class="c-stepByStep__elemImg"><img src="../images/contrib/illu-mandat-sepa-signature.png" alt=""/></div>
+                    <div class="c-stepByStep__elemText">
+                      <div class="c-wysiwyg">
+                        <p>Signer votre Mandat SEPA si besoin</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end .c-stepByStep__elem-->
+                  <!-- .c-stepByStep__elem-->
+                  <div class="c-stepByStep__elem">
+                    <div class="c-stepByStep__elemImg"><img src="../images/contrib/illu-pouce-tchek.png" alt=""/></div>
+                    <div class="c-stepByStep__elemText">
+                      <div class="c-wysiwyg">
+                        <p>Le prélèvement automatique et la Facture en ligne sont activés !</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end .c-stepByStep__elem-->
+                </div>
+                <!-- end .c-carousel-->
+              </div>
+              <!-- end .c-stepByStep-->
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;6&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="6" data-e-toggle-target="6"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant assuranceBand :</h2>
+            <div data-demo-html="7">
+              <!-- .c-assuranceBand (font icon)-->
+              <div class="c-assuranceBand c-assuranceBand--hasBorder u-padding-spacer">
+                <div class="c-assuranceBand__wrapper u-bg-grey-light u-padding-a-20">
+                  <div class="c-assuranceBand__elem"><span class="c-assuranceBand__picto icon icon-elec2"></span><span class="c-assuranceBand__text">Elec verte</span></div>
+                  <div class="c-assuranceBand__elem"><span class="c-assuranceBand__picto icon icon-sansengage"></span><span class="c-assuranceBand__text">Sans engagement</span></div>
+                  <div class="c-assuranceBand__elem"><span class="c-assuranceBand__picto icon icon-suividemenage"></span><span class="c-assuranceBand__text">Suivi d'emménagement</span></div>
+                </div>
+              </div>
+              <!-- END .c-assuranceBand-->
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;7&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="7" data-e-toggle-target="7"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Elements de formulaire agencés en une et deux colonnes :</h2>
+            <div data-demo-html="8">
+              <form class="c-formMat u-padding-spacer" novalidate="novalidate">
+                <div class="l-wrapper--small l-wrapper--iban"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                      <input class="c-inputMat__field" id="nom-titu" name="nom-titu" type="text" autocapitalize="off" required="required" placeholder="Ex : Martinez"/>
+                      <label class="c-inputMat__label" for="nom-titu">Nom du titulaire du compte
+                      </label><span class="c-inputMat__inputLine"></span></span>
+                    <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                      <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                    </ul></span><span class="c-inputMat" data-e-field-validation='{"validations":{"valueMissing":"Champ obligatoire"}}'><span class="c-inputMat__wrap">
+                      <input class="c-inputMat__field c-inputMat__field--hasElemRight" id="user-iban" name="user-iban" type="text" autocapitalize="off" required="required" placeholder="Ex : FR 1235 1231 1231 1231" data-e-iban="data-e-iban"/>
+                      <label class="c-inputMat__label" for="user-iban">Votre IBAN
+                      </label><span class="c-inputMat__inputLine"></span><span class="c-inputMat__rightBlock"><span class="icon icon-thin_check c-inputMat__check"></span></span></span>
+                    <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                      <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                    </ul></span>
+                </div>
+                <div class="l-wrapper--medium">
+                  <!-- .c-separatorMarge-->
+                  <div class="c-separatorMarge"></div>
+                  <!-- END .c-separatorMarge-->
+                </div>
+                <div class="l-wrapper--medium">
+                  <div class="c-column c-column--50-50 c-column--spaced">
+                    <div class="c-column__col"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="demo-input1" name="demo-input1" type="text" autocapitalize="off" required="required" placeholder="Ex : Martinez"/>
+                          <label class="c-inputMat__label" for="demo-input1">Nom du titulaire du compte
+                          </label><span class="c-inputMat__inputLine"></span></span>
+                        <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                          <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                        </ul></span><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="demo-input2" name="demo-input2" type="text" autocapitalize="off" required="required" placeholder="Ex : Martinez"/>
+                          <label class="c-inputMat__label" for="demo-input2">Nom du titulaire du compte
+                          </label><span class="c-inputMat__inputLine"></span></span>
+                        <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                          <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                        </ul></span>
+                    </div>
+                    <div class="c-column__col"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="demo-input3" name="demo-input3" type="text" autocapitalize="off" required="required" placeholder="Ex : Martinez"/>
+                          <label class="c-inputMat__label" for="demo-input3">Nom du titulaire du compte
+                          </label><span class="c-inputMat__inputLine"></span></span>
+                        <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                          <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                        </ul></span><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="demo-input4" name="demo-input4" type="text" autocapitalize="off" required="required" placeholder="Ex : Martinez"/>
+                          <label class="c-inputMat__label" for="demo-input4">Nom du titulaire du compte
+                          </label><span class="c-inputMat__inputLine"></span></span>
+                        <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                          <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                        </ul></span>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;8&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="8" data-e-toggle-target="8"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">arrowBox : variantes</h2>
+            <div data-demo-html="9">
+              <div class="l-wrapper--medium">
+                <!-- .c-arrowBox-->
+                <div class="c-arrowBox c-arrowBox--largePadding c-arrowBox--black c-arrowBox--arrowTop">
+                  <div class="c-arrowBox__wrapper">
+                    <div class="c-arrowBox__content">
+                      <div class="c-wysiwyg l-wrapper--medium">
+                        <p><b>Bon à savoir :</b></p>
+                        <ul>
+                          <li><span class="u-list__item u-list__item--check u-theme-color-before">Vous pouvez modifier votre e-mail de contact, à tout moment, dans votre Espace Client, rubrique "Mon Profil".</span></li>
+                          <li><span class="u-list__item u-list__item--check u-theme-color-before">Vous ne recevrez plus de factures papier.</span></li>
+                          <li><span class="u-list__item u-list__item--check u-theme-color-before">Vos factures seront accessibles dans votre Espace Client  sécurisé pendant 5 ans et ne porteront plus la mention "duplicata". Vous pourrez donc les utiliser comme justificatif de domicile.</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end .c-arrowBox-->
+                <!-- .c-separatorMarge-->
+                <div class="c-separatorMarge"></div>
+                <!-- END .c-separatorMarge-->
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>arrowBox : FEL black variantes</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;9&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="9" data-e-toggle-target="9"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="10">
+              <div class="l-wrapper--medium">
+                <!-- .c-arrowBox-->
+                <div class="c-arrowBox c-arrowBox--largePadding c-arrowBox--magentaLight c-arrowBox--arrowTop">
+                  <div class="c-arrowBox__wrapper">
+                    <div class="c-arrowBox__content">
+                      <div class="c-wysiwyg l-wrapper--medium">
+                        <p><b>Bon à savoir :</b></p>
+                        <ul>
+                          <li><span class="u-list__item u-list__item--check u-theme-color-before">Vous pouvez modifier votre e-mail de contact, à tout moment, dans votre Espace Client, rubrique "Mon Profil".</span></li>
+                          <li><span class="u-list__item u-list__item--check u-theme-color-before">Vous ne recevrez plus de factures papier.</span></li>
+                          <li><span class="u-list__item u-list__item--check u-theme-color-before">Vos factures seront accessibles dans votre Espace Client  sécurisé pendant 5 ans et ne porteront plus la mention "duplicata". Vous pourrez donc les utiliser comme justificatif de domicile.</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end .c-arrowBox-->
+                <!-- .c-separatorMarge-->
+                <div class="c-separatorMarge"></div>
+                <!-- END .c-separatorMarge-->
+                <!-- .c-arrowBox-->
+                <div class="c-arrowBox c-arrowBox--magentaLight c-arrowBox--imageLeft c-arrowBox--arrowTop">
+                  <div class="c-arrowBox__wrapper" data-ab-interchange="[../images/contrib/illu-facture-mobile.png, small], [../images/contrib/illu-facture-desktop.png, medium]">
+                    <div class="c-arrowBox__content">
+                      <div class="c-wysiwyg l-wrapper--medium">
+                        <p><b>Vous recevrez tous les deux mois une facture sur la base de vos consommations.</b></p>
+                        <p>Le montant sera prélevé 14 jours après la date d'émission de votre facture.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end .c-arrowBox-->
+                <!-- .c-separatorMarge-->
+                <div class="c-separatorMarge"></div>
+                <!-- END .c-separatorMarge-->
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>arrowBox : variantes magenta</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;10&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="10" data-e-toggle-target="10"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="11">
+              <!-- .c-arrowBox-->
+              <div class="c-arrowBox c-arrowBox--imageRight c-arrowBox--arrowTop">
+                <div class="c-arrowBox__wrapper" data-ab-interchange="[../images/contrib/ill-mensualisation-mobile.png, small], [../images/contrib/ill-mensualisation-desktop.png, medium]">
+                  <div class="c-arrowBox__content">
+                    <div class="c-wysiwyg l-wrapper--medium">
+                      <p><b>Vos prélèvements</b></p>
+                      <p>Vous êtes prélevé <b>tous les 2 mois</b> après l'émission de votre nouvelle facture.</p>
+                      <p>Le montant <b>sera prélevé 14 jours</b> après la date d'émission de votre facture.</p>
+                      <p>Vous recevrez tous les deux mois une facture sur la base de vos consommations.</p>
+                    </div>
+                    <!-- .c-separatorMarge-->
+                    <div class="c-separatorMarge"></div>
+                    <!-- END .c-separatorMarge-->
+                  </div>
+                </div>
+              </div>
+              <!-- end .c-arrowBox-->
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>arrowBox : gris</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;11&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="11" data-e-toggle-target="11"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">radioBlockMat + inputMat (en contenu) :</h2>
+            <div data-demo-html="12">
+              <div class="l-wrapper--medium">
+                <!-- .c-radioBlockMat--><span class="c-radioBlockMat c-radioBlockMat--block">
+                  <input class="c-radioBlockMat__field" type="radio" id="radioBlockMatBlock1" name="radioBlockMatBlock" value="radio value"/>
+                  <label class="c-radioBlockMat__label c-radioBlockMat__labelPadding" for="radioBlockMatBlock1"><span class="c-radioBlockMat__check u-theme-bg u-theme-color"></span><span class="c-radioBlockMat__text u-theme-color c-wysiwyg">Mr Alex Smith</span></label>
+                  <div class="c-radioBlockMat__aside c-radioBlockMat__labelPadding">Société Générale<br>XX 2222
+                  </div></span>
+                <!-- end .c-radioBlockMat-->
+                <!-- .c-radioBlockMat--><span class="c-radioBlockMat c-radioBlockMat--block">
+                  <input class="c-radioBlockMat__field" type="radio" id="radioBlockMatBlock2" name="radioBlockMatBlock" value="radio value"/>
+                  <label class="c-radioBlockMat__label c-radioBlockMat__labelPadding" for="radioBlockMatBlock2"><span class="c-radioBlockMat__check u-theme-bg u-theme-color"></span><span class="c-radioBlockMat__text u-theme-color c-wysiwyg">Mme Alice Smith</span></label>
+                  <div class="c-radioBlockMat__aside c-radioBlockMat__labelPadding">Société Générale<br>XX 2222
+                  </div></span>
+                <!-- end .c-radioBlockMat-->
+                <!-- .c-radioBlockMat--><span class="c-radioBlockMat c-radioBlockMat--block">
+                  <input class="c-radioBlockMat__field" type="radio" id="radioBlockMatBlock3" name="radioBlockMatBlock" value="radio value"/>
+                  <label class="c-radioBlockMat__label c-radioBlockMat__labelPadding" for="radioBlockMatBlock3"><span class="c-radioBlockMat__check u-theme-bg u-theme-color"></span><span class="c-radioBlockMat__text u-theme-color c-wysiwyg">Ajouter des coordonnées</span></label>
+                  <div class="c-radioBlockMat__aside c-radioBlockMat__labelPadding">
+                    <div class="l-wrapper--small"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="nom-titu2" name="nom-titu2" type="text" autocapitalize="off" required="required" placeholder="Ex : Martinez"/>
+                          <label class="c-inputMat__label" for="nom-titu2">Nom du titulaire du compte
+                          </label><span class="c-inputMat__inputLine"></span></span>
+                        <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                          <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                        </ul></span><span class="c-inputMat" data-e-field-validation='{"validations":{"valueMissing":"Champ obligatoire"}}'><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field c-inputMat__field--hasElemRight" id="user-iban2" name="user-iban2" type="text" autocapitalize="off" required="required" placeholder="Ex : FR 1235 1231 1231 1231" data-e-iban="data-e-iban"/>
+                          <label class="c-inputMat__label" for="user-iban2">Votre IBAN
+                          </label><span class="c-inputMat__inputLine"></span><span class="c-inputMat__rightBlock"><span class="icon icon-thin_check c-inputMat__check"></span></span></span>
+                        <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                          <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                        </ul></span>
+                    </div>
+                  </div></span>
+                <!-- end .c-radioBlockMat-->
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;12&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="12" data-e-toggle-target="12"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">toggleCheck :</h2>
+            <div data-demo-html="13">
+              <div class="l-wrapper--medium u-padding-spacer">
+                <!-- .c-toggleCheck-->
+                <div class="c-toggleCheck">
+                  <!-- .c-toggleCheckElem-->
+                  <div class="c-toggleCheckElem c-toggleCheckElem--boxBorder" data-e-toggleCheck="data-e-toggleCheck">
+                    <div class="c-toggleCheckElem__header">
+                      <!-- .c-checkboxMat--><span class="c-checkboxMat c-toggleCheckElem__checkBox" data-e-switch-toggle="felauto">
+                        <input class="c-checkboxMat__field" type="checkbox" id="felauto" value="checkbox value"/>
+                        <label class="c-checkboxMat__label c-checkboxMat__labelPadding" for="felauto"><span class="c-checkboxMat__check u-theme-bg u-theme-color">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+                              <path fill="none" d="M14 27.2l7 7 12-12"></path>
+                            </svg></span><span class="c-checkboxMat__text c-wysiwyg">Choisissez la simplicité avec la Facture en ligne</span>
+                        </label></span>
+                      <!-- end .c-checkboxMat-->
+                    </div>
+                    <div class="c-toggleCheckElem__content">
+                      <div data-e-switch-toggle-name="felauto" aria-hidden="true" hidden>
+                        <div class="c-wysiwyg l-wrapper--medium">
+                          <p class="u-textCenter">
+                            <!-- .c-toolTip-->
+                            <button class="c-toolTip" type="button" data-e-modal-open="modal2"><span class="c-toolTip__label">Bon à savoir</span><span class="c-toolTip__icon u-theme-bg u-theme-bg-hover">i</span>
+                            </button>
+                            <!-- END .c-toolTip-->
+                            <div class="c-modal u-hide" data-e-modal="{
+                    &quot;target&quot;: &quot;modal2&quot;
+                  }">
+                              <div class="c-modal__overlay">
+                                <div class="c-modal__content" data-e-modal-content="data-e-modal-content">
+                                  <button class="c-modalCloseButton" type="button" data-e-modal-close="data-e-modal-close"><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                                  <div class="c-modal__main">
+                                    <div class="u-padding-a-20">
+                                      <div class="c-wysiwyg l-wrapper--medium">
+                                        <p><b>Bon à savoir :</b></p>
+                                        <ul>
+                                          <li><span class="u-list__item u-list__item--check u-theme-color-before">Vous pouvez modifier votre e-mail de contact, à tout moment, dans votre Espace Client, rubrique "Mon Profil".</span></li>
+                                          <li><span class="u-list__item u-list__item--check u-theme-color-before">Vous ne recevrez plus de factures papier.</span></li>
+                                          <li><span class="u-list__item u-list__item--check u-theme-color-before">Vos factures seront accessibles dans votre Espace Client  sécurisé pendant 5 ans et ne porteront plus la mention "duplicata". Vous pourrez donc les utiliser comme justificatif de domicile.</span></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end .c-toggleCheckElem-->
+                  <!-- .c-toggleCheckElem-->
+                  <div class="c-toggleCheckElem c-toggleCheckElem--boxBorder" data-e-toggleCheck="data-e-toggleCheck">
+                    <div class="c-toggleCheckElem__header">
+                      <!-- .c-checkboxMat--><span class="c-checkboxMat c-toggleCheckElem__checkBox" data-e-switch-toggle="paauto">
+                        <input class="c-checkboxMat__field" type="checkbox" id="plop6" value="checkbox value"/>
+                        <label class="c-checkboxMat__label c-checkboxMat__labelPadding" for="plop6"><span class="c-checkboxMat__check u-theme-bg u-theme-color">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+                              <path fill="none" d="M14 27.2l7 7 12-12"></path>
+                            </svg></span><span class="c-checkboxMat__text c-wysiwyg">Choisissez la simplicité avec la Facture en ligne</span>
+                        </label></span>
+                      <!-- end .c-checkboxMat-->
+                    </div>
+                    <div class="c-toggleCheckElem__content">
+                      <div data-e-switch-toggle-name="paauto" aria-hidden="false">
+                        <div class="c-wysiwyg l-wrapper--medium">
+                          <p>Fini le temps perdu à classer ses papiers !</br>Vos factures sont classées et conservées pendant 5 ans dans votre Espace Client sécurisé.</p>
+                        </div>
+                      </div>
+                      <div data-e-switch-toggle-name="paauto" aria-hidden="true" hidden>
+                        <div class="c-wysiwyg l-wrapper--medium">
+                          <p><strong> Félicitations !</strong> Vos factures sont classées et conservées pendant 5 ans dans votre Espace Client sécurisé.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end .c-toggleCheckElem-->
+                </div>
+                <!-- end .c-toggleCheck-->
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>
+      Utilise le switch-toggle<br/>
+      Voir démo du toggleCheck pour plus de détails<br/>
+      Pour le bon fonctionnement du toggle :<br/>
+      - Attribuer un attribut <code>data-e-switch-toggle</code> à <code>c-toggleCheckElem__checkBox</code> et <code>c-toggleCheckElem__title</code><br>
+      - Attribuer un attribut <code>data-e-switch-toggle-name</code> , <code>aria-hidden</code> à true ou false aux deux contenus à échanger à l'intérieur de <code>c-toggleCheckElem__content</code> et enfin un attribut <code>hidden</code> sur celui à masquer par défaut<br>
+      - <code>data-e-switch-toggle</code> et <code>data-e-switch-toggle-name</code> doivent avoir la même valeur
+    </p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;13&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="13" data-e-toggle-target="13"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">toggleCheck :</h2>
+            <div data-demo-html="14">
+              <div class="c-wysiwyg l-wrapper--medium">
+                <p class="u-textCenter">Pour signer mon mandat, je reçois un code de sécurité par</p>
+              </div>
+              <div class="u-textCenter u-margin-t-15">
+                <!-- .c-radioSwitchMat--><span class="c-radioSwitchMat">
+                  <input class="c-radioSwitchMat__field" type="radio" id="email-pref" name="radioswitch" checked="checked"/>
+                  <label class="c-radioSwitchMat__label c-radioSwitchMat__label--left" for="email-pref"><span class="c-radioSwitchMat__radio"></span><span class="c-radioSwitchMat__text">Email</span></label>
+                  <input class="c-radioSwitchMat__field" type="radio" id="sms-pref" name="radioswitch"/>
+                  <label class="c-radioSwitchMat__label c-radioSwitchMat__label--right" for="sms-pref"><span class="c-radioSwitchMat__radio"></span><span class="c-radioSwitchMat__text">SMS</span></label></span>
+                <!-- end .c-radioSwitchMat-->
+              </div>
+              <!-- .c-separatorMarge-->
+              <div class="c-separatorMarge"></div>
+              <!-- END .c-separatorMarge-->
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;14&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="14" data-e-toggle-target="14"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">choiceBox + contenu :</h2>
+            <div data-demo-html="15">
+              <div class="l-wrapper--medium">
+                <!-- c-choiceBox-->
+                <div class="c-choiceBox c-choiceBox--smallSeparator">
+                  <div class="c-choiceBoxElem c-choiceBoxElem--smallPadding u-bg-grey-light">
+                    <div class="c-wysiwyg l-wrapper--medium">
+                      <p><strong>Vos mensualités</strong></p>
+                      <p><span class="u-fontSize-small"> Vous serez prélevé tous les <b>12 du mois* pendant 11 mois</b>, calculé sur la base de votre historique de consommation.</span></p>
+                    </div>
+                    <!-- .c-moreLessInput-->
+                    <div class="c-moreLessInput c-moreLessInput--large u-margin-t-40 u-margin-small-t-40" data-e-more-lessinput='{"min":58.86,"max":71.94,"step":1,"errorMsg":"Ce champ ne peut contenir que des chiffres"}' data-e-field-validation="data-e-field-validation">
+                      <button class="c-moreLessInput__button c-moreLessInput__button--minus u-theme-bg-hover" type="button">-<span class="u-visibilityHidden">Réduire</span></button>
+                      <div class="c-moreLessInput__wrapper">
+                        <label class="c-moreLessInput__label u-visibilityHidden" for="usermensualites">Vos mensualités TCC/mois</label>
+                        <input class="c-moreLessInput__input u-theme-color" id="usermensualites" name="usermensualites" type="tel" value="65.40"/>
+                        <div class="c-moreLessInput__blockRight u-theme-color">€</div>
+                      </div>
+                      <button class="c-moreLessInput__button c-moreLessInput__button--plus u-theme-bg-hover" type="button">+<span class="u-visibilityHidden">Augmenter</span></button>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat" data-e-field-validation-error="data-e-field-validation-error">
+                      </ul>
+                    </div>
+                    <!-- end .c-moreLessInput-->
+                    <p class="u-margin-t-10 u-margin-small-t-10 u-textCenter"><b class="u-fontSize-small">TTC/mois</b></p>
+                  </div>
+                  <div class="c-choiceBox__separator"><span class="c-choiceBox__plusSeparator">+</span></div>
+                  <div class="c-choiceBoxElem c-choiceBoxElem--smallPadding u-bg-grey-light">
+                    <div class="c-wysiwyg l-wrapper--medium">
+                      <p><strong>Votre facture</strong></p>
+                      <p><span class="u-fontSize-small"> Vous recevrez une unique <b>facture de régularisation</b>** le 12ème mois sur votre Espace Client.</span></p>
+                    </div>
+                    <div class="u-textCenter"><img src="../images/contrib/illu-facture-full.png" alt=""></div>
+                  </div>
+                </div>
+                <!-- end c-choiceBox-->
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;15&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="15" data-e-toggle-target="15"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">selectOptions :</h2>
+            <div data-demo-html="16">
+              <div class="l-wrapper--large">
+                <!-- c-selectOptions-->
+                <div class="c-selectOptions">
+                  <div class="c-selectOptions__arrow"></div>
+                  <div class="c-selectOptions__content">
+                    <!-- c-selectOptionBlock-->
+                    <div class="c-selectOptionBlock">
+                      <div class="c-selectOptionBlock__main">
+                        <div class="c-selectOptionBlock__check">
+                          <div class="c-selectOptionBlock__icon u-hideSmall"><span class="icon icon-calendar"></span>
+                          </div>
+                          <!--img.c-selectOptionBlock__icon.u-hideSmall(src=iconUrl alt=iconAlt)-->
+                        </div>
+                        <div class="c-selectOptionBlock__content">
+                          <div class="c-selectOptionBlock__description">
+                            <h3 class="c-selectOptionBlock__title u-heading-4 u-margin-b-10 u-theme-color">La Mensualisation</h3>
+                            <p>Ayez une meilleure visibilité sur votre budget et payez la même somme tous les mois*.</p>
+                          </div>
+                          <!-- .c-btnWrapper-->
+                          <div class="c-btnWrapper c-btnWrapper--fullOnMobile c-selectOptionBlock__sideBlock u-theme-green"><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#"><span class="c-baseBtn__content">Activer la mensualisation</span></a>
+                          </div>
+                          <!-- end .c-btnWrapper-->
+                        </div>
+                      </div>
+                      <!-- end .c-selectOptionBlock__main-->
+                      <!-- Pour démo vente :-->
+                    </div>
+                    <!-- end c-selectOptionBlock-->
+                  </div>
+                </div>
+                <!-- end c-selectOptions-->
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;16&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="16" data-e-toggle-target="16"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">checkboxMat + bloc de texte aligné :</h2>
+            <div data-demo-html="17">
+              <div class="l-wrapper--medium">
+                <!-- .c-choiceWrapperMat-->
+                <div class="c-choiceWrapperMat">
+                  <!-- .c-checkboxMat--><span class="c-checkboxMat">
+                    <input class="c-checkboxMat__field" type="checkbox" id="choose-fel2" name="choose-fel2" value="checkbox value"/>
+                    <label class="c-checkboxMat__label c-checkboxMat__labelPadding" for="choose-fel2"><span class="c-checkboxMat__check u-theme-bg u-theme-color">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+                          <path fill="none" d="M14 27.2l7 7 12-12"></path>
+                        </svg></span><span class="c-checkboxMat__text c-wysiwyg"><b>Choisissez la simplicité avec la Facture en ligne</b></span>
+                    </label></span>
+                  <!-- end .c-checkboxMat-->
+                </div>
+                <div class="c-wysiwyg l-wrapper--medium">
+                  <p class="c-radioBlockMat__labelPadding">Fini le temps perdu à classer ses papiers !<br/>Vos factures sont classées et conservées pendant 5 ans dans votre Espace Client sécurisé.</p>
+                </div>
+                <!-- .c-choiceWrapperMat-->
+                <div class="c-choiceWrapperMat">
+                  <!-- .c-checkboxMat--><span class="c-checkboxMat">
+                    <input class="c-checkboxMat__field" type="checkbox" id="accept-cgv" name="accept-cgv" value="checkbox value"/>
+                    <label class="c-checkboxMat__label c-checkboxMat__labelPadding" for="accept-cgv"><span class="c-checkboxMat__check u-theme-bg u-theme-color">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+                          <path fill="none" d="M14 27.2l7 7 12-12"></path>
+                        </svg></span><span class="c-checkboxMat__text c-wysiwyg">J'ai pris connaissance et j'accepte les <a href="#">Conditions Générales d’Utilisation</a> de la Facture en ligne</span>
+                    </label></span>
+                  <!-- end .c-checkboxMat-->
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>
+      - <code>choiceWrapperMat</code> sert de conteneur aux composants <code>checkboxMat</code> et <code>radioboxMat</code><br/>
+      - la classe <code>c-radioBlockMat__labelPadding</code> permet d'aligner un élément avec le label d'un composant <code>checkboxMat</code>
+    </p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;17&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="17" data-e-toggle-target="17"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">fieldInfo : message de validation de formulaire</h2>
+            <div data-demo-html="18">
+              <div class="l-wrapper--medium">
+                <div class="c-fieldInfo u-textCenter u-textBold is-success u-bg-grey-light">
+                  <div class="icon icon-thin_check u-heading-2"></div>
+                  <p>Message de succès</p>
+                </div>
+                <div class="c-fieldInfo u-textCenter u-textBold is-error u-bg-grey-light">
+                  <div class="icon icon-close u-heading-2"></div>
+                  <p>Message d'erreur</p>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;18&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="18" data-e-toggle-target="18"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Les boutons : btnWrapper + baseBtn</h2>
+            <div data-demo-html="19">
+              <div class="l-wrapper--large">
+                <!-- .c-btnWrapper-->
+                <div class="c-btnWrapper c-btnWrapper--alignLeft"><a class="c-baseBtn c-baseBtn--empty" href="#"><span class="c-baseBtn__iconLeft icon icon-chevron-left"></span><span class="c-baseBtn__content">Retourner au tableau de bord</span></a>
+                </div>
+                <!-- end .c-btnWrapper-->
+                <!-- .c-btnWrapper-->
+                <div class="c-btnWrapper c-btnWrapper--fullOnMobile u-theme-green"><a class="c-baseBtn u-theme-bg u-theme-bg-hover c-baseBtn--large" href="#"><span class="c-baseBtn__content">Valider</span></a>
+                </div>
+                <!-- end .c-btnWrapper-->
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;19&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="19" data-e-toggle-target="19"><code class="html"></code></pre>
+              </div>
+            </div>
+      </main>
+    </div>
+  </body>
+  <!-- COMMON-->
+  <script src="../js/bas/vendors.js"></script>
+  <script src="../js/bas/suiviconso.js"></script>
+</html>

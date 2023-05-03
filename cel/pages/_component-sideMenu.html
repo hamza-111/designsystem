@@ -1,0 +1,186 @@
+
+<!-- end - disconnected-->
+<!--to common--><!DOCTYPE html><!--[if IE 8]><html data-debug lang="fr" class="oldie ie8 no-js"><![endif]-->
+<!--[if IE 9]><html data-debug lang="fr" class="oldie ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js" data-debug lang="fr"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Module Side Menu">
+    <link rel="canonical" href="http://google.com">
+    <!-- Open Graph-->
+    <meta property="og:url" content="http://google.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your website title">
+    <meta property="og:description" content="Your description">
+    <meta property="og:image" content="http://essayspeechwala.com/wp-content/uploads/2016/03/Lion.jpg">
+    <title>Side Menu</title>
+    <!-- COMMON-->
+    <link rel="stylesheet" href="../css/cel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/css.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+      
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <!-- Fav and touch icons-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon/apple-touch-icon-57x57.png">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <script src="../js/haut/modernizr-custom.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="../js/haut/init.js"></script>
+    <script>
+      E.bannerApp = {
+        iOS:     'app-id=1104269908',
+        Android: 'app-id=com.engie.particuliers'
+      }
+      
+      
+    </script>
+  </head>
+  <body class="u-theme-genBlue" data-e-no-scroll>
+    <div class="l-wrapper l-wrapper--siteFull" id="backToTop">
+      <main class="l-wrapper l-wrapper--mainFull u-bg-white l-wrapper--main l-wrapper--headerv3" id="siteContent" role="main" data-e-sticky-container-main>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Side Menu :</h2>
+            <div data-demo-html="1">
+              <!-- Conteneur pour contexte démo-->
+              <div data-e-side-menu-wrapper data-e-no-scroll>
+                <!-- Classe de background juste pour démo-->
+                        <!-- - var target = data.target || ''-->
+                        <!-- - var sideContent = data.sideContent || ''-->
+                        <!-- - var classToOpen = data.classToOpen || 'is-menu-open'-->
+                        <!-- - var classToClose = data.classToClose || 'is-menu-close'-->
+                        <!-- - var preventScroll = data.preventScroll || false-->
+                        <!-- .c-sideMenu-->
+                        <aside class="c-sideMenu u-bg-teal" data-e-side-menu='{"target":"menu1","sideContent":"content1"}'>
+                          <button type="button" data-e-side-menu-target="menu1">Toggle Menu (dans le menu)</button>
+                          <h1>Bloc de menu</h1>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam justo purus, dignissim ac ligula sed, semper laoreet neque. Vivamus ut rutrum nisl.
+                            Nam quis mollis ipsum, sit amet imperdiet augue. Nunc maximus feugiat ligula nec aliquet. Donec interdum dui vel libero ullamcorper blandit.
+                            Phasellus dignissim tincidunt leo, et pellentesque lacus dapibus id. Maecenas hendrerit efficitur libero ac mattis. Etiam vel odio finibus, lacinia quam quis, porta lacus.
+                            Sed quis enim bibendum, tristique orci in, scelerisque neque. Cras fermentum est vitae tellus ullamcorper consequat Cras fermentum est vitae tellus ullamcorper consequat.
+                          </p>
+                        </aside>
+                        <!-- end .c-sideMenu-->
+                <!-- Classe "c-sideMenuSibling" nécessaire sur le main content-->
+                <div data-e-side-menu-content="content1">
+                  <button type="button" data-e-side-menu-target="menu1">Toggle Menu (dans le contenu)</button>
+                  <h1>Bloc de contenu</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam justo purus, dignissim ac ligula sed, semper laoreet neque. Vivamus ut rutrum nisl.
+                    Nam quis mollis ipsum, sit amet imperdiet augue. Nunc maximus feugiat ligula nec aliquet. Donec interdum dui vel libero ullamcorper blandit.
+                    Phasellus dignissim tincidunt leo, et pellentesque lacus dapibus id. Maecenas hendrerit efficitur libero ac mattis. Etiam vel odio finibus, lacinia quam quis, porta lacus.
+                    Sed quis enim bibendum, tristique orci in, scelerisque neque. Cras fermentum est vitae tellus ullamcorper consequat Cras fermentum est vitae tellus ullamcorper consequat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Ne gère que la partie dynamique, les animations sont gérées via les css des différents composants qui font appel à sideMenu.<br>
+  Composé par un menu, un bloc de contenu, et un conteneur commun à ceux-ci; le menu et le bloc de contenu doivent être frères et le conteneur leur parent.<br><br>
+
+  Le conteneur commun à ceux-ci doit recevoir l'attribut <code>data-e-side-menu-wrapper</code><br><br>
+
+  Le menu est déterminé par la classe <code>c-sideMenu</code> et un attribut <code>data-e-side-menu</code> qui prend plusieurs paramètres en valeur à travers un objet :<br>
+  - <code>target</code> qui pointe vers les boutons d'ouverture et de fermerture ayant l'attribut <code>data-e-side-menu-target</code> de même valeur<br>
+  - <code>sideContent</code> qui pointe vers le bloc de contenu ayant l'attribut <code>data-e-side-menu-content</code> de même valeur<br>
+  - <code>classToOpen</code> et <code>classToClose</code> qui déterminent respectivement les classes d'ouverture et de fermeture injectées à <code>data-e-side-menu</code> et <code>data-e-side-menu-content</code><br>
+  - <code>noDesktop</code> avec la valeur <code>true</code> si le menu ne doit pas se déclencher sur desktop<br><br>
+
+  Un bloc de contenu <code>data-e-side-menu-content</code> dont la valeur doit être identique à celle de <code>sideContent</code> de <code>data-e-side-menu</code><br><br>
+
+  Des boutons d'ouverture-fermeture <code>data-e-side-menu-target</code> dont la valeur doit être identique à <code>target</code> de <code>data-e-side-menu</code><br><br>
+
+  Si le menu occupe toute dimension de son conteneur :<br>
+  - <code>data-e-side-menu</code> prend un nouveau paramètres <code>fullView</code> dont la valeur doit être <code>true</code>à travers son objet<br>
+  - le template de la page doit contenir l'attribut <code>data-e-no-scroll</code> (voir plugin no-scroll)</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;1&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="1" data-e-toggle-target="1"><code class="html"></code></pre>
+              </div>
+            </div>
+      </main>
+    </div>
+  </body>
+  <!-- COMMON-->
+  <script src="../js/bas/vendors.js"></script>
+  <script src="../js/bas/cel.js"></script>
+</html>

@@ -1,0 +1,379 @@
+
+<!-- end - disconnected-->
+<!--to common--><!DOCTYPE html><!--[if IE 8]><html data-debug lang="fr" class="oldie ie8 no-js"><![endif]-->
+<!--[if IE 9]><html data-debug lang="fr" class="oldie ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js" data-debug lang="fr"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Module de sélection des options">
+    <link rel="canonical" href="http://google.com">
+    <!-- Open Graph-->
+    <meta property="og:url" content="http://google.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your website title">
+    <meta property="og:description" content="Your description">
+    <meta property="og:image" content="http://essayspeechwala.com/wp-content/uploads/2016/03/Lion.jpg">
+    <title>selectOptions</title>
+    <!-- COMMON-->
+    <link rel="stylesheet" href="../css/cel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/css.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+      
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <!-- Fav and touch icons-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon/apple-touch-icon-57x57.png">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <script src="../js/haut/modernizr-custom.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="../js/haut/init.js"></script>
+    <script>
+      E.bannerApp = {
+        iOS:     'app-id=1104269908',
+        Android: 'app-id=com.engie.particuliers'
+      }
+      
+      
+    </script>
+  </head>
+  <body class="u-theme-genBlue" data-e-no-scroll>
+    <div class="l-wrapper l-wrapper--siteFull" id="backToTop">
+      <main class="l-wrapper l-wrapper--mainFull u-bg-white l-wrapper--main l-wrapper--headerv3" id="siteContent" role="main" data-e-sticky-container-main>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant selectOptions</h2>
+            <div data-demo-html="1">
+                      <!-- c-selectOptions-->
+                      <div class="c-selectOptions">
+                        <div class="c-selectOptions__arrow"></div>
+                        <div class="c-selectOptions__content">
+                                  <!-- c-selectOptionBlock-->
+                                  <div class="c-selectOptionBlock c-selectOptionBlock--bgOnHover">
+                                    <div class="c-selectOptionBlock__main">
+                                      <div class="c-selectOptionBlock__check">
+                                        <div class="c-selectOptionBlock__icon u-hideSmall"><span class="icon icon-cat"></span>
+                                        </div>
+                                        <!--img.c-selectOptionBlock__icon.u-hideSmall(src=iconUrl alt=iconAlt)-->
+                                      </div>
+                                      <div class="c-selectOptionBlock__content">
+                                        <div class="c-selectOptionBlock__description">
+                                          <h3 class="c-selectOptionBlock__title u-heading-3 u-margin-b-10 u-theme-color">Dépannage Gaz et Electricité Express</h3>
+                                          <p><strong>Une assistance téléphonique 24/24h, 7j/7</strong> en cas de fuites d’eau, d’engorgement ou de problèmes sur votre installation de gaz naturel et d'électricité.</p>
+                                        </div>
+                                        <!-- .c-btnWrapper-->
+                                        <div class="c-btnWrapper c-btnWrapper--fullOnMobile c-selectOptionBlock__sideBlock u-theme-green"><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#"><span class="c-baseBtn__content">En savoir plus</span></a>
+                                        </div>
+                                        <!-- end .c-btnWrapper-->
+                                      </div>
+                                    </div>
+                                    <!-- end .c-selectOptionBlock__main-->
+                                    <!-- Pour démo vente :-->
+                                  </div>
+                                  <!-- end c-selectOptionBlock-->
+                        </div>
+                      </div>
+                      <!-- end c-selectOptions-->
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>
+    Composant de base sans checkbox de sélection :<br/>
+    Pour l'effet de background-color au survol ajouter la classe <code>c-selectOptionBlock--bgOnHover</code> au composant <code>c-selectOptionBlock</code>
+  </p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;1&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="1" data-e-toggle-target="1"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant avec checkbox et image au format SVG (VENTE) :</h2>
+            <div data-demo-html="2">
+                      <!-- c-selectOptions-->
+                      <div class="c-selectOptions">
+                        <div class="c-selectOptions__arrow"></div>
+                        <div class="c-selectOptions__header">
+                          <h2 class="u-heading-2 u-textCenter">Pour plus de sérénité, vous pouvez choisir des options</h2>
+                        </div>
+                        <div class="c-selectOptions__content">
+                                  <!-- c-selectOptionBlock-->
+                                  <div class="c-selectOptionBlock c-selectOptionBlock--hasCheckbox c-selectOptionBlock--bgOnHover">
+                                    <div class="c-selectOptionBlock__main">
+                                      <div class="c-selectOptionBlock__check">
+                                                <!-- .c-checkboxMat--><span class="c-checkboxMat c-selectOptionBlock__checkbox">
+                                                  <input class="c-checkboxMat__field" type="checkbox" id="input5" value="checkbox value">
+                                                  <label class="c-checkboxMat__label" for="input5"><span class="c-checkboxMat__check u-theme-bg u-theme-color">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+                                                        <path fill="none" d="M14 27.2l7 7 12-12"></path>
+                                                      </svg></span><span class="c-checkboxMat__text c-wysiwyg u-visibilityHidden">Assurance Facture</span>
+                                                  </label></span>
+                                                <!-- end .c-checkboxMat-->
+                                        <div class="c-selectOptionBlock__icon u-hideSmall"><img src="../images/contrib/icon-garantie-electromenager.svg" alt="Garantie paiement">
+                                        </div>
+                                        <!--img.c-selectOptionBlock__icon.u-hideSmall(src=iconUrl alt=iconAlt)-->
+                                      </div>
+                                      <div class="c-selectOptionBlock__content">
+                                        <div class="c-selectOptionBlock__description">
+                                          <h3 class="c-selectOptionBlock__title u-heading-3 u-margin-b-10 u-theme-color">Assurance Facture</h3>
+                                          <p><strong>Assurance Facture, c'est la garantie du paiement de vos factures d’énergie</strong> en cas de perte d’emploi, incapacité de travail, perte totale et irréversible d’autonomie décès accidentel.</p>
+                                        </div>
+                                        <div class="c-selectOptionBlock__sideBlock c-selectOptionBlock__price c-selectOptionBlock__sideBlock--alignTop u-theme-color"><strong>4€&nbsp;<sup>TTC</sup>/mois</strong></div>
+                                      </div>
+                                    </div>
+                                    <!-- end .c-selectOptionBlock__main-->
+                                    <!-- Pour démo vente :-->
+                                  </div>
+                                  <!-- end c-selectOptionBlock-->
+                                  <!-- c-selectOptionBlock-->
+                                  <div class="c-selectOptionBlock c-selectOptionBlock--hasCheckbox c-selectOptionBlock--bgOnHover">
+                                    <div class="c-selectOptionBlock__main">
+                                      <div class="c-selectOptionBlock__check">
+                                                <!-- .c-checkboxMat--><span class="c-checkboxMat c-selectOptionBlock__checkbox">
+                                                  <input class="c-checkboxMat__field" type="checkbox" id="input6" value="checkbox value">
+                                                  <label class="c-checkboxMat__label" for="input6"><span class="c-checkboxMat__check u-theme-bg u-theme-color">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+                                                        <path fill="none" d="M14 27.2l7 7 12-12"></path>
+                                                      </svg></span><span class="c-checkboxMat__text c-wysiwyg u-visibilityHidden">Dépannage Gaz et Electricité Express</span>
+                                                  </label></span>
+                                                <!-- end .c-checkboxMat-->
+                                        <div class="c-selectOptionBlock__icon u-hideSmall"><img src="../images/contrib/icon-garantie-electromenager.svg" alt="Dépannage">
+                                        </div>
+                                        <!--img.c-selectOptionBlock__icon.u-hideSmall(src=iconUrl alt=iconAlt)-->
+                                      </div>
+                                      <div class="c-selectOptionBlock__content">
+                                        <div class="c-selectOptionBlock__description">
+                                          <h3 class="c-selectOptionBlock__title u-heading-3 u-margin-b-10 u-theme-color">Dépannage Gaz et Electricité Express</h3>
+                                          <p><strong>Une assistance téléphonique 24/24h, 7j/7</strong> en cas de fuites d’eau, d’engorgement ou de problèmes sur votre installation de gaz naturel et d'électricité.</p>
+                                        </div>
+                                        <div class="c-selectOptionBlock__sideBlock c-selectOptionBlock__price c-selectOptionBlock__sideBlock--alignTop u-theme-color"><strong>4,99€&nbsp;<sup>TTC</sup>/mois</strong></div>
+                                      </div>
+                                    </div>
+                                    <!-- end .c-selectOptionBlock__main-->
+                                    <!-- Pour démo vente :-->
+                                  </div>
+                                  <!-- end c-selectOptionBlock-->
+                        </div>
+                      </div>
+                      <!-- end c-selectOptions-->
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Injection de la classe <code>is-checked</code> sur le composant <code>c-selectOptionBlock</code> au clique sur <code>.c-selectOptionBlock__checkbox .c-checkboxMat__field</code> ou sur <code>.c-selectOptionBlock__title</code></p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;2&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="2" data-e-toggle-target="2"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Dénué de thème :</h2>
+            <div data-demo-html="3">
+                      <!-- c-selectOptions-->
+                      <div class="c-selectOptions c-selectOptions--noTheme">
+                        <div class="c-selectOptions__arrow"></div>
+                        <div class="c-selectOptions__content">
+                                  <!-- c-selectOptionBlock-->
+                                  <div class="c-selectOptionBlock">
+                                    <div class="c-selectOptionBlock__main">
+                                      <div class="c-selectOptionBlock__check">
+                                        <div class="c-selectOptionBlock__icon u-hideSmall"><span class="icon icon-cat"></span>
+                                        </div>
+                                        <!--img.c-selectOptionBlock__icon.u-hideSmall(src=iconUrl alt=iconAlt)-->
+                                      </div>
+                                      <div class="c-selectOptionBlock__content">
+                                        <div class="c-selectOptionBlock__description">
+                                          <h3 class="c-selectOptionBlock__title u-heading-3 u-margin-b-10 u-theme-color">Dépannage Gaz et Electricité Express</h3>
+                                          <p><strong>Une assistance téléphonique 24/24h, 7j/7</strong> en cas de fuites d’eau, d’engorgement ou de problèmes sur votre installation de gaz naturel et d'électricité.</p>
+                                        </div>
+                                        <!-- .c-btnWrapper-->
+                                        <div class="c-btnWrapper c-btnWrapper--fullOnMobile c-selectOptionBlock__sideBlock u-theme-green"><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#"><span class="c-baseBtn__content">En savoir plus</span></a>
+                                        </div>
+                                        <!-- end .c-btnWrapper-->
+                                      </div>
+                                    </div>
+                                    <!-- end .c-selectOptionBlock__main-->
+                                    <!-- Pour démo vente :-->
+                                  </div>
+                                  <!-- end c-selectOptionBlock-->
+                                  <!-- c-selectOptionBlock-->
+                                  <div class="c-selectOptionBlock">
+                                    <div class="c-selectOptionBlock__main">
+                                      <div class="c-selectOptionBlock__check">
+                                        <div class="c-selectOptionBlock__icon u-hideSmall"><span class="icon icon-cat"></span>
+                                        </div>
+                                        <!--img.c-selectOptionBlock__icon.u-hideSmall(src=iconUrl alt=iconAlt)-->
+                                      </div>
+                                      <div class="c-selectOptionBlock__content">
+                                        <div class="c-selectOptionBlock__description">
+                                          <h3 class="c-selectOptionBlock__title u-heading-3 u-margin-b-10 u-theme-color">Dépannage Gaz et Electricité Express</h3>
+                                          <p><strong>Une assistance téléphonique 24/24h, 7j/7</strong> en cas de fuites d’eau, d’engorgement ou de problèmes sur votre installation de gaz naturel et d'électricité.</p>
+                                        </div>
+                                        <!-- .c-btnWrapper-->
+                                        <div class="c-btnWrapper c-btnWrapper--fullOnMobile c-selectOptionBlock__sideBlock u-theme-green"><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#"><span class="c-baseBtn__content">En savoir plus</span></a>
+                                        </div>
+                                        <!-- end .c-btnWrapper-->
+                                      </div>
+                                    </div>
+                                    <!-- end .c-selectOptionBlock__main-->
+                                    <!-- Pour démo vente :-->
+                                  </div>
+                                  <!-- end c-selectOptionBlock-->
+                        </div>
+                      </div>
+                      <!-- end c-selectOptions-->
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Pour retirer les couleurs des bordures : ajouter une classe <code>c-selectOptions--noTheme</code> sur le composant <code>c-selectOptions</code></p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;3&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="3" data-e-toggle-target="3"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Dénué de thème :</h2>
+            <div data-demo-html="4">
+                      <!-- c-selectOptions-->
+                      <div class="c-selectOptions c-selectOptions--noTheme">
+                        <div class="c-selectOptions__arrow"></div>
+                        <div class="c-selectOptions__content">
+                                  <!-- c-selectOptionBlock-->
+                                  <div class="c-selectOptionBlock">
+                                    <div class="c-selectOptionBlock__main">
+                                      <div class="c-selectOptionBlock__check">
+                                        <div class="c-selectOptionBlock__icon u-hideSmall"><span class="icon icon-mensualisation"></span>
+                                        </div>
+                                        <!--img.c-selectOptionBlock__icon.u-hideSmall(src=iconUrl alt=iconAlt)-->
+                                      </div>
+                                      <div class="c-selectOptionBlock__content">
+                                        <div class="c-selectOptionBlock__description">
+                                          <h3 class="c-selectOptionBlock__title u-heading-3 u-margin-b-10 u-theme-color">my Title</h3>
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis a esse fuga! Repellat unde officiis minima qui in! Corrupti, quasi atque laudantium quisquam illum nemo animi harum modi! Quia, atque.</p>
+                                        </div>
+                                        <!-- .c-btnWrapper-->
+                                        <div class="c-btnWrapper c-btnWrapper--fullOnMobile c-selectOptionBlock__sideBlock u-theme-green"><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#"><span class="c-baseBtn__content">Lorem ipsuim</span></a>
+                                        </div>
+                                        <!-- end .c-btnWrapper-->
+                                      </div>
+                                    </div>
+                                    <!-- end .c-selectOptionBlock__main-->
+                                    <!-- Pour démo vente :-->
+                                  </div>
+                                  <!-- end c-selectOptionBlock-->
+                        </div>
+                      </div>
+                      <!-- end c-selectOptions-->
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Pour retirer les couleurs des bordures : ajouter une classe <code>c-selectOptions--noTheme</code> sur le composant <code>c-selectOptions</code></p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;4&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="4" data-e-toggle-target="4"><code class="html"></code></pre>
+              </div>
+            </div>
+      </main>
+    </div>
+  </body>
+  <!-- COMMON-->
+  <script src="../js/bas/vendors.js"></script>
+  <script src="../js/bas/cel.js"></script>
+</html>

@@ -1,0 +1,223 @@
+
+<!-- TODO : rendre variable générique a plus de 2 couleurs-->
+<!--to common--><!DOCTYPE html><!--[if IE 8]><html data-debug lang="fr" class="oldie ie8 no-js"><![endif]-->
+<!--[if IE 9]><html data-debug lang="fr" class="oldie ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js" data-debug lang="fr"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Module Tool Tip">
+    <link rel="canonical" href="http://google.com">
+    <!-- Open Graph-->
+    <meta property="og:url" content="http://google.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your website title">
+    <meta property="og:description" content="Your description">
+    <meta property="og:image" content="http://essayspeechwala.com/wp-content/uploads/2016/03/Lion.jpg">
+    <title>Tool Tip</title>
+    <!-- COMMON-->
+    <link rel="stylesheet" href="../css/suiviconso.css">
+    <link rel="stylesheet" href="../css/allSuivieConso.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/css.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <link rel="stylesheet" href="../css/kit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+      
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <!-- Fav and touch icons-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon/apple-touch-icon-57x57.png">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <script src="../js/haut/modernizr-custom.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="../js/haut/init.js"></script>
+    <script>
+      E.bannerApp = {
+        iOS:     'app-id=1104269908',
+        Android: 'app-id=com.engie.particuliers'
+      }
+      
+      
+    </script>
+  </head>
+  <body class="u-theme-genBlue" data-e-no-scroll>
+    <div class="l-wrapper l-wrapper--siteFull" id="backToTop">
+      <main class="l-wrapper l-wrapper--mainFull u-bg-white l-wrapper--main l-wrapper--headerv3" id="siteContent" role="main" data-e-sticky-container-main>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant toolTip</h2>
+            <div data-demo-html="1">
+              <p>Proin eu pulvinar justo, efficitur iaculis neque. In hac habitasse
+                        <!-- .c-toolTip--><a class="c-toolTip" href="#"><span class="c-toolTip__icon u-theme-bg u-theme-bg-hover">?</span></a>
+                        <!-- END .c-toolTip-->tincidunt dapibus augue ac eleifend. Pellentesque tempus et risus eu fringilla. Sed aliquet turpis neque, in vehicula mauris gravida at. Etiam vitae aliquam augue, non congue eros. Nulla accumsan, eros eu rhoncus auctor, purus neque tincidunt ipsum, quis interdum odio libero in neque. Duis tempus tellus non risus sollicitudin mattis. Maecenas molestie tincidunt lectus eu lobortis. Aenean pellentesque, nisi eu accumsan laoreet, dui ante pulvinar purus, eu porttitor justo lorem quis nibh. Cras in pellentesque neque. Vestibulum blandit porttitor sapien, vel pulvinar urna consequat ac. Duis sed elit tortor. Phasellus at molestie justo, a luctus arcu.h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant toolTip
+              </p>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Composant Tool Tip : peut-être un lien ou un bouton<br> Ici aligné sur la baseline du texte</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;1&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="1" data-e-toggle-target="1"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Version "info"</h2>
+            <div data-demo-html="2">
+              <p>Proin eu pulvinar justo, efficitur iaculis neque. In hac habitasse
+                        <!-- .c-toolTip--><a class="c-toolTip c-toolTip--info" href="#"><span class="c-toolTip__icon u-theme-bg u-theme-bg-hover">i</span></a>
+                        <!-- END .c-toolTip-->
+              </p>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Ajouter une classe <code>c-toolTip--info</code> au composant</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;2&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="2" data-e-toggle-target="2"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant toolTip avec label textuel</h2>
+            <div data-demo-html="3">
+              <p>Maecenas molestie tincidunt
+                        <!-- .c-toolTip-->
+                        <button class="c-toolTip" type="button"><span class="c-toolTip__label">Qu'est-ce que c'est</span><span class="c-toolTip__icon u-theme-bg u-theme-bg-hover">?</span>
+                        </button>
+                        <!-- END .c-toolTip-->
+              </p>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Ajout d'une classe <code>c-toolTip--valignMid</code> pour assurer un alignement vertical au milieu</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;3&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="3" data-e-toggle-target="3"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant toolTip : alignement vertical</h2>
+            <div data-demo-html="4">
+              <p>Proin eu pulvinar justo, efficitur iaculis neque. In hac habitasse
+                        <!-- .c-toolTip-->
+                        <button class="c-toolTip u-theme-magenta c-toolTip--valignMid" type="button" data-e-tooltipPopper='{"text":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde architecto explicabo voluptates commodi a cumque. Suscipit est tempora, commodi ratione, voluptate quas perspiciatis eum nulla, minus aspernatur","position":"top"}'><span class="c-toolTip__icon u-theme-bg u-theme-bg-hover">?</span>
+                        </button>
+                        <!-- END .c-toolTip-->
+              </p>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>
+    Ajout d'une classe <code>c-toolTip--valignMid</code> pour assurer un alignement vertical au milieu
+    <br><br>
+    pour activer l'infoBulle faut juste ajouter un atrribut dans ton target <code>data-e-tooltipPopper={"text":"Coucou", "position" : "top"}</code> l'option "text" c'est pour le text de l'infobulle et l'option "position" c'est pour la position de ton infoBulle  
+    </p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;4&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="4" data-e-toggle-target="4"><code class="html"></code></pre>
+              </div>
+            </div>
+      </main>
+    </div>
+  </body>
+  <!-- COMMON-->
+  <script src="../js/bas/vendors.js"></script>
+  <script src="../js/bas/suiviconso.js"></script>
+</html>

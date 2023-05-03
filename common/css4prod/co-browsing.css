@@ -1,0 +1,104 @@
+body.security-key-form {
+  background-color: white;
+  overflow: hidden; }
+
+.webchat-security-key-form {
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0; }
+
+.input-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+.form-control.input--security-key {
+  height: 48px;
+  padding: 15px 20px 0 20px;
+  width: 200px;
+  border-radius: 3px;
+  margin-bottom: 32px;
+  box-shadow: none;
+  font-size: 24px;
+  letter-spacing: 4px;
+  text-align: center; }
+
+.form-control.input--security-key::-webkit-input-placeholder {
+  font-size: 15px;
+  letter-spacing: 0.62px;
+  padding-bottom: 8px;
+  position: relative;
+  top: -4px; }
+
+.form-control.input--security-key::-ms-input-placeholder {
+  font-size: 15px;
+  letter-spacing: 0.62px;
+  padding-bottom: 8px;
+  position: relative;
+  top: -4px; }
+
+.form-control.input--security-key::placeholder {
+  font-size: 15px;
+  letter-spacing: 0.62px;
+  padding-bottom: 8px;
+  position: relative;
+  top: -4px; }
+
+.input-group .form-control:first-child {
+  border-width: 0 0 2px 0;
+  box-shadow: none; }
+
+button.btn.btn-primary.btn--start-screen-share {
+  border-radius: 0;
+  padding: 0;
+  background-color: #009DE9;
+  width: 200px;
+  border: 0;
+  margin-left: 0;
+  box-shadow: none;
+  height: 40px; }
+
+button.btn.btn-primary.btn--start-screen-share:hover {
+  background-color: #0C5CAF; }
+
+.webchat-security-key-form .start-section .error-section {
+  top: 27px;
+  font-size: 14px; }
+
+.input-group.input-group-lg + .input-group-btn {
+  background-color: red; }
+
+.webchat-security-key-form .start-section .error-section {
+  color: #EB2936; }
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+  border: 0;
+  outline: 0; }
+
+.btn:active, .btn.active {
+  text-shadow: none; }
+
+.form-control:focus {
+  border: 2px #009DE9 solid; }
+
+.form-control.input--security-key {
+  color: #009DE9;
+  font-weight: bold; }
+
+button.btn.btn-primary.btn--start-screen-share:focus {
+  border: double !important; }
+
+@media screen and (max-width: 480px) {
+  .form-control.input--security-key {
+    margin-bottom: 20px; } }
+
+#cobrowse-security-form {
+  margin-top: 50px;
+  position: absolute;
+  bottom: 40px;
+  width: 100%; }
+
+.webchat-security-key-form {
+  height: auto !important; }

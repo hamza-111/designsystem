@@ -1,0 +1,76 @@
+{
+  "listeMessageretours": [{
+    "libelleMessage": "Traitement effectué sans erreur",
+    "codeMessage": "OCTOPUS_RechercherDistributeur_01"
+  }, {
+    "libelleMessage": "ELD inconnue",
+    "codeMessage": "OCTOPUS_RechercherDistributeur_98"
+  }],
+  "listeCommunes": [{
+    "codeINSEE": "47045",
+    "nomCommune": "CALIGNAC",
+    "raccordementGrDF": "non",
+    "raccordementERDF": "Oui",
+    "raccordementPDFD": "non"
+  }, {
+    "codeINSEE": "47090",
+    "nomCommune": "ESPIENS",
+    "raccordementGrDF": "non",
+    "raccordementERDF": "Oui",
+    "raccordementPDFD": "non"
+  }, {
+    "codeINSEE": "47098",
+    "nomCommune": "FIEUX",
+    "raccordementGrDF": "non",
+    "raccordementERDF": "Oui",
+    "raccordementPDFD": "non"
+  }, {
+    "codeINSEE": "47102",
+    "nomCommune": "FRANCESCAS",
+    "raccordementGrDF": "Oui",
+    "raccordementERDF": "Oui",
+    "raccordementPDFD": "non"
+  }, {
+    "codeINSEE": "47103",
+    "nomCommune": "FRECHOU",
+    "raccordementGrDF": "non",
+    "raccordementERDF": "Oui",
+    "raccordementPDFD": "non"
+  }, {
+    "codeINSEE": "47139",
+    "nomCommune": "LASSERRE",
+    "raccordementGrDF": "Oui",
+    "raccordementERDF": "Oui",
+    "raccordementPDFD": "non"
+  }, {
+    "codeINSEE": "47174",
+    "nomCommune": "MONCRABEAU",
+    "raccordementGrDF": "Oui",
+    "raccordementERDF": "Oui",
+    "raccordementPDFD": "non"
+  }, {
+    "codeINSEE": "47180",
+    "nomCommune": "MONTAGNAC SUR AUVIGNON",
+    "raccordementGrDF": "non",
+    "raccordementERDF": "Oui",
+    "raccordementPDFD": "non"
+  }, {
+    "codeINSEE": "47195",
+    "nomCommune": "NERAC",
+    "raccordementGrDF": "Oui",
+    "raccordementERDF": "Oui",
+    "raccordementPDFD": "non"
+  }, {
+    "codeINSEE": "47197",
+    "nomCommune": "NOMDIEU",
+    "raccordementGrDF": "non",
+    "raccordementERDF": "Oui",
+    "raccordementPDFD": "non"
+  }, {
+    "codeINSEE": "47287",
+    "nomCommune": "SAUMONT",
+    "raccordementGrDF": "non",
+    "raccordementERDF": "Oui",
+    "raccordementPDFD": "non"
+  }]
+}

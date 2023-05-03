@@ -1,0 +1,1429 @@
+<!DOCTYPE html><!--[if IE 8]><html data-debug lang="fr" class="oldie ie8 no-js"><![endif]-->
+<!--[if IE 9]><html data-debug lang="fr" class="oldie ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js" data-debug lang="fr"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://google.com">
+    <!-- Open Graph-->
+    <meta property="og:url" content="http://google.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your website title">
+    <meta property="og:description" content="Your description">
+    <meta property="og:image" content="http://essayspeechwala.com/wp-content/uploads/2016/03/Lion.jpg">
+    <title>TEL kit composant</title>
+    <!-- COMMON-->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/css.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <!-- Fav and touch icons-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon/apple-touch-icon-57x57.png">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <script src="../js/haut/modernizr-custom.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="../js/haut/init.js"></script>
+  </head>
+  <body class="u-theme-genBlue">
+    <div class="l-wrapper l-wrapper--siteFull" id="backToTop">
+      <main class="l-wrapper l-wrapper--main u-bg-white l-wrapper--headerv3" id="siteContent" role="main" data-e-sticky-container-main>
+        <div class="c-wysiwyg">
+          <h2>timeLine : tunnel</h2>
+        </div>
+            <div data-demo-html="1">
+              <div class="c-timeLine c-timeLineWizard" style="position: relative; top: 0;">
+                <div class="c-timeLineWizard__wrap">
+                  <div class="c-progress step-app">
+                    <div class="c-progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" and="" aria-valuemax="100">
+                      <div class="c-progressBar__line" style="-ms-transform: scaleX(0); -webkit-transform: scaleX(0); transform: scaleX(0.5);"></div>
+                    </div>
+                    <ul class="step-steps">
+                      <li class="c-progressStep done" style="left: 0%;"><a class="c-progressStep__value" href="#tab1"><span class="number">1</span></a>
+                        <div class="c-progressStep__legend"> Mon projet</div>
+                      </li>
+                      <li class="c-progressStep done" style="left: 25%;"><a class="c-progressStep__value" href="#tab2"><span class="number">2</span></a>
+                        <div class="c-progressStep__legend"> Mon budget</div>
+                      </li>
+                      <li class="c-progressStep active" style="left: 50%;"><a class="c-progressStep__value" href="#tab3"><span class="number">3</span></a>
+                        <div class="c-progressStep__legend"> Mes coordonnées</div>
+                      </li>
+                      <li class="c-progressStep" style="left: 75%;"><a class="c-progressStep__value" href="#tab4"><span class="number">4</span></a>
+                        <div class="c-progressStep__legend"> Mon nouveau logement</div>
+                      </li>
+                      <li class="c-progressStep" style="left: 100%;"><a class="c-progressStep__value" href="#tab5"><span class="number">5</span></a>
+                        <div class="c-progressStep__legend"> Ma facturation</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;1&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="1" data-e-toggle-target="1"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2>timeLine : tunnelChecked</h2>
+        </div>
+            <div data-demo-html="2">
+              <div class="c-timeLine c-timeLineWizard c-timeLineWizard--checked" style="position: relative; top: 0;">
+                <div class="c-timeLineWizard__wrap">
+                  <div class="c-progress step-app">
+                    <div class="c-progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" and="" aria-valuemax="100">
+                      <div class="c-progressBar__line" style="-ms-transform: scaleX(0); -webkit-transform: scaleX(0); transform: scaleX(1);"></div>
+                    </div>
+                    <ul class="step-steps">
+                      <li class="c-progressStep done" style="left: 0%;"><a class="c-progressStep__value" href="#tab1"><span class="number icon icon-check"></span></a>
+                        <div class="c-progressStep__legend"> Mon projet</div>
+                      </li>
+                      <li class="c-progressStep done" style="left: 25%;"><a class="c-progressStep__value" href="#tab2"><span class="number icon icon-check"></span></a>
+                        <div class="c-progressStep__legend"> Mon budget</div>
+                      </li>
+                      <li class="c-progressStep done" style="left: 50%;"><a class="c-progressStep__value" href="#tab3"><span class="number icon icon-check"></span></a>
+                        <div class="c-progressStep__legend"> Mes coordonnées</div>
+                      </li>
+                      <li class="c-progressStep done" style="left: 75%;"><a class="c-progressStep__value" href="#tab4"><span class="number icon icon-check"></span></a>
+                        <div class="c-progressStep__legend"> Mon nouveau logement</div>
+                      </li>
+                      <li class="c-progressStep done" style="left: 100%;"><a class="c-progressStep__value" href="#tab5"><span class="number icon icon-check"></span></a>
+                        <div class="c-progressStep__legend"> Ma facturation              </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;2&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="2" data-e-toggle-target="2"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2 style="margin:20px 0;">1e Etape</h2>
+        </div>
+            <div data-demo-html="3">
+              <fieldset>
+                <h2 class="u-heading-2 u-margin-h-110 u-margin-t-50 u-margin-b-20 u-color-genBlue">1. Mon budget</h2>
+                <div class="l-wrapper u-margin-h-110">
+                  <div class="l-wrapper--medium l-wrapper--left">  
+                    <p class="u-heading-4 u-color-textGrey u-margin-t-50">Je suis client Gaz Tarif Réglementé*</p>
+                    <!-- .c-choiceWrapperMat-->
+                    <div class="c-choiceWrapperMat c-choiceWrapperMat--hAlign">
+                      <!-- .c-radioMat--><span class="c-radioMat">
+                        <input class="c-radioMat__field" type="radio" id="step1label1" name="step1label1" value="radio value"/>
+                        <label class="c-radioMat__label c-radioMat__labelPadding" for="step1label1"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg">Oui</span>
+                        </label></span>
+                      <!-- end .c-radioMat-->
+                      <!-- .c-radioMat--><span class="c-radioMat">
+                        <input class="c-radioMat__field" type="radio" id="step1label2" name="step1label1" value="radio value"/>
+                        <label class="c-radioMat__label c-radioMat__labelPadding" for="step1label2"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg">None</span>
+                        </label></span>
+                      <!-- end .c-radioMat-->
+                      <!-- .c-radioMat--><span class="c-radioMat">
+                        <input class="c-radioMat__field" type="radio" id="step1label3" name="step1label1" value="radio value"/>
+                        <label class="c-radioMat__label c-radioMat__labelPadding" for="step1label3"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg">Je ne sais pas</span>
+                        </label></span>
+                      <!-- end .c-radioMat-->
+                    </div>
+                  </div>
+                  <div class="l-wrapper c-form--telStep">
+                    <p class="u-heading-4 u-color-textGrey u-margin-t-50">Ma situation*</p>
+                    <!-- .c-choiceWrapperMat-->
+                    <div class="c-choiceWrapperMat c-choiceWrapperMat--hAlign">
+                      <div class="c-formBlocItem u-margin-small-b-10">
+                        <!-- .c-radioMat--><span class="c-radioMat">
+                          <input class="c-radioMat__field" type="radio" id="radio" name="step1label1" value="radio value"/>
+                          <label class="c-radioMat__label c-radioMat__labelPadding" for="radio"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg"> </span>
+                          </label></span>
+                        <!-- end .c-radioMat-->
+                        <div class="icon icon-truck u-hideSmall"></div>
+                        <p>J’emménage, j’ai besoin d’un nouveau <br/>contrat de gaz naturel</p>
+                      </div>
+                      <div class="c-formBlocItem">
+                        <!-- .c-radioMat--><span class="c-radioMat">
+                          <input class="c-radioMat__field" type="radio" id="radio2" name="step1label1" value="radio value"/>
+                          <label class="c-radioMat__label c-radioMat__labelPadding" for="radio2"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg"> </span>
+                          </label></span>
+                        <!-- end .c-radioMat-->
+                        <div class="icon icon-home-file u-hideSmall"></div>
+                        <p>Je souscris un contrat au tarif réglementé de gaz <br/>naturel pour mon logement actuel</p>
+                      </div>
+                    </div>
+                    <p class="u-heading-4 u-color-textGrey u-margin-t-50">Mon logement*</p>
+                    <!-- .c-choiceWrapperMat-->
+                    <div class="c-choiceWrapperMat c-choiceWrapperMat--hAlign">
+                      <div class="c-formBlocItem u-margin-small-b-10">
+                        <!-- .c-radioMat--><span class="c-radioMat">
+                          <input class="c-radioMat__field" type="radio" id="radio3" name="step1label2" value="radio value"/>
+                          <label class="c-radioMat__label c-radioMat__labelPadding" for="radio3"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg"> </span>
+                          </label></span>
+                        <!-- end .c-radioMat-->
+                        <div class="icon icon-homeTR u-hideSmall"></div>
+                        <p>Une maison</p>
+                      </div>
+                      <div class="c-formBlocItem">
+                        <!-- .c-radioMat--><span class="c-radioMat">
+                          <input class="c-radioMat__field" type="radio" id="radio4" name="step1label2" value="radio value"/>
+                          <label class="c-radioMat__label c-radioMat__labelPadding" for="radio4"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg"> </span>
+                          </label></span>
+                        <!-- end .c-radioMat-->
+                        <div class="icon icon-fill-building u-hideSmall"></div>
+                        <p>Un appartement</p>
+                      </div>
+                    </div>
+                    <div class="l-wrapper l-wrapper--row">
+                      <div class="c-formBlocItem">
+                        <div class="l-wrapper--small l-wrapper--left"> <span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                              <input class="c-inputMat__field" id="newCp" name="newCp" type="tel" autocapitalize="off" required="required" placeholder="Ex : 75018"/>
+                              <label class="c-inputMat__label" for="newCp">Mon nouveau code postal*
+                              </label><span class="c-inputMat__inputLine"></span></span>
+                            <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                              <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                            </ul></span>
+                        </div>
+                      </div>
+                      <div class="c-formBlocItem">
+                        <div class="l-wrapper--small l-wrapper--left"> 
+                          <!-- .c-selectMat--><span class="c-selectMat">
+                            <div class="c-selectMat__wrap">
+                              <select class="c-selectMat__select">
+                                <option value="">Ma nouvelle commune</option>
+                                <option value="1">lorem</option>
+                                <option value="2">lorem2</option>
+                                <option value="3">lorem3</option>
+                              </select>
+                              <label class="c-inputMat__label">Ma nouvelle commune*</label>
+                              <div class="c-selectMat__inputLine"></div>
+                            </div></span>
+                          <!-- end .c-selectMat-->
+                        </div>
+                      </div>
+                    </div>
+                    <p class="u-heading-4 u-color-textGrey u-margin-t-50">Avant de souscrire, souhaitez-vous estimer votre budget ?*</p>
+                    <!-- .c-choiceWrapperMat-->
+                    <div class="c-choiceWrapperMat c-choiceWrapperMat--hAlign">
+                      <!-- .c-radioMat--><span class="c-radioMat">
+                        <input class="c-radioMat__field" type="radio" id="step1Estimation" name="step1Estimation" value="radio value"/>
+                        <label class="c-radioMat__label c-radioMat__labelPadding" for="step1Estimation"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg">Oui</span>
+                        </label></span>
+                      <!-- end .c-radioMat-->
+                      <!-- .c-radioMat--><span class="c-radioMat">
+                        <input class="c-radioMat__field" type="radio" id="step1Estimation2" name="step1Estimation" value="radio value"/>
+                        <label class="c-radioMat__label c-radioMat__labelPadding" for="step1Estimation2"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg">Non</span>
+                        </label></span>
+                      <!-- end .c-radioMat-->
+                    </div>
+                  </div>
+                </div>
+                <!-- .c-btnWrapper-->
+                <div class="c-btnWrapper u-margin-h-110 u-theme-genBlue u-margin-t-40 c-btnWrapper--fullOnMobile c-btnWrapper--alignLeft">
+                  <button class="c-baseBtn u-theme-bg u-theme-bg-hover c-baseBtn--large" type="button"><span class="c-baseBtn__content">Suivant</span>
+                  </button>
+                </div>
+                <!-- end .c-btnWrapper-->
+              </fieldset>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;3&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="3" data-e-toggle-target="3"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2 style="margin:20px 0;">2e Etape</h2>
+        </div>
+            <div data-demo-html="4">
+              <fieldset>
+                <div class="c-estimationFacture--center">
+                  <h2 class="u-heading-2 u-margin-h-110 u-margin-t-50 u-margin-b-20 u-color-genBlue">2. Mon budget</h2>
+                  <div class="l-wrapper u-margin-h-110">
+                    <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field c-inputMat__field--hasElemRight" id="surface" name="surface" type="tel" autocapitalize="off" required="required" placeholder="Ex : 60m"/>
+                          <label class="c-inputMat__label" for="surface">Surface*
+                          </label><span class="c-inputMat__inputLine"></span><span class="c-inputMat__rightBlock"><span>m²</span></span></span>
+                        <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                          <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                        </ul></span>
+                    </div>
+                    <div class="l-wrapper--medium l-wrapper--left">  
+                      <p class="u-heading-4 u-color-textGrey u-margin-t-50">Il s’agit de mon logement*</p>
+                      <!-- .c-choiceWrapperMat-->
+                      <div class="c-choiceWrapperMat c-choiceWrapperMat--hAlign">
+                        <!-- .c-radioMat--><span class="c-radioMat">
+                          <input class="c-radioMat__field" type="radio" id="monLogement" name="monLogement" value="radio value"/>
+                          <label class="c-radioMat__label c-radioMat__labelPadding" for="monLogement"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg">Principal</span>
+                          </label></span>
+                        <!-- end .c-radioMat-->
+                        <!-- .c-radioMat--><span class="c-radioMat">
+                          <input class="c-radioMat__field" type="radio" id="radioLogement2" name="monLogement" value="radio value"/>
+                          <label class="c-radioMat__label c-radioMat__labelPadding" for="radioLogement2"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg">Secondaire</span>
+                          </label></span>
+                        <!-- end .c-radioMat-->
+                      </div>
+                    </div>
+                    <div class="l-wrapper--small l-wrapper--left"> 
+                      <!-- .c-selectMat--><span class="c-selectMat u-margin-t-30">
+                        <div class="c-selectMat__wrap">
+                          <select class="c-selectMat__select">
+                            <option value="">Je séléctionne une réponse</option>
+                            <option value="1">1986</option>
+                            <option value="2">1987</option>
+                            <option value="3">1981</option>
+                          </select>
+                          <label class="c-inputMat__label">Année de construction**</label>
+                          <div class="c-selectMat__inputLine"></div>
+                        </div></span>
+                      <!-- end .c-selectMat-->
+                      <!-- .c-selectMat--><span class="c-selectMat u-margin-t-30">
+                        <div class="c-selectMat__wrap">
+                          <select class="c-selectMat__select">
+                            <option value="">Nombre d'occupation(s)*</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                          </select>
+                          <label class="c-inputMat__label">Année de construction**</label>
+                          <div class="c-selectMat__inputLine"></div>
+                        </div></span>
+                      <!-- end .c-selectMat-->
+                    </div>
+                    <div class="l-wrapper--medium l-wrapper--left">  
+                      <p class="u-heading-4 u-color-textGrey u-margin-t-50">Il s’agit de mon logement*</p>
+                      <!-- .c-choiceWrapperMat-->
+                      <div class="c-choiceWrapperMat c-choiceWrapperMat--hAlign">
+                        <!-- .c-radioMat--><span class="c-radioMat">
+                          <input class="c-radioMat__field" type="radio" id="maConso" name="maConso" value="radio value"/>
+                          <label class="c-radioMat__label c-radioMat__labelPadding" for="maConso"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg">Je connais ma consommation</span>
+                          </label></span>
+                        <!-- end .c-radioMat-->
+                        <!-- .c-radioMat--><span class="c-radioMat">
+                          <input class="c-radioMat__field" type="radio" id="estimeConsomation" name="maConso" value="radio value"/>
+                          <label class="c-radioMat__label c-radioMat__labelPadding" for="estimeConsomation"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg">J'estime ma consommation</span>
+                          </label></span>
+                        <!-- end .c-radioMat-->
+                      </div>
+                    </div>
+                    <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="name" name="name" type="text" autocapitalize="off" required="required" placeholder="Indiquez votre nom"/>
+                          <label class="c-inputMat__label" for="name">Prénom
+                          </label><span class="c-inputMat__inputLine"></span></span>
+                        <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                          <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                        </ul></span>
+                    </div>
+                    <div class="l-wrapper--large l-wrapper--left">
+                      <p class="u-heading-4 u-color-textGrey u-margin-t-50">Quelle est votre consommation annuelle de gaz naturel (kWh/an) ?*</p><span class="c-inputMat l-wrapper--small l-wrapper--left u-padding-t-20 l-wrapper--smallNoGutter" data-e-field-validation='{"validations":{"patternMismatch":"champs composé seulement de chiffres","valueMissing":"Champs obligatoire"}}'><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field c-inputMat__field--hasElemRight" id="consoAnnee" name="consoAnnee" type="tel" maxlength="5" autocapitalize="off" required="required" pattern="^[0-9]{5}$" placeholder="Ex : 10 000"/><span class="c-inputMat__inputLine"></span><span class="c-inputMat__rightBlock"><span>kWh/an</span></span></span>
+                        <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                          <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                        </ul></span>
+                    </div>
+                  </div>
+                  <!--.c-estimationFacture-->
+                  <div class="c-estimationFacture">
+                    <div class="c-estimationFacture__facture">
+                      <div class="c-estimationFacture__thumb">
+                        <div class="c-estimationFacture__thumbPrix"><span class="c-estimationFacture__prixMonth">16€/mois<sup>TTC</sup></span><span class="c-estimationFacture__prixYears">soit 192€/an TTC</span></div>
+                        <div class="c-estimationFacture__triangle"></div>
+                      </div>
+                      <div class="c-estimationFacture__Detail"><span class="c-estimationFacture__Desc"><b>Dont abonnement en € TTC</b> <span class="c-estimationFacture__dotted dotted-1 u-hideSmall"></span> <div><span id="abonnementTTC_estim">102.13</span>€/an</div></span><span class="c-estimationFacture__Desc"><b>Prix du kWh Gaz naturel en €</b>  <span class="c-estimationFacture__dotted dotted-2 u-hideSmall"></span> <span class="c-estimationFacture__RsltTTC">TTC : 0.082€/kWh<span class="c-estimationFacture__RsltHt">HT : 0.060€/kWh</span></span></span><span class="c-estimationFacture__Title">Estimation de votre consommation annulle d'après</span><span class="c-estimationFacture__infoSaisie">les informations saisies <span class="c-estimationFacture__dotted dotted-3 u-hideSmall"></span> <div><span>1000</span> kWh/an</div></span></div>
+                    </div>
+                    <div class="c-estimationFacture__image"><img src="../images/contrib/estimationFacture.jpg" alt="Estimation Facture"/></div>
+                  </div>
+                </div>
+                <!-- .c-btnWrapper-->
+                <div class="c-btnWrapper u-margin-h-110 u-theme-genBlue u-margin-t-40 c-btnWrapper--fullOnMobile c-btnWrapper--alignLeft">
+                  <button class="c-baseBtn c-baseBtn--secondary u-theme-color c-baseBtn--large" type="button"><span class="c-baseBtn__content">Modifier mes information</span>
+                  </button>
+                  <button class="c-baseBtn u-theme-bg u-theme-bg-hover c-baseBtn--large" type="button"><span class="c-baseBtn__content">suivant</span>
+                  </button>
+                </div>
+                <!-- end .c-btnWrapper-->
+                <!-- .c-btnWrapper-->
+                <div class="c-btnWrapper u-margin-h-110 u-theme-genBlue u-margin-t-40 c-btnWrapper--fullOnMobile c-btnWrapper--alignLeft">
+                  <button class="c-baseBtn u-theme-bg u-theme-bg-hover c-baseBtn--large" type="button"><span class="c-baseBtn__content">Estimez votre facture</span>
+                  </button>
+                </div>
+                <!-- end .c-btnWrapper-->
+              </fieldset>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;4&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="4" data-e-toggle-target="4"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2 style="margin:20px 0;">Bloc Mes coordonnées 4e ETAPES</h2>
+        </div>
+            <div data-demo-html="5">
+              <fieldset>
+                <h2 class="u-heading-2 u-margin-h-110 u-margin-t-50 u-margin-b-20 u-color-genBlue">4. Mes coordonnées</h2>
+                <div class="l-wrapper u-margin-h-110">
+                  <div class="l-row l-row--noSideGut">
+                    <div class="l-col-medium-3 l-col-small-12"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="rueNumber" name="rueNumber" type="tel" autocapitalize="off" required="required" placeholder="Exemple: 11"/>
+                          <label class="c-inputMat__label" for="rueNumber">N° rue*
+                          </label><span class="c-inputMat__inputLine"></span></span>
+                        <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                          <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                        </ul></span>
+                    </div>
+                    <div class="l-col-medium-6 l-col-small-12">
+                      <!-- .c-checkboxMat--><span class="c-checkboxMat u-margin-t-80 u-margin-l-20 u-theme-green">
+                        <input class="c-checkboxMat__field" type="checkbox" id="checkboxMat" value="checkbox value"/>
+                        <label class="c-checkboxMat__label c-checkboxMat__labelPadding" for="checkboxMat"><span class="c-checkboxMat__check u-theme-bg u-theme-color">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+                              <path fill="none" d="M14 27.2l7 7 12-12"></path>
+                            </svg></span><span class="c-checkboxMat__text c-wysiwyg">Mon adresse ne comporte pas de numéro de rue</span>
+                        </label></span>
+                      <!-- end .c-checkboxMat-->
+                    </div>
+                  </div>
+                  <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="rueNumber" name="rueNumber" type="tel" autocapitalize="off" required="required" placeholder="J'écris le nom de ma rue"/>
+                        <label class="c-inputMat__label" for="rueNumber">N° rue*
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                  <div class="l-wrapper l-wrapper--row">
+                    <div class="l-wrapper--extraSmall l-wrapper--left l-wrapper--smallNoGutter"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="batiment" name="batiment" type="text" autocapitalize="off" placeholder="Exemple: Flandres"/>
+                          <label class="c-inputMat__label" for="batiment">Batiment
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--extraSmall l-wrapper--left l-wrapper--smallNoGutter"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="escalier" name="escalier" type="text" autocapitalize="off" placeholder="Exemple: Gauche"/>
+                          <label class="c-inputMat__label" for="escalier">Escalier
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--extraSmall l-wrapper--left l-wrapper--smallNoGutter"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="etage" name="etage" type="text" autocapitalize="off" required="required" placeholder="Exemple: 3eme"/>
+                          <label class="c-inputMat__label" for="etage">Etage*
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--extraSmall l-wrapper--left l-wrapper--smallNoGutter"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="porte" name="porte" type="text" autocapitalize="off" placeholder="Exemple: 6"/>
+                          <label class="c-inputMat__label" for="porte">Porte
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--extraSmall l-wrapper--left l-wrapper--smallNoGutter"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="appartement" name="appartement" type="text" autocapitalize="off" required="required" placeholder="Exemple: 11"/>
+                          <label class="c-inputMat__label" for="appartement">Appartement
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                  </div>
+                  <div class="l-wrapper l-wrapper--row">
+                    <div class="l-wrapper--extraSmall l-wrapper--left l-wrapper--smallNoGutter"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="cp" name="cp" type="text" autocapitalize="off" required="required" placeholder="75016"/>
+                          <label class="c-inputMat__label" for="cp">Code Postal
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--small l-wrapper--left l-wrapper--smallNoGutter"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="ville" name="ville" type="text" autocapitalize="off" required="required" placeholder="Paris"/>
+                          <label class="c-inputMat__label" for="ville">Ville
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                  </div>
+                  <div class="l-wrapper--small l-wrapper--left l-wrapper--smallNoGutter"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="Name2" name="Name2" type="text" autocapitalize="off" placeholder="Du Pont"/>
+                        <label class="c-inputMat__label" for="Name2">Nom de l'ancien occupant
+                          <!-- .c-toolTip-->
+                          <button class="c-toolTip" type="button"><span class="c-toolTip__icon u-theme-bg u-theme-bg-hover" title="Information permettant de mieux localiser votre logement">?</span>
+                          </button>
+                          <!-- END .c-toolTip-->
+                        </label><span class="c-inputMat__inputLine"></span></span></span>
+                  </div>
+                  <div class="u-margin-t-30 u-margin-small-t-20 u-textLeft">
+                    <!-- .c-checkboxMat--><span class="c-checkboxMat u-theme-green">
+                      <input class="c-checkboxMat__field" type="checkbox" id="checkboxMat" value="checkbox value"/>
+                      <label class="c-checkboxMat__label c-checkboxMat__labelPadding" for="checkboxMat"><span class="c-checkboxMat__check u-theme-bg u-theme-color">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+                            <path fill="none" d="M14 27.2l7 7 12-12"></path>
+                          </svg></span><span class="c-checkboxMat__text c-wysiwyg">Mon adresse ne comporte pas de numéro de rue</span>
+                      </label></span>
+                    <!-- end .c-checkboxMat-->
+                  </div>
+                </div>
+                <!-- .c-btnWrapper-->
+                <div class="c-btnWrapper u-margin-h-110 u-theme-genBlue u-margin-t-40 c-btnWrapper--fullOnMobile c-btnWrapper--alignLeft">
+                  <button class="c-baseBtn u-theme-bg u-theme-bg-hover c-baseBtn--large" type="button"><span class="c-baseBtn__content">Suivant</span>
+                  </button>
+                </div>
+                <!-- end .c-btnWrapper-->
+              </fieldset>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Formulaire Etape 4</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;5&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="5" data-e-toggle-target="5"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2 style="margin:20px 0;">Bloc Mes coordonnées 3e ETAPES</h2>
+        </div>
+            <div data-demo-html="6">
+              <fieldset>
+                <h2 class="u-heading-2 u-margin-h-110 u-margin-t-50 u-margin-b-20 u-color-genBlue">3. Mes coordonnées</h2>
+                <div class="l-wrapper u-margin-h-110">
+                  <div class="l-wrapper--small l-wrapper--left">
+                    <!-- .c-selectMat--><span class="c-selectMat">
+                      <div class="c-selectMat__wrap">
+                        <select class="c-selectMat__select">
+                          <option value="">Je séléctionne une réponse</option>
+                          <option value="1">M</option>
+                          <option value="2">Mme</option>
+                          <option value="3">Mlle</option>
+                        </select>
+                        <label class="c-inputMat__label">Civilité*</label>
+                        <div class="c-selectMat__inputLine"></div>
+                      </div></span>
+                    <!-- end .c-selectMat-->
+                  </div>
+                  <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="lastName" name="lastName" type="text" autocapitalize="off" required="required" placeholder="Indiquez votre nom"/>
+                        <label class="c-inputMat__label" for="lastName">Nom*
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                  <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="name" name="name" type="text" autocapitalize="off" required="required" placeholder="Indiquez votre nom"/>
+                        <label class="c-inputMat__label" for="name">Prénom
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                </div>
+                <div class="c-column c-column--spaced c-column--33-33-33 u-margin-h-110 c-column--noGut">
+                  <div class="c-column__col"><span class="c-inputMat l-wrapper--small l-wrapper--left" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="mail" name="mail" type="mail" autocapitalize="off" required="required" pattern="^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+([\.]{1})[0-9a-zA-Z\._-]+$" placeholder="Indiquez votre nom"/>
+                        <label class="c-inputMat__label" for="mail">Adresse e-mail*
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                  <div class="c-column__col u-margin-l-50 u-margin-small-l-0"><span class="c-inputMat l-wrapper--small l-wrapper--left" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="mail2" name="mail2" type="mail" autocapitalize="off" required="required" pattern="^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+([\.]{1})[0-9a-zA-Z\._-]+$" placeholder="Indiquez votre nom"/>
+                        <label class="c-inputMat__label" for="mail2">Confirmation adresse e-mail*
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                </div>
+                <div class="c-column c-column--spaced c-column--33-33-33 u-margin-h-110">
+                  <div class="c-column__col"><span class="c-inputMat l-wrapper--small l-wrapper--left c-column--noGut" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="tel" name="tel" type="tel" autocapitalize="off" required="required" pattern="^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$" placeholder="Indiquez votre nom"/>
+                        <label class="c-inputMat__label" for="tel">Téléphone 1*
+                          <!-- .c-toolTip-->
+                          <button class="c-toolTip" type="button"><span class="c-toolTip__icon u-theme-bg u-theme-bg-hover">?</span>
+                          </button>
+                          <!-- END .c-toolTip-->
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                  <div class="c-column__col u-margin-l-50 u-margin-small-l-0"><span class="c-inputMat l-wrapper--small l-wrapper--left"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="tel2" name="tel2" type="tel2" autocapitalize="off" pattern="^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$" placeholder="Indiquez votre nom"/>
+                        <label class="c-inputMat__label" for="tel2">Téléphone 2
+                        </label><span class="c-inputMat__inputLine"></span></span></span>
+                  </div>
+                </div>
+                <!-- .c-btnWrapper-->
+                <div class="c-btnWrapper u-margin-h-110 u-theme-genBlue u-margin-t-40 c-btnWrapper--fullOnMobile c-btnWrapper--alignLeft">
+                  <button class="c-baseBtn u-theme-bg u-theme-bg-hover c-baseBtn--large" type="button"><span class="c-baseBtn__content">Suivant</span>
+                  </button>
+                </div>
+                <!-- end .c-btnWrapper-->
+              </fieldset>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;6&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="6" data-e-toggle-target="6"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2 style="margin:20px 0;">Bloc Mes coordonnées 4e ETAPES</h2>
+        </div>
+            <div data-demo-html="7">
+              <fieldset>
+                <h2 class="u-heading-2 u-margin-h-110 u-margin-t-50 u-margin-b-20 u-color-genBlue">4. Mes coordonnées</h2>
+                <div class="l-wrapper u-margin-h-110 l-wrapper--smallNoGutter">
+                  <div class="l-row l-row--noSideGut">
+                    <div class="l-col-medium-3 l-col-small-12"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="rueNumber" name="rueNumber" type="tel" autocapitalize="off" required="required" placeholder="Exemple: 11"/>
+                          <label class="c-inputMat__label" for="rueNumber">N° rue*
+                          </label><span class="c-inputMat__inputLine"></span></span>
+                        <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                          <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                        </ul></span>
+                    </div>
+                    <div class="l-col-medium-6 l-col-small-12">
+                      <!-- .c-checkboxMat--><span class="c-checkboxMat u-margin-t-80 u-margin-l-20 u-theme-green">
+                        <input class="c-checkboxMat__field" type="checkbox" id="checkboxMat" value="checkbox value"/>
+                        <label class="c-checkboxMat__label c-checkboxMat__labelPadding" for="checkboxMat"><span class="c-checkboxMat__check u-theme-bg u-theme-color">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+                              <path fill="none" d="M14 27.2l7 7 12-12"></path>
+                            </svg></span><span class="c-checkboxMat__text c-wysiwyg">Mon adresse ne comporte pas de numéro de rue</span>
+                        </label></span>
+                      <!-- end .c-checkboxMat-->
+                    </div>
+                  </div>
+                  <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="rueNumber" name="rueNumber" type="tel" autocapitalize="off" required="required" placeholder="J'écris le nom de ma rue"/>
+                        <label class="c-inputMat__label" for="rueNumber">N° rue*
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                  <div class="l-wrapper l-wrapper--row">
+                    <div class="l-wrapper--extraSmall l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="batiment" name="batiment" type="text" autocapitalize="off" placeholder="Exemple: Flandres"/>
+                          <label class="c-inputMat__label" for="batiment">Batiment
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--extraSmall l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="escalier" name="escalier" type="text" autocapitalize="off" placeholder="Exemple: Gauche"/>
+                          <label class="c-inputMat__label" for="escalier">Escalier
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--extraSmall l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="etage" name="etage" type="text" autocapitalize="off" required="required" placeholder="Exemple: 3eme"/>
+                          <label class="c-inputMat__label" for="etage">Etage*
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--extraSmall l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="porte" name="porte" type="text" autocapitalize="off" placeholder="Exemple: 6"/>
+                          <label class="c-inputMat__label" for="porte">Porte
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--extraSmall l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="appartement" name="appartement" type="text" autocapitalize="off" required="required" placeholder="Exemple: 11"/>
+                          <label class="c-inputMat__label" for="appartement">Appartement
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                  </div>
+                  <div class="l-wrapper l-wrapper--row">
+                    <div class="l-wrapper--extraSmall l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="cp" name="cp" type="text" autocapitalize="off" required="required" placeholder="75016"/>
+                          <label class="c-inputMat__label" for="cp">Code Postal
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="ville" name="ville" type="text" autocapitalize="off" required="required" placeholder="Paris"/>
+                          <label class="c-inputMat__label" for="ville">Ville
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                  </div>
+                  <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="Name2" name="Name2" type="text" autocapitalize="off" placeholder="Du Pont"/>
+                        <label class="c-inputMat__label" for="Name2">Nom de l'ancien occupant
+                          <!-- .c-toolTip-->
+                          <button class="c-toolTip" type="button"><span class="c-toolTip__icon u-theme-bg u-theme-bg-hover" title="Information permettant de mieux localiser votre logement">?</span>
+                          </button>
+                          <!-- END .c-toolTip-->
+                        </label><span class="c-inputMat__inputLine"></span></span></span>
+                  </div>
+                  <div class="u-margin-t-30 u-margin-small-t-20 u-textLeft">
+                    <!-- .c-checkboxMat--><span class="c-checkboxMat u-theme-green">
+                      <input class="c-checkboxMat__field" type="checkbox" id="checkboxMat2" value="checkbox value"/>
+                      <label class="c-checkboxMat__label c-checkboxMat__labelPadding" for="checkboxMat2"><span class="c-checkboxMat__check u-theme-bg u-theme-color">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+                            <path fill="none" d="M14 27.2l7 7 12-12"></path>
+                          </svg></span><span class="c-checkboxMat__text c-wysiwyg">Mon adresse ne comporte pas de numéro de rue</span>
+                      </label></span>
+                    <!-- end .c-checkboxMat-->
+                  </div>
+                </div>
+                <!-- .c-btnWrapper-->
+                <div class="c-btnWrapper u-margin-h-110 u-theme-genBlue u-margin-t-40 c-btnWrapper--fullOnMobile c-btnWrapper--alignLeft">
+                  <button class="c-baseBtn u-theme-bg u-theme-bg-hover c-baseBtn--large" type="button"><span class="c-baseBtn__content">Suivant</span>
+                  </button>
+                </div>
+                <!-- end .c-btnWrapper-->
+              </fieldset>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Formulaire Etape 4</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;7&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="7" data-e-toggle-target="7"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="8">
+              <fieldset>
+                <h2 class="u-heading-2 u-margin-h-110 u-margin-t-50 u-margin-b-20 u-color-genBlue">5. Ma facturation</h2>
+                <div class="l-wrapper u-margin-h-110 u-margin-t-40 l-wrapper--smallNoGutter">
+                  <p class="u-fontSize-large"><strong>Date à laquelle je souhaite disposer du gaz naturel*</strong></p><span class="c-inputMat c-inputMat--datepicker u-padding-v-20 l-wrapper--extraSmall l-wrapper--left" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                      <input class="c-inputMat__field c-inputMat__field--hasElemRight" id="date-picke-required" type="date" autocapitalize="off" required="required" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$" placeholder="07/07/2017" data-flatpickr="{&quot;minDate&quot;:-5,&quot;maxDate&quot;:&quot;today&quot;}"/><span class="c-inputMat__inputLine"></span><span class="c-inputMat__rightBlock"><span class="icon icon-big-calendar"></span></span></span>
+                    <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                      <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                    </ul></span>
+                  <p class="u-bg-grey-light u-padding-h-30 u-padding-v-20">En choisissant cette date, je demande l’exécution de mon contrat avant la fin du délai de rétractation de 14 jours.</p>
+                  <div class="c-itemOptionWrap l-row l-row--noSideGut u-margin-v-50">
+                    <div class="l-col-medium-12 l-col-large-8">
+                      <p class="c-itemOptionWrap__text u-fontSize-large u-margin-v-30"><strong>Je choisis mes options gratuites de facturation :</strong></p>
+                      <div class="c-itemOptionWrap__wrapper-2">
+                        <div class="c-itemOption">   
+                          <div class="c-itemOption__content"><img class="c-itemOption__imgPromo" alt="" src="../images/contrib/picto-gratuit.png"/>
+                            <h3 class="c-itemOption__title u-heading-3">Assurance Facture Gaz Tarif Réglementé</h3>
+                            <p class="c-itemOption__text">Couvrez vos dépenses de gaz naturel en cas de coup dur</p>
+                            <div class="c-itemOption__price"> <strong>5€TTC/mois</strong></div><a class="c-itemOption__info" href="#">En savoir plus</a>
+                          </div><span class="c-checkboxMat c-itemOption__checkbox u-theme-green">
+                            <input class="c-checkboxMat__field" type="checkbox" id="option1" name="option1" value="checkbox value"/>
+                            <label class="c-checkboxMat__label" for="option1"><span class="c-checkboxMat__check u-theme-bg u-theme-color"><svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+<path fill="none" d="M14 27.2l7 7 12-12"></path>
+</svg></span></label><img class="c-itemOption__img" src="../images/contrib/TEL-sans-conso_03.jpg" alt=""/>
+                            <div class="c-itemOption__border"></div>
+                            <div class="c-itemOption__infoState">
+                              <div class="l-wrapper"><b class="c-itemOption__infoState_off">Cochez pour activer cette option</b><b class="c-itemOption__infoState_on">Option activée</b></div>
+                            </div></span>
+                        </div>
+                        <div class="c-itemOption">   
+                          <div class="c-itemOption__content"><img class="c-itemOption__imgPromo" alt="" src="../images/contrib/picto-gratuit.png"/>
+                            <h3 class="c-itemOption__title u-heading-3">Titre</h3>
+                            <p class="c-itemOption__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <div class="c-itemOption__price"> <strong>Gratuit</strong></div><a class="c-itemOption__info" href="#">En savoir plus</a>
+                          </div><span class="c-checkboxMat c-itemOption__checkbox u-theme-green">
+                            <input class="c-checkboxMat__field" type="checkbox" id="option2" name="option2" value="checkbox value"/>
+                            <label class="c-checkboxMat__label" for="option2"><span class="c-checkboxMat__check u-theme-bg u-theme-color"><svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+<path fill="none" d="M14 27.2l7 7 12-12"></path>
+</svg></span></label><img class="c-itemOption__img" src="../images/contrib/TEL-sans-conso_03.jpg" alt=""/>
+                            <div class="c-itemOption__border"></div>
+                            <div class="c-itemOption__infoState">
+                              <div class="l-wrapper"><b class="c-itemOption__infoState_off">Cochez pour activer cette option</b><b class="c-itemOption__infoState_on">Option activée</b></div>
+                            </div></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="l-col-medium-12 l-col-large-4">
+                      <p class="c-itemOptionWrap__text u-fontSize-large u-margin-v-30"><strong>Et pour plus de tranquilité...</strong></p>
+                      <div class="c-itemOptionWrap__wrapper-1">
+                        <div class="c-itemOption">   
+                          <div class="c-itemOption__content">
+                            <h3 class="c-itemOption__title u-heading-3">Titre</h3>
+                            <p class="c-itemOption__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <div class="c-itemOption__price"> <strong>Gratuit</strong></div><a class="c-itemOption__info" href="#">En savoir plus</a>
+                          </div><span class="c-checkboxMat c-itemOption__checkbox u-theme-green">
+                            <input class="c-checkboxMat__field" type="checkbox" id="option3" name="option3" value="checkbox value"/>
+                            <label class="c-checkboxMat__label" for="option3"><span class="c-checkboxMat__check u-theme-bg u-theme-color"><svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+<path fill="none" d="M14 27.2l7 7 12-12"></path>
+</svg></span></label><img class="c-itemOption__img" src="../images/contrib/TEL-sans-conso_03.jpg" alt=""/>
+                            <div class="c-itemOption__border"></div>
+                            <div class="c-itemOption__infoState">
+                              <div class="l-wrapper"><b class="c-itemOption__infoState_off">Cochez pour activer cette option</b><b class="c-itemOption__infoState_on">Option activée</b></div>
+                            </div></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Formulaire Etape 5</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;8&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="8" data-e-toggle-target="8"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="9">
+              <fieldset>
+                <h2 class="u-heading-2 u-margin-h-110 u-margin-t-50 u-margin-b-20 u-color-genBlue">Mon récapitulatif</h2>
+                <div class="c-column c-column--spaced c-column--50-50 c-column--noGut">
+                  <div class="c-column__col">
+                    <div class="l-wrapper u-margin-h-110 u-margin-t-40">
+                      <p class="u-fontSize-large u-margin-b-30"><strong>Mon projet</strong></p>
+                      <p>J’emménage, j’ai besoin d’un nouveau contrat de gaz naturel</p>
+                    </div>
+                  </div>
+                  <div class="c-column__col">
+                    <div class="l-wrapper u-margin-h-110 u-margin-t-40">
+                      <p class="u-fontSize-large u-margin-b-30"><strong>Mes coordonnées</strong></p>
+                      <p>M.Dupont Cyril </p>
+                      <p>13 rue Lafayette</p>
+                      <p>92350 </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="c-column c-column--spaced c-column--50-50 c-column--noGut">
+                  <div class="c-column__col">
+                    <div class="l-wrapper u-margin-h-110 u-margin-t-40">
+                      <p class="u-fontSize-large u-margin-b-30"><strong>Mon budget</strong></p>
+                      <p class="u-margin-b-10">Vous avez choisi l’offre : Gaz Tarif Réglementé </p>
+                      <p>Budget annuel estimé(1) : 192,00€TTC/an</p>
+                    </div>
+                  </div>
+                  <div class="c-column__col">
+                    <div class="l-wrapper u-margin-h-110 u-margin-t-40">
+                      <p class="u-fontSize-large u-margin-b-30"><strong>Ma facturation</strong></p>
+                      <p>Mensualisation avec prélévement automatique</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- .c-btnWrapper-->
+                <div class="c-btnWrapper"><a class="c-baseBtn c-baseBtn--empty u-textBold u-margin-v-50" href="#"><span class="c-baseBtn__content">Je télécharge mon récapitulatif</span></a>
+                </div>
+                <!-- end .c-btnWrapper-->
+              </fieldset>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Formulaire Etape 6</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;9&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="9" data-e-toggle-target="9"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2 style="margin:20px 0;">Bloc Mes coordonnées 3e ETAPES</h2>
+        </div>
+            <div data-demo-html="10">
+              <fieldset>
+                <h2 class="u-heading-2 u-margin-h-110 u-margin-t-50 u-margin-b-20 u-color-genBlue">3. Mes coordonnées</h2>
+                <div class="l-wrapper u-margin-h-110">
+                  <div class="l-wrapper--small l-wrapper--left">
+                    <!-- .c-selectMat--><span class="c-selectMat">
+                      <div class="c-selectMat__wrap">
+                        <select class="c-selectMat__select">
+                          <option value="">Je séléctionne une réponse</option>
+                          <option value="1">M</option>
+                          <option value="2">Mme</option>
+                          <option value="3">Mlle</option>
+                        </select>
+                        <label class="c-inputMat__label">Civilité*</label>
+                        <div class="c-selectMat__inputLine"></div>
+                      </div></span>
+                    <!-- end .c-selectMat-->
+                  </div>
+                  <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="lastName" name="lastName" type="text" autocapitalize="off" required="required" placeholder="Indiquez votre nom"/>
+                        <label class="c-inputMat__label" for="lastName">Nom*
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                  <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="name" name="name" type="text" autocapitalize="off" required="required" placeholder="Indiquez votre nom"/>
+                        <label class="c-inputMat__label" for="name">Prénom
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                </div>
+                <div class="c-column c-column--spaced c-column--33-33-33 u-margin-h-110 c-column--noGut">
+                  <div class="c-column__col"><span class="c-inputMat l-wrapper--small l-wrapper--left" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="mail" name="mail" type="mail" autocapitalize="off" required="required" pattern="^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+([\.]{1})[0-9a-zA-Z\._-]+$" placeholder="Indiquez votre nom"/>
+                        <label class="c-inputMat__label" for="mail">Adresse e-mail*
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                  <div class="c-column__col u-margin-l-50 u-margin-small-l-0"><span class="c-inputMat l-wrapper--small l-wrapper--left" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="mail2" name="mail2" type="mail" autocapitalize="off" required="required" pattern="^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+([\.]{1})[0-9a-zA-Z\._-]+$" placeholder="Indiquez votre nom"/>
+                        <label class="c-inputMat__label" for="mail2">Confirmation adresse e-mail*
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                </div>
+                <div class="c-column c-column--spaced c-column--33-33-33 u-margin-h-110 c-column--noGut">
+                  <div class="c-column__col"><span class="c-inputMat l-wrapper--small l-wrapper--left" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="tel" name="tel" type="tel" autocapitalize="off" required="required" pattern="^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$" placeholder="Indiquez votre nom"/>
+                        <label class="c-inputMat__label" for="tel">Téléphone 1*
+                          <!-- .c-toolTip-->
+                          <button class="c-toolTip" type="button"><span class="c-toolTip__icon u-theme-bg u-theme-bg-hover">?</span>
+                          </button>
+                          <!-- END .c-toolTip-->
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                  <div class="c-column__col u-margin-l-50 u-margin-small-l-0"><span class="c-inputMat l-wrapper--small l-wrapper--left"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="tel2" name="tel2" type="tel2" autocapitalize="off" pattern="^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$" placeholder="Indiquez votre nom"/>
+                        <label class="c-inputMat__label" for="tel2">Téléphone 2
+                        </label><span class="c-inputMat__inputLine"></span></span></span>
+                  </div>
+                </div>
+                <!-- .c-btnWrapper-->
+                <div class="c-btnWrapper u-margin-h-110 u-theme-genBlue u-margin-t-40 c-btnWrapper--fullOnMobile c-btnWrapper--alignLeft">
+                  <button class="c-baseBtn u-theme-bg u-theme-bg-hover c-baseBtn--large" type="button"><span class="c-baseBtn__content">Suivant</span>
+                  </button>
+                </div>
+                <!-- end .c-btnWrapper-->
+              </fieldset>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;10&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="10" data-e-toggle-target="10"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2 style="margin:20px 0;">Bloc Mes coordonnées 4e ETAPES</h2>
+        </div>
+            <div data-demo-html="11">
+              <fieldset>
+                <h2 class="u-heading-2 u-margin-h-110 u-margin-t-50 u-margin-b-20 u-color-genBlue">4. Mes coordonnées</h2>
+                <div class="l-wrapper u-margin-h-110">
+                  <div class="l-row l-row--noSideGut">
+                    <div class="l-col-medium-3 l-col-small-12"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="rueNumber" name="rueNumber" type="tel" autocapitalize="off" required="required" placeholder="Exemple: 11"/>
+                          <label class="c-inputMat__label" for="rueNumber">N° rue*
+                          </label><span class="c-inputMat__inputLine"></span></span>
+                        <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                          <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                        </ul></span>
+                    </div>
+                    <div class="l-col-medium-6 l-col-small-12">
+                      <!-- .c-checkboxMat--><span class="c-checkboxMat u-margin-t-80 u-margin-l-20 u-theme-green">
+                        <input class="c-checkboxMat__field" type="checkbox" id="checkboxMat" value="checkbox value"/>
+                        <label class="c-checkboxMat__label c-checkboxMat__labelPadding" for="checkboxMat"><span class="c-checkboxMat__check u-theme-bg u-theme-color">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+                              <path fill="none" d="M14 27.2l7 7 12-12"></path>
+                            </svg></span><span class="c-checkboxMat__text c-wysiwyg">Mon adresse ne comporte pas de numéro de rue</span>
+                        </label></span>
+                      <!-- end .c-checkboxMat-->
+                    </div>
+                  </div>
+                  <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="rueNumber" name="rueNumber" type="tel" autocapitalize="off" required="required" placeholder="J'écris le nom de ma rue"/>
+                        <label class="c-inputMat__label" for="rueNumber">N° rue*
+                        </label><span class="c-inputMat__inputLine"></span></span>
+                      <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                        <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                      </ul></span>
+                  </div>
+                  <div class="l-wrapper l-wrapper--row">
+                    <div class="l-wrapper--extraSmall l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="batiment" name="batiment" type="text" autocapitalize="off" placeholder="Exemple: Flandres"/>
+                          <label class="c-inputMat__label" for="batiment">Batiment
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--extraSmall l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="escalier" name="escalier" type="text" autocapitalize="off" placeholder="Exemple: Gauche"/>
+                          <label class="c-inputMat__label" for="escalier">Escalier
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--extraSmall l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="etage" name="etage" type="text" autocapitalize="off" required="required" placeholder="Exemple: 3eme"/>
+                          <label class="c-inputMat__label" for="etage">Etage*
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--extraSmall l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="porte" name="porte" type="text" autocapitalize="off" placeholder="Exemple: 6"/>
+                          <label class="c-inputMat__label" for="porte">Porte
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--extraSmall l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="appartement" name="appartement" type="text" autocapitalize="off" required="required" placeholder="Exemple: 11"/>
+                          <label class="c-inputMat__label" for="appartement">Appartement
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                  </div>
+                  <div class="l-wrapper l-wrapper--row">
+                    <div class="l-wrapper--extraSmall l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="cp" name="cp" type="text" autocapitalize="off" required="required" placeholder="75016"/>
+                          <label class="c-inputMat__label" for="cp">Code Postal
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                    <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                          <input class="c-inputMat__field" id="ville" name="ville" type="text" autocapitalize="off" required="required" placeholder="Paris"/>
+                          <label class="c-inputMat__label" for="ville">Ville
+                          </label><span class="c-inputMat__inputLine"></span></span></span>
+                    </div>
+                  </div>
+                  <div class="l-wrapper--small l-wrapper--left"><span class="c-inputMat"><span class="c-inputMat__wrap">
+                        <input class="c-inputMat__field" id="Name2" name="Name2" type="text" autocapitalize="off" placeholder="Du Pont"/>
+                        <label class="c-inputMat__label" for="Name2">Nom de l'ancien occupant
+                          <!-- .c-toolTip-->
+                          <button class="c-toolTip" type="button"><span class="c-toolTip__icon u-theme-bg u-theme-bg-hover" title="Information permettant de mieux localiser votre logement">?</span>
+                          </button>
+                          <!-- END .c-toolTip-->
+                        </label><span class="c-inputMat__inputLine"></span></span></span>
+                  </div>
+                  <div class="u-margin-t-30 u-margin-small-t-20 u-textLeft">
+                    <!-- .c-checkboxMat--><span class="c-checkboxMat u-theme-green">
+                      <input class="c-checkboxMat__field" type="checkbox" id="checkboxMat" value="checkbox value"/>
+                      <label class="c-checkboxMat__label c-checkboxMat__labelPadding" for="checkboxMat"><span class="c-checkboxMat__check u-theme-bg u-theme-color">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+                            <path fill="none" d="M14 27.2l7 7 12-12"></path>
+                          </svg></span><span class="c-checkboxMat__text c-wysiwyg">Mon adresse ne comporte pas de numéro de rue</span>
+                      </label></span>
+                    <!-- end .c-checkboxMat-->
+                  </div>
+                </div>
+                <!-- .c-btnWrapper-->
+                <div class="c-btnWrapper u-margin-h-110 u-theme-genBlue u-margin-t-40 c-btnWrapper--fullOnMobile c-btnWrapper--alignLeft">
+                  <button class="c-baseBtn u-theme-bg u-theme-bg-hover c-baseBtn--large" type="button"><span class="c-baseBtn__content">Suivant</span>
+                  </button>
+                </div>
+                <!-- end .c-btnWrapper-->
+              </fieldset>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Formulaire Etape 4</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;11&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="11" data-e-toggle-target="11"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="12">
+              <fieldset>
+                <h2 class="u-heading-2 u-margin-h-110 u-margin-t-50 u-margin-b-20 u-color-genBlue">5. Ma facturation</h2>
+                <div class="l-wrapper u-margin-h-110 u-margin-t-40">
+                  <p class="u-fontSize-large"><strong>Date à laquelle je souhaite disposer du gaz naturel*</strong></p><span class="c-inputMat c-inputMat--datepicker u-padding-v-20 l-wrapper--extraSmall l-wrapper--left" data-e-field-validation="data-e-field-validation"><span class="c-inputMat__wrap">
+                      <input class="c-inputMat__field c-inputMat__field--hasElemRight" id="date-picke-required" type="date" autocapitalize="off" required="required" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$" placeholder="07/07/2017" data-flatpickr="{&quot;minDate&quot;:-5,&quot;maxDate&quot;:&quot;today&quot;}"/><span class="c-inputMat__inputLine"></span><span class="c-inputMat__rightBlock"><span class="icon icon-big-calendar"></span></span></span>
+                    <ul class="c-fieldInfo c-fieldInfo--inputMat is-error" data-e-field-validation-error="data-e-field-validation-error">
+                      <li>Texte d’erreur. Lorem ipsum dolor sit amet, tulem consectetur adipisicing elit, sed do eiusmod tempor</li>
+                    </ul></span>
+                  <p class="u-bg-grey-light u-padding-h-30 u-padding-v-20">En choisissant cette date, je demande l’exécution de mon contrat avant la fin du délai de rétractation de 14 jours.</p>
+                  <div class="c-itemOptionWrap l-row l-row--noSideGut u-margin-v-50">
+                    <div class="l-col-medium-12 l-col-large-8">
+                      <p class="c-itemOptionWrap__text u-fontSize-large u-margin-v-30"><strong>Je choisis mes options gratuites de facturation :</strong></p>
+                      <div class="c-itemOptionWrap__wrapper-2">
+                        <div class="c-itemOption">   
+                          <div class="c-itemOption__content"><img class="c-itemOption__imgPromo" alt="" src="../images/contrib/picto-gratuit.png"/>
+                            <h3 class="c-itemOption__title u-heading-3">Assurance Facture Gaz Tarif Réglementé</h3>
+                            <p class="c-itemOption__text">Couvrez vos dépenses de gaz naturel en cas de coup dur</p>
+                            <div class="c-itemOption__price"> <strong>5€TTC/mois</strong></div><a class="c-itemOption__info" href="#">En savoir plus</a>
+                          </div><span class="c-checkboxMat c-itemOption__checkbox u-theme-green">
+                            <input class="c-checkboxMat__field" type="checkbox" id="option1" name="option1" value="checkbox value"/>
+                            <label class="c-checkboxMat__label" for="option1"><span class="c-checkboxMat__check u-theme-bg u-theme-color"><svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+<path fill="none" d="M14 27.2l7 7 12-12"></path>
+</svg></span></label><img class="c-itemOption__img" src="../images/contrib/TEL-sans-conso_03.jpg" alt=""/>
+                            <div class="c-itemOption__border"></div>
+                            <div class="c-itemOption__infoState">
+                              <div class="l-wrapper"><b class="c-itemOption__infoState_off">Cochez pour activer cette option</b><b class="c-itemOption__infoState_on">Option activée</b></div>
+                            </div></span>
+                        </div>
+                        <div class="c-itemOption">   
+                          <div class="c-itemOption__content"><img class="c-itemOption__imgPromo" alt="" src="../images/contrib/picto-gratuit.png"/>
+                            <h3 class="c-itemOption__title u-heading-3">Titre</h3>
+                            <p class="c-itemOption__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <div class="c-itemOption__price"> <strong>Gratuit</strong></div><a class="c-itemOption__info" href="#">En savoir plus</a>
+                          </div><span class="c-checkboxMat c-itemOption__checkbox u-theme-green">
+                            <input class="c-checkboxMat__field" type="checkbox" id="option2" name="option2" value="checkbox value"/>
+                            <label class="c-checkboxMat__label" for="option2"><span class="c-checkboxMat__check u-theme-bg u-theme-color"><svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+<path fill="none" d="M14 27.2l7 7 12-12"></path>
+</svg></span></label><img class="c-itemOption__img" src="../images/contrib/TEL-sans-conso_03.jpg" alt=""/>
+                            <div class="c-itemOption__border"></div>
+                            <div class="c-itemOption__infoState">
+                              <div class="l-wrapper"><b class="c-itemOption__infoState_off">Cochez pour activer cette option</b><b class="c-itemOption__infoState_on">Option activée</b></div>
+                            </div></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="l-col-medium-12 l-col-large-4">
+                      <p class="c-itemOptionWrap__text u-fontSize-large u-margin-v-30"><strong>Et pour plus de tranquilité...</strong></p>
+                      <div class="c-itemOptionWrap__wrapper-1">
+                        <div class="c-itemOption">   
+                          <div class="c-itemOption__content">
+                            <h3 class="c-itemOption__title u-heading-3">Titre</h3>
+                            <p class="c-itemOption__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <div class="c-itemOption__price"> <strong>Gratuit</strong></div><a class="c-itemOption__info" href="#">En savoir plus</a>
+                          </div><span class="c-checkboxMat c-itemOption__checkbox u-theme-green">
+                            <input class="c-checkboxMat__field" type="checkbox" id="option3" name="option3" value="checkbox value"/>
+                            <label class="c-checkboxMat__label" for="option3"><span class="c-checkboxMat__check u-theme-bg u-theme-color"><svg xmlns="http://www.w3.org/2000/svg" viewBox="9 14 30 30" width="30" height="30">
+<path fill="none" d="M14 27.2l7 7 12-12"></path>
+</svg></span></label><img class="c-itemOption__img" src="../images/contrib/TEL-sans-conso_03.jpg" alt=""/>
+                            <div class="c-itemOption__border"></div>
+                            <div class="c-itemOption__infoState">
+                              <div class="l-wrapper"><b class="c-itemOption__infoState_off">Cochez pour activer cette option</b><b class="c-itemOption__infoState_on">Option activée</b></div>
+                            </div></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Formulaire Etape 5</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;12&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="12" data-e-toggle-target="12"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="13">
+              <fieldset>
+                <h2 class="u-heading-2 u-margin-h-110 u-margin-t-50 u-margin-b-20 u-color-genBlue">Mon récapitulatif</h2>
+                <div class="c-column c-column--spaced c-column--50-50 c-column--noGut">
+                  <div class="c-column__col">
+                    <div class="l-wrapper u-margin-h-110 u-margin-t-40">
+                      <p class="u-fontSize-large u-margin-b-30"><strong>Mon projet</strong></p>
+                      <p>J’emménage, j’ai besoin d’un nouveau contrat de gaz naturel</p>
+                    </div>
+                  </div>
+                  <div class="c-column__col">
+                    <div class="l-wrapper u-margin-h-110 u-margin-t-40">
+                      <p class="u-fontSize-large u-margin-b-30"><strong>Mes coordonnées</strong></p>
+                      <p>M.Dupont Cyril </p>
+                      <p>13 rue Lafayette</p>
+                      <p>92350 </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="c-column c-column--spaced c-column--50-50">
+                  <div class="c-column__col">
+                    <div class="l-wrapper u-margin-h-110 u-margin-t-40">
+                      <p class="u-fontSize-large u-margin-b-30"><strong>Mon budget</strong></p>
+                      <p class="u-margin-b-10">Vous avez choisi l’offre : Gaz Tarif Réglementé </p>
+                      <p>Budget annuel estimé(1) : 192,00€TTC/an</p>
+                    </div>
+                  </div>
+                  <div class="c-column__col">
+                    <div class="l-wrapper u-margin-h-110 u-margin-t-40">
+                      <p class="u-fontSize-large u-margin-b-30"><strong>Ma facturation</strong></p>
+                      <p>Mensualisation avec prélévement automatique</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- .c-btnWrapper-->
+                <div class="c-btnWrapper"><a class="c-baseBtn c-baseBtn--empty u-textBold u-margin-v-50" href="#"><span class="c-baseBtn__content">Je télécharge mon récapitulatif</span></a>
+                </div>
+                <!-- end .c-btnWrapper-->
+              </fieldset>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Formulaire Etape 6</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;13&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="13" data-e-toggle-target="13"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2 style="margin:20px 0;">Composant advantage avec fond gris</h2>
+        </div>
+            <div data-demo-html="14">
+              <!-- .c-advantages-->
+              <section class="c-advantages u-padding-spacer c-advantages--tel u-bg-grey-light u-padding-a-50">
+                <ul class="c-advantages__group l-wrapper--large">
+                  <li class="c-advantages__item">
+                    <div class="c-advantages__itemBlock c-advantages__itemBlock--img"><span class="c-advantages__icon icon"><img src="../images/contrib/avantage-logo3.png" alt=""/></span>
+                    </div>
+                    <h3 class="c-advantages__text c-advantages__text--title">Lorem Elsass ipsum Gal ! chambon</h3>
+                    <div class="c-advantages__text c-wysiwyg">Lorem Elsass ipsum Gal ! chambon nüdle schpeck vulputate</div>
+                  </li>
+                  <li class="c-advantages__item">
+                    <div class="c-advantages__itemBlock c-advantages__itemBlock--img"><span class="c-advantages__icon icon"><img src="../images/contrib/avantage-logo3.png" alt=""/></span>
+                    </div>
+                    <h3 class="c-advantages__text c-advantages__text--title">Lorem Elsass ipsum Gal ! chambon</h3>
+                    <div class="c-advantages__text c-wysiwyg">Lorem Elsass ipsum Gal ! chambon nüdle schpeck vulputate</div>
+                  </li>
+                  <li class="c-advantages__item">
+                    <div class="c-advantages__itemBlock c-advantages__itemBlock--img"><span class="c-advantages__icon icon"><img src="../images/contrib/avantage-logo3.png" alt=""/></span>
+                    </div>
+                    <h3 class="c-advantages__text c-advantages__text--title">Lorem Elsass ipsum Gal ! chambon</h3>
+                    <div class="c-advantages__text c-wysiwyg">Lorem Elsass ipsum Gal ! chambon nüdle schpeck vulputate</div>
+                  </li>
+                  <li class="c-advantages__item">
+                    <div class="c-advantages__itemBlock c-advantages__itemBlock--img"><span class="c-advantages__icon icon"><img src="../images/contrib/avantage-logo3.png" alt=""/></span>
+                    </div>
+                    <h3 class="c-advantages__text c-advantages__text--title">Lorem Elsass ipsum Gal ! chambon</h3>
+                    <div class="c-advantages__text c-wysiwyg">Lorem Elsass ipsum Gal ! chambon nüdle schpeck vulputate</div>
+                  </li>
+                </ul>
+              </section>
+              <!-- end .c-advantages-->
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>evolution du composant avec maintenant un background gris ou blanc + ajout d'un lien </p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;14&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="14" data-e-toggle-target="14"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2 style="margin:20px 0;">Composant advantage fond blanc</h2>
+        </div>
+            <div data-demo-html="15">
+              <!-- .c-advantages-->
+              <section class="c-advantages u-padding-spacer u-padding-a-50">
+                <ul class="c-advantages__group l-wrapper--large">
+                  <li class="c-advantages__item">
+                    <div class="c-advantages__itemBlock c-advantages__itemBlock--img"><span class="c-advantages__icon icon"><img src="../images/contrib/avantage-logo3.png" alt=""/></span>
+                    </div>
+                    <h3 class="c-advantages__text c-advantages__text--title">Lorem Elsass ipsum Gal ! chambon</h3>
+                    <div class="c-advantages__text c-wysiwyg">Lorem Elsass ipsum Gal ! chambon nüdle schpeck vulputate</div>
+                  </li>
+                  <li class="c-advantages__item">
+                    <div class="c-advantages__itemBlock c-advantages__itemBlock--img"><span class="c-advantages__icon icon"><img src="../images/contrib/avantage-logo3.png" alt=""/></span>
+                    </div>
+                    <h3 class="c-advantages__text c-advantages__text--title">Lorem Elsass ipsum Gal ! chambon</h3>
+                    <div class="c-advantages__text c-wysiwyg">Lorem Elsass ipsum Gal ! chambon nüdle schpeck vulputate</div>
+                  </li>
+                  <li class="c-advantages__item">
+                    <div class="c-advantages__itemBlock c-advantages__itemBlock--img"><span class="c-advantages__icon icon"><img src="../images/contrib/avantage-logo3.png" alt=""/></span>
+                    </div>
+                    <h3 class="c-advantages__text c-advantages__text--title">Lorem Elsass ipsum Gal ! chambon</h3>
+                    <div class="c-advantages__text c-wysiwyg">Lorem Elsass ipsum Gal ! chambon nüdle schpeck vulputate</div>
+                  </li>
+                  <li class="c-advantages__item">
+                    <div class="c-advantages__itemBlock c-advantages__itemBlock--img"><span class="c-advantages__icon icon"><img src="../images/contrib/avantage-logo3.png" alt=""/></span>
+                    </div>
+                    <h3 class="c-advantages__text c-advantages__text--title">Lorem Elsass ipsum Gal ! chambon</h3>
+                    <div class="c-advantages__text c-wysiwyg">Lorem Elsass ipsum Gal ! chambon nüdle schpeck vulputate</div>
+                  </li>
+                </ul>
+              </section>
+              <!-- end .c-advantages-->
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;15&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="15" data-e-toggle-target="15"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2 style="margin:20px 0;">Composant infoBlock</h2>
+        </div>
+            <div data-demo-html="16">
+              <!-- .c-infoBlock-->
+              <div class="c-infoBlock l-wrapper--huge u-padding-spacer">
+                <div class="c-infoBlock__content l-wrapper--medium u-padding-spacer">
+                  <h2 class="c-infoBlock__title">Des bonus écologiques auxquels il est difficile de dire « non »</h2>
+                  <div class="c-infoBlock__body">
+                    <div class="c-wysiwyg">
+                      <!-- Contenu du wysiwyg pour démo :-->
+                      <p>A la location longue durée ou à l'achat d'une voiture électrique en France, et sous certaines conditions, les bonus peuvent aller jusqu'à 10 000€. Par exemple, si vous changez et détruisez votre vieille voiture diesel immatriculée avant 2006 et avec laquelle vous roulez depuis plus d'1 an pour un véhicule tout électrique (particulier ou utilitaire), vous obtenez :</p>
+                      <ul>
+                        <li><span class="u-list__item u-theme-color-before">un bonus écologique de 6 000€ (dans la limite de 27% du prix d'acquisition),</span></li>
+                        <li><span class="u-list__item u-theme-color-before">et une prime de conversion superbonus de 4 000€ !</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>champs title contribuable + wyziwyg</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;16&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="16" data-e-toggle-target="16"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div class="c-wysiwyg">
+          <h2 style="margin:20px 0;">Composant assuranceBand</h2>
+        </div>
+            <div data-demo-html="17">
+              <!-- .c-assuranceBand (picture TEL)-->
+              <div class="c-assuranceBand c-assuranceBand--pictoColor c-assuranceBand--arrow u-padding-spacer">
+                <div class="u-bg-grey-light u-padding-v-40 u-padding-h-20">
+                  <!-- .c-headSection-->
+                  <div class="c-headSection l-wrapper--large">
+                    <h2 class="c-headSection__title u-heading-2">Suivez l’évolution de la création de votre Espace Client&nbsp;: </h2>
+                  </div>
+                  <!-- end .c-headSection-->
+                  <div class="c-assuranceBand__wrapper">
+                    <div class="c-assuranceBand__elem"><img class="c-assuranceBand__img" src="../images/contrib/01-Page-enmenagement_01.jpg" alt=""/>
+                      <p class="c-assuranceBand__number"><strong> 1/ </strong></p>
+                      <p>Demande de souscription <br/>prise en compte</p>
+                    </div>
+                    <div class="c-assuranceBand__arrow icon icon-carousel-next"></div>
+                    <div class="c-assuranceBand__elem"><img class="c-assuranceBand__img" src="../images/contrib/01-Page-enmenagement_02.jpg" alt=""/>
+                      <p class="c-assuranceBand__number"><strong> 2/ </strong></p>
+                      <p>Activation<br/> de votre contrat</p>
+                    </div>
+                    <div class="c-assuranceBand__arrow icon icon-carousel-next"></div>
+                    <div class="c-assuranceBand__elem"><img class="c-assuranceBand__img" src="../images/contrib/01-Page-enmenagement_01.jpg" alt=""/>
+                      <p class="c-assuranceBand__number"><strong> 3/ </strong></p>
+                      <p>Contrat activé <br/>Accès à votre Espace Client</p>
+                    </div>
+                    <div class="c-assuranceBand__arrow icon icon-carousel-next"></div>
+                    <div class="c-assuranceBand__elem"><img class="c-assuranceBand__img" src="../images/contrib/01-Page-enmenagement_01.jpg" alt=""/>
+                      <p class="c-assuranceBand__number"><strong> 3/ </strong></p>
+                      <p>Contrat activé <br/>Accès à votre Espace Client            </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END .c-assuranceBand    -->
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>titre + image + texte contribuable </p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;17&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="17" data-e-toggle-target="17"><code class="html"></code></pre>
+              </div>
+            </div>
+        <!-- .c-backToTop--><a class="c-backToTop icon icon-chevron-top" data-e-scrollto="data-e-scrollto" data-e-backtotop="data-e-backtotop" href="#backToTop"></a>
+        <!-- end .c-backToTop-->
+      </main>
+    </div>
+  </body>
+  <!-- COMMON-->
+  <script src="../js/bas/vendors.js"></script>
+  <script src="../js/bas/common.js"></script>
+  <script src="../js/bas/demo.js"></script>
+</html>

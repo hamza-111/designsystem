@@ -1,0 +1,497 @@
+
+<!-- TODO : rendre variable générique a plus de 2 couleurs-->
+<!--to common--><!DOCTYPE html><!--[if IE 8]><html data-debug lang="fr" class="oldie ie8 no-js"><![endif]-->
+<!--[if IE 9]><html data-debug lang="fr" class="oldie ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js" data-debug lang="fr"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://google.com">
+    <!-- Open Graph-->
+    <meta property="og:url" content="http://google.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your website title">
+    <meta property="og:description" content="Your description">
+    <meta property="og:image" content="http://essayspeechwala.com/wp-content/uploads/2016/03/Lion.jpg">
+    <title>mon compteur</title>
+    <!-- COMMON-->
+    <link rel="stylesheet" href="../css/suiviconso.css">
+    <link rel="stylesheet" href="../css/allSuivieConso.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/css.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <link rel="stylesheet" href="../css/kit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+      
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <!-- Fav and touch icons-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon/apple-touch-icon-57x57.png">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <script src="../js/haut/modernizr-custom.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="../js/haut/init.js"></script>
+    <script>
+      E.bannerApp = {
+        iOS:     'app-id=1104269908',
+        Android: 'app-id=com.engie.particuliers'
+      }
+      
+      
+    </script>
+  </head>
+  <body class="u-theme-genBlue" data-e-no-scroll>
+    <div class="l-wrapper l-wrapper--siteFull" id="backToTop">
+      <main class="l-wrapper l-wrapper--mainFull u-bg-white l-wrapper--main l-wrapper--headerv3" id="siteContent" role="main" data-e-sticky-container-main>
+        <h1 class="u-heading-1">les composant de mon compteur</h1>
+            <div data-demo-html="1">
+              <button data-e-modal-open="detailsExemple" type="button">modal formulaire</button>
+                      <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;detailsExemple&quot;}">
+                        <div class="c-modal__overlay">
+                          <div class="c-modal__content u-padding-a-40 c-blocCompteur--borderBlue" data-e-modal-content>
+                            <button class="c-modalCloseButton" type="button" data-e-modal-close><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                            <div class="c-modal__main">
+                              <div class="c-monCompteur__modalTitle">
+                                <div class="c-monCompteur__modalimg"> <img src="../images/contrib/gazparDispo.png" alt=""></div><span class="c-monCompteur__modalDisc">Gestion des données journalières de mon compteur communicant Gazpar</span>
+                              </div>
+                                      <form class="c-formMat u-padding-spacer" novalidate>
+                                                <!-- .c-radioMat--><span class="c-radioMat">
+                                                  <input class="c-radioMat__field" type="radio" id="radioMat1" name="radio" value="radio value">
+                                                  <label class="c-radioMat__label c-radioMat__labelPadding" for="radioMat1"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg"><b>Oui j'autorise </b> Gaz Tarif Réglementé à accéder à mes données. Je pourrai ainsi visualiser ma consommation quotidienne en euros, m3, Kwh et maitriser mon budget</span>
+                                                  </label></span>
+                                                <!-- end .c-radioMat-->
+                                                <!-- .c-radioMat--><span class="c-radioMat">
+                                                  <input class="c-radioMat__field" type="radio" id="radioMat2" name="radio" value="radio value">
+                                                  <label class="c-radioMat__label c-radioMat__labelPadding" for="radioMat2"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg"><b>Non, je n'autorise pas </b> Gaz Tarif Réglementé à accéder à mes données journalières de consommations</span>
+                                                  </label></span>
+                                                <!-- end .c-radioMat-->
+                                        <!-- .c-btnWrapper-->
+                                        <div class="c-btnWrapper u-theme-genBlue"><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#" data-e-modal-open="succsses"><span class="c-baseBtn__content">Valider</span></a><a class="c-baseBtn c-baseBtn--empty" href="#" type="button" data-e-modal-close="data-e-modal-close"><span class="c-baseBtn__content">Annuler</span></a>
+                                        </div>
+                                        <!-- end .c-btnWrapper-->
+                                      </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>modal plus formulaire</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;1&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="1" data-e-toggle-target="1"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="2">         
+              <button data-e-modal-open="success" type="button">modal success</button>
+                      <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;success&quot;}">
+                        <div class="c-modal__overlay">
+                          <div class="c-modal__content u-padding-a-40 c-blocCompteur--borderGreen" data-e-modal-content>
+                            <button class="c-modalCloseButton" type="button" data-e-modal-close><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                            <div class="c-modal__main">
+                              <div class="c-blocCompteur__modalIconHeader"><span class="c-blocCompteur__modalIcon icon icon-success"></span></div>
+                              <div class="c-blocCompteur--modalTitleGreen">Votre choix a bien été pris en compte</div>
+                              <div><b>Vous autorisez </b> Gaz Tarif Réglementé à dolor sit amet, concepteur adipiscing elit. lorem upsum lorem upsum lorem upsum lorem upsum lorem upsum lorem upsum lorem upsum lorem upsum <b>Vous accederez à vos données quotidiennes dans les 72h.</b></div>
+                              <!-- .c-btnWrapper-->
+                              <div class="c-btnWrapper u-theme-genBlue"><a class="c-baseBtn u-theme-bg u-theme-bg-hover u-margin-t-40" href="#" type="button" data-e-modal-close="data-e-modal-close"><span class="c-baseBtn__content">ok</span></a>
+                              </div>
+                              <!-- end .c-btnWrapper-->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>exemple de modal au cas de succée</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;2&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="2" data-e-toggle-target="2"><code class="html"></code></pre>
+              </div>
+            </div>
+        <div style="background:black; padding:100px 0;">
+              <div data-demo-html="3">
+                <div class="l-row">
+                  <div class="l-col-medium-12 l-col-large-4">
+                            <!--.c-monCompteur-->
+                            <div class="c-monCompteur">
+                              <div class="c-monCompteur__main">
+                                <div class="c-monCompteur__header">
+                                  <div class="c-monCompteur__headerTitle">
+                                    <div class="c-monCompteur__title">Compteur communicant</div>
+                                  </div>
+                                  <!-- .c-toolTipV2-->
+                                  <button class="c-toolTipV2" type="button" data-e-modal-open="info"><span class="c-toolTipV2__icon icon icon-question-circleDS"></span>
+                                  </button>
+                                  <!-- END .c-toolTipV2-->
+                                          <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;info&quot;}">
+                                            <div class="c-modal__overlay">
+                                              <div class="c-modal__content u-padding-a-40" data-e-modal-content>
+                                                <button class="c-modalCloseButton" type="button" data-e-modal-close><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                                                <div class="c-modal__main">
+                                                  <div class="c-blocCompteur__desc">Informations vous permettant d'identifier votre logement</div>
+                                                  <div class="c-blocCompteur__listeModal">
+                                                    <ul> 
+                                                      <li><span class="c-blocCompteur__labelListeModal">Accessibilité pour la relève</span><span class="c-blocCompteur__labelBlue">OUI</span></li>
+                                                      <li><span class="c-blocCompteur__labelListeModal">N° de PCE</span><span class="c-blocCompteur__labelBlue">14738205459495</span></li>
+                                                      <li><span class="c-blocCompteur__labelListeModal">N° de matricule compteur</span><span class="c-blocCompteur__labelBlue">159</span></li>
+                                                    </ul>
+                                                  </div>
+                                                  <div class="c-blocCompteur__listeModalLink"><a href="#">en savoir + sur le compteur Gazpar</a></div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                </div>
+                                <div class="c-monCompteur__content">
+                                  <div class="c-monCompteur__compteur"><img src="../images/contrib/compteur-gazpar.png" alt="">
+                                    <div class="c-monCompteur__number"> 
+                                      <div class="c-monCompteur__numberText">
+                                         <span class="c-monCompteur__value">278</span> <span class="c-monCompteur__numberSpanFontSize">m<sup>3</sup></span></div>
+                                      <div class="c-monCompteur__index">Dernier index du 02.10.2019</div>
+                                    </div>
+                                  </div>
+                                  <div class="c-monCompteur__telereleve">
+                                    <p>Votre prochain télérelevé vers le : <br> <b>13.02.2022</b></p>
+                                  </div>
+                                  <div class="c-monCompteur__btn">
+                                    <!-- .c-btnWrapper-->
+                                    <div class="c-btnWrapper u-theme-genBlue"><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#" data-e-modal-open="compteur"><span class="c-baseBtn__content">Me données quotidiennes</span></a>
+                                              <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;compteur&quot;}">
+                                                <div class="c-modal__overlay">
+                                                  <div class="c-modal__content u-padding-a-40 c-blocCompteur--borderBlue" data-e-modal-content>
+                                                    <button class="c-modalCloseButton" type="button" data-e-modal-close><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                                                    <div class="c-modal__main">
+                                                      <div class="c-monCompteur__modalTitle">
+                                                        <div class="c-monCompteur__modalimg"> <img src="../images/contrib/gazparDispo.png" alt=""></div><span class="c-monCompteur__modalDisc">Gestion des données journalières de mon compteur communicant Gazpar</span>
+                                                      </div>
+                                                              <form class="c-formMat u-padding-spacer" novalidate>
+                                                                        <!-- .c-radioMat--><span class="c-radioMat">
+                                                                          <input class="c-radioMat__field" type="radio" id="radioMat1" name="radio" value="radio value">
+                                                                          <label class="c-radioMat__label c-radioMat__labelPadding" for="radioMat1"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg"><b>Oui j'autorise </b> Gaz Tarif Réglementé à accéder à mes données. Je pourrai ainsi visualiser ma consommation quotidienne en euros, m3, Kwh et maitriser mon budget</span>
+                                                                          </label></span>
+                                                                        <!-- end .c-radioMat-->
+                                                                        <!-- .c-radioMat--><span class="c-radioMat">
+                                                                          <input class="c-radioMat__field" type="radio" id="radioMat2" name="radio" value="radio value">
+                                                                          <label class="c-radioMat__label c-radioMat__labelPadding" for="radioMat2"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg"><b>Non, je n'autorise pas </b> Gaz Tarif Réglementé à accéder à mes données journalières de consommations</span>
+                                                                          </label></span>
+                                                                        <!-- end .c-radioMat-->
+                                                                <!-- .c-btnWrapper-->
+                                                                <div class="c-btnWrapper u-theme-genBlue"><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#" data-e-modal-open="succsses"><span class="c-baseBtn__content">Valider</span></a><a class="c-baseBtn c-baseBtn--empty" href="#" type="button" data-e-modal-close="data-e-modal-close"><span class="c-baseBtn__content">Annuler</span></a>
+                                                                </div>
+                                                                <!-- end .c-btnWrapper-->
+                                                              </form>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                    </div>
+                                    <!-- end .c-btnWrapper-->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                  </div>
+                </div>
+              </div>
+              <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+                <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                  <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;3&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+                </div>
+                <div class="k-composantPage__caseHtml">
+                  <pre data-demo-display="3" data-e-toggle-target="3"><code class="html"></code></pre>
+                </div>
+              </div>
+        </div>
+            <div data-demo-html="4">
+              <div class="l-row">
+                <div class="l-col-medium-5">
+                          <!--.c-monCompteur-->
+                          <div class="c-monCompteur">
+                            <div class="c-monCompteur__main">
+                              <div class="c-monCompteur__header">
+                                <div class="c-monCompteur__headerTitle">
+                                  <div class="c-monCompteur__title">Compteur communicant</div>
+                                </div>
+                              </div>
+                              <div class="c-monCompteur__content">
+                                <div class="c-monCompteur__compteur"><img src="../images/contrib/gazparNonDispo.png" alt="">
+                                  <div class="c-monCompteur__errorMsg">Les données concernant votre compteur sont momentanément indisponibles.</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--.c-monCompteurRelever-->
+                          <div class="c-monCompteurRelever">
+                            <div class="c-monCompteurRelever__border">
+                              <div class="c-monCompteurRelever__msg">Merci d'avoir effectué votre relevé</div>
+                            </div>
+                          </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;4&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="4" data-e-toggle-target="4"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="5">
+              <div class="l-row">
+                <div class="l-col-medium-4">
+                          <!--.c-monCompteur-->
+                          <div class="c-monCompteur">
+                            <div class="c-monCompteur__main">
+                              <div class="c-monCompteur__header">
+                                <div class="c-monCompteur__headerTitle">
+                                  <div class="c-monCompteur__title">Compteur communicant</div>
+                                </div>
+                              </div>
+                              <div class="c-monCompteur__content">
+                                <div class="c-monCompteur__compteur"><img src="../images/contrib/nonGazparDispo.png" alt="">
+                                  <div class="c-monCompteur__number"> 
+                                    <div class="c-monCompteur__numberText">
+                                       <span class="c-monCompteur__value">278</span> <span class="c-monCompteur__numberSpanFontSize">m<sup>3</sup></span></div>
+                                    <div class="c-monCompteur__index">Dernier index du 02.10.2019</div>
+                                  </div>
+                                </div>
+                                <div class="c-monCompteur__telereleve">
+                                  <p>Votre prochain télérelevé vers le : <br> <b>13.02.2022</b></p>
+                                </div>
+                                <div class="c-monCompteur__btn">
+                                  <!-- .c-btnWrapper-->
+                                  <div class="c-btnWrapper u-theme-genBlue"><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#" data-e-modal-open="details"><span class="c-baseBtn__iconLeft icon icon-close"></span><span class="c-baseBtn__content">Plus de détails</span></a>
+                                            <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;details&quot;}">
+                                              <div class="c-modal__overlay">
+                                                <div class="c-modal__content u-padding-a-40 c-blocCompteur--borderBlue" data-e-modal-content>
+                                                  <button class="c-modalCloseButton" type="button" data-e-modal-close><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                                                  <div class="c-modal__main">
+                                                    <div class="c-monCompteur__modalTitle">
+                                                      <div class="c-monCompteur__modalimg"> <img src="../images/contrib/gazparDispo.png" alt=""></div><span class="c-monCompteur__modalDisc">Gestion des données journalières de mon compteur communicant Gazpar</span>
+                                                    </div>
+                                                            <form class="c-formMat u-padding-spacer" novalidate>
+                                                                      <!-- .c-radioMat--><span class="c-radioMat">
+                                                                        <input class="c-radioMat__field" type="radio" id="radioMat1" name="radio" value="radio value">
+                                                                        <label class="c-radioMat__label c-radioMat__labelPadding" for="radioMat1"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg"><b>Oui j'autorise </b> Gaz Tarif Réglementé à accéder à mes données. Je pourrai ainsi visualiser ma consommation quotidienne en euros, m3, Kwh et maitriser mon budget</span>
+                                                                        </label></span>
+                                                                      <!-- end .c-radioMat-->
+                                                                      <!-- .c-radioMat--><span class="c-radioMat">
+                                                                        <input class="c-radioMat__field" type="radio" id="radioMat2" name="radio" value="radio value">
+                                                                        <label class="c-radioMat__label c-radioMat__labelPadding" for="radioMat2"><span class="c-radioMat__check u-theme-bg u-theme-color"></span><span class="c-radioMat__text c-wysiwyg"><b>Non, je n'autorise pas </b> Gaz Tarif Réglementé à accéder à mes données journalières de consommations</span>
+                                                                        </label></span>
+                                                                      <!-- end .c-radioMat-->
+                                                              <!-- .c-btnWrapper-->
+                                                              <div class="c-btnWrapper u-theme-genBlue"><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#" data-e-modal-open="succsses"><span class="c-baseBtn__content">Valider</span></a><a class="c-baseBtn c-baseBtn--empty" href="#" type="button" data-e-modal-close="data-e-modal-close"><span class="c-baseBtn__content">Annuler</span></a>
+                                                              </div>
+                                                              <!-- end .c-btnWrapper-->
+                                                            </form>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                  </div>
+                                  <!-- end .c-btnWrapper-->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--.c-monCompteurRelever-->
+                          <div class="c-monCompteurRelever">
+                            <div class="c-monCompteurRelever__border">
+                              <div class="c-monCompteurRelever__msgItalic">Les données concernant votre relevé sont momentanément indispo.</div>
+                            </div>
+                          </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;5&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="5" data-e-toggle-target="5"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="6">
+              <div class="l-row">
+                <div class="l-col-medium-4">
+                          <!--.c-monCompteur-->
+                          <div class="c-monCompteur">
+                            <div class="c-monCompteur__main">
+                              <div class="c-monCompteur__header">
+                                <div class="c-monCompteur__headerTitle">
+                                  <div class="c-monCompteur__title">Compteur communicant</div>
+                                </div>
+                              </div>
+                              <div class="c-monCompteur__content">
+                                <div class="c-monCompteur__compteur"><img src="../images/contrib/nonGazparNonDispo.png" alt="">
+                                  <div class="c-monCompteur__errorMsg">Les données concernant votre compteur sont momentanément indisponibles.</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--.c-monCompteurRelever-->
+                          <div class="c-monCompteurRelever c-monCompteurRelever__jaune">
+                            <div class="c-monCompteurRelever__title">Il vous reste 3 jours</div>
+                            <div class="c-monCompteurRelever__btnTxt">pour relever votre compteur</div>
+                            <!-- .c-btnWrapper-->
+                            <div class="c-btnWrapper"><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#"><span class="c-baseBtn__content">Je relève</span></a>
+                            </div>
+                            <!-- end .c-btnWrapper-->
+                          </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;6&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="6" data-e-toggle-target="6"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="7">
+              <div class="l-row">
+                <div class="l-col-medium-4">
+                          <!--.c-monCompteur-->
+                          <div class="c-monCompteur">
+                            <div class="c-monCompteur__main">
+                              <div class="c-monCompteur__header">
+                                <div class="c-monCompteur__headerTitle">
+                                  <div class="c-monCompteur__title">Compteur communicant</div>
+                                </div>
+                              </div>
+                              <div class="c-monCompteur__content">
+                                <div class="c-monCompteur__compteur"><img src="../images/contrib/nonGazparDispo.png" alt="">
+                                  <div class="c-monCompteur__number"> 
+                                    <div class="c-monCompteur__numberText">
+                                       <span class="c-monCompteur__value">278</span> <span class="c-monCompteur__numberSpanFontSize">m<sup>3</sup></span></div>
+                                    <div class="c-monCompteur__index">Dernier index du 02.10.2019</div>
+                                  </div>
+                                </div>
+                                <div class="c-monCompteur__telereleve">
+                                  <p>Votre prochain télérelevé vers le : <br> <b>13.02.2022</b></p>
+                                </div>
+                                <div class="c-monCompteur__btn">
+                                  <!-- .c-btnWrapper-->
+                                  <div class="c-btnWrapper u-theme-genBlue">
+                                    <button class="c-baseBtn u-theme-bg u-theme-bg-hover" type="button" disabled="disabled"><span class="c-baseBtn__iconLeft icon icon-close"></span><span class="c-baseBtn__content">Plus de détails</span>
+                                    </button>
+                                  </div>
+                                  <!-- end .c-btnWrapper-->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--.c-monCompteurRelever-->
+                          <div class="c-monCompteurRelever">
+                            <div class="c-monCompteurRelever__border">
+                              <div class="c-monCompteurRelever__msgItalic">Les informations sont en cours de chargement...</div>
+                            </div>
+                          </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;7&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="7" data-e-toggle-target="7"><code class="html"></code></pre>
+              </div>
+            </div>
+      </main>
+    </div>
+  </body>
+  <!-- COMMON-->
+  <script src="../js/bas/vendors.js"></script>
+  <script src="../js/bas/suiviconso.js"></script>
+</html>

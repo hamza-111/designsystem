@@ -1,0 +1,692 @@
+
+<!-- TODO : rendre variable générique a plus de 2 couleurs-->
+<!--to common--><!DOCTYPE html><!--[if IE 8]><html data-debug lang="fr" class="oldie ie8 no-js"><![endif]-->
+<!--[if IE 9]><html data-debug lang="fr" class="oldie ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js" data-debug lang="fr"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://google.com">
+    <!-- Open Graph-->
+    <meta property="og:url" content="http://google.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your website title">
+    <meta property="og:description" content="Your description">
+    <meta property="og:image" content="http://essayspeechwala.com/wp-content/uploads/2016/03/Lion.jpg">
+    <title>info minimal</title>
+    <!-- COMMON-->
+    <link rel="stylesheet" href="../css/suiviconso.css">
+    <link rel="stylesheet" href="../css/allSuivieConso.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/css.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <link rel="stylesheet" href="../css/kit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+      
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <!-- Fav and touch icons-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon/apple-touch-icon-57x57.png">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <script src="../js/haut/modernizr-custom.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="../js/haut/init.js"></script>
+    <script>
+      E.bannerApp = {
+        iOS:     'app-id=1104269908',
+        Android: 'app-id=com.engie.particuliers'
+      }
+      
+      
+    </script>
+  </head>
+  <body class="u-theme-genBlue" data-e-no-scroll>
+    <div class="l-wrapper l-wrapper--siteFull" id="backToTop">
+      <main class="l-wrapper l-wrapper--mainFull u-bg-white l-wrapper--main l-wrapper--headerv3" id="siteContent" role="main" data-e-sticky-container-main>
+            <div data-demo-html="1">
+              <!--.c-infoMinimal-->
+              <div class="c-infoMinimal">
+                <div class="c-infoMinimal__bg">
+                  <div class="c-infoMinimal__headTitle">
+                    <h2 class="c-infoMinimal__title"> <span>Je consulte le cumul de ma consommation</span><span class="c-infoMinimal__icon icon icon-question-circleDS" data-e-modal-open="infoMinimal" type="button"></span></h2><span class="c-infoMinimal__soustitre">Dernière mise à jour : 30 février 2022</span>
+                    <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;infoMinimal&quot;}">
+                      <div class="c-modal__overlay">
+                        <div class="c-modal__content" data-e-modal-content="data-e-modal-content">
+                          <button class="c-modalCloseButton" type="button" data-e-modal-close="data-e-modal-close"><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                          <div class="c-modal__main">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__head">
+                    <div class="c-infoMinimal__headInfoMenu">
+                      <button class="c-infoMinimal__btn is-active" type="button"><span>À ce jour</span></button>
+                      <button class="c-infoMinimal__btn" type="button" aria-disabled="true"><span>Prévision fin 2022</span></button>
+                    </div>
+                    <button class="c-infoMinimal__btn is-active" type="button"><span>kWh</span></button>
+                    <button class="c-infoMinimal__btn" type="button"> <span>m<sup>3</sup></span></button>
+                    <button class="c-infoMinimal__btn" type="button"> <span>euros</span></button>
+                  </div>
+                  <div class="c-infoMinimal__main">
+                    <div class="c-infoMinimal__mainStat">
+                      <div class="c-infoMinimal__stat">
+                        <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number"> <span>15 500</span><span class="c-infoMinimal__numberKwh">kWh</span></span><span class="c-infoMinimal__desc">depuis le début de l’année 2021</span>
+                        </div>
+                      </div>
+                      <div class="c-infoMinimal__stat">
+                        <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number"> <span>185</span><span class="c-infoMinimal__numberKwh">kWh</span></span><span class="c-infoMinimal__desc">depuis le début de mois</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__allConso">
+                    <div class="c-infoMinimal__allConsoDesc"><span>Prochaine télérelève : <b> 2 février 2020 </b></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;1&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="1" data-e-toggle-target="1"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="2">
+              <!--.c-infoMinimal-->
+              <div class="c-infoMinimal c-infoMinimal--gazPar">
+                <div class="c-infoMinimal__bg">
+                  <div class="c-infoMinimal__mainGazPar">
+                    <div class="c-infoMinimal__headTitle">
+                      <h2 class="c-infoMinimal__title"> <span>Je consulte le cumul de ma consommation </span><span class="c-infoMinimal__icon icon icon-question-circleDS" data-e-modal-open="infoMinimal" type="button"></span>
+                        <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;infoMinimal&quot;}">
+                          <div class="c-modal__overlay">
+                            <div class="c-modal__content" data-e-modal-content="data-e-modal-content">
+                              <button class="c-modalCloseButton" type="button" data-e-modal-close="data-e-modal-close"><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                              <div class="c-modal__main">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </h2>
+                    </div>
+                    <div class="c-infoMinimal__head">
+                      <div class="c-infoMinimal__headInfoMenu">
+                        <button class="c-infoMinimal__btn is-active" type="button"><span>À ce jour</span></button>
+                        <button class="c-infoMinimal__btn" type="button"> <span>Prévision fin 2022</span></button>
+                      </div>
+                      <button class="c-infoMinimal__btn is-active" type="button"><span>kWh</span></button>
+                      <button class="c-infoMinimal__btn" type="button"> <span>m<sup>3</sup></span></button>
+                      <button class="c-infoMinimal__btn" type="button"> <span>euros</span></button>
+                    </div>
+                    <div class="c-infoMinimal__main">
+                      <div class="c-infoMinimal__mainStat">
+                        <div class="c-infoMinimal__stat">
+                          <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number"> <span>0  </span><span class="c-infoMinimal__numberKwh">kWh</span></span><span class="c-infoMinimal__desc">depuis le début de l’année 2021</span>
+                            <!--span.c-infoMinimal__descTow prochaine relève le 1er février 2021-->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="c-infoMinimal__allConso">
+                        <div class="c-infoMinimal__allConsoDesc"><span>Prochaine télérelève : <b> 2 février 2020 </b></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__pushGazPar">
+                    <p class="c-infoMinimal__pushGazParPara">Envie de suivre le cumul de votre consommation au jour le jour ?</p>
+                    <p>Votre compteur gazpar vous permet de le faire <b> gratuitement et simplement.</b></p>
+                    <!-- .c-btnWrapper-->
+                    <div class="c-btnWrapper c-infoMinimal__pushGazParBtn">
+                      <button class="c-baseBtn u-theme-bg u-theme-bg-hover" type="button"><span class="c-baseBtn__content">J'active</span>
+                      </button>
+                    </div>
+                    <!-- end .c-btnWrapper-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;2&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="2" data-e-toggle-target="2"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="3">
+              <!--.c-infoMinimal-->
+              <div class="c-infoMinimal c-infoMinimal--gazPar c-infoMinimal--tablette">
+                <div class="c-infoMinimal__bg">
+                  <div class="c-infoMinimal__mainGazPar">
+                    <div class="c-infoMinimal__headTitle">
+                      <h2 class="c-infoMinimal__title"> <span>Je consulte le cumul de ma consommation </span><span class="c-infoMinimal__icon icon icon-question-circleDS" data-e-modal-open="infoMinimal" type="button"></span>
+                        <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;infoMinimal&quot;}">
+                          <div class="c-modal__overlay">
+                            <div class="c-modal__content" data-e-modal-content="data-e-modal-content">
+                              <button class="c-modalCloseButton" type="button" data-e-modal-close="data-e-modal-close"><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                              <div class="c-modal__main">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </h2><span class="c-infoMinimal__soustitre">Dernière mise à jour : 30 février 2022</span>
+                    </div>
+                    <div class="c-infoMinimal__head">
+                      <div class="c-infoMinimal__headInfoMenu">
+                        <button class="c-infoMinimal__btn is-active" type="button"><span>À ce jour</span></button>
+                        <button class="c-infoMinimal__btn" type="button"> <span>Prévision fin 2022</span></button>
+                      </div>
+                      <button class="c-infoMinimal__btn is-active" type="button"><span>kWh</span></button>
+                      <button class="c-infoMinimal__btn" type="button"> <span>m<sup>3</sup></span></button>
+                      <button class="c-infoMinimal__btn" type="button"> <span>euros</span></button>
+                    </div>
+                    <div class="c-infoMinimal__main">
+                      <div class="c-infoMinimal__mainStat">
+                        <div class="c-infoMinimal__stat">
+                          <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number"> <span>+ 6<small>%</small></span></span><span class="c-infoMinimal__desc">par rapport à 2021 (19 867 kWh)</span>
+                          </div>
+                        </div>
+                        <div class="c-infoMinimal__stat">
+                          <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number"> <span>+ 6<small>%</small></span></span><span class="c-infoMinimal__desc">par rapport à 2021 (19 867 kWh)</span></div>
+                        </div>
+                      </div>
+                      <div class="c-infoMinimal__allConso">
+                        <div class="c-infoMinimal__allConsoDesc">
+                          <p> Sur cette tendance, nous estimons que vous consommerez</p><span class="u-textBold">+6% par rapport à 2021</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__pushGazPar">
+                    <div class="c-infoinfoMinimal__btnTabletteGazPar">
+                      <p class="c-infoMinimal__pushGazParPara">Envie de suivre le cumul de votre consommation au jour le jour ?</p>
+                      <p>Votre compteur gazpar vous permet de le faire <b> gratuitement et simplement.</b></p>
+                    </div>
+                    <!-- .c-btnWrapper-->
+                    <div class="c-btnWrapper c-infoMinimal__pushGazParBtn">
+                      <button class="c-baseBtn u-theme-bg u-theme-bg-hover" type="button"><span class="c-baseBtn__content">J'active</span>
+                      </button>
+                    </div>
+                    <!-- end .c-btnWrapper-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;3&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="3" data-e-toggle-target="3"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h1 class="u-heading-1 u-textUppercase u-margin-v-50">client résilier</h1>
+            <div data-demo-html="4">
+              <!--.c-infoMinimal-->
+              <div class="c-infoMinimal">
+                <div class="c-infoMinimal__bg">
+                  <div class="c-infoMinimal__headTitle">
+                    <h2 class="c-infoMinimal__title"> <span>Je consulte le cumul de ma consommation</span><span class="c-infoMinimal__icon icon icon-question-circleDS" data-e-modal-open="infoMinimal" type="button"></span></h2><span class="c-infoMinimal__soustitre">Dernière mise à jour : 30 février 2022</span>
+                    <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;infoMinimal&quot;}">
+                      <div class="c-modal__overlay">
+                        <div class="c-modal__content" data-e-modal-content="data-e-modal-content">
+                          <button class="c-modalCloseButton" type="button" data-e-modal-close="data-e-modal-close"><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                          <div class="c-modal__main">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__head">
+                    <div class="c-infoMinimal__headInfoMenu">
+                      <button class="c-infoMinimal__btn is-active" type="button"><span>À ce jour</span></button>
+                      <button class="is-disabled c-infoMinimal__btn" type="button" aria-disabled="true"><span>Prévision fin 2022</span></button>
+                    </div>
+                    <button class="c-infoMinimal__btn is-active" type="button"><span>kWh</span></button>
+                    <button class="c-infoMinimal__btn" type="button"> <span>m<sup>3</sup></span></button>
+                    <button class="c-infoMinimal__btn" type="button"> <span>euros</span></button>
+                  </div>
+                  <div class="c-infoMinimal__main">
+                    <div class="c-infoMinimal__mainStat">
+                      <div class="c-infoMinimal__stat">
+                        <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number"> <span>15 500</span><span class="c-infoMinimal__numberKwh">kWh</span></span><span class="c-infoMinimal__desc">depuis le début de l’année 2021</span>
+                        </div>
+                      </div>
+                      <div class="c-infoMinimal__stat">
+                        <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number"> <span>185</span><span class="c-infoMinimal__numberKwh">kWh</span></span><span class="c-infoMinimal__desc">depuis le début de mois</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__allConso">
+                    <div class="c-infoMinimal__allConsoDesc"><span>Prochaine télérelève : <b> 2 février 2020 </b></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;4&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="4" data-e-toggle-target="4"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h1 class="u-heading-1 u-textUppercase u-margin-v-50">avec pourcentage</h1>
+            <div data-demo-html="5">
+              <!--.c-infoMinimal-->
+              <div class="c-infoMinimal">
+                <div class="c-infoMinimal__bg">
+                  <div class="c-infoMinimal__headTitle">
+                    <h2 class="c-infoMinimal__title"> <span>Je consulte le cumul de ma consommation</span><span class="c-infoMinimal__icon icon icon-question-circleDS" data-e-modal-open="infoMinimal" type="button"></span></h2><span class="c-infoMinimal__soustitre">Dernière mise à jour : 30 février 2022</span>
+                    <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;infoMinimal&quot;}">
+                      <div class="c-modal__overlay">
+                        <div class="c-modal__content" data-e-modal-content="data-e-modal-content">
+                          <button class="c-modalCloseButton" type="button" data-e-modal-close="data-e-modal-close"><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                          <div class="c-modal__main">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__head">
+                    <div class="c-infoMinimal__headInfoMenu">
+                      <button class="c-infoMinimal__btn is-active" type="button"><span>À ce jour</span></button>
+                      <button class="c-infoMinimal__btn" type="button" aria-disabled="true"><span>Prévision fin 2022</span></button>
+                    </div>
+                    <button class="c-infoMinimal__btn is-active" type="button"><span>kWh</span></button>
+                    <button class="c-infoMinimal__btn" type="button"> <span>m<sup>3</sup></span></button>
+                    <button class="c-infoMinimal__btn" type="button"> <span>euros</span></button>
+                  </div>
+                  <div class="c-infoMinimal__main">
+                    <div class="c-infoMinimal__mainStat">
+                      <div class="c-infoMinimal__stat">
+                        <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number"> <span>15 500</span><span class="c-infoMinimal__numberKwh">kWh</span></span><span class="c-infoMinimal__desc">depuis le début de l’année 2021</span>
+                        </div>
+                      </div>
+                      <div class="c-infoMinimal__stat">
+                        <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number"> <span>+ 6<small>%</small></span></span><span class="c-infoMinimal__desc">par rapport à 2021 (19 867 kWh)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__allConso">
+                    <div class="c-infoMinimal__allConsoDesc">
+                      <p> Sur cette tendance, nous estimons que vous consommerez</p><span class="u-textBold">+6% par rapport à 2021</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;5&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="5" data-e-toggle-target="5"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="6">
+              <!--.c-infoMinimal-->
+              <div class="c-infoMinimal c-infoMinimal--gazPar">
+                <div class="c-infoMinimal__bg">
+                  <div class="c-infoMinimal__mainGazPar c-infoMinimal__mainGazParbkg">
+                    <div class="c-infoMinimal__headTitle">
+                      <h2 class="c-infoMinimal__title"> <span>Je consulte le cumul de ma consommation </span><span class="c-infoMinimal__icon icon icon-question-circleDS" data-e-modal-open="infoMinimal" type="button"></span>
+                        <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;infoMinimal&quot;}">
+                          <div class="c-modal__overlay">
+                            <div class="c-modal__content" data-e-modal-content="data-e-modal-content">
+                              <button class="c-modalCloseButton" type="button" data-e-modal-close="data-e-modal-close"><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                              <div class="c-modal__main">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </h2>
+                    </div>
+                    <div class="c-infoMinimal__head">
+                      <div class="c-infoMinimal__headInfoMenu">
+                        <button class="c-infoMinimal__btn is-active" type="button"><span>À ce jour</span></button>
+                        <button class="c-infoMinimal__btn" type="button"> <span>Prévision fin 2022</span></button>
+                      </div>
+                      <button class="c-infoMinimal__btn is-active" type="button"><span>kWh</span></button>
+                      <button class="c-infoMinimal__btn" type="button"> <span>m<sup>3</sup></span></button>
+                      <button class="c-infoMinimal__btn" type="button"> <span>euros</span></button>
+                    </div>
+                    <div class="c-infoMinimal__main">
+                      <div class="c-infoMinimal__mainStat">
+                        <div class="c-infoMinimal__stat">
+                          <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number"> <span>+ 6<small>%</small></span></span><span class="c-infoMinimal__desc">par rapport à 2021 (19 867 kWh)</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="c-infoMinimal__allConso">
+                        <div class="c-infoMinimal__allConsoDesc">
+                          <p> Sur cette tendance, nous estimons que vous consommerez</p><span class="u-textBold">+6% par rapport à 2021</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__pushGazPar">
+                    <p class="c-infoMinimal__pushGazParPara">Envie de suivre le cumul de votre consommation au jour le jour ?</p>
+                    <p>Votre compteur gazpar vous permet de le faire <b> gratuitement et simplement.</b></p>
+                    <!-- .c-btnWrapper-->
+                    <div class="c-btnWrapper c-infoMinimal__pushGazParBtn">
+                      <button class="c-baseBtn u-theme-bg u-theme-bg-hover" type="button"><span class="c-baseBtn__content">J'active</span>
+                      </button>
+                    </div>
+                    <!-- end .c-btnWrapper-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;6&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="6" data-e-toggle-target="6"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h1 class="u-heading-1 u-textUppercase u-margin-v-50">cas spécifique début d'année</h1>
+            <div data-demo-html="7">
+              <!--.c-infoMinimal-->
+              <div class="c-infoMinimal">
+                <div class="c-infoMinimal__bg">
+                  <div class="c-infoMinimal__headTitle">
+                    <h2 class="c-infoMinimal__title"> <span>Je consulte le cumul de ma consommation</span><span class="c-infoMinimal__icon icon icon-question-circleDS" data-e-modal-open="infoMinimal" type="button"></span></h2><span class="c-infoMinimal__soustitre">Dernière mise à jour : 30 février 2022</span>
+                    <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;infoMinimal&quot;}">
+                      <div class="c-modal__overlay">
+                        <div class="c-modal__content" data-e-modal-content="data-e-modal-content">
+                          <button class="c-modalCloseButton" type="button" data-e-modal-close="data-e-modal-close"><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                          <div class="c-modal__main">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__head">
+                    <div class="c-infoMinimal__headInfoMenu">
+                      <button class="c-infoMinimal__btn is-active" type="button"><span>À ce jour</span></button>
+                      <button class="c-infoMinimal__btn" type="button" aria-disabled="true"><span>Prévision fin 2022</span></button>
+                    </div>
+                    <button class="c-infoMinimal__btn is-active" type="button"><span>kWh</span></button>
+                    <button class="c-infoMinimal__btn" type="button"> <span>m<sup>3</sup></span></button>
+                    <button class="c-infoMinimal__btn" type="button"> <span>euros</span></button>
+                  </div>
+                  <div class="c-infoMinimal__main">
+                    <div class="c-infoMinimal__mainStat">
+                      <p class="c-infoMinimal__firstYear">Vos données de consommation seront disponibles prochainement.</p>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__allConso">
+                    <div class="c-infoMinimal__allConsoDesc"><span>Prochaine télérelève : <b> 2 février 2020 </b></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;7&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="7" data-e-toggle-target="7"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="8">
+              <!--.c-infoMinimal-->
+              <div class="c-infoMinimal c-infoMinimal--gazPar">
+                <div class="c-infoMinimal__bg">
+                  <div class="c-infoMinimal__mainGazPar">
+                    <div class="c-infoMinimal__headTitle">
+                      <h2 class="c-infoMinimal__title"> <span>Je consulte le cumul de ma consommation </span><span class="c-infoMinimal__icon icon icon-question-circleDS" data-e-modal-open="infoMinimal" type="button"></span>
+                        <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;infoMinimal&quot;}">
+                          <div class="c-modal__overlay">
+                            <div class="c-modal__content" data-e-modal-content="data-e-modal-content">
+                              <button class="c-modalCloseButton" type="button" data-e-modal-close="data-e-modal-close"><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                              <div class="c-modal__main">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </h2>
+                    </div>
+                    <div class="c-infoMinimal__head">
+                      <div class="c-infoMinimal__headInfoMenu">
+                        <button class="c-infoMinimal__btn is-active" type="button"><span>À ce jour</span></button>
+                        <button class="c-infoMinimal__btn" type="button"> <span>Prévision fin 2022</span></button>
+                      </div>
+                      <button class="c-infoMinimal__btn is-active" type="button"><span>kWh</span></button>
+                      <button class="c-infoMinimal__btn" type="button"> <span>m<sup>3</sup></span></button>
+                      <button class="c-infoMinimal__btn" type="button"> <span>euros</span></button>
+                    </div>
+                    <div class="c-infoMinimal__main">
+                      <div class="c-infoMinimal__mainStat">
+                        <div class="c-infoMinimal__statFirstYear">
+                          <p class="c-infoMinimal__firstYear--info u-margin-b-20">Il est encore trop tôt pour obtenir votre estimation.</p>
+                          <p class="c-infoMinimal__firstYear">Actuellement votre relevé est mensuel.</p><a class="c-infoMinimal__firstYearLink" href="" alt="">J’active mon relevé journalier</a>
+                        </div>
+                      </div>
+                      <div class="c-infoMinimal__allConso">
+                        <div class="c-infoMinimal__allConsoDesc"><span>Prochaine télérelève : <b> 2 février 2020 </b></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__pushGazPar">
+                    <p class="c-infoMinimal__pushGazParPara">Envie de suivre le cumul de votre consommation au jour le jour ?</p>
+                    <p>Votre compteur gazpar vous permet de le faire <b> gratuitement et simplement.</b></p>
+                    <!-- .c-btnWrapper-->
+                    <div class="c-btnWrapper c-infoMinimal__pushGazParBtn">
+                      <button class="c-baseBtn u-theme-bg u-theme-bg-hover" type="button"><span class="c-baseBtn__content">J'active</span>
+                      </button>
+                    </div>
+                    <!-- end .c-btnWrapper-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;8&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="8" data-e-toggle-target="8"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h1 class="u-heading-1 u-textUppercase u-margin-v-50">les cas d'erreur</h1>
+            <div data-demo-html="9">
+              <!--.c-infoMinimal-->
+              <div class="c-infoMinimal c-infoMinimal--erreur">
+                <div class="c-infoMinimal__bg">
+                  <div class="c-infoMinimal__headTitle">
+                    <h2 class="c-infoMinimal__title"> <span>Je consulte le cumul de ma consommation</span><span class="c-infoMinimal__icon icon icon-question-circleDS" data-e-modal-open="infoMinimal" type="button"></span></h2>
+                    <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;infoMinimal&quot;}">
+                      <div class="c-modal__overlay">
+                        <div class="c-modal__content" data-e-modal-content="data-e-modal-content">
+                          <button class="c-modalCloseButton" type="button" data-e-modal-close="data-e-modal-close"><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                          <div class="c-modal__main">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__head">
+                    <div class="c-infoMinimal__headInfoMenu">
+                      <button class="c-infoMinimal__btn is-active" type="button"><span>À ce jour</span></button>
+                      <button class="c-infoMinimal__btn" type="button" aria-disabled="true"><span>Prévision fin 2022</span></button>
+                    </div>
+                    <button class="c-infoMinimal__btn is-active" type="button"><span>kWh</span></button>
+                    <button class="c-infoMinimal__btn" type="button"> <span>m<sup>3</sup></span></button>
+                    <button class="c-infoMinimal__btn" type="button"> <span>euros</span></button>
+                  </div>
+                  <div class="c-infoMinimal__main">
+                    <div class="c-infoMinimal__mainStat">
+                      <div class="c-infoMinimal__stat">
+                        <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number">- kWh</span>
+                        </div>
+                      </div>
+                      <div class="c-infoMinimal__stat">
+                        <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number">- kWh</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__allConso">
+                    <div class="c-infoMinimal__allConsoDesc">
+                      <!--.icon.icon-error-cercle-modal--><span>Vos données sont actuellement indisponibles</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;9&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="9" data-e-toggle-target="9"><code class="html"></code></pre>
+              </div>
+            </div>
+            <div data-demo-html="10">
+              <!--.c-infoMinimal-->
+              <div class="c-infoMinimal c-infoMinimal--gazPar c-infoMinimal--erreur">
+                <div class="c-infoMinimal__bg">
+                  <div class="c-infoMinimal__mainGazPar">
+                    <div class="c-infoMinimal__headTitle">
+                      <h2 class="c-infoMinimal__title"> <span>Je consulte le cumul de ma consommation </span><span class="c-infoMinimal__icon icon icon-question-circleDS" data-e-modal-open="infoMinimal" type="button"></span>
+                        <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;infoMinimal&quot;}">
+                          <div class="c-modal__overlay">
+                            <div class="c-modal__content" data-e-modal-content="data-e-modal-content">
+                              <button class="c-modalCloseButton" type="button" data-e-modal-close="data-e-modal-close"><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                              <div class="c-modal__main">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </h2>
+                    </div>
+                    <div class="c-infoMinimal__head">
+                      <div class="c-infoMinimal__headInfoMenu">
+                        <button class="c-infoMinimal__btn is-active" type="button"><span>À ce jour</span></button>
+                        <button class="c-infoMinimal__btn" type="button"> <span>Prévision fin 2022</span></button>
+                      </div>
+                      <button class="c-infoMinimal__btn is-active" type="button"><span>kWh</span></button>
+                      <button class="c-infoMinimal__btn" type="button"> <span>m<sup>3</sup></span></button>
+                      <button class="c-infoMinimal__btn" type="button"> <span>euros</span></button>
+                    </div>
+                    <div class="c-infoMinimal__main">
+                      <div class="c-infoMinimal__mainStat">
+                        <div class="c-infoMinimal__stat">
+                          <div class="c-infoMinimal__statContent"><span class="c-infoMinimal__number">- kWh</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="c-infoMinimal__allConso">
+                        <div class="c-infoMinimal__allConsoDesc">
+                          <!--.icon.icon-error-cercle-modal--><span>Vos données sont actuellement indisponibles</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-infoMinimal__pushGazPar">
+                    <p class="c-infoMinimal__pushGazParPara">Envie de suivre le cumul de votre consommation au jour le jour ?</p>
+                    <p>Votre compteur gazpar vous permet de le faire <b> gratuitement et simplement.</b></p>
+                    <!-- .c-btnWrapper-->
+                    <div class="c-btnWrapper c-infoMinimal__pushGazParBtn">
+                      <button class="c-baseBtn u-theme-bg u-theme-bg-hover is-disabled" type="button" disabled="disabled"><span class="c-baseBtn__content">J'active</span>
+                      </button>
+                    </div>
+                    <!-- end .c-btnWrapper-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;10&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="10" data-e-toggle-target="10"><code class="html"></code></pre>
+              </div>
+            </div>
+      </main>
+    </div>
+  </body>
+  <!-- COMMON-->
+  <script src="../js/bas/vendors.js"></script>
+  <script src="../js/bas/suiviconso.js"></script>
+</html>

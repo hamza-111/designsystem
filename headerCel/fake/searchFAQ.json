@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Comment régler sa facture ?",
+    "questionPath": "#question1"
+  }, {
+    "title": "Pourquoi je ne reçois plus de facture ?",
+    "questionPath": "#question2"
+  }, {
+    "title": "Quelle est la date de ma prochaine facture ?",
+    "questionPath": "#question3"
+  }, {
+    "title": "Comment régler sa facture ?",
+    "questionPath": "#question4"
+  }, {
+    "title": "Pourquoi je ne reçois plus de facture ?",
+    "questionPath": "#question5"
+  }, {
+    "title": "Quelle est la date de ma prochaine facture ?",
+    "questionPath": "#question6"
+  }
+]

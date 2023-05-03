@@ -1,0 +1,447 @@
+
+<!-- TODO : rendre variable générique a plus de 2 couleurs-->
+<!--to common--><!DOCTYPE html><!--[if IE 8]><html data-debug lang="fr" class="oldie ie8 no-js"><![endif]-->
+<!--[if IE 9]><html data-debug lang="fr" class="oldie ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js" data-debug lang="fr"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Module Modal">
+    <link rel="canonical" href="http://google.com">
+    <!-- Open Graph-->
+    <meta property="og:url" content="http://google.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your website title">
+    <meta property="og:description" content="Your description">
+    <meta property="og:image" content="http://essayspeechwala.com/wp-content/uploads/2016/03/Lion.jpg">
+    <title>Modal</title>
+    <!-- COMMON-->
+    <link rel="stylesheet" href="../css/suiviconso.css">
+    <link rel="stylesheet" href="../css/allSuivieConso.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/css.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <link rel="stylesheet" href="../css/kit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <style>
+      [data-demo-display] {
+        display: none;
+        font-size: 1.3rem;
+      }
+      [data-demo-display][aria-hidden="false"] {
+        display: block;
+      }
+      .hljs { padding: 0; }
+      .desc code {
+        padding: 2px 5px;
+        background: grey;
+        border-radius: 5px;
+      }
+      
+    </style>
+    <script>
+      hljs.initHighlightingOnLoad();
+      function demoMode() {
+        var elements = document.querySelectorAll('[data-demo-html]');
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var html    = elements[i].innerHTML,
+              id      = elements[i].getAttribute('data-demo-html'),
+              display = document.querySelector('[data-demo-display="'+ id +'"] code');
+          display.innerText = html;
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function(event) {
+        demoMode();
+      });
+    </script>
+    <!-- Fav and touch icons-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon/apple-touch-icon-57x57.png">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <script src="../js/haut/modernizr-custom.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="../js/haut/init.js"></script>
+    <script>
+      E.bannerApp = {
+        iOS:     'app-id=1104269908',
+        Android: 'app-id=com.engie.particuliers'
+      }
+      
+      
+    </script>
+  </head>
+  <body class="u-theme-genBlue" data-e-no-scroll>
+    <div class="l-wrapper l-wrapper--siteFull" id="backToTop">
+      <main class="l-wrapper l-wrapper--mainFull u-bg-white l-wrapper--main l-wrapper--headerv3" id="siteContent" role="main" data-e-sticky-container-main>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant modal</h2>
+            <div data-demo-html="1">
+              <button type="button" data-e-modal-open="modal2">Ouvrir la modale</button>
+                      <div class="c-modal u-hide" data-e-modal="{
+      &quot;target&quot;: &quot;modal2&quot;
+    }">
+                        <div class="c-modal__overlay">
+                          <div class="c-modal__content" data-e-modal-content>
+                            <button class="c-modalCloseButton" type="button" data-e-modal-close><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                            <div class="c-modal__main">
+                              <p class="u-padding-a-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque eligendi, sapiente dicta eveniet voluptatibus, saepe distinctio ducimus ipsam qui, aspernatur debitis beatae. Nisi distinctio doloribus rerum error, optio totam voluptate.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>- La modale s'ouvre à travers une injection de classe <code>is-active</code> sur le composant <code>c-modal</code><br>- La modale se ferme en cliquant sur le bouton de fermeture<code>c-modalCloseButton</code> , en cliquant en dehors du contenu de la modale <code>c-modal__content</code> ou bien en appuyant sur la touche Echap<br>- Le bouton d'ouverture de la modale cible la modale à ouvrir à l'aide d'un attribut <code>data-e-target</code> qui cible l'id de la modale</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;1&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="1" data-e-toggle-target="1"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant modal Large 800px de large</h2>
+            <div data-demo-html="2">
+              <button class="openUp" type="button" data-e-modal-open="modal-large">Ouvrir la modale</button>
+                      <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;modal-large&quot;}">
+                        <div class="c-modal__overlay">
+                          <div class="c-modal__content c-modal__content--large" data-e-modal-content>
+                            <button class="c-modalCloseButton" type="button" data-e-modal-close><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                            <div class="c-modal__main">
+                              <p class="u-padding-a-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque eligendi, sapiente dicta eveniet voluptatibus, saepe distinctio ducimus ipsam qui, aspernatur debitis beatae. Nisi distinctio doloribus rerum error, optio totam voluptate.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Ajouter la classe <code>c-modal--large</code> à l'élément <code>c-modal</code></p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;2&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="2" data-e-toggle-target="2"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant modal Small 500px de large</h2>
+            <div data-demo-html="3">
+              <button class="openUp" type="button" data-e-modal-open="modal-large">Ouvrir la modale</button>
+                      <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;modal-large&quot;}">
+                        <div class="c-modal__overlay">
+                          <div class="c-modal__content c-modal__content--small" data-e-modal-content>
+                            <button class="c-modalCloseButton" type="button" data-e-modal-close><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                            <div class="c-modal__main">
+                              <p class="u-padding-a-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque eligendi, sapiente dicta eveniet voluptatibus, saepe distinctio ducimus ipsam qui, aspernatur debitis beatae. Nisi distinctio doloribus rerum error, optio totam voluptate.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Ajouter la classe <code>c-modal--small</code> à l'élément <code>c-modal</code></p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;3&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="3" data-e-toggle-target="3"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant modal test</h2>
+            <div data-demo-html="4">
+              <button class="openUp" type="button" data-e-modal-open="modal1">Ouvrir la modale</button>
+              <button class="openUp" type="button" data-e-modal-open="modal1">Ouvrir la même modale</button>
+                      <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;modal1&quot;}">
+                        <div class="c-modal__overlay">
+                          <div class="c-modal__content" data-e-modal-content>
+                            <button class="c-modalCloseButton" type="button" data-e-modal-close><span class="c-modalCloseButton__picto icon icon-close"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                            <div class="c-modal__main">
+                              <div class="u-padding-a-20">
+                                <p>test</p><a href="#">lien 1</a><a href="#">lien 2</a><a href="#">lien 3</a><a href="#">lien 4</a><a href="#">lien 5</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>Deux boutons qui ouvrent la même modale</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;4&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="4" data-e-toggle-target="4"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant modal autoStart</h2>
+            <div data-demo-html="5">
+                      <div class="c-modal u-hide" data-e-modal="{
+      &quot;autoStart&quot;: &quot;3&quot;
+    }">
+                        <div class="c-modal__overlay">
+                          <div class="c-modal__content c-modal--genBlue" data-e-modal-content>
+                            <div class="c-modal__iconTheme--genBlue"><span class="c-modal__icon icon icon-questions"></span></div>
+                            <div class="c-modal__main">
+                              <div class="u-padding-a-20">
+                                <p>Modal autoStart au bout de 3 seconde, par defaut l'autoStartse lance directement</p>
+                                <button data-e-switch-toggle="tata" type="button">Switch Toggle</button>
+                                <section data-e-switch-toggle-name="tata">
+                                  <p>BLOC1</p>
+                                </section>
+                                <section data-e-switch-toggle-name="tata" hidden>
+                                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae laboriosam vero beatae vel numquam, aliquid velit expedita quo, ut impedit suscipit eum ipsum dolorum unde consequatur vitae debitis sint deserunt.</p>
+                                  <button type="button" data-e-modal-close>close</button>
+                                </section>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>- modal autoStart, mettre une valeur en seconde dans <code>autoStart</code>' </p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;5&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="5" data-e-toggle-target="5"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">Composant modal loginPage</h2>
+        <button class="openUp" type="button" data-e-modal-open="modal-welcome">Ouvrir la modale loginPage</button>
+            <div data-demo-html="6">
+                      <div class="c-modal u-hide" data-e-modal="{&quot;target&quot;: &quot;modal-welcome&quot;, &quot;autoStart&quot;: 1, &quot;overlayClose&quot;: false }">
+                        <div class="c-modal__overlay">
+                          <div class="c-modal__content c-modal__content--large" data-e-modal-content>
+                            <div class="c-modal__main">
+                                      <div class="c-column c-column--33-66">
+                                        <div class="c-column__col c-column__col--45 u-hideSmall">
+                                          <p class="u-textCenter"><img src="../images/contrib/00-popin-redirection.gif" alt=""></p>
+                                        </div>
+                                        <div class="c-column__col c-column__col--55">
+                                          <div class="c-wysiwyg"><img class="c-modal__logoGaz u-hideMediumUp" src="../images/logo_tarif_reglemente.svg" alt="logo">
+                                            <h3>Vous avez été redirigé<br>sur le site Gaz Tarif Réglementé.</h3>
+                                            <p>Depuis janvier 2018, les bénéficiaires du gaz naturel au tarif réglementé d’Engie bénéficient désormais d’un site internet dédié avec leur Espace Client : <a href="#">gaz-tarif-reglemente.fr</a></p>
+                                            <p>Pour accéder à vos factures et votre contrat, il est nécessaire de saisir une nouvelle fois vos identifiants. Gagnez du temps lors de votre prochaine connexion en enregistrant le site à vos favoris</p>
+                                            <p><strong> Vos identifiants de connexion restent identiques.</strong></p>
+                                            <p class="u-textCenter"><a class="u-link u-link--arrow u-link--fullLarge" href="#" data-e-modal-close>Je me connecte à mon nouvel espace client</a></p>
+                                            <p><i>Astuce&nbsp;: Ajoutez cette page à vos favoris afin de faciliter vos connexions ultérieures.</i></p>
+                                          </div>
+                                        </div>
+                                      </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>- modal LoginPage' </p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;6&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="6" data-e-toggle-target="6"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">modal cobrowsing OK</h2>
+        <button type="button" data-e-modal-open="modalOK">Ouvrir la modale cobrowsing OK</button>
+            <div data-demo-html="7">
+                      <div class="c-modal u-hide" data-e-modal="{
+      &quot;target&quot;: &quot;modalOK&quot;
+    }">
+                        <div class="c-modal__overlay">
+                          <div class="c-modal__content c-modal--green c-modal--theme" data-e-modal-content>
+                            <div class="c-modal__iconTheme--green"><span class="c-modal__icon icon icon-correct-cercle"></span></div>
+                            <div class="c-modal__main">
+                              <div class="u-padding-a-20">
+                                <h2 class="u-heading-2 u-textCenter">Le service est désormais disponible</h2>
+                                <p class="u-textCenter u-margin-t-15">Cliquez sur le bouton ci-dessous pour continuer la procédure.</p>
+                                <!-- .c-btnWrapper-->
+                                <div class="c-btnWrapper u-theme-genBlue u-margin-t-40 u-margin-sm-t-40"><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#"><span class="c-baseBtn__content">Continuer</span></a>
+                                </div>
+                                <!-- end .c-btnWrapper-->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>- modal cobrowsing KO' </p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;7&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="7" data-e-toggle-target="7"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">modal cobrowsing OK</h2>
+        <button type="button" data-e-modal-open="modalKO">Ouvrir la modale cobrowsing KO</button>
+            <div data-demo-html="8">
+                      <div class="c-modal u-hide" data-e-modal="{
+      &quot;target&quot;: &quot;modalKO&quot;
+    }">
+                        <div class="c-modal__overlay">
+                          <div class="c-modal__content c-modal--coral c-modal--theme" data-e-modal-content>
+                            <div class="c-modal__iconTheme--coral"><span class="c-modal__icon icon icon-error-cercle-modal"></span></div>
+                            <div class="c-modal__main">
+                              <div class="u-padding-a-20">
+                                <h2 class="u-heading-2 u-textCenter">Une erreur est survenue</h2>
+                                <p class="u-textCenter u-margin-t-15">Désolé, nous avons rencontré un problème… <br> Veuillez recharger la page pour recommencer l’opération.</p>
+                                <!-- .c-btnWrapper-->
+                                <div class="c-btnWrapper u-theme-genBlue u-margin-t-40 u-margin-sm-t-40"><a class="c-baseBtn c-baseBtn--empty" href="#" data-e-modal-close="data-e-modal-close"><span class="c-baseBtn__content">Fermer</span></a><a class="c-baseBtn u-theme-bg u-theme-bg-hover" href="#"><span class="c-baseBtn__content">Recharger la page</span></a>
+                                </div>
+                                <!-- end .c-btnWrapper-->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>- modal cobrowsing KO' </p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;8&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="8" data-e-toggle-target="8"><code class="html"></code></pre>
+              </div>
+            </div>
+        <h2 style="font-size:2rem;font-weight:bold;margin:10px 0 20px;">exemple modal avec croix de fermiture large</h2>
+            <div data-demo-html="9">
+              <button type="button" data-e-modal-open="modalBigClose">Ouvrir la modale</button>
+                      <div class="c-modal u-hide" data-e-modal="{
+      &quot;target&quot;: &quot;modalBigClose&quot;
+    }">
+                        <div class="c-modal__overlay">
+                          <div class="c-modal__content" data-e-modal-content>
+                            <button class="c-modalCloseButton c-modalCloseButton--lg" type="button" data-e-modal-close><span class="c-modalCloseButton__picto icon icon-closeModal"></span><span class="c-modalCloseButton__text">Fermer</span></button>
+                            <div class="c-modal__main">
+                              <p class="u-padding-a-40">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque eligendi, sapiente dicta eveniet voluptatibus, saepe distinctio ducimus ipsam qui, aspernatur debitis beatae. Nisi distinctio doloribus rerum error, optio totam voluptate.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="u-padding-t-20 u-padding-b-20 u-margin-t-20 u-margin-b-40 u-bg-black">
+              <div class="desc u-padding-b-20 u-padding-h-20 u-color-white">
+                <p><strong>Description : </strong></p>
+                <p>-pour afficher la grande croix faut ajouter <code>c-modalCloseButton--lg</code> dans la meme niveau que ce classe <code>c-modalCloseButton</code> ou bien copier directement le HTML</p>
+              </div>
+                  <div class="u-padding-t-20 u-margin-b-20 k-composantPage__caseDesc">
+                    <div class="u-heading-3"></div>
+                    <div class="u-margin-t-20 k-composantPage__caseDescContent">
+                    </div>
+                  </div>
+              <div class="c-btnWrapper u-theme-indigo c-btnWrapper--fullOnMobile u-theme-genBlue">
+                <button class="k-composantPage__caseHtmlButton c-baseBtn u-theme-bg u-theme-bg-hover" data-e-toggle="{&quot;target&quot;: &quot;9&quot;, &quot;btnActiveClass&quot;: &quot;is-close&quot;,&quot;contentOpenedClass&quot;: &quot;is-opened&quot;}" type="button">voir HTML</button>
+              </div>
+              <div class="k-composantPage__caseHtml">
+                <pre data-demo-display="9" data-e-toggle-target="9"><code class="html"></code></pre>
+              </div>
+            </div>
+      </main>
+    </div>
+  </body>
+  <!-- COMMON-->
+  <script src="../js/bas/vendors.js"></script>
+  <script src="../js/bas/suiviconso.js"></script>
+</html>
