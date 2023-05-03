@@ -14,14 +14,6 @@
 
 - Installer [Node 8.x](https://nodejs.org/dist/latest-v8.x/) et [Yarn](https://yarnpkg.com/latest.msi)
 
-- Paramétrer le proxy pour NPM
-    ```
-    > npm config set strict-ssl false
-    > npm config set registry "https://registry.npmjs.org/"
-    > npm config set proxy http://proxygin.melinda.local:8080
-    > npm config set https-proxy http://proxygin.melinda.local:8080
-    ```
-
 - Installer gulp globalement
     ```
     > yarn global add gulp gulp-cli
