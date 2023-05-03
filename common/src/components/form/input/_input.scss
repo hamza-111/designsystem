@@ -1,0 +1,10 @@
+.c-input {
+  border: 1px solid $grey-medium;
+  width: 100%;
+  padding: 10px;
+  color: $black;
+
+  &.is-error {
+    border-color: $error-color;
+  }
+}

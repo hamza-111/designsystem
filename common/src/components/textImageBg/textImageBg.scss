@@ -1,0 +1,35 @@
+.c-textImageBg{
+    width: 100%;
+    height: 315px;
+    padding: 20px;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    color: $black;
+    display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.c-textImageBg__para{
+    width: 40%;
+}
+
+.c-textImageBg__para h2{
+    width: 100%;
+}
+
+@include media("<=small") {
+
+    .c-textImageBg__para{
+        width: 80%;
+    }
+
+    .c-textImageBg{
+        height: 215px;
+    }
+
+}

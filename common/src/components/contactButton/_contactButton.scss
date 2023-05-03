@@ -1,0 +1,77 @@
+.c-contactButton {
+  margin-bottom: 15px;
+
+  .c-linkLongArrow {
+    height: auto;
+  }
+}
+
+.c-contactButton__button {
+  @extend %reset-style-button;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 6px 15px;
+  position: relative;
+  color: $white;
+  text-decoration: none;
+  text-align: left;
+  font-size: 1.5rem;
+  transition: background-color 0.2s ease-in-out;
+
+  &.is-active {
+    display: none;
+  }
+}
+
+.c-contactButton__content {
+  display: table;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.c-contactButton__label,
+.c-contactButton__picto {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+}
+
+.c-contactButton__label {
+  width: 100%;
+  padding-right: 5px;
+}
+
+.c-contactButton__picto {
+  min-width: 30px;
+  font-size: 1.5em;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.c-contactButton__paragraph {
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+.c-contactButton__hiddenTarget {
+  .c-contactButton__button {
+    color: $black;
+    line-height: 43px;
+    padding: 0;
+    font-weight: $font-bold;
+  }
+}
+
+
+@include media(">=small") {
+  .c-contactButton__hiddenTarget {
+    display: none;
+
+    &.is-opened {
+      display: block;
+    }
+  }
+}

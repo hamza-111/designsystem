@@ -1,0 +1,27 @@
+.c-somsGreyBlock {
+  padding: 15px;
+
+  .c-pictoBlock {
+    margin-bottom: 15px;
+  }
+}
+
+
+@include media("<small") {
+  .c-somsGreyBlock {
+    padding: 15px;
+  }
+}
+
+
+@include media(">=small") {
+  .c-somsGreyBlock {
+    padding: 15px 30px;
+
+    .c-pictoBlock {
+      .icon {
+        font-size: 3rem;
+      }
+    }
+  }
+}

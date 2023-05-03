@@ -1,0 +1,34 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../../../common/src/components/img/img
+include ../../../common/src/components/timeLine/timeLine
+include ../../../common/src/components/separator/separator
+include ../../../common/src/components/pictoBlock/pictoBlock
+include ../../../common/src/components/infoBlock/infoBlock
+//- include ../../../common/src/components/priceDetail/priceDetail
+include ../../../common/src/components/legalMention/legalMention
+include ../../../cel/src/components/blocInfoEC/blocInfoEC
+include ../../../cel/src/components/soms/soms
+
+//- Main variables
+block variables
+  - var title          = "SOMS"
+  - var page           = ""
+  - var bodyClass      = ""
+  - var description    = ""
+  - var noHeaderFooter = true
+  - var headerCel      = "full"
+  - var wrapperSite    = "l-wrapper--siteFull"
+  - var noBg           = true
+  - var footerLightFull = true
+
+//- Page content
+block content
+  .l-wrapper--large.u-margin-b-40
+    +blocInfoEC().u-color-white
+      | Demande(s) en cours
+
+    +soms

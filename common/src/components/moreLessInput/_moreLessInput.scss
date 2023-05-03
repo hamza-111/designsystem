@@ -1,0 +1,99 @@
+.c-moreLessInput {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+
+  .c-fieldInfo {
+    width: 100%;
+    text-align: center;
+    color: initial;
+
+    li {
+      margin-top: 20px;
+    }
+  }
+
+  &.is-error .c-fieldInfo {
+    color: $error-color;
+  }
+}
+
+.c-moreLessInput__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-bottom: 1px solid $grey;
+  width: 50px;
+}
+
+.c-moreLessInput__input,
+.c-moreLessInput__blockRight,
+.c-moreLessInput__sup {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.c-moreLessInput__input {
+  width: 30px;
+  padding: 0;
+  border: 0;
+  text-align: center;
+  text-align-last: center;
+  background-color: transparent;
+
+
+  @include hover-focus-active {
+    outline: 0;
+  }
+}
+.c-moreLessInput__sup {
+  position: absolute;
+  top: 1px;
+  right: -2px;
+  line-height: 1;
+  font-size: 2.2rem;
+}
+
+.c-moreLessInput__button {
+  @extend %reset-style-button;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid $grey;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: bold;
+  outline: 0;
+  color: $grey;
+
+  @include hover-focus-active {
+    color: $white;
+    border-color: $white;
+  }
+
+  &:disabled {
+    cursor: default;
+    color: $grey-medium2;
+    border-color: $grey-medium2;
+
+    @include hover-focus-active {
+      color: $grey-medium2 !important;
+      border-color: $grey-medium2 !important;
+      background-color: $white !important;
+    }
+  }
+}
+
+.c-moreLessInput--large {
+  .c-moreLessInput__wrapper {
+    width: 100px;
+  }
+
+  .c-moreLessInput__input {
+    width: 90px;
+  }
+}

@@ -1,0 +1,189 @@
+
+include ../wysiwyg/wysiwyg
+include ../formMat/formMat
+mixin bandeauCookies(data)
+  - data = data || {}
+  - spinner = data.spinner || false
+
+  .c-bandeauCookies
+    form
+      .c-bandeauCookies__wrap.c-bandeauCookies__wrap--1
+        img(src='../images/contrib/visuBandeauCookies.svg' alt="image Visuel").c-bandeauCookies__img.u-centerText
+        .c-bandeauCookies__text.u-margin-t-16
+          h2.c-bandeauCookies__title.u-typoSize-20.u-Weight-700.u-margin-b-24 Acceptation des cookies informatiques
+
+          p.u-typoSize-14.u-margin-b-16 En poursuivant votre navigation, vous acceptez nos cookies destinés à personnaliser votre expérience. <br> 
+            a(href="#") Voir la politique de cookies.
+            
+
+          p.u-typoSize-14 Vous pouvez gérer leurs actions dans la rubrique <br>
+            a(href="#") gérez vos cookies.
+      +btnWrapper.u-margin-t-24.u-margin-small-t-32.u-theme-genBlue.c-bandeauCookies__btn
+        +baseBtn({
+          text: 'je refuse',
+          secondary: true
+        })
+        +baseBtn({
+          text: "j'accepte"
+        })
+
+mixin bandeauCookies2(data)
+  - data = data || {}
+  - spinner = data.spinner || false
+
+
+  .c-bandeauCookies.c-bandeauCookies--2
+    form
+      .c-bandeauCookies__wrap
+        h2.c-bandeauCookies__title.u-typoSize-20.u-Weight-700.u-margin-b-16 Personnalisez votre expérience
+
+        .c-bandeauCookies__radio.u-margin-t-16
+          .c-bandeauCookies__radioBloc
+            h3.u-Weight-700.u-margin-b-16 Cookies de performance
+            p Il s’agît des cookies qui nous permettent de connaître l’utilisation et les performances du site afin d’en améliorer le fonctionnement.
+
+          +checkboxMat({
+            switchMode : true,
+            checked: true
+          })
+        
+        .c-bandeauCookies__radio.u-margin-t-16
+          .c-bandeauCookies__radioBloc
+            h3.u-Weight-700.u-margin-b-16 Cookies de personnalisation
+            p Il s’agît des cookies utilisés pour vous présenter des contenus, ou informations, adaptés à vos centres d’intérêt sur votre site lors de votre navigation.
+
+          +checkboxMat({switchMode : true})
+
+
+      +btnWrapper.u-margin-t-24.u-margin-small-t-32.u-theme-genBlue
+        +baseBtn({
+          text: "Enregistrer vos préférences",
+          button: true
+        })
+
+
+
+mixin bandeauCookies3(data)
+  - data = data || {}
+  - spinner = data.spinner || false
+
+
+  .c-bandeauCookies.c-bandeauCookies--3
+    form
+      .c-bandeauCookies__wrap.c-bandeauCookies__wrap--row
+        img(src='../images/contrib/visuBandeauCookies.svg' alt="image Visuel").c-bandeauCookies__img.u-centerText
+        .c-bandeauCookies__text.u-margin-t-16
+          h2.u-typoSize-20.u-Weight-700.u-margin-b-24 Vos préférences de cookies
+
+          .c-bandeauCookies__textToggle
+            p.u-typoSize-12 Afin d'améliorer votre expérience, nous utilisons des cookies pour vous permettre de profiter de toutes les fonctionnalités et vous fournir une connexion sûre. Ces données pourront aussi être utilisées à des fins statistiques pour améliorer nos services. En outre, certains cookies indispensables au bon fonctionnement du site et à votre navigation ne sont pas désactivables.
+
+          .c-bandeauCookies__textToggleBtn
+            a(href="#").u-hide Voir moins
+              span.icon.icon-chevron-bottom
+            a(href="#") Voir plus
+              span.icon.icon-chevron-top
+
+      +btnWrapper.u-margin-t-24.u-margin-small-t-32.u-theme-genBlue.c-bandeauCookies__btn
+        +baseBtn({
+          text: "tout refuser",
+          secondary: true
+        })
+        +baseBtn({
+          text: 'tout accepter'
+        })
+
+      .c-bandeauCookies__spacer
+
+      .c-bandeauCookies__wrap
+        p.u-typoSize-12 Vous pouvez sélectionner et enregistrer vos préférences d’utilisations des cookies de performances et de personnalisation ci-dessous :
+
+        .c-bandeauCookies__radio.u-margin-t-16
+          .c-bandeauCookies__radioBloc
+            h3.u-Weight-700.u-margin-b-16 Cookies de performance
+            p Il s’agît des cookies qui nous permettent de connaître l’utilisation et les performances du site afin d’en améliorer le fonctionnement.
+              
+
+          +checkboxMat({
+            switchMode : true,
+            checked: true
+            })
+        
+        .c-bandeauCookies__radio.u-margin-t-16
+          .c-bandeauCookies__radioBloc
+            h3.u-Weight-700.u-margin-b-16 Cookies de personnalisation
+            p Il s’agît des cookies utilisés pour vous présenter des contenus, ou informations, adaptés à vos centres d’intérêt sur votre site lors de votre navigation.
+
+          +checkboxMat({switchMode : true})
+
+
+      +btnWrapper.u-margin-t-24.u-margin-small-t-32.u-theme-genBlue
+        +baseBtn({
+          text: "Enregistrer vos préférences",
+          button: true,
+          secondary: true
+        })
+
+
+
+mixin bandeauCookies4(data)
+  - data = data || {}
+  - spinner = data.spinner || false
+
+
+  .c-bandeauCookies.c-bandeauCookies--3
+    form
+      .c-bandeauCookies__wrap.c-bandeauCookies__wrap--row
+        img(src='../images/contrib/visuBandeauCookies.svg' alt="image Visuel").c-bandeauCookies__img.u-centerText
+        .c-bandeauCookies__text.u-margin-t-16
+          h2.u-typoSize-20.u-Weight-700.u-margin-b-24 Vos préférences de cookies
+
+          .c-bandeauCookies__textToggle.is-active
+            p.u-typoSize-12 Afin d'améliorer votre expérience, nous utilisons des cookies pour vous permettre de profiter de toutes les fonctionnalités et vous fournir une connexion sûre. Ces données pourront aussi être utilisées à des fins statistiques pour améliorer nos services. En outre, certains cookies indispensables au bon fonctionnement du site et à votre navigation ne sont pas désactivables.
+
+          .c-bandeauCookies__textToggleBtn
+            a(href="#") Voir moins
+              span.icon.icon-chevron-bottom
+            a(href="#").u-hide Voir plus
+              span.icon.icon-chevron-top
+
+      +btnWrapper.u-margin-t-24.u-margin-small-t-32.u-theme-genBlue.c-bandeauCookies__btn
+        +baseBtn({
+          text: "tout refuser",
+          secondary: true
+        })
+        +baseBtn({
+          text: 'tout accepter'
+        })
+
+      .c-bandeauCookies__spacer
+
+      .c-bandeauCookies__wrap
+        p.u-typoSize-12 Vous pouvez sélectionner et enregistrer vos préférences d’utilisations des cookies de performances et de personnalisation ci-dessous :
+
+        .c-bandeauCookies__radio.u-margin-t-16
+          .c-bandeauCookies__radioBloc
+            h3.u-Weight-700.u-margin-b-16 Cookies de performance
+            p Il s’agît des cookies qui nous permettent de connaître l’utilisation et les performances du site afin d’en améliorer le fonctionnement.
+              
+
+          +checkboxMat({
+            switchMode : true,
+            checked: true
+            })
+        
+        .c-bandeauCookies__radio.u-margin-t-16
+          .c-bandeauCookies__radioBloc
+            h3.u-Weight-700.u-margin-b-16 Cookies de personnalisation
+            p Il s’agît des cookies utilisés pour vous présenter des contenus, ou informations, adaptés à vos centres d’intérêt sur votre site lors de votre navigation.
+
+          +checkboxMat({switchMode : true})
+
+
+      +btnWrapper.u-margin-t-24.u-margin-small-t-32.u-theme-genBlue
+        +baseBtn({
+          text: "Enregistrer vos préférences",
+          button: true,
+          secondary: true
+        })
+

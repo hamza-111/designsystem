@@ -1,0 +1,55 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../../../common/src/components/advantages/advantages
+include ../../../common/src/components/textImage/textImage
+include ../../../common/src/components/infoBlock/infoBlock
+include ../../../common/src/components/legalMention/legalMention
+include ../../../common/src/components/faq/pushFAQ/pushFAQ
+
+
+
+//- Main variables
+block variables
+  - var title          = "connect-issue 02"
+  - var page           = "app"
+  - var bodyClass      = ""
+  - var description    = ""
+  - var noHeaderFooter = true
+  - var headerCel      = 'title'
+  - var footerLight    = true
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+
+  +advantages()
+
+  +textImage({
+    title: "Lorem ipsum",
+    imgLarge: '../images/contrib/textImage.jpg'
+  })
+
+  +infoBlock
+
+  +legalMention({
+    settings: {
+      target: "legalMention"
+    }
+  })
+    p (1) Lorem ipsum dolor sit amet, <a href="#" class="u-link u-theme-color u-theme-color-hover">consectetur adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    p (2) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+  +pushFAQSection
+    +pushFAQ({
+      text: "Que faire en cas de problème d'eau, d'électricité et de gaz naturel à votre domicile ?"
+    })
+    +pushFAQ({
+      text: "Ce type de prestation n’est-il pas déjà prévu dans une assurance multirisque habitation ?"
+    })

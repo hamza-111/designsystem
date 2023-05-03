@@ -1,0 +1,25 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/formContact/formContact
+
+
+//- Main variables
+block variables
+  - var title         = "Formulaire de contact"
+  - var page          = "Formulaire de contact"
+  - var bodyClass     = ""
+  - var description   = "Formulaire de contact"
+
+//- JS only for that page
+block JS
+  script(src="https://www.google.com/recaptcha/api.js?onload=formContactRecatpchaCallback&render=explicit" async defer)
+
+
+//- Page content
+block content
+  +breadcrumb()
+
+  +formContact()

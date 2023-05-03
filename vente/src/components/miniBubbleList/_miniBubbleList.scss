@@ -1,0 +1,149 @@
+$bubble-size: 110px;
+$bubble-space: 12px;
+
+
+.c-miniBubbleList {
+  font-size: 0; // retirer espaces à cause de inline-block enfants
+  text-align: center;
+}
+
+.c-miniBubble {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1px $bubble-space/2;
+  width: $bubble-size;
+  font-size: 16px;
+  color: $black;
+}
+
+.c-miniBubble__input {
+  position: absolute;
+  float: left;
+  margin: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.c-miniBubble__label {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: $bubble-size;
+  height: $bubble-size;
+  border-radius: 50%;
+  cursor: pointer;
+  color: $genBlue;
+  text-align: center;
+  transition: all .2s ease-in-out;
+
+  // Effets au hover
+  .c-miniBubble__input + & {
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: $grey-light;
+      transform: scale(.9) translate(0%, 0%) translatez(-10px);
+      transform-origin: center center;
+      transition: all .2s ease-in-out;
+    }
+
+    @include hover-focus-active {
+      color: $white;
+
+      &:after {
+        background-color: $genBlue;
+        transform: scale(1) translate(0%, 0%) translatez(-10px);
+      }
+    }
+  }
+
+  // Effets au input checked et au focus :
+  .c-miniBubble__input:checked + &,
+  .c-miniBubble__input:focus + & {
+    cursor: default;
+    color: $white;
+    transform: translatez(10px);
+
+    &:after {
+      opacity: 1;
+      background-color: $genBlue;
+      transform: scale(1) translate(0%, 0%) translatez(-10px);
+    }
+  }
+}
+
+.c-miniBubble__icon,
+.c-miniBubble__text {
+  height: $bubble-size/2;
+  z-index: 1;
+  position: relative;
+}
+
+.c-miniBubble__icon.iconVente {
+  font-size: 46px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  line-height: 1.2;
+}
+
+.c-miniBubble__text {
+  padding: 0 15px 15px;
+  line-height: 1;
+  font-size: 1.4rem;
+}
+
+
+/* Desktop et tablette : layout dimensions : */
+@include media(">=small") {
+  $bubble-size: 132px;
+  $bubble-space: 14px;
+
+  .c-miniBubble {
+    margin: $bubble-space/2;
+  }
+
+  .c-miniBubble {
+    width: $bubble-size;
+  }
+
+  .c-miniBubble__info {
+    opacity: 0;
+    margin: 20px -40px 0;
+    font-size: 1.4rem;
+    transition: transform .4s ease-in-out,
+                opacity .4s ease-in-out;
+  }
+
+  .c-miniBubble__label {
+    width: $bubble-size;
+    height: $bubble-size;
+
+    &:before {
+      opacity: 0;
+      transition: opacity .4s ease-in-out;
+    }
+  }
+
+  .c-miniBubble__icon,
+  .c-miniBubble__text {
+    height: $bubble-size/2;
+  }
+
+  .c-miniBubble__icon.iconVente {
+    margin-bottom: 15px;
+    font-size: 60px;
+    line-height: inherit;
+  }
+
+  .c-miniBubble__text {
+    padding: 0 20px 20px;
+    font-size: 1.5rem;
+  }
+}

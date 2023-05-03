@@ -1,0 +1,127 @@
+//- WHEN it's a link => contactElement
+//- WHEN it's not a link, has a phone button => contactElement--noLink
+
+//- WHEN it's a link
+mixin contactElement(data)
+  - var data         = data || {}
+
+  - var link         = data.link || "#"
+  - var unavailable  = data.unavailable ? 'c-contactElement--unavailable' : false
+  - var iconClass    = data.iconClass || "contact-advice"
+
+  - var isSticky     = data.isSticky || false
+  - var targetSticky = data.targetSticky || "stickyContact"
+  - var opened       = data.opened || false
+  - var paramToggle  = false
+
+  if (isSticky)
+    - paramToggle = {}
+    - paramToggle.target = targetSticky
+    if (opened)
+      - paramToggle.opened = true
+    -paramToggle = JSON.stringify(paramToggle)
+
+  // .c-contactElement
+  if (!isSticky)
+    .c-contactElement(class=unavailable)
+      span.c-contactElement__picto.icon(class='icon-'+ iconClass)
+      .c-contactElement__content
+        block
+
+  else
+    .c-contactElement(class=unavailable)
+      .c-contactElement__content(data-e-toggle-target=targetSticky)
+        block
+
+    button.c-stickyContact__close(data-e-toggle-close=targetSticky type="button")
+      span.icon.icon-close
+
+    button.c-contactElement__picto(class=unavailable data-e-toggle=paramToggle type="button")
+      span.icon.icon-phone
+  // end .c-contactElement
+
+
+//- WHEN it's not a link, has a phone button
+mixin contactElement--noLink(data)
+  - var data         = data || {}
+
+  - var unavailable  = data.unavailable ? 'c-contactElement--unavailable' : false
+  - var iconClass    = data.iconClass || "contact-advice"
+
+  - var isSticky     = data.isSticky || false
+  - var targetSticky = data.targetSticky || "stickyContact"
+  - var opened       = data.opened || false
+  - var closed       = data.closed || false
+  - var paramToggle  = false
+
+  if (isSticky)
+    - paramToggle = {"delayOpen": 5000}
+    - paramToggle.target = targetSticky
+    if (closed)
+      - paramToggle.delayOpen = false
+    if (opened)
+      - paramToggle.opened = true
+    -paramToggle = JSON.stringify(paramToggle)
+
+  // .c-contactElement
+  if (!isSticky)
+    .c-contactElement.c-contactElement--noLink(class=unavailable)
+      span.c-contactElement__picto.icon(class='icon-'+iconClass)
+      .c-contactElement__content
+        block
+
+  else
+    .c-contactElement.c-contactElement--noLink(class=unavailable)
+      .c-contactElement__content(data-e-toggle-target=targetSticky)
+        block
+
+    button.c-stickyContact__close(data-e-toggle-close=targetSticky type="button")
+      span.icon.icon-close
+
+    button.c-contactElement__picto(data-e-toggle=paramToggle type="button")
+      span(class="icon icon-phone")
+  // end .c-contactElement
+
+
+mixin contactElement__text(data)
+  - var data     = data || {}
+  - var title    = data.title || "Sourds et malentendants"
+  - var subTitle = data.subTitle || false
+  - var legend   = data.legend || false
+  - var link   = data.link || false
+
+  .c-contactElement__text
+    strong.c-contactElement__title!=title
+
+    block
+
+    if subTitle
+      p.c-contactElement__subtitle!=subTitle
+    if legend
+      em.c-contactElement__legend.u-textItalic!=legend
+    if link
+      +btnWrapper.u-theme-green
+        +baseBtn({
+          text: 'Lien à définir'
+        })
+
+
+//- this mixin cannot be call with contactElement, MUST BE CALL with contactElement--noLink
+mixin contactElement__phone(data)
+  - var data        = data || {}
+  - var phone       = data.phone || '01 36 65 65 65'
+  - var targetPhone = data.targetPhone || 'contactPhone'
+  - var buttonTxt   = data.buttonTxt || 'Voir le numéro'
+
+  button.c-contactElement__button.u-hideSmall.u-color-coral.u-color-hover(
+    data-e-toggle='{"target": "' + targetPhone + '"}'
+    type="button"
+  )!= buttonTxt
+
+  span.c-contactElement__phone.u-hideSmall.u-color-coral(
+    data-e-toggle-target=targetPhone
+  )!= phone
+
+  a.c-contactElement__phone.u-hideMediumUp.u-color-coral.u-color-hover(
+    href="tel:"+ phone
+  )!= phone

@@ -1,0 +1,18 @@
+include selectOptionsBlock/selectOptionsBlock
+
+mixin selectOptions(data)
+  - var data    = data || {}
+  - var title   = data.title || false
+  - var noTheme = data.noTheme || false
+
+  // c-selectOptions
+  .c-selectOptions(class=noTheme ? "c-selectOptions--noTheme" : "")&attributes(attributes)
+    .c-selectOptions__arrow
+
+    if title
+      .c-selectOptions__header
+        h2.u-heading-2.u-textCenter!=title
+
+    .c-selectOptions__content
+      block
+  // end c-selectOptions

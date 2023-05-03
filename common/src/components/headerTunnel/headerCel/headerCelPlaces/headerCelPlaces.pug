@@ -1,0 +1,28 @@
+include headerCelPlacesItem/headerCelPlacesItem
+
+mixin headerCelPlaces
+  // .c-headerCelPlaces
+  .c-headerCelPlaces
+    button.c-headerCelPlaces__btn(
+      type="button"
+      data-e-toggle='{"target": "headerCel-places", "autoClose": true, "blockScroll": true}'
+    )
+      p.c-headerCelPlaces__address 24 bis rue de villeneuve Saint-Georges 41000 Blois
+      span.icon.icon-chevron-right
+
+    .c-headerCelPlaces__btn.u-color-grey.u-hide
+      +spinner
+
+    +headerCelLayer({target: "headerCel-places"}).c-headerCelLayer--desktop.c-headerCelPlaces__layer(data-e-toggle-target='headerCel-places')
+      ul.c-headerCelPlaces__list
+        li: +headerCelPlacesItem().is-selected
+        li: +headerCelPlacesItem
+        li: +headerCelPlacesItem
+        li: +headerCelPlacesItem
+        li: +headerCelPlacesItem
+        li: +headerCelPlacesItem
+        li: +headerCelPlacesItem
+
+      .c-headerCelPlaces__bottom
+        a(href="#").c-headerCelPlaces__link Ajouter une référence client
+  // END .c-headerCelPlaces

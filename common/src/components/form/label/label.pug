@@ -1,0 +1,7 @@
+mixin label(data)
+  - var data  = data || {}
+  - var id    = data.id || false
+  - var label = data.label || "lorem ipsum"
+
+  label.c-label(for=id)&attributes(attributes)
+    span.c-label__text=label

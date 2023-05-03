@@ -1,0 +1,204 @@
+$progressBar: #80d5ff;
+
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+/* jquery validation */
+label.error {
+    color: #e7505a;
+    margin-left: 10px;
+    padding: 7px;
+}
+input.error {
+    border: 2px solid #e7505a;
+}
+
+
+.step-app > .step-steps {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+.step-app > .step-steps > li {
+  list-style: none;
+  flex: 1;
+}
+.step-app > .step-steps > li:last-child a {
+  border: none;
+}
+.step-app > .step-steps > li > a {
+  display: block;
+  padding: 0px;
+  text-decoration: none;
+}
+.step-app > .step-steps > li > a > .number {
+  // background: #fff;
+  // padding: 0;
+  // display: inline-block;
+  // text-align: center;
+  // margin-right: 0;
+  // border-radius: 0;
+  // color: #333;
+}
+// .step-app > .step-steps > li > a:hover {
+//   background-color: #ddd;
+// }
+
+.step-app > .step-steps > li {
+  background-color: $progressBar;
+}
+
+.step-app > .step-steps > li.active {
+  background-color: $genBlue;
+  color: #fff;
+
+  .c-progressStep__legend  {
+    color: white;
+  }
+}
+
+.step-app > .step-steps > li.done {
+  background-color: $genBlue;
+  color: #fff;
+  
+  .c-progressStep__legend  {
+    color: white;
+  }  
+}
+
+.step-app > .step-steps > li.error {
+  color: #fff;
+}
+
+.step-app > .step-content {
+  border-bottom: 0px solid #e5e5e5;
+  padding: 0;
+  border-top: 0;
+}
+.step-app > .step-content > .step-tab-panel {
+  display: none;
+}
+.step-app > .step-content > .step-tab-panel.active {
+  display: block;
+}
+.step-app > .step-footer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.step-app > .step-footer > .step-btn {
+  padding: 4px 16px;
+  color: #333;
+  text-decoration: none;
+  background: #e5e5e5;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+/*# sourceMappingURL=jquery-steps.css.map */
+
+.c-timeLine.c-timeLineWizard { 
+  z-index: 0;
+  width: 100%; }
+
+.c-progress.step-app {
+  top: 0;
+  
+  .c-progressStep {
+    padding: 15px;
+    border: 0;
+  }
+
+  .c-progressStep__value {
+    font-size: 1.8rem;
+    top: 5px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    color: white;
+  }
+}
+
+@include media("<small") {
+  .c-timeLine.c-timeLineWizard {
+    padding-top: 35px;
+    background: white;
+
+    .c-progressBar { background: $genBlue; }
+  }
+
+  .c-progress.step-app {
+    .c-progressStep__value {
+      color: white;
+    }
+
+    .c-progressBar__line { 
+      background: #80d5ff;
+    }
+
+    .c-progressStep__legend {
+      display: none;
+    }
+  }
+}
+
+@include media(">=small", "<=medium") {
+  .c-progress.step-app .c-progressStep .c-progressStep__value {
+    top: 50%;
+    left: 50%;
+  }      
+}
+
+
+
+@include media(">=medium") {
+  .c-progress.step-app {
+    
+    .c-progressStep {
+      background: $progressBar;
+
+      &.done, &.active {
+        background:  white;
+      }      
+
+      .c-progressStep__value {
+        top: 50%;
+        left: 50%;
+      }      
+    }
+
+    .c-progressStep__value {
+      color: $genBlue;
+    }
+  }
+
+  .c-timeLine.c-timeLineWizard {
+    height: 110px;
+    background: $genBlue;
+  }
+
+  .c-timeLine .c-timeLineWizard__wrap--minifier {
+    width: 60%;
+  }
+
+  .c-timeLineWizard__wrap {
+    width: 80%;
+    margin: 30px auto 0;
+
+    .c-progressBar { background: $progressBar; }
+
+    .c-progressBar__line { 
+      background: white;
+    }
+
+    .c-progressStep__legend {
+      padding-left: 0;
+      color: $progressBar;
+    }
+  }
+}

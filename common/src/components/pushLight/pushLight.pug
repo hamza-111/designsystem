@@ -1,0 +1,25 @@
+mixin pushLight(data)
+  - var data     = data || {}
+  - var iconName = data.iconName || 'icon-truck2'
+  - var text     = data.text || 'Vous déménagez ?'
+  - var labelBtn = data.labelBtn || 'Déménager avec cette offre'
+  - var light = data.light || false
+
+
+   
+
+  .c-pushLight&attributes(attributes)
+    if !light
+      .c-pushLight__content
+        .c-pushLight__picto
+          .icon(
+            class=iconName
+          )
+        h3.c-pushLight__title.u-textBold.u-fontSize-large!=text
+        +btnWrapper().u-theme-green
+          +baseBtn({
+            text: labelBtn
+          })
+    else
+      .c-pushLight__contentLight
+        block

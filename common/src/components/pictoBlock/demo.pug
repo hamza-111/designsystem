@@ -1,0 +1,73 @@
+include pictoBlock
+include ../formMat/inputMat/inputMat
+
+.c-wysiwyg
+  h2 pictoBlock
+
++demo({
+  desc:
+  `Il faut impérativement que le conteneur ait une largeur, assigner donc au composant une des classes suivante :
+  <code>l-wrapper--medium</code> ou <code>l-wrapper--small</code>.<br>
+  Généralement utilisé pour répondre au besoin avec un champs de formulaire
+  `
+})
+  +pictoBlock()
+    p Du contenu et une icône
+
+
++demo({
+  desc:
+  `aligner à gauche :
+  <code>c-pictoBlock--alignLeft</code>.
+  `
+})
+  +pictoBlock({
+    alignLeft: true
+  })
+    p Aligné à gauche en desktop
+
+
++demo({
+  desc: "Assigner au composant la classe <code>c-pictoBlock--pictoTopToLeft</code> pour que l'icône soit au-dessus du texte en mobile"
+})
+  +pictoBlock({
+    iconName: 'icon-bold-check',
+    topToLeft: true,
+    iconClasses: 'u-color-genBlue u-fontSize-40'
+  })
+    p Un message de validation
+
+
++demo({
+  desc: "Assigner au composant la classe <code>is-valid</code> pour activer l'icône de validation du mail"
+})
+  +pictoBlock({
+    iconName: 'icon-contact-mail2',
+    topToLeft: true,
+    email: true
+  }).is-valid
+    p.u-color-grey Email
+    p
+      b johndoe@wanadoo.com
+
+
++demo({
+  desc: "Ajouter la classe <code>c-pictoBlock--absoluteIcon</code> au composant pour fixer l'icône en absolu (lui permet de déborder d'un l-wrapper-small par exemple)"
+})
+  +pictoBlock({
+    absoluLeft: true,
+    iconName: 'icon-contact-mail2',
+    topToLeft: true,
+    email: true
+  }).is-valid.l-wrapper--small
+    +inputMat({
+              label: 'Téléphone',
+              type: "tel",
+              id: "tel",
+              pattern: 'tel',
+              name: "tel",
+              required: true,
+              maxlength: "10",
+              placeholder: '06 11 13 55 07',
+              dataValidation: true
+    })(data-e-foreign-target)

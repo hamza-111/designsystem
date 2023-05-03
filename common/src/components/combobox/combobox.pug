@@ -1,0 +1,12 @@
+mixin combobox()
+  // .c-combobox
+  script(data-tpl="searchFAQ" type="text/template")
+    li.c-combobox(
+      role="option"
+      aria-selected="false"
+    )
+      a(
+        href="[% this.questionPath %]"
+        data-click-name='{"userInput": [% this.userInput %]}'
+      ).c-combobox__link [% this.title %]
+  // END .c-combobox

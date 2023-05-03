@@ -1,0 +1,36 @@
+.c-codePromo {
+  .c-inputMat {
+    margin-bottom: 15px;
+  }
+}
+
+.c-codePromo__output {
+  margin-top: 10px;
+}
+
+.c-codePromo__input {
+  padding-top: 30px;
+  width: 100%;
+}
+
+
+@include media('>=small') {
+  .c-codePromo {
+    .c-inputMat {
+      margin-bottom: 0;
+    }
+  }
+
+  .c-codePromo__form,
+  .c-codePromo__output {
+    width: 490px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .c-codePromo__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

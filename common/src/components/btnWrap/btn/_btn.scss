@@ -1,0 +1,111 @@
+
+$charte-colors-map: (
+  white:        $white,
+  redZero:      $redZero,
+  pingSea:      $ping-sea,
+  genBlue:      $genBlue,
+  greenPersian: $green-persian,
+  greenBaaast:  $green-baaast,
+  greenMint:    $green-mint,
+  greyBaaast:   $grey-baaast,
+  blue:         $blue,
+  blueBayoux:   $blue-bayoux,
+  orangeAmber:  $orange-amber,
+  orangeBaaast: $orange-baaast,
+);
+
+$charte-colors-hover-map: (
+  white:        $white-hover,
+  redZero:      $redZero-hover,
+  pingSea:      $ping-sea-hover,
+  genBlue:      $genBlue-hover,
+  greenPersian: $green-persian-hover,
+  greenBaaast:  $green-baaast-hover,
+  greenMint:    $green-mint-hover,
+  greyBaaast:   $grey-baaast-hover,
+  blue:         $blue-hover,
+  blueBayoux:   $blue-bayoux-hover,
+  orangeAmber:  $orange-amber-hover,
+  orangeBaaast: $orange-baaast-hover
+);
+
+.c-btn {
+  @extend %reset-style-button;
+  min-width: 235px;
+  text-decoration: none;
+  position: relative;
+  text-align: center;
+  margin: 15px;
+  padding: 15px 5%;
+  border: 1px solid $genBlue;
+  background-color: $genBlue;
+  color: white;
+  transition: all .2s ease-in-out;
+
+
+  &.c-btn--noMargin {
+    margin: 0;
+  }
+  @include hover-focus-active() {
+    background-color: $genBlue-hover;
+  }
+
+
+  @each $name, $value in $charte-colors-map {
+    &.c-btn--#{$name} {
+      color: $white;
+      border: 1px solid $value;
+      background: $value; 
+
+      @include hover-focus-active() {
+        background: map-get($charte-colors-hover-map, $name);
+      }
+    }
+
+    &.c-btn--empty-#{$name} {
+      color: $value;
+      border: 1px solid $value;
+      background: white; 
+
+      @include hover-focus-active() {
+        background: map-get($charte-colors-map, $name);
+        color: white;
+      }
+    }    
+  } 
+
+  // Custom
+  &.c-btn--empty
+  &.c-btn--black {
+    background-color: white; 
+    color: black;
+    border: 1px solid black;
+    @include hover-focus-active() {
+      background: $white-hover;
+    }
+  }
+
+  &.c-btn.c-btn--noWidth {
+    min-width: 0;
+  }
+
+}
+
+.c-btn + .c-btn {
+  margin-left: 15px;
+}
+
+@include media("<=medium") {  
+  .c-btn {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+@include media(">=medium") {  
+  .c-btn {
+    width: auto;
+    padding: 15px 30px;
+  }
+}
+

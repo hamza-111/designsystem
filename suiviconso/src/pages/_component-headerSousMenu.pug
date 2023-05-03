@@ -1,0 +1,43 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+//- include ../components/sousMenu/sousMenu
+
+//- Main variables
+block variables
+  - var title       = "SousMenu"
+  - var page        = ""
+  - var bodyClass   = ""
+  - var description = ""
+  - var headerCel   = "sousMenu"
+  //- var headerCel   = "etapier"
+  - var noHeaderFooter   = true
+  - var wrapperSite = "l-wrapper--siteFull"
+  - var noBg        = true
+  - var footer = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+
+  .u-padding-t-196
+  .u-bg-genBlue.u-padding-v-120#target1
+    .u-padding-v-165
+
+  .u-bg-genBlue.u-padding-v-120
+    .u-padding-v-165    
+    
+  .u-bg-blue.u-padding-v-120#target2
+    .u-padding-v-165
+  .u-bg-green.u-padding-v-120#target3
+    .u-padding-v-165
+  .u-bg-coral.u-padding-v-120#target4
+    .u-padding-v-165
+
+  .u-padding-t-140
+  //- +siteFooterV2()

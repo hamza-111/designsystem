@@ -1,0 +1,48 @@
+//-
+  +img({
+      alt: "La description de mon image",
+      interchange: {
+        default:  'https://unsplash.it/50',
+        small:    'https://unsplash.it/50',
+        medium:   'https://unsplash.it/600'
+      }
+    })
+
+mixin img(data)
+  - var data        = data || {}
+  - var alt         = data.alt || ""
+  - var src         = data.src || false
+  - var interchange = data.interchange || {}
+  - var interchangeString = ""
+
+
+  // img interchange
+  picture
+    if interchange.hasOwnProperty('hugeOnly')
+      source(srcset=interchange.hugeOnly media="(min-width: 1280px)")
+    if interchange.hasOwnProperty('largeOnly')
+      source(srcset=interchange.largeOnly media="(min-width: 1024px) and (max-width: 1279px)")
+    if interchange.hasOwnProperty('mediumOnly')
+      source(srcset=interchange.mediumOnly media="(min-width: 768px) and (max-width: 1023px)")
+    if interchange.hasOwnProperty('smallOnly')
+      source(srcset=interchange.smallOnly media="(max-width: 767px)")
+    if interchange.hasOwnProperty('huge')
+      source(srcset=interchange.huge media="(min-width: 1280px)")
+    if interchange.hasOwnProperty('large')
+      source(srcset=interchange.large media="(min-width: 1024px)")
+    if interchange.hasOwnProperty('medium')
+      source(srcset=interchange.medium media="(min-width: 768px)")
+    if interchange.hasOwnProperty('medium769')
+      source(srcset=interchange.medium769 media="(min-width: 769px)")
+    if interchange.hasOwnProperty('small')
+      source(srcset=interchange.small)
+
+    each val, prop in interchange
+      if val
+        - interchangeString += "["+val+", "+prop+"], "
+    img(
+        src=src
+        alt=alt
+        data-ab-interchange=interchangeString
+      )&attributes(attributes)
+  // end img interchange

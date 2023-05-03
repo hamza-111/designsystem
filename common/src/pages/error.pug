@@ -1,0 +1,25 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/error/error
+
+//- Main variables
+block variables
+  - var title = "Page d'erreur"
+  - var page = "error"
+  - var bodyClass = ""
+  - var description = "Page d'erreur"
+  - var wrapperSite = "l-wrapper--siteFull"
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+
+  +error()
+

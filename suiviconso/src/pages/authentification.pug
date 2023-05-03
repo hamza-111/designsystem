@@ -1,0 +1,105 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+include ../../../common/src/components/headSection/headSection
+include ../../../common/src/components/listChoiceButton/listChoiceButton
+include ../../../common/src/components/pictoBlock/pictoBlock
+include ../../../common/src/components/wysiwyg/wysiwyg
+
+//- Main variables
+block variables
+  - var title          = "Page authentification"
+  - var page           = "app"
+  - var bodyClass      = ""
+  - var description    = ""
+  - var noHeaderFooter = true
+  - var headerCel      = 'title'
+  - var footerLight    = true
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  #cel.c-headerLightCelPush.u-margin-small-t-35
+
+    +headSection({
+      title: "My Little Poneeey !",
+      noLink: true
+    })
+
+    .l-wrapper--medium.c-listChoiceButtonWrapper
+      +listChoiceButton({
+        iconName: "icon-bold-madame",
+        title: "Sophie Laroche",
+        text: "Référence client : 24568512<br/>Adresse de facturation : 102 Avenue Aristide Briand, 94000 Cachan",
+        isInactive: true
+      })
+        .c-listChoiceButton__mailConfirm
+          .c-listChoiceButton__mailConfirmMessage
+            p Activez votre Espace en cliquant sur le lien qui vous a été envoyé à
+            +pictoBlock({
+              iconName: 'icon-contact-mail2',
+              iconClasses: 'u-fontSize-60',
+              topToLeft: true,
+              alignLeft: true
+            })
+              p johndoe@wanadoo.com
+          +btnWrapper.c-listChoiceButton__mailConfirmButton.u-theme-green
+            +baseBtn({
+              text: "Renvoyer le lien"
+            })
+
+
+      +listChoiceButton({
+        iconName: "icon-bold-madame",
+        colorTitle: true,
+        title: "Sophie Laroche",
+        text: "Référence client : 24568512<br/>Adresse de facturation : 102 Avenue Aristide Briand, 94000 Cachan",
+        isLink: true
+      })
+
+      +listChoiceButton({
+        iconName: "icon-bold-monsieur",
+        colorTitle: true,
+        title: "Sebastien Laroche",
+        text: "Référence client : 24568512<br/>Adresse de facturation : 102 Avenue Aristide Briand, 94000 Cachan",
+        isLink: true
+      })
+
+      +listChoiceButton({
+        iconName: "icon-bold-cotitulaire",
+        colorTitle: true,
+        title: "Sophie et Sebastien Laroche",
+        text: "Référence client : 24568512<br/>Adresse de facturation : 102 Avenue Aristide Briand, 94000 Cachan",
+        isLink: true
+      })
+
+      +listChoiceButton({
+        iconName: "icon-bold-madame",
+        title: "Sophie Laroche",
+        text: "Référence client : 24568512<br/>Adresse de facturation : 102 Avenue Aristide Briand, 94000 Cachan",
+        isInactive: true
+      })
+        +pictoBlock({
+          iconName: 'icon-thin_check',
+          topToLeft: true,
+          iconClasses: 'u-fontSize-30 u-margin-a-10 u-margin-small-a-0'
+        }).u-color-jadeGreen
+          .u-textCenter: strong Un email vous a bien été envoyé
+
+      +listChoiceButton({
+        iconName: "icon-bold-madame",
+        title: "Sophie Laroche",
+        text: "Référence client : 24568512<br/>Adresse de facturation : 102 Avenue Aristide Briand, 94000 Cachan",
+        isInactive: true
+      })
+        .u-textCenter.u-fontSize-small.u-color-error
+          p Nous vous avons déjà envoyé le lien. Vérifiez dans votre boîte mail ou dans vos spams.
+          p Vous devez attendre 30 min pour pouvoir vous renvoyer le lien.
+
+      +wysiwyg.u-padding-spacer
+        p.u-textCenter
+          a.u-link.u-theme-color.u-theme-color-hover(href="#") Rattacher un compte

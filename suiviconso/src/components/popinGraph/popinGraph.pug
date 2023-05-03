@@ -1,0 +1,14 @@
+mixin popinGraph(data)
+	- data = data || {}
+	- opacity = data.opacity || false
+
+	//c-popinGraph
+	if opacity
+		.layer#scMonoGazpar_moveLeft_ToolTips
+			.bg
+				div Les données de votre ancien compteur sont en cours de chargement...
+	else
+		.layer#scMonoGazpar_moveLeft_ToolTips
+			.bg.c-layerOpacity
+				.c-layerBlue Patientez 13 mois, le temps d'avoir suffusament de relevés d'index.
+				.c-layerBlack La comparaison est faites à partir de relevés réels, issu d'une vraie expertise. 

@@ -1,0 +1,30 @@
+.c-historiqueConso {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background: $white;
+  padding: 30px;
+  text-decoration: none;
+}
+
+.c-historiqueConso__texte {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon.c-historiqueConso__icon {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.c-historiqueConso:hover .icon.c-historiqueConso__icon {
+  transform: translateX(20px);
+  transition: all 0.5s ease;
+}
+
+.c-historiqueConso--gris {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+

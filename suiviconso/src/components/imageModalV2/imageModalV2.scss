@@ -1,0 +1,102 @@
+.c-imageModalV2 {
+    width: 100%;
+    justify-content: space-between;
+    background: white;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.c-imageModalV2__alignTooltip {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.c-imageModalV2--titre {
+    width: 100%;
+    display: block;
+    color: #00aaff;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 0;
+    padding-bottom: 12px;
+}
+
+.c-imageModalV2__alignTooltip .c-toolTipV2 {
+    flex-direction: column;
+}
+
+.c-imageModalV2__titreGras {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+}
+
+.c-imageModalV2__titreLight {
+    font-size: 2rem;
+    display: block;
+    font-weight: 400;
+}
+
+.c-imagesModalV2__textGris {
+ padding-top: 14px;
+ color: $grey-baaast;
+ display: block;
+ font-size: 1.8rem;   
+}
+
+.c-imageModalV2__recadrageImage {
+    width: 100%;
+    display: block;
+}
+
+.c-imageModalV2--responsiveImage { max-width: 100%; }
+
+.c-imageModalV2__main {
+    display: flex;
+    align-items: center;
+}
+
+.c-imageModalV2__textOrange {
+    color: #f96f52;
+    font-size: 2rem;
+}
+
+.c-imageModalV2__textBlue {
+    color: #293f79;
+    font-size: 2rem;
+}
+
+.c-imageModalV2__txtTop {
+    font-weight: bold;
+    padding-bottom: 30px;
+    display: block;
+}
+
+.c-imageModalV2__textOrange p {
+    display: block;
+    padding-bottom: 30px;
+}
+
+.c-imageModalV2__Gras {
+    font-weight: bold;
+}
+
+.c-imageModalV2__iconOrange {
+    padding-right: 40px;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+@include media ("<=small") {
+    .c-imageModalV2__main {
+        display: block;
+        width: 100%;
+    }
+
+    .c-imageModalV2__main  img {
+        display: block;
+        margin: 0 auto 20px;
+    }
+}

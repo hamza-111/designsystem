@@ -1,0 +1,21 @@
+@import "../carouselEcoGest/carouselEcoGest";
+
+.c-navAnchorEcoGest {
+  overflow: hidden;
+  height: 0;
+}
+.slick-prev.slick-arrow.slick-disabled, .slick-next.slick-arrow.slick-disabled {
+  display: none !important;
+}
+
+.c-navAnchorEcoGest.c-navAnchorEcoGest__active {
+  overflow: initial;
+  height: auto;
+}
+
+@include media("<small") {
+  .c-navAnchorEcoGest .l-wrapper--large {
+    padding-left: 0;
+    padding-right: 0; 
+  }
+}

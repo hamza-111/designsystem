@@ -1,0 +1,25 @@
+mixin pictoBlock(data)
+  - var data        = data || {}
+  - var iconName    = data.iconName || 'icon-digital'
+  - var email       = data.email || false
+  - var absoluLeft  = data.absoluLeft || false
+  - var topToLeft   = data.topToLeft || false
+  - var alignLeft   = data.alignLeft || false
+  - var iconClasses = data.iconClasses || 'u-fontSize-70 u-color-greyMedium2'
+
+
+  .c-pictoBlock(
+    class=absoluLeft ? 'c-pictoBlock--absoluteIcon' : ''
+    class=topToLeft ? 'c-pictoBlock--topToLeft' : ''
+    class=alignLeft ? 'c-pictoBlock--alignLeft' : ''
+  )&attributes(attributes)
+    .c-pictoBlock__icon
+      .icon(
+        class=iconName
+        class=iconClasses
+      )
+      if email
+        .c-pictoBlock__validIcon.icon.icon-thin_check
+
+    .c-pictoBlock__content
+      block

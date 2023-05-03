@@ -1,0 +1,118 @@
+.c-blocCompteur {
+    display: flex;
+    padding: 20px 30px;
+    background-color: #00a8ff;
+    height: 140px;
+    align-items: center;
+}
+
+.c-blocCompteur__txt {
+    color: $white;
+}
+
+.c-blocCompteur__txt span {
+    display: block;
+}
+
+.c-blocCompteur__Compteur {
+    font-weight: 700;
+    font-size: 2rem;
+    padding-bottom: 10px;
+}
+
+.c-blocCompteur__label {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.c-blocCopteur__index {
+    align-self: flex-end;
+    text-align: center;
+    color: $white;
+}
+
+.c-blocCopteur__index .c-blocCompteur__indexValue {
+    font-size: 4.2rem;
+}
+
+.c-blocCopteur__index .c-blocCompteur__indexValue span {
+    font-size: 1.8rem;
+}
+
+.c-btn.c-blocCompteur--plusDetails {
+    border: 1px $white solid;
+    font-size: 1.4rem;
+}
+
+.c-blocCompteur__modalTitle {
+    color: #00aeff;
+    display: block;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.c-blocCompteur__desc {
+    width: 60%;
+    text-align: center;
+    margin: 20px auto 50px;
+    font-size: 2rem;
+}
+
+.c-blocCompteur__listeModal {
+    padding: 0 20px;
+}
+
+.c-blocCompteur__listeModal ul .c-blocCompteur__labelListeModal {
+    font-size: 1.8rem;
+    width: 60%;
+    display: inline-block;
+    margin: 12px 0;
+}
+
+.c-blocCompteur__listeModal ul .c-blocCompteur__labelBlue {
+    font-size: 1.8rem;
+    color: #00aaff;
+    font-weight: bold;
+}
+
+@include media ("<=small") {
+    .c-blocCompteur {
+        display: inline-block;
+        text-align: center;
+        padding: 20px 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    .c-blocCompteur div {
+        display: block;
+    }
+
+    .c-blocCompteur .c-btn.c-btn.c-btn--noWidth {
+        min-width: 235px;
+    }
+
+    .c-blocCopteur__index {
+        margin: 20px 0 0;
+    }
+
+    .c-blocCompteur__desc {
+        width: 90%;
+    }
+
+    .c-blocCompteur__listeModal ul .c-blocCompteur__labelListeModal {
+        display: block;
+        width: 100%;
+    }
+
+    .c-blocCompteur__listeModal ul li {
+        margin: 20px 0;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 768px) {
+    .c-blocCompteur .c-btn.c-btn.c-btn--noWidth {
+        min-width: 0;
+    }
+}

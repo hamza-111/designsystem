@@ -1,0 +1,213 @@
+doctype html
+<!--[if IE 8]><html data-debug lang="fr" class="oldie ie8 no-js"><![endif]-->
+<!--[if IE 9]><html data-debug lang="fr" class="oldie ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+html(data-debug lang="fr" class="no-js")
+  <!--<![endif]-->
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name='description' content="")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    title Index
+
+    link(rel="stylesheet" href="css/kit.css")
+
+    style.
+      body {
+        margin: 0;
+        font-family: helvetica, aria, sans-serif;
+        color: #343434;
+        background-color: #f2f2f2;
+      }
+      body * {
+        box-sizing: border-box;
+      }
+      section {
+        margin: 0 auto;
+        padding: 10px 20px;
+        width: 100%;
+        max-width: 920px;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.18);
+      }
+      li {
+        line-height: 1.5em;
+      }
+      a {
+        text-decoration: none;
+        color: #059ce7;
+      }
+      a:hover {
+        border-bottom: 1px solid;
+      }
+      h1 {
+        margin: 40px 0;
+        text-transform: uppercase;
+      }
+      h2 {
+        border-bottom: 1px solid #e1e1e1;
+        margin: 40px 0 25px;
+        padding-bottom: 18px;
+      }
+      h2, h3 {
+        padding-left: 20px;
+      }
+
+  body
+    section
+      h1 Gaz Tarif Réglementé CEL
+
+      h2 Pages
+      ul
+        li: a(href="pages/loginPage.html") Login Page
+        li: a(href="pages/paiementCB.html") paiementCB
+        li: a(href="pages/mon-profile.html") Page mon profile
+        li: a(href="pages/emmenagement.html") Page emmenagement
+        li: a(href="pages/connect-issue.html") Problème de connexion: parcours 1
+        li: a(href="pages/connect-issue-02.html") Problème de connexion: parcours 2
+        li: a(href="pages/connect-issue-03.html") Problème de connexion: parcours 3-4
+        li: a(href="pages/creation-ec.html") Création Espace Client
+        li: a(href="pages/synthesePage.html") Synthèse
+        li: a(href="pages/authentification.html") Page authentification
+        li: a(href="pages/_component-parcours-fel-pa.html") composant Parcours service FEL / PA
+        li: a(href="pages/offres-et-services.html") offres-et-services
+        li: a(href="pages/ecm.html") EC en masse
+        li: a(href="pages/page-service.html") Page mes options / mes Services
+        li: a(href="pages/_component-navigatorAbsolete.html") Navigateur Absolete
+        li: a(href="pages/PageAdresseFacturation.html") Page Adresse de Facturation
+        li: a(href="pages/pageConfirmationAdresseFacturation.html") Confirmation de l'adresse de Facturation
+        li: a(href="pages/relverIndex.html") Relver index
+        li: a(href="pages/relverIndexConfirmer.html") Confirmer saisie index
+        li: a(href="pages/relverIndexResultat.html") Resultat saisie index
+        li: a(href="pages/relverIndexResultatLoader.html") Resultat saisie index loading relverIndexIcon
+        li: a(href="pages/relverIndexIcon.html") Resultat saisie index error 
+
+
+      h3 SOMS :
+      ul
+        li: a(href="pages/SOMS.html") SOMS v2
+        li: a(href="pages/SOMS-suiviDemande1.html") SOMS Suivi de demande prospect
+        li: a(href="pages/SOMS-suiviDemande2.html") SOMS Suivi de demande prospect 2
+        li: a(href="pages/SOMS-suiviDemande-error.html") SOMS Suivi de demande : message de feed-back
+
+      <strong>composants-ratachement BP </strong>
+        ul
+          li: a(href="pages/_component-rattachementBP.html") rattachementBP
+          
+      h3 Parcours de paiement :
+      ul
+        li: a(href="pages/_component-choixdePaiement.html") choix de paiement V2
+        li: a(href="pages/_component-confirmationPaiement.html") CB etape 03 confirmation paiement
+        li: a(href="pages/parcours-paiement.html") CB Template iframe prestataire
+        li: a(href="pages/confirmation-paiement.html") CB Confirmation de paiement V1
+
+        li <strong>composants-paiementEtip version 2</strong>
+          ul
+            li: a(href="pages/e-tip-etape1v2.html") E-TIP etape 01 avec header tunnel connecté v2
+            li: a(href="pages/signatureMondat.html") E-TIP etape 02 signature mondat
+            li: a(href="pages/_component-confirmationPaiementcb.html") E-tip etape 03 confirmation paiement
+        li <strong>composants-paiementEtip version 1 </strong>
+          ul
+            li: a(href="pages/e-tip-etape0.html") E-TIP etape 00 avec header tunnel non connecté
+            li: a(href="pages/e-tip-etape1.html") E-TIP etape 01 avec header tunnel connecté
+            li: a(href="pages/e-tip-etape2.html") E-TIP etape 02
+            li: a(href="pages/e-tip-etape3.html") E-TIP etape 03
+
+        li <strong>Iban obsolete</strong>
+          ul
+            li: a(href="pages/ibanObsolete.html") ibanObsolete
+            //- li: a(href="pages/ibanObsoleteModal.html") iban obsolete modal
+            
+        
+
+
+      h3 Pushes :
+      ul
+        li: a(href="pages/modal-promo-index.html") Modales de pushes promotionnels
+
+      h2 Sous-composants (pas un composant AEM)
+      ul
+        li: a(href="pages/styledown.html") UI kit
+        li: a(href="pages/_component-btnWrapper.html") Boutons : btnWrapper et baseBtn
+        li: a(href="pages/_component-btnWrap.html") Boutons : btnWrap et Btn REFONTE
+        li: a(href="pages/_component-formMat.html") formulaire (formMat UI KIT)
+        li: a(href="pages/_component-typo.html") typo
+        li: a(href="pages/_component-wysiwyg.html") wysiwyg
+        li: a(href="pages/_component-spinner.html") spinner
+        li: a(href="pages/_component-modal.html") modal
+        li: a(href="pages/_component-toolTip.html") toolTip
+        li: a(href="pages/_component-iframe.html") iframe
+
+      h2 Composants
+      ul
+        li: a(href="pages/_component-miniPush.html") KIT composants miniPush
+        li: a(href="pages/_component-mesFacture.html") composant de la page mes factures
+        li: a(href="pages/_component-pushActu.html") push Actualité page mes factures
+        li: a(href="pages/_component-actualiteFacture.html") composant Actualité de la page mes factures
+        li: a(href="pages/_component-etapierDS.html") etapier DS 
+        //- li: a(href="pages/_component-monProfile.html") KIT composants monProfile
+
+      h3 CEL :
+      ul
+        li: a(href="pages/_composant-synthese.html") Synthese KIT composants
+        li: a(href="pages/_component-etip.html") eTip KIT composants
+        li: a(href="pages/_component-login.html") Login
+        li: a(href="pages/_component-ecm.html") EC en masse
+        li: a(href="pages/_component-parcours-fel-pa.html") Parcours service FEL / PA
+        li: a(href="pages/_component-header-footer.html") Header & Footer
+        li: a(href="pages/_component-headerCelEtapier.html") Header & etapier 
+        li: a(href="pages/_component-header-etapier.html") Header & étapier V2
+        li: a(href="pages/_component-headerLightCel.html") headerLightCel
+        li: a(href="pages/_component-headerCelUser.html") headerCelUser
+        li: a(href="pages/_component-headerCel.html") headerCel
+        li: a(href="pages/_component-bandeauxAlert.html") Bandeaux Alert saisie index
+        li: a(href="pages/_component-popinTBD.html") PopIn TBD
+        li: a(href="pages/mesFacture.html") Page mes factures
+        li: a(href="pages/_component-modifPassword.html") Modifier mot de passe
+        li: a(href="pages/_component-adresseFacturation.html") Composant adresse Facturation
+        li: a(href="pages/_component-connexionSocialModal.html") Popin modification mode de connexion
+   
+      h3 Suivie Consommation :
+      ul
+        li
+          ul
+            h3 Composant Suivie Consommation :
+            li: a(href="pages/_component-blockCompteur.html") bloc compteur gazpar & non gazpar
+            li: a(href="pages/_component-imageModal.html") Explication Facture
+            li: a(href="pages/_component-imageindex.html") Bloc Image Index
+
+
+      h3 Common :
+      ul
+        li: a(href="pages/_component-title.html") title
+        li: a(href="pages/_component-textImage.html") textImage
+        li: a(href="pages/_component-textImageBg.html") textImageBG
+        li: a(href="pages/_component-image.html") image
+
+        li: a(href="pages/_component-assuranceBand.html") assuranceBand (bandeau de réassurance)
+        li: a(href="pages/_component-accordion.html") accordion
+        li: a(href="pages/_component-sideMenu.html") sideMenu
+        li: a(href="pages/_component-pictoBlock.html") pictoBlock
+        li: a(href="pages/_component-pictoLink.html") pictoLink (lien avec picto)
+        li: a(href="pages/_component-modalCel.html") modal cel
+        li: a(href="pages/_component-timeLine.html") timeLine
+        li: a(href="pages/_component-infoBlock.html") infoBlock
+        li: a(href="pages/_component-listChoiceButton.html") listChoiceButton
+        li: a(href="pages/_component-advantages.html") advantage
+        li: a(href="pages/_component-selectOptions.html") selectOptions
+        li: a(href="pages/_component-payBillFrame.html") payBillFrame
+        li: a(href="pages/_component-pushPromo.html") pushPromo
+        li: a(href="pages/_component-stepByStep.html") stepByStep
+        li: a(href="pages/_component-arrowBox.html") arrowBox
+        li: a(href="pages/_component-toggleCheck.html") toggleCheck
+        li: a(href="pages/_component-choiceBox.html") choiceBox
+        li: a(href="pages/_component-moreLessInput.html") moreLessInput
+        li: a(href="pages/_component-pushBlock.html") pushBlock
+        li: a(href="pages/_component-espritService.html") EespritService
+
+        li: a(href="pages/_component-fieldInfo.html") fieldInfo
+
+
+
+

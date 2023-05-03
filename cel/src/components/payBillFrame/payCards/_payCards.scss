@@ -1,0 +1,32 @@
+.c-payCards {
+  display: table;
+
+  .c-arrowSeparator {
+    margin: 10px 0 25px;
+  }
+}
+
+.c-payCards__acceptedCards {
+  margin-top: 15px;
+  color: $grey;
+}
+
+.c-payCards__cardList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.c-payCards__card {
+  margin: 3px 0;
+  margin-right: 6px;
+}
+
+.c-payCards__acceptedCardsIcon {
+  font-size: $font-25;
+}
+
+.c-payCards__acceptedCardsText {
+  display: inline-block;
+  vertical-align: top;
+  font-size: $font-13;
+}

@@ -1,0 +1,33 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/stickyDock/stickyDock
+
+//- Main variables
+block variables
+  - var title = "stickyDock"
+  - var page = ""
+  - var bodyClass = ""
+  - var description = ""
+  - var noHeaderFooter = true
+  - var demoMode = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  .c-wysiwyg
+    h2 stickyDock
+  +demo({
+    desc: `
+    2 thèmes existent: <code>u-theme-genBlue</code> et <code>u-theme-magenta</code>
+    `
+  })
+    +stickyDock({
+      options: ['cart', 'callback', 'callback-ko']
+    }).u-theme-magenta

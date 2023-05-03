@@ -1,0 +1,71 @@
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/column/column
+include ../components/wysiwyg/wysiwyg
+include ../components/image/image
+
+//- Main variables
+block variables
+  - var title = "contact"
+  - var page = ""
+  - var bodyClass = ""
+  - var description = ""
+  - var noHeaderFooter = true
+  - var demoMode = true
+
+
+//- JS only for that page
+block JS
+  //- !! just for the demo !!
+  script(type="text/javascript").
+    $('.c-stickyContact').first().css('top', '50px');
+    $('.c-stickyContact').first().css('bottom', 'auto');
+
+//- Page content
+block content
+  include ../components/contactBar/demo
+
+  include ../components/contactContainer/demo
+
+  include ../components/contactButton/demo
+
+  include ../components/contactLegal/demo
+
+  include ../components/stickyContact/demo
+
+  .u-bg-grey-light.u-padding-spacer
+    +column({
+      spaced: true,
+      wrapper: 'large',
+      vCenter: true
+    })
+      .c-column__col
+        +image({
+          smallImg:  "../images/contrib/image-small.png",
+          mediumImg: "../images/contrib/image-medium.png"
+        })
+
+        +wysiwyg({
+          noMarge: true
+        })
+          p: span.u-textBold.u-textUppercase Consultez nos questions-réponses pour gagner du temps&nbsp;:
+
+          p: a.u-link(href="#") Tout sur le tarif réglementé gaz
+          p: a.u-link(href="#") Tout sur ma facture et mon contrat gaz
+          p: a.u-link(href="#") Tout sur comment maîtriser sa consommation d'énergie
+          p: a.u-link(href="#") Tout sur la souscription d'un contrat gaz
+
+      .c-column__col
+        +contactElement--noLink({
+          iconClass: "contact-advice"
+        })
+          +contactElement__text({
+            title: "Téléphone d’urgence <br>pour le gaz",
+            subTitle: "du lundi au vendredi de 9h à 20h et le samedi de 9h à 13h",
+            legend: "(Appel non surtaxé)"
+          })
+            +contactElement__phone({
+              targetPhone: "phone05"
+            })

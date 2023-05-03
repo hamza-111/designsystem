@@ -1,0 +1,21 @@
+mixin formContactPayment(data)
+  - var data = data || {}
+  - var id = data.id || ""
+
+  fieldset.c-formContactPayment.l-wrapper--small(
+    data-e-formcontact-block={id: id}
+  )
+    +selectMat({
+      label: 'Précisez votre mode de règlement',
+      id:    'contact-payment',
+      name:  'TYPE_PAIEMENT'
+    })
+      option(value="") Choisissez dans la liste
+      option(value="cb-sur-le-site") CB sur le site
+      option(value="aplication-mobile") Application mobile
+      option(value="especes") Espèces
+      option(value="flashcode") Flashcode
+      option(value="cheque") Chèque
+      option(value="tip") TIP
+      option(value="prelevement") Prélèvement
+      option(value="autre") Autre

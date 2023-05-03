@@ -1,0 +1,30 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base-standalone
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title = "Header"
+  - var page = ""
+  - var bodyClass = ""
+  - var description = ""
+  - var wrapperSite = "l-wrapper--siteFull"
+
+
+//- CSS only for that page
+block CSS
+  link(rel="stylesheet" href="../css/header.css")
+
+
+//- JS only for that page
+block JS
+  script(src="../js/bas/header.js")
+
+
+//- Page content
+block content
+  //- div englobant le header sur l'ancien site
+  .parbase.header
+    +siteHeaderV3

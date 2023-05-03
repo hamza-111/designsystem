@@ -1,0 +1,19 @@
+include ../../../../common/src/components/image/image
+
+mixin imageIndex(data)
+  - var data   = data || {}
+  - var imgdesktop  = data.imgdesktop || "textImageBg.jpg"
+  - var imgmobile  = data.imgmobile || "textImageBg.jpg"
+
+  // c-imageIndex
+
+  .c-imageIndex&attributes(attributes)
+
+    +image({
+      smallImg:  "../images/contrib/"+imgdesktop,
+      mediumImg: "../images/contrib/"+imgmobile
+    }).u-margin-b-20.c-imageIndex__image
+
+    .c-imageIndex__para.u-textLeft 
+      h2.u-heading-3.u-margin-b-20 Où trouver votre index ?
+      p L'index de une suite de 5 chiffres indiquant le volume réel de votre consommation de gaz en m³. Sur votre compteur de gaz : ce sont les chiffres qui apparaissent sur le fond noir. 

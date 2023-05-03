@@ -1,0 +1,33 @@
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title = "contact"
+  - var page = ""
+  - var bodyClass = ""
+  - var description = ""
+  - var noHeaderFooter = true
+  - var demoMode = true
+
+
+//- JS only for that page
+block JS
+  //- !! just for the demo !!
+  script(type="text/javascript").
+    $('.c-stickyContact').first().css('top', '50px');
+    $('.c-stickyContact').first().css('bottom', 'auto');
+
+//- Page content
+block content
+  include ../../../common/src/components/contactBar/demo
+
+  include ../../../common/src/components/contactContainer/demo
+
+  include ../../../common/src/components/contactButton/demo
+
+  include ../../../common/src/components/contactLegal/demo
+
+  include ../../../common/src/components/stickyContact/demo

@@ -1,0 +1,68 @@
+mixin menuItemSubFAQ(data)
+  - var data = data || {}
+  - var titleDownSEO = data.titleDownSEO || false
+
+  li.c-menuFAQ__subRub&attributes(attributes)
+    a(href='#').c-menuFAQ__link.c-menuFAQ__link--subRub
+      if titleDownSEO
+        h4
+          block
+      else
+        h3
+          block
+
+mixin menuItemSubFAQSub(data)
+  - var data = data || {}
+  - var titleDownSEO = data.titleDownSEO || false
+  - var textSub = data.textSub || " Titre sous sous menu"
+  - var txt = data.txt || "Comment lire ma facture"
+  - var toggleSub = data.toggleSub || false
+  - var toggle = data.toggle || false
+
+  li.c-menuFAQ__subRub&attributes(attributes)
+    a(href='#' data-e-toggle='{"target": "'+ toggle + '", "autoClose" : "false"}').c-menuFAQ__link
+      h3!=txt
+      .icon.icon-chevron-bottom
+    ul.c-menuFAQ__listSubRub(data-e-toggle-target=toggle)
+      block
+
+mixin menuItemFAQ(data)
+  - var data = data || {}
+  - var text = data.text || " Lorem ipsum dolor sit amet."
+  - var sub  = data.sub || false
+  - var toggle = data.toggle || false
+  - var titleDownSEO = data.titleDownSEO || false
+
+  li.c-menuFAQ__rub&attributes(attributes)
+    if !sub
+      a(href='#').c-menuFAQ__link
+        if titleDownSEO
+          h3!=text
+        else
+          h2!=text
+    else
+      a(href='#' data-e-toggle='{"target": "'+ toggle + '", "autoCloseWrap": ".c-menuFAQ > nav"}').c-menuFAQ__link
+        if titleDownSEO
+          h3!=text
+        else
+          h2!=text
+        .icon.icon-chevron-bottom
+      ul.c-menuFAQ__listSubRub(data-e-toggle-target=toggle)
+        block
+
+mixin menuFAQ()
+  - var data      = data || {}
+
+  // .c-menuFAQ
+  .c-menuFAQ
+    button(
+      type="button"
+      data-e-toggle='{"target": "menuFAQ"}'
+    ).c-menuFAQ__btnMenu
+      h2 Titre Rubrique
+      .icon.icon-chevron-bottom
+
+    nav
+      ul.c-menuFAQ__listRub(data-e-toggle-target="menuFAQ")
+        block
+  // end .c-menuFAQ

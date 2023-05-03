@@ -1,0 +1,24 @@
+.c-titleV2 {
+  padding: 50px 0;
+  display: block;
+  width: 100%;
+}
+
+.c-titleV2__titleContent {
+  display: block;
+}
+
+.c-titleV2__textDown {
+  display: block;
+  width: 100%;
+  font-weight: 400 !important;
+}
+
+.c-titleV2__textTop.u-textNormal {
+  font-weight: 400 !important;}
+
+@include media ("<=small") {
+  .c-titleV2 {
+    padding: 30px 15px;
+  }
+}

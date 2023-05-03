@@ -1,0 +1,119 @@
+include ../../carousel/carousel
+include ../../accordion/accordion
+include ../../linkLongArrow/linkLongArrow
+include ../espritService-note/espritService-note
+
+mixin espritService-comments()
+  // .c-espritService-comments
+  section.c-espritService-comments(data-e-es-comments)
+    +accordion({
+      noWrapper: true
+    })
+      +espritService-comments__tab({
+        id: 'tab1',
+        title: 'Chaudière',
+        picto: 'contact-advice'
+      })
+      +accordion-panel('tab1')
+        +espritService-comments__panel()
+        +espritService-comments__panel()
+
+      +espritService-comments__tab({
+        id: 'tab2',
+        title: 'Déménagement',
+        picto: 'customer'
+      })
+      +accordion-panel('tab2')
+        +espritService-comments__panel()
+
+      +espritService-comments__tab({
+        id: 'tab3',
+        title: 'Economie d\'énergie',
+        picto: 'contact-advice'
+      })
+      +accordion-panel('tab3')
+        +espritService-comments__panel()
+
+      +espritService-comments__tab({
+        id: 'tab4',
+        title: 'Electricité et gaz naturel',
+        picto: 'customer'
+      })
+      +accordion-panel('tab4')
+        +espritService-comments__panel()
+        +espritService-comments__panel()
+
+    .c-espritService-comments__legal
+      +linkLongArrow({
+        text: "Conditions générales d'utilisation"
+      }).u-color-black
+  // end .c-espritService-comments
+
+
+mixin espritService-comments__tab(data)
+  - var data  = data || {}
+  - var id    = data.id || 'tab0'
+  - var title = data.title || false
+  - var picto = data.picto || 'contact-advice'
+
+  // .c-espritService-comments__tab
+  +accordion-tab(id)
+    .c-espritService-comments__tab
+      .c-espritService-comments__picto
+        span.icon(class='icon-'+ picto)
+
+      +espritService-note({
+        title: title,
+        noAggregate: true
+      })
+
+      span.c-espritService-comments__chevron.icon(class='icon-chevron-right')
+  // end .c-espritService-comments__tab
+
+
+mixin espritService-comments__panel(data)
+  - var data = data || {}
+
+  // .c-espritService-comments__panel
+  .c-espritService-comments__panel
+    .c-espritService-comments__total
+      .c-espritService-comments__padding
+        +espritService-note({
+          title: "Simulateur Estimer sa classe énergétique",
+          noAggregate: true
+        })
+
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore inventore asperiores amet enim, corporis blanditiis ea repellat sunt molestias suscipit, eius laboriosam, ratione! Et, repellat mollitia aliquam culpa nesciunt voluptatem.
+
+      +linkLongArrow({
+        text: "Simulateur Estimer sa classe énergétique",
+        inlineText: false
+      })(class="u-bg-grey-light u-bg-hover u-color-black")
+
+    .c-espritService-comments__slide
+      +carousel({
+        singleNav: 'c-carouselNav--arrowDots',
+        settings: {
+          arrows: true,
+          infinite: false,
+          dots: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          adaptiveHeight: true
+        }
+      })
+        div
+          +espritService-review({
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni nulla culpa nam obcaecati, dolor cum, aperiam rerum harum sed sint, ex accusantium minus recusandae eveniet autem alias. Vel, qui, veniam?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae animi qui voluptates doloribus optio sit neque et, temporibus iusto, voluptas ex laboriosam esse, praesentium porro libero ratione tenetur? Et, rem.'
+          })
+        div
+          +espritService-review()
+        div
+          +espritService-review()
+
+      .u-textCenter
+        +linkLongArrow({
+          text: "plus d'avis",
+          inlineText: true
+        }).u-color-genBlue
+  // end .c-espritService-comments__panel

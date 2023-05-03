@@ -1,0 +1,47 @@
+.c-footerLight {
+  padding-bottom: 15px;
+  background: $white;
+}
+
+.c-footerLight__line {
+  display: block;
+  width: 100%;
+  height: 15px;
+}
+
+.c-footerLight__engie {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  color: $grey;
+
+  .svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 70px;
+    height: 30px;
+    opacity: .3;
+  }
+}
+
+
+@include media('>=small') {
+  .c-footerLight {
+    padding: 20px;
+
+    .c-legalMention {
+      padding: 30px;
+    }
+  }
+
+  .c-footerLight__engie {
+    font-size: $font-15;
+    margin-top: 20px;
+
+    .svg {
+      margin-right: 10px;
+      width: 90px;
+    }
+  }
+}

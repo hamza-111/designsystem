@@ -1,0 +1,258 @@
+mixin mainEcoGest(data)
+  - var data = data || {}
+  - var imgSmall = data.imgSmall || "home_carrou_contrib_small.jpg"
+  - var imgLarge = data.imgLarge || "home_carrou_contrib_large1.jpg"
+  - var tab      = data.tab      || "tab"
+  - var travaux  = data.travaux  || false
+  - var plus  = data.plus  || false
+  - var citoyen  = data.citoyen  || false 
+
+  .c-mainEcoGest
+    .c-mainEcoGest__tab-content
+      // tabContent 1
+      .c-mainEcoGest__tab.c-mainEcoGest__active(id=tab+"1")
+
+        +ecoGestcontent({
+          travaux : travaux,
+          plus : plus,
+          citoyen : citoyen
+        })
+      
+      // tabContent 2
+      .c-mainEcoGest__tab(id=tab+"2")
+
+        +ecoGestcontent({
+          travaux : travaux,
+          plus : plus,
+          citoyen : citoyen
+        })
+      // tabContent 3
+      .c-mainEcoGest__tab(id=tab+"3")
+
+        +ecoGestcontent({
+          travaux : travaux,
+          plus : plus,
+          citoyen : citoyen
+        })
+      // tabContent 4
+      .c-mainEcoGest__tab(id=tab+"4")
+
+        +ecoGestcontent({
+          travaux : travaux,
+          plus : plus,
+          citoyen : citoyen
+        })
+      // tabContent 5
+      .c-mainEcoGest__tab(id=tab+"5")
+
+        +ecoGestcontent({
+          travaux : travaux,
+          plus : plus,
+          citoyen : citoyen
+        })
+      // tabContent 6
+      .c-mainEcoGest__tab(id=tab+"6")
+
+        +ecoGestcontent({
+          travaux : travaux,
+          plus : plus,
+          citoyen : citoyen
+        })
+
+      // tabContent 7
+      .c-mainEcoGest__tab(id=tab+"7")
+
+        +ecoGestcontent({
+          imgSmall : "bdhero-garantie-electro-menager-mobile.jpg",
+          imgLarge : "bdhero-garantie-electro-menager.jpg",
+          travaux : travaux,
+          plus : plus,
+          citoyen : citoyen
+        })
+      // tabContent 8
+      .c-mainEcoGest__tab(id=tab+"8")
+
+        +ecoGestcontent({
+          imgSmall : "ballon-push-fel-mobile.jpg",
+          imgLarge : "ballon-push-fel-desktop.jpg",
+          travaux : travaux,
+          plus : plus,
+          citoyen : citoyen
+        })
+      // tabContent 9
+      .c-mainEcoGest__tab(id=tab+"9")
+
+        +ecoGestcontent({
+          imgSmall : "carouselHome-slide1-small.jpg",
+          imgLarge : "carouselHome-slide2-medium.jpg",
+          travaux : travaux,
+          plus : plus,
+          citoyen : citoyen
+        })
+      // tabContent 10
+      .c-mainEcoGest__tab(id=tab+"10")
+
+        +ecoGestcontent({
+          imgSmall : "facture_fel.jpg",
+          imgLarge : "facture_fel_popin.jpg",
+          travaux : travaux,
+          plus : plus,
+          citoyen : citoyen
+        })
+      // tabContent 11
+      .c-mainEcoGest__tab(id=tab+"11")
+
+        +ecoGestcontent({
+          imgSmall : "ecogeste.jpg",
+          imgLarge : "3_desktop_ecogestes_bandeau.jpg",
+          travaux : travaux,
+          plus : plus,
+          citoyen : citoyen
+        })
+
+mixin ecoGestcontent(data)
+  - var data = data || {}
+  - var imgSmall = data.imgSmall || "home_carrou_contrib_small.jpg"
+  - var imgLarge = data.imgLarge || "3_desktop_ecogestes_bandeau.jpg"
+  - var travaux  = data.travaux  || false
+  - var plus  = data.plus  || false
+  - var citoyen  = data.citoyen  || false
+
+  .c-mainEcoGest__titleText.l-row--nogut
+    h2.c-mainEcoGest__title
+      if plus
+        img(src="../images/contrib/menu-plus.svg", alt="ecoPlus")
+        span.c-mainEcoGest__titre ECO<b>-PLUS</b>
+      else if citoyen
+        img(src="../images/contrib/menu-citoyen.svg", alt="ecoCitoyen")
+        span.c-mainEcoGest__titre ECO<b>-citoyen</b>
+      else if travaux
+        img(src="../images/contrib/menu-travaux.svg", alt="ecoTravaux")
+        span.c-mainEcoGest__titre ECO<b>-Travaux</b>
+      else
+        img(src="../images/contrib/menu-bienfait.svg", alt="ecoTravaux")
+        span.c-mainEcoGest__titre ECO<b>-bienfait</b>
+
+    p.c-mainEcoGest__txt.l-col-medium-7 <b>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque totem</b> fabulous. Aperspiciatis unde omnis iste natus error sit volu ptatem accusantium doloremque totem fabulous.
+  .c-mainEcoGest__titleImage
+    span.c-mainEcoGest__description Fermer les volets toute la nuit
+    .c-mainEcoGest__icons
+      .c-mainEcoGest__force
+        span.c-mainEcoGest__forceTxt Force
+        span.icon.icon-force.c-mainEcoGest__icon-force  
+          span.c-mainEcoGest__forceIcon 4
+      .c-mainEcoGest__social
+        a(href="https://www.addtoany.com/share_save?linkurl=https://gaz-tarif-reglemente.fr/", class="share_Js")
+          span.icon.icon-share
+        a(href="https://www.facebook.com/EngieFR/", title="Share on Twitter")
+          span.icon.icon-facebook
+  .c-mainEcoGest__banner
+    +img({
+      alt: "La description de mon image",
+      interchange: {
+        small: '../images/contrib/'+ imgSmall +'',
+        medium: '../images/contrib/'+ imgLarge +''
+      }
+    })
+  .c-mainEcoGest__body
+    .l-row
+      .c-mainEcoGest__para.l-col-medium-8
+        p.u-textBold Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolorem laudantium, totam rem aperiam.Aque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem.
+        p.c-mainEcoGest__para--padding - quia voluptas aspernatur aut odit aut fugit, sed quia consequuntur magni dolore qui ratione voluptatem 	  sequi nesciunt.
+        p.c-mainEcoGest__para--padding - Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia 	  non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+        p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et freg dolore magnam aliquam Neque porro quisquam est, qui dolorem ipsum quia.
+      .c-mainEcoGest__miniPush.l-col-medium-4
+        +miniPush({
+          themeColor: "genBlue",
+          img: true,
+          imgSmall: 'contact-mini.jpg',
+          imgLarge: 'contact-mini.jpg',
+          textColor: 'u-color-black',
+          themeTitle: 'Contact',
+          title: 'MON CONSEILLER',
+          btnTxt : "Je prends contact",
+          subTitle: 'ÉNERGÉTIQUE',
+          shadow : " ",
+          text: 'Besoin d’aide ? Nous<br> vous accompagnons<br> dans vos choix.'
+        })
+      
+      if travaux
+        .l-row
+          .l-col-medium-6.c-mainEcoGest__miniPush
+            
+            +miniPush({
+              themeColor: "white",
+              img: true,
+              imgSmall: 'ecogeste.jpg',
+              imgLarge: 'ecogeste.jpg',
+              textColor: 'u-color-white',
+              themeTitle: 'Eco-Travaux',
+              title: 'Quel est votre investissement ?',
+              btnTxt : "Je demande un devis",
+              subTitle: ' ',
+              shadow : " ",
+              themeTextColor : "black",
+              travauxTitle : true,
+              text: "<br>Isolation des murs par l’interieur  30-40€ ht/m² <br><br>Isolation des murs par l'extérieur  50-100€ HT/m²"
+            })
+          .l-col-medium-6.c-mainEcoGest__miniPush
+            
+            +miniPush({
+              themeColor: "white",
+              img: true,
+              imgSmall: 'ecogeste.jpg',
+              imgLarge: 'ecogeste.jpg',
+              textColor: 'u-color-white',
+              shadow : " ",
+              themeTitle: 'Service',
+              title: 'Découvrez si vous êtes éligible à la prime ?',
+              btnTxt : "Je fais ma simulation",
+              subTitle: ' ',
+              shadow : " ",
+              themeTextColor : "black",
+              text: '<br>Faites une simulation<br> adaptée de la prime CEE.'
+            })
+        
+        +titleV2({
+          blue : "u-color-greenPersian",
+          titleBlue : "Je me renseigne et profite d'aides financières adaptées",
+          titleBlack : "aux travaux à réaliser dans mon foyer."
+        })
+        .l-row.u-padding-b-110
+          .l-col-medium-6
+            ul.c-mainEcoGest__liste
+              li
+                span.c-mainEcoGest__imgIcon 
+                  img(src="../images/contrib/menu-travaux.svg", alt="travaux")
+                .c-mainEcoGest__desc
+                  span.u-color-greenPersian.u-textBold Le crédit d’impôt pour la transition énergétique (CITE)
+                  p quia voluptas aspernatur aut odit aut fugit, sed quia consequuntur magni dol ore qui ratione volupta tem sequi nesciunt.
+              li
+                span.c-mainEcoGest__imgIcon 
+                  img(src="../images/contrib/menu-travaux.svg", alt="travaux")
+                .c-mainEcoGest__desc
+                  span.u-color-greenPersian.u-textBold TVA à 5,5 %
+                  p quia voluptas aspernatur aut odit aut fugit, sed odit aut fugit, sed quia conse quuntur magni dolore quia consequuntur magni dolore ratione voluptatem  sequi nesciunt. sequi nesciunt odit aut fugit, sed quia consequuntur magni dolore qui ratione voluptat em sequi nesciunt
+              li
+                span.c-mainEcoGest__imgIcon 
+                  img(src="../images/contrib/menu-travaux.svg", alt="travaux")
+                .c-mainEcoGest__desc
+                  span.u-color-greenPersian.u-textBold L’ÉCO-prêt à taux Zéro
+                  p quia voluptas aspernatur aut odit aut fugit, sed quia consequuntur magni dolore qui ratione voluptatem sequi nesciunt odit aut fugit, sed quia consequ untur magni dolore qui ratione voluptatem sequi nesciunt.
+          .l-col-medium-6
+            ul.c-mainEcoGest__liste
+              li
+                span.c-mainEcoGest__imgIcon 
+                  img(src="../images/contrib/menu-travaux.svg", alt="travaux")
+                .c-mainEcoGest__desc
+                  span.u-color-greenPersian.u-textBold Les aides de l’ANAH (Agence nationale de l’habitat)
+                  p quia voluptas aspernatur aut odit aut fugit, sed quia consequuntur magni dolore qui ratione voluptatem sequi nesciunt aspernatur aut odit aut fugit, sed quia consequuntur magni dolore qui ratione voluptatem sequi nes spernatur aut odit aut fugit, sed quia consequuntur .
+              li
+                span.c-mainEcoGest__imgIcon 
+                  img(src="../images/contrib/menu-travaux.svg", alt="travaux")
+                .c-mainEcoGest__desc
+                  span.u-color-greenPersian.u-textBold Les certificats d’économies d’énergies
+                  p quia voluptas aspernatur aut odit aut fugit, sed quia consequuntur magni  dolore qui ratione voluptatem sequi nesciunt nesciunt aspernatur aut odit aut fugit, sed  consequuntur magni dolore qui ratione .
+
+
+              

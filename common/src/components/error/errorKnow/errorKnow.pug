@@ -1,0 +1,11 @@
+mixin errorKnow(data)
+  - var data = data || {}
+  - var titleNum = data.titleNum || ''
+  - var text = data.text || {}
+
+  .c-errorKnow.u-bg-white
+    .c-errorKnow__ribbon.u-bg-genBlue
+      .c-errorKnow__icon.u-color-white.u-textCenter.icon(class="icon-"+"lightbulb")
+      .c-errorKnow__title.u-color-white.u-textCenter=titleNum
+      .c-errorKnow__triangle
+    .c-errorKnow__content=text

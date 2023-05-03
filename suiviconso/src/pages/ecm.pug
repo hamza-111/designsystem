@@ -1,0 +1,39 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../../../common/src/components/pictoBlock/pictoBlock
+include ../../../common/src/components/footerLight/footerLight
+include ../../../cel/src/components/ecm/ecm
+
+
+
+//- Main variables
+block variables
+  - var title          = "EC en masse"
+  - var page           = "app"
+  - var bodyClass      = ""
+  - var description    = ""
+  - var noHeaderFooter = true
+  - var headerCel      = 'TR'
+  - var headerLight    = true
+  - var footerLight    = true
+  - var wrapperSite    = "l-wrapper--site"
+
+
+  //- - var noHeaderFooter = true
+  - var demoMode       = true
+  //- - var footerLight   = true
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  #cel.c-headerLightCelPush.l-wrapper--mainFull
+    +ecm({
+      "step": 1
+    })
+

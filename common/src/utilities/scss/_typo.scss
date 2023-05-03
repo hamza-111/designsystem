@@ -1,0 +1,452 @@
+/**
+ * Typography-alignement:
+ * `.u-textLeft .u-textRight .u-textCenter` - Alignements
+ *
+ *     @example
+ *     p.u-textLeft Texte aligné à gauche (par défaut le texte est aligné à gauche).
+ *     p.u-textRight Texte aligné à droite.
+ *     p.u-textCenter Texte centré.
+ */
+
+.u-textLeft { text-align: left; }
+.u-textRight { text-align: right; }
+.u-textCenter { text-align: center; }
+
+
+/**
+ * Typography-styles:
+ * `.u-textBold .u-textItalic .u-textUnderlined <sup> <sub>` - Styles de base
+ *
+ *     @example
+ *     p ipsum#[sup exposant]
+ *     p ipsum#[sub exposant]
+ *     p #[.u-textBold texte en gras]
+ *     p #[.u-textItalic texte en italique]
+ *     p #[.u-textUnderlined texte souligné]
+ *     p #[.u-textNormal texte normal]
+ *     p #[.u-textUppercase texte majuscule]
+ */
+
+sup {
+  font-size: 0.7em;
+  vertical-align: super;
+}
+
+sub {
+  font-size: 0.7em;
+  vertical-align: sub;
+}
+
+i, .u-textItalic { font-style: italic; }
+strong, b, .u-textBold { font-weight: $font-bold; }
+u, .u-textUnderlined { text-decoration: underline; }
+.u-textNormal { font-weight: $font-normal; }
+.u-textUppercase { text-transform: uppercase; }
+
+
+/**
+ * Typographie Titres:
+ * `.u-heading-x` - Styles des titres
+ *
+ *     @example
+ *     .u-heading-1 Titre de niveau 1
+ *     .u-heading-2 Titre de niveau 2
+ *     .u-heading-3 Titre de niveau 3
+ *     .u-heading-4 Titre de niveau 4
+ */
+
+/**
+ * Typographie Textes:
+ * `.u-fontSize-xxx` - Classes de font-size pour mobile > tablet > desktop
+ *
+ *     @example
+ *     div.u-fontSize-titan Texte 21px > 24px
+ *     div.u-fontSize-huge Texte 18px > 21px
+ *     div.u-fontSize-large Texte 16px > 18px
+ *     div.u-fontSize-medium Texte 15px > 15px
+ *     div.u-fontSize-default Texte 15px > 15px
+ *     div.u-fontSize-small Texte 13px > 13px
+ *     div.u-fontSize-tiny Texte 13px > 13px
+ */
+
+// ATTENTION, repporter modifs sur _wysiwyg.scss
+.u-heading-1,
+.u-heading-2,
+.u-heading-3,
+.u-heading-4 {
+  font-weight: $font-bold;
+  
+  @include media("<=small") {
+    &.u-heading--headerFixed {
+      margin-top: 110px;
+    }
+  }
+}
+
+.u-font-size-2-4 {
+  font-size: 2.4rem !important;
+}
+
+.u-heading-1,
+.u-fontSize-titan {
+  font-size: 2.4rem;
+}
+.u-heading-2,
+.u-fontSize-huge {
+  font-size: 2.1rem;
+}
+.u-heading-3,
+.u-fontSize-large {
+  font-size: 1.8rem;
+}
+.u-heading-4,
+.u-fontSize-medium,
+.u-fontSize-default {
+  font-size: 1.5rem;
+}
+
+.u-fontSize-small { font-size: 1.3rem; }
+.u-fontSize-tiny { font-size: 1.3rem; }
+
+@include media(">small") {
+  .u-heading-1,
+  .u-fontSize-titan {
+    font-size: 3rem;
+    line-height: 1.3;
+  }
+
+  .u-heading-2,
+  .u-fontSize-huge {
+    font-size: 2.4rem;
+    line-height: 1.1;
+  }
+
+  .u-heading-3,
+  .u-fontSize-large {
+    font-size: 2.1rem;
+    line-height: 1.2;
+  }
+
+  .u-heading-4,
+  .u-fontSize-medium {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .u-fontSize-default {
+    font-size: 1.5rem;
+  }
+
+  .u-fontSize-small { font-size: 1.3rem; }
+}
+
+@include media(">medium") {
+  .u-fontSize-default { font-size: 1.5rem; }
+  .u-fontSize-small { font-size:   1.4rem; }
+}
+// END - ATTENTION, repporter modifs sur _wysiwyg.scss
+
+
+// Size for icons
+.u-fontSize-30 { font-size:  3.0rem; }
+.u-fontSize-40 { font-size:  4.0rem; }
+.u-fontSize-50 { font-size:  5.0rem; }
+.u-fontSize-60 { font-size:  6.0rem; }
+.u-fontSize-70 { font-size:  7.0rem; }
+.u-fontSize-120 { font-size: 12rem; }
+
+
+/**
+ * Typography-liens:
+ * `.u-link` - différents types de liens (surtout pour wysiwyg). `.u-fauxLink` est utilisé sur les push (voir c-push)
+ * pour le SEO
+ *
+ *     @example
+ *     a.u-link.u-theme-color.u-theme-color-hover(href="#") Lien normal
+ *     a.u-link u-link--externalLink.u-theme-color.u-theme-color-hover(href="#" target="_blank" rel="noopener noreferrer") Lien ex
+ *     a.u-link u-link--download.u-theme-color.u-theme-color-hover(href="#") Lien télécharger
+ *     a.u-link.u-link--arrow.u-theme-bg.u-theme-bg-hover(href="#") Lien bouton
+ *     a.u-link.u-link--arrow.u-theme-color.u-bg-grey-light.u-bg-hover(href="#") Lien bouton secondaire
+ *
+ *     a.u-fauxLink Title
+ */
+
+.u-link {
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+
+  &:after {
+    font-family: icons;
+    margin-left: 0.1em;
+  }
+}
+
+.u-link--revert {
+  text-decoration: underline;
+}
+
+.u-link--arrow,
+.u-link--download {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  border: none;
+  color: $white;
+  padding: 10px 30px;
+  font-size: $font-16;
+  transition: all 0.2s ease-in-out;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.u-link--arrow {
+  background-color: $genBlue;
+  color: $white;
+
+  @include hover-focus-active() {
+    background-color: $genBlue-hover;
+  }
+}
+
+.u-link--download {
+  &:after {
+    font-size: 2.1rem;
+    line-height: 0;
+  }
+}
+
+.u-link--secondary,
+.u-link--download {
+  background-color: transparent;
+  border: 1px solid;
+  color: $genBlue;
+  padding: 9px 20px;
+
+  @include hover-focus-active() {
+    background-color: #CBEAF9;
+    color: $genBlue-hover;
+  }
+}
+
+.u-link--externalLink:after {
+  font-size: 2.5rem;
+  line-height: 0;
+}
+
+.u-fauxLink {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
+  overflow: hidden;
+  text-indent: 200%;
+  white-space: nowrap;
+  background: transparent;
+}
+
+// mobile
+@include media('<=small') {
+  
+.u-font-size-2-4 {
+  font-size: 2.4rem !important;
+}
+
+  .u-link--arrow {
+    font-size: 1.5rem;
+  }
+
+  .u-link--arrow.u-link--arrow {
+    display: block;
+    width: auto;
+  }
+}
+
+// @include media('>small') {
+//   [class*=u-link--] + [class*=u-link--] {
+//     margin-left: 15px;
+//   }
+// }
+
+
+/**
+ * Typography-listes:
+ * `.u-list` - Listes
+ *
+ *     @example
+ *     ul.u-list
+ *       li.u-list__item.u-theme-color-before Liste par défaut
+ *
+ *     ul.u-list
+ *       li.u-list__item.u-list__item--check.u-theme-color-before Liste par "checked"
+ *
+ *     ol.u-list.u-list--ordered
+ *       li.u-list__item.u-theme-color-before Liste ordonnée
+ */
+
+// dans c-wysiwyg
+.c-wysiwyg ul,
+.c-wysiwyg ol,
+// dans iFrame CQ RTE
+#CQrte ul,
+#CQrte ol,
+// dans classe u-list
+.u-list {
+  padding-left: 2em;
+
+  @include media(">small") {
+    padding-left: 2em;
+  }
+}
+
+.u-list__item {
+  display: block;
+  position: relative;
+
+  &:not([class*="u-margin-"]) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  &:before {
+    content: '●';
+    position: absolute;
+    padding-left: 0.3em;
+    left: -1.5em;
+    line-height: 1;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    text-transform: none;
+  }
+
+  @include media(">small") {
+    &:before {
+      left: -1.4em;
+    }
+  }
+}
+
+.u-list__item.u-list__item--check:before {
+  content: '';
+  padding-left: 0.2em; // pour aligner avec les puces carrées
+  line-height: 0.8;
+  font-family: icons;
+  font-size: 2.5rem;
+}
+
+.u-list__item.u-list__item--defaultDisc {
+  display: list-item;
+  list-style-type: disc;
+
+  &:before {
+    display: none;
+  }
+}
+
+// Dimensions des puces :
+ul .u-list__item:before {
+  font-size: 2rem;
+}
+
+ol .u-list__item:before {
+  font-size: 1.8rem;
+}
+
+.c-wysiwyg ol,
+.u-list--ordered {
+  counter-reset: number;
+
+  .u-list__item {
+    counter-increment: number;
+
+    &:before {
+      content: counter(number); // nombre
+      font-family: $font-arial;
+      font-weight: $font-bold;
+      line-height: 1;
+      @include media("<=small") {
+        font-size: 1.6rem;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+
+
+.u-buttonReset {
+  @extend %reset-style-button;
+}
+
+
+// Size for icons
+.u-typoSize-36 { 
+  font-size:  3.6rem!important; 
+  line-height: 4.6rem!important;
+}
+
+.u-typoSize-32, .u-heading-1 { 
+  font-size:  3.2rem!important;
+  line-height: 4.3rem!important;
+ }
+.u-typoSize-24, .u-heading-2, .u-heading-3 {
+  font-size:  2.4rem!important; 
+  line-height: 3.2rem!important;
+}
+.u-typoSize-22,.u-heading-4  { 
+  font-size:  2.2rem!important; 
+  line-height: 3.2rem!important;
+}
+.u-typoSize-20{ 
+  font-size:  2.0rem!important;
+  line-height: 2.8rem!important;
+}
+.u-typoSize-18 { 
+  font-size:  1.8rem!important; 
+  line-height: 2.6rem!important;
+}
+.u-typoSize-16 { 
+  font-size:  1.6rem!important; 
+  line-height: 2.2rem!important;
+}
+.u-typoSize-14 { 
+  font-size:  1.4rem!important;
+  line-height: 2rem!important;
+}
+.u-typoSize-12 { 
+  font-size:  1.2rem!important; 
+  line-height: 1.4rem!important;
+}
+
+// heading by DS
+.u-heading-1 {font-weight: 400;}
+.u-heading-2 {font-weight: 400;}
+.u-heading-3 {font-weight: 700;}
+.u-heading-4 {font-weight: 600;}
+.u-heading-5 {font-weight: 600;}
+
+
+// letter spacing 
+.u-letterSpacing-12 { letter-spacing: 12px; }
+
+// font-weight => a utilisé pour le support back
+.u-Weight-400 { font-weight: 400!important; } // REGULAR
+.u-Weight-700 { font-weight: 700!important; } // bold
+.u-Weight-600 { font-weight: 600!important; } //semi bold
+
+.icon.icon--blue::before {
+  color: $genBlue;
+}
+
+.icon-typo20 {
+  &:before{
+    font-size: 2.0rem;;
+    }  
+}
+
+  

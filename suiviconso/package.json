@@ -1,0 +1,15 @@
+{
+  "name": "suiviconso",
+  "version": "1.0.0",
+  "description": "suiviconso",
+  "private": true,
+  "config": {
+    "port": 4090
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "index.js",
+  "author": "",
+  "license": "private"
+}

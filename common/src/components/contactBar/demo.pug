@@ -1,0 +1,27 @@
+include contactBar
+
+.c-wysiwyg
+  h2 ContactBar : avec réseaux sociaux
+
++demo()
+  +contactBar({
+    displaySocialNetwork: true
+  })
+
+
+.c-wysiwyg
+  h2 ContactBar : sans réseaux sociaux
+
++demo()
+  +contactBar({
+    displaySocialNetwork: false
+  })
+
+
+.c-wysiwyg
+  h2 ContactBar : avec champs désactivés
+
++demo()
+  +contactBar({
+    unavailableMode: true
+  })

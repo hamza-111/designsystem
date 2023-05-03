@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+// imports variables, mixins
+@import "../../../../common/src/assets/scss/variables";
+@import "../../../../common/src/assets/scss/mixins";
+@import "../../assets/scss/variables";
+
+
+/***
+ * IconfontsVENTE:
+ */
+ @import "../../assets/scss/icons";
+
+
+// imports COMMON
+@import "../../../../common/src/components/moreLessInput/moreLessInput";
+
+
+// imports VENTE
+@import "../../components/fullModal/fullModal";
+@import "../../components/selectEmpty/selectEmpty";
+@import "../../components/multiChoice/multiChoice";
+@import "../../components/bubble/bubble";
+@import "../../components/bubbleList/bubbleList";

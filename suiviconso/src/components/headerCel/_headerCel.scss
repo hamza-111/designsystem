@@ -1,0 +1,36 @@
+// Override css Suiviconso spécifique
+
+// headerCEL
+
+.c-headerCel.c-headerCel--gradientStyle.c-headerCel--sousMenu {
+    background: linear-gradient(180deg, #F2F2F1 55px, white 55px, white 110px, #ccc 110px, transparent 120px)!important;
+}
+
+.c-headerCel.c-headerCel--gradientStyle {
+  &::before {
+    content: none;
+  }
+  // background: none!important;
+}
+
+.c-headerCel.c-headerCel--sousMenu.c-sticky.c-sticky--unstickyTop {
+  transform: translateY(-75%) !important;
+}
+
+.c-headerCel.c-headerCel--gradientStyle.c-headerCel--sousMenu {
+  .c-sousMenu {
+   background-color: transparent!important; 
+   max-width: 1240px;
+   border-top: 0;
+   margin-top: -31px;
+  }
+}
+
+@media (max-width: 64em) {
+  .c-headerCel__header {
+    padding: 23px 10px 50px 0 !important;
+    background: white;
+  }
+
+}
+

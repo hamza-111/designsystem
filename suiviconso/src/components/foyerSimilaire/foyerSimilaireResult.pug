@@ -1,0 +1,44 @@
+mixin foyerSimilaireResult(data)
+  - var data   = data || {}
+  //.c-foyerSimilaire
+
+  .c-foyerSimilaireResult
+    h2.c-foyerSimilaireResult__title Quel consommateur êtes-vous ?
+
+    .c-foyerSimilaireResult__wrap
+      .c-foyerSimilaireResult__item.c-foyerSimilaireResult__item--green
+        img(src="../images/contrib/foyers-base-v.svg" alt="foyer de base").c-foyerSimilaireResult__img
+        b.c-foyerSimilaireResult__itemText foyers économes
+        span.c-foyerSimilaireResult__itemTextColor 800 kWh
+      .c-foyerSimilaireResult__item.c-foyerSimilaireResult__item--yellow
+        img(src="../images/contrib/foyers-base-y.svg" alt="foyer de base").c-foyerSimilaireResult__img
+        b.c-foyerSimilaireResult__itemText foyers moyens
+        span.c-foyerSimilaireResult__itemTextColor 600 kWh
+
+      .c-foyerSimilaireResult__item.c-foyerSimilaireResult__item--blue.is-active
+        img(src="../images/contrib/foyers-base-b.svg" alt="foyer de base").c-foyerSimilaireResult__img
+        b.c-foyerSimilaireResult__itemText Votre foyer
+        span.c-foyerSimilaireResult__itemTextColor 840 kWh
+
+      .c-foyerSimilaireResult__item.c-foyerSimilaireResult__item--red
+        img(src="../images/contrib/foyers-base-r.svg" alt="foyer de base").c-foyerSimilaireResult__img
+        b.c-foyerSimilaireResult__itemText Foyer consommateurs
+        span.c-foyerSimilaireResult__itemTextColor +1400 kWh
+
+        
+    img(src="../images/contrib/progression-graph-nuance.svg" alt="foyer de base").c-foyerSimilaireResult__separatorImg.u-margin-t-20.u-margin-b-50
+
+    .c-foyerSimilaireResult__info
+      h2.c-foyerSimilaireResult__infoTitle.u-margin-small-b-10 De juin à juillet 2018
+
+      p.c-foyerSimilaireResult__infoText.u-margin-small-b-10 Votre consommation est légèrement supérieure à la moyenne des foyers similaires au votre,
+
+      p.c-foyerSimilaireResult__infoTextSynthese Soit + 5% que les foyers moyens.
+
+
+    +btnWrapper.c-btnWrapper--alignLeft.u-theme-genBlue.u-margin-t-50
+      +baseBtn({
+        text: 'Recommencer',
+        secondary: true
+      })
+

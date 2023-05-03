@@ -1,0 +1,43 @@
+mixin socialNetwork(data)
+  - var data      = data || {}
+  - var hasTitle  = data.hasTitle || false
+  - var title     = data.title || "Lorem ipsum"
+
+  // .c-socialNetwork
+  div.c-socialNetwork
+    if (hasTitle)
+      .c-socialNetwork__title
+        h3.u-textBold.u-fontSize-large!=title
+
+    ul.c-socialNetwork__group.u-clearfix
+      li.c-socialNetwork__item
+        a.c-socialNetwork__link.u-bg-genBlue-after(
+          href  = 'https://www.facebook.com/sharer/sharer.php?u=https%3A//particuliers.engie.fr',
+          title = 'Facebook',
+          target = '_blank',
+          rel   = 'noopener noreferrer'
+        )
+          span.c-socialNetwork__icon.icon.icon-facebook
+
+      li.c-socialNetwork__item
+        a.c-socialNetwork__link.u-bg-genBlue-after(
+          href  = 'https://twitter.com/home?status=Un%20message%20encod%C3%A9',
+          title = 'Twitter',
+          target = '_blank',
+          rel   = 'noopener noreferrer'
+        )
+          span.c-socialNetwork__icon.icon.icon-twitter
+
+      li.c-socialNetwork__item
+        a.c-socialNetwork__link.u-bg-genBlue-after(
+          href  = 'https://plus.google.com/share?url=https%3A//particuliers.engie.fr',
+          title = 'Google plus',
+          target = '_blank',
+          rel   = 'noopener noreferrer'
+        )
+          span.c-socialNetwork__icon.icon.icon-googleplus
+
+      li.c-socialNetwork__item
+        a.c-socialNetwork__link.u-bg-genBlue-after(href="#" title="Application mobile")
+          span.c-socialNetwork__icon.icon.icon-mobile
+  // end .c-socialNetwork

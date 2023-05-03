@@ -1,0 +1,26 @@
+mixin listLinkResult(data)
+	- var data  = data || {}
+	- var title = data.title || 'Découvrir l’Espace Client'
+	- var label = data.label || false
+	- var btn = data.btn || false
+	- var demoLink = ["Espace Client : découvrez vos services en ligne", "Comment créer mon Espace Client Gaz Tarif Réglementé ?", "Pourquoi l'accès sécurisé à mon Espace Client est-il renforcé ?", "Comment créer un favori pour accéder directement à mon Espace Client ?", "Comment enregistrer mon mot de passe ?", "Quels services peut-on retrouver sur l'application mobile Gaz Tarif Réglementé ?", "Comment télécharger l'application mobile Gaz Tarif Réglementé ?"]
+
+	//c-listLinkResult
+	.c-listLinkResult&attributes(attributes)
+		if label
+			h3.c-listLinkResult__label!=title
+		
+		ul.c-listLinkResult__list
+			each n in demoLink
+				li.c-listLinkResult__listElem
+					a.c-listLinkResult__link(href="#")
+						span=n
+							span.icon.icon-ic_chevron-right
+
+		if btn
+			+btnWrapper().c-btnWrapper--alignLeft.c-btnWrapper--fullOnMobile.u-margin-t-40.u-margin-small-t-40
+				+baseBtn({
+					text: "Toutes les FAQ",
+					iconLeft: "icon-chevron-left",
+					empty: true
+				})

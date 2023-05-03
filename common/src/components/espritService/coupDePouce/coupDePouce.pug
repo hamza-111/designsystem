@@ -1,0 +1,61 @@
+mixin coupDePouceBan(data)
+  - var data = data|| {}
+
+  // .c-coupDePouce__Ban
+  .c-coupDePouce__Ban.u-textCenter.u-margin-t-30
+    h2.u-margin-v-30.u-fontSize-titan Avis clients - Coup de Pouce Isolation 2020
+    p.c-coupDePouce__BanNote.u-margin-b-30
+        <b>4,2/5</b> (57553 avis)
+    img(src="../images/contrib/logo-CEE-jour.jpg" alt="logo")
+
+
+mixin coupDePouceCommentaire(data)
+  - var data = data|| {}
+
+  // .c-coupDePouce__com
+  .c-coupDePouce__com.u-margin-t-40
+    // .c-espritService-comments2__filter
+    .c-espritService-comments2__filter
+      h3.c-espritService-comments2__title Les commentaires
+
+      .c-espritService-comments2__dropdown
+        .c-espritService-comments2__seeAll
+          .u-visibilityHidden(data-e-es-reviews-resetnote)
+            a(href='#' data-e-es-reviews-filter="allavis")
+              span.icon.icon-close
+              | Voir toute les notes
+
+        +select({
+          name: "modeDeTriAvis"
+        })(data-e-es-reviews-filter)
+          option(value='commentedonly') Avis commentés les plus récents
+          option(value='commentedbyvote') Avis commentés les plus utiles
+          option(value='allavis') Tous les avis
+    // end .c-espritService-comments2__filter
+
+mixin coupDePouceReview(data)
+  <li class="c-coupDePouceReview c-espritService-comments2__avis">
+    <div class="c-espritService-review c-espritService-comments__padding">
+      <div class="c-espritService-review__content">
+        <span class="c-espritService-review__contentText"> Publié par : Alain M </span>
+        <span>le <b>12/04/2018</b> </span>
+
+        <!-- .c-rating-->
+        <div class="c-rating-block">
+          <span>(<b>5</b>/5)</span>
+        </div>
+      </div>
+      <p class="c-espritService-reviewMiniText" u-margin-t-0>Mon expérience de consommateur s'est faite le : 13/02/2018</p>
+      <p class="u-margin-t-20 u-margin-b-30">test double affichage popin lors de la validation</p>
+      <div class="c-espritService-comments2__voteBlock" data-e-es-reviews-votes="[% this.identifiantAvis %]">
+        <p class="c-espritService-comments2__voteText">Cet avis est-il utile ?</p>
+        <div class="c-espritService-comments2__voteBtn"><a href="#" data-e-es-reviews-vote="{&quot;id&quot;: 431236, &quot;vote&quot;: &quot;VoteP&quot;}" title="oui"><span class="icon icon-thumbs-o-up"></span></a><a href="#" data-e-es-reviews-vote="{&quot;id&quot;: [% this.identifiantAvis %], &quot;vote&quot;: &quot;VoteN&quot;}" title="non"><span class="icon icon-thumbs-o-down"></span></a></div>
+      </div>
+    </div>
+    <div class="l-row l-row--nogut">
+      <div class="l-col-fix">
+          <!-- .c-linkLongArrow--><a class="c-linkLongArrow u-bg-white u-bg-hover u-color-black" href="[% this.lienSignalerAbus %]/[% this.identifiantAvis %]" data-e-popup="popup_delete_review"><span class="c-linkLongArrow__content"><span class="c-linkLongArrow__text">Supprimer cet avis</span><span class="c-linkLongArrow__icon icon icon-long-arrow-right"></span></span></a>
+          <!-- .c-linkLongArrow-->
+      </div>
+    </div>
+  </li>

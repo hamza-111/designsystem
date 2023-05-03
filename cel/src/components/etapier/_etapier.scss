@@ -1,0 +1,262 @@
+
+$timeLineBG :#80CEF4;
+$timeLineBGActive :$genBlue;
+$timeLineBGCurrent :white;
+
+$progressBarDelay: .4s;
+
+// new TIMELINE
+
+.c-etapier {
+  background-color:$genBlue;
+  padding: 8px 10%;
+  width: 100%;
+  
+  &.c-etapier--steps-2 {
+    .c-etapier__wrap {
+      width: 30%;
+    }
+  }
+  &.c-etapier--steps-3 {
+    .c-etapier__wrap {
+      width: 50%;
+    }
+  }
+
+}
+
+
+.c-etapier__item span { display: none;}
+
+.c-etapier__wrap {
+  position: relative;
+  margin: 0 auto;
+  @include media ("<=small") { width: 100%!important; }
+}
+
+.c-etapier__wrapItem {
+  color:white;
+  display:flex;
+  justify-content: space-between;
+}
+
+
+.c-etapier--noCurssor .c-etapier__item {
+  cursor: context-menu;
+}
+
+.c-etapier__item {
+  cursor: pointer;
+  display: flex;
+  font-weight: bold;
+  font-size: 1.7rem;
+  text-decoration: none;
+  z-index: 2;
+  background: $timeLineBG;
+  border: 2px solid $timeLineBG;
+  border-radius: 25px;
+  position :relative;
+  color: $genBlue;
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  
+
+  &.is-current {
+    background: white;
+    border: 2px solid white;
+  }
+
+  &.is-past {
+    background: $genBlue;
+    border: 2px solid white;
+    color: white;
+  }
+}
+
+.c-etapier__progessBar {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  background: $timeLineBG;
+  height: 2px;
+  top: 16px;
+
+  .c-etapier__progessBarCurrent {
+    background: $white;
+    height: 2px;
+  }
+}
+
+@include media (">small") {
+  .c-etapier {
+    padding-bottom: 40px;
+  }
+  
+.c-headerCel--gradientStyleEtapier .c-etapier {
+  padding-bottom: 16px;
+}
+  
+  .c-etapier__item span {
+    font-weight: bold;
+    font-size: 1.3rem;
+    position: absolute;
+    width: 180px;
+    line-height: 2rem;
+    bottom: -48px;
+    left: -74px;
+    min-height: 40px;
+    color: white;
+    display: block;
+    text-align: center;
+  }
+}
+
+.c-headerCel--gradientStyleEtapier .c-etapier__header .c-etapier__item span .icon {
+  display: none;
+}
+
+@include media ("<=medium") {
+
+  .c-headerCel--gradientStyleEtapier .c-etapier__header .c-etapier__item span  {
+    display: none;
+  }
+
+}
+
+@include media (">medium") {
+  .c-etapier__item span {
+    font-size: 1.6rem;
+    width:230px ;
+    left: -100px;
+  }
+
+  .c-headerCel--gradientStyleEtapier .c-headerCelLayer__content {
+    margin-top: 14px;
+  }
+
+  .c-etapier__header .c-etapier__progessBar {
+    display: none;
+  }
+
+  .c-etapier__header .c-etapier__item span {
+    left: 50px;
+    top: 5px;
+    text-align: left;
+    bottom: 0;
+  }
+
+  .c-headerCel--gradientStyleEtapier .c-etapier__header .c-etapier__item span .icon {
+    font-size: 3rem;
+    display: block;
+  }
+  
+  .c-headerCel--gradientStyleEtapier .c-etapier__header .c-etapier__item:last-of-type span .icon {
+    display: none;
+  }
+
+  .c-headerCel--gradientStyleEtapier .c-etapier__header .c-etapier__item span {
+    display: flex;
+    align-items: center;
+    top: -5px;
+  }
+
+}
+
+
+//etapier header
+
+.c-etapier__header.c-etapier {
+  background-color: white;
+}
+
+.c-etapier__header .c-etapier__item.is-current {
+  background-color: $genBlue;
+  color: white;
+  border-color:$genBlue ;
+}
+
+.c-etapier__progessBar {
+  background-color: #D0D0D0;
+}
+
+.c-etapier__header .c-etapier__progessBar .c-etapier__progessBarCurrent {
+  background-color: #80cef4;
+}
+
+.c-etapier__header .c-etapier__item {
+  background: white;
+  border: 2px solid #D0D0D0;
+  color: #D0D0D0;
+}
+
+.c-etapier__header .c-etapier__item.is-current span {
+  color: $genBlue;
+}
+
+.c-etapier__header .c-etapier__item span {
+  color: #999;
+  font-weight: 600;
+}
+
+.c-headerCel--gradientStyleEtapier .c-etapier__header .c-etapier__item span {
+  font-size: 1.4rem;
+}
+
+.c-headerCel--gradientStyleEtapier .c-etapier__header .c-etapier__item.is-past {
+  background: white;
+  opacity: 1;
+}
+
+.c-etapier__header .c-etapier__item.is-past {
+  background: $genBlue;
+  border: 2px solid #00aaff;
+  color: #00aaff;
+  cursor: default;
+  opacity: 1;
+
+  .c-progressStep__value {
+    color: #00aaff;
+  }
+  .c-progressStep {
+    background-color: white;
+  }
+}
+
+.c-etapier__header .c-etapier__item.is-past span{
+  color: $genBlue;
+}
+@include media ("<small") {
+  .c-etapier__header .c-etapier__item.is-current span { 
+    display: none;
+    //display: block;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 45px;
+    font-weight: normal;
+  }
+
+  .c-headerCel--etapierStyleMobile {
+    bottom: -96px !important;
+    z-index: 0;
+  }
+
+  .c-etapier__header .c-etapier__item.is-current {
+    position: initial;
+  }
+}
+
+@include media (">small", "<=medium") {
+  .c-headerCel--gradientStyleEtapier .c-etapier__header .c-etapier__item span {
+    font-size: 13px;
+  }
+
+  .c-headerCel--etapierStyleMobile {
+    bottom: -106px !important;
+    z-index: 0;
+  }
+}

@@ -1,0 +1,31 @@
+mixin radioMat(data)
+  - var data           = data || {}
+  - var label          = data.label || "Lorem ipsum"
+  - var id             = data.id || false
+  - var name           = data.name || false
+  - var dataValidation = data.dataValidation || false
+  - var required       = data.required || false
+  - var value          = data.value || "radio value"
+
+
+  // .c-radioMat
+  span.c-radioMat(
+    data-e-field-validation=dataValidation ? dataValidation : false
+  )&attributes(attributes)
+    input.c-radioMat__field(
+      type="radio"
+      id=id
+      name=name
+      value=value
+      required=required
+    )
+    label.c-radioMat__label(for=id, class='c-radioMat__labelPadding')
+      span.c-radioMat__check.u-theme-bg.u-theme-color
+      span.c-radioMat__text.c-wysiwyg!=label
+
+      if dataValidation
+        +fieldInfo({
+          typeMessage: 'error',
+          input: true
+        })(data-e-field-validation-error)
+  // end .c-radioMat

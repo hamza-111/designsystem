@@ -1,0 +1,60 @@
+@import "menuFAQ/menuFAQ";
+@import "listLinkVertical/listLinkVertical";
+@import "articleFAQ/articleFAQ";
+@import "searchFAQ/searchFAQ";
+@import "pushFAQ/pushFAQ";
+@import "noResultFAQ/noResultFAQ";
+@import "accordeonFAQ/accordeonFAQ";
+@import "evaluationFAQ/evaluationFAQ";
+@import "listLinkResult/listLinkResult";
+
+.c-faq__title {
+  font-size: $font-30;
+  font-weight: bold;
+}
+
+.c-faq__subTitle {
+  font-size: 2.4rem;
+  font-weight: $font-bold;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.c-faq__titleRub {
+  margin: 30px 0 10px 0;
+}
+
+.c-faq__colRight {
+  padding:0 ;
+}
+
+@include media('>=small') {
+  .c-faq__colRight {
+    line-height: 1.5;
+    padding:0 50px ;
+  }
+  
+  .c-faq__blockMarge {
+    margin-left: 40px;
+  }
+  .c-faq__title {
+    font-size: $font-50;
+    margin-top: -28px;
+  }
+
+  .c-faq__subTitle {
+    font-size: 2.8rem;
+    margin-bottom: 22px;
+  }
+
+  .c-faq__titleRub {
+    margin: 0 0 30px 70px;
+  }
+}
+
+@include media('>=medium') {
+  .c-faq__subTitle {
+    font-size: 3.2rem;
+    line-height: 30px;
+  }
+}

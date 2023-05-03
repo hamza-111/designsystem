@@ -1,0 +1,120 @@
+.c-bandeauxAlert__rouge {
+	border-color: #ff0000;
+	color: #ff0000;
+}
+
+.c-bandeauxAlert__orange {
+	border-color: #ffbd0a;
+	color: #ffbd0a;
+}
+
+.c-bandeauxAlert {
+	padding: 0;
+	display: block;
+	width: 100%;
+}
+
+.c-bandeauxAlert__borderRight {
+	border-right: 7px solid;
+}
+
+.c-bandeauxAlert__main {    
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	padding: 30px 30px 30px 40px;
+	-ms-flex-align: center;	
+	align-items: center;
+	height: 100%;
+}
+
+.c-bandeauxAlert__mainError {
+	padding: 30px 30px 30px 40px;
+	font-size: 2rem;
+}
+
+.c-bandeauxAlert__textIcon {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.c-bandeauxAlert__textIcon .c-bandeauxAlert__icon {
+	margin-right: 40px;
+}
+
+.c-bandeauxAlert .c-btn {
+	margin: 0;
+}
+
+.c-msgError {
+  color: #cc0033;
+  font-size: 1.1rem;
+	text-align: left; 
+}
+
+.c-msgError__message span {
+	display: inline-block;
+	font-size: 1.8rem;
+	color: black;
+}
+
+.c-msgError__message .c-bandeauxAlert__orange {
+	color: #ffbd0a;
+}
+
+.c-msgError__message .c-bandeauxAlert__rouge {
+	color: #ff0000;
+}
+
+.c-msgError__gras {
+	font-weight: bold;
+}
+
+.c-msgError__regular {
+	font-weight: normal;
+}
+
+.c-bandeauxAlert__icon {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	border: 1px solid;
+	text-align: center;
+	line-height: 25px;
+	display: inline-block;
+}
+
+@include media ("<=medium") {
+  .c-bandeauxAlert .c-btn {
+    padding: 15px 30px;
+  }
+}
+
+@include media ("<=small") {
+	.c-bandeauxAlert__main {
+		flex-direction: column;
+	}
+
+	.c-bandeauxAlert__textIcon {
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	}
+
+	.c-bandeauxAlert__icon {
+		margin-bottom: 15px;
+	}
+
+	.c-bandeauxAlert__textIcon .c-bandeauxAlert__icon {
+		margin-right: 0;
+	}
+
+	.c-msgError__message {
+		padding-bottom: 15px;
+	}
+
+	.c-bandeauxAlert {
+		height: auto;
+	}
+}

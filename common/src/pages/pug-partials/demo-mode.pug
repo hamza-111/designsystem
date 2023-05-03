@@ -1,0 +1,40 @@
+include ../../components/kit
+
+link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/monokai-sublime.min.css")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/xml.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/javascript.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/css.min.js")
+
+style.
+  [data-demo-display] {
+    display: none;
+    font-size: 1.3rem;
+  }
+  [data-demo-display][aria-hidden="false"] {
+    display: block;
+  }
+  .hljs { padding: 0; }
+  .desc code {
+    padding: 2px 5px;
+    background: grey;
+    border-radius: 5px;
+  }
+//- link(rel="stylesheet" href="../css/kit.css")
+
+
+
+script.
+  hljs.initHighlightingOnLoad();
+  function demoMode() {
+    var elements = document.querySelectorAll('[data-demo-html]');
+    for (var i = 0, len = elements.length; i < len; i++) {
+      var html    = elements[i].innerHTML,
+          id      = elements[i].getAttribute('data-demo-html'),
+          display = document.querySelector('[data-demo-display="'+ id +'"] code');
+      display.innerText = html;
+    }
+  }
+  document.addEventListener("DOMContentLoaded", function(event) {
+    demoMode();
+  });

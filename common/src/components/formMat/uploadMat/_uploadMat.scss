@@ -1,0 +1,29 @@
+.c-uploadMat {
+  display: block;
+  margin: 30px 0;
+}
+
+.c-uploadMat__btn {
+  margin-bottom: 15px;
+}
+
+.c-uploadMat__label {
+  display: inline-block;
+}
+
+.c-uploadMat__field {
+  width: .1px;
+  height: .1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.c-uploadMat__list {
+  margin-bottom: 15px;
+
+  span {
+    margin-right: 10px;
+  }
+}

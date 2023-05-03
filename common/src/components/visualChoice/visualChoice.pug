@@ -1,0 +1,35 @@
+include ../formMat/radioMat/radioMat
+
+mixin visualChoice(data)
+  - var data           = data || {}
+  - var label          = data.label || "Lorem ipsum"
+  - var id             = data.id || false
+  - var name           = data.name || false
+  - var url            = data.url || "tuto-exterieur.jpg"
+  - var value          = data.value || ""
+
+
+  // .visualChoice
+  label(for=id).c-visualChoice&attributes(attributes)
+    .c-visualChoice__link
+      .c-visualChoice__img(style='background-image:url("../images/contrib/'+ url +'");')
+
+      
+      .c-visualChoice__input
+        span.c-radioMat(
+            data-e-field-validation=dataValidation ? dataValidation : false
+          )
+            input.c-radioMat__field(
+              type="radio"
+              id=id
+              name=name
+              value=value
+              required=required
+            )
+            p.c-radioMat__label
+              span.c-radioMat__check.u-theme-bg.u-theme-color
+              span.c-radioMat__text!=label
+
+
+
+  // end .c-radioMat

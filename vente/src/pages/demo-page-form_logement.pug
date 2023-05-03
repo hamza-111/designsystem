@@ -1,0 +1,251 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title         = "Démo étape3 : Formulaire d'identité"
+  - var page          = "tel"
+  - var bodyClass     = ""
+  - var description   = "Module étape 3"
+  - var noHeaderFooter = true
+  //- var headerLight   = true
+  - var footerLight   = true
+
+//- CSS (haut) pour cette page
+block CSS
+  link(rel="stylesheet" href="../css/tel.css")
+
+//- JS (bas) pour cette page
+block JS
+  script(src="../js/bas/demo.js")
+
+
+//- Page content
+block content
+  #telv3.c-headerLightPush
+    +headerLight
+    +timeLine({
+      type:  "progressBar",
+      currentStep: 3,
+      stepWording: ['Critères', 'Offres', 'Souscription', 'Validation']
+    })
+
+    +stickyDock
+
+    div(data-e-sticky-container="floatingMenu" data-e-side-menu-wrapper)
+      +floatingMenu(
+        data-e-sticky='{"container": "floatingMenu", "topPositionDefault": 300, "hAlign": "left"}',
+        data-e-side-menu='{"target": "menu-float", "sideContent": "content-float", "classToOpen": "floating-menu-open", "classToClose": "floating-menu-close"}'
+      )
+        +floatingMenuListButton({
+          iconVente: true,
+          iconName: 'iconVente-identity',
+          text: 'Identité'
+        }).is-viewed.u-theme-color.u-theme-color-hover.not-active(disabled)
+
+        +floatingMenuListButton({
+          iconVente: true,
+          iconName: 'iconVente-home',
+          text: 'Logement'
+        }).is-viewed.u-theme-color.u-theme-color-hover.is-active
+
+        +floatingMenuListButton({
+          iconVente: true,
+          iconName: 'iconVente-contract',
+          text: 'Contrat'
+        }).not-active
+
+      div(data-e-side-menu-content='content-float')
+        .l-wrapper--medium
+          h2.u-heading-2.u-textCenter.u-margin-t-40.u-margin-small-t-40.u-margin-b-20.u-margin-small-b-20 Mon nouveau Logement
+
+        .l-wrapper--medium
+          +arrowBox({
+            largePadding: true
+          }).u-padding-a-30.u-textCenter
+            div
+              img(src='../images/contrib/vente_map.png' alt="")
+
+            p.u-margin-small-t-10.u-margin-t-20: strong 24 rue Denfert-Rochereau, 75014 Paris
+
+        // Step 1
+        .l-wrapper--medium.u-margin-v-40.u-margin-small-v-40.u-textCenter
+          .icon.iconVente.iconVente-appart.u-fontSize-60.u-color-greyMedium2
+          h3.u-heading-4 Aidez nous à bien localiser votre logement
+
+          .c-column.c-column--50-50.c-column--spaced
+            .c-column__col
+              .l-wrapper--small
+                +inputMat({
+                  float: true,
+                  label: 'Nom de l\'ancien occupant (optionnel)',
+                  type: "text",
+                  id: "previousName",
+                  name: "previousName",
+                  required: true,
+                  dataValidation: true
+                })(data-e-float-label).c-inputMat--float
+
+            .c-column__col
+              .l-wrapper--small
+                +inputMat({
+                  float: true,
+                  label: 'Etage',
+                  type: "text",
+                  id: "etage",
+                  name: "etage",
+                  required: true,
+                  dataValidation: true
+                })(data-e-float-label).c-inputMat--float
+
+        // Step 2
+        .l-wrapper--medium.u-margin-v-40.u-margin-small-v-40.u-textCenter
+          .icon.iconVente.iconVente-door.u-fontSize-60.u-color-greyMedium2
+          h3.u-heading-4 Informations complémentaires
+
+          .c-column.c-column--50-50.c-column--spaced
+            .c-column__col
+              .l-wrapper--small
+                +inputMat({
+                  float: true,
+                  label: 'Bâtment (optionnel)',
+                  type: "text",
+                  id: "batiment",
+                  name: "batiment",
+                  required: true,
+                  dataValidation: true
+                })(data-e-float-label).c-inputMat--float
+
+                +inputMat({
+                  float: true,
+                  label: 'Appartement (optionnel)',
+                  type: "text",
+                  id: "appartement",
+                  name: "appartement",
+                  required: true,
+                  dataValidation: true
+                })(data-e-float-label).c-inputMat--float
+
+            .c-column__col
+              .l-wrapper--small
+                +inputMat({
+                  float: true,
+                  label: 'Porte (optionnel)',
+                  type: "text",
+                  id: "porte",
+                  name: "porte",
+                  required: true,
+                  dataValidation: true
+                })(data-e-float-label).c-inputMat--float
+
+                +inputMat({
+                  float: true,
+                  label: 'Escalier (optionnel)',
+                  type: "text",
+                  id: "escalier",
+                  name: "escalier",
+                  required: true,
+                  dataValidation: true
+                })(data-e-float-label).c-inputMat--float
+
+        // Step 3 : switches
+        .l-wrapper--medium.u-margin-v-40.u-margin-small-v-40.u-textCenter
+          p Je souhaite relever mon compteur
+
+          +radioSwitchMat({
+            label1: 'Oui',
+            label2: 'Non',
+            id1:    'compteur1',
+            id2:    'compteur2',
+            name:   'compteur',
+            theme:  'genBlue'
+          }).u-margin-t-10.u-margin-small-t-10
+
+        .l-wrapper--medium.u-margin-v-40.u-margin-small-v-40.u-textCenter
+          p Mon futur logement dispose de l'option heures pleines/heures creuses
+
+          +radioSwitchMat({
+            label1: 'Oui',
+            label2: 'Non',
+            id1:    'hphc1',
+            id2:    'hphc2',
+            name:   'hphc',
+            theme:  'genBlue'
+          }).u-margin-t-10.u-margin-small-t-10
+
+        // Step 4 : consommation annuelle
+        .l-wrapper--medium
+          +choiceBox
+            +choiceBoxElem.u-bg-grey-light.u-textCenter
+              .c-choiceBoxElem__header.l-wrapper--small
+                .icon.iconVente.iconVente-elec.u-fontSize-60.u-color-greyMedium2
+                h3.u-heading-4 Consommation annuelle électrique
+
+              .c-choiceBoxElem__content.l-wrapper--small
+                +toolTip({
+                  labelText: "Comment trouver"
+                }).u-margin-t-20.u-margin-small-t-20
+                +inputMat({
+                    label: 'Votre consommation annuelle électrique',
+                    hiddenLabel: true,
+                    float: true,
+                    textRight: 'KWh',
+                    type: "text",
+                    id: "consoElec",
+                    name: "consoElec",
+                    required: true,
+                  })(data-e-float-label).c-inputMat--float
+
+            +choiceBoxSeparator({
+              text: 'ET'
+            })
+
+            +choiceBoxElem.u-bg-grey-light.u-textCenter
+              .c-choiceBoxElem__header.l-wrapper--small
+                .icon.iconVente.iconVente-gaz.u-fontSize-60.u-color-greyMedium2
+                h3.u-heading-4 Consommation annuelle de gaz naturel
+
+              .c-choiceBoxElem__content.l-wrapper--small
+                +toolTip({
+                  labelText: "Comment trouver"
+                }).u-margin-t-20.u-margin-small-t-20
+                +inputMat({
+                    label: 'Votre consommation annuelle de gaz naturel',
+                    hiddenLabel: true,
+                    float: true,
+                    textRight: 'm<sup>3</sup>',
+                    type: "text",
+                    id: "consoGaz",
+                    name: "consoGaz",
+                    required: true,
+                  })(data-e-float-label).c-inputMat--float
+
+        .l-wrapper--medium
+          .u-bg-grey-light.u-textCenter.u-margin-v-40.u-margin-small-v-40.u-padding-a-40
+            .u-margin-small-v-25
+              .icon.iconVente.iconVente-elec.u-fontSize-60.u-color-greyMedium2
+              h3.u-heading-4 Consommation annuelle électrique
+
+              .l-wrapper--small
+                +toolTip({
+                  labelText: "Comment trouver"
+                }).u-margin-t-20.u-margin-small-t-20
+                +inputMat({
+                    label: 'Consommation annuelle électrique',
+                    hiddenLabel: true,
+                    textRight: 'KWh',
+                    type: "text",
+                    id: "consoElec2",
+                    name: "consoElec2",
+                    required: true,
+                  })(data-e-float-label).c-inputMat--float
+
+        .l-wrapper--medium
+          +btnWrapper().u-theme-jadeGreen.c-btnWrapper--fullOnMobile.u-margin-v-40.u-margin-small-v-40
+            +baseBtn({
+              text: "Continuer",
+              button: true
+            }).c-baseBtn--large

@@ -1,0 +1,49 @@
+include pushBlock
+include ../blockquote/blockquote
+
+.c-wysiwyg
+  h2 pushBlock : pour plus de deux enfants
+
++demo({
+  desc: "Composant pushBlock"
+})
+  .l-wrapper--large
+    +pushBlock
+      +pushBlockElem({
+        titleText: "Optimiser son chauffage",
+        imgUrl: 'contrib/pushBlock_contrib_1.jpg',
+        btnLabel: "Optimiser son chauffage"
+      })
+        p Suivez nos conseils pour optimiser votre budget énergie !
+
+      +pushBlockElem({
+        titleText: "Cap Eco Conso",
+        imgUrl: 'contrib/pushBlock_contrib_2.jpg',
+        btnLabel: "Découvrir Cap EcoConso"
+      })
+        p.u-margin-b-10.u-margin-small-b-10 <span class="u-color-genBlue u-fontSize-huge"><b>9,99€<sup>TTC</sup></b> </span><span class="u-fontSize-large">/ mois</span>
+        p Un technicien chez vous en moins de 4h.
+
+      +pushBlockElem({
+        titleText: "Prime économies d’énergie pour financer vos travaux",
+        imgUrl: 'contrib/pushBlock_contrib_3.jpg',
+        btnLabel: "Découvrir la prime"
+      })
+        p Profitez de la prime économies d’énergie pour financer votre projet: sans engagement !
+
+
+.c-wysiwyg
+  h2 pushBlock : avec un seul enfant
+
++demo({
+  desc: "Ajouter la classe <code>c-pushBlock--hasOneChild</code> à l'élément <code>c-pushBlock</code> pour le rendre fluide, il s'adapte alors à son parent (des colonnes dans cette démo)"
+})
+  +pushBlock({
+    oneChild: true
+  })
+    +pushBlockElem({
+      titleText: "Entretien de chaudière"
+    })
+      p À partir de :
+      p.u-margin-b-10.u-margin-small-b-10 <span class="u-color-genBlue u-fontSize-huge"><b>9,90€<sup>TTC</sup></b> </span><span class="u-fontSize-large">/ mois</span>
+      p Un contrat de maintenance qui garantit les dépannages.

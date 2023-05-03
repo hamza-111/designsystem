@@ -1,0 +1,31 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../../../common/src/components/iframe/iframe
+
+//- Main variables
+block variables
+  - var title = "iframe"
+  - var page = ""
+  - var bodyClass = ""
+  - var description = ""
+  - var noHeaderFooter = true
+  - var demoMode = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+
+  +demo({
+    desc: 'when: <code>["mediumOnly", "large"]</code>, classes: <code>u-hideMediumu</code>'
+  })
+    +iframe({
+      newBp: ["mediumOnly", "large"],
+      src: "loginPage.html"
+    })

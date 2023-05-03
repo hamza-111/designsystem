@@ -1,0 +1,31 @@
+h2 block télécharger mon historique
+
++demo({
+    desc: `
+          -  ajouter ou pas ajouter le classe <code>u-textBold</code> pour gerer le bold pas bold <br>
+          -  ajouter ou pas ajouter le classe <code>u-color-votrecouleur</code> pour gerer les couleur<br>
+          -  Liste des colors : <br>
+              # .u-color-grey <br>
+              #  .u-color-black <br>
+              #  .u-color-white <br>
+              #  .u-color-magenta <br>
+              #  .u-color-genBlue <br>
+              #  .u-color-green <br>
+              #  .u-color-coral <br>
+          `
+})
+
+  +historiqueConso()
+
+
+h2 block télécharger mon historique désactiver
+
++demo({
+    desc: `
+          -  non clickable pas de lien
+          `
+})
+
+  +historiqueConso({
+    desactiver : true
+  })

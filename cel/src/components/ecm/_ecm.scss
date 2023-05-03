@@ -1,0 +1,73 @@
+.c-ecm {
+  .c-modal__text--color {
+    color: $genBlue;
+    font-weight: bold;
+  }
+
+  .c-spinner--full {
+    background: transparent;
+  }
+
+  form.u-padding-spacer {padding: 0;}
+}
+
+//mobile
+@include media("<small") {
+  .c-ecm__blocInfo {
+    text-align: left;
+  }
+
+  .c-ecm__col {
+    width: 100%;
+  }
+
+  .c-ecm.l-wrapper--large {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .c-ecm.l-wrapper--largeSmall {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+
+//Desktop
+
+@include media(">small") {
+  .c-ecm {
+    .c-textImage__content {
+      margin-top: 80px;
+    }
+  }
+
+  .c-ecm__blocInfo {
+    text-align: center;
+  }
+
+  .c-ecm__img {
+    height: 500px;
+    width: 100%;
+  }
+
+  .c-ecm__wrapper {
+    display: flex;
+  }
+
+  .c-ecm__colLeft {
+    width: 312px;
+  }
+
+  .c-ecm__colRight {
+    width: 600px;
+    margin: 0 auto;
+    padding-left: 50px;
+  }
+
+
+  .c-btnWrapper.c-btnWrapper--left {
+    justify-content: left;
+  }
+}
+

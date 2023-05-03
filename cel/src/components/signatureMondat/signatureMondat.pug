@@ -1,0 +1,32 @@
+mixin signatureMondat(data)
+  - var data = data || {}
+
+  //.c-signatureMondat
+  .c-signatureMondat
+    .c-signatureMonda__header.l-wrapper--medium
+      span.c-signatureMondat__price 73,59 € <sup> TTC</sup>
+      span.c-signatureMondat__desc Votre solde sera prélevé le <b>20 octobre 2021</b>
+      a(href="" alt="").u-color-genBlue.c-signatureMondat__topLink Consultez votre formulaire de mandat
+    +formMat()(data-e-form-validation='{"switchBtnState": true}').u-margin-b-40.c-signatureMondat__spacer
+
+      .c-eTip__wrapperGrey
+        h2.c-signatureMondat__title Signez votre mandat SEPA
+        +checkboxMat({
+          label: 'J’autorise Gaz Tarif Réglementé à effectuer un prélèvement unique correspondant à mon solde.',
+          id: "checkboxMat2",
+          required: true,
+          dataValidation: {
+            validations: {
+              valueMissing: ' ',
+            }
+          }
+        }).c-signatureMondat__checkBox
+
+        +btnWrapper().u-theme-orange
+          +baseBtn({
+            text: "Valider"
+          })(type="submit" data-e-form-validation-submit).u-margin-t-30.u-margin-small-t-30.is-disabled
+      
+    a(href="#").u-color-genBlue.c-eTipV2--linkretour.u-margin-t-30
+      span.icon-carousel-prev.icon
+      span Retour au choix du mode de paiement

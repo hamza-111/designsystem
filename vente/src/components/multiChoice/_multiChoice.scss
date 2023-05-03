@@ -1,0 +1,133 @@
+$boxDim:   86px;
+$checkDim: 30px;
+
+.c-multiChoice {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 320px;
+}
+
+.c-multiChoiceInput {
+  margin: 5px 20px;
+}
+
+.c-multiChoice__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-multiChoiceInput__imgBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 10px;
+  padding: 15px;
+  width: $boxDim;
+  height: $boxDim;
+}
+
+.c-multiChoice__img {
+  max-width: 100%;
+}
+
+.c-multiChoiceInput__labelText {
+  max-width: 120px;
+  text-align: center;
+  transition: color .4s;
+}
+
+.c-multiChoice__check {
+  position: absolute;
+  top: 15px;
+  right: -15px;
+  width: $checkDim;
+  height: $checkDim;
+}
+
+.c-multiChoiceInput__imgBox,
+.c-multiChoice__check {
+  border: 1px solid;
+  border-color: $grey-medium2;
+  border-radius: 50%;
+  background-color: $white;
+  transition: all .4s;
+}
+
+.c-multiChoiceInput__imgBox,
+.c-multiChoice__check,
+.c-multiChoiceInput__labelText {
+  cursor: pointer;
+}
+
+// Etat checked :
+.c-multiChoice__input:checked + .c-multiChoice__label {
+  .c-multiChoiceInput__imgBox {
+    border-color: $indigo;
+  }
+
+  .c-multiChoice__check {
+    border-color: $indigo;
+    background-color: $indigo;
+
+    &:after {
+      content: '\EAD9';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: $white;
+      font-size: 1.6rem;
+      font-weight: bold;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      transition: transform .4s;
+
+      display: inline;
+      font-family: 'icons' !important; // empêcher surcharge CSS partenaires (FAQ)
+      speak: none;
+    }
+  }
+
+  .c-multiChoiceInput__labelText {
+    color: $indigo;
+  }
+}
+
+// Etat disabled :
+.c-multiChoice__input:disabled + .c-multiChoice__label {
+  .c-multiChoiceInput__imgBox,
+  .c-multiChoice__check,
+  .c-multiChoiceInput__labelText {
+    cursor: not-allowed;
+  }
+
+  .c-multiChoiceInput__imgBox:after,
+  .c-multiChoice__check:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: rgba(215, 215, 215, 0.70);
+  }
+
+  .c-multiChoiceInput__imgBox:after {
+    width: $boxDim;
+    height: $boxDim;
+    z-index: 1;
+  }
+
+  .c-multiChoice__check {
+    z-index: 10;
+
+    &:after {
+      width: $checkDim;
+      height: $checkDim;
+    }
+  }
+}

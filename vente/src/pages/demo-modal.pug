@@ -1,0 +1,207 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title         = "demo-modal"
+  - var page          = "tel"
+  - var bodyClass     = ""
+  - var description   = "Module Modal"
+  - var noHeaderFooter = true
+
+//- CSS (haut) pour cette page
+block CSS
+  link(rel="stylesheet" href="../css/tel.css")
+
+//- JS (bas) pour cette page
+block JS
+  script(src="../js/bas/demo.js")
+
+
+//- Page content
+block content
+  h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant modal
+  button(type='button', data-e-modal-open='modal1') Ouvrir la modal
+
+  h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant modal : login / connexion
+  button(type='button', data-e-modal-open='modal2') Ouvrir la modal
+
+  h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant modal : identification logement
+  button(type='button', data-e-modal-open='modal3') Ouvrir la modal
+
+  h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant modal : avec état "waiting"
+  button(type='button', data-e-modal-open='modal4') Ouvrir la modal
+
+
+
+  +modal({
+    target: '{"target": "modal1"}'
+  }).c-modal--hasPadding
+    header.u-padding-b-30.u-textCenter
+      h2.u-heading-1 Le PDL/PCE, qu'est-ce que c'est ?
+
+    .l-row.l-row--noSideGut.u-padding-b-30
+      .l-col-small-12
+        p.u-margin-b-25 Le numéro de PDL (électricité) ou de PCE (gaz) permet à votre fournisseur de rattacher votre contrat  au bon logement.
+        h4.u-margin-b-25.u-textCenter.u-textBold Comment trouver mon numéro de PDL/PCE ?
+
+    .l-row.l-row--noSideGut
+      .l-col-medium-6
+        p.u-margin-b-15 Il est composé de 14 chiffres et figure sur toutes les factures d'électricité ou de gaz.
+        p.u-margin-b-15 Lorsque vous déménagez, vous pouvez vous faire communiquer ce numéro par l'ancien occupant ou par votre agence immobilière.
+      .l-col-medium-6
+        figure.u-textCenter.u-margin-b-25
+          +img({
+            alt: "Description",
+            interchange: {
+              small: '../images/contrib/vente_contrat.png'
+            }
+          })
+
+    .l-row.l-row--noSideGut
+      .l-col-small-12
+        p.u-margin-b-15 Lorem ipsums dolor sit amet, consectetur adipiscing elit. Pellentesque ut nulla ex. Duis vitae sapien sit amet enim commodo ornare in eget tortor. Proin at congue elit, quis pulvinar ipsum. Nunc suscipit sit amet justo ut pulvinar. Vestibulum sodales ultricies semper. Maecenas auctor augue ut augue iaculis ultrices. Donec vulputate elit nisl, ut sagittis sapien varius quis. Quisque placerat varius ex, id lacinia turpis consequat ut. Ut augue mi, accumsan ac libero in, rhoncus interdum tortor. Nunc a euismod nisl, in condimentum turpis. Nam turpis turpis, scelerisque at massa quis, fermentum consectetur lectus. Quisque eget orci a risus ullamcorper pulvinar. Cras laoreet id purus eu pharetra. Ut pharetra nibh ac scelerisque pulvinar. Ut scelerisque efficitur nunc, ut convallis mauris. Suspendisse potenti.
+        p Donec laoreet rutrum ornare. Vestibulum quam velit, cursus at velit nec, imperdiet volutpat ipsum. Donec mi massa, viverra sed mi ut, tempor commodo sem. Curabitur elementum odio non ante volutpat, et auctor orci ornare. In hac habitasse platea dictumst. Etiam consequat nisl justo, quis tempor diam rhoncus in. Aenean at risus id felis viverra accumsan. Vestibulum quis felis ac felis maximus scelerisque vitae in enim.
+
+
+  +modal({
+    target: '{"target": "modal2"}'
+  })
+    +flatTabs({
+      tabsArray: [ {label: "J'ai un Espace Client", id: "panel1"}, {label: "Je n'ai pas d’Espace Client", id: "panel2"} ]
+    })
+      +flatTabsPanel({
+        id: panel1
+      })
+        header.u-padding-t-40.u-padding-h-40.u-padding-b-30.u-textCenter
+          h2.u-heading-1 Identifiez-vous
+
+        .l-row
+          .l-col-medium-8.l-push-medium-2
+            p Nous pourrons pré-remplir certaines de vos données et ainsi faliciter votre souscription.
+
+        .l-row
+          .l-col-medium-8.l-push-medium-2
+            +inputMat({
+              id: 'identifiant',
+              type: 'text',
+              label: 'Identifiant',
+              float: true
+            })(data-e-float-label).c-inputMat--float
+
+        .l-row
+          .l-col-medium-8.l-push-medium-2.u-margin-b-20
+            +inputMat({
+              id: 'mdp',
+              type: 'password',
+              label: 'Mot de passe',
+              float: true
+            })(data-e-float-label).c-inputMat--float
+
+        .l-row
+          .l-col-medium-8.l-push-medium-2
+            p Nous pouvons vous aider si vous avez oublié votre <a class="u-link u-link--revert" href="#">identifiant</a> ou votre <a class="u-link u-link--revert" href="#">mot de passe</a>.
+
+      +flatTabsPanel({
+        id: panel2
+      })
+        header.u-padding-t-40.u-padding-h-40.u-padding-b-30.u-textCenter
+          h2.u-heading-1 Connectez-vous
+
+        .l-row
+          .l-col-medium-8.l-push-medium-2
+            p Nous pourrons pré-remplir certaines de vos données et ainsi faliciter votre souscription.
+
+        .l-row
+          .l-col-medium-8.l-push-medium-2
+            +inputMat({
+              id: 'nom',
+              type: 'text',
+              label: 'Nom',
+              float: true
+            })(data-e-float-label).c-inputMat--float
+
+        .l-row
+          .l-col-medium-8.l-push-medium-2
+            +inputMat({
+              id: 'password',
+              type: 'text',
+              label: 'Code postal',
+              float: true
+            })(data-e-float-label).c-inputMat--float
+
+        .l-row
+          .l-col-medium-8.l-push-medium-2
+            +inputMat({
+              id: 'ref',
+              type: 'text',
+              label: 'Référence client',
+              float: true
+            })(data-e-float-label).c-inputMat--float
+
+
+      +btnWrapper().u-theme-jadeGreen.u-padding-h-40.u-padding-b-40.u-padding-t-20.c-btnWrapper--fullOnMobile
+        +baseBtn({
+          text: "Continuer sans m'identifier",
+          secondary: true
+        }).c-baseBtn--large
+
+        +baseBtn({
+          text: "Je m'identifie"
+        }).c-baseBtn--large
+
+
+  +modal({
+    target: '{"target": "modal3"}'
+  })
+    .u-padding-a-40
+      header.u-padding-b-30.u-margin-small-t-30.u-textCenter
+        h2.u-heading-1 Plus qu'un clic...
+
+      .l-row.l-row--noSideGut.u-margin-b-20
+        .l-col-medium-10.l-push-medium-1
+          p Indiquez-nous le logement concerné par votre situation
+
+      .l-row.l-row--noSideGut.u-margin-b-20.u-margin-small-b-40
+        .l-col-medium-10.l-push-medium-1
+          +listChoiceButton
+            strong 24 rue de la Tour Maubourg
+            br
+            | 75015 PARIS
+          +listChoiceButton
+            strong 24 rue de la Tour Maubourg
+            br
+            | 75015 PARIS
+          +listChoiceButton
+            strong 24 rue de la Tour Maubourg
+            br
+            | 75015 PARIS
+          +listChoiceButton
+            strong 24 rue de la Tour Maubourg
+            br
+            | 75015 PARIS
+
+      +btnWrapper().c-btnWrapper--alignLeft.c-btnWrapper--fullOnMobile
+        +baseBtn({
+          text: "Retour",
+          iconLeft: "icon-chevron-left",
+          empty: true
+        })
+
+
+  +modal({
+    target: '{"target": "modal4"}',
+    blocked: true
+  })
+    .u-padding-a-40
+      header.u-padding-b-30.u-margin-small-t-30.u-textCenter
+        h2.u-heading-1 Plus qu'un clic...
+
+      .l-row.l-row--noSideGut.u-margin-b-20
+        .l-col-medium-10.l-push-medium-1
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias eligendi fugiat, iusto ipsa adipisci vel dolorum molestiae impedit inventore maxime perferendis, facilis magni. A officiis maiores sint aut, maxime blanditiis.
+
+    +spinner().c-spinner--full

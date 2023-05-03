@@ -1,0 +1,26 @@
+mixin flatTabs(data)
+  - var data = data || {}
+  - var array = data.tabsArray || [ {label: "Onglet 1", id: "panel1"}, {label: "Onglet 2", id: "panel2"} ]
+
+  // .c-flatTabs
+    - Hérite du composant c-Tabs de common pour son fonctionnement dynamique à travers les attributs "data-e-tabs", "data-e-tabs-link" et "data-e-tabs-panel"
+
+  .c-flatTabs(data-e-tabs='{"mobileSlide": false, "sameHeight": false}')
+    ul.c-flatTabs__nav
+      each obj in array
+        li.c-flatTabs__navElem
+          a.c-flatTabs__navLink(href=obj.id, data-e-tabs-link)=obj.label
+
+    .c-flatTabs__panelContainer
+      block
+  // end .c-flatTabs
+
+
+mixin flatTabsPanel(data)
+  - var data = data || {}
+  - var id = data.id || 'default'
+
+  // .c-flatTabsPanel
+  .c-flatTabs__panel(id=id, data-e-tabs-panel)
+    block
+  // end .c-flatTabsPanel

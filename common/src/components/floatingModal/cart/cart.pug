@@ -1,0 +1,54 @@
+include ../../offerPromo/offerPromo
+
+mixin floatingCart()
+  // .c-floatingCart
+  .c-floatingCart
+    .c-floatingModal__headingBlock
+      h2.c-floatingModal__heading-1 Mon panier
+
+    .c-floatingCart__content
+      .c-floatingCart__item
+        .c-floatingCart__itemMain
+          h3.c-floatingCart__itemTitle Duo Fixe
+          p.c-floatingCart__itemText Prix indexé sur le Tarif Réglementé de l’électricité
+
+        +offerPromo
+
+        .c-floatingCart__itemDetail
+          .c-floatingCart__itemDetailTitle Prix
+          .c-floatingCart__itemPrice
+            | non estimé
+
+      .c-floatingCart__item
+        .c-floatingCart__itemMain
+          h3.c-floatingCart__itemTitle Assurance Facture
+          p.c-floatingCart__itemText C’est la garantie du paiement de vos factures d’énergie
+
+        .c-floatingCart__itemDetail
+          .c-floatingCart__itemDetailTitle Prix
+          .c-floatingCart__itemPrice
+            span 400.99€<sup>TTC</sup>
+            | &nbsp;/mois
+
+      .c-floatingCart__item
+        .c-floatingCart__itemMain
+          h3.c-floatingCart__itemTitle Assurance Facture
+          p.c-floatingCart__itemText C’est la garantie du paiement de vos factures d’énergie
+
+        .c-floatingCart__itemDetail
+          .c-floatingCart__itemDetailTitle Prix
+          .c-floatingCart__itemPrice
+            span 4€<sup>TTC</sup>
+            | &nbsp;/mois
+
+      .c-floatingCart__item
+        .c-floatingCart__itemMain
+          h3.c-floatingCart__itemTitle Assurance Facture
+          p.c-floatingCart__itemText C’est la garantie du paiement de vos factures d’énergie
+
+        .c-floatingCart__itemDetail
+          .c-floatingCart__itemDetailTitle Prix
+          .c-floatingCart__itemPrice
+            span 4€<sup>TTC</sup>
+            | &nbsp;/mois
+  // END .c-floatingCart

@@ -1,0 +1,28 @@
+.c-simuPanel__content {
+    position: relative;
+}
+
+.c-msgErreurGraph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+.c-msgErreurGraph__main {
+    text-align: center;
+    color: #ff0000;
+    font-size: 1.8rem;
+}
+
+.c-msgErreurGraph__picto {
+    font-size: 4.5rem;
+    padding-bottom: 10px;
+}
+
+.c-msgErreurGraph__msg {
+    display: block;
+}

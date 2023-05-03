@@ -1,0 +1,26 @@
+mixin multiChoice(data)
+  - var data = data || {}
+
+  // .c-multiChoice
+  .c-multiChoice&attributes(attributes)
+    block
+  // end .c-multiChoice
+
+
+mixin multiChoiceInput(data)
+  - var data        = data || {}
+  - var inputID     = data.inputID || "default-id"
+  - var inputName   = data.inputName || "default-name"
+  - var inputLabel  = data.inputLabel || "Label du champs"
+  - var imageUrl    = data.imageUrl || "../images/estimation/picto-radiateur.svg"
+  - var disabled    = data.disabled || false
+
+  // .c-multiChoiceInput
+  .c-multiChoiceInput
+    input.c-multiChoice__input.u-visibilityHidden(type="checkbox" id=inputID name="["+ inputName +"]" disabled=disabled)
+    label.c-multiChoice__label(for=inputID)
+      .c-multiChoiceInput__imgBox
+        img.c-multiChoice__img(src=imageUrl alt="")
+        .c-multiChoice__check
+      .c-multiChoiceInput__labelText!=inputLabel
+  // end .c-multiChoiceInput

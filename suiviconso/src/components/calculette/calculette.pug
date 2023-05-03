@@ -1,0 +1,125 @@
+include ../../../../common/src/components/modal/modal
+
+mixin calculette()
+
+	//.c-calculette
+	.c-calculette.js-calculette
+		.c-calculette__sumilateur
+			.c-calculette__mainForm
+
+				+formMat()(
+						action="/"
+						novalidate
+						method="POST"
+						data-e-form-validation='{"switchBtnState": true}'
+				)
+
+					+inputMat({
+							type: "tel",
+							id: "indexDebut",
+							name: "indexDebut",
+							pattern: '^[0-9]*$',
+							label: 'Index de départ',
+							textRight: "m³",
+							required: true,
+							toolTip:  "infoIndexDebut",
+							toolTipLabel:  "label",
+							placeholder: 'Ex: 25 000',
+							maxlength: 5,
+							dataValidation: {
+							typing : true,
+							validations: {
+									patternMismatch: "Vous devez saisir une suite de 5 chiffres correspondant à un index de compteur de gaz naturel",
+									valueMissing: 'champs obligatoire'
+							}
+							}
+					}).c-calculette--label.js-indexDebut
+
+					+modal({
+							target: `{ "target": "infoIndexDebut"}`
+					}).c-calculette--ajusteBloc
+
+						+column({
+								colConfig: '100'
+						})
+
+							p.c-calculette--textInfoCenter Cet index correspond à celui facturé sur votre dernière facture. Vous pouver le modifiez à votre guise
+
+					+inputMat({
+							type: "tel",
+							id: "indexFin",
+							name: "indexFin",
+							pattern: '^[0-9]*$',
+							label: "Index de fin",
+							toolTip:  "infoIndexFin",
+							toolTipLabel:  "label",
+							textRight: "m³",
+							required: true,
+							placeholder: 'Ex: 00 000',
+							maxlength: 6,
+							dataValidation: {
+								typing : true,
+								validations: {
+										patternMismatch: "Vous devez saisir une suite de 5 chiffres correspondant à un index de compteur de gaz naturel",
+										valueMissing: 'champs obligatoire'
+								}
+							}
+					}).c-calculette--espaceInput.c-calculette--label.c-calculette--tooltipColer.js-indexFin
+
+					+modal({
+							target: `{ "target": "infoIndexFin"}`
+					}).c-calculette--ajusteBloc
+
+						+column({
+								colConfig: '100'
+						})
+
+							p.c-calculette--textInfoCenter Cet index correspond à celui facturé sur votre dernière facture. Vous pouver le modifiez à votre guise
+
+
+					.c-fieldInfo.is-error.u-hide.js-calculetteError(id="calculetteError" class="u-hide") index de Départ supérieur à l'index de fin
+					+btnWrapper.u-theme-genBlue.c-btnWrapper--fullOnMobile.c-calculette--espacementMobile
+							+baseBtn({
+							text: 'Calculer',
+							button: true,
+							hasLoader: true,
+							submit: true
+							})(
+								data-e-form-validation-submit 
+								disabled
+								data-e-form-validation-calculer
+
+							).c-baseBtn--large.u-margin-t-30.is-disabled
+									
+					+fieldInfo({
+						typeMessage: 'error',
+						backgroundColor:"u-bg-white"
+					}).c-fieldInfo--margin-0
+						p Service indisponible !
+
+		.c-calculette__reponse(data-e-reponse)
+			.c-calculette__mainForm
+				h2.u-heading-3.u-textCenter.u-margin-b-15(data-e-tooltipPopper={"text":"Coucou", "position" : "left"}) Mon estimation
+				ul.c-calculette__listeResponse
+					li: .c-calculette__listeLine
+							span.c-calculette__repLabel(data-e-tooltipPopper={"text":"Coucou geo"}) Mon consommation
+							span.c-calculette__repResultWhite.u-textBold 11,04
+							span.c-calculette__repUnit m³
+					li: .c-calculette__listeLine
+							span.c-calculette__repLabel Coef de conversion
+							span.c-calculette__repResultGray.u-textItalic 5487
+							span.c-calculette__repUnit kpcs
+					li: .c-calculette__listeLine
+							span.c-calculette__repLabel Nombre de kWh
+							span.c-calculette__repResultWhite.u-textBold 54187
+							span.c-calculette__repUnit kWh
+					li: .c-calculette__listeLine
+							span.c-calculette__repLabel Prix de kWh
+							span.c-calculette__repResultGray.u-textItalic 0,26
+							span.c-calculette__repUnit €
+					li: .c-calculette__listeLine
+							span.c-calculette__repLabel Mon calcul en €
+							span.c-calculette__repResultWhite.u-textBold 102
+							span.c-calculette__repUnit €															
+
+			p.u-textCenter.u-margin-t-30.c-calculette--paddingMobile Cette valeur est à titre indicatif et ne représente que la part de consommation <strong> TTC (hors abonnement et service)</strong>

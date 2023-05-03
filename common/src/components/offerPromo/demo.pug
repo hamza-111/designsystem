@@ -1,0 +1,26 @@
+include offerPromo
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant offerPromo
+
++demo
+  +offerPromo
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant offerPromo sans flèche
+
++demo
+  +offerPromo({
+    noArrow: true,
+    text: "-50% de remise"
+  })
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant offerPromo cliquable
+
++demo
+  +offerPromo({
+    select: true,
+    text: "<strong>110€ TTC de bon d'achat</strong>"
+  })
+  +offerPromo({
+    select: true,
+    text: "-30% pendant 6 mois avec le code <strong>4565KHH</strong>"
+  })

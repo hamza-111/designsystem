@@ -1,0 +1,19 @@
+//- +adressBox
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant miniBubble
+
++demo({
+  desc: ''
+})
+  +miniBubbleList()
+    +miniBubble({
+      text: 'Madame',
+      inputID: 'madame',
+      radioName: 'gender',
+      picto: 'iconVente-woman'
+    })
+    +miniBubble({
+      text: 'Monsieur',
+      inputID: 'monsieur',
+      radioName: 'gender',
+      picto: 'iconVente-man'
+    })

@@ -1,0 +1,32 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title         = "test"
+  - var page          = "test"
+  - var bodyClass     = ""
+  - var description   = "un test"
+  - var demoMode = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  include ../../../common/src/components/backToTop/demo
+  include ../../../common/src/components/breadcrumb/demo
+  include ../../../common/src/components/contactBar/demo
+  include ../../../common/src/components/contactButton/demo
+  include ../../../common/src/components/contactContainer/demo
+  include ../../../common/src/components/contactLegal/demo
+  include ../../../common/src/components/form/demo
+  include ../../../common/src/components/legalMention/demo
+  include ../../../common/src/components/linkLongArrow/demo
+  include ../../../common/src/components/stickyContact/demo
+  include ../../../common/src/components/storageLink/demo

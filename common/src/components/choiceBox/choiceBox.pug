@@ -1,0 +1,29 @@
+mixin choiceBox(data)
+  - var data           = data || {}
+  - var smallSeparator = data.smallSeparator || false
+
+  // c-choiceBox
+  .c-choiceBox(class=smallSeparator? 'c-choiceBox--smallSeparator' : '')
+    block
+  // end c-choiceBox
+
+
+mixin choiceBoxElem(data)
+  - var data         = data || {}
+  - var smallPadding = data.smallPadding || false
+
+  //- c-choiceBoxElem
+  .c-choiceBoxElem(class=smallPadding ? 'c-choiceBoxElem--smallPadding' : '')&attributes(attributes)
+    block
+
+
+mixin choiceBoxSeparator(data)
+  - var data = data || {}
+  - var text = data.text || false
+
+  //- c-choiceBoxSeparator
+  if text
+    .c-choiceBox__separator!=text
+  else
+    .c-choiceBox__separator
+      span.c-choiceBox__plusSeparator +

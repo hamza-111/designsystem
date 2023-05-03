@@ -1,0 +1,18 @@
+include payCards/payCards
+
+mixin payBillFrame(data)
+  - var data = data || {}
+  - var url = data.url || "/pages/_ifram-EnterCardData.html"
+
+  // .c-payBillFrame
+  .c-payBillFrame&attributes(attributes)
+    .c-payBillFrame__paymentInformations
+      .c-payBillFrame__balance
+        h3.c-payBillFrame__title Votre solde
+        p.c-payBillFrame__amount 66,55€ TTC
+        p.c-payBillFrame__delayDate À payer avant le 09/09/2017
+
+      +payCards
+
+    .c-payBillFrame__paiementIframe
+      iframe(src=url)

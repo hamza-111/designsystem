@@ -1,0 +1,23 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title         = "fullModal"
+  - var page          = ""
+  - var bodyClass     = ""
+  - var description   = "fullModal"
+  - var noHeaderFooter = true
+  - var demoMode      = true
+
+//- CSS (haut) pour cette page
+block CSS
+  link(rel="stylesheet" href="../css/estimation.css")
+
+
+block content
+
+  include ../components/fullmodal/demo

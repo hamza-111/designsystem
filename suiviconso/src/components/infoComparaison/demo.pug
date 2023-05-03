@@ -1,0 +1,44 @@
+ h2.u-heading-1 Bloc info comparaison Graph A-1:
++demo ()
+  .l-row
+    .l-col-medium-3
+      +blocCumul({
+        cumul : true
+      })
+      +infoComparaison({
+        number:"0",
+        zero : true
+      })
+
++demo ()
+  .l-row
+    .l-col-medium-3
+      +blocCumul({
+        targetModal : "cumul1",
+        cumul : true
+      })
+      +infoComparaison({
+        negatif : true,
+        number  : "-13"
+      })
+
++demo ()
+  .l-row
+    .l-col-medium-3
+      +blocCumul({
+        targetModal : "cumul2",
+        cumul : true
+      })
+      +infoComparaison({
+        positif : true,
+        number  : "16"
+      })
+
++demo ()
+  .l-row
+    .l-col-medium-3
+      +blocCumul({
+        targetModal : "cumul3",
+        cumul : true
+      })
+      +infoComparaison()

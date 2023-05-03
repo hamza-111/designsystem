@@ -1,0 +1,184 @@
+//- include ../formMat/formMat
+//- include ../tooltipV2/tooltipV2
+//- include ../btnWrapper/btnWrapper
+//- include ../btnWrap/btnWrap
+//- include ../modal/modal
+
+mixin objectifMain(data)
+	- var data			= data || {}
+
+	//.c-objectifMain
+	.c-objectifMain
+		.c-objectifMain__title 
+			span.c-objectifMain__titleSpan Fixez votre seuil de conso
+			
+			+toolTipV2({
+					themeColor: 'u-theme-magenta'
+			})(data-e-modal-open="objectiMain")
+
+			+modal({
+				target: '{"target": "objectiMain"}'
+			}).u-padding-a-40
+				.u-margin-b-40 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut amet perspiciatis animi sit aliquam exercitationem ad culpa
+		.c-objectifMain__desc Recevez un e-mail, en cas de dépassement de votre seuil de consommation.
+		
+		+formMat()(data-e-form-validation='{"switchBtnState": true}')
+
+			+inputMat({
+				type: "email",
+				pattern: true,
+				name: "email",
+				required: true,
+				placeholder: 'Votre email usuel',
+				disabled:    true
+			})(data-e-errorMail)
+			span(data-e-errorMail-message).c-objectifMain--color.u-hide Vous désirez modifier votre e-mail de contact, merci de vous rendre dans l'onglet "Mon profil - Mes coordonnées de contact" de votre Espace Client.
+
+			+checkboxMat({
+				label: " J'accepte de recevoir des e-mails d'alerte. Service gratuit.",
+				id: "checkObjectif",
+				required: true,
+						pattern: true,
+				name: 'checkObjectif',
+						dataValidation: {
+							validations: {
+								patternMismatch: "Pour recevoir les e-mails, veuillez accepter.",
+								valueMissing: "Pour recevoir les e-mails, veuillez accepter."
+							}
+						}
+			})
+
+			.c-objectifMaion__wrapper
+
+				+inputMat({
+					required: true,
+					type : 'tel',
+					placeholder: 'Seuil en €',
+					pattern : '^[0-9]*$',
+					dataValidation: {
+						typing: true,
+						validations: {
+							patternMismatch: 'Format incorrect',
+							valueMissing: 'Merci de saisir le montant de dépense maximum pour lequel vous souhaitez être alerté'
+						}
+					}
+				}).c-objectifMain--seuil
+
+				+btnWrapper().u-theme-genBlue.c-btnWrapper--fullOnMobile
+					+baseBtn({
+						text: "J'activ",
+						button: true
+					})(type="submit" data-e-form-validation-submit).c-objectiMain--btn
+			.c-objectifMaion__succes.u-hide  Nous avons bien pris en compte votre demande.
+mixin objectifMainSeuil(data)
+	- var data			= data || {}
+	//.c-objectifMainSeuil
+	.c-objectifMain.c-objectifMainSeuil
+		.c-objectifMain__title
+			span.c-objectifMain__titleSpan Maitrisez votre consommation
+			
+			+toolTipV2({
+					themeColor: 'u-theme-magenta'
+			})(data-e-modal-open="objectifMain")
+
+			+modal({
+				target: '{"target": "objectifMain"}'
+			}).u-padding-a-40
+				.u-margin-b-40 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut amet perspiciatis animi sit aliquam exercitationem ad culpa		
+		+formMat()
+		
+			.c-objectifMain__seuilWrapper 
+				span.c-objectifMainSeuil__label Votre seuil est fixé à
+				+inputMat({
+					type : 'tel',
+					placeholder: 'Seuil en €',
+					pattern : '^[0-9]*$',
+					dataValidation: {
+						typing: true,
+						validations: {
+							patternMismatch: 'Format incorrect',
+							valueMissing: 'Merci de saisir le montant de dépense maximum pour lequel vous souhaitez être alerté'
+						}
+					}
+				}).c-objectifMain--seuil.objectifMainSeuil--width
+
+				+inputMat({
+					type: "email",
+					pattern: true,
+					name: "email",
+					required: true,
+					placeholder: 'Votre email usuel',
+					disabled:    true
+				})(data-e-errorMail)
+				span(data-e-errorMail-message).c-objectifMain--color.u-hide Vous désirez modifier votre e-mail de contact, merci de vous rendre dans l'onglet "Mon profil - Mes coordonnées de contact" de votre Espace Client.
+			
+			.c-objectifMain__desc Choisissez votre objectif de consommation mensuelle en euros, vous serez notifié en cas de dépassement.
+
+			+checkboxMat({
+				label: 'Je ne souhaite plus recevoir des e-mails d’alerte.',
+				id: "checkObjectifGazPar",
+				name: 'checkObjectifGazPar'
+			})
+
+			+btnWrap
+				+btn(type="submit").c-btn--empty-genBlue Valider
+
+			.c-objectifMaion__succes.u-hide  Nous avons bien pris en compte votre demande.
+
+mixin objectifMainMail(data)
+	- var data			= data || {}
+
+	//.c-objectifMainMail
+	.c-objectifMainMail.c-objectifMain
+		.c-objectifMain__title 
+			span.c-objectifMain__titleSpan Maitrisez votre consommation
+			
+			+toolTipV2({
+					themeColor: 'u-theme-magenta'
+			})(data-e-modal-open="objectiMain2")
+
+			+modal({
+				target: '{"target": "objectiMain2"}'
+			}).u-padding-a-40
+				.u-margin-b-40 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut amet perspiciatis animi sit aliquam exercitationem ad culpa
+		.c-objectifMain__desc Choisissez votre objectif de consommation mensuelle en euros, vous serez notifié en cas de dépassement.
+		.c-objectifMainMailMessage.u-padding-t-20 
+			span Un e-mail de contact est nécessaire pour bénéficier de ce service.
+			span 
+				span Merci de le renseigner dans l'onglet
+				a(href="") « Mon Profil-Mes coordonnées de contact » 
+				span  de votre Espace Client.
+		+formMat()(data-e-form-validation='{"switchBtnState": true}')
+
+			+checkboxMat({
+				label: ' J’accepte de recevoir des e-mails d’alerte.',
+				id: "checkObjectif2",
+				required: true,
+				pattern: true,
+				disabled:    true,
+				name: 'checkObjectif2'
+			}).is-disabled
+
+			.c-objectifMaion__wrapper
+
+				+inputMat({
+					required: true,
+					type : 'tel',
+					placeholder: 'Seuil en €',
+					pattern : '^[0-9]*$',
+					disabled:    true,
+					dataValidation: {
+						typing: true,
+						validations: {
+							patternMismatch: 'Format incorrect',
+							valueMissing: 'Merci de saisir le montant de dépense maximum pour lequel vous souhaitez être alerté'
+						}
+					}
+				}).c-objectifMain--seuil
+
+				+btnWrapper().u-theme-genBlue.c-btnWrapper--fullOnMobile
+					+baseBtn({
+						text: 'Valider',
+						button: true
+					})(type="submit" data-e-form-validation-submit).c-objectiMain--btn
+			.c-objectifMaion__succes.u-hide  Nous avons bien pris en compte votre demande.

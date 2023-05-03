@@ -1,0 +1,62 @@
+
+mixin blockFacture(data)
+  - var data   = data || {}
+  - var theme  = data.theme || "gab1"
+  - var loader = data.loader || false
+  - var error  = data.error || false
+
+  // .c-blockFacture
+  if error
+    .c-blockFacture&attributes(attributes)
+      h2.u-heading-4.u-padding-b-20 Votre dernière facture
+
+      +fieldInfo({
+        icon: 'icon-erreur-fichier',
+        typeMessage: 'error'
+      })
+        p Message d'erreur!!! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi dolorem velit perspiciatis sapiente reprehenderit distinctio corporis, earum, nihil explicabo quam ratione! Suscipit velit excepturi eos, ab impedit consectetur tenetur laboriosam?
+
+  else
+    .c-blockFacture&attributes(attributes)
+      //- if loader
+      //-   +spinner().c-spinner--full
+
+      p.c-blockFacture__theme Facturation
+      h2.c-blockFacture__title Ma dernière <b>facture</b>
+      p.c-blockFacture__subTitle de consommation en Gaz Naturel
+      
+      
+
+      .c-blockFacture__infos
+            
+        p.u-margin-v-10 <b> A regler avant le 9.05.2017 </b>
+        .c-blockFacture__layoutInfos        
+          span.c-blockFacture__label Facture du 3 mai 2017
+          span.c-blockFacture__facture 
+            span 105.90€ TTC
+
+        .c-blockFacture__layoutInfos.c-blockFacture--bleu
+          span.c-blockFacture__label Solde à payer
+          span.c-blockFacture__facture 50.90€ TTC
+          
+        .c-blockFacture__telecharger
+          +btnWrapper().u-theme-orangeBaaast.c-btnWrapper--fullOnMobile.c-btnWrapper--alignRight
+            +baseBtn({
+              text: "",
+              empty: true,
+              iconRight: "icon-bold-download",
+              iconOnly: true
+            }).c-blockFacture--btnFlexStart
+              
+      .c-blocFacture__infosBlock
+        p.c-blockFacture--ftSize Votre Prochaine facture sera le <strong>16 juin 2017</strong>
+        p.c-blockFacture--ftSize Votre Prochaine facture sera le <strong>16 juin 2017</strong>
+
+
+      +btnWrap.c-btnWrap--alignLeft.c-blockFacture--btnSize
+        +btn.c-btn--empty-blue Je conulte mes factures
+        +btn.c-btn--orangeBaaast.u-margin-r-0 Je paye
+      div.c-blockmentionPBsecu.u-fontSize-tiny.u-textRight.u-color-grey
+        | Paiement sécurisé
+        span.icon.icon-libre-resilier
+

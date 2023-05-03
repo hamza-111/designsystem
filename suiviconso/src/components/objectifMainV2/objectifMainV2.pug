@@ -1,0 +1,233 @@
+//- include ../formMat/formMat
+//- include ../tooltipV2/tooltipV2
+//- include ../btnWrapper/btnWrapper
+//- include ../btnWrap/btnWrap
+//- include ../modal/modal
+
+mixin objectifMainV2(data)
+	- var data			= data || {}
+	- var title			= data.title || "Fixez votre seuil <br> de conso"
+	- var euro			= data.euro || false
+
+
+	//.c-objectifMainV2
+	.c-objectifMainV2
+		.c-objectifMainV2__title 
+			span.c-objectifMainV2__titleSpan!=title
+			+toolTipV2({
+				themeColor: 'u-theme-magenta',
+				icon : true
+			})(data-e-modal-open='objectiMain')
+
+			+modal({
+				target: '{"target": "objectiMain"}'
+			}).u-padding-a-40
+				.u-margin-b-40 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut amet perspiciatis animi sit aliquam exercitationem ad culpa
+		if euro
+			.c-objectifMainV2__desc Vous êtes informé par e-mail en cas de dépassement.
+		
+		+formMat()(data-e-form-validation='{"switchBtnState": true}')
+
+			+inputMat({
+				required: true,
+				type : 'tel',
+				placeholder: 'montant',
+				label : "Votre seuil :",
+				seuil : true,
+				pattern : '^[0-9]*$',
+				dataValidation: {
+					typing: true,
+					validations: {
+						patternMismatch: 'Format incorrect',
+						valueMissing: 'Merci de saisir le montant de dépense maximum pour lequel vous souhaitez être alerté'
+					}
+				}
+			}).c-objectifMainV2--seuil
+
+			.c-objectifMainV2__mailInfo 
+				span.c-objectifMainV2__spanMailInfo
+					span.u-textBold E-mail : 
+					span  paul.martin@gmail.com
+						a(href="").c-objectifMainV2__linkMailInfo modifier mon e-mail
+
+			//- +inputMat({
+			//- 	type: "email",
+			//- 	pattern: true,
+			//- 	name: "email",
+			//- 	required: true,
+			//- 	placeholder: 'Votre email usuel',
+			//- 	disabled:    true
+			//- })(data-e-errorMail)
+			//- span(data-e-errorMail-message).c-objectifMainV2--color.u-hide Vous désirez modifier votre e-mail de contact, merci de vous rendre dans l'onglet "Mon profil - Mes coordonnées de contact" de votre Espace Client.
+			if euro 
+				+checkboxMat({
+					label: " Désactiver l’e-mail d’alerte.",
+					id: "checkObjectifeuro",
+					name: 'checkObjectifeuro',
+				})
+
+			else
+				+checkboxMat({
+					label: " J'accepte de recevoir un e-mail d’alerte en cas de dépassement. Service gratuit.",
+					id: "checkObjectif",
+					required: true,
+					pattern: true,
+					name: 'checkObjectif',
+					dataValidation: {
+						validations: {
+							patternMismatch: "Pour recevoir les e-mails, veuillez accepter.",
+							valueMissing: "Pour recevoir les e-mails, veuillez accepter."
+						}
+					}
+				})
+
+			.c-objectifMaion__wrapper
+
+				+btnWrapper().u-theme-genBlue.c-btnWrapper--fullOnMobile.c-objectiMainV2--wrapper
+					if euro
+						+baseBtn({
+							text: "Je mets à jour",
+							button: true
+						})(type="submit" data-e-form-validation-submit).c-objectiMainV2--btn
+					else
+						+baseBtn({
+							text: "J'activ",
+							button: true
+						})(type="submit" data-e-form-validation-submit).c-objectiMainV2--btn
+
+					+baseBtn({
+						text: "Annuler",
+						button: true,
+						empty : true
+					}).c-objectiMainV2--btn.c-objectiMainV2--btnAnul
+			.c-objectifMaion__succes.u-hide  Nous avons bien pris en compte votre demande.
+//- mixin objectifMainV2Seuil(data)
+//- 	- var data			= data || {}
+//- 	//.c-objectifMainV2Seuil
+//- 	.c-objectifMainV2.c-objectifMainV2Seuil
+//- 		.c-objectifMainV2__title
+//- 			span.c-objectifMainV2__titleSpan Maitrisez votre consommation
+			
+//- 			+toolTipV2({
+//- 					themeColor: 'u-theme-magenta'
+//- 			})(data-e-modal-open="objectifMain")
+
+//- 			+modal({
+//- 				target: '{"target": "objectifMain"}'
+//- 			}).u-padding-a-40
+//- 				.u-margin-b-40 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut amet perspiciatis animi sit aliquam exercitationem ad culpa		
+//- 		+formMat()
+		
+//- 			.c-objectifMainV2__seuilWrapper 
+//- 				span.c-objectifMainV2Seuil__label Votre seuil est fixé à
+//- 				+inputMat({
+//- 					type : 'tel',
+//- 					placeholder: 'Seuil en €',
+//- 					pattern : '^[0-9]*$',
+//- 					dataValidation: {
+//- 						typing: true,
+//- 						validations: {
+//- 							patternMismatch: 'Format incorrect',
+//- 							valueMissing: 'Merci de saisir le montant de dépense maximum pour lequel vous souhaitez être alerté'
+//- 						}
+//- 					}
+//- 				}).c-objectifMainV2--seuil.objectifMainSeuil--width
+
+//- 				+inputMat({
+//- 					type: "email",
+//- 					pattern: true,
+//- 					name: "email",
+//- 					required: true,
+//- 					placeholder: 'Votre email usuel',
+//- 					disabled:    true
+//- 				})(data-e-errorMail)
+//- 				span(data-e-errorMail-message).c-objectifMainV2--color.u-hide Vous désirez modifier votre e-mail de contact, merci de vous rendre dans l'onglet "Mon profil - Mes coordonnées de contact" de votre Espace Client.
+			
+//- 			.c-objectifMainV2__desc Choisissez votre objectif de consommation mensuelle en euros, vous serez notifié en cas de dépassement.
+
+//- 			+checkboxMat({
+//- 				label: 'Je ne souhaite plus recevoir des e-mails d’alerte.',
+//- 				id: "checkObjectifGazPar",
+//- 				name: 'checkObjectifGazPar'
+//- 			})
+
+//- 			+btnWrap
+//- 				+btn(type="submit").c-btn--empty-genBlue Valider
+
+//- 			.c-objectifMaion__succes.u-hide  Nous avons bien pris en compte votre demande.
+
+mixin objectifMainV2Mail(data)
+	- var data			= data || {}
+	- var mail 			= data.mail || false
+	- var sold 			= data.sold || false
+	- var txt 			= data.txt || "Fixez votre seuil <br>  de conso"
+	 
+
+	//.c-objectifMainV2Mail
+	.c-objectifMainV2Mail.c-objectifMainV2
+		.c-objectifMainV2__title 
+			span.c-objectifMainV2__titleSpan!=txt
+			
+			+toolTipV2({
+					themeColor: 'u-theme-magenta',
+					icon: true
+			})(data-e-modal-open="objectiMain2")
+
+			+modal({
+				target: '{"target": "objectiMain2"}'
+			}).u-padding-a-40
+				.u-margin-b-40 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut amet perspiciatis animi sit aliquam exercitationem ad culpa
+		.c-objectifMainV2__main
+			.c-objectifMainV2__wrapper
+				.c-objectifMainV2__desc.u-padding-t-20 Recevez un e-mail, en cas de dépassement de votre seuil de consommation.
+				if mail
+					.c-objectifMainV2MailMessage
+						span Un e-mail de contact est nécessaire pour bénéficier de ce service.
+			.c-objectifMainV2__img 
+				img(src="../images/contrib/porc2.jpg" alt="")
+		if sold
+			+btnWrapper().c-objectifMainV2--btn.u-theme-genBlue.c-btnWrapper--fullOnMobile.u-margin-t-20
+				+baseBtn({
+					secondary : true,
+					text: 'Je mets à jour'
+				})
+		else
+			+btnWrapper().c-objectifMainV2--btn.u-theme-genBlue.c-btnWrapper--fullOnMobile.u-margin-t-20
+				+baseBtn({
+					text: 'J’ajoute mon e-mail'
+				})
+
+		//- +formMat()(data-e-form-validation='{"switchBtnState": true}')
+
+		//- 	+checkboxMat({
+		//- 		label: ' J’accepte de recevoir des e-mails d’alerte.',
+		//- 		id: "checkObjectif2",
+		//- 		required: true,
+		//- 		pattern: true,
+		//- 		disabled:    true,
+		//- 		name: 'checkObjectif2'
+		//- 	}).is-disabled
+
+		//- 	.c-objectifMaion__wrapper
+
+		//- 		+inputMat({
+		//- 			required: true,
+		//- 			type : 'tel',
+		//- 			placeholder: 'Seuil en €',
+		//- 			pattern : '^[0-9]*$',
+		//- 			disabled:    true,
+		//- 			dataValidation: {
+		//- 				typing: true,
+		//- 				validations: {
+		//- 					patternMismatch: 'Format incorrect',
+		//- 					valueMissing: 'Merci de saisir le montant de dépense maximum pour lequel vous souhaitez être alerté'
+		//- 				}
+		//- 			}
+		//- 		}).c-objectifMainV2--seuil
+
+		//- 		+btnWrapper().u-theme-genBlue.c-btnWrapper--fullOnMobile
+		//- 			+baseBtn({
+		//- 				text: 'Valider',
+		//- 				button: true
+		//- 			})(type="submit" data-e-form-validation-submit).c-objectiMain--btn
+		//- 	.c-objectifMaion__succes.u-hide  Nous avons bien pris en compte votre demande.

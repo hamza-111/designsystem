@@ -1,0 +1,328 @@
+.c-confirmationPaiement__title {
+  font-size: 2.2rem;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+.c-confirmationPaiement__txtCB {
+  font-size: 1.6rem;
+}
+
+.c-confirmationPaiement__title .icon {
+  font-size: 3rem;
+  color: #3BA934;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.c-confirmationPaiement__desc {
+  display: block;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 17px;
+  vertical-align: middle;
+  
+}
+
+.c-confirmationPaiement__desc.c-confirmationPaiement__desc--mobile {
+  padding-right: 40px;
+}
+
+
+@media #{$medium} {
+  .c-confirmationPaiement__desc.c-confirmationPaiement__desc--mobile {
+    padding-right: 54px;
+  }
+
+  .c-confirmationPaiement .c-confirmationPaiement__cta .c-btnWrapper  {
+    margin-left: 0;
+  }
+
+  .c-confirmationPaiement .c-btnWrapper.c-btnWrapper--active {
+    margin-left: 97px;
+  }
+
+  .c-confirmationPaiement__grye {
+    width: 84%;
+    margin: 0 auto;
+  }
+
+  .c-confirmationPaiement__download {
+    width: 304px;
+  }
+}
+
+@media #{$large} {
+  .c-confirmationPaiement__header.l-wrapper--medium {
+    width: 563px // valeur non conforme;
+  }
+  .c-confirmationPaiement__grye {
+    padding: 20px 40px;
+  }
+}
+
+@include media("<small") {
+
+  .c-confirmationPaiement__titleTxt {
+    line-height: 28px;
+  }
+  
+  .c-confirmationPaiement__desc.c-confirmationPaiement__desc--mobile {
+    padding-right: 24px;
+  }
+
+  .c-confirmationPaiement__liste--content2 {padding-right: 13px;}
+}
+
+.c-confirmationPaiement__txt {
+  display: block;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.c-confirmationPaiement__grye {
+  background-color: $grey-light;
+  padding: 20px 30px;
+  display: flex;
+  border-radius: 6px;
+}
+
+.c-confirmationPaiement__link {
+  color: $genBlue;
+  font-size: 1.6rem;
+}
+
+.c-confirmationPaiement__download {
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+  padding-left: 15px;
+}
+
+.c-confirmationPaiement__label {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.c-confirmationPaiement__label img {
+  margin-right: 10px;
+  height: 41px;
+}
+
+.c-confirmationPaiement__ctadesc {
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+}
+
+.c-confirmationPaiement__cta {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+
+.c-confirmationPaiement__main {
+  background-color: #009DE905;
+  padding: 26px 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+.c-confirmationPaiement__centerBar {
+  background-color:$genBlue;
+  width: 2px;
+  height: 170px;
+  display: block;
+  margin: 0 50px;
+}
+
+@include media("<small") {
+  .c-confirmationPaiement__txtCB {
+    padding: 0 38px;
+    margin-bottom: 30px;
+  }
+
+  
+  .c-confirmationPaiement .c-btnWrapper {
+    justify-content: left;
+    width: 100%;
+  }
+}
+
+
+.c-confirmationPaiement__leftSide {
+  width: 295px;
+  // @media #{$medium} {
+  //   width: 350px!important;
+  // }
+}
+
+.c-confirmationPaiement__rightSide {
+  width: 432px;
+  font-size: 1.6rem;
+}
+
+
+.c-confirmationPaiement .c-btnWrapper {
+  justify-content: left;
+}
+
+.c-confirmationPaiement__dowloadCB {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  font-size : 16px;
+}
+
+.c-confirmationPaiement__dowloadCB a {
+  margin-right: 5px;
+  color: $genBlue;
+}
+
+.c-confirmationPaiement .c-eTipV2--linkretour {
+  font-size: 16px;
+}
+
+.c-confirmationPaiement__liste .c-confirmationPaiement__liste--disc:before { 
+  content: "•";
+  font-size:30px; 
+  vertical-align:middle; 
+  line-height:20px;
+  margin-right: 10px;
+  top: 6px;
+  position: relative;
+} 
+
+.c-confirmationPaiement__liste--disc {
+  display: flex;
+  align-items: baseline;
+}
+
+.c-confirmationPaiement__liste {
+  @media #{$medium} {
+    padding-right: 50px;
+  }
+}
+
+@include media("<=medium") { 
+  .c-confirmationPaiement__main {
+    background-color: transparent;
+    flex-direction: column;
+  }
+
+  .c-confirmationPaiement__leftSide, .c-confirmationPaiement__rightSide {
+    background-color: #009DE905;
+    margin: 10px 0;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .c-confirmationPaiement__centerBar {
+    display: none;
+  }
+
+  .c-confirmationPaiement__mainSide {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .c-confirmationPaiement__desc--reponsive {
+    display: inline-block;
+    width: 345px;
+    margin-bottom: 0;
+    @include media("<small") {
+      width: 340px;
+      margin-bottom: 17px;
+    }
+  }
+  
+
+  .c-confirmationPaiement .c-btnWrapper {
+    display: inline-block;
+    margin-left: 50px;
+  }
+
+  .c-confirmationPaiement__main {
+    padding: 0;
+  }
+}
+
+
+
+@include media("<small") {
+  .c-confirmationPaiement__grye {
+    flex-direction: column;
+    border-radius: 0;
+  }
+
+  .c-confirmationPaiement__download {
+    margin-right: 0;
+  }
+
+  .c-confirmationPaiement__title {
+    display: flex;
+    flex-direction: column;
+    width: 195px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .c-confirmationPaiement__txt {
+    width: 300px;
+    margin: 15px auto 30px;
+    padding: 0 18px;
+  }
+
+  .c-confirmationPaiement .c-btnWrapper--fullOnMobile {
+    margin-top: 20px;
+  }
+  .c-confirmationPaiement .c-btnWrapper {
+      display: block;
+      margin-left: 0;
+  }
+
+  .c-confirmationPaiement .c-btnWrapper--fullOnMobile .c-baseBtn__content {
+    width: auto;
+  }
+
+  .c-confirmationPaiement__header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .c-confirmationPaiement .c-eTipV2--linkretour {
+    margin-top: 50px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .c-confirmationPaiement__leftSide {
+    margin-top: 0;
+  }
+
+  .c-confirmationPaiement__mainSide {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+
+  .c-confirmationPaiement__grye {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media #{$medium} {
+  .c-confirmationPaiement__mainSide {
+    width: 540px;
+  }
+  .c-confirmationPaiement .c-btnWrapper.c-btnWrapper--active {
+    margin-left: 54px;
+  }
+}

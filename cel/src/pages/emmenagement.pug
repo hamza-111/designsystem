@@ -1,0 +1,39 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../../../common/src/components/assuranceBand/assuranceBand
+include ../../../common/src/components/advantages/advantages
+
+//- Main variables
+block variables
+  - var title          = "creation-EC"
+  - var page           = "app"
+  - var bodyClass      = ""
+  - var description    = ""
+  - var noHeaderFooter = true
+  - var headerCel      = 'title'
+  - var footer         = true
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  #cel.c-headerLightCelPush.u-margin-small-t-35
+  
+    h2.u-heading-1.u-heading--headerFixed.u-textCenter.u-margin-b-40.u-margin-small-b-40
+      | Bonjour Marina, <br/> vous n'avez pas encore accès à votre Espace Client.
+
+    p.u-textCenter.u-margin-b-40.u-margin-small-b-30
+      | Pas de panique ! Votre contrat sera très bientôt actif <br>et vous pourrez profiter de tous les avantages de votre Espace Client.
+
+    +assuranceBand({
+      picture: true
+    })
+    
+    +advantages({
+      nb : 4
+    })

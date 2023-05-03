@@ -1,0 +1,15 @@
+{
+  "name": "cel",
+  "version": "1.0.0",
+  "description": "cel",
+  "private": true,
+  "config": {
+    "port": 4050
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "index.js",
+  "author": "",
+  "license": "private"
+}

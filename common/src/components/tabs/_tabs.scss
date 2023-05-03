@@ -1,0 +1,139 @@
+.c-tabs {
+  // hide arrows but keep active zone
+  .slick-prev,
+  .slick-next {
+    background: transparent;
+    width: 8%;
+    padding: 0;
+
+    button {
+      background: transparent;
+      outline: none;
+    }
+
+    .icon:before,
+    button { display: none; }
+
+    &:hover { background: transparent; }
+  }
+}
+
+.c-tabs__header {
+  display: table;
+  width: 90%;
+  min-height: 75px;
+  margin: 0 auto 15px auto;
+  border-bottom: 3px solid;
+}
+
+  .c-tabs__title {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px 0;
+    font-size: $font-18;
+    font-weight: $font-bold;
+    text-align: center;
+    color: $black;
+  }
+
+.c-tabs__panel {
+  // space between slides
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+@include media(">=small") {
+  .c-tabs {
+    &:before {
+      display: none;
+    }
+  }
+
+  // it's only for mobile so we hide it
+  .js .c-tabs__header {
+    @include visibility-hidden();
+  }
+
+  .c-tabs__pannels {
+    position: relative;
+  }
+
+  .c-tabs__nav {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+
+    .c-headSection + & {
+      margin-top: 0;
+    }
+
+    .no-js & {
+      display: none;
+    }
+  }
+
+  .c-tabs__links {
+    width: 50%;
+    position: relative;
+    border-bottom: 1px solid $black;
+
+    a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: $black;
+
+      // pour avoir une couleur "u-theme-bg-after" plus claire : un petit hack
+      // pour éviter d'ajouter des classes...
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        transition: all 0.3s ease-in-out;
+        transform: translateY(50%) scaleX(0);
+      }
+
+      &:before {
+        background: $green;
+      }
+
+      @include hover-focus-active() {
+        &:after,
+        &:before {
+          transform: translateY(50%) scaleX(1);
+        }
+      }
+
+      &.is-active {
+        text-shadow: 1px 0 0 $black;
+      }
+    }
+  }
+
+  .c-tabs__panel {
+    position: relative;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    transition: transform 0.4s ease-in-out,
+                opacity 0.4s ease-in-out;
+
+    html.js &:not(.is-active) { // only when JS
+      position: absolute;
+      transform: translateY(-20px);
+      opacity: 0.01;
+      z-index: -1;
+    }
+  }
+}
+
+

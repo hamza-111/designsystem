@@ -1,0 +1,20 @@
+
+mixin contactLegal(data)
+  - var data  = data || {}
+  - var color  = data.color || "vert"
+
+  // .c-contactLegal
+  .c-contactLegal(class="c-contactLegal--"+ color)
+    p.c-contactLegal__title Appeler un conseiller
+
+    .c-contactLegal__wrapper
+      .c-contactLegal__button
+        a.c-contactLegal__link(href="tel:0810124125") 0 810 124 125
+
+        p.c-contactLegal__infos Service 0,06&nbsp;€&nbsp;/&nbsp;min <br>+ prix appel
+
+        .c-contactLegal__empty
+
+      p.c-contactLegal__text
+        | Du lundi au vendredi de 8h15 à 20h
+  // end .c-contactLegal

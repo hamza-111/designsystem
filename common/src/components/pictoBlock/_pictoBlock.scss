@@ -1,0 +1,95 @@
+.c-pictoBlock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .c-inputMat {
+    padding-top: 25px;
+    max-width: 280px;
+  }
+}
+
+.c-pictoBlock__icon {
+  position: relative;
+}
+
+.c-pictoBlock__validIcon {
+  display: none;
+  position: absolute;
+  top: 15px;
+  left: 27px;
+  color: $valid-color;
+  font-size: 3.4rem;
+
+  .is-valid & {
+    display: block;
+  }
+}
+
+.c-pictoBlock__content {
+  margin-left: 20px;
+
+  b {
+    word-break: break-all;
+  }
+}
+
+// Icone au-dessus sur mobile et à gauche en tablette et desktop :
+.c-pictoBlock--topToLeft {
+  flex-direction: column;
+
+  .c-pictoBlock__content {
+    margin-top: 10px;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+// Fait flotter l'icône à gauche de l'input pour qu'il conserve ses dimensions dans son conteneur :
+.c-pictoBlock--absoluteIcon {
+  .c-pictoBlock__content {
+    width: 100%;
+  }
+}
+
+
+@include media('<small') {
+  .c-pictoBlock {
+    .c-inputMat {
+      margin-left: 0;
+    }
+  }
+}
+
+
+@include media('>=small') {
+  .c-pictoBlock {
+    .c-inputMat {
+      width: 280px;
+    }
+  }
+
+  .c-pictoBlock--topToLeft {
+    flex-direction: row;
+
+    .c-pictoBlock__content {
+      margin-top: 0;
+      margin-left: 20px;
+      text-align: left;
+    }
+  }
+
+  .c-pictoBlock--absoluteIcon {
+    .c-pictoBlock__icon {
+      position: absolute;
+      left: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .c-pictoBlock--alignLeft {
+    justify-content: flex-start;
+  }
+}

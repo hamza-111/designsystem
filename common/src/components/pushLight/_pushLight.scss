@@ -1,0 +1,48 @@
+.c-pushLight__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: solid 6px #dcf2fd;
+  .icon {
+    font-size: 5rem;
+  }
+  .c-pushLight__title {
+    padding-left: 30px;
+    padding-right: 100px;
+  }
+}
+
+.c-pushLight__contentLight {
+  padding: 20px;
+  background-color: white;
+
+  .c-pushLight-flex {
+    display: flex;
+    justify-content: space-between;
+    }
+
+  .c-pushLight-flexContent {
+    width: 70%;
+    font-size: 1.6rem;
+  }
+}
+
+@include media("<=small") {
+  .c-pushLight__content {
+    flex-direction: column;
+    .c-pushLight__title {
+      padding: 10px 0 20px 0;
+    }
+  }
+
+  .c-pushLight__contentLight .c-pushLight-flexContent {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .c-pushLight-flex {
+    flex-direction: column;
+  }
+}

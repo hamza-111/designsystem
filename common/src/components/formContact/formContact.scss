@@ -1,0 +1,40 @@
+@import "formContactClient/formContactClient";
+@import "formContactSelect/formContactSelect";
+@import "formContactLogged/formContactLogged";
+@import "formContactReclamation/formContactReclamation";
+@import "formContactMessage/formContactMessage";
+@import "formContactContract/formContactContract";
+@import "formContactUpload/formContactUpload";
+@import "formContactIban/formContactIban";
+@import "formContactExtra/formContactExtra";
+@import "formContactPayment/formContactPayment";
+@import "formContactDevice/formContactDevice";
+@import "formContactClientAccess/formContactClientAccess";
+@import "formContactSuccess/formContactSuccess";
+
+
+.c-formContact__separator {
+  position: relative;
+
+  &:before {
+    content: '';
+    height: 2px;
+    background-color: $grey-light;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    right: 15px;
+  }
+}
+
+
+@include media(">=small") {
+  .c-formContact__separator {
+    &:before {
+      width: 640px;
+      transform: translateX(-50%);
+      left: 50%;
+      right: auto;
+    }
+  }
+}

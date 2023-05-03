@@ -1,0 +1,41 @@
+mixin breadcrumb(data)
+  - var data      = data || {}
+
+  // .c-breadcrumb
+  nav.c-breadcrumb
+    ol.c-breadcrumb__group(itemscope itemtype="http://schema.org/BreadcrumbList")
+      +breadcrumb_item({
+        link: '../homepage.html',
+        label: 'Accueil',
+        nbr: 1
+      })
+      +breadcrumb_item({
+        link: '#',
+        label: 'Page blabla',
+        nbr: 2
+      })
+      +breadcrumb_item({
+        label: 'Page actuelle',
+        nbr: 3
+      })
+  // end .c-breadcrumb
+
+
+mixin breadcrumb_item(data)
+  - var data  = data || {}
+  - var link  = data.link || ''
+  - var label = data.label || 'Nom de la page'
+  - var nbr   = data.nbr || 1
+
+  li.c-breadcrumb__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+    if (link !== '')
+      a.c-breadcrumb__link(itemprop="item" href=link)
+        span.c-breadcrumb__label(itemprop="name")!=label
+        span.c-breadcrumb__icon.icon.icon-chevron-right
+      meta(itemprop="position" content=nbr)
+    else
+      .c-breadcrumb__text
+        span.c-breadcrumb__label(itemprop="name")!=label
+      meta(itemprop="position" content=nbr)
+
+

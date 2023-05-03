@@ -1,0 +1,13 @@
+mixin facebookMessenger(data)
+  - var data       = data || {}
+
+  // .c-facebookMessenger
+  .c-facebookMessenger
+    a.c-facebookMessenger__link(href="#")
+      span.c-facebookMessenger__picto.icon.icon-facebook-messenger
+      .c-facebookMessenger__content
+        .c-wysiwyg
+          if block
+            block
+          else
+            | Posez-nous votre question dans <strong><u>Messenger</u></strong>

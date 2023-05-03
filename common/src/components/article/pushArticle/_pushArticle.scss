@@ -1,0 +1,108 @@
+.c-pushArticleWrapper__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  @include media('>=small'){
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-right: -20px;
+  }
+
+  @include media('>medium'){
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+
+.c-pushArticle {
+  flex: 0 1 100%;
+  margin: 10px 15px;
+  max-width: 460px;
+
+  @include media('>=small'){
+    display: flex;
+    margin: 10px;
+    flex: 0 1 33.33%;
+  }
+
+  @include media('>=small','<=medium'){
+    margin: 10px 0;
+    padding-right: 20px;
+  }
+
+  @include media('>medium'){
+    max-width: 320px;
+  }
+}
+
+// Article mis en avant, 2x plus grand sur tablette et desktop et pas de tags :
+.c-pushArticle--highlighted {
+  @include media('<small'){
+    margin: 10px 0;
+  }
+
+  @include media('>=small'){
+    flex: 2 0 60%;
+    max-width: none;
+  }
+
+  .c-pushArticle__title {
+    padding: 20px;
+    font-size: $font-18;
+
+    @include media('>=medium'){
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba($white, .8);
+    }
+  }
+}
+
+.c-pushArticle__wrapper {
+  position: relative;
+  display: block;
+  justify-content: space-between;
+  border: 1px solid $grey-medium2;
+  background: transparent;
+}
+
+// Pour le positionnement du fake-link :
+.c-pushArticle__header {
+  position: relative;
+}
+
+.c-pushArticle__img {
+  img {
+    width: 100%;
+  }
+}
+
+.c-pushArticle__title {
+  font-size: 1.8rem;
+  line-height: 24px;
+  padding: 20px;
+
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.c-pushArticle__content {
+  padding: 20px;
+}
+
+.c-pushArticle__date {
+  font-size: $font-12;
+  color: $text-grey;
+}
+
+.c-pushArticle__tagList {
+  margin-top: 10px;
+}

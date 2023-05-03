@@ -1,0 +1,202 @@
+/**
+ * Paddings:
+ * `.u-padding-xxx` - classes de padding (5, 10, 15, 20, 30)
+ *
+ *     @example
+ *     .fill
+ *       .u-padding-10: .fill
+ *     .fill
+ *       .u-padding-20: .fill
+ *     .fill
+ *       .u-padding-v-20: .fill
+ *     .fill
+ *       .u-padding-h-20: .fill
+ */
+
+$paddings-map: (
+  "10":  10px,
+  "15":  15px,
+  "20":  20px,
+  "25":  25px,
+  "30":  30px,
+  "35":  35px,
+  "40":  40px,
+  "50":  50px,
+  "60":  60px,
+  "70":  70px,
+  "80":  80px,
+  "90":  90px,
+  "100": 100px,
+  "110": 110px,
+  "120": 120px,
+  "130": 130px,
+  "140": 140px,
+  "165": 165px,
+  "196": 196px,
+);
+
+
+.u-nopadding-small {
+  padding: 0;
+}
+
+.u-nopadding-left {
+  padding-left: 0;
+}
+
+.u-nopadding-right {
+  padding-right: 0;
+}
+
+[class*="u-padding-a-"] {
+  padding: 20px;
+}
+
+[class*="u-padding-t-"] {
+  padding-top: 20px;
+}
+
+[class*="u-padding-r-"] {
+  padding-right: 20px;
+}
+
+[class*="u-padding-b-"] {
+  padding-bottom: 20px;
+}
+
+[class*="u-padding-l-"] {
+  padding-left: 20px;
+}
+
+[class*="u-padding-v-"] {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+[class*="u-padding-h-"] {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.u-padding-a-0 {
+  padding: 0;
+}
+
+.u-padding-t-0 {
+  padding-top: 0;
+}
+
+.u-padding-r-0 {
+  padding-right: 0;
+}
+
+.u-padding-b-0 {
+  padding-bottom: 0;
+}
+
+.u-padding-l-0 {
+  padding-left: 0;
+}
+
+.u-padding-v-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.u-padding-h-0 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+// Classes destinées à espacer les composants :
+.u-padding-spacer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.u-padding-t-spacer {
+  padding-top: 30px;
+}
+
+.u-padding-b-spacer {
+  padding-bottom: 30px;
+}
+
+
+@include media(">small") {
+  @each $name, $value in $paddings-map {
+    .u-padding-a-#{$name} {
+      padding: $value;
+    }
+
+    .u-padding-t-#{$name} {
+      padding-top: $value;
+    }
+
+    .u-padding-r-#{$name} {
+      padding-right: $value;
+    }
+
+    .u-padding-b-#{$name} {
+      padding-bottom: $value;
+    }
+
+    .u-padding-l-#{$name} {
+      padding-left: $value;
+    }
+
+    .u-padding-v-#{$name} {
+      padding-top: $value;
+      padding-bottom: $value;
+    }
+
+    .u-padding-h-#{$name} {
+      padding-right: $value;
+      padding-left: $value;
+    }
+  }
+
+  .u-padding-spacer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .u-padding-t-spacer {
+    padding-top: 50px;
+  }
+
+  .u-padding-b-spacer {
+    padding-bottom: 50px;
+  }
+}
+
+@include media("<=small") {
+  @each $name, $value in $paddings-map {
+    .u-paddings-small-a-#{$name} { margin: $value; }
+    .u-paddings-small-t-#{$name} { margin-top: $value; }
+    .u-paddings-small-r-#{$name} { margin-right: $value; }
+    .u-paddings-small-b-#{$name} { margin-bottom: $value; }
+    .u-paddings-small-l-#{$name} { margin-left: $value; }
+    .u-paddings-small-v-#{$name} { margin-top: $value; margin-bottom: $value; }
+    .u-paddings-small-h-#{$name} { margin-right: $value; margin-left: $value; }
+  }
+}
+
+
+// homepage reborn fix temporaire
+.u-padding-t-120 {
+  padding-top: 120px!important;
+}
+
+@media #{$small} {
+  .u-padding-t-120 {
+    padding-top: 0px!important;
+  }
+}
+
+
+// @media #{$small} {
+//   .u-padding-t-120.u-padding-small-t-0 {
+//     padding-top: 0!important;
+//   }
+// }

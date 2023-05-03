@@ -1,0 +1,67 @@
+include ../../headSection/headSection
+include ../tagList/tagList
+
+mixin pushArticleWrapper(data)
+  - var data  = data || {}
+  - var title = data.title || false
+  - var noPadding = data.noPadding || false
+
+  // .c-pushArticleWrapper
+  .c-pushArticleWrapper(class=!noPadding ? "u-padding-spacer l-wrapper--large" : "")&attributes(attributes)
+    if title
+      +headSection({
+        noLink: true,
+        title: title
+      })
+
+    .c-pushArticleWrapper__content(data-e-filters-article-content)
+      block
+  // end .c-pushArticleWrapper
+
+
+mixin pushArticle(data)
+  - var data    = data || {}
+  - var title   = data.title || 'Titre du composant'
+  - var date    = data.date || ''
+  - var imgSrc  = data.imgSrc || '../images/contrib/child_eolien.jpg'
+  - var imgAlt  = data.imgAlt || ''
+
+  // .c-pushArticle
+  article.c-pushArticle(class=highlighted ? 'c-pushArticle--highlighted' : '')
+    .c-pushArticle__wrapper
+      .c-pushArticle__header
+        .c-pushArticle__img
+          img(src=imgSrc alt=imgAlt)
+
+        h3.c-pushArticle__title
+          a(href="#")!=title
+
+        a.u-fauxLink(href="#" tabindex="-1")
+
+    if date
+      .c-pushArticle__content
+        time.c-pushArticle__date=date
+  // end .c-pushArticle
+
+
+mixin pushArticle-tpl(data)
+  // Template .c-pushArticle
+  script(data-tpl="listArticles" type="text/template")
+    article.c-pushArticle
+      .c-pushArticle__wrapper
+        .c-pushArticle__header
+          .c-pushArticle__img
+            img(src='[% this.image %]' alt='')
+
+          h3.c-pushArticle__title
+            a(href='[% this.url %]') [% this.title %]
+
+          a.u-fauxLink(href='[% this.url %]' tabindex="-1")
+
+        | [% if (!this.pin) { %]
+        .c-pushArticle__content
+          time.c-pushArticle__date [% this.date %]
+        | [% } %]
+  // end Template .c-pushArticle
+
+

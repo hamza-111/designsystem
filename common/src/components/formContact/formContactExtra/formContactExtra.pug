@@ -1,0 +1,10 @@
+mixin formContactExtra(data)
+  - var data = data || {}
+  - var id = data.id || ""
+
+  fieldset.c-formContactExtra.c-formContact__separator.u-padding-spacer(
+    data-e-formcontact-block={id: id}
+  )
+    h3.u-heading-3.l-wrapper--medium.u-textCenter.u-margin-b-30 Pour mieux traiter votre demande... <br>(optionnel)
+
+    block

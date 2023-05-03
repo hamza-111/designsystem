@@ -1,0 +1,42 @@
+include shareArticle
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant tagList
+
++demo({
+  desc: "Utilise les classes de thème pour ses couleurs"
+})
+  +shareArticle({
+    label: 'Partager cet article par'
+  }).u-theme-genBlue
+    +shareArticleLink({
+      text: 'Facebook',
+      iconName: 'icon-facebook'
+    })
+    +shareArticleLink({
+      text: 'Twitter',
+      iconName: 'icon-twitter'
+    })
+    +shareArticleLink({
+      text: 'Google+',
+      iconName: 'icon-googleplus'
+    })
+
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Sans label
+
++demo({
+  desc: "Composant tagList"
+})
+  +shareArticle.u-theme-genBlue
+    +shareArticleLink({
+      text: 'Facebook',
+      iconName: 'icon-facebook'
+    })
+    +shareArticleLink({
+      text: 'Twitter',
+      iconName: 'icon-twitter'
+    })
+    +shareArticleLink({
+      text: 'Google+',
+      iconName: 'icon-googleplus'
+    })

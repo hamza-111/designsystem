@@ -1,0 +1,55 @@
+mixin uploadMat2(data)
+  - var data           = data || {}
+  - var label          = data.label || "Lorem ipsum"
+  - var id             = data.id || "defaultID"
+  - var name           = data.name || false
+  - var required       = data.required || false
+  - var dataValidation = data.dataValidation || false
+  - var submitState    = data.submitState || false
+  - var maxSize        = data.maxSize || 1048576
+  - var accept         = data.accept || "image/jpeg, image/tiff, application/pdf"
+
+
+  // .c-uploadMat2
+  .c-uploadMat2(
+    data-e-uploadmat2='{"maxSize": ' + maxSize + ', "maxSizeMessage": "La taille du fichier dépasse le maximum autorisé", "fileTypeMessage": "Le format de fichier n\'est pas supporté"}'
+    data-e-field-validation=dataValidation ? dataValidation : false
+  )
+    .c-uploadMat2__chooseFile(data-e-uploadmat2-choose)
+      span.c-uploadMat2__stateIcon
+        span.icon.icon-bold-upload
+
+      .c-uploadMat2__btn
+        input.c-uploadMat2__field(
+          name=id
+          id=id
+          type="file"
+          required=required
+          accept=accept
+        )
+        label.c-uploadMat2__label(
+          for=id
+        )
+          if required
+            span.u-textUnderlined Choisir un fichier
+          else
+            span.u-textUnderlined Choisir un fichier
+            = " "
+            | (optionnel)
+
+      p(data-e-uploadmat2-file-type) (jpg /pdf /tiff /tif) Taille max&nbsp;: 1Mo
+
+      if dataValidation
+        +fieldInfo({
+          typeMessage: 'error',
+          input: true
+        })(data-e-field-validation-error)
+
+    .c-uploadMat2__resetFile(data-e-uploadmat2-display hidden)
+      span.c-uploadMat2__stateIcon
+        span.icon.icon-thin_check
+
+      .c-uploadMat2__file(data-e-uploadmat2-file)
+
+      button.c-uploadMat2__resetBtn.c-uploadMat2__reset(type="button" data-e-uploadmat2-reset) Supprimer ou remplacer
+  // end .c-uploadMat2

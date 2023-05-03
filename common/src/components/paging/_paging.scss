@@ -1,0 +1,57 @@
+$blockDim: 32px;
+
+.c-paging__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-paging__link,
+.c-paging__block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 $blockDim;
+  margin: 0 3px;
+  width: $blockDim;
+  height: $blockDim;
+  border: 1px solid;
+  border-color: transparent;
+  color: $text-grey;
+}
+
+.c-paging__link {
+  text-decoration: none;
+
+  @include hover-focus-active {
+    color: $genBlue;
+  }
+
+  &.is-active {
+    color: $genBlue;
+    border-color: $genBlue;
+  }
+
+  &.is-hidden {
+    visibility: hidden;
+  }
+}
+
+.c-paging__link--arrow {
+  margin: 0 6px;
+  width: auto;
+  font-size: 2.4rem;
+
+  @include media('>=small'){
+    margin: 0 10px;
+  }
+
+  // Force le centrage et le rapprochement pour les double flèches << et >>
+  .icon-chevron-left,
+  .icon-chevron-right {
+    display: flex;
+    justify-content: center;
+    width: 8px;
+    line-height: $blockDim; // Assure un outline régulier (bien rectangulaire)
+  }
+}

@@ -1,0 +1,18 @@
+.c-blockCompteur{
+	position: relative;
+	padding: 30px;
+	background: white;
+}
+
+.c-blockCompteur .c-blockCompteur__detail{
+	position: relative;
+	padding: 20px 0;
+	border-bottom: 1px solid $grey-medium;
+	border-top: 0;
+}
+
+@include media("<=small") {
+	.c-blockCompteur{
+			padding: 15px
+	}
+}

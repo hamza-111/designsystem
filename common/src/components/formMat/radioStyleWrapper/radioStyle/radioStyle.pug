@@ -1,0 +1,47 @@
+mixin radioStyle(data)
+  - var data           = data || {}
+  - var id             = data.id || false
+  - var name           = data.name || false
+  - var required       = data.required || false
+  - var dataValidation = data.dataValidation || false
+  - var value          = data.value || "radio value"
+  - var titre          = data.titre || false
+  - var imgUrl         = data.imgUrl || ""
+  - var icon           = data.icon || ""
+  - var alt            = data.alt || imgUrl
+  - var label          = data.label || ""
+  - var textLabel      = data.textLabel || ""
+
+  // .c-radioStyle
+  .c-radioStyle(
+    data-e-field-validation=dataValidation ? dataValidation : false
+  )&attributes(attributes)
+    .c-radioStyle__fieldBorder
+      input.c-radioStyle__field(
+        type="radio"
+        id=id
+        name=name
+        value=value
+        dataValidation=dataValidation
+        required=required
+      )
+
+      if titre
+        span.c-radioStyle__nouveaux.u-fontSize-medium!=titre
+
+      .c-radioStyle__blocImage.u-fontSize-medium
+        if imgUrl
+          img(src="../images/contrib/" + imgUrl + "" alt=alt)
+        if icon
+          span.c-radioStyle__icon.icon(class!=icon)
+        if !icon
+          .c-radioStyle__label.u-margin-t-20
+            span.c-radioStyle__boldText.u-textBold!=label
+            span.c-radioStyle__date!=textLabel
+
+        if dataValidation
+          +fieldInfo({
+            typeMessage: 'error',
+            input: true
+          })(data-e-field-validation-error)
+

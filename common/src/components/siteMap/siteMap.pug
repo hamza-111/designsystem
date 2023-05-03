@@ -1,0 +1,60 @@
+mixin siteMap()
+  ul.c-siteMap
+    li
+      a(href="#") Page niveau 1
+      ul
+        - for (var i = 0; i < 4; i++)
+          li
+            a(href="#") Page niveau 2
+
+    li
+      a(href="#") Page niveau 1
+
+    li
+      a(href="#") Page niveau 1
+
+      ul
+        li
+          a(href="#") Page niveau 2
+        li
+          a(href="#") Page niveau 2
+          ul
+            - for (var i = 0; i < 2; i++)
+              li
+                a(href="#") Page niveau 3
+
+        - for (var i = 0; i < 4; i++)
+          li
+            a(href="#") Page niveau 2
+
+    li
+      a(href="#") Page niveau 1
+      ul
+        - for (var i = 0; i < 4; i++)
+          li
+            a(href="#") Page niveau 2
+
+    li
+      a(href="#") Page niveau 1
+
+      ul
+        li
+          a(href="#") Page niveau 2
+          ul
+            - for (var i = 0; i < 2; i++)
+              li
+                a(href="#") Page niveau 3
+
+        li
+          a(href="#") Page niveau 2
+          ul
+            - for (var i = 0; i < 2; i++)
+              li
+                a(href="#") Page niveau 3
+
+        - for (var i = 0; i < 4; i++)
+          li
+            a(href="#") Page niveau 2
+
+    li
+      a(href="#") Page niveau 1

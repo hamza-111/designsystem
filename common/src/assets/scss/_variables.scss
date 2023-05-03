@@ -1,0 +1,239 @@
+$bp-small:    47.99em; // 768px
+$bp-medium:   64em; // 1024px
+$bp-large:    80em; // 1280px
+$bp-huge:    120em; // 1920px
+
+// $bp-small:   768px;
+// $bp-medium:  1024px;
+// $bp-large:   1280px;
+// $bp-huge:    1920px;
+
+
+// AB-mediaQuery: https://github.com/lordfpx/AB-mediaQuery
+$ab-breakpoints: (
+  small:      $bp-small,
+  medium:     $bp-medium,
+  large:      $bp-large,
+  huge:       $bp-huge
+);
+
+// MEDIA QUERIES
+// -------------
+// include-media: http://include-media.com/
+$breakpoints: (
+  small:      $bp-small,
+  medium:     $bp-medium,
+  large:      $bp-large,
+  huge:       $bp-huge
+);
+
+// @media mixin usage:
+//
+// @include media(">=medium", "<large") {
+//   ...
+// }
+// -------------
+//
+
+// New Charte Graphique projet BAAAST 
+$white:               #fff;
+$white-hover:         #ccc;
+$blackZero:           #000;
+$blackZero-hover:     #fff;
+$redZero:             #ff0000;
+$redZero-hover:       #8c1d02;
+$ping-sea:            #EE8D8D;
+$ping-sea-hover:      #E34545;
+
+$genBlue:             #00aaff;
+$genBlue-hover:       #007fff;
+
+$green-persian:       #00AE90;
+$green-persian-hover: #02836C;
+$green-baaast:        #54dda3;
+$green-baaast-hover:  #02836C;
+$green-mint:          #9CFF75;
+$green-mint-hover:    #00AE90;
+$grey-baaast:         #B2B2B2;
+$grey-baaast-hover:   #929090;
+$blue:                #0059B3;
+$blue-hover:          #10377F;
+$blue-bayoux:         #4A6284;
+$blue-bayoux-hover:   #10377F;
+$orange-amber:        #FFBD0A;
+$orange-amber-hover:  #ce4d37;
+$orange-baaast:       #FF7423;
+$orange-baaast-hover: #fe471a;
+
+
+
+
+// --end New Charte Graphique projet BAAAST 
+
+
+$facebook:           #3b5998;
+$facebook-hover:     darken($facebook, 15%);
+$twitter:            #1da1f2;
+$twitter-hover:      darken($twitter, 15%);
+$gplus:              #d34836;
+$gplus-hover:        darken($gplus, 15%);
+$mail:               #0f978c;
+$mail-hover:         darken($mail, 15%);
+
+$facebookMessenger:  #1787fb;
+
+
+
+// old colors
+
+$orange:             #fe471a;
+$orange-dark:        #8c1d02;
+$red:                #ea002a;
+$red-dark:           #93011b;
+
+$starYellow:         #fca713;
+
+
+$black:              #333;
+$text-grey:          #666666;
+$grey:               #858585;
+$starGrey:           #999999;
+$grey-medium:        #e5e5e5;
+$grey-medium2:       #cccccc;
+$grey-light:         #f2f2f2;
+
+$facebook:           #3b5998;
+$facebook-hover:     darken($facebook, 15%);
+$twitter:            #1da1f2;
+$twitter-hover:      darken($twitter, 15%);
+$gplus:              #d34836;
+$gplus-hover:        darken($gplus, 15%);
+$mail:               #0f978c;
+$mail-hover:         darken($mail, 15%);
+
+$facebookMessenger:  #1787fb;
+
+
+// Général
+$error-bg:        #FFF4F5;
+$error-color:     #EB2936;
+$valid-color:     #188464;
+$warning-color:   $starYellow;
+
+
+// esprit service
+$magenta-hover:      #85013c;
+$magenta:            #b90857;
+$magenta-medium:     #ff3c6e;
+$magenta-light:      #ffeaed;
+
+
+// TR
+$coral:          #ed694b;
+$coral-hover:    #ce4d37;
+
+$genBlue-light:  #c9edff;
+$genBlue-medium: #75d3ff;
+
+$green:          #3aaa35;
+$green-hover:    #2a7f27;
+$green-success: #edfff0;
+
+
+// pour header, ne PAS utiliser ailleurs !!!
+$headerColor1:       #6fb535;
+$headerColor2:       #ffc300;
+$headerColor3:       #0f978c;
+$headerColor4:       #005faa;
+$headerColor5:        $genBlue;
+$headerColor6:       #008737;
+$headerColor7:       #e62d87;
+// END - pour header, ne PAS utiliser ailleurs !!!
+
+// Vente (mais plus seulement) :
+$venteBlue-light:   #dcf2fd;
+$venteBlue-medium:  #c8e4f2;
+$venteBlue-dark:    #79a6bb;
+$venteStarsYellow:  #fcc813;
+$venteStarsBlue:    #4ebef6;
+
+//chèque énergie
+$chequeEnergieBlue: #9FDBED; // $BlizzardBlue
+$chequeEnergieBlueDark :#0E4194; //$ToreaBay
+
+
+// fonts
+$font-arial: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$font-typo: 'Open Sans', sans-serif;
+
+$font-bold:   700;
+$font-normal: 400;
+
+$font-0:   0;
+$font-11:  1.1rem;
+$font-12:  1.2rem;
+$font-13:  1.3rem;
+$font-14:  1.4rem;
+$font-15:  1.5rem;
+$font-16:  1.6rem;
+$font-18:  1.8rem;
+$font-20:  2rem;
+$font-21:  2.1rem;
+$font-24:  2.4rem;
+$font-25:  2.5rem;
+
+
+$font-30:  3rem;
+$font-40:  4rem;
+$font-50:  5rem;
+$font-60:  6rem;
+$font-70:  7rem;
+$font-80:  8rem;
+$font-120: 12rem;
+$font-170: 17rem;
+
+
+$bp-small:    48em; // 768px
+$bp-medium:   64em; // 1024px
+$bp-large:    80em; // 1280px
+$bp-huge:    90em; // 1440px
+
+// $bp-small:   768px;
+// $bp-medium:  1024px;
+// $bp-large:   1280px;
+// $bp-huge:    1920px;
+
+// @media #{$small} {}
+
+// mobile
+// ( max-width : 768px )
+$small:  "(max-width: #{$bp-small - 0.01})";
+
+// tablette
+// ( min-width: 768px) (max-width : 1024px)
+$medium:   "(min-width: #{$bp-small - 0.01}) and (max-width: #{$bp-medium + 0.01})";
+// ( min-width: 1024px)
+$mediumLandscape:   "(min-width: #{$bp-medium + 0.01})";
+
+// tablette landscape, grandes tablettes ET plus 
+// ( min-width: 768px)
+$mediumLarge:   "(min-width: #{$bp-small - 0.01})";
+
+// mobile ET tablette 
+// ( max-width: 1024px)
+$smallMediumOnly: "(max-width: #{$bp-medium + 0.01})";
+
+// desktop & landscape tablette 
+// ( min-width: 1023px)
+$large:    "(min-width: #{$bp-medium + 0.01})";
+
+// ( min-width: 1024px) (max-width : 1280px)
+$largeNet:  "(min-width: #{$bp-medium + 0.01}) and (max-width: #{$bp-large})";
+
+// ( min-width: 1281px)
+$hugeUp:     "(min-width: #{$bp-large + 0.01})";
+
+// petite hauteur d’écran
+// ( min-height: 700px) (min-width : 768px)
+$mediumHeight:     "(max-height: 700px) and (min-width: #{$bp-small - 0.01})";
+

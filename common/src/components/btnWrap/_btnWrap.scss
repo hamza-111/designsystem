@@ -1,0 +1,41 @@
+@import 'btn/btn';
+
+
+.c-btnWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+
+@include media("<=small") {
+  .c-btnWrap--alignLeft {
+    justify-content: center;
+  }
+  
+  .c-btnWrap--alignRight {
+    justify-content: center;
+  }  
+
+  .c-btnWrap .c-btn { margin: 15px 0; }
+}
+
+@include media(">small") {
+
+  .c-btnWrap.c-btnWrap--inline {
+    .c-btn { min-width: initial;}
+  }
+  .c-btnWrap--alignLeft {
+    justify-content: flex-start;
+
+    .c-btn {
+      margin-left: 0;
+    }
+  }
+
+  .c-btnWrap--alignRight {
+    justify-content: flex-end;
+  }
+}

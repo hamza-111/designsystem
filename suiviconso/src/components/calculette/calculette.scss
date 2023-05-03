@@ -1,0 +1,171 @@
+.c-calculette {
+    padding: 0;
+    background-color: $grey-light;
+    margin: 50px;
+    margin-right: 0;
+}
+
+.c-calculette label {
+    color:$black;
+}
+
+.c-calculette .c-formMat {
+    width: 235px;
+}
+
+.c-calculette .c-fieldInfo--margin-0 { margin-bottom: 0; }
+
+.c-calculette .c-modal__content {
+    min-height: auto;
+}
+
+.popper__arrow {
+    background-color: red;
+}
+
+.c-calculette__sumilateur {
+    width: 100%;
+}
+
+.c-calculette__reponse {
+    border-top: 1px white solid;
+    padding: 30px 0;
+    margin-top: 0;
+}
+
+.c-calculette--label .c-inputMat__label {
+    font-size: 1.8rem;
+    font-weight: 700;
+    top: -32px;
+}
+
+.c-calculette--tooltipColer.c-calculette--label .c-toolTip {
+    right: 100px;
+}
+
+.c-calculette--label .c-toolTip {
+    margin: 0 5px; 
+}
+
+.c-calculette--espaceInput {
+    margin-top: 50px;
+}
+
+#calculetteError {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.c-calculette__mainForm {
+    display: flex;
+    width: 50%;
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;
+    margin: 0 auto; 
+}
+
+.c-calculette__titre{
+    text-align: center;
+    padding: 0 10px 30px;
+}
+
+.c-calculette--textInfoCenter {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.c-calculette--ajusteBloc {
+    min-height: auto;
+}
+
+.c-calculette__listeLine { 
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+}
+
+.c-calculette__repLabel { 
+    width: 190px;
+    height: 30px;
+    line-height: 30px; 
+}
+
+.c-calculette__repResultWhite { 
+    width: 130px;
+    background-color:white;
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px; 
+}
+
+.c-calculette__repUnit {
+    width: 20px;
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;  
+}
+
+.c-calculette__repResultGray { 
+    width: 130px;
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px; 
+}
+
+.c-calculette__repUnit { width: 20px; }
+
+@include media(">=small") {
+
+    .c-calculette { margin: 30px 0 50px 0; }
+
+    .c-calculette--paddingMobile { 
+        margin-left: 10px;
+        margin-right: 10px; 
+    }
+
+}
+
+@include media("<=small") {
+
+    .c-calculette__mainForm {
+        width: 100%;
+        padding: 0 20px;  
+    }
+
+    .c-calculette .c-formMat {
+        width: 100%;
+    }
+
+    .c-calculette__mainForm form {
+        width: 100%;
+    }
+
+    .c-calculette--espacementMobile {
+        margin-top: 30px;
+    }
+
+    .c-calculette__listeResponse {
+        width: auto;
+        padding: 0 10px;
+    }
+
+    .c-calculette__repLabel { width: 140px; }
+
+    .c-calculette__repResultGray, .c-calculette__repResultWhite { 
+        width: 90px;
+        min-height: 30px; 
+    }
+
+    .c-calculette--paddingMobile { padding: 0 5px; }
+
+    .c-calculette { margin: 30px 15px; }
+
+    .c-calculette--label .c-toolTip { left: 0; }
+
+    .c-calculette--tooltipColer.c-calculette--label .c-toolTip { left: 0; }
+
+}
+  

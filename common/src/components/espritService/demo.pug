@@ -1,0 +1,195 @@
+include ../headSection/headSection
+include espritService
+
+.c-wysiwyg
+  h2 Block titre
+
++demo()
+  +headSection({
+    title: 'espritService note globale',
+    noLink: true
+  })(class="u-color-white u-bg-genBlue")
+
+
+.c-wysiwyg
+  h2 Utilisation des étoiles
+
++demo()
+  +rating(7)
+
+
+.c-wysiwyg
+  h2 espritService total
+
++demo()
+  +espritService({
+    rate: 3.5
+  })
+
+
+.c-wysiwyg
+  h2 espritService note
+
++demo()
+  +espritService-note({
+    alone: true,
+    rate: 3.5,
+    title: "Satisfaction moyenne de nos clients"
+  })
+
+
+.c-wysiwyg
+  h2 espritService commentaires: option 1
+
++demo()
+  +headSection({
+    title: 'espritService note globale',
+    noLink: true
+  })(class="u-color-white u-bg-genBlue")
+
+  +espritService-comments()
+
+
+.c-wysiwyg
+  h2 espritService commentaires: option 2
+
++demo()
+  +headSection({
+    title: "L'avis de nos clients",
+    noLink: true
+  })(id="ESPRITSERVICE" class="u-color-white u-bg-genBlue")
+  +espritService-reviews()
+
+
+.c-wysiwyg
+  h2 espritService top
+
++demo()
+  +headSection({
+    title: 'espritService note globale',
+    noLink: true,
+    noTheme: true,
+    titleSize: "medium"
+  })(class="u-color-white u-bg-genBlue")
+
+  +espritService-top()
+
+
+.c-wysiwyg
+  h2 AFNOR
+
++demo()
+  +afnor()
+
+
+.c-wysiwyg
+  h2 espritService catchPhrase
+
++demo()
+  +espritService-catchPhrase
+
+
+.c-wysiwyg
+  h2 espritService reviews scenario 1
+
++demo()
+  //- +espritService-reviews
+  <li class="c-espritService-comments2__avis">
+    <div class="c-espritService-review c-espritService-comments__padding">
+      <div class="c-espritService-review__content">
+        <span class="c-espritService-review__contentText"> Publié par : Alain M </span>
+        <span>le <b>12/04/2018</b> </span>
+        <!-- .c-rating-->
+        <div class="c-rating-block">
+          <div class="c-rating c-rating--7" aria-hidden="true">
+            <div class="c-rating__back"><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span></div>
+            <div class="c-rating__front"><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span></div>
+          </div>
+          <span>(<b>5</b>/5)</span>
+        </div>
+      </div>
+      <p>test double affichage popin lors de la validation</p>
+      <p class="c-espritService-reviewMiniText">Mon expérience de consommateur s'est faite le : 13/02/2018</p>
+      <div class="c-espritService-comments2__voteBlock" data-e-es-reviews-votes="[% this.identifiantAvis %]">
+        <p class="c-espritService-comments2__voteText">Cet avis est-il utile ?</p>
+        <div class="c-espritService-comments2__voteBtn"><a href="#" data-e-es-reviews-vote="{&quot;id&quot;: 431236, &quot;vote&quot;: &quot;VoteP&quot;}" title="oui"><span class="icon icon-thumbs-o-up"></span></a><a href="#" data-e-es-reviews-vote="{&quot;id&quot;: [% this.identifiantAvis %], &quot;vote&quot;: &quot;VoteN&quot;}" title="non"><span class="icon icon-thumbs-o-down"></span></a></div>
+      </div>
+    </div>
+    <div class="l-row l-row--nogut">
+      <div class="l-col-fix">
+          <!-- .c-linkLongArrow--><a class="c-linkLongArrow u-bg-white u-bg-hover u-color-black" href="[% this.lienSignalerAbus %]/[% this.identifiantAvis %]" data-e-popup="popup_delete_review"><span class="c-linkLongArrow__content"><span class="c-linkLongArrow__text">Supprimer cet avis</span><span class="c-linkLongArrow__icon icon icon-long-arrow-right"></span></span></a>
+          <!-- .c-linkLongArrow-->
+      </div>
+    </div>
+  </li>
+
+
+.c-wysiwyg
+  h2 espritService reviews scenario 2
+
++demo()
+  //- +espritService-reviews
+  <li class="c-espritService-comments2__avis">
+    <div class="c-espritService-review c-espritService-comments__padding">
+      <div class="c-espritService-review__content">
+        <span class="c-espritService-review__contentText"> Publié par Mlle S </span>
+        <span>le <b>12/04/2018</b> </span>
+        <!-- .c-rating-->
+        <div class="c-rating-block">
+          <div class="c-rating c-rating--7" aria-hidden="true">
+            <div class="c-rating__back"><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span></div>
+            <div class="c-rating__front"><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span></div>
+          </div>
+          <span>(<b>5</b>/5)</span>
+        </div>
+      </div>
+      <p>test double affichage popin lors de la validation</p>
+      <p class="c-espritService-reviewMiniText">Mon expérience de consommateur s'est faite le : 13/02/2018</p>
+      <div class="c-espritService-comments2__voteBlock" data-e-es-reviews-votes="[% this.identifiantAvis %]">
+        <p class="c-espritService-comments2__voteText">Cet avis est-il utile ?</p>
+        <div class="c-espritService-comments2__voteBtn"><a href="#" data-e-es-reviews-vote="{&quot;id&quot;: 431236, &quot;vote&quot;: &quot;VoteP&quot;}" title="oui"><span class="icon icon-thumbs-o-up"></span></a><a href="#" data-e-es-reviews-vote="{&quot;id&quot;: [% this.identifiantAvis %], &quot;vote&quot;: &quot;VoteN&quot;}" title="non"><span class="icon icon-thumbs-o-down"></span></a></div>
+      </div>
+    </div>
+    <div class="l-row l-row--nogut">
+      <div class="l-col-fix">
+          <!-- .c-linkLongArrow--><a class="c-linkLongArrow u-bg-white u-bg-hover u-color-black" href="[% this.lienSignalerAbus %]/[% this.identifiantAvis %]" data-e-popup="popup_delete_review"><span class="c-linkLongArrow__content"><span class="c-linkLongArrow__text">Supprimer cet avis</span><span class="c-linkLongArrow__icon icon icon-long-arrow-right"></span></span></a>
+          <!-- .c-linkLongArrow-->
+      </div>
+    </div>
+  </li>
+
+
+
+.c-wysiwyg
+  h2 espritService reviews scenario 3
+
++demo()
+  //- +espritService-reviews
+  <li class="c-espritService-comments2__avis">
+    <div class="c-espritService-review c-espritService-comments__padding">
+      <div class="c-espritService-review__content">
+        <span class="c-espritService-review__contentText"> Publié par &laquo;Anonyme&raquo; </span>
+        <span>le <b>12/04/2018</b> </span>
+        <!-- .c-rating-->
+        <div class="c-rating-block">
+          <div class="c-rating c-rating--7" aria-hidden="true">
+            <div class="c-rating__back"><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span></div>
+            <div class="c-rating__front"><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span></div>
+          </div>
+          <span>(<b>5</b>/5)</span>
+        </div>
+      </div>
+      <p>test double affichage popin lors de la validation</p>
+      <p class="c-espritService-reviewMiniText">Mon expérience de consommateur s'est faite le : 13/02/2018</p>
+      <div class="c-espritService-comments2__voteBlock" data-e-es-reviews-votes="[% this.identifiantAvis %]">
+        <p class="c-espritService-comments2__voteText">Cet avis est-il utile ?</p>
+        <div class="c-espritService-comments2__voteBtn"><a href="#" data-e-es-reviews-vote="{&quot;id&quot;: 431236, &quot;vote&quot;: &quot;VoteP&quot;}" title="oui"><span class="icon icon-thumbs-o-up"></span></a><a href="#" data-e-es-reviews-vote="{&quot;id&quot;: [% this.identifiantAvis %], &quot;vote&quot;: &quot;VoteN&quot;}" title="non"><span class="icon icon-thumbs-o-down"></span></a></div>
+      </div>
+    </div>
+    <div class="l-row l-row--nogut">
+      <div class="l-col-fix">
+          <!-- .c-linkLongArrow--><a class="c-linkLongArrow u-bg-white u-bg-hover u-color-black" href="[% this.lienSignalerAbus %]/[% this.identifiantAvis %]" data-e-popup="popup_delete_review"><span class="c-linkLongArrow__content"><span class="c-linkLongArrow__text">Supprimer cet avis</span><span class="c-linkLongArrow__icon icon icon-long-arrow-right"></span></span></a>
+          <!-- .c-linkLongArrow-->
+      </div>
+    </div>
+  </li>

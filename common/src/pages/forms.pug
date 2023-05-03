@@ -1,0 +1,231 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+include ../components/title/title
+include ../components/formMat/formMat
+include ../components/wysiwyg/wysiwyg
+include ../components/column/column
+include ../components/greyWrapper/greyWrapper
+
+//- Main variables
+block variables
+  - var title         = "forms"
+  - var page          = ""
+  - var bodyClass     = ""
+  - var description   = "Ici c'est une page des formulaires !"
+  - var wrapperSite = "l-wrapper--siteFull"
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  +breadcrumb()
+
+  +title({
+    title: "Exemple formulaire"
+  })
+
+  +formMat(
+    action="/"
+    method="get"
+    data-e-form-validation='{"switchBtnState": false}'
+  ).l-wrapper--medium.u-theme-genBlue
+    +wysiwyg
+      h2.u-textCenter Votre adresse de contact
+      p.u-textCenter Votre contrat sera envoyé par email, merci de le renseigner.
+
+    +choiceWrapperMat.c-choiceWrapperMat--hAlign
+      +radioMat({
+        label: 'Madame',
+        id: "madame",
+        name: 'genre'
+      })
+      +radioMat({
+        label: 'Monsieur',
+        id: "monsieur",
+        name: 'genre'
+      })
+      +radioMat({
+        label: 'Autre',
+        id: "autre",
+        name: 'genre'
+      })
+
+    +column({
+      spaced: true,
+      colConfig: '50-50'
+    })
+      .c-column__col
+        +inputMat({
+          label: 'Téléphone mobile',
+          type: "text",
+          id: "tel",
+          name: "tel",
+          required: true,
+          placeholder: 'Ex : 0605040302',
+          pattern: 'tel',
+          maxlength: 10,
+          dataValidation: {
+            validations: {
+              valueMissing: 'Champs obligatoire',
+              patternMismatch: 'Le format est incorrect'
+            }
+          }
+        })
+
+      .c-column__col
+        +inputMat({
+          label: 'email',
+          type: "email",
+          id: "email",
+          name: "email",
+          required: true,
+          pattern: 'email',
+          placeholder: 'Ex : Pierre.dupont@fai.com',
+          dataValidation: {
+            validations: {
+              valueMissing: 'Champs obligatoire',
+              patternMismatch: 'Le format est incorrect'
+            }
+          }
+        })
+
+
+    +inputMat({
+      label: "Rue",
+      type: "text",
+      id: "comp-adresse",
+      name: "comp-adresse",
+      placeholder: 'Ex : 32 rue des plantes'
+    })
+
+
+    +cityMat()
+
+    +column({
+      spaced: true,
+      colConfig: '50-50'
+    })
+      .c-column__col
+        +inputMat({
+          id: "date-picker",
+          type : 'date',
+          label: 'Pick a date :',
+          placeholder: '07/07/2017',
+          required: true,
+          pattern: "date",
+          dataValidation: true,
+          iconRight: 'icon-big-calendar',
+          flatpickr: {
+            maxPromoDate: 14,
+            minDate: 1,
+            maxDate: 183,
+            onChange: true,
+          },
+          dataValidation: {
+            validations: {
+              valueMissing: 'Champs obligatoire'
+            }
+          }
+        }).c-inputMat--datepicker
+
+        +fieldInfo({
+          input: true,
+          message: "En choisissant cette date, je demande l'exécution de mon contrat avant la fin du délai de rétractation de 14 jours.",
+          backgroundColor : "u-bg-grey-light"
+        })(data-e-flatpickrInfo).u-hide
+          p En choisissant cette date, je demande l'exécution de mon contrat avant la fin du délai de rétractation de 14 jours.
+
+        +inputMat({
+          label: 'test 2',
+          type: "text",
+          id: "test2",
+          name: "test2",
+          required: true,
+          placeholder: 'test2',
+          dataValidation: {
+            validations: {
+              valueMissing: 'Champs obligatoire'
+            }
+          }
+        })
+
+      .c-column__col
+        +textareaMat({
+          label: 'un label',
+          id:    'textareaMat1',
+          name:  'textareaMat'
+        })
+
+    +uploadMat({
+      required: true,
+      dataValidation: {
+        valueMissing: 'champs obligatoire'
+      }
+    })
+
+    +choiceWrapperMat
+      +checkboxMat({
+        label: 'Mon adresse à assurer est la même que mon adresse de contact.',
+        id: "checkboxMat"
+      })
+      +checkboxMat({
+        label: "J'accepte que mes coordonnées soient envoyées aux Partenaires Gaz Tarif Réglementé pour mon projet travaux.",
+        id: "checkboxMat2",
+        required: true,
+        dataValidation: {
+          validations: {
+            valueMissing: 'Champs obligatoire'
+          }
+        }
+      })
+
+    +greyWrapper
+      .u-textCenter
+        +radioSwitchMat({
+          label1: 'Prélèvement',
+          label2: 'Chèque',
+          id1:    'radioSwitchMat1',
+          id2:    'radioSwitchMat2',
+          name:   'how',
+          theme:  'genBlue'
+        })(data-e-switch-toggle='how')
+
+      fieldset(data-e-switch-toggle-name="how")
+        +column({
+          colConfig: '100'
+        })
+          .c-column__col
+            +inputMat({
+              label:       'IBAN',
+              iban:        true,
+              type:        "text",
+              id:          "iban",
+              name:        "ibvan",
+              required:    true,
+              placeholder: 'FRxx xxxx xxxx xxxx xxxx xxxx xxxx',
+              check:       true,
+              dataValidation: {
+                validations: {
+                  valueMissing: 'Champs obligatoire'
+                }
+              }
+            })
+
+      fieldset(data-e-switch-toggle-name="how" hidden)
+        +wysiwyg
+          p.u-textCenter Vous devrez envoyer le chèque à l'adresse suivante&nbsp;:
+          p.u-textCenter
+            strong
+              | 36 boulevard de la république, <br> 75010 Paris
+
+    +btnWrapper().u-theme-green.u-margin-t-40.c-btnWrapper--fullOnMobile
+      +baseBtn({
+        text: 'Valider',
+        button: true,
+        submit: true
+      })(data-e-form-validation-submit).c-baseBtn--large

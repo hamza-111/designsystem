@@ -1,0 +1,66 @@
+include ../../../../common/src/components/wysiwyg/wysiwyg
+
+mixin imageModalV2(data)
+  - var data   = data || {}
+  - var img    = data.img || "textImageBg.jpg"
+  - var savier   = data.savier || false
+  - var oranger  = data.oranger || false
+  - var targetModal = data.targetModal || "ModalTarget"
+  - var icon        = data.icon || "vente_mapmarker.jpg"
+  - var spinner     = data.spinner || false
+
+  //Explication Facture
+  .c-imageModalV2.u-padding-a-30.u-shadow
+    if spinner
+        +spinner().c-spinner--full
+    .c-imageModalV2__alignTooltip
+        .c-imageModaleV2__allTitre
+            span.c-imageModalV2--titre Comprendre
+            if savier
+                span.c-imageModalV2__titreLight <b>Saviez</b>-vous ?
+            else
+                span.c-imageModalV2__titreGras Répartition de la consommation
+                span.c-imageModalV2__titreLight en Gaz des ménages français
+            span.c-imagesModalV2__textGris Source lorem ipsum *
+        +toolTipV2({
+            themeColor: 'u-theme-magenta'
+        })(data-e-modal-open=targetModal)
+
+        +modal({
+            target: '{"target":"' + targetModal +'"}'
+        }).u-padding-a-40
+
+            +wysiwyg
+                p Lorem ipsum dolor sit amet, elit.Placeat aperiam delectus aut neque quos accusamus omnis quod veniam, magni, nesciunt ducimus eligendi consequuntur!
+                h2 Listes
+                ul
+                    li: span.u-list__item Liste 'carré'
+                    li: span.u-list__item Liste 'carré'
+                    li: span.u-list__item
+                    a.u-link.u-link--externalLink(href="#" target="_blank" rel="noopener noreferrer") Lien externe
+                    li
+                    ul
+                        li: span.u-list__item.u-list__item--check Liste 'check'
+                        li: span.u-list__item.u-list__item--check Liste 'check'
+                        
+    .c-imageModalV2__recadrageImage.u-padding-t-20
+
+        if savier
+            .c-imageModalV2__main
+                if oranger
+                    .c-imageModalV2__iconOrange
+                        img(src="../images/contrib/"+icon alt="picto")
+                    .c-imageModalV2__textOrange
+                        span.c-imageModalV2__txtTop Le gaz naturel est l’énergie préféré des grands cuisiniers !
+                        p Grâce à sa génération de chaleur immédiate et pour la précision de sa  flamme. En effet, on peut passer d’un feu vif à un feu doux en une seconde ce qui permet une cuisson optimum des aliments
+                        span.c-imageModalV2__Gras A vos fourneaux !
+                else
+                    .c-imageModalV2__iconOrange
+                        img(src="../images/contrib/"+icon alt="picto")
+                    .c-imageModalV2__textBlue
+                        span.c-imageModalV2__txtBlueTop Un bon réglage de la température de l’eau chaude entre
+                        p 55°C
+                        span.c-imageModalV2__Gras permet d’éliminer la prolifération des bactéries de manière efficace.
+
+        else
+            img(src="../images/contrib/"+img alt="Explication Facture").c-imageModalV2--responsiveImage

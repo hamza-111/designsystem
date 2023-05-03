@@ -1,0 +1,24 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title          = "push actualité"
+  - var page           = ""
+  - var bodyClass      = ""
+  - var description    = "push actualité page mes factures"
+  - var noHeaderFooter = true
+  - var demoMode       = true
+  - var noBg           = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  include ../components/pushActu/demo

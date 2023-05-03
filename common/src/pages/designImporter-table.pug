@@ -1,0 +1,2674 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+block CSS
+  link(rel="stylesheet" href="../css/designImporter.css")
+
+
+//- Page content
+block content
+
+  // ------- LAMPES BASSE CONSO ---------
+  .u-heading-4.u-textCenter Lampes basse conso
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding-full
+        p.couleur4(data-cq-component='text')
+          strong
+        table.table.table-hover.hide-mobile.u-hideSmall
+          tr
+            th(scope='col', width='15%%')
+              p(data-cq-component='text') Technologie
+            th(scope='col', width='20%')
+              p(data-cq-component='text') Temps pour atteindre 60% du flux lumineux
+            th(scope='col', width='15%')
+              p(data-cq-component='text') Coût
+            th(scope='col', width='20%')
+              p(data-cq-component='text') Type de lumière
+            th(scope='col', width='30%')
+              p(data-cq-component='text') Pièce/activité
+          tr
+            td(scope='col')
+              p(data-cq-component='text') Halogène
+            td
+              p(data-cq-component='text') Allumage instantané
+            td
+              p(data-cq-component='text') 1 €*
+            td
+              p(data-cq-component='text') Chaude et douce
+            td
+              p(data-cq-component='text') Pour les pièces de travail/de lecture
+          tr
+            td(scope='col')
+              p(data-cq-component='text') Halogène éco
+            td
+              p(data-cq-component='text') Allumage instantané
+            td
+              p(data-cq-component='text') 1,5 €*
+            td
+              p(data-cq-component='text') Chaude
+            td
+              p(data-cq-component='text') Pour les pièces de travail/de lecture
+          tr
+            td(scope='col')
+              p(data-cq-component='text') Basse consommation
+            td
+              p(data-cq-component='text') De 0,3 s à 110 s
+            td
+              p(data-cq-component='text') 2 €*
+            td
+              p(data-cq-component='text') Chaude/douce/du jour
+            td
+              p(data-cq-component='text')
+                | Pour les pièces de vie- Non adaptée pour les lieux de passage, les couloirs, les WC et l’extérieur
+          tr
+            td(scope='col')
+              p(data-cq-component='text') LED
+            td
+              p(data-cq-component='text') Allumage instantané
+            td
+              p(data-cq-component='text') 4 €*
+            td
+              p(data-cq-component='text') Chaude/douce/du jour/changement de couleur
+            td
+              p(data-cq-component='text') Dans les pièces où la lumière doit rester allumée longtemps/ pour l’extérieur
+          tr
+            td(scope='col')
+              p(data-cq-component='text') Tube fluorescent
+            td
+              p(data-cq-component='text') Pas d’allumage instantané pour les tubes non équipés de starter
+            td
+              p(data-cq-component='text') 3,5 €*
+            td
+              p(data-cq-component='text') Chaude/douce/du jour
+            td
+              p(data-cq-component='text') Mieux adapté pour garage/cave
+          .show-mobile.u-hideMediumUp
+            p
+              b
+            ul.table-liste
+              li
+                p(data-cq-component='text')
+                  b Technologie: Halogène
+                p(data-cq-component='text')
+                  | Allumage
+                  sup (1)
+                  | : instantané
+                p(data-cq-component='text') Coût: A partir de 1 €*
+                p(data-cq-component='text') Type de lumière: chaude et douce
+                p(data-cq-component='text') Pièce/activité: Pour les pièces de travail/de lecture
+              li
+                p(data-cq-component='text')
+                  b Technologie: Halogène éco
+                p(data-cq-component='text')
+                  | Allumage
+                  sup (1)
+                  | : instantané
+                p(data-cq-component='text') Coût: A partir de 1,5 €*
+                p(data-cq-component='text') Type de lumière: chaude
+                p(data-cq-component='text') Pour les pièces de travail/de lecture
+              li
+                p(data-cq-component='text')
+                  b Technologie: Basse consommation
+                p(data-cq-component='text')
+                  | Allumage
+                  sup (1)
+                  | : De 0,3 s à 110 s
+                p(data-cq-component='text') Coût: A partir de 2 €*
+                p(data-cq-component='text') Type de lumière: chaude/douce/du jour
+                p(data-cq-component='text')
+                  | Pièce/activité: Pour les pièces de vie- Non adaptée pour les lieux de passage, les couloirs, les WC et l’extérieur
+              li
+                p(data-cq-component='text')
+                  b Technologie: LED
+                p(data-cq-component='text')
+                  | Allumage
+                  sup (1)
+                  | : instantané
+                p(data-cq-component='text') Coût: A partir de 4 €*
+                p(data-cq-component='text') Type de lumière: chaude/douce/du jour/changement de couleur
+                p(data-cq-component='text') Dans les pièces où la lumière doit rester allumée longtemps/ pour l’extérieur
+              li
+                p(data-cq-component='text')
+                  b Tube fluorescent
+                p(data-cq-component='text')
+                  | Allumage
+                  sup (1)
+                  | : Pas d’allumage instantané pour les tubes non équipés de starter
+                p(data-cq-component='text') Coût: A partir de 3,5 €*
+                p(data-cq-component='text') Type de lumière: chaude/douce/du jour
+                p(data-cq-component='text') Pièce/activité: Mieux adapté pour garage/cave
+              li
+                p(data-cq-component='text')
+                  sup (1)
+                  |  Temps pour atteindre 60% du flux lumineux
+            // .table-liste
+          // .show-mobile
+        p(data-cq-component='text') * : Source : leroymerlin.fr
+      // .box-content
+    // .box
+
+
+  // ------- TABLEAU 2 ---------
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding-full
+        p.couleur4(data-cq-component='text')
+          strong
+        table.table.table-hover.hide-mobile.u-hideSmall
+          tr
+            th(scope='col', width='20%')
+              p(data-cq-component='text')
+            th(scope='col', width='20%')
+              p(data-cq-component='text')
+                | Lampe à incandescence
+                br
+                |  75 Watt
+            th(scope='col', width='20%')
+              p(data-cq-component='text')
+                | Lampe Halogène
+                br
+                |  60 Watt
+            th(scope='col', width='20%')
+              p(data-cq-component='text')
+                | Lampe Basse consommation
+                br
+                |  15 Watt
+            th(scope='col', width='20%')
+              p(data-cq-component='text')
+                | Lampe LED
+                br
+                |  6 Watt
+          tr
+            th(scope='col')
+              p(data-cq-component='text')
+                | Consommation
+                br
+                |  (kWh/an)
+            td
+              p(data-cq-component='text')
+                | 3h x 365 J
+                br
+                | x 75 W x 8 lampes
+                br
+                | = 657
+            td
+              p(data-cq-component='text')
+                | 3h x 365 J
+                br
+                | x 60 W x 8 lampes
+                br
+                | = 525,6
+            td
+              p(data-cq-component='text')
+                | 3h x 365 J
+                br
+                | x 15 W x 8 lampes
+                br
+                | = 131,4
+            td
+              p(data-cq-component='text')
+                | 3h x 365 J
+                br
+                | x 6 W x 8 lampes
+                br
+                | = 52,56
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Coût de fonctionnement
+            td
+              p(data-cq-component='text') 87,32 €/an
+            td
+              p(data-cq-component='text') 69,85 €/an
+            td
+              p(data-cq-component='text') 17,46 €/an
+            td
+              p(data-cq-component='text') 6,99 €/an
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Coût du remplacement des 8 lampes*
+            td
+              p(data-cq-component='text') Plus de lampe à incandescence sur le marché
+            td
+              p(data-cq-component='text') 7,89 € x 8 = 63,12 €
+            td
+              p(data-cq-component='text') 9,99 € x 8 = 79.92 €
+            td
+              p(data-cq-component='text') 14,90 € x 8 = 119,2 €
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Coût des lampes + coût de fonctionnement
+            td
+              p(data-cq-component='text')
+            td
+              p(data-cq-component='text')
+                | 63,12 €+ 69,85 €
+                br
+                | = 132,97 €/an
+            td
+              p(data-cq-component='text')
+                | 79,92 € + 17,46 €
+                br
+                | = 97,38 €/an
+            td
+              p(data-cq-component='text')
+                | 119,2 € + 6, 99 €
+                br
+                | = 126,19 €/an
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Coût cumulée sur 2 ans (sans augmentation du coût de l’énergie)
+            td
+              p(data-cq-component='text') 174,64 € (conservation des lampes à incandescence)
+            td
+              p(data-cq-component='text') 202,82 €
+            td
+              p(data-cq-component='text') 114,84 €
+            td
+              p(data-cq-component='text') 133,18 €
+          .show-mobile.u-hideMediumUp
+            p
+              b
+            ul.table-liste
+              li
+                p(data-cq-component='text')
+                  b Lampe à incandescence 75 Watt
+                p(data-cq-component='text') Consommation: 3h x 365 jours x 75 W x 8 lampes = 657 kWh/an
+                p(data-cq-component='text') Coût de fonctionnement : 87,32 €/an
+                p(data-cq-component='text') Coût de remplacement (8 lampes) : Plus de lampe à incandescence sur le marché
+                p(data-cq-component='text')
+                  | Coût cumulée sur 2 ans
+                  sup (1)
+                  | : 174,64 € (conservation des lampes à incandescence)
+              li
+                p(data-cq-component='text')
+                  b Lampe Halogène 60 Watt
+                p(data-cq-component='text') Consommation: 3h x 365 jours x 60 W x 8 lampes = 525,6 kWh/an
+                p(data-cq-component='text') Coût de fonctionnement : 17,46 €/an
+                p(data-cq-component='text') Coût de remplacement (8 lampes) : 7,89 € x 8 = 63,12 €
+                p(data-cq-component='text') Coût des lampes + coût de fonctionnement : 63,12 €+ 69,85 €/an
+                p(data-cq-component='text')
+                  | Coût cumulée sur 2 ans
+                  sup (1)
+                  | : 202,82 €
+              li
+                p(data-cq-component='text')
+                  b Lampe Basse consommation 15 Watt
+                p(data-cq-component='text') 3h x 365 jours x 15 W x 8 lampes = 131,4 kWh/an
+                p(data-cq-component='text') Coût de fonctionnement :17,46 €/an
+                p(data-cq-component='text') Coût de remplacement (8 lampes) : 9,99 € x 8 = 79.92 €
+                p(data-cq-component='text') Coût des lampes + coût de fonctionnement : 79,92 € + 17,46 €/an
+                p(data-cq-component='text')
+                  | Coût cumulée sur 2 ans
+                  sup (1)
+                  | : 114,84 €
+              li
+                p(data-cq-component='text')
+                  b Lampe à incandescence 75 Watt
+                p(data-cq-component='text') Consommation: 3h x 365 jours x 75 W x 8 lampes = 657 kWh/an
+                p(data-cq-component='text') Coût de fonctionnement : 6,99 €/an
+                p(data-cq-component='text') Coût de remplacement (8 lampes) : 14,90 € x 8 = 119,2 €
+                p(data-cq-component='text') Coût des lampes + coût de fonctionnement : 119,2 € + 6, 99 € /an
+                p(data-cq-component='text')
+                  | Coût cumulée sur 2 ans
+                  sup (1)
+                  | : 133,18 €
+            // .table-liste
+            p(data-cq-component='text')
+              sup (1)
+              | sans augmentation du prix de l'énergie
+          // .show-mobile
+      // .box-content
+    // .box
+
+
+  // ------- CLIMATISATION REVERSIBLE ---------
+  .u-heading-4.u-textCenter Climatisation réversible
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding-full
+        table(border='1', cellspacing='0', cellpadding='0').table
+          tbody
+            tr
+              th(scope='col', width='20%')
+                p
+              th(scope='col', width='40%', colspan='2')
+                p
+                  b Unitaires
+              th(scope='col', width='40%', colspan='2')
+                p
+                  b Centralisés
+            tr
+              th(scope='col', width='20%')
+                p
+              th(scope='col', width='20%')
+                p Mono Bloc
+              th(scope='col', width='20%')
+                p Split système
+              th(scope='col', width='20%')
+                p Multi-splits
+              th(scope='col', width='20%')
+                p PAC réversible
+            tr
+              th(scope='col', width='20%')
+                p Avantages
+              td(scope='col', width='20%')
+                p - Facile à installer
+                p - Peu coûteux
+                p - Mobile
+                p
+              td(scope='col', width='20%')
+                p - Fiable
+                p - Évacuation de l’air efficace
+                p - Isolement du bruit
+                p
+              td(scope='col', width='20%')
+                p - Rafraîchissement efficace
+                p - Équipement progressif possible
+                p
+              td(scope='col', width='20%')
+                p - Offre plusieurs possibilités de rafraichissement (air, plancher, gaine)
+                p - Chauffage efficace et peu énergivore
+            tr
+              th(scope='col', width='20%')
+                p
+                  b Inconvénients
+              td(scope='col', width='20%')
+                p - Énergivore
+                p - Peu performant
+                p - Évacuation de l’air complexe
+                p - Faible isolement du bruit
+              td(scope='col', width='20%')
+                p - Plus coûteux (achat, installation)
+                p - Installation fixe
+              td(scope='col', width='20%')
+                p - Un seul mode de rafraichissement
+                p - Énergivore en mode chauffage
+              td(scope='col', width='20%')
+                p - À installer lors de la construction (ou travaux importants)
+                p - Rafraichissement modéré (3 à 4 °)
+            tr
+              th(scope='col', width='20%')
+                p
+                  b Pour qui ?
+              td(scope='col', width='20%')
+                p
+                  | - Personnes disposant d’un budget modéré, ayant besoin d’un rafraichissement de manière ponctuelle dans peu de pièces (faible volume à rafraichir)
+              td(scope='col', width='20%')
+                p - Personnes ayant besoin d’un rafraichissement important dans certaines pièces
+              td(scope='col', width='20%')
+                p
+                  | - Personnes ayant besoin d’un rafraichissement important (zones de forte chaleur) et d’un chauffage d’appoint en hiver dans un logement entier
+              td(scope='col', width='20%')
+                p
+                  | - Personnes ayant besoin d’un chauffage important (hiver et mi-saison) et d’un rafraichissement modéré en été dans un logement entier
+
+
+
+  // ------- CONSEIL CHAUFFE EAU ---------
+  .u-heading-4.u-textCenter Conseil chauffe eau
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding-full
+        p.couleur4(data-cq-component='text')
+          strong
+        table.table.table-hover.hide-mobile.u-hideSmall
+          tr
+            th(scope='col', width='25%')
+              p(data-cq-component='text') Type
+            th(scope='col', width='25%')
+              p(data-cq-component='text') Réservoir
+            th(scope='col', width='25%')
+              p(data-cq-component='text') Utilisation
+            th(scope='col', width='25%')
+              p(data-cq-component='text') Budget
+          tr
+            td
+              p(data-cq-component='text') Accumulation thermoplongeur
+            td
+              p(data-cq-component='text') 50-500L
+            td
+              p(data-cq-component='text') Principal
+            td
+              p(data-cq-component='text') 150-300 € pour 150 L
+          tr
+            td
+              p(data-cq-component='text') Accumulation stéatite
+            td
+              p(data-cq-component='text') 50-500L
+            td
+              p(data-cq-component='text') Principal
+            td
+              p(data-cq-component='text') 200-500 € pour 150 L
+          tr
+            td
+              p(data-cq-component='text') Petite capacité
+            td
+              p(data-cq-component='text') 10-50 L
+            td
+              p(data-cq-component='text') Appoint
+            td
+              p(data-cq-component='text') 100-200 € pour 30 L
+          tr
+            td
+              p(data-cq-component='text') Instantané
+            td
+              p(data-cq-component='text') Sans
+            td
+              p(data-cq-component='text') Appoint
+            td
+              p(data-cq-component='text') 200-400 €
+        .show-mobile.u-hideMediumUp
+          ul.table-liste
+            li
+              span.date-decale(data-cq-component='text')
+                strong Accumulation thermoplongeur
+              br
+              strong Réservoir :
+              | 50-500 L
+              br
+              strong Utilisation :
+              | Principal
+              br
+              strong Budget :
+              | 150-300 € pour 150 L
+              br
+              p(data-cq-component='text')
+            li
+              span.date-decale(data-cq-component='text')
+                strong Accumulation stéatite
+              br
+              strong Réservoir :
+              | 50-500 L
+              br
+              strong Utilisation :
+              | Principal
+              br
+              strong Budget :
+              | 200-500 € pour 150 L
+              br
+              p(data-cq-component='text')
+            li
+              span.date-decale(data-cq-component='text')
+                strong Petite capacité
+              br
+              strong Réservoir :
+              | 10-50 L
+              br
+              strong Utilisation :
+              | Appoint
+              br
+              strong Budget :
+              | 100-200 € pour 30 L
+              br
+              p(data-cq-component='text')
+            li
+              span.date-decale(data-cq-component='text')
+                strong Instantané
+              br
+              strong Réservoir :
+              | Sans
+              br
+              strong Utilisation :
+              | Appoint
+              br
+              strong Budget :
+              | 200-400 €
+              br
+              p(data-cq-component='text')
+          // .table-liste
+        // .show-mobile
+      // .box-content
+    // .box
+
+
+  // -------------- EMETTEUR ----------------------
+  .u-heading-4.u-textCenter Emetteurs
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding-full
+        p.couleur4(data-cq-component='text')
+          strong
+        table.table.table-hover.hide-mobile.u-hideSmall
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Technologie
+            th(scope='col')
+              p(data-cq-component='text') Coût d’investissement  /   Confort
+            th(scope='col')
+              p(data-cq-component='text') Avantages
+            th(scope='col')
+              p(data-cq-component='text') Inconvénients
+          tr
+            td
+              p(data-cq-component='text') Convecteurs
+            td
+              p(data-cq-component='text') €     |     *
+            td
+              p(data-cq-component='text')
+                | Petit prix, Montée rapide en températurePeu encombrant
+            td
+              p(data-cq-component='text')
+                | Mauvaise répartition de la chaleur (stratification, trains de chaleur)Absence de rayonnement
+                | ,Peu adapté pour logements non isolés (parois froides) et les hauteurs sous-plafond >3m,Desséchement de l’air
+          tr
+            td
+              p(data-cq-component='text') Panneaux rayonnants
+            td
+              p(data-cq-component='text') €€     |     **
+            td
+              p(data-cq-component='text')
+                | Plutôt bon marché, Montée rapide en température
+            td
+              p(data-cq-component='text')
+                | Convection importante, Confort thermique moins bon que les radiateurs à inertie,
+                | Desséchement de l’air
+          tr
+            td
+              p(data-cq-component='text') Radiateur à inertie (et double corps de chauffe)
+            td
+              p(data-cq-component='text') €€€     |     ***
+            td
+              p(data-cq-component='text')
+                | Chaleur stable et homogène, Bonne proportion de rayonnement, Absence d’éléments surchauffés en contact avec l’air, Bon confort
+            td
+              p(data-cq-component='text')
+                | Inertie peu adaptée aux locaux occupé sur de courtes périodes, Fuites possibles pour les radiateurs à inertie fluide, Prix plus élevé
+          tr
+            td
+              p(data-cq-component='text') Accumulateur
+            td
+              p(data-cq-component='text') €€€     |     *
+            td
+              p(data-cq-component='text')
+                | Permet de profiter du tarif réduit en heures creuses
+            td
+              p(data-cq-component='text')
+                | Radiateur volumineux, peu esthétique et lourd, Confort thermique moyen si utilisation de la convection, Prix relativement élevé et risque de devoir passer à un abonnement supérieur
+          tr
+            td
+              p(data-cq-component='text') Plancher rayonnant
+            td
+              p(data-cq-component='text') €€€     |     ****
+            td
+              p(data-cq-component='text')
+                | Chaleur rayonnante, Bonne répartition du chauffage dans le logement, Gain de place
+            td
+              p(data-cq-component='text')
+                | Inertie un peu plus importante que les systèmes classiques, Parfois incompatible avec certains revêtements de sol, Travaux d’installation importants, peu adaptés en rénovation
+          tr
+            td
+              p(data-cq-component='text') Plafond rayonnant
+            td
+              p(data-cq-component='text') €€€€     |     ****
+            td
+              p(data-cq-component='text')
+                | Chaleur transmise majoritairement par rayonnement, Inertie plus faible qu’un PRE, Bonne répartition de la chaleur, Gain de place, Utilisable en rénovation
+            td
+              p(data-cq-component='text')
+                | Réduit la hauteur sous plafond d’une dizaine de centimètre, Coûts assez élevé
+          tr
+            td
+              p(data-cq-component='text') Radiateur sèche serviette
+            td
+              p(data-cq-component='text') €€€     |     **
+            td
+              p(data-cq-component='text')
+                | Spécifiquement adapté à la salle de bain, Bon confort thermique
+            td
+              p(data-cq-component='text')
+                | Etendage des serviettes difficile sur certains modèles.
+        .show-mobile.u-hideMediumUp
+          p
+            b
+          ul.table-liste
+            li
+              p(data-cq-component='text')
+                b Convecteurs
+              p(data-cq-component='text')
+                | Coût d’investissement =
+                b €
+                |  | Confort=
+                b *
+              p(data-cq-component='text') Avantages: Petit prix, Montée rapide en températurePeu encombrant
+              p(data-cq-component='text')
+                | Inconvénients: Mauvaise répartition de la chaleur (stratification, trains de chaleur)Absence de rayonnement ,Peu adapté pour logements non isolés (parois froides) et les hauteurs sous-plafond >3m,Desséchement de l’air
+            li
+              p(data-cq-component='text')
+                b Panneaux rayonnants
+              p(data-cq-component='text')
+                | Coût d’investissement =
+                b €€
+                |  | Confort=
+                b **
+              p(data-cq-component='text') Avantages: Plutôt bon marché, Montée rapide en température
+              p(data-cq-component='text')
+                | Inconvénients: Convection importante, Confort thermique moins bon que les radiateurs à inertie, Desséchement de l’air
+            li
+              p(data-cq-component='text')
+                b Radiateur à inertie (et double corps de chauffe)
+              p(data-cq-component='text')
+                | Coût d’investissement =
+                b €€€
+                |  | Confort=
+                b ***
+              p(data-cq-component='text')
+                | Avantages: Chaleur stable et homogène, Bonne proportion de rayonnement, Absence d’éléments surchauffés en contact avec l’air, Bon confort
+              p(data-cq-component='text')
+                | Inconvénients: Inertie peu adaptée aux locaux occupé sur de courtes périodes, Fuites possibles pour les radiateurs à inertie fluide, Prix plus élevé
+            li
+              p(data-cq-component='text')
+                b Accumulateur
+              p(data-cq-component='text')
+                | Coût d’investissement =
+                b €€€
+                | | Confort=
+                b *
+              p(data-cq-component='text') Avantages: Permet de profiter du tarif réduit en heures creuses
+              p(data-cq-component='text')
+                | Inconvénients: Radiateur volumineux, peu esthétique et lourd, Confort thermique moyen si utilisation de la convection, Prix relativement élevé et risque de devoir passer à un abonnement supérieur
+            li
+              p(data-cq-component='text')
+                b Plancher rayonnant
+              p(data-cq-component='text')
+                | Coût d’investissement =
+                b €€€
+                |  | Confort=
+                b ****
+              p(data-cq-component='text')
+                | Avantages: Chaleur rayonnante, Bonne répartition du chauffage dans le logement, Gain de place
+              p(data-cq-component='text')
+                | Inconvénients: Inertie un peu plus importante que les systèmes classiques, Parfois incompatible avec certains revêtements de sol, Travaux d’installation importants, peu adaptés en rénovation
+            li
+              p(data-cq-component='text')
+                b Plafond rayonnant
+              p(data-cq-component='text')
+                | Coût d’investissement =
+                b €€€
+                |  | Confort=
+                b ****
+              p(data-cq-component='text')
+                | Avantages: Chaleur transmise majoritairement par rayonnement, Inertie plus faible qu’un PRE, Bonne répartition de la chaleur, Gain de place, Utilisable en rénovation
+              p(data-cq-component='text')
+                | Inconvénients: Réduit la hauteur sous plafond d’une dizaine de centimètre, Coûts assez élevé
+            li
+              p(data-cq-component='text')
+                b Radiateur sèche serviette
+              p(data-cq-component='text')
+                | Coût d’investissement =
+                b €€€
+                |  | Confort=
+                b **
+              p(data-cq-component='text') Avantages: Spécifiquement adapté à la salle de bain, Bon confort thermique
+              p(data-cq-component='text') Inconvénients: Etendage des serviettes difficile sur certains modèles.
+          // .table-liste
+        // .show-mobile
+      // .box-content
+    // .box
+
+
+  // -------------- FROID LAVAGE ----------------------
+  .u-heading-4.u-textCenter Froid lavage
+  #cqcanvas
+    .box.bg-box-blanc.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding-full
+        p.couleur4(data-cq-component='text')
+          strong
+        table.table.table-hover.hide-mobile.u-hideSmall
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Type
+            th(scope='col')
+              p(data-cq-component='text') Photo (source topten)
+            th(scope='col')
+              p(data-cq-component='text') Performance max
+          tr
+            td
+              p(data-cq-component='text')
+                | Table top sans congélateur
+                br
+                | que l’on peut mettre sous un plan de travail)
+            td
+              div(data-cq-component='image')
+                img(src='../images/designImporter/table-top-sans-congelateur.png' alt="")
+            td
+              p(data-cq-component='text')
+                | A++
+                br
+                | (pas encore de A+++ sur le marché français)
+          tr
+            td
+              p(data-cq-component='text')
+                | Table top avec congélateur
+                br
+                | (que l’on peut mettre sous un plan de travail)
+            td
+              div
+                img(src='../images/designImporter/refrigerateur-table-top-avec-congelateur.png' alt="")
+            td
+              p(data-cq-component='text')
+                | A++
+                br
+                | (pas encore de A+++ sur le marché français)
+          tr
+            td
+              p(data-cq-component='text') Une porte sans congélateur
+            td
+              div
+                img(src='../images/designImporter/refrigerateur-porte-sans-congelateur.png' alt="")
+            td
+              p(data-cq-component='text') A+++
+          tr
+            td
+              p(data-cq-component='text') Une porte avec congélateur
+            td
+              div
+                img(src='../images/designImporter/refrigerateur-porte-avec-congelateur.png' alt="")
+            td
+              p(data-cq-component='text') A+++
+          tr
+            td
+              p(data-cq-component='text')
+                | Deux portes
+                br
+                | (partie congélation sur le haut de l’appareil)
+            td
+              div
+                img(src='../images/designImporter/refrigerateur-deux-portes.png' alt="")
+            td
+              p(data-cq-component='text') A+++
+          tr
+            td
+              p(data-cq-component='text')
+                | Combinés
+                br
+                | (partie congélation sur le bas de l’appareil)
+            td
+              div
+                img(src='../images/designImporter/refrigerateur-combine.png' alt="")
+            td
+              p(data-cq-component='text') A+++
+          tr
+            td
+              p(data-cq-component='text')
+                | Américains
+                br
+                | (non répertoriés dans la base topten car les plus énergivores)
+            td
+              div
+                img(src='../images/designImporter/refrigerateur-americain.png' alt="")
+            td
+              p(data-cq-component='text')
+                | A+++
+                br
+                |  (Source Darty.fr)
+        .show-mobile.u-hideMediumUp
+          ul.table-liste
+            li
+              p(data-cq-component='text')
+                b
+                  | Table top sans congélateur
+                  br
+                  | que l’on peut mettre sous un plan de travail)
+              div
+                img(src='../images/designImporter/table-top-sans-congelateur.png' alt="")
+              p(data-cq-component='text')
+                | Performance max: A++
+                br
+                | (pas encore de A+++ sur le marché français)
+            li
+              p(data-cq-component='text')
+                b
+                  | Table top avec congélateur
+                  br
+                  | (que l’on peut mettre sous un plan de travail)
+              div
+                img(src='../images/designImporter/refrigerateur-table-top-avec-congelateur.png' alt="")
+              p(data-cq-component='text')
+                | Performance max: A++
+                br
+                | (pas encore de A+++ sur le marché français)
+            li
+              p(data-cq-component='text')
+                b Une porte sans congélateur
+              div
+                img(src='../images/designImporter/refrigerateur-porte-avec-congelateur.png' alt="")
+              p(data-cq-component='text') Performance max: A+++
+            li
+              p(data-cq-component='text')
+                b Une porte avec congélateur
+              div
+                img(src='../images/designImporter/refrigerateur-porte-avec-congelateur.png' alt="")
+              p(data-cq-component='text') Performance max: A+++
+            li
+              p(data-cq-component='text')
+                b
+                  | Deux portes
+                  br
+                  | (partie congélation sur le haut de l’appareil)
+              div
+                img(src='../images/designImporter/refrigerateur-deux-portes.png' alt="")
+              p(data-cq-component='text') Performance max: A+++
+            li
+              p(data-cq-component='text')
+                b
+                  | Combinés
+                  br
+                  | (partie congélation sur le bas de l’appareil)
+              div
+                img(src='../images/designImporter/refrigerateur-combine.png' alt="")
+              p(data-cq-component='text') Performance max: A+++
+            li
+              p(data-cq-component='text')
+                b
+                  | Américains
+                  br
+                  | (non répertoriés dans la base topten car les plus énergivores)
+              div
+                img(src='../images/designImporter/refrigerateur-americain.png' alt="")
+              p(data-cq-component='text')
+                | Performance max: A+++
+                br
+                |  (Source Darty.fr)
+          // .table-liste
+        // .show-mobile
+        p(data-cq-component='text') Source interne : Direction de la Recherche et de l’Innovation de GDF SUEZ
+      // .box-content
+    // .box
+
+
+  // -------------- FROID LAVAGE PART 2 ----------------------
+  .u-heading-4.u-textCenter Froid lavage part 2
+  #cqcanvas
+    .box.bg-box-blanc.l-wrapper--large
+      div(style='padding:1px 0 1px 0;')
+        table.table.table-hover.hide-mobile.u-hideSmall
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Type
+            th(scope='col')
+              p(data-cq-component='text') Photo (source topten)
+            th(scope='col')
+              p(data-cq-component='text') Performance max
+          tr
+            td
+              p(data-cq-component='text')
+                | Encastrable
+                br
+                | largeur 45 cm
+                br
+                | De 9 à 10 couverts
+            td
+              img(src='../images/designImporter/lave-vaisselle-encastrable-45.png' alt="")
+            td
+              p(data-cq-component='text')
+                | A++ (performance énergie)/
+                br
+                | A (performance séchage)
+          tr
+            td
+              p(data-cq-component='text')
+                | Encastrable
+                br
+                | largeur 60 cm
+                br
+                | De 12 à 15 couverts
+            td
+              img(src='../images/designImporter/lave-vaisselle-encastrable-60.png' alt="")
+            td
+              p(data-cq-component='text')
+                | A+++ (performance énergie)/
+                br
+                | A (performance séchage)
+          tr
+            td
+              p(data-cq-component='text')
+                | Non encastrable
+                br
+                | largeur 45 cm
+            td
+              img(src='../images/designImporter/lave-vaisselle-non-encastrable-45.png' alt="")
+            td
+              p(data-cq-component='text')
+                | A++ (performance énergie)/
+                br
+                | A (performance séchage)
+          tr
+            td
+              p(data-cq-component='text')
+                | Non encastrable
+                br
+                | largeur 60 cm
+            td
+              img(src='../images/designImporter/lave-vaisselle-non-encastrable-60.png' alt="")
+            td
+              p(data-cq-component='text')
+                | A+++ (performance énergie)/
+                br
+                | A (performance séchage)
+        .show-mobile.u-hideMediumUp
+          ul.table-liste
+            li
+              p(data-cq-component='text')
+                b Encastrable | largeur 45 cm | De 9 à 10 couverts
+              div
+                img(src='../images/designImporter/lave-vaisselle-encastrable-45.png' alt="")
+              p(data-cq-component='text')
+                | A++ (performance énergie)/
+                br
+                | A (performance séchage)
+            li
+              p(data-cq-component='text')
+                b Encastrable | largeur 60 cm | De 12 à 15 couverts
+              div
+                img(src='../images/designImporter/lave-vaisselle-encastrable-60.png' alt="")
+              p(data-cq-component='text')
+                | A+++ (performance énergie)/
+                br
+                | A (performance séchage)
+            li
+              p(data-cq-component='text')
+                b Non encastrable | largeur 45 cm
+              div
+                img(src='../images/designImporter/lave-vaisselle-non-encastrable-45.png' alt="")
+              p(data-cq-component='text')
+                | A++ (performance énergie)/
+                br
+                | A (performance séchage)
+            li
+              p(data-cq-component='text')
+                b Non encastrable | largeur 60 cm
+              div
+                img(src='../images/designImporter/lave-vaisselle-non-encastrable-60.png' alt="")
+              p(data-cq-component='text')
+                | A+++ (performance énergie)/
+                br
+                | A (performance séchage)
+          // .table-liste
+        // .show-mobile
+
+
+  // -------------- ISOLANTS BIO ----------------------
+  .u-heading-4.u-textCenter Isolants bio
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding(style='margin-top: -25px;')
+        div  
+        table.table.table-hover.hide-mobile.u-hideSmall(style='margin-bottom:0;')
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Matériau
+            th(scope='col')
+              p(data-cq-component='text') Conductivité λ
+            th(scope='col')
+              p(data-cq-component='text')
+                  | Prix
+                  sup 1
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Laine de bois
+            td
+              p(data-cq-component='text') 0,038 W/(m.K)
+            td
+              p(data-cq-component='text') 11 à 13 € le m2 pour des panneaux d’une épaisseur 10 cm
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Chanvre
+            td
+              p(data-cq-component='text') De 0,038 à 0,048 W/(m.K)
+            td
+              p(data-cq-component='text') 11 à 14 € le m2 pour des panneaux d’une épaisseur 10 cm
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Ouate de cellulose
+            td
+              p(data-cq-component='text') De 0,035 à 0,041 W/(m.K)
+            td
+              p(data-cq-component='text') 1 à 2€ le kg en vrac
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Liège expansé
+            td
+              p(data-cq-component='text') De 0,034 à 0,042 W/(m.K)
+            td
+              p(data-cq-component='text') 25 € le m2 pour des panneaux d’une épaisseur 10 cm
+        .show-mobile.u-hideMediumUp
+          ul.table-liste
+            li
+              p(data-cq-component='text')
+                b Laine de bois :
+                br
+                | Conductivité λ : 0,038 W/(m.K)
+                br
+                | Prix
+                sup 1
+                |  : 11 à 13 € le m2 pour des panneaux d’une épaisseur 10 cm
+              p(data-cq-component='text')
+                b Chanvre :
+                br
+                | Conductivité λ : De 0,038 à 0,048 W/(m.K)
+                br
+                | Prix
+                sup 1
+                |  : 11 à 14 € le m2 pour des panneaux d’une épaisseur 10 cm
+              p(data-cq-component='text')
+                b Ouate de cellulose :
+                br
+                | Conductivité λ : De 0,035 à 0,041 W/(m.K)
+                br
+                | Prix
+                sup 1
+                |  : 1 à 2€ le kg en vrac
+              p(data-cq-component='text')
+                b Liège expansé :
+                br
+                | Conductivité λ : De 0,032 à 0,042 W/(m.K)
+                br
+                | Prix
+                sup 1
+                |  : 25 € le m2 pour des panneaux d’une épaisseur 10 cm
+          // .table-liste
+        div  
+        //
+          <figcaption style="color:#BDBDBD; font-size:.8em;">
+          <sup>1</sup> : <a href="http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf">http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf</a>
+          <br>Angie / Pôle Interactif
+          <br>Une marque de la société Angie Interactive
+          <br>26 rue du Sentier - 75 002 PARIS
+          <br>Tel : 01 55 34 46 00 - Fax : 01 55 34 46 01
+          <br>SARL au capital de 7 622,45 euros – B413 496 902 RCS Paris – CODE APE 744B.
+          </figcaption>
+        // .show-mobile
+      // .box-content
+      // .box
+
+
+  // -------------- ISOLANTS MIN ----------------------
+  .u-heading-4.u-textCenter Isolants minéraux
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding(style='margin-top: -25px;')
+        div  
+        table.table.table-hover.hide-mobile.u-hideSmall(style='margin-bottom:0;')
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Matériau
+            th(scope='col')
+              p(data-cq-component='text') Conductivité λ
+            th(scope='col')
+              p(data-cq-component='text')
+                  | Prix
+                  sup 1
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Laine de verre et laine de roche
+            td
+              p(data-cq-component='text') entre 0.03 et 0.04 W/m.k
+            td
+              p(data-cq-component='text') En rouleaux : 3€/m2 pour une épaisseur de 100 mm
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Perlite
+            td
+              p(data-cq-component='text') 0.040 W/m.k
+            td
+              p(data-cq-component='text') 200€ le m3
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Verre cellulaire
+            td
+              p(data-cq-component='text') de 0.035 W/m.k à 0.050 W/m.k
+            td
+              p(data-cq-component='text') En panneaux : 45€/m2 en épaisseur 120 mm
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Vermiculite
+            td
+              p(data-cq-component='text') De 0,060 à 0,080 W/m.k
+            td
+              p(data-cq-component='text') Entre 120 et 160€ le m3
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Argile expansée
+            td
+              p(data-cq-component='text') 0.10 W/m.k
+            td
+              p(data-cq-component='text')
+                | 500€ le m
+                sup 3
+        .show-mobile.u-hideMediumUp
+          ul.table-liste
+            li
+              p(data-cq-component='text')
+                b Laine de verre et laine de roche :
+                br
+                | Conductivité λ : entre 0.03 et 0.04 W/m.k
+                br
+                | Prix : En rouleaux : 3€/m2 pour une épaisseur de 100 mm
+              p(data-cq-component='text')
+                b Perlite :
+                br
+                | Conductivité λ : 0.040 W/m.k
+                br
+                | Prix : 200€ le m
+                sup 3
+              p(data-cq-component='text')
+                b Verre cellulaire :
+                br
+                | Conductivité λ : De 0.035 W/m.k à 0.050 W/m.k
+                br
+                | Prix : En panneaux : 45€/m2 en épaisseur 120 mm
+              p(data-cq-component='text')
+                b Vermiculite :
+                br
+                | Conductivité λ : De 0,060 à 0,080 W/m.k
+                br
+                | Prix : Entre 120 et 160€ le m
+                sup 3
+              p(data-cq-component='text')
+                b Argile expansée :
+                br
+                | Conductivité λ : 0.10 W/m.k
+                br
+                | Prix : 500€ le m
+                sup 3
+          // .table-liste
+        div  
+        //
+          <figcaption style="color:#BDBDBD; font-size:.8em;">
+          <sup>1</sup> : <a href="http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf">http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf</a>
+          <br>Angie / Pôle Interactif
+          <br>Une marque de la société Angie Interactive
+          <br>26 rue du Sentier - 75 002 PARIS
+          <br>Tel : 01 55 34 46 00 - Fax : 01 55 34 46 01
+          <br>SARL au capital de 7 622,45 euros – B413 496 902 RCS Paris – CODE APE 744B.
+          </figcaption>
+        // .show-mobile
+      // .box-content
+      // .box
+
+
+  // -------------- ISOLANTS SYNTHETIQUES ----------------------
+  .u-heading-4.u-textCenter Isolants synthétiques
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding(style='margin-top: -25px;')
+        div  
+        table.table.table-hover.hide-mobile.u-hideSmall(style='margin-bottom:0;')
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Matériau
+            th(scope='col')
+              p(data-cq-component='text') Conductivité λ
+            th(scope='col')
+              p(data-cq-component='text')
+                  | Prix
+                  sup 1
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Le polystyrène expansé
+            td
+              p(data-cq-component='text') 0,028 à 0,035 W/(m.K)
+            td
+              p(data-cq-component='text') 4€ le m2 pour des panneaux de 40 mm d’épaisseur
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Le polystyrène extrudé
+            td
+              p(data-cq-component='text') De 0,028 à 0,046 W/(m.K)
+            td
+              p(data-cq-component='text') 6€ le m2 pour des panneaux de 40 mm d’épaisseur
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Le polyuréthane expansé
+            td
+              p(data-cq-component='text') De 0,021 à 0,028 W/(m.K)
+            td
+              p(data-cq-component='text') 14€ le m2 pour des panneaux de 40 mm d’épaisseur
+          tr
+            th(scope='col')
+              p(data-cq-component='text') La mousse phénolique
+            td
+              p(data-cq-component='text') De 0,018 à 0,040 W/(m.K)
+            td
+              p(data-cq-component='text') 200€ le m2
+        .show-mobile.u-hideMediumUp
+          ul.table-liste
+            li
+              p(data-cq-component='text')
+                b Le polystyrène expansé :
+                br
+                | Conductivité λ : 0,028 à 0,035 W/(m.K)
+                br
+                | Prix
+                sup 1
+                |  : 4€ le m2 pour des panneaux de 40 mm d’épaisseur
+              p(data-cq-component='text')
+                b Le polystyrène extrudé :
+                br
+                | Conductivité λ : De 0,028 à 0,046 W/(m.K)
+                br
+                | Prix
+                sup 1
+                |  : 6€ le m2 pour des panneaux de 40 mm d’épaisseur
+              p(data-cq-component='text')
+                b Le polyuréthane expansé :
+                br
+                | Conductivité λ : De 0,021 à 0,028 W/(m.K)
+                br
+                | Prix
+                sup 1
+                |  : 14€ le m2 pour des panneaux de 40 mm d’épaisseur
+              p(data-cq-component='text')
+                b La mousse phénolique :
+                br
+                | Conductivité λ : De 0,018 à 0,040 W/(m.K)
+                br
+                | Prix
+                sup 1
+                |  : 200€ le m2
+          // .table-liste
+        div  
+        //
+          <figcaption style="color:#BDBDBD; font-size:.8em;">
+          <sup>1</sup> : <a href="http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf">http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf</a>
+          <br>Angie / Pôle Interactif
+          <br>Une marque de la société Angie Interactive
+          <br>26 rue du Sentier - 75 002 PARIS
+          <br>Tel : 01 55 34 46 00 - Fax : 01 55 34 46 01
+          <br>SARL au capital de 7 622,45 euros – B413 496 902 RCS Paris – CODE APE 744B.
+          </figcaption>
+        // .show-mobile
+      // .box-content
+    // .box
+
+
+  // -------------- MATERIAUX ISOLANTS ----------------------
+  .u-heading-4.u-textCenter Matériaux isolants
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding
+        table.table.table-hover.hide-mobile.u-hideSmall(style='margin-bottom:0;')
+          tr
+            th(scope='col' width="30%")
+              p(data-cq-component='text') Matériaux isolants
+            th(scope='col')
+              p(data-cq-component='text') Murs
+            th(scope='col')
+              p(data-cq-component='text') Toitures
+            th(scope='col')
+              p(data-cq-component='text') Sols
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Laine de mouton
+            td
+              p(data-cq-component='text', style='text-align:center;') 17 à 23 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 25 à 30 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') -
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Ouate de cellulose
+            td
+              p(data-cq-component='text', style='text-align:center;') 20 à 26 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 26 à 37 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') -
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Lin
+            td
+              p(data-cq-component='text', style='text-align:center;') 18 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 27 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') -
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Chanvre
+            td
+              p(data-cq-component='text', style='text-align:center;') 19 à 21 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 20 à 27 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') -
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Liège expansé
+            td
+              p(data-cq-component='text', style='text-align:center;') 14 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 30 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 14 cm
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Fibres de bois
+            td
+              p(data-cq-component='text', style='text-align:center;') 20 à 26 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 26 à 37 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') -
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Paille
+            td
+              p(data-cq-component='text', style='text-align:center;') 20 à 26 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 26 à 37 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') -
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Béton cellulaire
+            td
+              p(data-cq-component='text', style='text-align:center;') 30 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') -
+            td
+              p(data-cq-component='text', style='text-align:center;') -
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Laine de verre ou minérale
+            td
+              p(data-cq-component='text', style='text-align:center;') 17 à 23 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 17 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') -
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Polystyrène expansé
+            td
+              p(data-cq-component='text', style='text-align:center;') 16 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 23 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') -
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Polystyrène extrudé
+            td
+              p(data-cq-component='text', style='text-align:center;') -
+            td
+              p(data-cq-component='text', style='text-align:center;') 20 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 10 cm
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Polyuréthanes
+            td
+              p(data-cq-component='text', style='text-align:center;') 12 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 20 cm
+            td
+              p(data-cq-component='text', style='text-align:center;') 12 cm
+        .show-mobile.u-hideMediumUp
+          p
+            b Matériaux isolants :
+          ul.table-liste
+            li
+              p(data-cq-component='text')
+                b Laine de mouton :
+                br
+                | Murs : 17 à 23 cm
+                br
+                | Toitures : 25 à 30 cm
+              p(data-cq-component='text')
+                b Ouate de cellulose :
+                br
+                | Murs : 20 à 26 cm
+                br
+                | Toitures : 26 à 37 cm
+              p(data-cq-component='text')
+                b Lin :
+                br
+                | Murs : 20 à 26 cm
+                br
+                | Toitures : 26 à 37 cm
+              p(data-cq-component='text')
+                b Chanvre :
+                br
+                | Murs : 19 à 21 cm
+                br
+                | Toitures : 20 à 27 cm
+              p(data-cq-component='text')
+                b Liège expansé :
+                br
+                | Murs : 14 cm
+                br
+                | Toitures : 20 cm
+                br
+                | Sols : 14 cm
+              p(data-cq-component='text')
+                b Fibres de bois :
+                br
+                | Murs : 20 à 26 cm
+                br
+                | Toitures : 26 à 37 cm
+              p(data-cq-component='text')
+                b Paille :
+                br
+                | Murs : 20 à 26 cm
+                br
+                | Toitures : 26 à 37 cm
+              p(data-cq-component='text')
+                b Béton cellulaire :
+                br
+                | Murs : 30 cm
+              p(data-cq-component='text')
+                b Paille :
+                br
+                | Murs : 20 à 26 cm
+                br
+                | Toitures : 26 à 37 cm
+              p(data-cq-component='text')
+                b Laine de verre ou minérale :
+                br
+                | Murs : 17 à 23 cm
+                br
+                | Toitures : 17  cm
+              p(data-cq-component='text')
+                b Polystyrène expansé :
+                br
+                | Murs : 16 cm
+                br
+                | Toitures : 23 cm
+              p(data-cq-component='text')
+                b Polystyrène extrudé :
+                br
+                | Toitures : 20 cm
+                br
+                | Sols : 10 cm
+              p(data-cq-component='text')
+                b Polystyrène extrudé :
+                br
+                | Murs : 12 cm
+                br
+                | Toitures : 20 cm
+                br
+                | Sols : 12 cm
+          // .table-liste
+        p(data-cq-component='text') * : Source :
+          a(href='http://www.cg43.fr/sites/cg43/IMG/pdf/guide_des_materiaux__isolants.pdf ') Guide des matériaux isolants
+          | ", Conseil Général de Haute-Loire / ADEME.
+        // .show-mobile
+      // .box-content
+    // .box
+
+
+  // -------------- RESISTANCE ----------------------
+  .u-heading-4.u-textCenter Résistance
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding(style='margin-top: -25px;')
+        div &nbsp;
+        table.table.table-hover.hide-mobile.u-hideSmall(style='margin-bottom:0;')
+          tr
+            th(scope='col', width="30%")
+              p(data-cq-component='text') Support
+            th(scope='col')
+              p(data-cq-component='text') Résistance thermique standard
+            th(scope='col')
+              p(data-cq-component='text') Epaisseur recommandée selon les matériaux
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Murs
+            td
+              p(data-cq-component='text', style='text-align:center;') 3,7 m².K/W
+            td
+              p(data-cq-component='text') 8 cm de polyuréthane ou 12 cm de laine minérale ou 44 cm de béton cellulaire
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Planchers
+            td
+              p(data-cq-component='text', style='text-align:center;') 3 m².K/W
+            td
+              p(data-cq-component='text') 9 cm de laine de roche ou 12 cm de perlite
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Combles et Toiture
+            td
+              p(data-cq-component='text', style='text-align:center;') 5 à 7 m².K/W
+            td
+              p(data-cq-component='text') 16 à 22 cm de laine de verre ou 15 à 22 cm de polyuréthane
+        .show-mobile.u-hideMediumUp
+          ul.table-liste
+            li
+              p(data-cq-component='text')
+                b Murs :
+                br
+                | Résistance thermique standard : 3,7 m².K/W
+                br
+                | Epaisseur recommandée selon les matériaux : 8 cm de polyuréthane ou 12 cm de laine minérale ou 44 cm de béton cellulaire
+              p(data-cq-component='text')
+                b Planchers :
+                br
+                | Résistance thermique standard : 3 m².K/W
+                br
+                | Epaisseur recommandée selon les matériaux : 9 cm de laine de roche ou 12 cm de perlite
+              p(data-cq-component='text')
+                b Combles et Toiture :
+                br
+                | Résistance thermique standard : 5 à 7 m².K/W
+                br
+                | Epaisseur recommandée selon les matériaux : 16 à 22 cm de laine de verre ou 15 à 22 cm de polyuréthane
+          // .table-liste
+        div  
+        //
+          <figcaption style="color:#BDBDBD; font-size:.8em;">
+          <sup>1</sup> : <a href="http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf">http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf</a>
+          <br>Angie / Pôle Interactif
+          <br>Une marque de la société Angie Interactive
+          <br>26 rue du Sentier - 75 002 PARIS
+          <br>Tel : 01 55 34 46 00 - Fax : 01 55 34 46 01
+          <br>SARL au capital de 7 622,45 euros – B413 496 902 RCS Paris – CODE APE 744B.
+          </figcaption>
+        // .show-mobile
+      // .box-content
+    // .box
+
+
+  // -------------- RESISTANCE PART 2 ----------------------
+  .u-heading-4.u-textCenter Résistance part 2
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding(style='margin-top: -25px;')
+        div  
+        table.table.table-hover.hide-mobile.u-hideSmall(style='margin-bottom:0;')
+          tr
+            th(scope='col', width="30%")
+              p(data-cq-component='text') Support
+            th(scope='col')
+              p(data-cq-component='text') Résistance thermique<br>exigée en métropole
+            th(scope='col')
+              p(data-cq-component='text') Résistance thermique exigée en Guadeloupe,<br>Guyane, Martinique, La Reunion et Mayotte
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Murs
+            td
+              p(data-cq-component='text', style='text-align:center;') 3,7 m².K/W
+            td
+              p(data-cq-component='text', style='text-align:center;') 0,5 m².K/W
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Plancher
+            td
+              p(data-cq-component='text', style='text-align:center;') 3 m².K/W
+            td
+              p(data-cq-component='text', style='text-align:center;') 3 m².K/W
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Toiture
+            td
+              p(data-cq-component='text', style='text-align:center;') 6 m².K/W
+            td
+              p(data-cq-component='text', style='text-align:center;') 1.5 m².K/W
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Combles perdus
+            td
+              p(data-cq-component='text', style='text-align:center;') 7 m².K/W
+            td
+              p(data-cq-component='text')  
+        .show-mobile.u-hideMediumUp
+          ul.table-liste
+            li
+              p(data-cq-component='text')
+                b Murs :
+                br
+                | Résistance thermique exigée en métropole : 3,7 m².K/W
+                br
+                | Résistance thermique exigée en Guadeloupe, Guyane, Martinique, La Reunion et Mayotte : 0,5 m².K/W
+              p(data-cq-component='text')
+                b Plancher :
+                br
+                | Résistance thermique exigée en métropole : 3 m².K/W
+                br
+                | Résistance thermique exigée en Guadeloupe, Guyane, Martinique, La Reunion et Mayotte : 3 m².K/W
+              p(data-cq-component='text')
+                b Toiture :
+                br
+                | Résistance thermique exigée en métropole : 6 m².K/W
+                br
+                | Résistance thermique exigée en Guadeloupe, Guyane, Martinique, La Reunion et Mayotte : 1.5 m².K/W
+              p(data-cq-component='text')
+                b Combles perdus :
+                br
+                | Résistance thermique exigée en métropole : 5 à 7 m².K/W
+                br
+                | Résistance thermique exigée en Guadeloupe, Guyane, Martinique, La Reunion et Mayotte :
+          // .table-liste
+        div  
+        //
+          <figcaption style="color:#BDBDBD; font-size:.8em;">
+          <sup>1</sup> : <a href="http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf">http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf</a>
+          <br>Angie / Pôle Interactif
+          <br>Une marque de la société Angie Interactive
+          <br>26 rue du Sentier - 75 002 PARIS
+          <br>Tel : 01 55 34 46 00 - Fax : 01 55 34 46 01
+          <br>SARL au capital de 7 622,45 euros – B413 496 902 RCS Paris – CODE APE 744B.
+          </figcaption>
+        // .show-mobile
+      // .box-content
+    // .box
+
+  // -------------- ECO SUR LE POSTE D'ECLAIRAGE ----------------------
+  .u-heading-4.u-textCenter Eco sur le poste d'éclairage
+  #cqcanvas
+    .box.l-wrapper--large
+      .bg-box-blanc
+        div  
+        table.table.table-hover.hide-mobile.orange.u-hideSmall(style='margin-bottom:0;')
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Type de lampe
+            th(scope='col')
+              p(data-cq-component='text') Classe énergétique
+            th(scope='col')
+              p(data-cq-component='text') Prix moyen
+            th(scope='col')
+              p(data-cq-component='text') Durée de vie
+            th(scope='col')
+              p(data-cq-component='text') Consommation kWh/an (base : 3h/jr)
+            th(scope='col')
+              p(data-cq-component='text') Avantages
+            th(scope='col')
+              p(data-cq-component='text') Inconvénients
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Lampe basse consommation
+            td(style='text-align:center;')
+              p(data-cq-component='text') A et B
+            td(style='text-align:center;')
+              p(data-cq-component='text') 2€
+            td
+              p(data-cq-component='text') 6000 à 7000 heures
+            td
+              p(data-cq-component='text') 3h x 365j x 15W = 16,4 kWh/an
+            td
+              p(data-cq-component='text')
+                | - Économe en énergie
+                br
+                | - Prix peu élevé
+            td
+              p(data-cq-component='text')
+                | - Peu adaptée pour un usage en extérieur
+                br
+                | - Longue à l’allumage
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Lampe à LED
+            td(style='text-align:center;')
+              p(data-cq-component='text') A+ et A
+            td(style='text-align:center;')
+              p(data-cq-component='text') 4€
+            td
+              p(data-cq-component='text') Jusqu’à 20 000 heures
+            td
+              p(data-cq-component='text') 3h x 365j x 6W = 6,5 kWh/an
+            td
+              p(data-cq-component='text')
+                | - Durée de vie
+                br
+                | - Allumage instantané
+                br
+                | - Peut être utilisée en extérieur
+            td
+              p(data-cq-component='text')
+                | - Plus chère
+                br
+                | - Puissance lumineuse assez faible
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Lampe à incandescence halogène
+            td(style='text-align:center;')
+              p(data-cq-component='text') C et D
+            td(style='text-align:center;')
+              p(data-cq-component='text') 1,5€
+            td
+              p(data-cq-component='text') 2000 à 3000 heures
+            td
+              p(data-cq-component='text') 3h x 365j x 60W = 65,7 kWh/an
+            td
+              p(data-cq-component='text')
+                | - Lumière douce et proche de la lumière naturelle
+                br
+                | - Prix peu élevé
+            td
+              p(data-cq-component='text') - Moins performante énergétiquement
+        .show-mobile.u-hideMediumUp
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text') Lampe basse consommation
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Classe énergétique
+              td
+                p(data-cq-component='text') A et B
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Prix moyen
+              td
+                p(data-cq-component='text') 2€
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Durée de vie
+              td
+                p(data-cq-component='text') 6000 à 7000 heures
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Conso. kWh/an (base : 3h/jr)
+              td
+                p(data-cq-component='text') 3h x 365j x 15W = 16,4 kWh/an
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Avantages
+              td
+                p(data-cq-component='text')
+                  | - Économe en énergie
+                  br
+                  | - Prix peu élevé
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Inconvénients
+              td
+                p(data-cq-component='text')
+                  | - Peu adaptée pour un usage en extérieur
+                  br
+                  | - Longue à l’allumage
+          br
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text') Lampe à LED
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Classe énergétique
+              td
+                p(data-cq-component='text') A+ et A
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Prix moyen
+              td
+                p(data-cq-component='text') 4€
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Durée de vie
+              td
+                p(data-cq-component='text') Jusqu’à 20 000 heures
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Conso. kWh/an (base : 3h/jr)
+              td
+                p(data-cq-component='text') 3h x 365j x 6W = 6,5 kWh/an
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Avantages
+              td
+                p(data-cq-component='text')
+                  | - Durée de vie
+                  br
+                  | - Allumage instantané
+                  br
+                  | - Peut être utilisée en extérieur
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Inconvénients
+              td
+                p(data-cq-component='text')
+                  | - Plus chère
+                  br
+                  | - Puissance lumineuse assez faible
+          br
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text') Lampe à incandescence halogène
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Classe énergétique
+              td
+                p(data-cq-component='text') C et D
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Prix moyen
+              td
+                p(data-cq-component='text') 1,5€
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Durée de vie
+              td
+                p(data-cq-component='text') 2000 à 3000 heures
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Conso. kWh/an (base : 3h/jr)
+              td
+                p(data-cq-component='text') 3h x 365j x 60W = 65,7 kWh/an
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Avantages
+              td
+                p(data-cq-component='text')
+                  | - Lumière douce et proche de la lumière naturelle
+                  br
+                  | - Prix peu élevé
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Inconvénients
+              td
+                p(data-cq-component='text') - Moins performante énergétiquement
+                p(data-cq-component='text') - Moins performante énergétiquement
+        div  
+        //
+          <figcaption style="color:#BDBDBD; font-size:.8em;">
+          <sup>1</sup> : <a href="http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf">http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf</a>
+          <br>Angie / Pôle Interactif
+          <br>Une marque de la société Angie Interactive
+          <br>26 rue du Sentier - 75 002 PARIS
+          <br>Tel : 01 55 34 46 00 - Fax : 01 55 34 46 01
+          <br>SARL au capital de 7 622,45 euros – B413 496 902 RCS Paris – CODE APE 744B.
+          </figcaption>
+        // .show-mobile
+      // .box
+
+
+  // -------------- ISOLANTS ----------------------
+  .u-heading-4.u-textCenter Isolants
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-content.bg-box-blanc.box-content-padding
+        div  
+        table.table.table-hover.hide-mobile.u-hideSmall(style='margin-bottom:0;')
+          tr
+            th(scope='col')
+              p(data-cq-component='text')  
+            th(scope='col')
+              p(data-cq-component='text')
+                b Isolants minéraux
+            th(scope='col')
+              p(data-cq-component='text')
+                b Isolants synthétiques
+            th(scope='col')
+              p(data-cq-component='text')
+                b Isolants bio-sourcés
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Origine
+            td
+              p(data-cq-component='text') Ressources minérales
+            td
+              p(data-cq-component='text') Pétrole
+            td
+              p(data-cq-component='text') Ressources végétales et animales
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Performance thermique (en W/m.k)
+            td
+              p(data-cq-component='text') De 0,030 à 0,10
+            td
+              p(data-cq-component='text') De 0,018 à 0,046
+            td
+              p(data-cq-component='text') De 0,035 à 0,048
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Performance phonique
+            td
+              p(data-cq-component='text') Bonne
+            td
+              p(data-cq-component='text') Mauvaise
+            td
+              p(data-cq-component='text') Bonne
+          tr
+            th(scope='col')
+              p(data-cq-component='text')
+                | Prix
+                sup 1
+            td
+              p(data-cq-component='text') A partir de 3€/m2 pour des rouleaux d’une épaisseur de 100 mm.
+            td
+              p(data-cq-component='text') A partir de 4€/m2 pour des panneaux d’une épaisseur de 40mm.
+            td
+              p(data-cq-component='text') A partir de 11€/m2 pour des panneaux d’une épaisseur 10 cm.
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Perméable à l’eau
+            td
+              p(data-cq-component='text') Oui
+            td
+              p(data-cq-component='text') Non
+            td
+              p(data-cq-component='text') Oui
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Sensible au feu
+            td
+              p(data-cq-component='text') Non
+            td
+              p(data-cq-component='text') Oui
+            td
+              p(data-cq-component='text') Oui
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Imputrescible
+            td
+              p(data-cq-component='text') Oui
+            td
+              p(data-cq-component='text') Oui
+            td
+              p(data-cq-component='text') Variable
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Stabilité dans le temps
+            td
+              p(data-cq-component='text') Variable
+            td
+              p(data-cq-component='text') Excellente
+            td
+              p(data-cq-component='text') Variable
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Dangers pour la santé
+            td
+              p(data-cq-component='text')
+                | Potentiellement cancérogènes. Caractère irritant qui nécessite protection pendant la pose.
+            td
+              p(data-cq-component='text') Emanation de gaz toxiques possibles.
+            td
+              p(data-cq-component='text') Pas de dangers avérés aujourd’hui.
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Recyclable
+            td
+              p(data-cq-component='text') Non
+            td
+              p(data-cq-component='text') Non
+            td
+              p(data-cq-component='text') Oui
+        .show-mobile.u-hideMediumUp
+          ul.table-liste
+            li
+              p(data-cq-component='text')
+                b Origine :
+                br
+                | Isolants minéraux : Ressources minérales
+                br
+                | Isolants synthétiques : Pétrole
+                br
+                | Isolants bio-sourcés : Ressources végétales et animales
+              p(data-cq-component='text')
+                b Performance thermique (en W/m.k) :
+                br
+                | Isolants minéraux : De 0,030 à 0,10
+                br
+                | Isolants synthétiques : De 0,018 à 0,046
+                br
+                | Isolants bio-sourcés : De 0,035 à 0,048
+              p(data-cq-component='text')
+                b Performance phonique :
+                br
+                | Isolants minéraux : Bonne
+                br
+                | Isolants synthétiques : Mauvaise
+                br
+                | Isolants bio-sourcés : Bonne
+              p(data-cq-component='text')
+                b
+                  | Prix
+                  sup 1
+                  |  :
+                br
+                | Isolants minéraux : A partir de 3€/m2 pour des rouleaux d’une épaisseur de 100 mm.
+                br
+                | Isolants synthétiques : A partir de 4€/m2 pour des panneaux d’une épaisseur de 40mm.
+                br
+                | Isolants bio-sourcés : A partir de 11€/m2 pour des panneaux d’une épaisseur 10 cm.
+              p(data-cq-component='text')
+                b Perméable à l’eau :
+                br
+                | Isolants minéraux : Oui
+                br
+                | Isolants synthétiques : Non
+                br
+                | Isolants bio-sourcés : Oui
+              p(data-cq-component='text')
+                b Sensible au feu :
+                br
+                | Isolants minéraux : Non
+                br
+                | Isolants synthétiques : Oui
+                br
+                | Isolants bio-sourcés : Oui
+              p(data-cq-component='text')
+                b Imputrescible :
+                br
+                | Isolants minéraux : Oui
+                br
+                | Isolants synthétiques : Oui
+                br
+                | Isolants bio-sourcés : Variable
+              p(data-cq-component='text')
+                b Stabilité dans le temps :
+                br
+                | Isolants minéraux : Variable
+                br
+                | Isolants synthétiques : Excellente
+                br
+                | Isolants bio-sourcés : Variable
+              p(data-cq-component='text')
+                b Dangers pour la santé :
+                br
+                | Isolants minéraux : Potentiellement cancérogènes. Caractère irritant qui nécessite protection pendant la pose.
+                br
+                | Isolants synthétiques : Emanation de gaz toxiques possibles.
+                br
+                | Isolants bio-sourcés : Pas de dangers avérés aujourd’hui.
+              p(data-cq-component='text')
+                b Recyclable :
+                br
+                | Isolants minéraux : Non
+                br
+                | Isolants synthétiques : Non
+                br
+                | Isolants bio-sourcés : Oui
+          // .table-liste
+        div  
+        //
+          <figcaption style="color:#BDBDBD; font-size:.8em;">
+          <sup>1</sup> : <a href="http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf">http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf</a>
+          <br>Angie / Pôle Interactif
+          <br>Une marque de la société Angie Interactive
+          <br>26 rue du Sentier - 75 002 PARIS
+          <br>Tel : 01 55 34 46 00 - Fax : 01 55 34 46 01
+          <br>SARL au capital de 7 622,45 euros – B413 496 902 RCS Paris – CODE APE 744B.
+          </figcaption>
+        // .show-mobile
+      // .box-content
+    // .box
+
+
+  // -------------- ECO SUR LE POSTE DE LAVAGE ----------------------
+  .u-heading-4.u-textCenter Eco sur le poste de lavage
+  #cqcanvas
+    .box.l-wrapper--large
+      .bg-box-blanc
+        div  
+        table.table.table-hover.hide-mobile.orange.u-hideSmall(style='margin-bottom:0;')
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Type d'appareil
+            th(scope='col')
+              p(data-cq-component='text')
+                b Prix*
+            th(scope='col')
+              p(data-cq-component='text')
+                b Consommation annuelle**
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Lave-linge A+++ de capacité 9kg²
+            td
+              p(data-cq-component='text') 900€
+            td
+              p(data-cq-component='text') 152 kWh/an
+          tr
+            th(scope='col')
+              p(data-cq-component='text')
+                | Lave-linge A+ de capacité 9kg
+                sup 3
+            td
+              p(data-cq-component='text') 350€
+            td
+              p(data-cq-component='text') 253 kWh/an
+          tr
+            th(scope='col')
+              p(data-cq-component='text')
+                | Lave-linge A+++ de capacité 6kg
+                sup 4
+            td
+              p(data-cq-component='text') 500€
+            td
+              p(data-cq-component='text') 153 kWh/an
+          tr
+            th(scope='col')
+              p(data-cq-component='text')
+                | Sèche linge A++
+                sup 5
+            td
+              p(data-cq-component='text') 600€
+            td
+              p(data-cq-component='text') 235 kWh/an
+          tr
+            th(scope='col')
+              p(data-cq-component='text')
+                | Sèche linge B
+                sup 6
+            td
+              p(data-cq-component='text') 300€
+            td
+              p(data-cq-component='text') 561 kWh/an
+          tr
+            th(scope='col')
+              p(data-cq-component='text')
+                | Lave-linge A+++
+                sup 7
+            td
+              p(data-cq-component='text') 600€
+            td
+              p(data-cq-component='text') 237 kWh/an
+          tr
+            th(scope='col')
+              p(data-cq-component='text')
+                | Lave-linge A+
+                sup 8
+            td
+              p(data-cq-component='text') 250€
+            td
+              p(data-cq-component='text') 291 kWh/an
+        .show-mobile.u-hideMediumUp
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text') Lave-linge A+++ de capacité 9kg²
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Prix*
+              td
+                p(data-cq-component='text') 900€
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Consommation annuelle**
+              td
+                p(data-cq-component='text') 152 kWh/an
+          br
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text')
+                  | Lave-linge A+ de capacité 9kg
+                  sup 3
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Prix*
+              td
+                p(data-cq-component='text') 350€
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Consommation annuelle**
+              td
+                p(data-cq-component='text') 253 kWh/an
+          br
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text')
+                  | Lave-linge A+++ de capacité 6kg
+                  sup 4
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Prix*
+              td
+                p(data-cq-component='text') 500€
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Consommation annuelle**
+              td
+                p(data-cq-component='text') 153 kWh/an
+          br
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text')
+                  | Sèche linge A++
+                  sup 5
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Prix*
+              td
+                p(data-cq-component='text') 600€
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Consommation annuelle**
+              td
+                p(data-cq-component='text') 235 kWh/an
+          br
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text')
+                  | Sèche linge B
+                  sup 6
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Prix*
+              td
+                p(data-cq-component='text') 300€
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Consommation annuelle**
+              td
+                p(data-cq-component='text') 561 kWh/an
+          br
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text')
+                  | Lave-linge A+++
+                  sup 7
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Prix*
+              td
+                p(data-cq-component='text') 600€
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Consommation annuelle**
+              td
+                p(data-cq-component='text') 237 kWh/an
+          br
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text')
+                  | Lave-linge A+
+                  sup 8
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Prix*
+              td
+                p(data-cq-component='text') 250€
+            tr
+              th(scope='row')
+                p(data-cq-component='text')
+                  b Consommation annuelle**
+              td
+                p(data-cq-component='text') 291 kWh/an
+        div  
+        //
+          <figcaption style="color:#BDBDBD; font-size:.8em;">
+          <sup>1</sup> : <a href="http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf">http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf</a>
+          <br>Angie / Pôle Interactif
+          <br>Une marque de la société Angie Interactive
+          <br>26 rue du Sentier - 75 002 PARIS
+          <br>Tel : 01 55 34 46 00 - Fax : 01 55 34 46 01
+          <br>SARL au capital de 7 622,45 euros – B413 496 902 RCS Paris – CODE APE 744B.
+          </figcaption>
+        // .show-mobile
+      // .box
+
+
+  // -------------- POMPE A CHALEUR ----------------------
+  .u-heading-4.u-textCenter Pompe à chaleur
+  #cqcanvas
+    .box.l-wrapper--large
+      .box-bg-blanc.box-content-padding-full
+        table.table.table-hover.hide-mobile.contrib-tableau.u-hideSmall
+          tbody
+            tr
+              th(colspan='3')
+                p(data-cq-component='text')
+                    | PAC
+                    | géothermiques
+            tr
+              th  
+              td
+                p(data-cq-component='text') PAC sol/sol ou sol/eau
+              td
+                p(data-cq-component='text') PAC eau glycolée/eau ou eau/eau
+            tr
+              th
+                p(data-cq-component='text') Appoint
+              td
+                p(data-cq-component='text') Pas nécéssaire
+              td
+                p(data-cq-component='text') Pas nécéssaire
+            tr
+              th
+                p(data-cq-component='text') Eau Chaude Sanitaire
+              td
+                p(data-cq-component='text') Production d'une partie d'eau chaude sanitaire possible.
+              td
+                p(data-cq-component='text') Production d'une partie d'eau chaude sanitaire possible.
+            tr
+              th
+                p(data-cq-component='text') Rafraichissement
+              td
+                p(data-cq-component='text') Possible
+              td
+                p(data-cq-component='text')
+                  | Possible (sauf si les émetteurs sont des radiateurs) et bien
+                  | maitrisé.
+            tr
+              th
+                p(data-cq-component='text') Atouts
+              td(data-cq-component='text')
+                ul
+                  li.lien-fleche
+                    | Système simple et coût limité pour du géothermique,
+                  li.lien-fleche
+                    | adapté aux climats rigoureux,
+                  li.lien-fleche
+                    | existence obligatoire d'un avis technique du CSTB (pompe sol/sol).
+              td(data-cq-component='text')
+                ul
+                  li.lien-fleche
+                    | Adapté aux climats rigoureux,
+                  li.lien-fleche
+                    | peu de fluide frigorigène confiné dans la PAC,
+                  li.lien-fleche
+                    | adaptation possible à un réseau de chauffage central existant.
+            tr
+              th
+                p(data-cq-component='text') Contraintes
+              td(data-cq-component='text')
+                ul
+                  li.lien-fleche
+                    | Système à capteurs horizontaux seulement (ils occupent 1,5 à 2 fois la surface de la la
+                    | surface à chauffer),
+                  li.lien-fleche
+                    | quantité importante de fluide frigorigène mis en œuvre (surtout pour la PAC sol/sol),
+                  li.lien-fleche
+                    | exige une solide expérience du professionnel en charge de l'installation,
+                  li.lien-fleche
+                    | la PAC sol/sol requiert une technologie de plancher spécifique.
+              td(data-cq-component='text')
+                ul
+                  li.lien-fleche
+                    | Système plus coûteux qu'une PAC sol/sol ou sol/eau.
+                p Pour les PAC à capteurs verticaux ou sur eau de nappe :
+                ul
+                  li.lien-fleche
+                    | exige une solide expérience de l'installateur et du foreur,
+                  li.lien-fleche
+                    | démarches et autorisations à envisager,
+                  li.lien-fleche
+                    | coût élevé des forages.
+
+            // Tableau 2
+      .box-bg-blanc.box-content-padding-full
+        table.table.table-hover.hide-mobile.contrib-tableau.u-hideSmall
+          tbody
+            tr
+              th(colspan='3')
+                p(data-cq-component='text')
+                    | PAC
+                    | aérothermiques
+            tr
+              th  
+              td
+                p(data-cq-component='text') PAC air extérieur/eau
+              td
+                p(data-cq-component='text') PAC air extérieur/air ou air extrait/air neuf
+            tr
+              th
+                p(data-cq-component='text') Appoint
+              td(data-cq-component='text')
+                ul
+                  li.lien-fleche
+                    | Généralement intégré au système,
+                  li.lien-fleche
+                    | peu ou pas utilisé dans les sysèmes les plus performants,
+                  li.lien-fleche
+                    | nécéssaire dans certains cas.
+              td(data-cq-component='text')
+                ul
+                  li.lien-fleche
+                    | Pas nécéssaire systèmatiquement.
+                  li.lien-fleche
+                    | Appoint indépendant de la PAC
+            tr
+              th
+                p(data-cq-component='text') Eau Chaude Sanitaire
+              td
+                p(data-cq-component='text')
+                  | Préchauffage ou production d'une partie d'au chaude sanitaire
+                  | possible.
+              td
+                p(data-cq-component='text') Non conçu pour produire d l'eau chaude sanitaire.
+            tr
+              th
+                p(data-cq-component='text') Rafraichissement
+              td
+                p(data-cq-component='text')
+                  | Possible (sauf si les émetteurs sont des radiateurs) et bien
+                  | maitrisé.
+              td
+                p(data-cq-component='text') Possible et bien maitrisé.
+            tr
+              th
+                p(data-cq-component='text') Atouts
+              td(data-cq-component='text')
+                ul
+                  li.lien-fleche
+                    | Système simple et coût limité,
+                  li.lien-fleche
+                    | utilisable en appartement à chauffage individuel,
+                  li.lien-fleche
+                    | peu de fluide frigorigène confiné dans la PAC,
+                  li.lien-fleche
+                    | adaptation possible à un réseau de chauffage central existant.
+              td(data-cq-component='text')
+                ul
+                  li.lien-fleche
+                    | Utilisable en appartement à chauffage individuel,
+                  li.lien-fleche
+                    | couplage avec la VMC pour les PAC air extrait/air neuf,
+                  li.lien-fleche
+                    | système simple et coût limité.
+            tr
+              th
+                p(data-cq-component='text') Contraintes
+              td(data-cq-component='text')
+                ul
+                  li.lien-fleche
+                    | exiger des modèles particulièrement performants dans les climats rigoureux,
+                  li.lien-fleche
+                    | vérifier le niveau de bruit développé par la PAC et prendre les dispositions nécéssaires
+                    | pour préserver votre voisinages.
+              td(data-cq-component='text')
+                ul
+                  li.lien-fleche
+                    | N'assure pas la production d'au chaude sanitaire,
+                  li.lien-fleche
+                    | si unité intérieure gainable : nécéssite le passage d'un réseau de gaines de soufflage d'air
+                    | (dans un faux-plafond ou des combles, accessibles pour les besoins de l'entretien),
+                  li.lien-fleche
+                    | n'assure pas la totalité du chaffage pour les PAC air extrait/air neuf.
+
+
+  // -------------- ECO SUR LES EQUIPEMENTS ELEC ----------------------
+  .u-heading-4.u-textCenter Eco sur les equipements électriques
+  #cqcanvas
+    .box.l-wrapper--large
+      .bg-box-blanc
+        div  
+        table.table.table-hover.hide-mobile.orange.u-hideSmall(style='margin-bottom:0;')
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Type d'appareil
+            th(scope='col')
+              p(data-cq-component='text')
+                b Capacité
+            th(scope='col')
+              p(data-cq-component='text')
+                b Prix
+            th(scope='col')
+              p(data-cq-component='text')
+                b Consommation annuelle
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Réfrigérateur « table-top » (ou réfrigérateur sous plan)
+            td
+              p(data-cq-component='text') Jusqu’à 200 litres
+            td
+              p(data-cq-component='text') Entre 150 et 1000€
+            td
+              p(data-cq-component='text') Environ 100 kWh/an
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Réfrigérateur classique
+            td
+              p(data-cq-component='text') De 200 à 400 litres
+            td
+              p(data-cq-component='text') Entre 250 et 1500€
+            td
+              p(data-cq-component='text') Entre 100 et 200 kWh/an
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Combiné (réfrigérateur + congélateur)
+            td
+              p(data-cq-component='text') Réfrigérateur : de 60 à 260 litres. Congélateur : de 25 à 85 litres
+            td
+              p(data-cq-component='text') Entre 200 et 3000€
+            td
+              p(data-cq-component='text') Label A+ : 200 kWh/an. Label C : 500 kWh/an
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Réfrigérateur américain
+            td
+              p(data-cq-component='text') Réfrigérateur : de 320 à 450 litres. Congélateur : de 130 à 290 litres
+            td
+              p(data-cq-component='text') Entre 500 et 5000€
+            td
+              p(data-cq-component='text') Jusqu’à 800 kWh/an. Les anciens modèles peuvent consommer encore plus.
+          tr
+            th(scope='col')
+              p(data-cq-component='text') Congélateur
+            td
+              p(data-cq-component='text') De 70 à 500 litres
+            td
+              p(data-cq-component='text') Entre 150 et 2500€
+            td
+              p(data-cq-component='text') Entre 200 et 500 kWh/an, selon la capacité du modèle.
+        .show-mobile.u-hideMediumUp
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text') Réfrigérateur « table-top » (ou réfrigérateur sous plan)
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Capacité
+              td
+                p(data-cq-component='text') Jusqu’à 200 litres
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Prix
+              td
+                p(data-cq-component='text') Entre 150 et 1000€
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Consommation annuelle
+              td
+                p(data-cq-component='text') Environ 100 kWh/an
+          br
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text') Réfrigérateur classique
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Capacité
+              td
+                p(data-cq-component='text') De 200 à 400 litres
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Prix
+              td
+                p(data-cq-component='text') Entre 250 et 1500€
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Consommation annuelle
+              td
+                p(data-cq-component='text') Entre 100 et 200 kWh/an
+          br
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text') Combiné (réfrigérateur + congélateur)
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Capacité
+              td
+                p(data-cq-component='text') Réfrigérateur : de 60 à 260 litres. Congélateur : de 25 à 85 litres
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Prix
+              td
+                p(data-cq-component='text') Entre 200 et 3000€
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Consommation annuelle
+              td
+                p(data-cq-component='text') Label A+ : 200 kWh/an. Label C : 500 kWh/an
+          br
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text') Réfrigérateur américain
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Capacité
+              td
+                p(data-cq-component='text') Réfrigérateur : de 320 à 450 litres. Congélateur : de 130 à 290 litres
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Prix
+              td
+                p(data-cq-component='text') Entre 500 et 5000€
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Consommation annuelle
+              td
+                p(data-cq-component='text') Jusqu’à 800 kWh/an. Les anciens modèles peuvent consommer encore plus.
+          br
+          table.table.table_phone.table-hover.orange(style='width:100%; margin-bottom:0;')
+            tr
+              th(scope='col', colspan='2')
+                p(data-cq-component='text') Congélateur
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Capacité
+              td
+                p(data-cq-component='text') De 70 à 500 litres
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Prix
+              td
+                p(data-cq-component='text') Entre 150 et 2500€
+            tr
+              th(scope='row')
+                p(data-cq-component='text') Consommation annuelle
+              td
+                p(data-cq-component='text') Entre 200 et 500 kWh/an, selon la capacité du modèle.
+        div  
+        //
+          <figcaption style="color:#BDBDBD; font-size:.8em;">
+          <sup>1</sup> : <a href="http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf">http://www.parc-ecohabitat.com/Files/30845/11264173150663.pdf</a>
+          <br>Angie / Pôle Interactif
+          <br>Une marque de la société Angie Interactive
+          <br>26 rue du Sentier - 75 002 PARIS
+          <br>Tel : 01 55 34 46 00 - Fax : 01 55 34 46 01
+          <br>SARL au capital de 7 622,45 euros – B413 496 902 RCS Paris – CODE APE 744B.
+          </figcaption>
+        // .show-mobile
+      // .box

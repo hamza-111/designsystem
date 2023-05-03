@@ -1,0 +1,185 @@
+include ../../../../common/src/components/modal/modal
+include ../../../../common/src/components/formMat/formMat
+
+mixin monCompteur(data)
+  
+  - var data = data || {}
+  - var gazpar = data.gazpar || false
+  - var tooltip = data.tooltip || false
+  - var error  = data.error  || false
+  - var textError = data.textError || "Les données concernant votre compteur sont momentanément indisponibles."
+  - var chargement = data.chargement || false
+  //.c-monCompteur
+  .c-monCompteur&attributes(attributes)
+    .c-monCompteur__main
+      .c-monCompteur__header
+        .c-monCompteur__headerTitle
+          .c-monCompteur__title Compteur communicant
+          
+
+        if gazpar
+          if tooltip
+            if !error
+              +toolTipV2({
+                title: toolTipTitle
+              })(data-e-modal-open="info")
+              
+              +modal({
+                target: '{"target": "info"}'
+              }).u-padding-a-40
+
+                .c-blocCompteur__desc Informations vous permettant d'identifier votre logement
+                .c-blocCompteur__listeModal
+                  ul 
+                    li
+                      span.c-blocCompteur__labelListeModal Accessibilité pour la relève
+                      span.c-blocCompteur__labelBlue OUI
+                    li
+                      span.c-blocCompteur__labelListeModal N° de PCE
+                      span.c-blocCompteur__labelBlue 14738205459495
+                    li
+                      span.c-blocCompteur__labelListeModal N° de matricule compteur
+                      span.c-blocCompteur__labelBlue 159
+                .c-blocCompteur__listeModalLink
+                  a(href="#") en savoir + sur le compteur Gazpar
+
+                
+
+      .c-monCompteur__content
+      
+        if !error
+          .c-monCompteur__compteur
+            if gazpar
+              img(src="../images/contrib/compteur-gazpar.png" alt="")
+            else
+              img(src="../images/contrib/nonGazparDispo.png" alt="")
+            .c-monCompteur__number 
+              .c-monCompteur__numberText 
+                <span class="c-monCompteur__value">278</span> <span class="c-monCompteur__numberSpanFontSize">m<sup>3</sup></span>
+              .c-monCompteur__index Dernier index du 02.10.2019
+          .c-monCompteur__telereleve
+            p Votre prochain télérelevé vers le : <br> <b>13.02.2022</b>
+          .c-monCompteur__btn
+            +btnWrapper.u-theme-genBlue
+              if gazpar
+                +baseBtn({
+                  text: "Me données quotidiennes",
+                })(data-e-modal-open="compteur")
+
+                +modal({
+                  target: '{"target": "compteur"}'
+                }).u-padding-a-40.c-blocCompteur--borderBlue
+
+                  .c-monCompteur__modalTitle
+                    .c-monCompteur__modalimg 
+                      img(src="../images/contrib/gazparDispo.png" alt="")
+                    span.c-monCompteur__modalDisc Gestion des données journalières de mon compteur communicant Gazpar
+                  
+                  +formMat()
+                    +radioMat({
+                      label: "<b>Oui j'autorise </b> Gaz Tarif Réglementé à accéder à mes données. Je pourrai ainsi visualiser ma consommation quotidienne en euros, m3, Kwh et maitriser mon budget",
+                      id: "radioMat1",
+                      name: 'radio'
+                    })
+
+                    +radioMat({
+                      label: "<b>Non, je n'autorise pas </b> Gaz Tarif Réglementé à accéder à mes données journalières de consommations",
+                      id: "radioMat2",
+                      name: 'radio'
+                    })
+
+                    +btnWrapper.u-theme-genBlue
+                      +baseBtn({
+                        text: "Valider",
+                      })(data-e-modal-open="succsses")
+
+                      +baseBtn({
+                        text: "Annuler",
+                        empty: true
+                      })(type="button" data-e-modal-close)
+              else
+                if !chargement
+                  +baseBtn({
+                    text: "Plus de détails",
+                    iconLeft: "icon-close"
+                  })(data-e-modal-open="details")
+                
+                  +modal({
+                    target: '{"target": "details"}'
+                  }).u-padding-a-40.c-blocCompteur--borderBlue
+
+                    .c-monCompteur__modalTitle
+                      .c-monCompteur__modalimg 
+                        img(src="../images/contrib/gazparDispo.png" alt="")
+                      span.c-monCompteur__modalDisc Gestion des données journalières de mon compteur communicant Gazpar
+                    
+                    +formMat()
+                      +radioMat({
+                        label: "<b>Oui j'autorise </b> Gaz Tarif Réglementé à accéder à mes données. Je pourrai ainsi visualiser ma consommation quotidienne en euros, m3, Kwh et maitriser mon budget",
+                        id: "radioMat1",
+                        name: 'radio'
+                      })
+
+                      +radioMat({
+                        label: "<b>Non, je n'autorise pas </b> Gaz Tarif Réglementé à accéder à mes données journalières de consommations",
+                        id: "radioMat2",
+                        name: 'radio'
+                      })
+
+                      +btnWrapper.u-theme-genBlue
+                        +baseBtn({
+                          text: "Valider",
+                        })(data-e-modal-open="succsses")
+
+                        +baseBtn({
+                          text: "Annuler",
+                          empty: true
+                        })(type="button" data-e-modal-close)
+
+                else
+                  +baseBtn({
+                    text: "Plus de détails",
+                    iconLeft: "icon-close",
+                    button: true
+                  })(disabled)
+        else
+          .c-monCompteur__compteur
+            if gazpar
+              img(src="../images/contrib/gazparNonDispo.png" alt="")
+            else
+              img(src="../images/contrib/nonGazparNonDispo.png" alt="")
+            .c-monCompteur__errorMsg!=textError
+
+mixin monCompteurRelever(data)
+  
+  - var data = data || {}
+  - var errorReleve = data.errorReleve || false
+  - var msgErrorRelever = data.msgErrorRelever || "Les données concernant votre relevé sont momentanément indisponibles."
+  - var msgsuccessRelever = data.msgsuccessRelever || "Merci d'avoir effectué votre relevé"
+  - var italic = data.italic || false
+  - var notBtn = data.notBtn || false
+
+  //.c-monCompteurRelever
+  .c-monCompteurRelever(class=!notBtn?'c-monCompteurRelever__jaune':'')
+    if notBtn
+      if errorReleve
+        .c-monCompteurRelever__border
+          if italic
+            .c-monCompteurRelever__msgItalic!=msgErrorRelever
+          else
+            .c-monCompteurRelever__msg!=msgsuccessRelever
+
+      else
+        .c-monCompteurRelever__border
+          .c-monCompteurRelever__title Votre prochain relevé
+          .c-monCompteurRelever__date 01/10/2019
+
+    else
+      .c-monCompteurRelever__title Il vous reste 3 jours
+      .c-monCompteurRelever__btnTxt pour relever votre compteur
+      
+      +btnWrapper
+        +baseBtn({
+          text: "Je relève"
+        })
+  

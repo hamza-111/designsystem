@@ -1,0 +1,67 @@
+include socialNetwork/socialNetwork
+include ../contactElement/contactElement
+include ../linkLongArrow/linkLongArrow
+
+mixin contactBar(data)
+  - var data                      = data || {}
+  - var displaySocialNetwork      = data.displaySocialNetwork || false
+  - var displaySocialNetworkClass = (data.displaySocialNetwork === true) ? "c-contactBar--fourBlock" : ""
+  - var unavailableMode           = data.unavailableMode  || false
+
+  // .c-contactBar
+  aside.c-contactBar(class=displaySocialNetworkClass)
+    .c-contactBar__title
+      h3.u-textBold.u-fontSize-large Contactez-nous
+
+      +linkLongArrow({
+        text:"Tous les contacts",
+        inlineText: true
+      })
+
+    .c-contactBar__group
+      .c-contactBar__item
+        +contactElement--noLink({
+          iconClass: "contact-advice",
+          unavailable: unavailableMode
+        })
+          +contactElement__text({
+            title: "Appelez un conseiller",
+            subTitle: "du lundi au vendredi de 9h à 20h et le samedi de 9h à 13h",
+            legend: "(Appel non surtaxé)"
+          })
+            +contactElement__phone()
+
+      .c-contactBar__item
+        +contactElement({
+          iconClass: "contact-deaf",
+          unavailable: unavailableMode
+        })
+          +contactElement__text({
+            title: "Sourds et malentendants",
+            subTitle: "Contactez un conseiller par visio en LSF ou par t'chat du lundi au vendredi de 9h à 17h",
+            legend: "(Appel non surtaxé)"
+          })
+
+      .c-contactBar__item
+        +contactElement({
+          iconClass: "contact-mail"
+        })
+          +contactElement__text({
+            title: "Envoyez-nous un email"
+          })
+      .c-contactBar__item
+        +contactElement({
+          iconClass: "contact-faq",
+          subTitle: "Accédez aux Questions/Réponses"
+        })
+          +contactElement__text({
+            title: "FAQ"
+          })
+
+    if displaySocialNetwork
+      .c-contactBar__socialNetwork
+        +socialNetwork({
+          hasTitle:true,
+          title:"Suivez-nous sur"
+        })
+  // end .c-contactBar

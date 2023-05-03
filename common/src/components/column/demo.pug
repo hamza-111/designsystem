@@ -1,0 +1,133 @@
+include column
+
+.c-wysiwyg
+  h2 Tablette + desktop: 100
++demo({
+  desc: '<code>c-column--100</code>'
+})
+  +column({
+    colConfig: '100'
+  })
+
+
+.c-wysiwyg
+  h2 Tablette + desktop: 50-50
++demo({
+  desc: '<code>c-column--50-50</code>'
+})
+  +column({
+    colConfig: '50-50'
+  })
+
+
+.c-wysiwyg
+  h2 Tablette + desktop: 33-66
++demo({
+  desc: '<code>c-column--33-66</code>'
+})
+  +column({
+    colConfig: '33-66'
+  })
+
+
+.c-wysiwyg
+  h2 Tablette + desktop: 66-33
++demo({
+  desc: '<code>c-column--66-33</code>'
+})
+  +column({
+    colConfig: '66-33'
+  })
+
+
+.c-wysiwyg
+  h2 Tablette + desktop: 33-33-33
++demo({
+  desc: '<code>c-column--33-33-33</code>'
+})
+  +column({
+    colConfig: '33-33-33'
+  })
+
+
+.c-wysiwyg
+  h2 Tablette + desktop: 25-25-25-25
++demo({
+  desc: '<code>c-column--25-25-25-25</code>'
+})
+  +column({
+    colConfig: '25-25-25-25'
+  })
+
+
+.c-wysiwyg
+  h2 Tablette: 50-50 + 50-50 et desktop: 25-25-25-25
++demo({
+  desc: '<code>c-column--50-50_25-25-25-25</code>'
+})
+  +column({
+    colConfig: '50-50_25-25-25-25'
+  })
+
+
+.c-wysiwyg
+  h2 Tablette: 100 + 100 + 100 + 100 et desktop: 25-25-25-25
++demo({
+  desc: '<code>c-column--100_25-25-25-25</code>'
+})
+  +column({
+    colConfig: '100_25-25-25-25'
+  })
+
+
+.c-wysiwyg
+  h2 Colonnes espacées
++demo({
+  desc: '<code>c-column--spaced</code>'
+})
+  +column({
+    colConfig: '50-50_25-25-25-25',
+    spaced: true
+  })
+
+
+.c-wysiwyg
+  h2 Tablette + desktop centré verticalement
++demo({
+  desc: '<code>c-column--vCenter</code>'
+})
+  +column({
+    colConfig: '50-50_25-25-25-25',
+    vCenter: true
+  })
+
+
+.c-wysiwyg
+  h2 Wrappers
++demo({
+  desc: `
+    Ajouter les classes suivante pour limiter la largeur: <br>
+      <ul>
+        <li><code>l-wrapper--large</code></li>
+        <li><code>l-wrapper--medium</code></li>
+        <li><code>l-wrapper--small</code></li>
+      </ul>
+  `
+})
+  +column({
+    colConfig: '50-50',
+    spaced: true,
+    wrapper: 'large'
+  })
+
+  +column({
+    colConfig: '50-50',
+    spaced: true,
+    wrapper: 'medium'
+  })
+
+  +column({
+    colConfig: '50-50',
+    spaced: true,
+    wrapper: 'small'
+  })

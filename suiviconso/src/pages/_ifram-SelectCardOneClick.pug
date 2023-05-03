@@ -1,0 +1,638 @@
+html.flexNav-no-touch(lang="en", xmlns="http://www.w3.org/1999/xhtml", xml:lang="en")
+	head
+		meta(name="copyright", content="Atos")
+		meta(http-equiv="content-type", content="text/html; charset=utf-8")
+		meta(http-equiv="content-script-type", content="text/javascript")
+		meta(http-equiv="expires", content="0")
+		meta(http-equiv="pragma", content="no-cache")
+		meta(http-equiv="cache-control", content="no-cache, must-revalidate")
+		meta(name="format-detection", content="telephone=no")
+		meta(name="format-detection", content="email=no")
+		meta(name="viewport", content="initial-scale=1.0, user-scalable=1")
+		title Page de sélection du moyen de paiement
+		link(type='text/css', rel='stylesheet', href='../css/iframe-paiementCB.css?loc=1')
+
+	body#no_wallet_management_body(marginwidth="0", marginheight="0")
+		#container
+
+			header(role="banner")
+				h1
+			hr
+			#wrapper
+				aside.transaction-data(role="complementary")
+					p.vendor
+					h2#transaction_bloc_title
+						| Détails de la transaction
+						span.transactionShowMore +
+					.main-data
+						h3#merchantName MerchantName
+						dl
+							dt.amount
+								| Montant de la transaction :
+							dd#amount.amount(name="amount")
+								| 1,23 €
+					dl.data-sheet
+						#instalmentsInfo
+							dt
+								| Référence de la transaction :
+							dd
+								| 79cff5957801413d9ba2fbda1e64e04c
+						dt.orderId
+							| Identifiant de la commande :
+						dd#orderId.orderId(name="orderId")
+							| OI123456789
+						dt.statementReference
+							| Référence de la commande :
+						dd#statementReference.statementReference(name="statementReference")
+							| 06060606061111111111
+						dt.merchantId
+							| Identifiant du commerçant :
+						dd#merchantId.merchantId(name="merchantId")
+							| 000000000000001
+						dt.amount
+							| Montant de la transaction :
+						dd.amount
+							| 1,23 €
+						table#instalmentsReceipt(style="display: none")
+							tbody
+								tr
+									th(style="width: 260px;") Référence de la transaction :
+									th(style="width: 132px;") Période
+									th Montant de la transaction
+				#main(role="main")
+					.walletPaymentMeansLogos
+						ul.list-of-cards.null
+							li
+								img(src="../images/CEL/iframeImg/logo_CB.png", name="CB", alt="Logo pour le type de carte CB")
+							li
+								img(src="../images/CEL/iframeImg/logo_VISA.png", name="VISA", alt="Logo pour le type de carte VISA")
+							li
+								img(src="../images/CEL/iframeImg/logo_MASTERCARD.png", name="MASTERCARD", alt="Logo pour le type de carte MASTERCARD")
+							li
+								img(src="../images/CEL/iframeImg/logo_AMEX.png", name="AMEX", alt="Logo pour le type de carte AMEX")
+							li
+								img(src="../images/CEL/iframeImg/logo_ACCORD.png", name="ACCORD", alt="Logo pour le type de carte ACCORD")
+							li
+								img(src="../images/CEL/iframeImg/logo_ACCORD_KDO.png", name="ACCORD_KDO", alt="Logo pour le type de carte ACCORD_KDO")
+							li
+								img(src="../images/CEL/iframeImg/logo_ACCORD_3X.png", name="ACCORD_3X", alt="Logo pour le type de carte ACCORD_3X")
+							li
+								img(src="../images/CEL/iframeImg/logo_ACCORD_4X.png", name="ACCORD_4X", alt="Logo pour le type de carte ACCORD_4X")
+							li
+								img(src="../images/CEL/iframeImg/logo_IDEAL.png", name="IDEAL", alt="Logo pour le type de carte IDEAL")
+							li
+								img(src="../images/CEL/iframeImg/logo_PAYPAL.png", name="PAYPAL", alt="Logo pour le type de carte PAYPAL")
+							li
+								img(src="../images/CEL/iframeImg/logo_SOFORTUBERWEISUNG.png", name="SOFORTUBERWEISUNG", alt="Logo pour le type de carte SOFORTUBERWEISUNG")
+							li
+								img(src="../images/CEL/iframeImg/logo_INGHOMEPAY.png", name="INGHOMEPAY", alt="Logo pour le type de carte INGHOMEPAY")
+							li
+								img(src="../images/CEL/iframeImg/logo_INGHOMEPAY.png", name="INGHOMEPAY", alt="Logo pour le type de carte INGHOMEPAY")
+							li
+								img(src="../images/CEL/iframeImg/logo_CBCONLINE.png", name="CBCONLINE", alt="Logo pour le type de carte CBCONLINE")
+							li
+								img(src="../images/CEL/iframeImg/logo_KBCONLINE.png", name="KBCONLINE", alt="Logo pour le type de carte KBCONLINE")
+							li
+								img(src="../images/CEL/iframeImg/logo_POSTFINANCE.png", name="POSTFINANCE", alt="Logo pour le type de carte POSTFINANCE")
+							li
+								img(src="../images/CEL/iframeImg/logo_GIROPAY.png", name="GIROPAY", alt="Logo pour le type de carte GIROPAY")
+							li
+								img(src="../images/CEL/iframeImg/logo_PASSBE.png", name="PASSBE", alt="Logo pour le type de carte PASSBE")
+							li
+								img(src="../images/CEL/iframeImg/logo_AURORE.png", name="AURORE", alt="Logo pour le type de carte AURORE")
+							li
+								img(src="../images/CEL/iframeImg/logo_KLARNAINVOICE.png", name="KLARNAINVOICE", alt="Logo pour le type de carte KLARNAINVOICE")
+							li
+								img(src="../images/CEL/iframeImg/logo_NXCB.gif", name="NXCB", alt="Logo pour le type de carte NXCB")
+							li
+								img(src="../images/CEL/iframeImg/logo_PAYTRAIL.png", name="PAYTRAIL", alt="Logo pour le type de carte PAYTRAIL")
+							li
+								img(src="../images/CEL/iframeImg/logo_PRESTO.png", name="PRESTO", alt="Logo pour le type de carte PRESTO")
+							li
+								img(src="../images/CEL/iframeImg/logo_AFTERPAY.png", name="AFTERPAY", alt="Logo pour le type de carte AFTERPAY")
+					form#walletSelectionForm(method="post", action="/fr/payment/card/selectpaymentmethodandpay.walletselectionform;jsessionid=9WmgC8Eew+arPQQ41FuYndGa")
+						div(style="display: none;")
+							input(type="hidden", name="sid", value="htk98kgrlz")
+							input(type="hidden", name="t:formdata", value="5Yw/NVyQn5L+Iu+bkyoqS5+BCXs=:H4sIAAAAAAAAAM2UT2jTUBzHX8dktkNRy7wJHuZhaPNnbceYUwlzG0I7R6NDL5bX5DWLJHnx5fUfgmcPXjx5EwRv/jnowdsO20HWgxfFu+BVEAeeHPhes24TQZrXEnsKyXvf3/eTlw95+Q0caWSB6sOWizwqG5CYso4cZNDV8FER0XVsap7J7ucING1sEVzzAwJmMbEk6ENjHUkU+iigpJWXDEyQY1fY1fWxxwYEUomnlnlqUke05j9WNi68Pb6zOQISBTBuYI8S7KxAF1FwqnAX1qHsQM+SdUpsz7rY9ClIHRSL0uYEaNV2s91+o+9ujADQ9BsZcL7HZgdj3in12llg+yfzmevbn6fA/e1Y2tTbX1/tVN99fCbYthKprcTW2ZJOIUVLBLs6vzMXHJttWYNODWWebH56CM7u7jlxsHAPPAAJ7kBCbahA7hHSqNerNnJMBpr/J2gFBkjSKuwhNOgSj4SOnru5Nf5l4v2vvxzd5znKOjoBMSwtKtYqwQYKAr1Wce0gsLG39drMVX8+/RCLLrkffnVq+fSLK0Jt/NBS7BNORwzyXFq0LBtnWU7EAh4+xv5uXZPKisAUPuRkHK8aVZkZ5cT32TvPH10KlZFBJkJbWeGMY0KpM1FTqlBXJ5WMnNpXRhUqTIsXTsdUGH6DeTDXY8q0A9+BrawZONjCUlfQsf5HJPsb0T250bVrutY/TXowNKmipt9YLC1opatDwzSqFRdv/XeaULzLYF5oRFk5pN4AhiT7HfKnfgMgSg+K6LCCw8QVajgMRB0VfwPeDPT7Xg0AAA==")
+						h2 Choix du moyen de paiement
+						.customMessage1
+						.customMessage2
+						fieldset.k-choice
+							legend#note Veuillez sélectionner votre moyen de paiement dans la liste ci-dessous
+							.card-choice.with-action
+								p
+									input#card.radio(type="radio", name="radiogroup", value="1", onclick="jQuery(this).parent().parent().next().next().find('input').focus();")
+									label#card-label.selectCard(for="card")
+										strong.stressed visa-card-1
+										strong  N° masked-pan [12/2016]
+								ul.k-actions.on-list
+									li
+										a.k-modal-trigger(href="#visacard1-edit", role="button")
+											img(src="../images/CEL/iframeImg/picto_wallet_update.svg", alt="Mettre à jour ce moyen de paiement ?")
+									li
+										a.k-modal-trigger(href="#visacard1-delete", role="button")
+											img(src="../images/CEL/iframeImg/picto_wallet_delete.svg", alt="Mettre à jour ce moyen de paiement ?")
+							br
+							p.crypto-data
+								label#cvvfield-label(for="cvvField") Cryptogramme visuel :
+								input#cvvField(type="text", name="cvvField", autocomplete="OFF", maxlength="4", size="4")
+								a.k-field-help.k-modal-trigger(href="#crypto-info", role="button")
+									span#cvvHelpText Aide ?
+									img(src="../images/CEL/iframeImg/help.svg", alt="Aide ?")
+							.card-choice.with-action
+								p
+									input#card_0.radio(type="radio", name="radiogroup", value="2", checked="checked", disabled="disabled", onclick="jQuery(this).parent().parent().next().next().find('input').focus();")
+									label#card-label.selectCard(for="card_0")
+										strong.stressed accord-card-1
+										strong  N° 503201245 [Expiré depuis le12/2015]
+								ul.k-actions.on-list
+									li
+										a.k-modal-trigger(href="#accordcard1-edit", role="button")
+											img(src="../images/CEL/iframeImg/picto_wallet_update.svg", alt="Mettre à jour ce moyen de paiement ?")
+									li
+										a.k-modal-trigger(href="#accordcard1-delete", role="button")
+											img(src="../images/CEL/iframeImg/picto_wallet_delete.svg", alt="Mettre à jour ce moyen de paiement ?")
+							.card-choice.with-action
+								p
+									input#card_1.radio(type="radio", name="radiogroup", value="3", disabled="disabled", onclick="jQuery(this).parent().parent().next().next().find('input').focus();")
+									label#card-label.selectCard(for="card_1")
+										strong.stressed accord-card-2
+										strong  N° masked-pan [Expiré depuis le12/2015]
+								ul.k-actions.on-list
+									li
+										a.k-modal-trigger(href="#accordcard2-edit", role="button")
+											img(src="../images/CEL/iframeImg/picto_wallet_update.svg", alt="Mettre à jour ce moyen de paiement ?")
+									li
+										a.k-modal-trigger(href="#accordcard2-delete", role="button")
+											img(src="../images/CEL/iframeImg/picto_wallet_delete.svg", alt="Mettre à jour ce moyen de paiement ?")
+							.card-choice.with-action
+								p
+									input#card_2.radio(type="radio", name="radiogroup", value="4", disabled="disabled", onclick="jQuery(this).parent().parent().next().next().find('input').focus();")
+									label#card-label.selectCard(for="card_2")
+										strong.stressed visa-card-2
+										strong  N° masked-pan [Expiré depuis le12/2015]
+								ul.k-actions.on-list
+									li
+										a.k-modal-trigger(href="#visacard2-edit", role="button")
+											img(src="../images/CEL/iframeImg/picto_wallet_update.svg", alt="Mettre à jour ce moyen de paiement ?")
+									li
+										a.k-modal-trigger(href="#visacard2-delete", role="button")
+											img(src="../images/CEL/iframeImg/picto_wallet_delete.svg", alt="Mettre à jour ce moyen de paiement ?")
+							br
+							p.crypto-data
+								label#cvvfield-label(for="cvvField_0") Cryptogramme visuel :
+								input#cvvField_0(type="text", name="cvvField_0", autocomplete="OFF", maxlength="4", size="4")
+								a.k-field-help.k-modal-trigger(href="#crypto-info", role="button")
+									span#cvvHelpText Aide ?
+									img(src="../images/CEL/iframeImg/help.svg", alt="Aide ?")
+							.card-choice.with-action
+								p
+									input#paypalaccount.radio(type="radio", name="radiogroup", value="1")
+									label#paypalaccount-label.selectSdd(for="paypalaccount")
+										strong.stressed "provideraccount-1"
+										strong foXXXXXXXXXXXXXom
+								ul.k-actions.on-list
+									li
+										a.k-modal-trigger(href="#provideraccount1-edit", role="button")
+											img(src="../images/CEL/iframeImg/picto_wallet_update.svg", alt="Mettre à jour ce moyen de paiement ?")
+									li
+										a.k-modal-trigger(href="#provideraccount1-delete", role="button")
+											img(src="../images/CEL/iframeImg/picto_wallet_delete.svg", alt="Mettre à jour ce moyen de paiement ?")
+							.card-choice.with-action
+								p
+									input#paypalaccount_0.radio(type="radio", name="radiogroup", value="2", checked="checked")
+									label#paypalaccount-label.selectSdd(for="paypalaccount_0")
+										strong.stressed "provideraccount-2"
+										strong foXXXXXXXXXXXXXom
+								ul.k-actions.on-list
+									li
+										a.k-modal-trigger(href="#provideraccount2-edit", role="button")
+											img(src="../images/CEL/iframeImg/picto_wallet_update.svg", alt="Mettre à jour ce moyen de paiement ?")
+									li
+										a.k-modal-trigger(href="#provideraccount2-delete", role="button")
+											img(src="../images/CEL/iframeImg/picto_wallet_delete.svg", alt="Mettre à jour ce moyen de paiement ?")
+							legend#note Votre carte sera débitée au comptant
+						.customMessage3
+						.customMessage4
+						#threeDsBefore
+							.message
+								p.threeDSWarningMessage
+									| Selon votre établissement bancaire, vous pourrez être redirigé vers la page d’authentification de votre banque avant la validation de votre paiement.
+								p.threeDSLogo
+									img(src="../images/CEL/iframeImg/3DS_VISA.png", alt="Page sécurisée par VISA")
+									img(src="../images/CEL/iframeImg/3DS_MASTERCARD.png", alt="Page sécurisée par MASTERCARD")
+									img(src="../images/CEL/iframeImg/3DS_AMEX.png", alt="Page sécurisée par AMEX")
+						.k-buttons-bar
+							p
+								input(type="submit", value="Valider")
+							.secondaryButtons
+								a#usenewpaymentmean.bt-reset.optional(href="/fr/payment/card/selectpaymentmethodandpay.usenewpaymentmean;jsessionid=9WmgC8Eew+arPQQ41FuYndGa?sid=htk98kgrlz") Utiliser un nouveau moyen de paiement
+								a#cancel_0.bt-reset(href="/fr/payment/card/selectpaymentmethodandpay.cancel;jsessionid=9WmgC8Eew+arPQQ41FuYndGa?sid=htk98kgrlz") Annuler
+							p
+						#threeDsAfter
+							.message
+								p.threeDSWarningMessage
+									| Selon votre établissement bancaire, vous pourrez être redirigé vers la page d’authentification de votre banque avant la validation de votre paiement.
+								p.threeDSLogo
+									img(src="../images/CEL/iframeImg/3DS_VISA.png", alt="Page sécurisée par VISA")
+									img(src="../images/CEL/iframeImg/3DS_MASTERCARD.png", alt="Page sécurisée par MASTERCARD")
+									img(src="../images/CEL/iframeImg/3DS_AMEX.png", alt="Page sécurisée par AMEX")
+					article#crypto-info.k-modal(style="display: none; height: 1219px;", role="dialog", aria-hidden="true")
+						.overlay
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							p.close(tabindex="0")
+								a(aria-label="Fermer", href="#") ✖
+							.customMessage1(tabindex="0")
+							.customMessage2
+							#message_cvv_perso
+								h3(tabindex="0")  Qu’est-ce que le cryptogramme visuel de votre carte ?
+								br
+								.content
+									p
+										| Le cryptogramme visuel de votre carte est un dispositif de sécurité anti-fraude qui permet de vérifier que vous êtes en possession de votre carte bancaire. Pour la sécurité de vos achats en ligne, vous devez saisir le cryptogramme visuel présent à l’arrière de votre carte. Cette étape supplémentaire sert à s’assurer que vos informations de carte ne sont pas utilisées frauduleusement.
+									br
+									ul.list-images
+										li
+											figure
+												img.cvv_help_img(src="../images/CEL/iframeImg/cvv_help_visa_mastercard.svg", alt="Image vous permettant d’identifier le cryptogramme visuel de votre carte")
+										li
+											figure
+												img.cvv_help_img(src="../images/CEL/iframeImg/crypto_mc.svg", alt="Image vous permettant d’identifier le cryptogramme visuel de votre carte")
+										li
+											figure
+												img.cvv_help_img(src="../images/CEL/iframeImg/cvv_help_amex.svg", alt="Image vous permettant d’identifier le cryptogramme visuel de votre carte AMEX.")
+							.customMessage3
+					#visacard1-edit.k-modal.active(role="dialog", aria-hidden="true", style="display: none; height: 1219px;")
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							h3(tabindex="0") Souhaitez-vous modifier l’intitulé de votre moyen de paiement ?
+							.content
+								.customMessage1
+								.customMessage2
+								form#form(method="post", action="/fr/payment/card/selectpaymentmethodandpay.form;jsessionid=9WmgC8Eew+arPQQ41FuYndGa", onsubmit="javascript:return Tapestry.waitForPage(event);")
+									div(style="display: none;")
+										input(type="hidden", name="sid", value="htk98kgrlz")
+										input(type="hidden", name="t:formdata", value="Jg9jBMcYWBoSrO4/ae8mxvrFlzM=:H4sIAAAAAAAAAJ3QMUsDMRQH8NcDS6Wb4iAuDjp6V8UuulgEUahSOFxcJJe8tpG7JCavel2cBD+Di59AnBTcO7j5HfwALg5ODuZaUKQg1i155J//j3f7ClPna1AzrJ+hoogzK6IYU+TUGo32kbpaNJTw9w3CnNoSU+Es1LXthMww3sWQmEFHtl8PubaYyiRMmMOwkfgh47RTRJZipJ5ZPhxUX+aePgIoNaHKtSKr0wOWIcFM84SdsShlqhPFZKXqbOaGYPqr9J/QxqTQltUcnYt7SSadk1oN7sR6+/3mOQDIzXkEK39UdKUQqDxh61cC15nRyodduDtMjAuOrhZn84XH8tjaTuECSsWayqOyCXSu+J0m0Q09NK67jt/mH+4vtwMImlDhqfSv98SQ5rUeUHT/0FZG5cer38faJ46Q/VmMAgAA")
+									p
+										input#textfield(type="text", name="textfield", value="visa-card-1", autocomplete="OFF", maxlength="20")
+										input(type="hidden", name="hidden", value="1")
+										span#paymentmean  N° masked-pan [12/2016]
+									.customMessage3
+									.k-buttons-bar
+										p
+											input#submit_1(type="submit", name="submit_0", value="Valider")
+											a.bt-reset.bt-close(href="#")  Annuler
+					#visacard1-delete.k-modal.active(role="dialog", aria-hidden="true", style="display: none; height: 1219px;")
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							h3(tabindex="0") Souhaitez-vous supprimer ce moyen de paiement de votre portefeuille ?
+							.content
+								.customMessage1
+								.customMessage2
+								form#form_0(method="post", action="/fr/payment/card/selectpaymentmethodandpay.form_0;jsessionid=9WmgC8Eew+arPQQ41FuYndGa", onsubmit="javascript:return Tapestry.waitForPage(event);")
+									div(style="display: none;")
+										input(type="hidden", name="sid", value="htk98kgrlz")
+										input(type="hidden", name="t:formdata", value="O+AX5X7N/ySfwiXqy1GhcIOYrv4=:H4sIAAAAAAAAAFvzloG13JBBvyCxMjc1r0Q/ObEoRT84NSc1uSQAIuSbWpKRn+KYlwLkW2VkpqSk5sUbFBcxOOQXpeslFiQmZ6TqlSQWpBaXFFWa6iXnF6XmZCYB6dyC/Dyg9mI9D7AelYCi/OTU4uLg0qTczOLizPy8qHYF4QrpHWxMDIw+DNzJ+XklRfk5fom5qSUMQj5ZiWWJ+jmJeen6wSVFmXnp1hUFJQwcMOtJcHExyL4S0lwMdmMJpotnBn+S3LqlxZmJgcmHgSM5JxOo2jOlkKEO7AOgE0C2g3wAFgK7GGq9MYJpAADa2obncwEAAA==")
+									p
+										input(type="hidden", name="hidden_0", value="1")
+										span#paymentmean  N° masked-pan [12/2016]
+									.customMessage3
+									.k-buttons-bar
+										p
+											input#submit_3(type="submit", name="submit_0", value="Supprimer")
+											a.bt-reset.bt-close(href="#")  Annuler
+					#accordcard1-edit.k-modal.active(role="dialog", aria-hidden="true", style="display: none; height: 1219px;")
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							h3(tabindex="0") Souhaitez-vous modifier l’intitulé de votre moyen de paiement ?
+							.content
+								.customMessage1
+								.customMessage2
+								form#form_1(method="post", action="/fr/payment/card/selectpaymentmethodandpay.form;jsessionid=9WmgC8Eew+arPQQ41FuYndGa", onsubmit="javascript:return Tapestry.waitForPage(event);")
+									div(style="display: none;")
+										input(type="hidden", name="sid", value="htk98kgrlz")
+										input(type="hidden", name="t:formdata", value="yU9qsjwx4zxAcRlYS5UvApJRiYs=:H4sIAAAAAAAAAJ3QMUsDMRQH8NcDS6Wb4iAuDjp6V8QuulgEUahSOFxcJJe8tpG7JCav9ro4CX4GFz+BOCm4d3DzO/gBXBycHMy1oEhBrFvyyD//H+/2FWb661AzbJChoogzK6IYU+TUGo8OkLpaNJTw903CnNoSU+Es1LXthMww3sWQmEFHdlAPubaYyiRMmMOwkfgh47RbRFZipJ5ZPRpWXxaePgIoNaHKtSKr00OWIcFc85SdsyhlqhPFZKXqbOWGYPar9J/QxrTQltUcnYt7SSadk1oN78RG+/3mOQDITT+CtT8qulIIVJ6w/SuB68xo5cMu3BslJgXHV8vz+dJjeWJtZ3ABpWJN5XHZFDpX/E7T6EYemtRdx2+LD/eXOwEETajwVPrX+2JE81oPKLp/aCvj8pP697H2CfGr+1qMAgAA")
+									p
+										input#textfield_0(type="text", name="textfield", value="accord-card-1", autocomplete="OFF", maxlength="20")
+										input(type="hidden", name="hidden", value="2")
+										span#paymentmean  N° 503201245 [Expiré depuis le12/2015]
+									.customMessage3
+									.k-buttons-bar
+										p
+											input#submit_5(type="submit", name="submit_0", value="Valider")
+											a.bt-reset.bt-close(href="#")  Annuler
+					#accordcard1-delete.k-modal.active(role="dialog", aria-hidden="true", style="display: none; height: 1219px;")
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							h3(tabindex="0") Souhaitez-vous supprimer ce moyen de paiement de votre portefeuille ?
+							.content
+								.customMessage1
+								.customMessage2
+								form#form_0_0(method="post", action="/fr/payment/card/selectpaymentmethodandpay.form_0;jsessionid=9WmgC8Eew+arPQQ41FuYndGa", onsubmit="javascript:return Tapestry.waitForPage(event);")
+									div(style="display: none;")
+										input(type="hidden", name="sid", value="htk98kgrlz")
+										input(type="hidden", name="t:formdata", value="/1dAKMPyrWrtYe6CkEWMsvyWZLM=:H4sIAAAAAAAAAFvzloG13JBBvyCxMjc1r0Q/ObEoRT84NSc1uSQAIuSbWpKRn+KYlwLkW2VkpqSk5sUbFBcxOOQXpeslFiQmZ6TqlSQWpBaXFFWa6iXnF6XmZCYB6dyC/Dyg9mI9D7AelYCi/OTU4uLg0qTczOLizPy8qHYF4QrpHWxMDIw+DNzJ+XklRfk5fom5qSUMQj5ZiWWJ+jmJeen6wSVFmXnp1hUFJQwcMOtJcHExyL4S0lwMdmMJpotnBn+S3LqlxZmJgcmHgSM5JxOo2jOlkKEO7AOgE0C2g3wAFgK7GGq9OYJpAACl4YDkcwEAAA==")
+									p
+										input(type="hidden", name="hidden_0", value="2")
+										span#paymentmean  N° 503201245 [Expiré depuis le12/2015]
+									.customMessage3
+									.k-buttons-bar
+										p
+											input#submit_7(type="submit", name="submit_0", value="Supprimer")
+											a.bt-reset.bt-close(href="#")  Annuler
+					#accordcard2-edit.k-modal.active(role="dialog", aria-hidden="true", style="display: none; height: 1219px;")
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							h3(tabindex="0") Souhaitez-vous modifier l’intitulé de votre moyen de paiement ?
+							.content
+								.customMessage1
+								.customMessage2
+								form#form_2(method="post", action="/fr/payment/card/selectpaymentmethodandpay.form;jsessionid=9WmgC8Eew+arPQQ41FuYndGa", onsubmit="javascript:return Tapestry.waitForPage(event);")
+									div(style="display: none;")
+										input(type="hidden", name="sid", value="htk98kgrlz")
+										input(type="hidden", name="t:formdata", value="zRaHtpDATfHcZnJInNUPxvnIh0M=:H4sIAAAAAAAAAJ3QMUsDMRQH8NcDS6Wb4iAuDjp6V8QO6mIRRKFK4XBxkVzy2kbukpi86nVxEvwMLn4CcVJw7+Dmd/ADuDg4OZhrQZGCWLfkkX/+P97tK0ydr0LNsH6GiiLOrIhiTJFTazTaR+pq0VDC3zcIc2pLTIWzUNe2EzLDeBdDYgYd2X495NpiKpMwYQ7DRuKHjNNOEVmKkXpm+XBQfZl7+gig1IQq14qsTg9YhgQzzRN2xqKUqU4Uk5Wqs5kbgumv0n9CG5NCW1ZzdC7uJZl0Tmo1uBNr7feb5wAgN+cRrPxR0ZVCoPKErV8JXGdGKx924e4wMS44ulqczRcey2NrO4ULKBVrKo/KJtC54neaRDf00LjuOn6bf7i/3A4gaEKFp9K/3hNDmtd6QNH9Q1sZlR+vfx9rn3Dm8V+MAgAA")
+									p
+										input#textfield_1(type="text", name="textfield", value="accord-card-2", autocomplete="OFF", maxlength="20")
+										input(type="hidden", name="hidden", value="3")
+										span#paymentmean  N° masked-pan [Expiré depuis le12/2015]
+									.customMessage3
+									.k-buttons-bar
+										p
+											input#submit_9(type="submit", name="submit_0", value="Valider")
+											a.bt-reset.bt-close(href="#")  Annuler
+					#accordcard2-delete.k-modal.active(role="dialog", aria-hidden="true", style="display: none; height: 1219px;")
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							h3(tabindex="0") Souhaitez-vous supprimer ce moyen de paiement de votre portefeuille ?
+							.content
+								.customMessage1
+								.customMessage2
+								form#form_0_1(method="post", action="/fr/payment/card/selectpaymentmethodandpay.form_0;jsessionid=9WmgC8Eew+arPQQ41FuYndGa", onsubmit="javascript:return Tapestry.waitForPage(event);")
+									div(style="display: none;")
+										input(type="hidden", name="sid", value="htk98kgrlz")
+										input(type="hidden", name="t:formdata", value="ozt2Ro6RFIRFKUd1kUJxZx8zRrw=:H4sIAAAAAAAAAFvzloG13JBBvyCxMjc1r0Q/ObEoRT84NSc1uSQAIuSbWpKRn+KYlwLkW2VkpqSk5sUbFBcxOOQXpeslFiQmZ6TqlSQWpBaXFFWa6iXnF6XmZCYB6dyC/Dyg9mI9D7AelYCi/OTU4uLg0qTczOLizPy8qHYF4QrpHWxMDIw+DNzJ+XklRfk5fom5qSUMQj5ZiWWJ+jmJeen6wSVFmXnp1hUFJQwcMOtJcHExyL4S0lwMdmMJpotnBn+S3LqlxZmJgcmHgSM5JxOo2jOlkKEO7AOgE0C2g3wAFgK5mBNqvaEh0PUwpwAAcEZo/nQBAAA=")
+									p
+										input(type="hidden", name="hidden_0", value="3")
+										span#paymentmean  N° masked-pan [Expiré depuis le12/2015]
+									.customMessage3
+									.k-buttons-bar
+										p
+											input#submit_11(type="submit", name="submit_0", value="Supprimer")
+											a.bt-reset.bt-close(href="#")  Annuler
+					#visacard2-edit.k-modal.active(role="dialog", aria-hidden="true", style="display: none; height: 1219px;")
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							h3(tabindex="0") Souhaitez-vous modifier l’intitulé de votre moyen de paiement ?
+							.content
+								.customMessage1
+								.customMessage2
+								form#form_3(method="post", action="/fr/payment/card/selectpaymentmethodandpay.form;jsessionid=9WmgC8Eew+arPQQ41FuYndGa", onsubmit="javascript:return Tapestry.waitForPage(event);")
+									div(style="display: none;")
+										input(type="hidden", name="sid", value="htk98kgrlz")
+										input(type="hidden", name="t:formdata", value="eKyVMKt6nDCGkEU44Wv0yYWAc4Q=:H4sIAAAAAAAAAFvzloG13IjBoCCxMjc1r0Q/ObEoRT84NSc1uSQAIuSbWpKRn+KYlwLkW5WkVpSkZabmpBQXMZjmF6XrJRYkJmek6pUkFqQWlxRVmuol5xel5mQm6SUlFqfqOSYBBROTS9xAWlSCU0tKC1RDD3M/FD3+h4mB0YeBOzk/r6QoP8cvMTe1hEHIJyuxLFE/JzEvXT+4pCgzL926oqCEgRNuKZkOdSTVoQFF+cmpxcXBpUm5mcXFmfl5h9elmKR9m3eOiYGhoqBcn0GXSFdkZKakpOYBneCA1wnJ+bkF+XlAzcV6HmAdmC6IalcQrpDewYYRbIUMdQyMoGBig1hGguuKQaaXkOI6sHtKMF03M/iT5NYtLc5MDEw+DBzJOZlA1Z4pYKcBXQt0AMhuFNdyQiyPNzQuYeCAsg0AA4O3Ho0CAAA=")
+									p
+										input#textfield_2(type="text", name="textfield", value="visa-card-2", autocomplete="OFF", maxlength="20")
+										input(type="hidden", name="hidden", value="4")
+										span#paymentmean  N° masked-pan [Expiré depuis le12/2015]
+									.customMessage3
+									.k-buttons-bar
+										p
+											input#submit_13(type="submit", name="submit_0", value="Valider")
+											a.bt-reset.bt-close(href="#")  Annuler
+					#visacard2-delete.k-modal.active(role="dialog", aria-hidden="true", style="display: none; height: 1219px;")
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							h3(tabindex="0") Souhaitez-vous supprimer ce moyen de paiement de votre portefeuille ?
+							.content
+								.customMessage1
+								.customMessage2
+								form#form_0_2(method="post", action="/fr/payment/card/selectpaymentmethodandpay.form_0;jsessionid=9WmgC8Eew+arPQQ41FuYndGa", onsubmit="javascript:return Tapestry.waitForPage(event);")
+									div(style="display: none;")
+										input(type="hidden", name="sid", value="htk98kgrlz")
+										input(type="hidden", name="t:formdata", value="ykMIZPJNRsB4cYP9hbpHRAralsU=:H4sIAAAAAAAAAFvzloG13JBBvyCxMjc1r0Q/ObEoRT84NSc1uSQAIuSbWpKRn+KYlwLkW2VkpqSk5sUbFBcxOOQXpeslFiQmZ6TqlSQWpBaXFFWa6iXnF6XmZCYB6dyC/Dyg9mI9D7AelYCi/OTU4uLg0qTczOLizPy8qHYF4QrpHWxMDIw+DNzJ+XklRfk5fom5qSUMQj5ZiWWJ+jmJeen6wSVFmXnp1hUFJQwcMOtJcHExyL4S0lwMdmMJpotnBn+S3LqlxZmJgcmHgSM5JxOo2jOlkKEO7AOgE0C2g3wAFgK5mBNqvaEp0PUwpwAAD31u/XQBAAA=")
+									p
+										input(type="hidden", name="hidden_0", value="4")
+										span#paymentmean  N° masked-pan [Expiré depuis le12/2015]
+									.customMessage3
+									.k-buttons-bar
+										p
+											input#submit_15(type="submit", name="submit_0", value="Supprimer")
+											a.bt-reset.bt-close(href="#")  Annuler
+					#provideraccount1-edit.k-modal.active(role="dialog", aria-hidden="true", style="display: none; height: 1219px;")
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							h3(tabindex="0") Souhaitez-vous modifier l’intitulé de votre moyen de paiement ?
+							.content
+								.customMessage1
+								.customMessage2
+								form#form_4(method="post", action="/fr/payment/card/selectpaymentmethodandpay.form_3;jsessionid=9WmgC8Eew+arPQQ41FuYndGa", onsubmit="javascript:return Tapestry.waitForPage(event);")
+									div(style="display: none;")
+										input(type="hidden", name="sid", value="htk98kgrlz")
+										input(type="hidden", name="t:formdata", value="4yJFDfm0Mp8ZBfsQ1nmVhGfJlXk=:H4sIAAAAAAAAAJ3QsUoDQRAG4MmBEkmnWIiNhbZ3RBMEbQyCKEQJHDY2YW93kqzc7Z67E3NpUgk+g41PIFYK9insfAcfwMbCysK9aEAJiLHcYf/5P+bmBWZ6FVhPWT9BRQFnRgQhxsip8Tk6ROpoUVPCvbcIM2pJjEWzbA1UtWn7LGW8gz6xFC2ZftXn2mAsIz9iFv1a5IaM014eWg2Ruuna8bD0vPj47kGhDiWuFRkdH7EECebrp+ycBTFT7SAkI1V7O0sJSt9q/42tTYttGM3R2rAbJdJaqdXwVlRab9dPHkCW9soQ/NHRkUKgam44xM6vCK6TVCsXt/7+KDNpOLlcWciWH2YnjncGAyjkxyqO66YQ2nw/TSccmWhSeBW+Lt3fXex64NWhyGPpfh+IEc+JHSFv/yGe+6ovbzr9mPIBxVv52JkCAAA=")
+									p
+										input#textfield_3(type="text", name="textfield_1", value="provideraccount-1", autocomplete="OFF", maxlength="20")
+										input(type="hidden", name="hidden_3", value="1")
+										span#paymentmean  foXXXXXXXXXXXXXom
+									.customMessage3
+									.k-buttons-bar
+										p
+											input#submit_17(type="submit", name="submit_3", value="Valider")
+											a.bt-reset.bt-close(href="#")  Annuler
+					#provideraccount1-delete.k-modal.active(role="dialog", aria-hidden="true", style="display: none; height: 1219px;")
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							h3(tabindex="0") Souhaitez-vous supprimer ce moyen de paiement de votre portefeuille ?
+							.content
+								.customMessage1
+								.customMessage2
+								form#form_5(method="post", action="/fr/payment/card/selectpaymentmethodandpay.form_4;jsessionid=9WmgC8Eew+arPQQ41FuYndGa", onsubmit="javascript:return Tapestry.waitForPage(event);")
+									div(style="display: none;")
+										input(type="hidden", name="sid", value="htk98kgrlz")
+										input(type="hidden", name="t:formdata", value="41ThtBLoGNycde5/YhxZrEbOyNE=:H4sIAAAAAAAAAFvzloG13JBBvyCxMjc1r0Q/ObEoRT84NSc1uSQAIuSbWpKRn+KYlwLkW2VkpqSk5sWbFBcxOOQXpeslFiQmZ6TqlSQWpBaXFFWa6iXnF6XmZCYB6dyC/Dyg9mI9D7AelYCi/OTU4uLg0qTczOLizPy8qHYF4QrpHWxMDIw+DNzJ+XklRfk5fom5qSUMQj5ZiWWJ+jmJeen6wSVFmXnp1hUFJQwcMOtJcHExyL4S0lwMdmMJpotnBn+S3LqlxZmJgcmHgSM5JxOo2jOlkKEO7AOgE0C2g3wAFgK5mBNqvaEl0PUwpwAAqwV+PXQBAAA=")
+									p
+										input(type="hidden", name="hidden_4", value="1")
+										span#paymentmean  foXXXXXXXXXXXXXom
+									.customMessage3
+									.k-buttons-bar
+										p
+											input#submit_19(type="submit", name="submit_4", value="Supprimer")
+											a.bt-reset.bt-close(href="#")  Annuler
+					#provideraccount2-edit.k-modal.active(role="dialog", aria-hidden="true", style="display: none; height: 1219px;")
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							h3(tabindex="0") Souhaitez-vous modifier l’intitulé de votre moyen de paiement ?
+							.content
+								.customMessage1
+								.customMessage2
+								form#form_6(method="post", action="/fr/payment/card/selectpaymentmethodandpay.form_3;jsessionid=9WmgC8Eew+arPQQ41FuYndGa", onsubmit="javascript:return Tapestry.waitForPage(event);")
+									div(style="display: none;")
+										input(type="hidden", name="sid", value="htk98kgrlz")
+										input(type="hidden", name="t:formdata", value="ZF94Eb68ESplCnpas/v4Tnirp70=:H4sIAAAAAAAAAJ3QsUoDQRAG4MmBEkmnWIiNhbZ3JCaNNgZBFKIEDhubsLc7SU7udtfdibk0qQSfwcYnECsF+xR2voMPYGNhZeFeNKAExFjusP/8H3PzAnP9KlQ0G6QoKeDMiCDEBDk1P0eHSF0l6lK49xZhRu0YE9EqWwM1ZTo+04x30Sem0ZIZ1HyuDCZx5EfMol+P3JBx2stD6yFST28cj0rPy4/vHhQaUOJKklHJEUuRYLFxys5ZkDDZCUIysexsZ5qg9K3239j6rNimURytDXtRGlsbKzm6FdX22/WTB5DpfhmCPzq6sRAoW5sOsfMrgqtUK+ni1t8fZ6YNJ5drS9nqw/zU8c5gCIX8WMVJ3QxCm++n2YRjE00Lr8LXlfu7i10PvAYUeRK73wdizHNiR8jbf4gXvuorZaefUD4A65IOipkCAAA=")
+									p
+										input#textfield_4(type="text", name="textfield_1", value="provideraccount-2", autocomplete="OFF", maxlength="20")
+										input(type="hidden", name="hidden_3", value="2")
+										span#paymentmean  foXXXXXXXXXXXXXom
+									.customMessage3
+									.k-buttons-bar
+										p
+											input#submit_21(type="submit", name="submit_3", value="Valider")
+											a.bt-reset.bt-close(href="#")  Annuler
+					#provideraccount2-delete.k-modal.active(role="dialog", aria-hidden="true", style="display: none; height: 1219px;")
+						.overlay
+						.modal-body
+							p.close
+								a(aria-label="Fermer", href="#") ✖
+							h3(tabindex="0") Souhaitez-vous supprimer ce moyen de paiement de votre portefeuille ?
+							.content
+								.customMessage1
+								.customMessage2
+								form#form_7(method="post", action="/fr/payment/card/selectpaymentmethodandpay.form_4;jsessionid=9WmgC8Eew+arPQQ41FuYndGa", onsubmit="javascript:return Tapestry.waitForPage(event);")
+									div(style="display: none;")
+										input(type="hidden", name="sid", value="htk98kgrlz")
+										input(type="hidden", name="t:formdata", value="Jt0QNrxHjUPCLrGtJvlBHKypBBQ=:H4sIAAAAAAAAAFvzloG13JBBvyCxMjc1r0Q/ObEoRT84NSc1uSQAIuSbWpKRn+KYlwLkW2VkpqSk5sWbFBcxOOQXpeslFiQmZ6TqlSQWpBaXFFWa6iXnF6XmZCYB6dyC/Dyg9mI9D7AelYCi/OTU4uLg0qTczOLizPy8qHYF4QrpHWxMDIw+DNzJ+XklRfk5fom5qSUMQj5ZiWWJ+jmJeen6wSVFmXnp1hUFJQwcMOtJcHExyL4S0lwMdmMJpotnBn+S3LqlxZmJgcmHgSM5JxOo2jOlkKEO7AOgE0C2g3wAFgK5mBNqvZEx0PUwpwAABIGDanQBAAA=")
+									p
+										input(type="hidden", name="hidden_4", value="2")
+										span#paymentmean  foXXXXXXXXXXXXXom
+									.customMessage3
+									.k-buttons-bar
+										p
+											input#submit_23(type="submit", name="submit_4", value="Supprimer")
+											a.bt-reset.bt-close(href="#")  Annuler
+			footer(lang="en", role="contentinfo")
+				p.baseline Société Générale
+				p.k-copyright
+					| Copyright ©
+					script.
+						document.write(new Date().getFullYear())
+					| 2017 - Tous droits réservés
+		script(type="text/javascript").
+			Tapestry.DEBUG_ENABLED = true;
+			Tapestry.onDOMLoaded(function() {
+			Tapestry.init({
+			"formEventManager" : [
+			{
+			"formId" : "walletSelectionForm",
+			"validate" : {
+			"submit" : false,
+			"blur" : false
+			}
+			},
+			{
+			"formId" : "form",
+			"validate" : {
+			"submit" : true,
+			"blur" : true
+			}
+			},
+			{
+			"formId" : "form_0",
+			"validate" : {
+			"submit" : true,
+			"blur" : true
+			}
+			},
+			{
+			"formId" : "form_1",
+			"validate" : {
+			"submit" : true,
+			"blur" : true
+			}
+			},
+			{
+			"formId" : "form_0_0",
+			"validate" : {
+			"submit" : true,
+			"blur" : true
+			}
+			},
+			{
+			"formId" : "form_2",
+			"validate" : {
+			"submit" : true,
+			"blur" : true
+			}
+			},
+			{
+			"formId" : "form_0_1",
+			"validate" : {
+			"submit" : true,
+			"blur" : true
+			}
+			},
+			{
+			"formId" : "form_3",
+			"validate" : {
+			"submit" : true,
+			"blur" : true
+			}
+			},
+			{
+			"formId" : "form_0_2",
+			"validate" : {
+			"submit" : true,
+			"blur" : true
+			}
+			},
+			{
+			"formId" : "form_4",
+			"validate" : {
+			"submit" : true,
+			"blur" : true
+			}
+			},
+			{
+			"formId" : "form_5",
+			"validate" : {
+			"submit" : true,
+			"blur" : true
+			}
+			},
+			{
+			"formId" : "form_6",
+			"validate" : {
+			"submit" : true,
+			"blur" : true
+			}
+			},
+			{
+			"formId" : "form_7",
+			"validate" : {
+			"submit" : true,
+			"blur" : true
+			}
+			}
+			]
+			});
+			new ClickOnce('usenewpaymentmean');
+			new ClickOnce('cancel_0');
+			Tapestry.init({
+			"activate" : [
+			"cvvField"
+			]
+			});
+			});

@@ -1,0 +1,25 @@
+include headSection
+
+.c-wysiwyg
+  h2 Titre de section
+
++demo({
+  desc: "Spécifié le thème sur le parent"
+})
+  +headSection({
+    noLink: true
+  })
+
+.c-wysiwyg
+  h2 Avec lien
+
++demo({
+  desc: "Couleur du lien spécifiée par le thème sur le parent"
+})
+  // Thème pour contexte démo :
+  .u-theme-magenta
+
+    +headSection({
+      title: "My Little Poneeey !",
+      text: "Toutes nos actualités et conseils sur les poneys"
+    })

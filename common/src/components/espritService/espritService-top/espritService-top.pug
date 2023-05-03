@@ -1,0 +1,29 @@
+mixin espritService-top(data)
+  - var data = data|| {}
+
+  // .c-espritService-top
+  .c-espritService-top.l-row.l-row--nogut
+    .c-espritService-top__block.l-col-medium-6
+      h3.c-espritService-top__title
+        span.icon.icon-star
+        | Le mieux noté
+
+      +espritService-note({
+        titleLink: true,
+        avisLink: true,
+        title: 'Relevé de compteur',
+        noAggregate: true
+      })
+
+    .c-espritService-top__block.l-col-medium-6
+      h3.c-espritService-top__title
+        span.icon.icon-heart
+        | Le coup de coeur
+
+      +espritService-note({
+        titleLink: true,
+        avisLink: true,
+        title: 'Relevé de compteur',
+        noAggregate: true
+      })
+  // end - .c-espritService-top

@@ -1,0 +1,56 @@
+.c-legalMention {
+  padding: 15px;
+  border-top: 1px solid $grey-light;
+}
+
+.c-legalMention__btn {
+  @extend %reset-style-button;
+  color: $grey;
+  text-decoration: underline;
+  font-size: 1.5rem;
+  outline: none;
+
+  .icon-caret-bottom {
+    transition: all .3s ease-in-out;
+    font-size: 2.4rem;
+    vertical-align: middle;
+  }
+
+  &[aria-expanded="true"] {
+    .icon-caret-bottom {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.c-legalMention__content {
+  max-height: 0;
+  height: 0;
+  overflow: hidden;
+  transform: translateY(-10px);
+  opacity: 0;
+  color: $grey;
+  font-size: 1.2rem;
+  transition: opacity .3s ease-in-out,
+              max-height .2s ease-in-out,
+              transform .2s ease-out;
+
+  &.is-opened, .no-js & {
+    max-height: 5000px;
+    height: auto;
+    overflow: auto;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@include media(">=small") {
+  .c-legalMention {
+    padding: 25px 60px;
+    border-top: none;
+  }
+
+  .c-legalMention__content {
+    font-size: 1.3rem;
+  }
+}

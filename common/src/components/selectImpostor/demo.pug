@@ -1,0 +1,26 @@
+include selectImpostor
+
+.c-wysiwyg
+  h2 Composant selectImpostor
+
++demo({
+  desc: "Utilise le toggle.js pour l'ouverture / fermeture"
+})
+  +selectImpostor({
+    default: "Toutes les thématiques",
+    settings: {
+      target: "themeFilter"
+    }
+  })
+    +selectImpostorOption({
+      text: "Déménagement"
+    })
+    +selectImpostorOption({
+      text: "Gaz"
+    })
+    +selectImpostorOption({
+      text: "Électricité"
+    })
+    +selectImpostorOption({
+      text: "Économies d'énergie"
+    })

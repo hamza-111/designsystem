@@ -1,0 +1,122 @@
+include ../../../../common/src/components/legalMention/legalMention
+mixin jauge(data)
+  - var data			= data || {}
+  - var theme     = data.theme || ""
+  - var nth       = data.nth || 5
+
+  //.c-jauge
+  .c-jauge.c-jauge__theme(class=theme)
+    .c-jauge__main
+      .c-jauge__wording
+        .c-jauge__title
+          span.c-jauge__color Projection 
+          span  de la régularisation à la fin de votre plan de mensualisation
+        .c-jauge__desc La relève de votre consommation effectuée le 18 février 2019  projette une consommation annuelle inférieure à celle estimée dans votre plan de mensualisation :
+        .c-jauge__price.c-jauge__color - 175 € sur la régularisation prochaine
+    .c-jauge__jauge
+      .c-jauge__projection      
+        div(class=!theme ? "u-hide" : "").c-jauge__projectionPrice
+          span.c-jauge__bg + 240 € TTC
+            .c-jauge__tooltip 
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26€ TTC
+              hr
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26€ TTC 
+          span.c-jauge__color Projection
+        div(class="c-jauge--nth-"+nth).u-margin-t-80
+          .c-jauge__cube.c-jauge__cubeFin 680 € TTC
+            .c-jauge__tooltip 
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+              hr
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+            span.c-jauge__cubeFinMonth Juillet
+            span.c-jauge__cubeFinLabel Consommation prévue
+          .c-jauge__cube
+            .c-jauge__tooltip 
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+              hr
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+          .c-jauge__cube
+            .c-jauge__tooltip 
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+              hr
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+          .c-jauge__cube
+            .c-jauge__tooltip 
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+              hr
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26€ TTC
+          .c-jauge__cube
+            .c-jauge__tooltip 
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+              hr
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+          .c-jauge__cube.c-jauge__cubeReleve
+            .c-jauge__tooltip 
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+              hr
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+            span.c-jauge__cubeReleveMonth Février
+            span.c-jauge__cubeReleveLabel Relevé
+          .c-jauge__cube
+            .c-jauge__tooltip 
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+              hr
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26 € TTC
+            .c-jauge--active
+          .c-jauge__cube
+            .c-jauge__tooltip 
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26€ TTC
+              hr
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26€ TTC
+          .c-jauge__cube
+            .c-jauge__tooltip 
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26€ TTC
+              hr
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26€ TTC
+          .c-jauge__cube
+            .c-jauge__tooltip 
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26€ TTC
+              hr
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26€ TTC
+          .c-jauge__cube.c-jauge__cubeDebut
+            .c-jauge__tooltip 
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26€ TTC
+              hr
+              span.c-jauge__tooltipTime Au 13 juillet 2019
+              span.c-jauge__tooltipPrice 26€ TTC
+
+
+            span.c-jauge__cubeDebutMonth Aout
+            span.c-jauge__cubeDebutLabel Début du plan
+    .c-jauge__boutton
+      .c-jauge__bouttonTxt Vous voulez revoir votre plan de mensualisation ?
+      .c-jauge__btn
+        +baseBtn({
+          text: "Contacter le service client",
+          iconRight: "icon-external-page",
+          empty: true
+        })
+    a.c-jauge__ancre Mentions légales

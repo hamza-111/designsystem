@@ -1,0 +1,185 @@
+h2.u-heading-1.u-margin-b-60 kit page mes facture
+
+
++demo({
+  desc: "les cas d'erreur pour le bloc solde KO"
+})
+  .l-row
+    .l-col-medium-12
+
+      +pushLight({
+        light:true
+      })
+        .c-mesFactureInfo__titleDesc
+          h2.c-mesFactureInfo__title.u-margin-b-20.u-margin-small-b-20 VOTRE DERNIERE <b>INDEX</b> FACTURE du  12/12/2020: <br><b class="c-mesFactureInfo__title--index">28 555 M<sup>3</sup></b>
+          .c-pushLight-flex
+            .c-pushLight-flexContent
+              p 
+                strong Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe nemo facilis sint eaque voluptatum dolorum unde neque, asperiores vel enim amet esse suscipit veniam dicta autem culpa, nihil quasi doloremque!
+
+        +btnWrapper.u-theme-blue.c-btnWrapper--fullOnMobile
+          +baseBtn({
+            text: 'Je corrige mon index',
+            secondary: true
+          })
+
+
++demo({
+  desc: "block pour facture d'indexation"
+})
+  .l-row
+    .l-col-medium-4
+      +mesFactureHeaderPaiement({
+        error : true
+      })
+
++demo({
+  desc: "les cas d'erreur pour le bloc solde KO"
+})
+
++demo({
+  desc : "les cas d'erreur pour le bloc mes facture"
+})
+  .l-row
+    .l-col-medium-7
+      +mesFactureInfo({
+        error : true,
+        txt : "MA DERNIERE",
+        txtInfo : "FACTURE"
+      })
+
++demo({
+  desc : "les cas d'erreur pour le bloc mes paiements"
+})
+  .l-row
+    .l-col-medium-7
+      +mesFactureInfo({
+        error : true,
+        info : true,
+        txt : "MON DERNIER",
+        txtInfo : "PAIEMENT"
+      })
+
++demo({
+  desc: " cas d'erreur bloc tableaux"
+})
+  .l-row
+    .l-col-medium-12
+      +mesFactureTable({
+        error : true
+      }).c-mesFactureTableError
+
++demo({
+  desc: " cas d'erreur bloc tableaux"
+})
+  .l-row
+    .l-col-medium-12
+      +mesFactureTableFacture({
+        error : true
+      }).c-mesFactureTableError
+
++demo({
+  desc : "cas d'erreur tableaux prochaine paiements"
+})
+  .l-row
+    .l-col-medium-12
+      +mesFactureTableProchainePaiement({
+        error : true
+      }).c-mesFactureTableError
+
+.l-wrapper--large
+  h2.u-heading-2 header 1
+  +demo()
+    +mesFactureHeader({
+      bloc : true
+    })
+
+  h2.u-heading-2 header 2
+
+  +demo()
+    +mesFactureHeader({
+      bloc : false
+    })
+
+  h2.u-heading-2 ma dernière facture
+
+  +demo()
+    .l-row.l-row--noSideGut
+      .l-col-medium-7
+        +mesFactureInfo({
+          info:false,
+          theme : 'u-bg-magenta',
+          statut : 'Paiement rejeté'
+        })
+      .l-col-medium-5
+        +mesFactureInfo({
+          info:true
+        })
+
+  h2.u-heading-2 Les tableaux
+
+  +demo()
+    +mesFactureTable()
+  +demo()
+    +mesFactureTableFacture()
+  +demo()
+    +mesFactureTableProchainePaiement()
+
+  h2.u-heading-2 Push éco-energie + Push chèque énergie
+  +demo()
+    .l-row
+      .l-col-medium-6  
+        +miniPush({
+          themeColor: "blue",
+          img: true,
+          imgSmall: 'ecoEnergiePush.jpg',
+          imgLarge: 'ecoEnergiePush.jpg',
+          textColor: 'u-color-black',
+          themeTitle: false,
+          title: 'TOUT SAVOIR SUR LA',
+          subTitle: '<span class="u-color-blue"><b>PRIME ÉCO-ÉNERGIE</b></span> DE Gaz TARIF RÉGLEMENTÉ :',
+          shadow : ' ',
+          btnTxt : "Je découvre",
+          themeTextColor : "white",
+          imgMobile : false,
+          noWidth : true,
+          text: 'Vous souhaitez lancer des travaux d’économies d’énergie et </br> cherchez une solution de financement ?</br> Pour amortit les dépenses engagées, une aide peut être obtenue </br> en récompense de l’effort fourni.'
+        })
+      .l-col-medium-6  
+        +miniPush({
+          themeColor: "blue",
+          img: true,
+          imgSmall: 'ecoEnergiePush.jpg',
+          imgLarge: 'ecoEnergiePush.jpg',
+          textColor: 'u-color-black',
+          themeTitle: false,
+          title: "VOUS BÉNÉFICIEZ D'UN",
+          subTitle: "<span class='u-color-blue'><b>CHÉQUE ÉNERGIE DE 144€</b></span> DÉLIVRÉ PAR L'ÉTAT POUR L'ANNÉE 2018/2019",
+          shadow : ' ',
+          btnTxt : "J'effectue ma pré-affectation",
+          themeTextColor : "white",
+          imgMobile : true,
+          noWidth : true,
+          text: "<div class='u-margin-b-20'><b>Durée de validité : </b> du 01/04/2018 au 31/03/2019</div>Demandez une pré-affectation pour les années suivantes afin que votre chèque énergie soit automatiquement détruit à vos factures d'énergie."
+        })
+  
+  h2.u-heading-2 bloc FAQ + MES JUSTIFICATIF
+  +demo()
+    .l-row.l-row--noSideGut
+      .l-col-medium-6
+      
+        +mesFactureFaq({
+          titre : "Mes Justificatis",
+          values : ['Justificatif de domicile' , 'Fiche de renseignements'],
+          icon : true,
+          color : "blue",
+          img : "justificatif.jpg"
+        })
+        
+      .l-col-medium-6  
+
+        +mesFactureFaq({
+          titre : "FAQ",
+          values : ['Comprendre ma facture' , 'Comment le montant de ma facture de gaz est-il calculé ?', 'Accéder à toutes nos questions/réponses']
+        })

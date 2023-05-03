@@ -1,0 +1,34 @@
+mixin adressBoxItem(data)
+  - var data         = data ||{}
+  - var text         = data.text || 'lorem ipsum'
+  - var imgSmall     = data.imgSmall || false
+  - var imgMedium    = data.imgMedium || false
+  - var infoBox      = data.infoBox || false
+  - var hasSeparator = data.hasSeparator || false
+
+  // .c-addressBoxItem
+  .c-addressBoxItem&attributes(attributes)
+    .c-addressBoxItem__intro
+      h3.c-addressBoxItem__title.u-heading-4
+        span.c-addressBoxItem__titleText!=text
+        span.c-addressBoxItem__titlePicto.icon.icon-chevron-top
+
+      if imgSmall || imgMedium
+        .c-addressBoxItem__img
+          if imgSmall
+            img(src=imgSmall alt="").u-hideMediumUp
+          if imgMedium
+            img(src=imgMedium alt="").u-hideSmall
+
+          if infoBox
+            .c-addressBox__infoBox
+              +toolTip({
+                labelText: "Qu’est-ce que le PDL ou le PCE"
+              })
+
+    .c-addressBoxItem__content
+      block
+
+    if hasSeparator
+      .c-addressBox__separator OU
+  // end .c-addressBoxItem

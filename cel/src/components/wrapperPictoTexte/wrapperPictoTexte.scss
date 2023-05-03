@@ -1,0 +1,39 @@
+.c-wrapperPictoText {
+  position: relative;
+  text-align: center;
+
+  .c-wrapperPictoText__icon{
+    position: relative;
+    display: inline-block;
+  }
+
+  .icon {
+    display: inline-block;
+  }
+
+  .icon-thin_check {
+    display: none;
+    position: absolute;
+    top: 18px;
+    left: 28px;
+    color: $teal;
+    font-size: 3rem;
+  }
+
+  &.is-valid {
+    .icon-thin_check {
+      display: block;
+    }
+  }
+
+  .c-wrapperPictoTexte__text {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    margin-top: 12px;
+  }
+
+  .c-inputMat {
+    padding-top: 23px;
+  }
+}

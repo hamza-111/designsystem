@@ -1,0 +1,25 @@
+.c-loginAccess {
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.c-loginAccess__text {
+  margin-bottom: 10px;
+}
+
+.c-loginAccess__item {
+  padding: 10px 0;
+
+  & + .c-loginAccess__item {
+    border-top: 1px solid $grey-light;
+  }
+}
+
+@include media(">=small") {
+  .c-loginAccess {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

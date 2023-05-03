@@ -1,0 +1,10 @@
+mixin date(data)
+  - var data      = data || {}
+
+  // .c-date
+  .c-date
+    p
+      | Publié le
+      = " "
+      time(datetime="2016-09-01" pubdate) 01/09/2016
+  // end .c-date

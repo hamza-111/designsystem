@@ -1,0 +1,24 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title         = "assuranceBand"
+  - var page          = ""
+  - var bodyClass     = ""
+  - var description   = "Module assuranceBand"
+  - var noHeaderFooter = true
+  - var demoMode      = true
+
+
+//- JS (bas) pour cette page
+block JS
+  script(src="../js/bas/demo.js")
+
+
+//- Page content
+block content
+  include ../../../common/src/components/assuranceBand/demo

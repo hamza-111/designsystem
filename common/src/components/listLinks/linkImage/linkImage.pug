@@ -1,0 +1,36 @@
+mixin linkImage(data)
+  - var data        = data || {}
+  - var link        = data.link || '#'
+  - var linkLabel   = data.linkLabel || {}
+  - var html        = data.html || false
+  - var isImage     = (data.isImage === true ? true : false)
+  - var iconClass   = (isImage === true ? false : 'icon-contact-advice')
+
+  // .c-linkImage
+  a.c-linkImage(href=link)
+    if isImage
+      span.c-linkImage__image
+        span.c-linkImage__spriteContent
+          span.c-linkImage__spriteContent__sprite.u-theme-bg-after.child-hover(
+            style="background-image:url('../images/contrib/listLink-sprite01.png');background-position: -200px 0;"
+          )
+    else
+      span.c-linkImage__image.c-linkImage__image--noImage.u-theme-bg.u-theme-bg-after.child-hover
+        span.c-linkImage__picto.icon(class=iconClass)
+
+    .c-linkImage__content
+      span.c-linkImage__text!=linkLabel
+      | &nbsp;
+      span.c-linkImage__icon.icon.icon-chevron-right.u-theme-color
+
+  if html
+    .c-linkImage__paragraph
+      .c-wysiwyg!=html
+
+      .c-linkImage__extraLink
+        span.c-linkLongArrow.c-linkLongArrow--inline.u-theme-color.u-theme-color-hover(role="link")
+          span.c-linkLongArrow__content
+            span.c-linkLongArrow__text Lorem ipsum text
+            | &nbsp;
+            span.c-linkLongArrow__icon.icon.icon-long-arrow-right
+  // end .c-linkImage

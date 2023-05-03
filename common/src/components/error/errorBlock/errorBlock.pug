@@ -1,0 +1,20 @@
+include ../../linkLongArrow/linkLongArrow
+
+mixin errorBlock(data)
+  - var data = data || {}
+  - var className = data.className || 'u-theme-purple'
+  - var title = data.title || 'Le titre'
+
+  .c-errorBlock(class=className)
+    .c-errorBlock__title.u-theme-bg.u-textCenter.u-fontSize-medium=title
+    ul.c-errorBlock__content.u-bg-grey-light
+      li
+        +linkLongArrow({
+        text: 'Lorem ipsum dolor sit amet, consectetur',
+        icon: 'chevron-right u-theme-color'
+        })
+      li
+        +linkLongArrow({
+        text: 'Sed ut perspiciatis unde ',
+        icon: 'chevron-right u-theme-color'
+        })

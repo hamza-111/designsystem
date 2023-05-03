@@ -1,0 +1,215 @@
+// Submit button :
+.c-baseBtn {
+  font-family: 'Open Sans', sans-serif;
+  @extend %reset-style-button;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  min-height: 48px;
+  transition: all .2s ease-in-out;
+  text-align: center;
+  justify-content: center;
+  background-color: $genBlue;
+
+  @include hover-focus-active() {
+    background-color: $genBlue-hover;
+  }
+
+  // Bouton compte a rebour
+  &.has-countDown {
+    padding-right: 70px;
+  }
+
+  &:not(.c-baseBtn--secondary):not(.c-baseBtn--empty):not(.c-baseBtn--select) {
+    color: $white;
+  }
+
+  + .c-baseBtn {
+    margin-left: 15px;
+  }
+
+  // ETAT DISABLED
+  &:disabled,
+  &.is-disabled {
+    background-color: #e1e1e1 !important;
+    color: #555555  !important;
+    border: 0 !important;
+    cursor: not-allowed !important;
+  }
+}
+
+.c-baseBtn__iconLeft,
+.c-baseBtn__iconRight {
+  font-size: 2.5rem;
+  line-height: 0;
+}
+
+.c-baseBtn__iconLeft {
+  margin-left: -8px;
+  margin-right: 8px;
+}
+
+.c-baseBtn__iconRight {
+  margin-left: 8px;
+  margin-right: -8px;
+}
+
+.c-baseBtn--iconOnly {
+  .c-baseBtn__iconLeft, .c-baseBtn__iconRight {
+    margin-left:  0;
+    margin-right: 0;
+  }
+}
+
+// forcer le margin auto
+.c-baseBtn--push.c-baseBtn--push {
+  margin-left: auto;
+}
+
+.c-baseBtn__content {
+  position: relative;
+  z-index: 1;
+  vertical-align: middle;
+  width: 100%;
+  font-weight: 600;
+}
+
+header .c-baseBtn__content {
+  position: relative;
+  z-index: 0;
+  vertical-align: middle;
+  max-width: 185px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c-siteNav__item .c-baseBtn__content {
+  text-overflow: initial;
+  overflow: initial;
+  white-space: initial;
+  max-width: initial;
+}
+
+// MODIFICATEURS :
+
+// Bouton plus grand et large
+.c-baseBtn--large {
+  padding: 15px 30px;
+  min-height: 60px;
+  font-size: 1.8rem;
+  font-weight: $font-bold;
+
+  + .c-baseBtn--large {
+    margin-left: 15px;
+  }
+}
+
+// Bouton d'action secondaire :
+.c-baseBtn.c-baseBtn--secondary,
+.c-baseBtn--empty {
+  background-color: transparent;
+  border: 1px solid;
+
+  @include hover-focus-active() {
+    background-color: #CBEAF9;
+  }
+}
+
+// bouton filaire :
+$form-colors-map: (
+  genBlue: $genBlue,
+  green: $green
+);
+
+$form-colors-hover-map: (
+  genBlue: $genBlue-hover,
+  green: $green-hover
+);
+
+.c-baseBtn--empty {
+  .icon-chevron-left,
+  .icon-chevron-right {
+    font-size: 2.5rem;
+    vertical-align: middle;
+    color: $grey;
+  }
+
+  .icon {
+    transition: color .3s;
+  }
+
+  @each $name, $value in $form-colors-map {
+    .u-theme-#{$name} & {
+      color: $value;
+      .icon { color: $value; }
+
+      @include hover-focus-active() {
+        border-color: map-get($form-colors-hover-map, $name);
+        color: map-get($form-colors-hover-map, $name);
+        // background-color: $grey-light;
+        .icon { color: map-get($form-colors-hover-map, $name); }
+      }
+
+      // annuler certains effets de focus
+      &:focus {
+        color: $value !important;
+      }
+    }
+  }
+}
+
+// Bouton avec loader
+.c-baseBtn--hasLoader {
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all .4s;
+
+  .c-spinner {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity .4s;
+  }
+
+  &.is-loading {
+    padding-right: 55px;
+
+    .c-spinner {
+      opacity: 1;
+    }
+  }
+}
+
+.c-btnBase__countDown {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 32px;
+  transform: translateY(-50%);
+}
+
+.c-baseBtn--countDown .c-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.c-btnBase__timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+.c-btn--colorTextOrange span{
+  color: $coral;
+}
+.c-btn--noBorder{
+  border: none;
+}

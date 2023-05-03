@@ -1,0 +1,225 @@
+$charte-colors-hover-map: (
+  genBlue:      $genBlue-hover,
+  greenPersian: $green-persian-hover,
+  greenBaaast:  $green-baaast-hover,
+  greenMint:    $green-mint-hover,
+  greyBaaast:   $grey-baaast-hover,
+  orange-baaast: $orange-baaast-hover,
+  blue: $blue-hover,
+  white: $white-hover,
+  black: $blackZero-hover
+  
+);
+
+$charte-colors-map: (
+  genBlue:      $genBlue,
+  greenPersian: $green-persian,
+  greenBaaast:  $green-baaast,
+  greenMint:    $green-mint,
+  greyBaaast:   $grey-baaast,
+  orange-baaast: $orange-baaast,
+  blue : $blue,
+  white: $white,
+  black: $blackZero
+);
+
+
+.c-miniPush {
+  text-decoration: none;
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.c-miniPush--link {
+  color: $genBlue;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.c-miniPush--act .c-miniPush--minHeight {
+  min-height: auto;
+}
+
+.c-miniPush--minHeight {
+  min-height: 400px;
+}
+
+.c-miniPush__content {
+  background: $grey-light;
+  position: relative;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  .c-btn { 
+    margin: 0;
+
+    &.c-miniPush__btn {
+      background: $genBlue;
+
+      @each $name, $value in $charte-colors-map {
+        &.c-miniPush__btn--#{$name} {
+          background: $value;
+          border: none;
+          
+          @include hover-focus-active() {
+            background: map-get($charte-colors-hover-map, $name);
+          }
+        }
+      }
+
+      @each $name, $value in $charte-colors-map {
+        &.c-miniPush__textBtn--#{$name} {
+          color: $value;
+        }
+      }
+    }
+
+  }
+
+  &.c-miniPush__content--img {
+    position: absolute!important;
+    background: transparent;
+    max-width: 100%;
+  }
+}
+
+.c-miniPush__theme {
+  font-family: HelveticaNeue, Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: flex;
+  @each $name, $value in $charte-colors-map {
+    &.c-miniPush__btn--#{$name} {
+      color: $value;
+    }
+  }
+  @each $name, $value in $charte-colors-map {
+    &.c-miniPush__textBtn--#{$name} {
+      color: $value;
+    }
+  }
+}
+
+.c-miniPush__title {
+  font-size: 2.6rem;
+  margin-bottom: 15px;
+  margin-top: 7px;
+  word-break: break-all;
+}
+
+.c-miniPush__subTitle {
+  font-weight: 100;
+}
+
+.c-miniPush__text {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+  line-height: 1.2; 
+}
+
+.c-btn__content {
+  font-size: 1.8rem;
+}
+
+.c-miniPush__img.c-miniPush--ajustBanner {
+  width: 100%;
+  height: 350px !important;
+}
+
+.c-miniPush__travauxImg {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+@include media(">small") {
+
+  .l-col-medium-3 .c-miniPush .c-btn {
+    min-width: 100%;
+  }
+
+  .c-miniPush {
+    .c-miniPush__content, .c-miniPush__img {
+      overflow: hidden;
+      height: 100%;
+    }
+  }
+
+}
+
+@include media("<=medium"){
+  .c-miniPush__text {
+    font-size: 1.5rem;
+  }
+
+  .c-miniPush__title {
+    font-size: 2.5rem;
+  }
+}
+
+@include media ("<=small"){
+  .c-miniPush__content.c-miniPush__content--img {
+    position: relative !important;
+  }
+
+  .c-miniPush__img {
+    height: 100% !important;
+    max-width: 100%;
+  }
+
+  .c-miniPush__imgMobile.c-miniPush__content.c-miniPush__content--img {
+    position: absolute !important;
+  }
+
+  .c-miniPush__content--imgNoBtn.c-miniPush__content.c-miniPush__content--img {
+    position: absolute !important;
+  }
+
+  .c-miniPush__title {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 950px) and (min-width: 768px) {
+  .c-miniPush .c-btn {
+    min-width: auto;
+  }
+}
+
+@include media (">small", "<=medium") {
+  .c-miniPush__img.c-miniPush--ajustBanner {
+    width: 100%;
+    height: (calc(100% + 50px)) !important;
+  }
+
+  .c-miniPush--act .c-miniPush__content.c-miniPush__content--img {
+    min-height: 260px;
+  }
+
+  .c-miniPush__title.c-miniPush--font-size {
+    font-size: 2.5rem;
+  }
+
+  .c-headerEcoGest__list li a {
+    margin: -47px 0 0 0;
+  }
+
+  .c-headerEcoGest__list li a img {
+    width: 70px;
+  }
+
+}
+
+@media screen and (max-width : 1000px) and (min-width : 768px) {
+  .c-miniPush--act {
+    background-color: white;
+    border-radius: 20px;
+    padding-bottom: 90px;
+  }
+  
+}

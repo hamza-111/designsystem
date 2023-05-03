@@ -1,0 +1,128 @@
+.c-serviceItem {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 23.5%;
+	border: 1px $grey-medium solid;
+	height: 420px;
+	margin-bottom: 50px;
+	margin-right: 2%;
+	position: relative;
+	background: white;
+
+	.c-btnWrapper {
+		width: 100%;
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+}
+.c-serviceItem__text {
+	width: 100%;
+	height: 130px;
+  padding: 0 15px;
+}
+
+.serviceItem__info {
+	width: 100%;
+	bottom: 0;
+}
+
+.c-autreService__items > :nth-child(4n),
+.c-serviceNonActive__items > :nth-child(4n) {
+  margin-right: 0 !important;
+}
+
+.c-serviceItem__paddingBtn {
+  padding: 0 45px;
+}
+
+.c-serviceItem__responsiveImage {
+	margin-bottom: 30px;
+	width: 100%;
+	height: 100px !important;
+}
+
+.c-serviceItem__titre {
+	width: 100%;
+	display: block;
+	padding-left:2%;
+	padding-right:2%;
+	margin-bottom: 20px;
+}
+
+.c-serviceItem__prix {
+	color: $genBlue;
+	width: 100%;
+	display: block;
+	bottom: 105px;
+}
+
+.c-serviceItem__para {
+	width: 100%;
+	display: block;
+	padding: 0 2%;
+	margin-bottom: 20px;
+}
+
+.c-serviceItem__savoirPlus {
+	display: block;
+	width: 100%;
+	bottom: 0;
+	margin-bottom: 20px;
+}
+
+@include media("<=medium") {
+
+	.c-serviceItem {
+			width: 32%;
+	}
+
+	.c-autreService__items > :nth-child(3n), .c-serviceNonActive__items > :nth-child(3n) {
+			margin-right: 0 !important;
+	}
+
+	.c-autreService__items > :nth-child(4n), .c-serviceNonActive__items > :nth-child(4n) {
+			margin-right: 2% !important;
+	}
+}
+
+@media (max-width: 767px) {
+
+	.c-serviceItem {
+		width: 100%;
+		height: auto;
+		margin:20px 0;
+	}
+
+	.serviceItem__info {
+		position: relative;
+	}
+
+	.c-serviceItem  .c-btnWrapper, .c-serviceItem__prix, .c-serviceItem__savoirPlus {
+			position: initial;
+			bottom: initial;
+	}
+
+	.c-serviceItem__titre {
+			font-size: 18px !important;
+	}
+
+	.c-autreService__items > :nth-child(3n), .c-serviceNonActive__items > :nth-child(3n) {
+			margin-right: 20px !important;
+	}
+
+	.c-autreService__items > :nth-child(4n), .c-serviceNonActive__items > :nth-child(4n) {
+			margin-right: 20px !important;
+	}
+
+}
+
+@include media("<small") {
+	.c-autreService__items > :nth-child(4n), .c-serviceNonActive__items > :nth-child(4n) {
+		margin-right: 0 !important;
+	}
+
+	.c-autreService__items > :nth-child(3n), .c-serviceNonActive__items > :nth-child(3n) {
+		margin-right: 0 !important;
+	}
+}

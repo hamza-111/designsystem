@@ -1,0 +1,74 @@
+$checkPictoWidth: 20px;
+
+.c-radioMat {
+  display: block;
+  margin-bottom: 15px;
+
+  .c-fieldInfo {
+    display: none;
+    width: 100%;
+  }
+
+  &.is-error {
+    .c-fieldInfo {
+      display: block;
+    }
+
+    .c-radioMat__check {
+      border-color: $error-color !important;
+    }
+  }
+}
+
+.c-radioMat__label {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding-left: $checkPictoWidth;
+  min-height: $checkPictoWidth;
+}
+
+/* Classe présente sur .c-radioMat__label et à affecter au contenu à aligner avezc le texte de la radio :*/
+.c-radioMat__labelPadding {
+  padding-left: 30px;
+}
+
+.c-radioMat__check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $checkPictoWidth;
+  height: $checkPictoWidth;
+  border: 1px solid;
+  border-radius: 50%;
+  transition: transform .2s,
+              box-shadow .2s;
+  transform: translateZ(0);
+  box-shadow: inset 0 0 0 2px white;
+}
+
+.c-radioMat__field {
+  @include visibility-hidden;
+}
+
+
+// Attention, nécessaire à cause des classes de thème
+.c-radioMat__field:not(:checked):focus + .c-radioMat__label .c-radioMat__check {
+  border-color: $genBlue-hover !important;
+}
+
+.c-radioMat__field:not(:checked) + .c-radioMat__label .c-radioMat__check {
+  background-color: $white;
+  border-color: $black;
+  box-shadow: inset 0 0 0 10px white;
+}
+
+.c-radioMat--link {
+  .c-radioMat__field + .c-radioMat__label .c-radioMat__text {
+    color: $genBlue;
+  }
+  .c-radioMat__field:checked + .c-radioMat__label .c-radioMat__text {
+    color: $black;
+  }
+}

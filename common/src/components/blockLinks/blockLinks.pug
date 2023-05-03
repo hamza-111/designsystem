@@ -1,0 +1,92 @@
+include blockLinksApps/blockLinksApps
+include ../linkLongArrow/linkLongArrow
+
+mixin blockLinks(data)
+  - var data            = data || {}
+  - var isDownloadFiles = data.isDownloadFiles || false
+  - var bottomLinks     = data.bottomLinks || false
+  - var appLinks        = data.appLinks || false
+  - var fullWidth       = data.fullWidth || false
+  - var classFullWidth  = fullWidth ? "c-blockLinks--full":  false
+  - var minBreakPoint   = data.minBreakPoint || "large"
+
+  // .c-blockLinks
+  section.c-blockLinks.u-padding-spacer.l-wrapper--large.l-row(class=classFullWidth)
+    if (isDownloadFiles)
+      .c-blockLinks__wysiwyg(class=fullWidth?"":"l-col-medium-7")
+        .c-wysiwyg
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, aliquid itaque assumenda rem, nostrum doloremque eveniet similique quod quae quia dolore voluptatibus? Similique at totam minus ab doloribus, distinctio magnam?
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, aliquid itaque assumenda rem, nostrum doloremque eveniet similique quod quae quia dolore voluptatibus? Similique at totam minus ab doloribus, distinctio magnam?
+
+        if bottomLinks
+          +blockLinks__bottomLinks(minBreakPoint)
+
+      .c-blockLinks__block(
+        class="c-blockLinks__block--files"
+        class=fullWidth ? "" : "l-col-medium-5"
+      ).u-bg-grey-light
+        .c-blockLinks__title.c-blockLinks__title Documents à télécharger
+
+        ul.c-blockLinks__group
+          li.c-blockLinks__item
+            +linkLongArrow({
+              text: 'Télécharger les conditions générales de vente',
+              reverse: true,
+              icon: 'download'
+            }).u-color-black
+
+          - for(var i = 0; i <= 5; i++)
+            li.c-blockLinks__item
+              +linkLongArrow({
+                text: 'Télécharger les conditions',
+                reverse: true,
+                icon: 'download'
+              }).u-color-black
+
+        if appLinks
+          +blockLinksApps()
+
+    else
+      .c-blockLinks__wysiwyg.l-col-medium-8
+        .c-wysiwyg
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, aliquid itaque assumenda rem, nostrum doloremque eveniet similique quod quae quia dolore voluptatibus? Similique at totam minus ab doloribus, distinctio magnam?
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, aliquid itaque assumenda rem, nostrum doloremque eveniet similique quod quae quia dolore voluptatibus? Similique at totam minus ab doloribus, distinctio magnam?
+
+      .c-blockLinks__block(class="c-blockLinks__block--links").u-theme-bg.l-col-medium-4
+        .c-blockLinks__title Accès rapides
+
+        ul.c-blockLinks__group
+          li.c-blockLinks__item
+            +linkLongArrow({
+              text: 'Estimer le montant de votre prime'
+            })(target="_blank" rel="noopener noreferrer").u-theme-bg.u-theme-bg-hover
+
+          -for(var i = 0; i <= 3; i++)
+            li.c-blockLinks__item
+              +linkLongArrow({
+                text: 'Déclarer votre projet'
+              })(target="_blank" rel="noopener noreferrer").u-theme-bg.u-theme-bg-hover
+  // end .c-blockLinks
+
+
+mixin blockLinks__bottomLinks(minBreakPoint)
+  // .c-blockLinks__bottomLinks
+  .c-blockLinks__bottomLinks.u-theme-green
+    .l-row.l-row--nogut
+      div(class="l-col-" + minBreakPoint + "-5" )
+        +linkLongArrow({
+          text: "Je compare les offres",
+          inlineText: false
+        }).u-theme-color.u-theme-color-hover
+
+      div(
+        class="l-col-" + minBreakPoint + "-2"
+        class=(minBreakPoint === "large" ? "u-hideMedium" : "")
+      ).u-hideSmall
+
+      div(class="l-col-" + minBreakPoint + "-5" )
+        +linkLongArrow({
+          text: "J'estime mon budget",
+          inlineText: false
+        }).u-theme-bg.u-theme-bg-hover
+  // end .c-blockLinks__bottomLinks

@@ -1,0 +1,208 @@
+@charset "utf-8";
+
+// assets
+@import "variables";
+@import "mixins";
+
+
+/***
+ * Utilities:
+ */
+@import "../../utilities/global";
+
+
+/***
+ * Variables spécifiques:
+ */
+$bg-purple : rgba(62, 61, 115, 0.57);
+$indigo:          #5c6bc0;
+$indigo-hover:    #36469d;
+
+
+/* -----------------*/
+/* --- navbar ---*/
+/* -----------------*/
+.k-composantIndex__navbar {
+  background-color: $white;
+  text-align: center;
+  font-size: 17px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+
+  & ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.6rem 5.8rem;
+    position: relative;
+    list-style: none;
+    box-shadow: 0 4px 6px 0 $grey-medium;
+    margin: 0;
+  }
+
+  & li {
+    flex: 1 1 auto;
+    border-left: 2px solid $grey-medium;
+    transform: skew(-15deg);
+    &:first-child {
+      border: none;
+    }
+    &:nth-child(2) {
+      border: none;
+    }
+
+    & a {
+      text-decoration: none;
+      color: $black;
+      transition: all .2s;
+      transform: skew(195deg);
+      display: inline-block;
+      &:hover {
+        color: $indigo-hover;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.k-composantPage__case {
+  .k-composantPage__caseHtmlButton.c-btnWrapper {border-top: 3px solid #00aaff; }
+}
+
+.k-composantIndex__headerLogo {
+  width: 50px;
+  height: 50px;
+}
+
+
+/* -----------------*/
+/* --- composant ---*/
+/* -----------------*/
+.k-composantIndex__Wrapper {
+  margin-top: 70px;
+}
+
+.k-composantIndex {
+  padding: 15px 0;
+  border-bottom: 1px solid $grey-medium;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 260px;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.k-composantPage__caseHtmlButton {
+  background: $grey!important;
+
+  @include hover-focus-active() {
+    background-color: $grey!important;
+  }
+}
+
+.k-composantIndex__desc  {
+  padding: 35px 25px;
+  min-height: 190px;
+}
+
+.desc {
+  background-color: #23241f;
+  color:#ccc;
+
+  code {
+    color:white;;
+    background-color: grey;
+  }
+}
+
+.k-composantIndex__title {
+  color: $indigo;
+  font-size: 1.2em;
+  transition: all .1s;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: $indigo-hover;
+  }
+}
+
+.k-composantIndex__titleArrow {
+  color: $indigo;
+  font-size: 1.5em;
+  margin-left: 4%;
+  line-height: 5px;
+  &:hover {
+    color: $indigo-hover;
+  }
+}
+
+.k-composantIndex__text {
+  margin-bottom: 0;
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: $black;
+}
+
+.k-composantIndex__maj {
+  font-size: 0.8em;
+  color: $text-grey;
+  margin-top: 20px;
+}
+
+.k-composantIndex__desc,
+.k-composantIndex__img {
+  width: 30%;
+  background-color: $white;
+  overflow: hidden;
+  margin: 5px;
+}
+
+.k-composantIndex__img {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  min-height: 260px;
+}
+
+.k-composantIndex__img--hover {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all .4s;
+  background-color: $bg-purple;
+  z-index: 1;
+  &:hover {
+    opacity: 1;
+  }
+}
+.k-composantIndex__img--hoverLink {
+  color: $white;
+  top: 50%;
+  position: relative;
+  transform: translateY(50%);
+  border: 1px solid $white;
+  padding: 15px;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+@media screen and (max-width: 850px) and (min-width: 0) {
+  .k-composantIndex {
+    max-width: 500px;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .k-composantIndex__desc,
+  .k-composantIndex__img {
+    width: auto;
+  }
+}

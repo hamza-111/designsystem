@@ -1,0 +1,30 @@
+mixin searchBar(data)
+	// .c-searchBar
+	.c-searchBar
+		form( action="http://localhost:4010/pages/homepage.html")
+			.c-searchBar__inputs
+				input.c-searchBar__input(type="text" placeholder="Rechercher dans le site gaz tarif réglementé")
+				button.c-searchBar__submit(type="submit" title="lancer la recherche").c-searchBar__icon.icon.icon-lens
+
+
+mixin searchBar-v3(data)
+	// .c-searchBar
+	.c-searchBar.v3(data-e-searchbar)
+		.c-searchBar__wrap
+			form( action="http://localhost:4010/pages/homepage.html")
+				.c-searchBar__inputs
+					input.c-searchBar__input(type="text" placeholder="Rechercher dans le site" autocomplete="off")
+					button.c-searchBar__submit(type="submit" title="lancer la recherche").c-searchBar__icon.icon.icon-lens <span> Rechercher </span>
+
+			.c-searchBar__links 
+				p Exemples : « <a href="#">déménagement</a> »,  « <a href="#">comment relever mon compteur</a> », « <a href="#">justificatif de domicile</a> » <a href="#" class="is-lastItem"></a>
+
+mixin searchBarMobile-v3(data)
+	.c-searchBarMobile.v3(data-e-searchbarmobile)
+		//- (data-e-searchbarmobile)
+		.c-searchBarMobile__wrap
+			form( action="http://localhost:4010/pages/homepage.html")
+				.c-searchBarMobile__inputs.is-active
+					button.c-searchBarMobile__return(type="button" title="retour").c-searchBarMobile__icon.icon.icon-ic_chevron-right 
+					input.c-searchBarMobile__input(type="text" placeholder="Rechercher dans le site" autocomplete="off" id="monChampTexte")
+					button.c-searchBarMobile__submit(type="submit" title="lancer la recherche" id="btnsub").c-searchBarMobile__icon.icon.icon-lens <span> Rechercher </span>

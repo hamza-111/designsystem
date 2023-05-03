@@ -1,0 +1,23 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../../../suiviconso/src/components/imageModal/imageModal
+//- Main variables
+block variables
+  - var title          = "Explication Facture"
+  - var page = ""
+  - var bodyClass = ""
+  - var description = ""
+  - var noHeaderFooter = true
+  - var demoMode = true
+
+
+//- JS (bas) pour cette page
+block JS
+
+
+//- Page content
+block content
+  include ../../../suiviconso/src/components/imageModal/demo

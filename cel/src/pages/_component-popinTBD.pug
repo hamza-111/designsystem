@@ -1,0 +1,45 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title = "popin TBD"
+  - var page = ""
+  - var bodyClass = ""
+  - var description = ""
+  - var noHeaderFooter = true
+  - var demoMode = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  .c-wysiwyg
+    h2.u-heading2 Popin TBD
+  +demo({
+    desc: `
+    - popin pour TBD <br>
+    - popin auto Start
+
+    `
+  })
+    +modal({
+      target: `{
+        "autoStart": "2"
+      }`,
+      size : "c-modal__content--large"
+    }).u-padding-a-40
+      .modal--popInTbd__topModal.u-padding-b-20 
+        .u-heading-2.modal--popInTbd__titre.u-padding-b-30 Bienvenue Madame Tartempion
+        p.modal--popInTbd__Text Vous pouvez maintenant gérer vos préférences de contact depuis votre "centre de préférence."
+
+      +btnWrap.u-padding-b-20 
+        +btn.u-width33.c-btn--empty-blue(data-e-modal-close) Je continue ma navigation
+        +btn.u-width33 J'accède à mes préférences
+      p.modal--popInTbd__Text Vous pouvez gérer toutes vos préférences de contact à tout moment depuis la page "Mon profil".

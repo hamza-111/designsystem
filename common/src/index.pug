@@ -1,0 +1,368 @@
+include components/kit
+
+doctype html
+<!--[if IE 8]><html data-debug lang="fr" class="oldie ie8 no-js"><![endif]-->
+<!--[if IE 9]><html data-debug lang="fr" class="oldie ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+html(data-debug lang="fr" class="no-js")
+  <!--<![endif]-->
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name='description' content="")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    title Index
+    link(rel="stylesheet" href="css/kit.css")
+
+    script(src="../js/haut/modernizr-custom.js")
+    script(src="http://code.jquery.com/jquery-2.1.3.min.js")
+    script(src="../js/haut/init.js")
+
+    //- style.
+    //-   body {
+    //-     margin: 0;
+    //-     font-family: helvetica, aria, sans-serif;
+    //-     color: #343434;
+    //-     background-color: #f2f2f2;
+    //-   }
+    //-   body * {
+    //-     box-sizing: border-box;
+    //-   }
+    //-   section {
+    //-     margin: 0 auto;
+    //-     padding: 10px 20px;
+    //-     width: 100%;
+    //-     max-width: 920px;
+    //-     background-color: #fff;
+    //-     box-shadow: 0 0 20px rgba(0, 0, 0, 0.18);
+    //-   }
+    //-   li {
+    //-     line-height: 1.5em;
+    //-   }
+    //-   a {
+    //-     text-decoration: none;
+    //-     color: #059ce7;
+    //-   }
+    //-   a:hover {
+    //-     border-bottom: 1px solid;
+    //-   }
+    //-   h1 {
+    //-     margin: 40px 0;
+    //-     text-transform: uppercase;
+    //-   }
+    //-   h2 {
+    //-     border-bottom: 1px solid #e1e1e1;
+    //-     margin: 40px 0 25px;
+    //-     padding-bottom: 18px;
+    //-   }
+    //-   h2, h3 {
+    //-     padding-left: 20px;
+    //-   }
+
+
+  body
+    section(style="margin-top:100px;")
+      h1 COMMON
+
+      ul
+        li: a(href="pages/styledown.html") UI kit
+        li: a(href="pages/colors.html") Colors
+        li: a(href="pages/_component-formMat.html") formMat
+        li: a(href="pages/_component-btnWrapper.html") Boutons : btnWrapper et baseBtn
+
+
+      h2 Composants NEW Charte GRAPHIQUE
+      ul
+        li: a(href="pages/_component-btnWrap.html") Boutons : btnWrap et btn
+        li: a(href="pages/_component-bandeauCookies.html") bandeauCookies
+        li: a(href="pages/_component-bandeauWomenDay.html") bandeau journée de la femme
+
+      h2 Pages
+      ul
+        li: a(href="pages/homepage.html") Homepage
+        li: a(href="pages/pms.html") PMS
+        li: a(href="pages/pageCoupDePouce.html") coup de pouce isolation
+        li: a(href="pages/error.html") Erreur 404
+        li: a(href="pages/article.html") Article
+        li: a(href="pages/articleSummary.html") Articles : Sommaire
+        li: a(href="pages/siteMap.html") Plan du site
+        li: a(href="pages/deepLink-accountActivation.html") DeepLink : activation de compte
+        li: a(href="pages/deepLink-lostPassword.html") DeepLink : mot de passe perdu
+        li: a(href="pages/energySimulator.html") simulateur étiquette énergétique
+        li: a(href="pages/forms.html") Formulaires
+        li: a(href="pages/pageFaqArticle.html") FAQ avec un article
+        li: a(href="pages/pageFaqListe.html") FAQ avec des listes
+        li: a(href="pages/pageFaqListe-empty.html") FAQ aucun résultat
+        li: a(href="pages/pageFaqListe-link.html") FAQ link résultat
+        li: a(href="pages/pageFaqListe-oneLink.html") FAQ uez seule catégorie link résultat 
+        li: a(href="pages/pageFaqAccordeon.html") FAQ Accordeon
+        li: a(href="pages/pageFaqEvaluation.html") FAQ Evaluation
+        li: a(href="pages/formulaire-contact.html") Formulaires de contact
+        li: a(href="pages/formulaire-succes.html") Formulaires de contact : page de succès
+
+      h2 Pages Tel
+      ul
+        li: a(href="pages/tel-etape1.html") Tel- kit composants
+
+      ul
+        li: a(href="pages/wcb-standalone.html") Web call back isolé
+        li: a(href="pages/designImporter-table.html") designImporter-table
+     
+      h2 kit composant Pages PUCLIC
+      ul
+
+        li: a(href="pages/_component-resultSearch.html") Kit composants resultat de recherche "resultSearch"
+
+      h2 Composants
+      ul
+        li: a(href="pages/_component-header-footer.html") siteHeader - siteFooter
+        li: a(href="pages/_component-headerTunnel.html") headerTunnel 
+        li: a(href="pages/_component-headerTunnelConnected.html") headerTunnelConnected 
+        
+        li: a(href="pages/_component-resiliation.html") resiliation 
+        li: a(href="pages/_component-herohpv2.html") herohpv2
+                
+
+        li: a(href="pages/_component-textImage.html") textImage
+        li: a(href="pages/_component-textImageBg.html") textImageBg
+        li: a(href="pages/_component-toggleBox.html") toggleBox
+        li: a(href="pages/_component-itemOptionWrap.html") itemOptionWrap
+        li: a(href="pages/_component-backToTop.html") backToTop
+        li: a(href="pages/_component-wysiwyg.html") wysiwyg
+        li: a(href="pages/_component-espritService.html") espritService
+        li: a(href="pages/_component-contact.html") contact
+        li: a(href="pages/_component-blockquote.html") citation
+        li: a(href="pages/_component-accordion.html") accordion
+        li: a(href="pages/_component-image.html") image
+        li: a(href="pages/_component-tabs.html") tabs
+        li: a(href="pages/_component-blockLinks.html") blockLinks (HTML libre + liens)
+        li: a(href="pages/_component-quickAccess.html") quickAccess
+        li: a(href="pages/_component-quickAccess2.html") quickAccess2
+        li: a(href="pages/_component-title.html") titre
+        li: a(href="pages/_component-titleV2.html") titre version 2
+        li: a(href="pages/_component-advantages.html") avantages
+        li: a(href="pages/_component-listLinks.html") listLinks - Liste lien
+        li: a(href="pages/_component-greyWrapper.html") greyWrapper - Fond
+        li: a(href="pages/_component-legalMention.html") legalMention
+        li: a(href="pages/_component-headSection.html") headSection (titre de section)
+        li: a(href="pages/_component-iframe.html") iframe
+        li: a(href="pages/_component-flash.html") flash
+        li: a(href="pages/_component-breadcrumb.html") breadcrumb
+        li: a(href="pages/_component-storageLink.html") storageLink (gestion localStorage au click)
+        li: a(href="pages/_component-gazConnect.html") gazConnect (Raccordement au gaz)
+        li: a(href="pages/_component-facebookMessenger.html") Messenger
+        li: a(href="pages/_component-separator.html") separator (ligne de séparation)
+        li: a(href="pages/_component-column.html") Colonne
+        li: a(href="pages/_component-toolTip.html") Tool Tip
+        li: a(href="pages/_component-modal.html") Modal
+        li: a(href="pages/_component-assuranceBand.html") assuranceBand
+        li: a(href="pages/_component-sideMenu.html") sideMenu
+        li: a(href="pages/_component-pictoBlock.html") pictoBlock
+        li: a(href="pages/_component-moreLessInput.html") moreLessInput
+        li: a(href="pages/_component-userReview.html") userReview
+        li: a(href="pages/_component-pictoLink.html") pictoLink
+        li: a(href="pages/_component-paging.html") paging
+        li: a(href="pages/_component-pushBlock.html") pushBlock
+        li: a(href="pages/_component-pushLight.html") pushLight
+        li: a(href="pages/_component-stickyDock.html") stickyDock
+        li: a(href="pages/_component-offerPromo.html") offerPromo
+        li: a(href="pages/_component-stepByStep.html") stepByStep
+        li: a(href="pages/_component-productList.html") productList
+        li: a(href="pages/_component-timeLine.html") timeLine
+        li: a(href="pages/_component-infoBlock.html") infoBlock
+        li: a(href="pages/_component-listChoiceButton.html") listChoiceButton
+        li: a(href="pages/_component-selectImpostor.html") selectImpostor
+        li: a(href="pages/_component-selectOptions.html") selectOptions
+        li: a(href="pages/_component-pushPromo.html") pushPromo
+        li: a(href="pages/_component-bubbleSelect.html") bubbleSelect
+        li: a(href="pages/_component-verticalStep.html") verticalStep
+        li: a(href="pages/_component-arrowBox.html") arrowBox
+        li: a(href="pages/_component-toggleCheck.html") toggleCheck
+        li: a(href="pages/_component-choiceBox.html") choiceBox
+        li: a(href="pages/_component-arrowBorder.html") arrowBorder
+
+        li: a(href="pages/_component-zoneTarifaire.html") zoneTarifaire 
+
+      h3 Articles
+
+      ul
+        li: a(href="pages/_component-headerArticle.html") headerArticle
+        li: a(href="pages/_component-footerArticle.html") footerArticle
+        li: a(href="pages/_component-chapoArticle.html") chapoArticle
+        li: a(href="pages/_component-shareArticle.html") shareArticle
+        li: a(href="pages/_component-pushArticle.html") pushArticle
+        li: a(href="pages/_component-filtersArticle.html") filtersArticle
+
+      h3 FAQ
+
+      ul
+        li: a(href="pages/_component-listLinkVertical.html") listLinkVertical
+        li: a(href="pages/_component-searchFAQ.html") searchFAQ
+        li: a(href="pages/_component-evaluationFAQ.html") evaluationFAQ
+        li: a(href="pages/_component-articleFAQ.html") articleFAQ
+        li: a(href="pages/_component-noResultFAQ.html") noResultFAQ
+        li: a(href="pages/_component-menuFAQ.html") menuFAQ
+        li: a(href="pages/_component-reviewFeedBack.html") reviewFeedBack
+        li: a(href="pages/_component-pushFAQ.html") pushFAQ
+
+      h2 Sous-composants (pas un composant AEM)
+      ul
+        li: a(href="pages/_component-linkLongArrow.html") linkLongArrow (liens de type bouton)
+        li: a(href="pages/_component-form.html") form
+        li: a(href="pages/_component-spinner.html") Spinner
+        li: a(href="pages/_component-zip2city.html") zip2city
+        li: a(href="pages/_component-fieldInfo.html") fieldInfo
+
+
+  // header kit
+  +composantIndex__header({})
+
+  body
+    style(type='text/css').
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #343;
+        background-color: #f6f6f6;
+      }
+
+    .l-wrapper.l-wrapper--site
+      .k-composantIndex__Wrapper
+
+
+        section#k-composantsAEM
+          .u-heading-4.u-textCenter.u-margin-t-50 Composants AEM
+
+          +composantIndex({
+            devName: "FieldInfo",
+            longName: "Titre article et liens RSN",
+            text: "Description succincte du composant, usage, page(s) concernée(s) ...",
+            tags: "Cel",
+            maj: "01/12/2017",
+            imgCase: true,
+            link: "http://localhost:3011/"
+          })
+            +composantIndex__img({
+              imgLink: "#",
+              imgSrc: "contrib/ballon-push-fel-desktop.jpg"
+            })
+            +composantIndex__img({
+              imgLink: "#",
+              imgSrc: "contrib/carouselHome-slide1-small.jpg"
+            })
+
+
+        section#k-sousComposants
+          .u-heading-4.u-textCenter.u-margin-t-50 Sous composants
+
+          +composantIndex({
+            devName: "FieldInfo",
+            longName: "Titre article et liens RSN",
+            text: "Description succincte du composant, usage, page(s) concernée(s) ...",
+            tags: "Cel",
+            maj: "01/12/2017",
+            imgCase: true,
+            link: "http://localhost:3011/"
+          })
+            +composantIndex__img({
+              imgLink: "#",
+              imgSrc: "../images/StudioDigitalEngie_Logo.png"
+            })
+            +composantIndex__img({
+              imgLink: "#",
+              imgSrc: "../images/StudioDigitalEngie_Logo.png"
+            })
+
+
+        //- section#k-common
+        //-   .u-heading-4.u-textCenter.u-margin-t-50 Common
+
+        //-   +composantIndex({
+        //-     devName: "FieldInfo",
+        //-     longName: "Titre article et liens RSN",
+        //-     text: "Description succincte du composant, usage, page(s) concernée(s) ...",
+        //-     tags: "Cel",
+        //-     maj: "01/12/2017",
+        //-     imgCase: true,
+        //-     link: "http://localhost:3011/"
+        //-   })
+        //-     +composantIndex__img({
+        //-       imgLink: "#",
+        //-       imgSrc: "../images/StudioDigitalEngie_Logo.png"
+        //-     })
+        //-     +composantIndex__img({
+        //-       imgLink: "#",
+        //-       imgSrc: "../images/StudioDigitalEngie_Logo.png"
+        //-     })
+
+
+        //- section#k-pages
+        //-   .u-heading-4.u-textCenter.u-margin-t-50 Pages
+
+        //-   +composantIndex({
+        //-     devName: "FieldInfo",
+        //-     longName: "Titre article et liens RSN",
+        //-     text: "Description succincte du composant, usage, page(s) concernée(s) ...",
+        //-     tags: "Cel",
+        //-     maj: "01/12/2017",
+        //-     imgCase: true,
+        //-     link: "http://localhost:3011/"
+        //-   })
+        //-     +composantIndex__img({
+        //-       imgLink: "#",
+        //-       imgSrc: "../images/StudioDigitalEngie_Logo.png"
+        //-     })
+        //-     +composantIndex__img({
+        //-       imgLink: "#",
+        //-       imgSrc: "../images/StudioDigitalEngie_Logo.png"
+        //-     })
+
+
+        //- section#k-articles
+        //-   .u-heading-4.u-textCenter.u-margin-t-50 Articles
+
+        //-   +composantIndex({
+        //-     devName: "FieldInfo",
+        //-     longName: "Titre article et liens RSN",
+        //-     text: "Description succincte du composant, usage, page(s) concernée(s) ...",
+        //-     tags: "Cel",
+        //-     maj: "01/12/2017",
+        //-     imgCase: true,
+        //-     link: "http://localhost:3011/"
+        //-   })
+        //-     +composantIndex__img({
+        //-       imgLink: "#",
+        //-       imgSrc: "../images/StudioDigitalEngie_Logo.png"
+        //-     })
+        //-     +composantIndex__img({
+        //-       imgLink: "#",
+        //-       imgSrc: "../images/StudioDigitalEngie_Logo.png"
+        //-     })
+
+
+        //- section#k-faq
+        //-   .u-heading-4.u-textCenter.u-margin-t-50 FAQ
+
+        //-   +composantIndex({
+        //-     devName: "FieldInfo",
+        //-     longName: "Titre article et liens RSN",
+        //-     text: "Description succincte du composant, usage, page(s) concernée(s) ...",
+        //-     tags: "Cel",
+        //-     maj: "01/12/2017",
+        //-     imgCase: true,
+        //-     link: "http://localhost:3011/"
+        //-   })
+        //-     +composantIndex__img({
+        //-       imgLink: "#",
+        //-       imgSrc: "../images/StudioDigitalEngie_Logo.png"
+        //-     })
+        //-     +composantIndex__img({
+        //-       imgLink: "#",
+        //-       imgSrc: "../images/StudioDigitalEngie_Logo.png"
+        //-     })
+
+
+    // COMMON
+    script(src="../js/bas/vendors.js")
+    script(src="../js/bas/common.js")

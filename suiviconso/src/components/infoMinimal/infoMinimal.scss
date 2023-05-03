@@ -1,0 +1,532 @@
+.c-infoMinimal {
+  background: rgb(245,243,252);
+  background: linear-gradient(90deg, rgba(245,243,252,1) 0%, rgba(240,248,255,1) 100%);
+  border-radius: 24px;
+  background-color: white;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 1.6rem;
+  .c-infoMinimal__bg {
+    padding: 35px 45px;
+    height: 100%;
+    width: 100%;
+    background: no-repeat url(../images/contrib/salon-bkg3.png);
+    background-size: 40%;
+    background-position: bottom right;
+  @media #{$small} { 
+    padding: 0;
+    background: none;}
+
+  }
+}
+
+.c-infoMinimal__firstYearLink {
+  color: $genBlue;
+  text-decoration: underline;
+  display: block;
+  font-weight: 600;
+}
+
+.c-infoMinimal__firstYearLink:hover, .c-infoMinimal__firstYearLink:active {
+  color: $blue;
+}
+
+.c-infoMinimal__headInfoMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-infoMinimal__firstYear {
+  width: 300px;
+}
+
+.c-infoMinimal__firstYear--info {
+  width: 385px;
+}
+
+.c-infoMinimal__headInfoMenu::after {
+  content: "";
+  width: 1px;
+  height: 30px;
+  background-color: #D0D0D0;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.c-infoMinimal__headInfoMenu .c-infoMinimal__btn {
+  width: auto;
+  margin-right: 5px;
+  padding: 4px 10px;
+}
+
+.c-infoMinimal__descTow {
+  font-style: italic;
+}
+
+.c-infoMinimal--erreur .c-infoMinimal__pushGazParBtn .c-baseBtn.u-theme-bg {
+  background-color: #E9E9E9 !important;
+}
+
+.c-infoMinimal--erreur .c-baseBtn:disabled, .c-baseBtn.is-disabled {
+  color: #393939 !important;
+  font-weight: bold;
+}
+
+.c-infoMinimal__pushGazParBtn .c-baseBtn.u-theme-bg {
+  background-color: $genBlue !important;
+}
+
+.c-infoMinimal__pushGazParBtn .c-baseBtn.u-theme-bg:hover {
+  background-color: $blue !important;
+}
+
+.c-infoMinimal--erreur .c-infoMinimal__pushGazParBtn .c-baseBtn.u-theme-bg:hover {
+  background-color: #D0D0D0 !important;
+}
+
+.c-infoMinimal__headTitle {
+  margin-bottom: 20px;
+}
+
+.c-infoMinimal__title span {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.c-infoMinimal__icon {
+  color: $genBlue;
+  margin-left: 12px;
+  font-size: 3rem !important;
+  font-weight: normal !important;
+}
+
+.c-infoMinimal__allConsoNumber span {
+  font-size: 2.2rem;
+}
+
+.c-infoMinimal__head {
+  display: flex;
+  margin-bottom: 36px;
+  align-items: center;
+}
+
+.c-infoMinimal__btn {
+  width: 57px;
+  height: 32px;
+  padding: 4px;
+  text-align: center;
+  border:0;
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.c-infoMinimal__btn.is-active {
+  background-color: $genBlue;
+  color: white;
+}
+
+.c-infoMinimal__btn.is-disabled {
+  color: $grey;
+  cursor: not-allowed;
+}
+
+.c-infoMinimal__mainStat {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-bottom: 38px;
+}
+
+.c-infoMinimal--erreur .c-infoMinimal__mainStat {
+  width: 40%;
+}
+
+.c-infoMinimal__stat {
+  display: flex;
+}
+
+.c-infoMinimal__stat::before {
+  content: '';
+  width: 5px;
+  height: 92%;
+  background-color: #009DE9;
+  border-radius: 3px;
+  position: relative;
+  top: 5px;
+  margin-right: 12px;
+}
+
+.c-infoMinimal--erreur .c-infoMinimal__stat::before {
+  height: 65px;
+  background-color: #FF5E69;
+}
+
+.c-infoMinimal__stat span {
+  display: block;
+}
+
+.c-infoMinimal__number {
+  font-size: 3rem;
+  line-height: 3.2rem;
+  font-weight: bold;
+}
+
+.c-infoMinimal__number span small {
+  font-size: 2.4rem;
+}
+
+.c-infoMinimal--erreur .c-infoMinimal__number {
+  font-size: 2.4rem;
+}
+
+.c-infoMinimal__number span {
+  display: inline-block;
+}
+
+.c-infoMinimal__numberKwh {
+  font-size: 2.4rem;
+  padding-left: 3px;
+}
+
+.c-infoMinimal--erreur.c-infoMinimal--gazPar .c-infoMinimal__allConsoDesc {
+  display: flex;
+  align-items: baseline;
+}
+
+.c-infoMinimal--erreur.c-infoMinimal--gazPar .c-infoMinimal__allConsoDesc span {
+  width: 250px;
+  display: inline-block;
+}
+
+.c-infoMinimal--erreur .c-infoMinimal__allConsoDesc {
+  display: flex;
+  align-items: baseline;
+}
+
+.c-infoMinimal--erreur .c-infoMinimal__allConsoDesc span {
+  width: 100%;
+  display: inline-block;
+}
+
+.c-infoMinimal__allConsoDesc .icon {
+  color: rgb(255, 195, 0);
+  margin-right: 6px;
+}
+
+.c-infoMinimal--erreur .c-infoMinimal__allConsoDesc .icon {
+  color: #FF5E69;
+}
+
+.c-infoMinimal__allConsoNumber {
+  display: block;
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+
+.c-infoMinimal.c-infoMinimal--gazPar .c-infoMinimal__bg{
+  background-size: 23%;
+  background-position: 56% bottom;
+  display: flex;
+  padding: 0;
+}
+
+.c-infoMinimal__pushGazParPara {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.c-infoMinimal__mainGazPar {
+  display: inline-block;
+  width: 65%;
+  // background-image: url(../images/contrib/salon-bkg-gazPar.png);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  padding: 35px 45px;
+  border-radius: 24px 0 0 24px;
+}
+
+.c-infoMinimal__mainGazPar.c-infoMinimal__mainGazParbkg {
+  // background-image: url(../images/contrib/salonPercent.jpg);
+}
+
+.c-infoMinimal--tablette .c-infoMinimal__mainGazPar {
+  // background-image: url(../images/contrib/salonPercent.jpg);
+}
+
+.c-infoMinimal--tablette .c-infoMinimal__mainStat {
+  width: 80%;
+}
+
+.c-infoMinimal__pushGazPar {
+  display: inline-block;
+  width: 35%;
+  padding: 50px 2% 50px 4%;
+  border: 1px #D0D0D0 solid;
+  border-radius: 0 24px 24px 0;
+  background-color: white;
+}
+
+.c-infoMinimal__pushGazParBtn.c-btnWrapper {
+  margin-top: 35px;
+  justify-content: left;
+}
+
+@include media(">small", "<=medium") {
+  .c-infoMinimal.c-infoMinimal--gazPar.c-infoMinimal--tablette .c-infoMinimal__bg {
+    flex-direction: column;
+  }
+
+  .c-infoMinimal--tablette .c-infoMinimal__mainStat {
+    width: 65%;
+  }
+
+  .c-infoMinimal--tablette .c-infoMinimal__pushGazPar p {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  .c-infoMinimal--tablette .c-infoMinimal__pushGazPar {
+    display: flex;
+  }
+
+  .c-infoinfoMinimal__btnTabletteGazPar {
+    margin-right: 30px;
+  }
+
+  .c-infoMinimal--tablette .c-infoMinimal__pushGazParBtn.c-btnWrapper {
+    margin-top: 0;
+    height: 48px;
+  }
+
+  .c-infoMinimal--tablette .c-infoMinimal__mainGazPar {
+    width: 100%;
+    border-radius: 24px 24px 0 0;
+    background-size: auto;
+  }
+
+  .c-infoMinimal--tablette .c-infoMinimal__pushGazPar {
+    width: 100%;
+    border-radius: 0 0 24px 24px;
+    padding: 20px 2% 20px 4%;
+  }
+
+  .c-infoMinimal__mainStat {
+    width: 60%;
+  }
+
+  .c-infoMinimal__allConsoDesc {
+    width: 65%;
+  }
+
+  .c-infoMinimal__mainGazPar.c-infoMinimal__mainGazParbkg {
+    // background-image: url(../images/contrib/salonMedium.jpg);
+  }
+
+.c-infoMinimal--erreur .c-infoMinimal__mainStat {
+  width: 45%;
+}
+
+  .c-infoMinimal__mainGazPar {
+    padding: 35px 20px;
+    // background-image: url(../images/contrib/salonMedium.jpg);
+    background-position-x: 20%;
+  }
+}
+
+@include media("<=medium") {
+  .c-infoMinimal__pushGazParPara {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  .c-infoMinimal--erreur .c-infoMinimal__number {
+    font-size: 1.8rem;
+  }
+
+  .c-infoMinimal--erreur .c-infoMinimal__stat::before {
+    height: 50px;
+  }
+
+  .c-infoMinimal__title span {
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
+}
+
+@media screen and (max-width : 1000px ) and (min-width : 768px) {
+  .c-infoMinimal__mainStat {
+    width: 75%;
+  }
+}
+
+@include media("<small") {
+  .c-infoMinimal {
+    background-image: none;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  .c-infoMinimal--tablette .c-infoMinimal__mainGazPar {
+    background-image: none;
+  }
+
+  .c-infoMinimal--tablette .c-infoMinimal__mainStat {
+    width: 100%;
+  }
+
+  .c-infoMinimal__btn span {
+    vertical-align: middle;
+  }
+
+.c-infoMinimal__number span small {
+  font-size: 2rem;
+}
+
+  .c-infoMinimal__firstYear {
+    margin-bottom: 20px;
+  }
+
+  .c-infoMinimal__firstYear--info {
+    width: auto;
+  }
+
+  .c-infoMinimal__headInfoMenu::after {
+    display: none;
+  }
+
+  .c-infoMinimal__headInfoMenu {
+    margin-bottom: 16px;
+  }
+
+  .c-infoMinimal__head {
+    display: block;
+  }
+
+  .c-infoMinimal__headInfoMenu {
+    justify-content: left;
+  }
+
+  .c-infoMinimal__headInfoMenu .c-infoMinimal__btn {
+    padding: 4px 0;
+    width: 50%;
+    max-width: 155px;
+  }
+
+  .c-infoMinimal__btn {
+    padding: 4px 19px;
+    width: 32.2%;
+    max-width: 102px;
+    border: 1px #D0D0D0 solid;
+  }
+
+  .c-infoMinimal__headInfoMenu .c-infoMinimal__btn:last-child {
+    margin-right: 0;
+  }
+
+  .c-infoMinimal__btn.is-active {
+    border-color: transparent;
+  }
+
+  .c-infoMinimal--erreur .c-infoMinimal__allConsoDesc span {
+    width: 300px;
+  }
+
+  .c-infoMinimal__icon {
+    font-size: 3.2rem !important;
+  }
+
+  .c-infoMinimal__numberKwh {
+    font-size: 1.8rem;
+  }
+
+  .c-infoMinimal__number {
+    font-size: 2.4rem;
+  }
+
+  // .c-infoMinimal__mainGazPar .c-infoMinimal__stat::before {
+  //   height: 75px;
+  // }
+
+  .c-infoMinimal--erreur .c-infoMinimal__mainGazPar .c-infoMinimal__stat::before {
+    height: 50px;
+  }
+
+  .c-infoMinimal__pushGazParBtn .c-baseBtn {
+    justify-content: left;
+    margin: 0;
+    width: 150px;
+  }
+  .c-infoMinimal__mainStat {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .c-infoMinimal__stat {
+    margin-bottom: 24px;
+  }
+
+  .c-infoMinimal__stat::before {
+    height: 50px;
+  }
+
+  .c-infoMinimal__head {
+    margin-bottom: 20px;
+  }
+
+  .c-infoMinimal__title {
+    display: flex;
+  }
+
+  .c-infoMinimal__mainGazPar, .c-infoMinimal__pushGazPar {
+    width: 100%;
+    padding: 20px 16px;
+    @media #{$small} { 
+      padding: 20px 0;   
+    }
+  }
+
+  .c-infoMinimal.c-infoMinimal--gazPar .c-infoMinimal__bg{
+    flex-direction: column;
+  }
+
+  .c-infoMinimal__mainGazPar {
+    background-image: none;
+    border-bottom: 1px #DDDDDD solid;
+    border-radius: 0;
+  }
+
+  .c-infoMinimal__mainGazPar.c-infoMinimal__mainGazParbkg {
+    background-image: none;
+  }
+
+  .c-infoMinimal__pushGazPar {
+    border: 0;
+  }
+}
+
+@media screen and (max-width : 900px) and (min-width:768px) {
+  .c-infoMinimal__title span {
+    font-size: 1.8rem;
+  }
+
+  .c-infoMinimal--tablette .c-infoMinimal__mainStat {
+    width: 90%;
+  }
+} 
+
+@media screen and (max-width : 351px) {
+  .c-infoMinimal__btn span {
+    font-size: 1.4rem;
+  }
+
+  .c-infoMinimal__btn {
+    width: 32.2%;
+  }
+} 

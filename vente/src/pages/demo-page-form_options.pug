@@ -1,0 +1,223 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title         = "Démo étape3 : Formulaire d'identité"
+  - var page          = "tel"
+  - var bodyClass     = ""
+  - var description   = "Module étape 3"
+  - var noHeaderFooter = true
+  //- var headerLight   = true
+  - var footerLight   = true
+
+//- CSS (haut) pour cette page
+block CSS
+  link(rel="stylesheet" href="../css/tel.css")
+
+//- JS (bas) pour cette page
+block JS
+  script(src="../js/bas/demo.js")
+
+
+//- Page content
+block content
+  #telv3.c-headerLightPush
+    +headerLight
+    +timeLine({
+      type:  "progressBar",
+      currentStep: 3,
+      stepWording: ['Critères', 'Offres', 'Souscription', 'Validation']
+    })
+
+    +stickyDock
+
+    div(data-e-sticky-container="floatingMenu" data-e-side-menu-wrapper)
+
+      +floatingMenu(
+        data-e-sticky='{"container": "floatingMenu", "topPositionDefault": 150, "hAlign": "left"}',
+        data-e-side-menu='{"target": "menu-float", "sideContent": "content-float", "classToOpen": "floating-menu-open", "classToClose": "floating-menu-close"}'
+      ).u-theme-genBlue
+        +floatingMenuListButton({
+          iconVente: true,
+          iconName: 'iconVente-identity',
+          text: 'Identité'
+        }).is-viewed.u-theme-color.u-theme-color-hover
+
+        +floatingMenuListButton({
+          iconVente: true,
+          iconName: 'iconVente-home',
+          text: 'Logement'
+        }).is-viewed.u-theme-color.u-theme-color-hover
+
+        +floatingMenuListButton({
+          iconVente: true,
+          iconName: 'iconVente-contract',
+          text: 'Contrat'
+        }).is-viewed.u-theme-color.u-theme-color-hover.is-active
+
+      div(data-e-side-menu-content='content-float')
+        .c-formStep.is-active
+          +bubbleList({
+            title: 'Concernant mon contrat actuel, je souhaite'
+          })
+            +bubble({inputID: 'bubble_1', radioName: 'bubbleList_demo1', picto: 'iconVente-contract', text: 'le conserver'})
+            +bubble({inputID: 'bubble_2', radioName: 'bubbleList_demo1', picto: 'iconVente-terminate', text: 'le résilier'})
+
+        .c-formStep
+          .l-wrapper--small.u-margin-b-50.u-margin-small-b-50
+            .u-heading-4 Sélectionner le contrat à résilier&nbsp;:
+            +choiceWrapperMat
+              +checkboxMat({
+                label: 'Premier contrat',
+                id: "checkboxMat1"
+              })
+              +checkboxMat({
+                label: 'Second contrat',
+                id: "checkboxMat2"
+              })
+              +checkboxMat({
+                label: 'Troisième contrat',
+                id: "checkboxMat3"
+              })
+
+            +inputMat({
+              float: true,
+              id: "contractDate",
+              name: "contractDate",
+              type : 'date',
+              float: true,
+              label: 'Date de résiliation souhaitée',
+              iconRight: 'icon-big-calendar'
+            }).c-inputMat--float.c-inputMat--datepicker
+
+          .l-wrapper--medium.u-margin-b-40.u-margin-small-b-40
+            .u-bg-grey-light.u-padding-v-10.u-padding-h-40.u-margin-t-20.u-margin-small-t-20
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, facilis repudiandae qui at nemo maiores repellat aspernatur accusantium, ad dicta doloribus alias exercitationem similique tempora nulla molestiae optio odio? Harum.
+
+          .l-wrapper--medium
+            h2.u-heading-2.u-textCenter.u-margin-b-20.u-margin-small-b-20 Pour mon nouveau Contrat
+          .l-wrapper--small
+            +inputMat({
+              float: true,
+              id: "contractDate2",
+              name: "contractDate2",
+              type : 'date',
+              label: 'Date de début de contrat',
+              iconRight: 'icon-big-calendar'
+            })(data-e-float-label).c-inputMat--float.c-inputMat--datepicker
+
+          .l-wrapper--medium
+            .u-bg-grey-light.u-padding-v-10.u-padding-h-40.u-margin-t-20.u-margin-small-t-20
+              ul.u-list.u-margin-h-40
+                li.u-list__item.u-list__item--defaultDisc.u-margin-a-0 En choisissant cette date, je demande l'exécution de mes contrats avant la fin du délai de rétractation de 14 jours.
+                li.u-list__item.u-list__item--defaultDisc.u-margin-a-0 Aucune coupure et aucune intervention de technicien.
+                li.u-list__item.u-list__item--defaultDisc.u-margin-a-0 Réception du matériel à J+10.
+
+          .l-wrapper--medium
+            +toggleCheck.u-margin-v-40.u-margin-small-v-40
+              +toggleCheckElem({
+                labelTitle: "Je choisis le prélèvement automatique",
+                noLabel: true,
+                checkBoxId: "pvmauto",
+                toggleTarget: 'toggle1',
+                hasBanner: 'Service gratuit',
+                boxFX: true,
+                boxBorder: true
+              })
+                div(data-e-switch-toggle-name='toggle1')
+                  p.l-toggleCheckPadding <strong>Mensuel</strong> ou <strong>tous les deux mois</strong>
+                  .u-margin-t-15.u-padding-v-15.u-padding-h-20.u-bg-grey-light.u-textCenter Vous réglerez vos factures par Carte Bleue, TIP ou chèque tous les 2 mois
+
+                .u-padding-h-35(data-e-switch-toggle-name='toggle1' hidden)
+                  .u-textCenter.u-margin-b-30.u-margin-small-b-30
+                    +radioSwitchMat({
+                      label1: 'Mensuel',
+                      label2: 'Tous les deux mois',
+                      id1: 'switchMat1',
+                      id2: 'switchMat2',
+                      name: 'checkboxMat'
+                    })
+                    +arrowBox({
+                      hasTheme: 'u-theme-genBlue'
+                    }).c-arrowBox--arrowTop.c-arrowBox--switchLeft.u-margin-t-15
+                      |  Je maîtrise mon budget, mes paiements sont lissés sur 11 mois !<br> Estimation de mes mensualités : 65€ <sup>TTC</sup> / mois
+
+                  .u-padding-a-20.u-bg-venteBlue-medium.u-margin-b-30.u-margin-small-b-30.u-fontSize-tiny
+                    .c-column.c-column--50-50.c-column--spaced
+                      .c-column__col
+                        p Mensuel
+                        ul.u-list.u-margin-t-15
+                          li.u-list__item.u-list__item--defaultDisc.u-margin-a-0 Paiements sont lissés sur 11 mois !
+                          li.u-list__item.u-list__item--defaultDisc.u-margin-a-0 Ajustement de votre consommation annuelle sur 12 mois
+                          li.u-list__item.u-list__item--defaultDisc.u-margin-a-0 Facture disponible en ligne
+                      .c-column__col
+                        p Tous les 2 mois
+                        ul.u-list.u-margin-t-15
+                          li.u-list__item.u-list__item--defaultDisc.u-margin-a-0 Paiements sont lissés sur 11 mois !
+                          li.u-list__item.u-list__item--defaultDisc.u-margin-a-0 Ajustement de votre consommation annuelle sur 12 mois
+                          li.u-list__item.u-list__item--defaultDisc.u-margin-a-0 Facture disponible en ligne
+
+                  p.u-textCenter: strong Vous pouvez, dès maintenant, renseigner vos coordonnées bancaires ou le faire ultérieurement.
+
+                  .l-wrapper--small.u-margin-t-10
+                    +inputMat({
+                      float: true,
+                      label: 'Nom du titulaire (optionnel)',
+                      type: "text",
+                      id: "userName",
+                      name: "userName"
+                    })(data-e-float-label).c-inputMat--float
+
+                    +inputMat({
+                      float: true,
+                      label: 'IBAN (optionnel)',
+                      type: "text",
+                      id: "userIBAN",
+                      name: "userIBAN"
+                    })(data-e-float-label).c-inputMat--float
+
+              +toggleCheckElem({
+                labelTitle: "J'opte pour la simplicité avec la facture en ligne",
+                noLabel: true,
+                checkBoxId: "fal",
+                toggleTarget: 'toggle2',
+                hasBanner: 'Service gratuit',
+                boxFX: true,
+                boxBorder: true
+              })
+                div(data-e-switch-toggle-name='toggle2' aria-hidden='false')
+                  p.l-toggleCheckPadding Plus de temps perdu à classer ses papiers !<br> <strong>Vos factures accessibles</strong> depuis votre Espace Client.
+                  .u-margin-t-20.u-margin-small-t-20.u-padding-v-15.u-padding-h-20.u-bg-grey-light.u-textCenter Vous recevrez vos factures par courrier mais elle ne sera pas accessible via l’espace client Gaz Tarif Réglementé
+
+                div(data-e-switch-toggle-name='toggle2' aria-hidden='true' hidden)
+                  p.l-toggleCheckPadding Plus de temps perdu à classer ses papiers !<br> <strong>Vos factures accessibles</strong> depuis votre Espace Client.
+                  p.l-toggleCheckPadding.u-fontSize-tiny.u-margin-t-15: a.u-color-black(href="#" data-e-switch-toggle-name="toggle2" aria-hidden="true" hidden) Consulter les Conditions Générales</a>
+
+          .l-wrapper--medium.u-padding-t-20
+            h2.u-heading-2.u-textCenter.u-margin-t-40.u-margin-small-t-40.u-margin-b-20.u-margin-small-b-20 Je souhaite ajouter des informations
+
+          .l-wrapper--small
+            +textareaMat({
+              label:          'Message (optionnel)',
+              id:             "userMessage",
+              name:           "userMessage",
+              dataValidation: true,
+              maxlength:      220
+            })
+
+          .l-wrapper--medium
+            +fieldInfo({
+              typeMessage: 'error'
+            })
+              p Message d'erreur quelconque
+
+          .l-wrapper--medium
+            +btnWrapper().u-theme-jadeGreen.c-btnWrapper--fullOnMobile.u-margin-v-40.u-margin-small-v-40
+              +baseBtn({
+                text: "Continuer",
+                button: true
+              }).c-baseBtn--large

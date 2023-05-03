@@ -1,0 +1,77 @@
+.c-signatureMonda__header {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c-signatureMondat__price sup {
+  font-size: 0.5em;
+}
+
+.c-signatureMondat__price {
+  font-size: 3.6rem;
+  font-weight: bold;
+  color: #FB7431;
+  margin-bottom: 10px;
+}
+
+.c-signatureMondat__desc {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.c-signatureMondat__topLink {
+  font-size: 1.6rem;
+}
+
+.c-signatureMondat .u-theme-orange .c-baseBtn.u-theme-bg {
+  background-color: #FB7431;
+}
+
+.c-signatureMondat .u-theme-orange .c-baseBtn.u-theme-bg:hover {
+  background-color: $orange;
+}
+
+.c-signatureMondat__title {
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.c-signatureMondat__checkBox {
+  width: 470px;
+  margin: auto;
+}
+
+.c-signatureMondat__checkBox .c-checkboxMat__text {
+  font-size: 1.6rem;
+}
+
+.c-signatureMondat .c-eTip__wrapperGrey {
+  padding: 30px 0;
+}
+
+.c-signatureMondat__spacer.u-padding-spacer {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 30px 0;
+}
+
+.c-signatureMondat .c-checkboxMat__field:not(:checked) + .c-checkboxMat__label .c-checkboxMat__check {
+  border: 2px solid $genBlue;
+}
+
+.c-signatureMondat .c-checkboxMat.is-error .c-checkboxMat__check {
+  border-color: $genBlue !important;
+}
+
+@include media("<=small") {
+  .c-signatureMondat__checkBox {
+    width: 100%;
+    padding: 0 30px;
+    margin: auto;
+  }
+}

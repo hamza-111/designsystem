@@ -1,0 +1,113 @@
+include menuFAQ
+
+.c-wysiwyg
+  h2 menuFAQ
+
++demo({
+  desc:`menuFAQ: <br>
+  le menu FAQ utilise le plugin eToggle <br>
+  -  <code>data-e-toggle</code> sur les balise <a> qui possède des sous rubriques. <br>
+  -  "autoCloseWrap" selectionne le selecteur parent pour isolé un groupe de toggles des autres dans la pages <br>
+  -  data-e-toggle-target => rubriqueFAQ || rubriqueFAQ1 || rubriqueFAQ2 [...] ou nom au choix<br>
+  -  pour les rubriques principales, ajouter la classe <code>is-active</code> aux <code>a</code> qui contient la classe <code>c-menuFAQ__link</code> pour que le lien devienne bleu<br>
+  -  pour les sous rubriques, ajouter la classe <code>is-active</code> aux <code>li avec la classe c-menuFAQ__subRub</code> pour que le lien devienne bleu
+   `
+})
+  +menuFAQ
+    +menuItemFAQ({
+      text:"les question fréquentes",
+    })
+
+    +menuItemFAQ({
+      text:"Factures et Paiements",
+      sub: true,
+      toggle: "rubriqueFAQ",
+      autoCloseWrap : true
+    })
+      +menuItemSubFAQSub({
+        toggleSub: "sousFacture",
+        toggle: "rubriqueFAQFacture",
+        txt : "comment lire ma facture"
+      })
+        +menuItemSubFAQ()
+          | Comment lire ma facture
+        +menuItemSubFAQ()
+          | Mes index de consommation
+        +menuItemSubFAQ()
+          | Facture en ligne
+
+      +menuItemSubFAQSub({
+        toggleSub: "sousPaiement",
+        toggle: "rubriqueFAQPaiement",
+        txt : "Modalités de paiements"
+      })
+        +menuItemSubFAQ()
+          | rubrique1
+
+        +menuItemSubFAQ()
+          | rubrique2
+
+        +menuItemSubFAQ()
+          | rubrique3
+
+    +menuItemFAQ({
+      text:"Mon Espace Client",
+      sub: true,
+      toggle: "rubriqueFAQ2"
+    })
+      +menuItemSubFAQ()
+        | rubrique1
+
+      +menuItemSubFAQ()
+        | rubrique2
+
+      +menuItemSubFAQ()
+        | rubrique3
+
+      +menuItemSubFAQ()
+        | rubrique4
+
+      +menuItemSubFAQ()
+        | rubrique5
+
+    +menuItemFAQ({
+      text:"Offres et tarifs",
+      sub: true,
+      toggle: "rubriqueFAQ3"
+    })
+      +menuItemSubFAQ()
+        | Facture
+      +menuItemSubFAQ()
+        | Modalités de paiements
+
+    +menuItemFAQ({
+      text:"Mon installation et mon compteur"
+    })
+
+    +menuItemFAQ({
+      text:"Déménagement"
+    })
+
+    +menuItemFAQ({
+      text:"Economie d'énergie"
+    })
+
+    +menuItemFAQ({
+      text:"Chaudière gaz naturel"
+    })
+
+    +menuItemFAQ({
+      text:"Chauffage électrique"
+    })
+
+    +menuItemFAQ({
+      text:"Mon activité professionnelle"
+    })
+
+    +menuItemFAQ({
+      text:"Contact"
+    })
+
+    +menuItemFAQ({
+      text:"À propos de GDF Suez / Engie ?"
+    })

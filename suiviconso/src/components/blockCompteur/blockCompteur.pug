@@ -1,0 +1,56 @@
+include ../../../../common/src/components/image/image
+
+mixin blockCompteur()
+
+	//.c-blockCompteur
+	.c-blockCompteur.u-textCenter
+		h2.u-heading-3.u-padding-b-20 Mon compteur de gaz naturel
+
+		+image({
+			smallImg:  "../images/contrib/illu-etapier-hpdemenagement-stepdeux.png",
+			mediumImg: "../images/contrib/illu-etapier-hpdemenagement-stepquatre.png"
+		})
+
+		.c-blockCompteur__detail.u-margin-b-10 votre prochaine relevé sera automatiquement effectué le <strong> 13/07/2018 </strong> par votre compteur communicant.
+		p.u-padding-t-20 derinier relevé transmis par votre compteur communicant le <strong>06/06/2017</strong>
+		p.u-padding-t-15 index : <strong>18010 m3</strong>
+
+		+btnWrapper().u-margin-t-20.c-btnWrapper--fullOnMobile
+			+baseBtn({
+				text: 'Télécharger mes relevés',
+				empty: true
+			})
+
+mixin blockCompteurNgp(data)
+	- var data   = data || {}
+
+	//.c-blockCompteur
+	.c-blockCompteur.u-textCenter
+		h2.u-heading-3.u-padding-b-20 Mon compteur de gaz naturel
+		+image({
+			smallImg:  "../images/contrib/illu-etapier-hpdemenagement-stepdeux.png",
+			mediumImg: "../images/contrib/illu-etapier-hpdemenagement-stepquatre.png"
+		})
+		.c-blockCompteur__detail.u-margin-b-10 votre prochaine relevé sera automatiquement effectué le <strong> 13/07/2018 </strong> par votre compteur communicant.
+		p.u-padding-t-20 derinier relevé transmis par votre compteur communicant le <strong>06/06/2017</strong>
+		p.u-padding-t-15 index : <strong>18010 m3</strong>
+
+mixin blockCompteurReleve(data)
+	- var data   = data || {}
+
+	//.c-blockCompteur
+	.c-blockCompteur.u-textCenter
+		h2.u-heading-3.u-padding-b-20 Mon compteur de gaz naturel
+		+image({
+			smallImg:  "../images/contrib/illu-etapier-hpdemenagement-stepdeux.png",
+			mediumImg: "../images/contrib/illu-etapier-hpdemenagement-stepquatre.png"
+		})
+		.c-blockCompteur__detail.u-margin-b-10 
+			p m@ reléve:
+			p.u-padding-t-20.u-textBold saisissez votre reléve d'index le 09/06/2018
+
+		+btnWrapper().u-margin-t-20.c-btnWrapper--fullOnMobile
+			+baseBtn({
+				text: 'Saisir mes reléves',
+				empty: true
+			})

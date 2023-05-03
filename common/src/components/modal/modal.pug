@@ -1,0 +1,46 @@
+//- - var size = data.size || "c-modal__content--large" => 1042px
+
+include ../spinner/spinner
+
+mixin modal(data)
+  - var data       = data || {}
+  - var target     = data.target || `{ "target": "veuillez associé une cible", "autoStart": "false"  }`
+  - var blocked    = data.blocked || false
+  - var noCloseBtn = data.noCloseBtn || false
+  - var size       = data.size || ""
+  - var theme      = data.theme || ""
+  - var icon       = data.icon || ""
+  - var bigClose       = data.bigClose || false
+  - var closeTheme = data.closeTheme || false
+
+  .c-modal.u-hide(
+    data-e-modal=target
+  )
+    .c-modal__overlay
+      .c-modal__content(data-e-modal-content class=size class=theme ? "c-modal--"+ theme : "")&attributes(attributes)
+        if !theme
+          if !noCloseBtn
+            if bigClose
+                button(type="button" data-e-modal-close).c-modalCloseButton.c-modalCloseButton--lg
+                  span.c-modalCloseButton__picto.icon.icon-closeModal
+                  span.c-modalCloseButton__text Fermer
+            else
+                button(type="button" data-e-modal-close).c-modalCloseButton
+                  span.c-modalCloseButton__picto.icon.icon-close
+                  span.c-modalCloseButton__text Fermer
+        else
+          div(class = "c-modal__iconTheme--"+theme)
+            span.c-modal__icon.icon(class=icon)
+
+          if closeTheme
+              button(type="button" data-e-modal-close).c-modalCloseButton
+                span.c-modalCloseButton__picto.icon.icon-close
+                span.c-modalCloseButton__text Fermer
+
+        .c-modal__main
+          block
+
+    if blocked
+      +spinner({
+        mode: "lock"
+      })

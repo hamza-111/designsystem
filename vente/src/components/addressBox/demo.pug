@@ -1,0 +1,114 @@
+include addressBoxItem/addressBoxItem
+
+//- +adressBox
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant adressBox
+
++demo()
+  +addressBox.l-wrapper--large
+    +adressBoxItem({
+      text: "On parie qu'on trouve votre adresse&nbsp;?",
+      imgMedium: '../images/contrib/vente_contrat.png',
+      infoBox: true
+    })
+      .c-addressBox__fieldSet
+        .l-row.l-row--noSideGut
+          .l-col-small-12.l-col-medium-5
+            +inputMat({
+              float: true,
+              id: 'floatLabel1',
+              label: `
+                <span class="u-hideLargeUp">PDL </span>
+                <span class="u-hideSmall u-hideMedium">PDL (électricité) </span>
+                <span class="icon icon-elec2 u-fontSize-huge"></span>
+              `
+            })(data-e-float-label).c-inputMat--float
+          .l-col-small-12.l-col-medium-2
+            p.c-addressBox__fieldSetSeparator ou
+          .l-col-small-12.l-col-medium-5
+            +inputMat({
+              float: true,
+              id: 'floatLabel2',
+              label: `
+                <span class="u-hideLargeUp">PCE </span>
+                <span class="u-hideSmall u-hideMedium">PCE (Gaz) </span>
+                <span class="icon icon-gaz3 u-fontSize-huge"></span>
+              `
+            })(data-e-float-label).c-inputMat--float
+
+      p.c-addressBox__legalMention.u-textLeft.u-margin-t-10.u-margin-small-t-10 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum tenetur odit beatae voluptates ipsa debitis eveniet, nihil asperiores. Modi explicabo ratione quae, dolorem fugiat illum laudantium ab quo maiores maxime.
+
+      .u-margin-small-t-20.u-margin-t-20
+        a.u-link.u-link--revert(href='#') Trouver le PDL/PCE pour moi grâce à une facture
+
+    +adressBoxItem({
+      text: "Je renseigne directement mon adresse",
+      imgMedium: '../images/contrib/vente_map.png',
+      hasSeparator: true
+    })
+      .c-addressBox__fieldSet
+        .l-row.l-row--noSideGut
+          .l-col-small-12
+            +inputMat({
+              float: true,
+              id: 'autocomplete1',
+              label: 'Adresse',
+              autoComplete: true
+            })(data-e-float-label).c-inputMat--suggest.c-inputMat--float
+
+      .u-margin-small-t-30.u-margin-t-30
+        a.u-link.u-link--revert(href="#") Trouver le PDL/PCE pour moi grâce à une facture
+
+//- +adressBox
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Contenu pour démo :
+
++demo()
+  .c-addressBox__group
+    +adressBoxItem({
+      text: "Je renseigne directement mon adresse",
+      imgMedium: '../images/contrib/vente_map.png'
+    })
+      .c-addressBox__fieldSet
+        .l-row.l-row--noSideGut
+          .l-col-small-12
+            +inputMat({
+              float: true,
+              id: 'voie',
+              label: 'Voie',
+            })(data-e-float-label).c-inputMat--float
+
+        .l-row.l-row--noSideGut
+          .l-col-small-12.l-col-medium-6
+            +inputMat({
+              float: true,
+              id: 'codepostal',
+              label: 'Code postal'
+            })(data-e-float-label).c-inputMat--float
+
+          .l-col-small-12.l-col-medium-6
+            +inputMat({
+              float: true,
+              id: 'ville',
+              label: 'Ville'
+            })(data-e-float-label).c-inputMat--float
+
+        +fieldInfo({
+          typeMessage: 'error',
+          message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet reprehenderit, labore ex dolorem quidem libero, provident nemo tempore quasi maiores doloremque sapiente voluptates earum, possimus dignissimos, harum iusto veniam. Porro.'
+        }).u-textLeft
+
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Message de confirmation pour démo (n'utilise pas le composant adressBox) :
+
++demo()
+  .l-wrapper--large
+    .u-padding-a-30.u-bg-grey-light.u-textCenter
+      h3.u-heading-4 Trouvé&nbsp;!
+
+      div.u-margin-small-t-20.u-margin-t-20
+        img(src='../images/contrib/vente_mapmarker.jpg' alt="").u-hideMediumUp
+        img(src='../images/contrib/vente_map.png' alt="").u-hideSmall
+
+      p.u-margin-small-t-10.u-margin-t-20: strong 9 Rue mozart, Clichy 92110
+
+      p.u-margin-small-t-40.u-margin-t-40
+        a(href="#").u-link.u-link--revert Perdu, ce n'est pas mon adresse

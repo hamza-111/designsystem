@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+// assets
+@import "../../../../common/src/assets/scss/variables";
+@import "../../../../common/src/assets/scss/mixins";
+
+html {
+  font-size: 62.5%;
+  font-size: calc(1em * 0.625);
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: $font-arial;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'icons';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/icons.woff2') format('woff2'),
+       url('../fonts/icons.woff') format('woff'),
+       url('../fonts/icons.ttf') format('truetype');
+}
+
+
+.c-siteFooter {
+  @import "../../../../common/src/assets/scss/reset";
+  @import "../../../../common/src/assets/scss/base";
+
+  @import "../../../../common/src/assets/scss/icons";
+
+
+  // écraser styles BOS4
+  [class^="icon-"],
+  [class*=" icon-"] {
+    background-image: none;
+  }
+
+  .icon {
+    width: auto;
+    height: auto;
+  }
+
+
+  // spécifier largeur du site
+  max-width: 1240px;
+  margin: 0 auto;
+
+  .parbase.footer & {
+    position: relative;
+    z-index: 100;
+  }
+
+
+  // quelques styles (pas besoin d'importer toutes des 'utilities'
+  .u-textUppercase { text-transform: uppercase; }
+  strong { font-weight: 700; }
+
+  // composants utilisés
+  @import "../../../../common/src/components/siteFooter/siteFooter";
+  @import "../../../../common/src/utilities/scss/display";
+}
+
+.parbase.footer { background-color: $white; }

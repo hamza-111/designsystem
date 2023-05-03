@@ -1,0 +1,27 @@
+mixin confirmerAdresse(data)
+  - data = data || {}
+
+  //.c-confirmerAdresse
+  .c-confirmerAdresse
+    h2.u-heading-1.u-textCenter.u-margin-b-20 Confirmation de votre nouvelle adresse
+    p.c-confirmerAdresse__desc.u-textCenter Votre adresse postale a bien été modifiée. Vous recevrez désormais votre facture à l'adresse suivante :
+    .c-confirmerAdresse__name.u-margin-t-40.u-margin-small-t-40.u-margin-b-20.u-margin-small-b-20 Mme Sandrine Delahaye
+    ul.c-confirmerAdresse__liste
+      li.c-confirmerAdresse__item
+        //span.c-confirmerAdresse__categorie Adresse : 
+        span.c-confirmerAdresse__result 12 rue chicken
+      li.c-confirmerAdresse__item
+        //span.c-confirmerAdresse__categorie Étage : 
+        span.c-confirmerAdresse__result porte 2 digicode 5412
+      li.c-confirmerAdresse__item
+        //span.c-confirmerAdresse__categorie Complément d'adresse : 
+        span.c-confirmerAdresse__result 75018 PARIS
+    .c-confirmerAdresse__grey.u-margin-t-50.u-margin-small-t-50
+      span.c-confirmerAdresse__note À noter
+      p.c-confirmerAdresse__msg Si votre facture a déjà été envoyée, la modification de votre adresse sera prise en compte lors de l'envoi de votre prochaine facture.  
+    
+    +btnWrapper.u-theme-genBlue.c-btnWrapper--alignRight.u-margin-v-50.u-margin-small-v-50
+      
+      +baseBtn({
+        text: 'Je retourne à mon profil'
+      })

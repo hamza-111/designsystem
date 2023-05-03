@@ -1,0 +1,36 @@
+include ../../../../common/src/components/wysiwyg/wysiwyg
+include ../toolTipV2/toolTipV2
+
+mixin imageModal(data)
+  - var data   = data || {}
+  - var img  = data.img || "textImageBg.jpg"
+
+  //Explication Facture
+  .c-imageModal.u-padding-a-10
+    .c-imageModal__alignTooltip
+
+        +toolTipV2({
+            themeColor: 'u-theme-magenta'
+        })(data-e-modal-open='infoFacture')
+
+        +modal({
+            target: '{"target": "infoFacture"}'
+        }).u-padding-a-40
+
+            +wysiwyg
+                p Lorem ipsum dolor sit amet, elit.Placeat aperiam delectus aut neque quos accusamus omnis quod veniam, magni, nesciunt ducimus eligendi consequuntur!
+                h2 Listes
+                ul
+                    li: span.u-list__item Liste 'carré'
+                    li: span.u-list__item Liste 'carré'
+                    li: span.u-list__item
+                    a.u-link.u-link--externalLink(href="#" target="_blank" rel="noopener noreferrer") Lien externe
+                    li
+                    ul
+                        li: span.u-list__item.u-list__item--check Liste 'check'
+                        li: span.u-list__item.u-list__item--check Liste 'check'
+                        
+    h2.u-heading-2.u-textCenter.c-imageModal--titre composition d'une facture
+    .c-imageModal__recadrageImage.u-padding-t-20
+
+        img(src="../images/contrib/"+img alt="Explication Facture").c-imageModal--responsiveImage

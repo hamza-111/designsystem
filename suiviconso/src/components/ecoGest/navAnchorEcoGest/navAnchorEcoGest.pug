@@ -1,0 +1,20 @@
+include ../carouselEcoGest/carouselEcoGest
+
+mixin navAnchorEcoGest(data)
+  - var data = data || {}
+  - var tab  = data.tab || "tab"
+  - var travaux  = data.travaux  || false
+  - var plus  = data.plus  || false
+  - var citoyen  = data.citoyen  || false 
+  //c-navAnchorEcoGest
+  .c-navAnchorEcoGest&attributes(attributes)
+    +carouselEcoGest({
+      anchor : tab
+    })
+    .l-wrapper--large
+      +mainEcoGest({
+      tab : tab,
+      travaux : travaux,
+      plus : plus,
+      citoyen : citoyen 
+    })

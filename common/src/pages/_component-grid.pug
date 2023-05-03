@@ -1,0 +1,57 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+include ../components/column/column
+
+//- Main variables
+block variables
+  - var title = "Grille"
+  - var page = ""
+  - var bodyClass = ""
+  - var description = ""
+  - var noHeaderFooter = true
+  - var demoMode = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  .c-wysiwyg
+    h2 Grille 4 colonnes desktop
+  +demo()
+    +column({
+      nbrCol: 4
+    })
+
+  .c-wysiwyg
+    h2 Grille 3 colonnes desktop
+  +demo()
+    +column({
+      nbrCol: 3
+    })
+
+  .c-wysiwyg
+    h2 Grille 2 colonnes desktop
+  +demo()
+    +column({
+      nbrCol: 2
+    })
+
+  .c-wysiwyg
+    h2 Grille 1 colonne desktop
+  +demo()
+    +column({
+      nbrCol: 1
+    })
+
+  .c-wysiwyg
+    h2 Grille sans gouttière
+  +demo()
+    +column({
+      nbrCol: 3,
+      noGutter: true
+    })

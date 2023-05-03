@@ -1,0 +1,285 @@
+.c-monCompteur {
+  width: 100%;
+  display: block;
+  padding: 30px;
+  background-color: white;
+  margin-bottom: 1px;
+  min-height: 267px;
+  border-radius: 24px;
+  font-family: 'Open Sans';
+  
+  .c-monCompteur__value {
+    font-size: 4.6rem;
+  }
+  .c-baseBtn {
+    width: 100%;
+    font-size: 1.6rem;}
+    
+  .c-baseBtn__content {
+    font-weight: bold!important;
+  }
+
+  
+  .c-toolTipV2__icon.icon.icon-picto-info-ds {
+    font-size: 2.4rem;
+    border: 0;
+    color: #009DE9;
+    &:hover {
+      color: #009DE9;
+      background-color: white;
+    }
+  }
+}
+
+.c-monCompteur .c-btnWrapper, .c-monCompteurRelever .c-btnWrapper {
+  justify-content : flex-start;
+}
+
+.c-monCompteur .c-modal__main .c-btnWrapper, .c-monCompteurRelever .c-modal__main .c-btnWrapper {
+  justify-content : center;
+}
+
+.c-monCompteur .c-modal__main .c-radioMat__check {
+  top: 3px;
+}
+
+.c-monCompteur__modalTitle {
+  width: 100%;
+  display: flex;
+}
+
+.c-monCompteur__modalTitle img {
+  width: 35px;
+  height: 45px;
+}
+
+.c-monCompteur__modalimg {
+  margin-right: 20px;
+  flex-basis: 35px;
+}
+
+.c-monCompteur__modalDisc {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: $genBlue;
+  display: inline-block;
+  flex-basis: 90%;
+}
+
+.c-monCompteur__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.c-monCompteur__title {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.c-monCompteur__index {
+  font-size: 1.6rem;
+  color: #747474;
+  font-weight: 400;
+}
+
+.c-monCompteur__content {
+  display: block;
+  width: 100%;
+}
+
+.c-monCompteur__telereleve {
+  margin-bottom: 40px;
+  font-size: 1.6rem;
+}
+
+.c-monCompteur__compteur {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.c-monCompteur__compteur img {
+  margin-right: 20px;
+  height : 59px!important;
+  margin-top: 10px;
+}
+
+.c-monCompteur__number {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 23px;
+  margin-top: 17px;
+}
+
+.c-monCompteur__errorMsg {
+  color: #3e3e3e;
+  font-size: 1.6rem;
+  font-style: italic;
+}
+
+.c-monCompteur .c-baseBtn__iconLeft.icon-close {
+  transform: rotate(45deg);
+  font-size: 1.5rem;
+}
+
+.c-monCompteurRelever {
+  padding: 30px 40px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  height: 165px;
+  background: white;
+}
+
+.c-monCompteurRelever.c-monCompteurRelever__jaune {
+  background-color: #ffc300;
+}
+
+.c-monCompteurRelever__title {
+  font-style: 1.8rem;
+  font-weight: bold;
+}
+
+.c-monCompteurRelever__btnTxt, .c-monCompteurRelever__date {
+  font-size: 1.6rem;
+}
+
+.c-monCompteurRelever .c-btnWrapper {
+  margin-top: 16px;
+}
+
+.c-monCompteurRelever .c-btnWrapper .c-baseBtn.u-theme-bg {
+  background-color: white;
+}
+
+.c-monCompteurRelever .c-btnWrapper .c-baseBtn .c-baseBtn__content {
+  color: $genBlue;
+}
+
+.c-monCompteurRelever .c-btnWrapper .c-baseBtn:hover {
+  background-color: #e5e5e5 !important;
+}
+
+.c-monCompteurRelever .c-btnWrapper .c-baseBtn .c-baseBtn__content, .c-monCompteur .c-btnWrapper .c-baseBtn .c-baseBtn__content {
+  font-weight: normal;
+}
+
+.c-monCompteurRelever__border {
+  border-left: 5px solid #ffc300;
+  padding-left: 16px;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c-monCompteurRelever__msg {
+  font-size: 1.6rem;
+  width: 70%;
+}
+
+.c-monCompteurRelever__msgItalic {
+  font-size: 1.6rem;
+  color: #3e3e3e;
+  font-style: italic;
+}
+
+.c-blocCompteur--borderBlue {
+  border-top: 7px $genBlue solid;
+}
+
+.c-blocCompteur--borderGreen {
+  border-top: 7px $green solid;
+}
+
+.c-blocCompteur__modalIconHeader {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.c-blocCompteur--modalTitleGreen {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: $green;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.c-blocCompteur__modalIcon {
+  width: 40px;
+  height: 40px;
+  font-size: 3rem;
+  background-color: $green;
+  color: white;
+  border-radius: 50%;
+  line-height: 40px !important;
+  text-align: center;
+}
+
+.c-monCompteur__numberSpanFontSize {
+  font-size: 2.7rem;
+}
+
+.c-blocCompteur__listeModalLink {
+  text-align: center;
+  a {
+      color: $genBlue!important;
+  }
+}
+
+@include media ("<=medium") {
+  .c-monCompteurRelever__msg {
+    width: 100%;
+  }
+  .c-monCompteur__compteur {
+    float: left;
+    width: 320px;
+  }
+  .c-monCompteur__telereleve {
+    float: left;
+    margin-top: 28px;
+  }
+  .c-monCompteur__btn {
+    float: left;
+    width: 100%;
+  }
+}
+
+@include media ("<=small") {
+  .c-monCompteur .l-col-md-4, .c-monCompteurRelever .l-col-md-4, .c-monCompteur .c-btnWrapper, .c-monCompteurRelever .c-btnWrapper {
+    width: 100%;
+  }
+
+  .c-monCompteur {
+    width: 100%;
+    display: block;
+    padding: 16px;
+    background-color: white;
+    margin-bottom: 1px;
+    min-height: 267px;
+    border-radius: 8px;
+  }
+
+  .c-monCompteur__compteur {
+    float: left;
+    width: 100%;
+  }
+  .c-monCompteur__title {
+    font-size: 2rem;
+  }
+  .c-monCompteur__numberText .c-monCompteur__value {
+    font-size: 3.6rem;
+  }
+
+  .c-monCompteur__btn {
+    float: none;
+  }
+}
+

@@ -1,0 +1,224 @@
+.c-espritService-comments {
+  @extend %clear-after;
+
+  .c-accordion__panel {
+    border-bottom: 1px solid $grey-medium;
+    overflow: hidden;
+  }
+
+  .c-carouselNav {
+    border-top: 1px solid $grey-medium;
+  }
+}
+
+// espaces standards
+.c-espritService-comments__padding,
+.c-espritService-comments__picto {
+  padding: 15px;
+}
+
+.c-espritService-comments__legal {
+  margin-top: 10px;
+
+  // ni un bouton, ni un lien...
+  @include hover-focus-active() {
+    .c-linkLongArrow__text {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+// TABS
+.c-espritService-comments__tab {
+  background-color: $grey-light;
+  display: table;
+  width: 100%;
+  overflow: hidden;
+
+  > * {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .c-espritService-note {
+    width: 100%; // pour élargir au max le block
+  }
+
+  .c-espritService-note__title {
+    margin-bottom: 5px;
+  }
+
+  // quand le Tabs est ouvert :
+  [aria-expanded="true"] & {
+    .c-espritService-comments__chevron {
+      color: $genBlue;
+    }
+
+    .c-espritService-comments__picto {
+      .icon {
+        background-color: $genBlue;
+      }
+    }
+
+    .c-espritService-note__title {
+      color: $genBlue;
+    }
+  }
+}
+
+.c-espritService-comments__picto {
+  .icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 4.5rem;
+    color: $white;
+    background-color: $genBlue-medium;
+    transition: all .2s ease-in-out;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.c-espritService-comments__chevron {
+  transition: all .2s ease-in-out;
+  font-size: 4rem;
+}
+
+
+// PANELS
+.c-espritService-comments__panel {
+  @extend %clear-after;
+  position: relative;
+}
+
+.c-espritService-comments__total {
+  margin-bottom: 5px;
+
+  .c-espritService-note {
+    margin-bottom: 15px;
+  }
+}
+
+.c-espritService-comments__slide {
+  background-color: $grey-light;
+  padding-bottom: 15px;
+
+  .c-linkLongArrow--inline {
+    vertical-align: top; // pour retirer l'espace en bas
+  }
+}
+
+
+// mobiles only
+@include media("<small") {
+  .c-espritService-comments__tab {
+    [aria-expanded="true"] & {
+      .c-espritService-comments__chevron {
+        transform: rotateZ(270deg);
+      }
+    }
+  }
+
+  .c-espritService-comments__panel {
+    transition: all .3s ease-in-out;
+    opacity: 0;
+
+    [aria-hidden="false"] & {
+      opacity: 1;
+    }
+  }
+
+  .c-espritService-comments__chevron {
+    transform: rotateZ(90deg);
+  }
+}
+
+
+@include media(">=small") {
+  .c-espritService-comments {
+    padding-bottom: 60px; // à cause du lien CGU
+
+    .c-accordion__tab {
+      width: 25%;
+    }
+
+    .c-accordion__panel {
+      border-bottom: none;
+      float: right;
+      width: calc(75% - 15px);
+    }
+  }
+
+  .c-espritService-comments__legal {
+    position: absolute;
+    width: 25%;
+    max-width: 300px;
+  }
+
+  .c-espritService-comments__tab {
+    border-bottom: 1px solid $grey-medium;
+    transition: all .3s ease-in-out;
+
+    [aria-expanded="true"] & {
+      background-color: $white;
+    }
+
+    [aria-expanded="false"] & {
+      cursor: pointer;
+
+      @include hover-focus-active() {
+        background-color: $grey-medium;
+      }
+    }
+  }
+
+  .c-espritService-comments__panel {
+    padding: 15px 0;
+  }
+
+  .c-espritService-comments__total {
+    float: left;
+    width: 55%;
+    padding-bottom: 50px; // hauteur du boutton + petite marge
+    padding-right: 15px;
+
+    .c-linkLongArrow {
+      position: absolute;
+      bottom: 15px;
+      width: calc(55% - 15px);
+      height: auto;
+    }
+  }
+
+  .c-espritService-comments__slide {
+    float: left;
+    width: 45%;
+    padding-bottom: 0;
+  }
+}
+
+
+// tablets only
+@include media(">=small", "<medium") {
+  .c-espritService-comments__tab {
+    .c-espritService-note {
+      padding: 15px 0 15px 15px;
+    }
+  }
+
+  .c-espritService-comments__picto {
+    display: none;
+  }
+
+  .c-espritService-comments__legal {
+    font-size: 1.3rem;
+  }
+}

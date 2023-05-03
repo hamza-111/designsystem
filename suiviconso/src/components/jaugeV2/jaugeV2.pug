@@ -1,0 +1,158 @@
+mixin jaugeV2(data)
+	- var data			= data || {}
+	- var theme     = data.theme || "green"
+	- var nth       = data.nth || 5
+	
+	//.c-jaugeV2
+	.c-jaugeV2&attributes(attributes)
+		.c-jaugeV2__left
+			h2.c-jaugeV2__title 
+				p J’anticipe ma facture annuelle
+			p.c-jaugeV2__para.u-margin-b-20 Votre relevé de compteur du 23/06/2022 nous a permis de réestimer votre facture annuelle. Sur cette base, nous prévoyons de 
+				span(class="c-jaugeV2--"+ theme).c-jaugeV2--typo vous rembourser environ 84€ 
+				| au terme de votre échéancier.
+
+			p Si vous le souhaitez, contactez le <a href="" class="c-jaugeV2--sc u-color-genBlue u-textBold"> service client </a> pour répartir ce montant sur vos mensualités restantes. 
+			p.c-jaugeV2__para.u-margin-b-20 À défaut, le remboursement sur votre compte bancaire aura lieu vers le 18/11/2022.
+			button.c-jaugeV2__link(data-e-modal-open='jauge', type="button") En savoir plus sur la mensualisation 
+		.c-jaugeV2__right(data-e-jauge)
+			img(src="../images/contrib/jauge-animate.gif" alt="animate").c-jaugeV2__animate
+			.c-jaugeV2__jauge(class="c-jaugeV2--nth-"+nth)
+				.c-jaugeV2__clic
+					.c-jaugeV2__item.c-jaugeV2--firstItem(class="c-jaugeV2__jauge--"+ theme)
+						span.icon.icon-Facture-jauge
+						span.c-jaugeV2__month Nov
+					.c-jaugeV2__tooltipWrapper
+						.c-jaugeV2__tooltipFac
+							span.c-jaugeV2__calc Fact. annuelle ré-estimée
+								span(class="c-jaugeV2--"+ theme).u-textBold 1 306€
+							span.c-jaugeV2__calc 
+								span(class="c-jaugeV2--"+ theme class="c-jaugeV2--bkg-"+theme).c-jaugeV2--soustraction.c-jaugeV2--puce 
+								| Total des 11 mensualités
+								span(class="c-jaugeV2--"+ theme).u-textBold 924€ 
+							hr
+							span.c-jaugeV2__calc 
+								span(class="c-jaugeV2--"+ theme).c-jaugeV2--puce =
+								| Prélèvement estimé
+								span(class="c-jaugeV2--"+ theme).u-textBold 382€
+							p.u-textItalic.u-margin-t-20 Cette estimation est basée sur votre consommation relevée en mai et tient compte de la saisonnalité.
+				.c-jaugeV2__clic
+					.c-jaugeV2__item
+						span.c-jaugeV2__month Oct
+						.c-jaugeV2__tooltip
+							span À partir du 16 mai une estimation de votre facture annuelle sera calculée
+				.c-jaugeV2__clic
+					.c-jaugeV2__item
+						span.c-jaugeV2__month Sept
+						.c-jaugeV2__tooltip
+							span À partir du 16 mai une estimation de votre facture annuelle sera calculée
+				.c-jaugeV2__clic
+					.c-jaugeV2__item
+						span.c-jaugeV2__month Août
+						.c-jaugeV2__tooltip
+							span À partir du 16 mai une estimation de votre facture annuelle sera calculée
+				.c-jaugeV2__clic
+					.c-jaugeV2__item
+						span.c-jaugeV2__month Juill.
+						.c-jaugeV2__tooltip
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+							hr
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+				.c-jaugeV2__clic
+					.c-jaugeV2__item
+						span.c-jaugeV2__month Juin
+						.c-jaugeV2__tooltip
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+							hr
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+				.c-jaugeV2__clic
+					.c-jaugeV2__item
+						span.c-jaugeV2__month Mai
+						.c-jaugeV2__tooltip
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+							hr
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+				.c-jaugeV2__clic
+					.c-jaugeV2__item
+						span.c-jaugeV2__month Avril
+						.c-jaugeV2__tooltip
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+							hr
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+				.c-jaugeV2__clic
+					.c-jaugeV2__item
+						span.c-jaugeV2__month Mars
+						.c-jaugeV2__tooltip
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+							hr
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+				.c-jaugeV2__clic
+					.c-jaugeV2__item
+						span.c-jaugeV2__month Fév.
+						.c-jaugeV2__tooltip
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+							hr
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+				.c-jaugeV2__clic
+					.c-jaugeV2__item
+						span.c-jaugeV2__month Janv.
+						.c-jaugeV2__tooltip
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+							hr
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+				.c-jaugeV2__clic
+					.c-jaugeV2__item
+						span.c-jaugeV2__month Déc.
+						.c-jaugeV2__tooltip
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+							hr
+							span Mensualité passée : <b class="u-color-blue">84,22€</b>
+				.c-jaugeV2__mask
+				
+			
+			.c-jaugeV2__fac 
+				span.c-jaugeV2__label Avoir estimé à : 
+				span.c-jaugeV2__price(class="c-jaugeV2--"+ theme) 4 <span>€</span><sup>TTC</sup>
+				//- .c-jaugeV2__tooltipWrapper
+				//- 	.c-jaugeV2__tooltipFac
+				//- 		span Fact. annuelle ré-estimée
+				//- 			span(class="c-jaugeV2--"+ theme) 1 306€
+				//- 		span 
+				//- 			span(class="c-jaugeV2--"+ theme) -
+				//- 			| Total des 11 mensualités
+				//- 			span(class="c-jaugeV2--"+ theme) 38924€ 
+				//- 		hr
+				//- 		span 
+				//- 			span(class="c-jaugeV2--"+ theme) =
+				//- 			| Prélèvement estimé
+				//- 			span(class="c-jaugeV2--"+ theme) 382€ </span>
+				//- 		p Cette estimation est basée sur votre consommation relevée en mai et tient compte de la saisonnalité.
+
+mixin jaugeV2Mens(data)
+	- var data			= data || {}
+	- var img = data.img || "jauge.jpg"
+	- var imgMobile = data.imgMobile || "jauge-mobile.jpg"
+	- var error = data.error || false
+
+	//.c-jaugeV2Mens
+	.c-jaugeV2Mens
+		.c-jaugeV2Mens__wrap
+			h2.c-jaugeV2Mens__title J’anticipe ma facture annuelle
+			if !error
+				p.c-jaugeV2Mens__para.u-margin-b-20 L’ajustement de vos mensualités a bien été enregistré. 
+				p.c-jaugeV2Mens__para Pour vous accompagner dans la maîtrise de votre consommation, consultez nos <a class="u-color-genBlue"> astuces et conseils.</a>
+				button(data-e-modal-open='jauge', type="button").c-jaugeV2Mens__link En savoir plus sur la mensualisation
+				+modal({
+					target: `{
+					"target": "jauge"
+					}`
+				}).c-jaugeV2__modal.u-padding-a-40
+					h2.c-jaugeV2__ModalTitle.u-margin-b-40 En savoir plus sur la mensualisation
+					p.u-margin-b-20 Votre plan de mensualisation est basé sur votre consommation de l’année précédente.
+					p.u-margin-b-20 La ré-estimation de votre facture annuelle est calculée sur votre consommation relevée à mi-parcours et tient compte de la saisonnalité. Une fois l'estimation établie, vous pourrez ajuster vos mensualités.
+					p Le plan de mensualisation est modifiable une fois par an.
+			else
+				p.c-jaugeV2Mens__para.u-margin-b-20 Vos données sont en cours de récupération… Nous vous prions d'actualiser votre page ou de revenir un peu plus tard.
+		.c-jaugeV2Mens__img
+			img(src="../images/contrib/"+img alt="").u-hideSmall
+			img(src="../images/contrib/"+imgMobile alt="").u-hideMediumUp

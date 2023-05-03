@@ -1,0 +1,126 @@
+@import "errorBlock/errorBlock";
+@import "errorKnow/errorKnow";
+
+.c-error {
+  background-color: $grey-light;
+  padding-top: 7%;
+
+  .c-linkLongArrow {
+    @include hover-focus-active() {
+      .c-linkLongArrow__text {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .c-linkLongArrow__icon {
+    font-size: 2.8rem;
+  }
+
+  .c-headSection {
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+
+  .c-headSection__title {
+    color: $genBlue-hover;
+    margin-top:40px;
+  }
+
+  .c-greyWrapper {
+    padding-bottom: 60px;
+  }
+}
+
+.c-error__message {
+  padding: 1%;
+}
+
+.c-error__block {
+  vertical-align: top;
+  display: inline-block;
+}
+
+.c-error__text {
+  width: 74%;
+}
+
+
+.c-error__bg {
+  background-position: right;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.c-error__title {
+  font-size: 3em;
+  font-weight: bold;
+  color: $genBlue-hover;
+  position: relative;
+  margin-bottom: 15px;
+
+  &::after {
+    content: "__";
+    color: $genBlue-hover;
+    position: absolute;
+    left: 3px;
+    bottom: -10px;
+  }
+  @include media("<small") {
+    font-size: 2em;
+  }
+}
+
+
+
+@include media("<small") {
+  .c-error__bgParent [class*="l-col-"] {
+    padding: 0;
+  }
+  .c-error__text {
+    width: 100%;
+    }
+}
+
+
+@include media(">=small") {
+  .c-error {
+    padding-bottom: 40px;
+  }
+
+.c-error__bgParent {
+  text-align: center;
+  overflow: auto ;
+}
+
+  .c-error__bg {
+    padding-top: 0;
+    background-size: cover;
+    margin-left: 1%;
+    width: 24%;
+    img.u-hideSmall {
+      height: 170px;
+    }
+  }
+}
+
+
+
+
+@include media(">medium") {
+
+
+  .c-error__bgParent [class*="l-col-"] {
+    padding: 0 10px;
+  }
+
+  .c-error__bgParent {
+    padding: 40px 0 60px;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
+    text-align: center;
+  }
+}

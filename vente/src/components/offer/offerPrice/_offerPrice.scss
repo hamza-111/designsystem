@@ -1,0 +1,56 @@
+.c-offerPrice {
+  padding: 15px;
+  padding-bottom: 25px;
+  padding-top: 0;
+}
+
+.c-offerPrice__title {
+  margin-bottom: 10px;
+}
+
+.c-offerPrice__detail {
+  font-size: 1.8rem;
+  font-weight: $font-bold;
+  margin-bottom: 5px;
+
+  sup {
+    font-size: 0.9rem;
+    top: -0.8em;
+  }
+}
+
+.c-offerPrice__detail2 {
+  font-size: 1.3rem;
+  sup {
+    font-size: .8rem;
+  }
+}
+
+.c-offerPrice--notEstimation {
+  text-align: right;
+
+  .c-offerPrice__detail {
+    font-weight: $font-normal;
+  }
+
+  .c-offerPrice__detail2 {
+    font-size: $font-15;
+  }
+
+  .c-offerPrice__price {
+    font-size: 3rem;
+    font-weight: $font-bold;
+    color: $genBlue;
+  }
+}
+
+@include media('>=small') {
+  .c-offerPrice {
+    padding-left: 0;
+    padding-bottom: 15px;
+  }
+
+  .c-offerPrice__detail {
+    margin-bottom: 0;
+  }
+}

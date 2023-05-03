@@ -1,0 +1,55 @@
+mixin stickyOffer(data)
+  - var data     = data || {}
+  - var title    = data.title || "lorem ipsum"
+  - var btn1     = data.btn1 || false
+  - var btn2     = data.btn2 || false
+  - var picto    = data.picto || false
+  - var template = data.template || false
+
+  .c-stickyOffer&attributes(attributes)
+    if template
+      +stickyOffer-tpl
+
+    .c-stickyOffer__wrap.l-wrapper--huge(
+      data-e-headeroffer-sticky=template ? "data-e-headeroffer-sticky" : false
+    )
+      .c-stickyOffer__title.u-hideSmall!=title
+
+      if block
+        .c-stickyOffer__info
+          block
+
+      .c-stickyOffer__push
+        +btnWrapper().u-theme-genBlue
+          if btn1
+            +baseBtn({
+              text: btn1,
+              secondary: true,
+              iconRight: picto,
+              linkUrl: "#"
+            }).c-baseBtn--large.u-hideSmall
+          if btn2
+            +baseBtn({
+              text: btn2,
+              linkUrl: "#formulaire"
+            })(data-e-scrollto={"offset": "90"}).c-baseBtn--large
+
+
+mixin stickyOffer-tpl()
+  // TEMPLATE - stickyOffer-tpl
+  script(data-tpl="stickyOffer-tpl" type="text/template")
+    .c-stickyOffer__title.u-hideSmall Confort Connecté
+
+    .c-stickyOffer__info
+      span.c-stickyOffer__bold [% this.budgetMensuel %]€<sup>TTC</sup>
+      |&nbsp;/mois
+      | [% if (this.netatmo) { %]
+      | + thermostat à <span class="c-stickyOffer__bold">[% this.thermostat %]€</span>
+      | [% } %]
+
+    .c-stickyOffer__push
+      +btnWrapper().u-theme-genBlue
+        +baseBtn({
+          text: 'Souscrire'
+        }).c-baseBtn--large
+  // END - TEMPLATE - stickyOffer-tpl

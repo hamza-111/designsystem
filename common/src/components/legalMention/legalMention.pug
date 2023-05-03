@@ -1,0 +1,18 @@
+mixin legalMention(data)
+  - var data = data || {}
+  - var settings = data.settings || false
+  - var target = settings.target || false
+
+  // c-legalMention
+  .c-legalMention&attributes(attributes)
+    button.c-legalMention__btn(
+      type="button"
+      data-e-toggle=settings
+    )
+      span.icon.icon-caret-bottom
+      | Mentions légales
+
+    .c-legalMention__content(data-e-toggle-target=target)
+      .c-wysiwyg
+        block
+  // end c-legalMention

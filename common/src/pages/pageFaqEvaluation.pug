@@ -1,0 +1,157 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/formMat/radioMat/radioMat
+
+include ../components/faq/faq
+include ../components/column/column
+include ../components/paging/paging
+
+//- Main variables
+block variables
+  - var title         = "pageFAQ Liste"
+  - var page          = ""
+  - var bodyClass     = ""
+  - var description   = "Ici c'est la page FAQ !"
+  - var wrapperSite = "l-wrapper--siteFull"
+
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  +breadcrumb
+  .c-faq
+
+    +searchFAQ()
+
+    +column({
+      colConfig: '33-66'
+    }).u-padding-h-50.u-padding-b-30.u-padding-t-110
+      .c-column__col
+        .c-faq__subTitle Question/réponses&nbsp;:
+        +menuFAQ
+          +menuItemFAQ({
+            text:"les question fréquentes",
+            titleDownSEO: true
+          })
+
+          +menuItemFAQ({
+            text:"Factures et Paiements",
+            sub: true,
+            toggle: "rubriqueFAQ",
+            titleDownSEO: true
+          })
+            +menuItemSubFAQSub({
+              toggleSub: "sousFacture",
+              toggle: "rubriqueFAQFacture",
+              txt : "Ma Facture"
+            })
+              +menuItemSubFAQ()
+                | Comment lire ma facture
+              +menuItemSubFAQ()
+                | Mes index de consommation
+              +menuItemSubFAQ()
+                | Facture en ligne
+            +menuItemSubFAQ({
+              titleDownSEO: true
+            })
+              | Modalités de paiements
+
+          +menuItemFAQ({
+            text:"Mon Espace Client",
+            sub: true,
+            toggle: "rubriqueFAQ2",
+            titleDownSEO: true
+          })
+            +menuItemSubFAQ({
+              titleDownSEO: true
+            })
+              | rubrique1
+
+            +menuItemSubFAQ({
+              titleDownSEO: true
+            })
+              | rubrique2
+
+            +menuItemSubFAQ({
+              titleDownSEO: true
+            })
+              | rubrique3
+
+            +menuItemSubFAQ({
+              titleDownSEO: true
+            })
+              | rubrique4
+
+            +menuItemSubFAQ({
+              titleDownSEO: true
+            })
+              | rubrique5
+
+          +menuItemFAQ({
+            text:"Offres et tarifs",
+            sub: true,
+            toggle: "rubriqueFAQ3",
+            titleDownSEO: true
+          })
+            +menuItemSubFAQ({
+              titleDownSEO: true
+            })
+              | Facture
+            +menuItemSubFAQ({
+              titleDownSEO: true
+            })
+              | Modalités de paiements
+
+          +menuItemFAQ({
+            text:"Mon installation et mon compteur",
+            titleDownSEO: true
+          })
+
+          +menuItemFAQ({
+            text:"Déménagement",
+            titleDownSEO: true
+          })
+
+          +menuItemFAQ({
+            text:"Economie d'énergie",
+            titleDownSEO: true
+          })
+
+          +menuItemFAQ({
+            text:"Chaudière gaz naturel",
+            titleDownSEO: true
+          })
+
+          +menuItemFAQ({
+            text:"Chauffage électrique",
+            titleDownSEO: true
+          })
+
+          +menuItemFAQ({
+            text:"Mon activité professionnelle",
+            titleDownSEO: true
+          })
+
+          +menuItemFAQ({
+            text:"Contact",
+            titleDownSEO: true
+          })
+
+          +menuItemFAQ({
+            text:"À propos de Gaz Tarif Réglementé ?",
+            titleDownSEO: true
+          })
+
+      .c-column__col
+        section
+          +articleFAQ.c-faq__blockMarge
+          +evaluationFAQ().c-faq__blockMarge
+
+

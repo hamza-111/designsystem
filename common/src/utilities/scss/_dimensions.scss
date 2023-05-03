@@ -1,0 +1,48 @@
+/**
+ * Dimensions:
+ * `.u-widthxxx` - classes de dimensions
+ *
+ *     @example
+ *     .u-width100: .fill
+ *     .u-width75: .fill
+ *     .u-width66: .fill
+ *     .u-width50: .fill
+ *     .u-width33: .fill
+ *     .u-width25: .fill
+ */
+
+.u-width100,
+.u-width75,
+.u-width66,
+.u-width50,
+.u-width33,
+.u-width25 {
+  width: 100%;
+}
+
+/**
+ * Dimensions automatique:
+ * `.u-width-auto` - classe de dimension automatique elle prent la valeur par default de navigateur
+ *
+ *     @example
+ *     .u-width-auto: .fill
+ */
+.u-width-auto{
+  width: auto !important;
+}
+
+@include media(">small") {
+  .u-width75 { width: (100% / 4 * 3); }
+  .u-width66 { width: (100% / 3 * 2); }
+  .u-width50 { width: 50%; }
+  .u-width33 { width: (100% / 3); }
+  .u-width25 { width: 25%; }
+}
+
+@media print {
+  .u-width75 { width: (100% / 4 * 3); }
+  .u-width66 { width: (100% / 3 * 2); }
+  .u-width50 { width: 50%; }
+  .u-width33 { width: (100% / 3); }
+  .u-width25 { width: 25%; }
+}

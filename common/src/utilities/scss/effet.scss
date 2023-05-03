@@ -1,0 +1,39 @@
+.u-radius {
+  border-radius: 20px;
+}
+
+.u-radius25 {
+  border-radius: 25px;
+}
+
+.u-shadow {
+	box-shadow: 0 0 25px 0 #B8B8B8;
+}
+
+.u-shadowHr {
+  box-shadow: inset 0px 13px 8px -10px #d3d3d3, 0px 11px 10px -3px #d3d3d3;
+}
+
+#fin-tr-wysiwig .u-link {
+  text-decoration: underline !important;
+  color: $genBlue !important;
+  font-size: 14px !important;
+}
+
+@include media("<=small") {
+  .u-radius {
+    border-radius: 0;
+  }
+
+  .u-shadow {
+    box-shadow: 0 0 0 0 #B8B8B8;
+  }
+
+  .u-radiusBorder {
+    border-radius: 6px;
+  }
+
+  .u-greyCadre {
+    border: 1px #d0d0d0 solid;
+  }
+}

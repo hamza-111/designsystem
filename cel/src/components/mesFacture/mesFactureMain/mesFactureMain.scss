@@ -1,0 +1,144 @@
+@import "mesFactureOnglet/mesFactureOnglet";
+.c-mesFactureMain .c-mesFactureMain__ecoPush .c-miniPush__text {
+  font-size: 1.6rem;
+}
+
+// surcharge layout DS
+
+$grid-gutter: 24px;
+
+// row
+.c-mesFactureMain {
+  
+  .c-toolTip {
+    margin-left: 6px;
+  }
+  .c-mesFactureOnglet__panel {
+    padding: 24px 85px 2px; 
+  }
+
+  .c-miniPush__title {
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    margin-top: 0;
+  }
+
+  .c-miniPush__text {
+    font-size: 1.8rem;
+  }
+
+  .l-row {
+    @extend %clear-after;
+
+    &.l-row--noSideGut {
+      margin-left: 0 - $grid-gutter /2;
+      margin-right: 0 - $grid-gutter /2;
+    }
+  }
+
+  // col
+  [class*="l-col-"] {
+    float: left;
+    padding-right: $grid-gutter / 2;
+    padding-left: $grid-gutter / 2;
+    width: 100%;
+    min-height: 1px;
+
+    // nested row
+    > .l-row {
+      margin-left: 0 - $grid-gutter /2;
+      margin-right: 0 - $grid-gutter /2;
+    }
+
+    // no gutter
+    .l-row--nogut > & {
+      padding-left: 0;
+      padding-right: 0;
+
+      > .l-row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  // col widths
+  @for $i from 1 through 12 {
+    .l-col-small-#{$i} {
+      width: (100% / (12/$i));
+    }
+    .l-push-small-#{$i} {
+      margin-left: (100% / (12/$i));
+    }
+  }
+}
+@include media (">small", "<=medium") {
+  .c-miniPush__content {
+    padding: 20px;
+  }
+
+  .c-mesFactureMain .c-miniPush__title {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+
+  .c-mesFactureMain .c-miniPush__text {
+    font-size: 1.4rem;
+  }
+}
+@include media(">small") {
+
+  .c-mesFactureMain {
+    @for $i from 1 through 12 {
+      .l-col-medium-#{$i} {
+        width: (100% / (12/$i));
+      }
+      .l-push-medium-#{$i} {
+        margin-left: (100% / (12/$i));
+      }
+    }
+  }
+}
+
+@include media(">medium") {
+  .c-mesFactureMain {
+    @for $i from 1 through 12 {
+      .l-col-large-#{$i} {
+        width: (100% / (12/$i));
+      }
+      .l-push-large-#{$i} {
+        margin-left: (100% / (12/$i));
+      }
+    }
+  }
+}
+
+
+// PRINT
+@media print {
+  
+  .c-mesFactureMain {
+    @for $i from 1 through 12 {
+      .l-col-medium-#{$i} {
+        width: (100% / (12/$i));
+      }
+      .l-push-medium-#{$i} {
+        margin-left: (100% / (12/$i));
+      }
+    }
+  }
+}
+
+@include media("<=small") {
+  
+  .c-mesFactureMain {
+    [class*="l-col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    
+    .c-mesFactureOnglet__panel {
+      padding: 24px 15px 2px;
+    }
+  }
+}

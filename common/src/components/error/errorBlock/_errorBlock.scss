@@ -1,0 +1,45 @@
+.c-errorBlock__title {
+  color: $white;
+  font-weight: $font-bold;
+  padding: 15px;
+
+  &:first-child {
+    margin-top: 10px;
+  }
+}
+
+.c-errorBlock__content {
+  padding-bottom: 15px;
+  padding-top: 15px;
+
+  //[linkLongArrow]
+  .c-linkLongArrow__text {
+    color: $black;
+  }
+}
+
+
+@include media(">=small") {
+  .c-errorBlock {
+    width: 47.75%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1%;
+  }
+}
+
+@include media(">medium") {
+  .c-errorBlock__content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .c-errorBlock {
+    margin-bottom: 25px;
+    width: 22.7%;
+  }
+}
+
+
+
+

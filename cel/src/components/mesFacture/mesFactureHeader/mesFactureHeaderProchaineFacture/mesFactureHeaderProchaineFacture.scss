@@ -1,0 +1,75 @@
+.c-mesFactureHeaderProchaineFacture {
+  padding: 40px;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 105%;
+  margin-bottom: 20px;
+}
+
+.c-mesFactureHeaderProchaineFacture__paiementType {
+  font-size: 1.6rem;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+.c-mesFactureHeaderProchaineFacture__titleNormal, .c-mesFactureHeaderProchaineFacture__titleBold {
+  font-size: 2.4rem;
+  line-height: 2.6rem;
+}
+
+.c-mesFactureHeaderProchaineFacture__titleBold, .c-mesFactureHeaderProchaineFacture__date {
+  font-weight: bold;
+}
+
+.c-mesFactureHeaderProchaineFacture__label, .c-mesFactureHeaderProchaineFacture__date {
+  font-size: 1.6rem;
+}
+
+.c-mesFactureHeaderProchaineFacture__title {
+  margin-bottom: 12px;
+}
+
+.c-mesFactureHeaderProchaineFacture .c-modal__main {
+  font-weight: normal;
+}
+
+.c-mesFactureHeaderProchaineFacture__link {
+  background: white;
+  border-radius: 40px;
+  padding: 7px 10px;
+  border: 1px solid $blue;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-around;
+  color: $blue;
+  text-decoration: none;
+  width: 210px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.c-mesFactureHeaderProchaineFacture__link span.icon {
+  font-size: 2rem;
+}
+
+@include media("<=small") {
+  .c-mesFactureHeaderProchaineFacture__link {
+    margin-top: 20px;
+  }
+  
+  .c-mesFactureHeaderProchaineFacture {
+    padding: 20px;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 80px;
+    background-size: 100% 140%;
+  }
+}
+
+@include media ("<medium", ">small") {
+  .c-mesFactureHeaderProchaineFacture {
+    padding: 20px;
+  }
+}

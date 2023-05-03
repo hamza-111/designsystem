@@ -1,0 +1,24 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/comparateurFoyersimilaire/comparateurFoyersimilaire
+
+//- Main variables
+block variables
+  - var title = "Foyers similaires"
+  - var page = ""
+  - var bodyClass = ""
+  - var description = ""
+  - var noHeaderFooter = true
+  - var demoMode = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  +comparateurFoyersimilaire()

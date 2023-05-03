@@ -1,0 +1,131 @@
+$articleHeader:$grey-light;
+
+.c-headerArticle {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.c-headerArticle__infoContent {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.c-headerArticle__pagination {
+  display: none;
+}
+
+.c-headerArticle__paginationButton {
+  @extend %reset-style-button;
+}
+
+.c-headerArticle__category {
+  font-weight: bold;
+  transition: color .3s ease-in-out;
+  text-decoration: none;
+  border-bottom: 2px solid;
+}
+
+.c-headerArticle__title {
+  width: 100%;
+  margin: 15px 0 10px;
+}
+
+.c-headerArticle__aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c-headerArticle {
+  .c-tagList,
+  .c-shareArticle {
+    color: $black;
+  }
+}
+
+.c-headerArticle__share,
+.c-headerArticle__tagList {
+  display: flex;
+}
+
+
+.c-headerArticle__share {
+  margin-bottom: 10px;
+}
+
+
+@include media('>=small'){
+  .c-headerArticle {
+    padding-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  .c-headerArticle__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 155px;
+    background-color: $articleHeader;
+  }
+
+  .c-headerArticle__main {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .c-headerArticle__content {
+    display: flex;
+    background-color: $white;
+
+    .js & {
+      justify-content: space-between;
+    }
+  }
+
+  .js .c-headerArticle__pagination {
+    display: flex;
+    flex: 0 0 100px;
+    justify-content: center;
+    transition: background-color .3s;
+  }
+
+  .c-headerArticle__paginationButton {
+    width: 100%;
+    font-size: 7rem;
+    color: $white;
+  }
+
+  .c-headerArticle__infoContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 175px;
+    width: 100%;
+  }
+
+  .c-headerArticle__title {
+    margin: 20px 0 15px;
+  }
+
+  .c-headerArticle__aside {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+  }
+
+  .c-headerArticle__share + .c-headerArticle__tagList {
+    border-left: 1px solid;
+  }
+
+  .c-headerArticle__share,
+  .c-headerArticle__tagList {
+    flex: 1 1 auto;
+    width: 50%;
+    margin: 0;
+    padding: 10px 30px;
+  }
+}

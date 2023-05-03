@@ -1,0 +1,259 @@
+.c-mainEcoGest__tab {
+  display: none;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.c-mainEcoGest__titleText {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  padding: 60px 0 30px 80px;
+  justify-content: space-around;
+}
+
+.c-mainEcoGest__title {
+  display: flex;
+  padding-bottom: 40px;
+  font-size: 1.8rem;
+}
+
+.c-mainEcoGest__title img {
+  width: 30px;
+  height: 30px !important;
+  margin-right: 15px;
+}
+
+.c-mainEcoGest__titre {
+  line-height: 30px;
+}
+
+.c-mainEcoGest__tab.c-mainEcoGest__active {
+  display: block;
+}
+
+.c-mainEcoGest__txt {
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: #17be9b;
+}
+
+.c-mainEcoGest__titleImage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 80px;
+  padding-bottom: 40px;
+}
+
+.c-mainEcoGest__description {
+  font-size: 3.6rem;
+  font-weight: bold;
+}
+
+.c-mainEcoGest__icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-mainEcoGest__force {
+  padding-right: 40px;
+  color: $green-baaast;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.c-mainEcoGest__forceTxt {
+  font-size: 1.2rem;
+}
+
+.c-mainEcoGest__icon-force {
+  width: 35px;
+  height: 35px;
+  margin-left: 15px;
+}
+
+.c-mainEcoGest__icon-force::before {
+  font-size: 9rem;
+  color: $green-baaast;
+  position: relative;
+  top: -25px;
+  left: -28px;
+  z-index: 0;
+}
+
+.c-mainEcoGest__forceIcon {
+  color: $white;    
+  font-size: 2.4rem;
+  position: relative;
+  top: -83px;
+  left: 11px;
+  font-weight: bold;
+}
+
+.c-mainEcoGest__social {
+  display: flex;
+  justify-content: space-around;
+  border-left: 1px black solid;    
+  height: 60px;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.c-mainEcoGest__social .icon-facebook::before {
+  color: #bfbfbf;
+  font-size: 4rem;
+}
+
+.c-mainEcoGest__social .icon-share::before {
+  color: #bfbfbf;
+  font-size: 3rem;
+  padding-right: 20px;
+} 
+.c-mainEcoGest__banner {
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.c-mainEcoGest__body .c-mainEcoGest__para {
+  padding-left:80px;
+  padding-right:70px;
+}
+
+.c-mainEcoGest__para p {
+  padding-bottom: 30px;
+  font-size: 1.7rem;
+  line-height: 1.56;
+}
+
+.c-mainEcoGest__para--padding {
+  padding-left: 40px;
+}
+
+.c-mainEcoGest__liste {
+  width: 100%;
+}
+
+.c-mainEcoGest__liste li {
+  display: flex;
+  padding-bottom: 40px;
+}
+
+.c-mainEcoGest__imgIcon img {
+  width: 100px;
+  height: 70px;
+}
+
+.c-mainEcoGest__imgIcon {
+  width: 100px;
+  height: 70px;
+  padding-right: 15px;
+}
+
+.c-mainEcoGest__desc {
+  display: inline-block;
+  font-size: 1.8rem;
+  width: 90%;
+}
+
+.c-mainEcoGest__desc span {
+  display: block;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.c-mainEcoGest__desc p {
+  display: block;
+  font-weight: normal;
+}
+
+.c-mainEcoGest__miniPush .c-btn__content {
+  font-size: 1.8rem;
+}
+
+@include media("<=small") {
+  .c-mainEcoGest__titleImage {
+    display: block;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .c-mainEcoGest__description {
+    padding-bottom: 50px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+  }
+
+  .c-mainEcoGest__titleText {
+    padding-left: 15px;
+    padding-right: 15px;
+    display: block;
+  }
+
+  .c-mainEcoGest__social {
+    padding-left: 20px;
+    height: 25px;
+  }
+
+  .c-mainEcoGest__social .icon-facebook::before {
+    font-size: 2rem;
+  }
+
+  .c-mainEcoGest__social .icon-share::before {
+    font-size: 1.3rem;
+    padding-right: 10px;
+  }
+
+  .c-mainEcoGest__force {
+    height: 25px;
+  }
+
+  .c-mainEcoGest__forceIcon {
+    font-size: 1.4rem;
+    top: -48px;
+    left: -2px;
+  }
+
+  .c-mainEcoGest__icon-force::before {
+    font-size: 6rem;
+    top: -9px;
+  }
+
+  .c-mainEcoGest__banner {
+    margin-bottom: 30px;
+  }
+
+  .c-mainEcoGest__body .c-mainEcoGest__para {
+    padding-left:15px;
+    padding-right:15px;
+  }
+
+  .c-mainEcoGest__para--padding {
+    padding-left: 0;
+  }
+  
+  .c-mainEcoGest__desc {
+    font-size: 1.4rem;
+  }
+
+  .c-mainEcoGest__body .u-heading-1 {
+    font-size: 2rem;
+  }
+
+  .c-mainEcoGest__miniPush {
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .c-mainEcoGest__miniPush .c-miniPush {
+    margin-bottom:0;
+  }
+
+  .c-mainEcoGest__tab .c-titleV2 h2 {
+    padding: 0 40px;
+  }
+}

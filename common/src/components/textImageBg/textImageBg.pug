@@ -1,0 +1,15 @@
+mixin textImageBg(data)
+	- var data       = data || {}
+	- var imgMobile  = data.imgMobile || "textImageBgMobile.jpg"
+	- var imgDesktop = data.imgDesktop || "textImageBg.jpg"
+
+
+	// c-textImageBg
+	.c-textImageBg(	data-ab-interchange=`
+        [../images/contrib/`+ imgMobile +` , default],
+        [../images/contrib/`+ imgDesktop +` , medium]
+      `)
+
+		.c-textImageBg__para.u-padding-l-25
+			h2.u-heading-3.u-margin-b-20 *Nouveautés E-tip SEPA
+			p Enregistrez une seule fois vos coordonnées bancaire (IBAN) dans votre espace client et payez vos prochaines factures d’un simple geste.

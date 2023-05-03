@@ -1,0 +1,22 @@
+mixin arrowBox(data)
+  - var data         = data || {}
+  - var hasTheme     = data.hasTheme || false
+  - var customTheme  = data.customTheme || false
+  - var largePadding = data.largePadding || false
+  - var imgLeft      = data.imgLeft || false
+  - var imgRight     = data.imgRight || false
+
+  // .c-arrowBox
+  .c-arrowBox(
+    class=largePadding ? 'c-arrowBox--largePadding' : ''
+    class=customTheme ? 'c-arrowBox--' + customTheme : ''
+    class=imgLeft ? 'c-arrowBox--imageLeft' : ''
+    class=imgRight ? 'c-arrowBox--imageRight' : ''
+  )&attributes(attributes)
+    .c-arrowBox__wrapper(
+      class=hasTheme ? 'u-theme-bg u-theme-color' : ''
+      data-ab-interchange=imgLeft || imgRight
+    )
+      .c-arrowBox__content
+        block
+  // end .c-arrowBox

@@ -1,0 +1,9 @@
+mixin select(data)
+  - var data = data || {}
+  - var id   = data.id || "mycheckbox"
+  - var name = data.name || id
+
+  .c-select
+    select(id=id name=name)&attributes(attributes)
+      block
+    span.icon.icon-chevron-bottom

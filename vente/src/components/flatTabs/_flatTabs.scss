@@ -1,0 +1,59 @@
+.c-flatTabs__nav {
+  display: flex;
+  width: 100%;
+
+  .ie9 & {
+    display: table;
+    table-layout: fixed;
+  }
+}
+
+.c-flatTabs__navElem {
+  width: 50%;
+  text-align: center;
+
+  .ie9 & {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.c-flatTabs__navLink {
+  display: flex;
+  padding: 25px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  color: inherit;
+  text-decoration: none;
+  background: $white;
+  transition: background-color .3s linear;
+
+  .ie9 &{
+    display: block;
+  }
+
+  &:not(.is-active) {
+    background: $grey-light;
+  }
+}
+
+.c-flatTabs__panelContainer {
+  position: relative;
+}
+
+.c-flatTabs__panel {
+  position: relative;
+  z-index: 1;
+  background: $white;
+  transition: opacity 0.3s ease-in-out;
+
+  .js &:not(.is-active) {
+      position: absolute;
+      top: 0;
+      opacity: 0.01;
+      z-index: -1;
+  }
+}

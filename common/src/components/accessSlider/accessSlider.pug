@@ -1,0 +1,74 @@
+mixin accessSlider(data)
+  - var data = data || {}
+
+  // .c-accessSlider
+  .c-accessSlider.u-padding-spacer&attributes(attributes)
+    .c-accessSlider__wrapper.l-wrapper--large
+      +headSection({
+        title: "Déjà client ? Accédez en 1 clic à vos services !",
+        noLink: true
+      }).c-accessSlider__title
+      .c-accessSlider__content
+        +carousel({
+          id: carouselID,
+          mode: "slide",
+          delayed: true,
+          settings: {
+            mobileFirst: true,
+            arrows: false,
+            dots: true,
+            speed: 600,
+            draggable: true,
+            initialSlide: 1,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            infinite: false,
+            centerPadding: '60px',
+            responsive: [
+              {
+                breakpoint: 767,
+                settings: 'unslick'
+              }
+            ]
+          }
+        }).c-accessSlider__slider
+          +accessSliderElem({
+            title : "Communiquer",
+            text : "mon relevé de compteur",
+            imgSrc: "picto_acces_4.svg"
+          })
+          +accessSliderElem({
+            title : "Consulter et payer",
+            text : "ma facture",
+            imgSrc: "picto_acces_3.svg"
+          })
+          +accessSliderElem({
+            title : "Mensualiser",
+            text : "mes paiements",
+            imgSrc: "picto_acces_1.svg"
+          })
+
+        .c-accessSlider__footer
+          +accessSliderElem({
+            title : "Entretenir",
+            text : "ma chaudière au gaz naturel",
+            imgSrc: "picto_acces_2.svg"
+          })
+  // end .c-accessSlider
+
+
+mixin accessSliderElem(data)
+  - var data   = data || {}
+  - var title  = data.title || "Titre accrocheur"
+  - var text   = data.text || "pour mieux décrocher la lune"
+  - var imgSrc = data.imgSrc || "picto_acces_4.svg"
+
+  // .c-accessSlider__elem
+  a(href="#").c-accessSlider__elem&attributes(attributes)
+    .c-accessSlider__elemImg
+      img(src="../images/contrib/"+imgSrc alt="" aria-hidden="true")
+    .c-accessSlider__elemContent
+      span.c-accessSlider__elemTitle.u-theme-color!=title
+      span.c-accessSlider__elemText!=text
+  // end .c-accessSlider__elem

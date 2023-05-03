@@ -1,0 +1,146 @@
+$contactLegal-map: (
+  vert: #37ac31,
+  gris: #8e929d,
+  violet: #a21077
+);
+
+
+.c-contactLegal {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.c-contactLegal__title {
+  position: relative;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-weight: $font-bold;
+  font-size: $font-24;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+  }
+}
+
+.c-contactLegal__wrapper {
+  width: 300px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.c-contactLegal__button {
+  display: table;
+  width: 100%;
+  background-color: $white;
+  border: 1px solid $grey-medium;
+  font-weight: $font-bold;
+}
+
+.c-contactLegal__link,
+.c-contactLegal__infos,
+.c-contactLegal__empty {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.c-contactLegal__link {
+  padding: 5px 10px;
+  font-size: $font-18;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all .3s ease-in-out;
+}
+
+.c-contactLegal__infos {
+  position: relative;
+  z-index: 2;
+  padding: 0 5px 0 15px;
+  color: $white;
+  font-size: $font-11;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent $white;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 0;
+    bottom: -5px;
+    left: 0;
+  }
+}
+
+.c-contactLegal__text {
+  font-size: $font-12;
+  margin-top: 15px;
+}
+
+.c-contactLegal__empty { padding: 5px; }
+
+
+// couleurs
+@mixin contactLegal-color($name, $color) {
+  .c-contactLegal--#{$name} {
+    .c-contactLegal__title:after { background-color: $color; }
+
+    .c-contactLegal__link {
+      color: $color;
+
+      @include hover-focus-active() {
+        color: darken($color, 15);
+        text-decoration: underline;
+      }
+    }
+
+    .c-contactLegal__infos {
+      background-color: $color;
+
+      &:after {
+        border-top: 5px solid $color;
+        border-bottom: 5px solid $color;
+      }
+    }
+  }
+}
+
+@each $name, $value in $contactLegal-map {
+  @include contactLegal-color($name, $value);
+}
+
+
+@include media(">=small") {
+  .c-contactLegal__title {
+    font-size: $font-21;
+  }
+
+  .c-contactLegal__wrapper {
+    width: auto;
+    margin: 0;
+  }
+
+  .c-contactLegal__link {
+    font-size: $font-24;
+  }
+
+  .c-contactLegal__infos {
+    font-size: $font-14;
+  }
+}

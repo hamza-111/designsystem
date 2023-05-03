@@ -1,0 +1,298 @@
+include ../../selectImpostor/selectImpostor
+include ../pushArticle/pushArticle
+include ../../headSection/headSection
+
+mixin filtersArticle(data)
+  - var data = data || {}
+
+  // .c-filtersArticle
+  .c-filtersArticle.l-wrapper--large&attributes(attributes)
+    script.
+      E.listArticles = [
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre01",
+          "date": "12 Avril 2017",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 152700,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre02",
+          "date": "07 Mai 2017",
+          "tags": ["voiture"],
+          "nbVue": 154600,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre03",
+          "date": "02 septembre 2017",
+          "tags": ["voiture", "energie"],
+          "nbVue": 150560,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre04",
+          "date": "23 Mars 2017",
+          "tags": ["nature", "ecologie"],
+          "nbVue": 154600,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre05",
+          "date": "23 Juin 2018",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 1505460,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre06",
+          "date": "24 janvier 2018",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 1565400,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre07",
+          "date": "03 juillet 2018",
+          "tags": ["nature", "ecologie"],
+          "nbVue": 1504560,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre08",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 1564500,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre09",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "nature"],
+          "nbVue": 1532400,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre10",
+          "date": "12 Avril 2018",
+          "tags": ["voiture"],
+          "nbVue": 15200,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre11",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 10500,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre12",
+          "date": "12 Avril 2018",
+          "tags": ["nature", "ecologie"],
+          "nbVue": 15060,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre13",
+          "date": "12 Avril 2018",
+          "tags": ["consomation", "ecologie"],
+          "nbVue": 15020,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre14",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 15050,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre15",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 13500,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre16",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "nature"],
+          "nbVue": 17500,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre17",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 15700,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre18",
+          "date": "12 Avril 2018",
+          "tags": ["consomation", "ecologie"],
+          "nbVue": 15500,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre19",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 15060,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre20",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 15500,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre21",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "nature"],
+          "nbVue": 156400,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre22",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 15600,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre23",
+          "date": "12 Avril 2018",
+          "tags": ["consomation", "ecologie"],
+          "nbVue": 15800,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre24",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 15400,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre25",
+          "date": "12 Avril 2018",
+          "tags": ["voiture", "ecologie"],
+          "nbVue": 15060,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre26",
+          "date": "02/01/2017",
+          "tags": ["voiture", "consomation"],
+          "nbVue": 500,
+          "pin": false
+        },
+        {
+          "link": "#",
+          "image": "../images/contrib/child_eolien.jpg",
+          "title": "titre27",
+          "date": "02/01/2017",
+          "tags": ["voiture", "consomation"],
+          "nbVue": 500,
+          "pin": false
+        }
+      ]
+
+    +pushArticle-tpl
+
+    .c-filtersArticle__header
+      .c-filtersArticle-selectTheme
+        +selectImpostor({
+          default: "Toutes les thématiques",
+          settings: {
+            target: "themeFilter"
+          }
+        })
+          +selectImpostorOption({
+            text: "Déménagement"
+          })
+          +selectImpostorOption({
+            text: "Gaz"
+          })
+          +selectImpostorOption({
+            text: "Électricité"
+          })
+          +selectImpostorOption({
+            text: "Économies d'énergie"
+          })
+
+      +headSection({
+        title: "Nos actualités et conseils",
+        noLink: true
+      })
+
+      .c-filtersArticle-baseFilters
+        a(href="#").c-filtersArticle-baseFilters__filter.is-active Les plus récents
+        a(href="#").c-filtersArticle-baseFilters__filter Les plus lus
+
+    .c-filtersArticle__content
+      block
+
+    .c-filtersArticle__footer
+      +btnWrapper.c-btnWrapper--fullOnMobile
+        +baseBtn({
+          text: "Afficher plus",
+          secondary: true
+        })
+  // END .c-filtersArticle

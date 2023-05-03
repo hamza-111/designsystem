@@ -1,0 +1,89 @@
+/**
+ * Margins:
+ * `.u-margin-b-xxx` - classes de margin (se transforment en 15px sur mobile). Tailles disponibles: 10, 15, 20, 25, 30, 40, 70
+ *
+ *     @example
+ *     .u-margin-b-10: .fill
+ *     .u-margin-b-20: .fill
+ */
+
+/**
+ * Margins Mobile:
+ * `.u-margin-b-xxx` - classes de margin QUE pour mobile. Tailles disponibles: 10, 15, 20, 25, 30, 40, 70
+ *
+ *     @example
+ *     .u-margin-small-b-10: .fill
+ *     .u-margin-small-b-20: .fill
+ */
+
+
+$margins-map: (
+  "0":   0,
+  "10":  10px,
+  "15":  15px,
+  "16":  16px,
+  "20":  20px,
+  "25":  25px,
+  "30":  30px,
+  "40":  40px,
+  "50":  50px,
+  "60":  60px,
+  "70":  70px,
+  "80":  80px,
+  "90":  90px,
+  "110": 110px,
+  "120": 120px,
+  "140": 140px
+);
+
+[class*="u-margin-a-"] { margin: 15px; }
+[class*="u-margin-t-"] { margin-top: 15px; }
+[class*="u-margin-r-"] { margin-right: 15px; }
+[class*="u-margin-b-"] { margin-bottom: 15px; }
+[class*="u-margin-l-"] { margin-left: 15px; }
+[class*="u-margin-v-"] { margin-top: 15px; margin-bottom: 15px; }
+[class*="u-margin-h-"] { margin-right: 15px; margin-left: 15px; }
+
+.u-margin-a-0 { margin: 0; }
+.u-margin-t-0 { margin-top: 0; }
+.u-margin-r-0 { margin-right: 0; }
+.u-margin-b-0 { margin-bottom: 0; }
+.u-margin-l-0 { margin-left: 0; }
+.u-margin-v-0 { margin-top: 0; margin-bottom: 0; }
+.u-margin-h-0 { margin-right: 0; margin-left: 0; }
+
+@include media("<=small") {
+  @each $name, $value in $margins-map {
+    .u-margin-small-a-#{$name} { margin: $value; }
+    .u-margin-small-t-#{$name} { margin-top: $value; }
+    .u-margin-small-r-#{$name} { margin-right: $value; }
+    .u-margin-small-b-#{$name} { margin-bottom: $value; }
+    .u-margin-small-l-#{$name} { margin-left: $value; }
+    .u-margin-small-v-#{$name} { margin-top: $value; margin-bottom: $value; }
+    .u-margin-small-h-#{$name} { margin-right: $value; margin-left: $value; }
+  }
+}
+
+@include media(">small") {
+  @each $name, $value in $margins-map {
+    .u-margin-a-#{$name} { margin: $value; }
+    .u-margin-t-#{$name} { margin-top: $value; }
+    .u-margin-r-#{$name} { margin-right: $value; }
+    .u-margin-b-#{$name} { margin-bottom: $value; }
+    .u-margin-l-#{$name} { margin-left: $value; }
+    .u-margin-v-#{$name} { margin-top: $value; margin-bottom: $value; }
+    .u-margin-h-#{$name} { margin-right: $value; margin-left: $value; }
+  }
+}
+
+@media print {
+  @each $name, $value in $margins-map {
+    .u-margin-a-#{$name} { margin: $value; }
+    .u-margin-t-#{$name} { margin-top: $value; }
+    .u-margin-r-#{$name} { margin-right: $value; }
+    .u-margin-b-#{$name} { margin-bottom: $value; }
+    .u-margin-l-#{$name} { margin-left: $value; }
+    .u-margin-v-#{$name} { margin-top: $value; margin-bottom: $value; }
+    .u-margin-h-#{$name} { margin-right: $value; margin-left: $value; }
+  }
+}

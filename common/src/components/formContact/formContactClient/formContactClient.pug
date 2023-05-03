@@ -1,0 +1,80 @@
+mixin formContactClient(data)
+  - var data     = data || {}
+
+  // .c-formContactClient
+  .c-formContactClient
+    div(data-e-formcontact-client={
+      url: "../fake/formContact-context.json",
+      errorWrongRef: "Votre référence client semble incorrecte"
+    })
+      +bubbleSelect
+        +bubbleSelectElem({
+          text:       'Je suis client Gaz Tarif Réglementé',
+          inputID:    'client',
+          inputValue: "oui",
+          radioName:  'DEJA_CLIENT_ENGIE',
+          picto:      'icon-client-yes',
+          info:       true
+        })
+
+        +bubbleSelect__elemLabel
+          p Si vous êtes client Gaz Tarif Réglementé, nous avons besoin de votre référence client
+
+          fieldset.l-wrapper--small.u-margin-t-10.u-margin-small-t-10.u-hide(
+            data-e-formcontact-client-target
+            aria-hidden="true"
+            disabled
+          )
+            +inputMat({
+              label:       'Référence client',
+              type:        "tel",
+              id:          "clientRef",
+              name:        "REFERENCE_CLIENT",
+              placeholder: 'Ex: 023123123',
+              toolTip:     'modal-contact-ref',
+              maxlength:   10,
+              pattern:     "^([0]?[23]\\d{8})$",
+              required:    true,
+              dataValidation: {
+                typing: false,
+                validations: {
+                  patternMismatch: "Votre référence client doit commencer par 0, 2, ou 3 et contenir 9 ou 10 chiffres comme sur votre facture.",
+                  tooShort:        "Votre référence doit contenir 9 ou 10 chiffres",
+                  tooLong:         "Votre référence doit contenir 10 chiffres max",
+                  valueMissing:    "Champ nécessaire pour valider votre référence client"
+                }
+              }
+            })(data-e-formcontact-client-input)
+            +btnWrapper.c-btnWrapper--fullOnMobile.u-margin-t-30.u-margin-small-t-30.u-theme-green
+              +baseBtn({
+                text:      "Valider ma référence client",
+                button:    true,
+                hasLoader: true
+              })(data-e-formcontact-client-submit)
+
+            +modal({
+              target: '{"target": "modal-contact-ref"}'
+            }).c-modal--hasPadding
+              p Retrouvez votre Ref BP en haut à gauche de votre facture.
+
+
+        +bubbleSelectElem({
+          text:       'Je ne suis pas encore client Gaz Tarif Réglementé',
+          inputID:    'notclient',
+          inputValue: "non",
+          radioName:  'DEJA_CLIENT_ENGIE',
+          picto:      'icon-client-no'
+        })
+
+      // Client TR
+      .u-hide.l-wrapper--medium.u-margin-t-30(data-e-formcontact-client-trclient aria-hidden="true")
+        .u-bg-grey-light.u-padding-a-40
+          h3.u-heading-3.u-margin-b-30.u-margin-small-b-50.u-textCenter Votre référence client ne correspond pas à un contrat Gaz Tarif Réglementé.
+
+          .c-column.c-column--50-50.c-column--spaced.c-column--vCenter
+            .c-column__col
+              img(src="../images/contrib/redir_tr-om.png" alt="" aria-hidden="true")
+
+            .c-column__col.u-margin-small-t-30
+              p Nous vous invitons à vérifier votre fournisseur de gaz naturel sur votre dernière facture.
+  // END - .c-formContactClient

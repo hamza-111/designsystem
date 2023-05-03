@@ -1,0 +1,246 @@
+.c-objectifMain {
+    padding: 40px 40px 20px;
+    width: 100%;
+    display: block;
+    background:url('../images/contrib/porc.jpg') $white no-repeat bottom right;
+    height: 450px;
+    position: relative;
+    font-family: arial;
+    line-height: normal;
+}
+
+.c-objectifMain--color {
+    color: $genBlue;
+    font-size: 1.2rem;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.c-objectifMain .c-inputMat.is-disabled {
+    background: $grey-light;
+}
+
+.c-objectifMain .c-checkboxMat.is-disabled .c-checkboxMat__label {
+    cursor: not-allowed;
+}
+
+.c-objectifMain .c-inputMat.is-disabled .c-inputMat__field {
+    border: none;
+    cursor: not-allowed;
+}
+
+.c-objectifMainMailMessage {
+    width: 90%;
+}
+
+.c-objectifMainMailMessage span {
+    color: $genBlue;
+    font-size: 1.6rem;
+}
+
+.c-objectifMainMailMessage span:first-child {
+    display: block;
+}
+
+.c-objectifMainMailMessage span a {
+    color: $genBlue;
+}
+
+.c-objectifMain .u-padding-spacer {
+    padding: 20px 0 0 0;
+    width: 80%;
+}
+
+.c-objectifMain .c-inputMat {
+    padding-top: 0;
+}
+
+.c-objectifMain .c-inputMat__field {
+    border: 1px solid grey;
+    text-indent: 10px;
+    padding: 8px 0;
+    font-size: 1.4rem;
+    height: 40px;
+}
+
+.c-objectifMain__seuilWrapper {
+    width: 100%;
+}
+
+.c-objectifMainSeuil .c-objectifMain__desc {
+    margin-bottom: 20px;
+}
+
+.objectifMainSeuil--width {
+    width: 90px;
+    display: block;
+}
+
+.c-objectifMainSeuil__label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.c-objectifMain .is-error .c-inputMat__inputLine {
+    background: none !important;
+}
+
+.c-objectifMain__title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.c-objectifMain__title .c-objectifMain__titleSpan {
+    color: $genBlue;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.c-objectifMain__desc {
+    font-size: 1.6rem;
+    width: 90%;
+}
+
+.c-objectifMain .c-inputMat.is-error .c-inputMat__field {
+    border: 1px solid #cc0033;
+}
+
+.c-objectifMain .c-checkboxMat__label {
+    align-items: center;
+}
+
+.c-objectifMain .c-checkboxMat__check {
+    width: 15px;
+    height: 15px;
+    top: 4px;
+}
+
+.c-objectifMain .c-checkboxMat__labelPadding {
+    padding-left: 30px;
+}
+
+.c-objectifMain .is-success .c-inputMat__field {
+    border: 1px #188464 solid;
+}
+
+.c-objectifMain .is-success .c-inputMat__inputLine {
+    background-color: none !important;
+}
+
+.c-objectifMaion__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.c-objectifMain .c-objectifMaion__wrapper .c-inputMat {
+    width: 90px;
+}
+
+.c-objectiMain--btn {
+    height: 40px;
+    min-height: 40px !important;
+    font-size: 1.4rem;
+    width: 110px;
+}
+
+.c-objectifMain--seuil .c-fieldInfo--inputMat.is-error {
+    width: 270px;
+}
+
+.c-objectifMainSeuil .c-btn {
+    width: 190px;
+    min-width: auto;
+}
+
+.c-objectifMainSeuil .c-checkboxMat {
+    margin-bottom: 0;
+}
+
+.c-objectifMaion__succes {
+    color: #188464;
+    font-size: 1.2rem;
+}
+
+@include media ("<=medium") {
+
+    .c-objectifMain .c-inputMat {
+        width: auto;
+    }
+}
+
+@include media ("<=small") {
+    .c-objectifMain {
+        padding: 40px;
+        width: 100%;
+        display: block;
+        background-image: none;
+        height: auto !important;
+        min-height: auto;
+    }
+
+    .objectifMainSeuil--width, .c-objectifMainSeuil__label {
+        display: inline-block !important;
+    }
+
+    .c-objectifMainSeuil__label {
+        margin-right: 10px;
+        padding-top: 10px;
+    }
+
+    .c-objectifMain__desc {
+        width: 100%;
+    }
+
+    .c-objectifMain .u-padding-spacer {
+        width: 100%;
+    }
+
+    .c-objectifMaion__wrapper {
+        display: block;
+    }
+
+    .c-objectifMain .c-objectifMaion__wrapper .c-inputMat {
+        width: 150px;
+        margin: auto;
+    }
+
+    .c-objectifMain .c-objectifMaion__wrapper .c-inputMat__field {
+        text-align: center;
+        text-indent: 0;
+    }
+
+    .c-objectifMain .c-objectifMaion__wrapper .c-inputMat__wrap {
+        margin-bottom: 15px;
+    }
+
+    .c-objectifMain--seuil .c-fieldInfo--inputMat.is-error {
+        margin-bottom: 15px;
+        width: auto;
+    }
+
+    .c-objectifMaion__succes {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 1124px) and (min-width: 768px) {
+    .c-objectifMain {
+        padding: 20px;
+        background-image: none;
+    }
+
+    .c-objectifMain .u-padding-spacer, .c-objectifMain__desc {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 900px) and (min-width: 768px) {
+    .c-objectifMain--seuil .c-fieldInfo--inputMat.is-error {
+        width: 220px;
+    }
+}

@@ -1,0 +1,40 @@
+.c-listLinkResult {
+    padding: 0 0 40px;
+}
+
+.c-listLinkResult__label {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 16px;
+}
+
+.c-listLinkResult__link {
+    display: block;
+    text-decoration: none;
+    font-size: 1.6rem;
+    text-underline-position: under;
+    margin-bottom: 16px;
+}
+
+.c-listLinkResult__link:hover {
+    color: #009DE9;
+    text-decoration: underline;
+}
+
+.c-listLinkResult__link span span {
+    margin-left: 8px;
+}
+
+.c-listLinkResult .c-baseBtn {
+    min-height: 40px;
+}
+
+.c-listLinkResult .c-baseBtn__content {
+	font-weight: bold;
+}
+
+@include media('<small'){
+	.c-listLinkResult .c-baseBtn__content {
+		width:auto;
+	}
+}

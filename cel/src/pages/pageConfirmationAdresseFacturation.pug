@@ -1,0 +1,30 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+include ../components/confirmerAdresse/confirmerAdresse
+
+
+//- Main variables
+block variables
+  - var title = "confirmation Adresse de Facturation"
+  - var page = ""
+  - var description = ""
+  - var demoMode = true
+  - var headerCel       = "full"
+  - var wrapperSite     = "l-wrapper--siteFull "
+  - var main = "mainFull"
+  - var noBg            = false
+  - var footer         = true
+  - var noHeaderFooter         = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  .l-wrapper--large
+    .l-wrapper--largeMedium.u-padding-t-60
+      +confirmerAdresse()

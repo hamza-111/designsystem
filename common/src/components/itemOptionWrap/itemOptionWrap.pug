@@ -1,0 +1,27 @@
+include itemOption/itemOption
+
+mixin itemOptionWrap
+
+  .c-itemOptionWrap(class="l-row l-row--noSideGut u-margin-v-50")
+    .l-col-medium-12.l-col-large-8
+      p.c-itemOptionWrap__text.u-fontSize-large.u-margin-v-30
+        strong Je choisis mes options gratuites de facturation :
+      .c-itemOptionWrap__wrapper-2
+        +itemOption({
+          val:"option1",
+          promo: true,
+          title: 'Assurance Facture Gaz Tarif Réglementé',
+          text: 'Couvrez vos dépenses de gaz naturel en cas de coup dur',
+          tarif: '5€TTC/mois'
+        })
+        +itemOption({
+          promo: true,
+          val:"option2"
+        })
+    .l-col-medium-12.l-col-large-4
+      p.c-itemOptionWrap__text.u-fontSize-large.u-margin-v-30
+        strong Et pour plus de tranquilité...
+      .c-itemOptionWrap__wrapper-1
+        +itemOption({
+          val:"option3"
+        })

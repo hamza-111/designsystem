@@ -1,0 +1,33 @@
+include ../../pictoLink/pictoLink
+include ../../reviewFeedBack/reviewFeedBack
+
+mixin accordeonFAQ(data)
+  - var data      = data || {}
+
+  // .c-articleFAQ
+  section.c-articleFAQ&attributes(attributes)
+
+
+
+
+    article.c-articleFAQ__content.u-bg-grey-light
+      +pictoLink({
+        text: 'Retour à la liste',
+        picto: 'icon-chevron-left'
+      }).u-fontSize-medium.u-margin-b-20.u-margin-small-b-20
+
+      h1.c-articleFAQ__title.u-heading-1 A quelle fréquence reçoit-on les factures ?
+
+      .c-wysiwyg
+        p
+          | En règle générale, vous recevez une facture tous les 2 mois. Si vous êtes mensualisés, vous en recevez une par an.
+          br
+          | Pour connaitre la date de votre prochaine facture, suivez le guide.
+
+    //- +reviewFeedBack({
+    //-   settings: {
+    //-     voteYesMessage: "<strong>Merci pour votre vote, avez vous des suggestions d'amélioration ?</strong>",
+    //-     voteNoMessage: "<strong>Merci pour votre vote, dîtes-nous pourquoi cette réponse n'est pas utile ?</strong> (facultatif)"
+    //-   }
+    //- }).c-articleFAQ__review
+  // end .c-articleFAQ

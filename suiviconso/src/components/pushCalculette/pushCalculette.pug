@@ -1,0 +1,17 @@
+mixin pushCalculette(data)
+  - var data			= data || {}
+  - var img       = data.img || "calculette.png"
+  - var full      = data.full || false
+
+  //.c-pushCalculette
+  .c-pushCalculette(class = full ? "c-pushCalculette--full" : "")
+    .c-pushCalculette__content
+      h2.c-pushCalculette__title.u-margin-b-20 Ma calculette
+      p.c-pushCalculette__desc Convertissez votre consommation de gaz en euros.
+
+      +btnWrapper().u-margin-v-30.u-margin-small-v-30.u-theme-genBlue.c-btnWrapper--fullOnMobile.c-btnWrapper--alignLeft
+        +baseBtn({
+          text: 'Je calcule',
+        })
+    .c-pushCalculette__picto
+      img(src="../images/contrib/"+img alt="calculette")

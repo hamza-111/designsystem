@@ -1,0 +1,204 @@
+.c-mesFactureTable {
+  width: 100%;
+  padding: 40px;
+  background: $white;
+}
+
+.c-mesFactureTableError {
+  text-align: center;
+}
+
+.c-mesFactureTable__title {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.c-mesFactureTable__table {
+  width: 100%;
+}
+
+.c-mesFactureTable__head {
+  width: 100%;
+  background: $grey-light;
+  display: flex;
+  text-align: left;
+  position: relative;
+  justify-content: space-between;
+}
+
+.c-mesFactureTable__th, .c-mesFactureTable__td {
+  height: 60px;
+  padding: 15px 20px;
+  vertical-align: middle;
+  position: relative;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+// .c-mesFactureTable__th--small {
+//   width: 110px;
+// }
+// .c-mesFactureTable__th--large {
+//   width: 200px;
+// }
+
+.c-mesFactureTable__tr {
+  width: 100%;
+  border-bottom: 1px #f2f2f2 solid;
+  color: #0059B3;
+  font-size: 1.6rem;
+  display: flex;
+  text-align: left;
+  position: relative;
+  justify-content: space-between;
+}
+
+a.c-mesFactureTable__voirPlus {
+  background: $blue;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 1.5rem;
+  display: block;
+  line-height: 50px;
+  color: $white;
+  font-size: 1.5rem;
+}
+
+a.c-mesFactureTable__voirPlus .icon-close {
+  margin-right: 10px;
+  font-size: 2rem;
+  transform: rotate(45deg);
+}
+
+.c-mesFactureTable__th .icon {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 18px;
+}
+
+.c-mesFactureTable__td.u-textBold .icon {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.c-mesFactureTable__mainError {
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 40%;
+}
+
+.c-mesFactureTable__iconError {
+  font-size: 8em;
+  color: $grey;
+  display: flex;
+  margin: 24px 0;
+  justify-content: center;
+  line-height: 8rem;
+}
+
+.c-mesFactureTable__paiementError {
+  font-size: 2rem;
+  color: $grey;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 2rem;
+}
+
+.c-mesFactureTable__descspan {
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+@include media (">small", "<medium") {
+  .c-mesFactureTable__th .icon {
+    top: initial;
+    bottom: 0;
+    left: 30px;
+  }
+
+  .c-mesFactureTable {
+    padding: 20px;
+  }
+}
+
+@include media ("<=small") {
+
+  .c-mesFactureTable__mainError {
+    width: 100%;
+  }
+
+  .c-mesFactureTable__th--small {
+    width: calc(100% / 6) !important;
+  }
+  
+  .c-mesFactureTable__th, .c-mesFactureTable__td {
+  width:calc(100% / 6);
+  }
+
+  .c-mesFactureTable__th2Mobile, .c-mesFactureTable__td2Mobile {
+    width:calc(100% / 2);
+    padding-left: 15px;
+  }
+
+  .c-mesFactureTable__th3Mobile, .c-mesFactureTable__td3Mobile {
+    width:calc(100% / 3);
+    padding-left: 15px;
+  }
+
+  .c-mesFactureTable__th4Mobile, .c-mesFactureTable__td4Mobile {
+    width:calc(100% / 4);
+    padding-left: 15px;
+  }
+
+  .c-mesFactureTable__th5Mobile, .c-mesFactureTable__td5Mobile {
+    width:calc(100% / 5);
+    padding-left: 10px;
+  }
+
+  .c-mesFactureTable__th {
+    text-align: left;
+  }
+
+  .c-mesFactureTable {
+    padding: 0;
+  }
+
+  .c-mesFactureTable__th .icon {
+    display: none;
+  }
+
+  .c-mesFactureTable__td--lastItem {
+    right: 7%;
+  }
+}
+
+
+@include media (">=small") {
+  .c-mesFactureTable__table {
+    display: table;
+  }
+
+  .c-mesFactureTable__th, .c-mesFactureTable__td {
+    display: table-cell;
+    width: auto;
+  }
+
+  .c-mesFactureTable__head {
+    display: table-row;
+  }
+
+  .c-mesFactureTable__tr {
+    display: table-row;
+  }
+
+  .c-mesFactureTable__td--lastItem {
+    .icon {
+      margin-left: 20%;
+    }
+  }
+}

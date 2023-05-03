@@ -1,0 +1,37 @@
+include linkImage/linkImage
+include ../headSection/headSection
+
+mixin listLinks(data)
+  - var data     = data || {}
+  - var imgSize  = (data.imgSize === 'large' ? 'c-listLinks__group--sizeLarge': '')
+  - var hasTitle = (data.hasTitle === true ? true : false)
+  - var length   = data.length || 2
+  - var isImage  = (data.isImage === true ? true : false)
+  - var html     = data.html || false
+
+
+  // .c-listLinks
+  nav.c-listLinks.u-padding-spacer
+    if (hasTitle)
+      +headSection
+
+    ul.c-listLinks__group(class=imgSize)
+      - for (var i = 0; i <= length; i++)
+        li.c-listLinks__item
+          +linkImage({
+            linkLabel: "Je suis client et je veux changer d'offre",
+            html: html,
+            isImage: isImage
+          })(
+            class=!isImage ? 'u-theme-color' : ''
+          )
+
+        li.c-listLinks__item
+          +linkImage({
+            linkLabel: "Nos offres d'électricité",
+            html: html,
+            isImage: isImage
+          })(
+            class=!isImage ? 'u-theme-color' : ''
+          )
+  // end .c-listLinks

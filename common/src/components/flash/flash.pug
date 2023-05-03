@@ -1,0 +1,22 @@
+
+mixin flash(data)
+  - var data       = data || {}
+  - var src        = data.data || ""
+  - var altText    = data.altText || "<p>Lecteur de vidéo Flash</p>"
+  - var width      = data.width || "900"
+  - var height     = data.height || "400"
+
+  // .c-flash
+  .c-flash
+    object.c-flash__object.u-hideSmall.u-hideMedium(
+      data=src
+      type="application/x-shockwave-flash"
+      width=width
+      height=height
+    )
+      param(name="movie" value=src)
+      param(name="wmode" value="opaque")
+
+      .c-flash__fallBack.c-wysiwyg #{altText}
+
+    .c-flash__alternative.u-hideLargeUp.c-wysiwyg

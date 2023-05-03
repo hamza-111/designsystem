@@ -1,0 +1,23 @@
+mixin estimationFacture(data)
+
+  - var data = data || {}
+
+  //.c-estimationFacture
+  .c-estimationFacture
+    .c-estimationFacture__facture
+      .c-estimationFacture__thumb
+        .c-estimationFacture__thumbPrix
+          span.c-estimationFacture__prixMonth 16€/mois
+            sup TTC
+          span.c-estimationFacture__prixYears soit 192€/an TTC
+        .c-estimationFacture__triangle
+      .c-estimationFacture__Detail
+        span.c-estimationFacture__Desc <b>Dont abonnement en € TTC</b> <span class="c-estimationFacture__dotted dotted-1 u-hideSmall"></span> <div><span id="abonnementTTC_estim">102.13</span>€/an</div>
+        span.c-estimationFacture__Desc <b>Prix du kWh Gaz naturel en €</b>  <span class="c-estimationFacture__dotted dotted-2 u-hideSmall"></span> 
+          span.c-estimationFacture__RsltTTC TTC : 0.082€/kWh
+            span.c-estimationFacture__RsltHt HT : 0.060€/kWh
+        span.c-estimationFacture__Title Estimation de votre consommation annulle d'après
+        span.c-estimationFacture__infoSaisie les informations saisies <span class="c-estimationFacture__dotted dotted-3 u-hideSmall"></span> <div><span>1000</span> kWh/an</div>
+
+    .c-estimationFacture__image
+      img(src="../images/contrib/estimationFacture.jpg" alt="Estimation Facture")

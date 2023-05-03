@@ -1,0 +1,146 @@
+include ../../../../common/src/components/toggleBox/toggleBox
+mixin relverIndexConfirmer(data)
+  - var data = data || {}
+  - var confirmation = data.confirmation || false
+  - var loader = data.loader || false
+  - var confirmerResultat = data.confirmerResultat || false
+  - var superMan = data.superMan || false
+  - var confirmerResultat = data.confirmerResultatsandrine || false
+  //.c-relverIndexConfirmer
+  .c-relverIndexConfirmer
+    if superMan
+      .l-col-large-8.u-nopadding-small.l-push-large-2
+        h2.u-heading-2.c-relverIndexConfirmer--style.u-padding-b-20.u-textBold Votre relevé de compteur est pris en compte
+        p Votre relevé gaz naturel a bien été transmis
+        p Un e-mail récapulatif vous sera envoyé à l'adresse : frederique@srf.fr
+        .c-relverIndexConfirmer__imgIndex.u-margin-t-30
+          .c-relverIndexConfirmer__img 
+            img(src="../images/contrib/flamCalander.png" alt="flam calander")
+          .c-relverIndexConfirmer__desc
+            h2 Gaz naturel
+        .c-relverIndexConfirmer__yourIndex
+          span 
+            b Index saisi
+          span 9500
+      .l-col-large-8.u-nopadding-small.l-push-large-2.u-margin-b-40
+        h2.c-relverIndexResultat--style.u-margin-t-50.u-textBold Estimation du montant<sup>(1)</sup> total de votre prochaine facture
+      .l-col-large-8.u-nopadding-small.l-push-large-2.u-margin-b-40.u-textCenter
+        img(src="../images/contrib/superMan.png" alt="")
+        p Nos équipe se mobilisent pour vous afficher votre estimation de facture.
+        p Ce service sera bientôt disponible !
+        a(href="#").u-color-genBlue.c-relverIndexResultat--linkretour.u-margin-t-40
+          span.icon-carousel-prev.icon
+          span.u-textNormal Retour au tableau de bord
+    if !superMan
+      if confirmation
+        .l-col-large-8.u-nopadding-small.l-push-large-2
+          if confirmerResultat
+            h2.u-heading-2.c-relverIndexConfirmer--style.u-padding-b-20.u-textBold Votre relevé de compteur est pris en compte
+            p.u-margin-b-30 Un e-mail récapitulatif vous sera envoyé à l'adresse : adresse@e-mail.com Votre relevé gaz naturel a bien été transmis.
+          if !confirmerResultat
+            h2.u-heading-2.c-relverIndexConfirmer--style.u-padding-b-20.u-textBold Confirmez votre relevé de compteur
+            p.u-margin-b-30 Merci de vérifier la saisie de votre index. Si vous souhaitez le modifier, cliquez simplement sur le bouton « modifier » pour revenir à l’étape précédente.
+          .c-relverIndexConfirmer__imgIndex
+            .c-relverIndexConfirmer__img 
+              img(src="../images/contrib/flamCalander.png" alt="flam calander")
+            .c-relverIndexConfirmer__desc
+              h2 Gaz naturel
+          .c-relverIndexConfirmer__yourIndex
+            span 
+              b Index saisi
+            span 9500
+
+          +fieldInfo({
+            backgroundColor : "u-bg-genBlue-light"
+          })
+            .c-relverIndexConfirmer__fieldInfo.u-textLeft
+              span
+                i.icon.icon-info-circle.u-fontSize-30 
+                b Merci de bien vouloir vérifier votre saisie.
+              p.u-textNormal.u-padding-l-30 Votre nouvel index est inférieur à votre dernier index transmis. Nous vous conseillons de vérifier votre saisie.
+
+          +btnWrapper.u-theme-genBlue.c-btnWrapper--fullOnMobile.u-margin-b-50.u-margin-b-small-50
+            +baseBtn({
+              text: 'Modifier',
+              empty : true
+            })
+
+            +baseBtn({
+              text: 'Valider',
+            })
+    if !superMan
+      if !confirmation
+        if loader 
+          span.c-spinner
+            span.c-spinner__container
+              span.c-spinner__firstArk
+              span.c-spinner__secondArk
+          p.u-textCenter.u-margin-t-10 Transmission de votre relevé de compteur en cours
+        if !loader
+          .l-col-large-8.u-nopadding-small.l-push-large-2
+            h2.u-heading-2.c-relverIndexConfirmer--style.u-padding-b-20.u-textBold Votre index est pris en compte
+            p.u-margin-b-30 Le relevé de votre compteur a bien été transmis. <br>Vous allez recevoir un e-mail récapitulatif à l'adresse : adresse@e-mail.com
+            .c-relverIndexConfirmer__imgIndex
+              .c-relverIndexConfirmer__img 
+                img(src="../images/contrib/flamCalander.png" alt="flam calander")
+              .c-relverIndexConfirmer__desc
+                h2 Gaz naturel
+            .c-relverIndexConfirmer__yourIndex
+              span 
+                b Index saisi
+              span 95004
+          if !loader
+            .l-col-large-8.u-nopadding-small.l-push-large-2.u-margin-b-40
+              h2.c-relverIndexResultat--style.u-margin-b-20.u-margin-t-50.u-textBold Estimation du montant<sup>(1)</sup> total de votre prochaine facture
+              .c-relverIndexResultat__img 
+                span.c-relverIndexResultat__borderContent Votre prochaine facture sera émise le <b>26/11/2020 9:55</b>
+                img(src="../images/contrib/estimation-facture-bg-img.png" alt="")
+
+              .c-relverIndexResultat__result
+                .c-relverIndexResultat__toggle
+                  .c-relverIndexResultat__title
+                    .c-relverIndexResultat__titleMain
+                      .icon.icon-tarif
+                      span Total estimé
+                  span.c-relverIndexResultat__priceToggle 406,51 € <sup> TTC</sup>
+                  +toggleBox({
+                    settings: {
+                      target: "togglePrice",
+                      link : "Ouvrir le détail de l'estimation"
+                    }
+                  })(data-e-toggleText)
+                    .c-relverIndexResultat__details 
+                      .c-relverIndexResultat__detailBlock
+                        span.c-relverIndexResultat__detailsTitle Montant estimé
+                        .c-relverIndexResultat__detailsBlue 
+                          span Abonnement
+                          span 36 € <sup> TTC</sup>
+                        .c-relverIndexResultat__detailsWhite 
+                          span Consommation
+                          span 288 € <sup> TTC</sup>
+                        .c-relverIndexResultat__detailsBlue 
+                          span Contribution Tarifaire Acheminement
+                          span 40 € <sup> TTC</sup>
+                        .c-relverIndexResultat__detailsWhite 
+                          span Taxe Intérieure de Consommation sur le Gaz Naturel
+                          span 42,51 € <sup> TTC</sup>
+                      .c-relverIndexResultat__detailBlock
+                        span.c-relverIndexResultat__detailsTitle Consommation
+                        .c-relverIndexResultat__detailsBlue 
+                          span Relevé saisi
+                          span 59562
+                        .c-relverIndexResultat__detailsWhite 
+                          span Relevé précédent facturé
+                          span -
+                        .c-relverIndexResultat__detailsBlue 
+                          span Différence de volume (m3)
+                          span 654
+                        .c-relverIndexResultat__detailsWhite 
+                          span Consommation (kWh)
+                          span -
+                        .c-relverIndexResultat__detailsBlue 
+                          span Coefficient de conversion
+                          span -
+              a(href="#").u-color-genBlue.c-relverIndexResultat--linkretour.u-margin-t-30
+                span.icon-carousel-prev.icon
+                span Retour au tableau de bord

@@ -1,0 +1,109 @@
+include ../../../../../common/src/components/carousel/carousel
+
+
+
+mixin loginInfo()
+  // .c-loginInfo
+
+
+  //- +carousel({
+  //-   singleNav: 'c-carouselNav--arrowDots',
+  //-   settings: {
+  //-     arrows: true,
+  //-     infinite: false,
+  //-     dots: true,
+  //-     slidesToShow: 1,
+  //-     slidesToScroll: 1,
+  //-     adaptiveHeight: true
+  //-   }
+  //- })
+  //-   div
+  //-     p tata
+  //-   div
+  //-     p tata2
+  //-   div
+  //-     p tata3
+
+  .c-loginInfo.u-textLeft.u-margin-small-t-60(data-ab-interchange=`
+        [empty.bg, default],
+        [../images/contrib/fond-login-mobile.png, smallOnly]
+      `)
+    .c-loginInfo__text
+      p.u-heading-1.u-padding-b-30 Bienvenue sur votre nouvel Espace Client<br>pour les clients gaz au tarif réglementé !
+
+      p.u-padding-b-15 Connectez-vous pour consulter vos factures, payer en ligne,
+        <br>suivre votre consommation, gérer votre contrat… où que vous soyez et en toute simplicité!&nbsp;
+
+    +carousel({
+      singleNav: 'c-carouselNav--arrowDots',
+      settings: {
+        autoplay: true,
+        autoplaySpeed: 5000,
+        arrows:         false,
+        infinite:       false,
+        dots:           true,
+        slidesToShow:   1,
+        slidesToScroll: 1,
+        adaptiveHeight: false
+      }
+    }).u-margin-t-40
+      div
+        +loginPush({
+          icon : "icon-cheque-energie",
+          background:    "#589cdf",
+          titleColor:    "#fff",
+          title:         "lore Vous bénéficiez d'un cheque énergie délivré par l'État ?",
+          btnBackground: "#fff",
+          text:          "Vous pouvez payer vos factures Gaz Tarif Réglementé avec votre chèque énergie si, vous ne l'avez pas déjà utilisé et/ou demandé, une pré-affectation pour les années suivantes.<br/> Votre chèque énergie sera aisi automatiquement déduit de votre facture d'énergie.",
+          btnTextColor:  "#589cdf",
+          textColor: "#fff"
+        })
+
+      div
+        +loginPush({
+          icon : "icon-electro-menager",
+          background:    "#ed694b",
+          title:         "Vos frais de mise en service offerts",
+          textColor:     "#fff",
+          btnBackground: "#fff",
+          btnTextColor:  "#ed694b"
+        })
+
+      div
+        +loginPush({
+          icon : "icon-assurance-chaudiere",
+          background:    "#3aaa35",
+          title:         "Vos frais de mise en service offerts",
+          textColor:     "#fff",
+          btnBackground: "#fff",
+          btnTextColor:  "#3aaa35"
+        })
+
+  // end .c-loginInfo
+
+mixin loginPush(data)
+
+  - var data          = data || {}
+  - var icon = data.icon || "icon-accompagne"
+  - var background    = data.background || "#fff"
+  - var title         = data.title || ""
+  - var titleColor    = data.titleColor || "#fff"
+  - var textColor     = data.textColor || "#000"
+  - var text          = data.text || "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum recusandae error quaerat, quia quasi laudantium molestias sit temporibus consequatur aliquam, deleniti repellat, nesciunt et. Est qui maiores temporibus saepe expedita? Vous bénéficiez d'un cheque énergie délivré par l'État "
+  - var btnBackground = data.btnBackground || ""
+  - var btnTextColor  = data.btnTextColor || "black"
+
+
+  .c-loginInfo__Push( style="background-color:" + background +";" )
+    .c-loginInfo__PushImg
+      div(class=icon).icon
+      //- img(src="../images/logo_cheque_energie.png" alt="visuel de demenagement")
+
+    .c-loginInfo__PushText
+      h2.c-loginInfo__PushTitle.u-heading-3( style="color:" + titleColor +";" )!=title
+
+      p.c-loginInfo__PushInfos( style="color:" + textColor +";" )!=text
+    a.c-loginInfo__btn(
+      href="#"
+      style=" background-color:" + btnBackground +"; color:"+ btnTextColor +";"
+    ).u-link.u-link--arrow En savoir plus

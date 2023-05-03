@@ -1,0 +1,25 @@
+
+include passwordHelper/passwordHelper
+include suggest/suggest
+include inputMat/inputMat
+include selectMat/selectMat
+include checkboxMat/checkboxMat
+include radioMat/radioMat
+include radioSwitchMat/radioSwitchMat
+include radioInteger/radioInteger
+include textareaMat/textareaMat
+include cityMat/cityMat
+include uploadMat/uploadMat
+include choiceWrapperMat/choiceWrapperMat
+include radioBlockMat/radioBlockMat
+include uploadMat2/uploadMat2
+include radioStyleWrapper/radioStyleWrapper
+
+
+mixin formMat()
+
+  - var data = {}
+  - var spacer = data.spacer || "u-padding-spacer"
+
+  form.c-formMat(novalidate class=spacer ? spacer : "" )&attributes(attributes)
+    block

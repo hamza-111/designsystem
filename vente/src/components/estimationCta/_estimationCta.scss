@@ -1,0 +1,44 @@
+.c-estimationCta {
+  padding: 10px;
+  border: 1px solid $indigo;
+  color: $indigo;
+  transition: all .3s;
+
+  a {
+    color: $indigo;
+    text-decoration: none;
+    transition: all .3s;
+  }
+
+  @include hover-focus-active {
+    color: $white;
+    background-color: $indigo;
+
+    a {
+      color: $white;
+    }
+  }
+}
+
+.c-estimationCta__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.c-estimationCta__link {
+  display: flex;
+  align-items: center;
+}
+
+.c-estimationCta__chevronIcon {
+  font-size: 2.6rem;
+  line-height: 1em;
+}
+
+.c-estimationCta__budgetIcon {
+  font-size: 5rem;
+  line-height: 0.8em;
+}

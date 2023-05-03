@@ -1,0 +1,71 @@
+include offerPrice/offerPrice
+
+mixin offer(data)
+  - var data      = data || {}
+  - var edit      = data.edit || false
+  - var recapMode = data.recapMode || false
+  - var promo     = data.promo || false
+  - var name      = data.name || "Duo Fixe"
+  - var iconName  = data.iconName || false
+
+  // .c-offer
+  if recapMode
+    article.c-offer.c-offer--recap&attributes(attributes)
+      .c-offer__wrapper
+        .c-offer__main
+          .c-offer__img
+            if iconName
+              span.icon(class=iconName)
+
+          .c-offer__infos
+            h3.c-offer__title(class=recapMode ? '' : 'u-color-genBlue')=name
+            h4.c-offer__subTitle: strong Dépannage Eau, Gaz et Electricité Express
+            if promo
+              +offerPromo
+
+            .c-offer__text
+              p Assurez-vous en cas de fuites d'eau, d'engorgement ou de problèmes sur votre installation de gaz naturel et d'électricité.
+
+          .c-offer__aside
+            +offerPrice({
+              noEstim: true
+            })
+  else
+    article.c-offer(
+      class=edit? 'c-offer--shopList' : '')&attributes(attributes)
+      .c-offer__wrapper
+        .c-offer__main
+          .c-offer__img.u-hideSmall
+            img(src="../images/contrib/offer-medium.png" alt="La description de mon image")
+
+          .c-offer__infos
+            h3.c-offer__title.u-color-genBlue=name
+            ul.u-list
+              li.u-list__item.u-list__item--check.u-color-genBlue-before
+                | Prix indexé sur le Tarif Réglementé de l'électricité
+              li.u-list__item.u-list__item--check.u-color-genBlue-before
+                | -30% soir et week-ends<sup>(1)</sup>
+
+            if promo
+              +offerPromo
+
+          .c-offer__aside
+            +offerPrice
+
+            if !edit
+              +btnWrapper().u-theme-genBlue.c-btnWrapper--fullOnMobile.c-btnWrapper--alignLeft
+                +baseBtn({
+                  text: 'Choisir cette offre',
+                  button: true
+                })
+
+          if edit
+            .c-offer__edit
+              button(type="button" tabindex="-1" aria-hidden="true").c-offer__editSwitch
+                span.icon.icon-bold-edit
+              button(type="button").c-offer__editBtn
+                .icon.icon-bold-edit
+                span Modifier
+
+        block
+  // END .c-offer

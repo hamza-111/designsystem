@@ -1,0 +1,16 @@
+mixin sideMenu(data)
+  - var data = data || {}
+  // - var target = data.target || ''
+  // - var sideContent = data.sideContent || ''
+  // - var classToOpen = data.classToOpen || 'is-menu-open'
+  // - var classToClose = data.classToClose || 'is-menu-close'
+  // - var preventScroll = data.preventScroll || false
+  - var settings = data.settings || false
+
+
+  // .c-sideMenu
+  aside.c-sideMenu(
+    data-e-side-menu=settings
+  )&attributes(attributes)
+    block
+  // end .c-sideMenu

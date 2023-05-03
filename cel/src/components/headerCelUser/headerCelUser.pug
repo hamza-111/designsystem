@@ -1,0 +1,94 @@
+include ../../../../common/src/components/floatingModal/floatingModal
+include ../../../../common/src/components/btnWrapper/btnWrapper
+
+mixin headerCelUser(data)
+  - var data   = data || {}
+  - var layer  = data.layer || 'detail'
+  - var target = data.target || "headerCel-userDetail"
+  - var label  = data.label || "Jean-François & Marie-Françoise"
+  - var icon   = data.icon || "icon-identity"
+
+  // .c-headerCelUser
+  .c-headerCelUser&attributes(attributes)
+    button.c-headerCelUser__btn(
+      type="button"
+      data-e-toggle='{"target": "' + target + '", "autoClose": true, "blockScroll": true}'
+    )
+      p.c-headerCelUser__name.u-hideSmall Jean-François & Marie-Françoise
+      span.icon(class=icon)
+
+    if layer === 'tunnel'
+      +floatingModalArrow({
+        target: target,
+        arrow: 'TR'
+      })
+        .c-floatingModal__headingBlock
+          h2.c-floatingModal__heading-1.u-textCenter Vous nous quittez déjà...
+
+        +btnWrapper().c-btnWrapper--fullOnDesktop.u-theme-genBlue.u-margin-t-20
+          +baseBtn({
+            text: 'Continuer',
+            button: true
+          })(data-e-toggle-close=target)
+          +baseBtn({
+            text: 'Espace Client',
+            secondary: true
+          })
+
+    if layer === 'tunnelConnect'
+      +floatingModalArrow({
+        target: target,
+        arrow: 'TR'
+      })
+        .c-floatingModal__headingBlock
+          h2.c-floatingModal__heading-1.u-textCenter Vous nous quittez déjà...
+
+        +btnWrapper().c-btnWrapper--fullOnDesktop.u-theme-genBlue.u-margin-t-20
+          +baseBtn({
+            text: 'Continuer',
+            button: true
+          })(data-e-toggle-close=target)
+          +baseBtn({
+            text: 'Espace Client',
+            secondary: true
+          })
+
+    else
+      +headerCelLayer({
+        target: target
+      }).c-headerCelLayer--desktop.c-headerCelUser__layer(data-e-toggle-target=target)
+        if layer === 'detail'
+          .u-hideMediumUp
+            span.icon.icon-identity.c-headerCelUser__layerIcon
+            p.c-headerCelUser__layerName Jean-François & Marie-Françoise
+
+          .c-headerCelLayer__userInfo
+            p Ref. Client&nbsp;: 68769234
+            p N° contrat&nbsp;:
+              = " "
+              a(href="#") 68769234
+
+          +btnWrapper().u-theme-genBlue
+            +baseBtn({
+              text: 'Déconnexion',
+              secondary: true
+            })
+
+        if layer === 'backEC'
+          .u-hideMediumUp
+            span.icon.icon-identity.c-headerCelUser__layerIcon
+            p.c-headerCelUser__layerName Jean-François & Marie-Françoise
+
+          +btnWrapper().u-theme-genBlue
+            +baseBtn({
+              text: 'Espace client'
+            })
+
+          +btnWrapper().u-theme-genBlue
+            +baseBtn({
+              text: 'Déconnexion',
+              secondary: true
+            })
+
+  // END .c-headerCelUser
+

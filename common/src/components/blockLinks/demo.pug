@@ -1,0 +1,54 @@
+include blockLinks
+
+.c-wysiwyg
+  h2 HTML libre + liens: téléchargement
++demo()
+  +blockLinks({
+    isDownloadFiles: true
+  })
+
+
+.c-wysiwyg
+  h2 HTML libre + liens: téléchargement + boutons
++demo()
+  +blockLinks({
+    isDownloadFiles: true,
+    bottomLinks: true
+  })
+
+
+.c-wysiwyg
+  h2 HTML libre + liens: téléchargement (affichage deux colonnes)
++demo({
+  desc: "Classe <code>c-blockLinks--full</code> sur élement <code>c-blockLinks</code>. Retirer les classes <code>l-col-medium-7</code> et <code>l-col-medium-5</code>"
+})
+  +blockLinks({
+    isDownloadFiles: true,
+    fullWidth: true
+  })
+
+.c-wysiwyg
+  h2 HTML libre + liens: téléchargement + liens applis
++demo()
+  +blockLinks({
+    isDownloadFiles: true,
+    appLinks: true
+  })
+
+.c-wysiwyg
+  h2 HTML libre + liens: accès rapides
++demo()
+  +blockLinks({
+    isDownloadFiles: false
+  })
+
+
+.c-wysiwyg
+  h2 HTML libre + liens: accès rapide + liens: téléchargement + boutons
++demo()
+  +blockLinks({
+    isDownloadFiles: true,
+    bottomLinks: true,
+    fullWidth: true,
+    minBreakPoint: "medium"
+  })

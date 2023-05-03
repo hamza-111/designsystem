@@ -1,0 +1,29 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/signatureMondat/signatureMondat
+
+
+
+//- Main variables
+block variables
+  - var title          = "signatureMondat"
+  - var page           = "app"
+  - var bodyClass      = ""
+  - var description    = ""
+  - var noHeaderFooter = true
+  - var headerCel      = "tunnelConnect"
+  - var footerLight    = true  
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+
+  .u-padding-spacer.u-margin-small-t-35
+    +signatureMondat().l-wrapper--large
+

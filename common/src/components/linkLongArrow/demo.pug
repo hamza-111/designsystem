@@ -1,0 +1,37 @@
+include linkLongArrow
+
+.c-wysiwyg
+  h2 Utilisation normale
++demo()
+  +linkLongArrow().u-theme-bg.u-theme-bg-hover
+
+
+.c-wysiwyg
+  h2 Texte centré
++demo({
+  desc: "Classe <code>u-textCenter</code>"
+})
+  +linkLongArrow({
+    positionText: 'center'
+  }).u-theme-bg.u-theme-bg-hover
+
+
+.c-wysiwyg
+  h2 Mode inline-texte
++demo({
+  desc: "Bouton en ligne: <code>c-linkLongArrow--inline</code>"
+})
+  +linkLongArrow({
+    inlineText: true
+  }).u-theme-bg.u-theme-bg-hover
+
+
+.c-wysiwyg
+  h2 Texte et icône inversés
+
++demo({
+  desc: "Classes <code>c-linkLongArrow--reverse</code>"
+})
+  +linkLongArrow({
+    reverse: true
+  }).u-theme-bg.u-theme-bg-hover

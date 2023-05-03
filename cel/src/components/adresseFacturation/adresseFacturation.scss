@@ -1,0 +1,39 @@
+.c-adresseFacturation {
+    width: 100%;
+    background: white;
+    display: block;
+}
+
+.c-adresseFacturation__title {
+    width: 100%;
+    text-align: center;
+}
+
+.c-adresseFacturation__title .c-adresseFacturation--gras {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.c-adresseFacturation .c-inputMat__label, .c-adresseFacturation .c-selectMat__label {
+    font-size: 1.4rem;
+}
+
+@include media ("<=small") {
+    .c-adresseFacturation .c-btnWrapper {
+        display: block;
+    }
+
+    .c-adresseFacturation .c-btnWrapper .c-baseBtn {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+@include media ("<=medium", ">=small") {
+    .c-confirmerAdresse {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+

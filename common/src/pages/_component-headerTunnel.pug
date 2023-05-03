@@ -1,0 +1,47 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/floatingModal/floatingModal
+include ../components/headerTunnel/headerCel/headerCel
+
+//- Main variables
+block variables
+  - var title          = "headerTunnel "
+  - var page           = ""
+  - var bodyClass      = ""
+  - var description    = "Module headerTunnel "
+  - var noHeaderFooter = true
+  - var demoMode       = true
+
+
+//- JS (bas) pour cette page
+block JS
+
+
+//- Page content
+block content
+
+
+  div(data-e-switch-toggle-name="header" hidden )
+    +demo({
+      desc :"Header Tunnel pour le type Tunnel non connecté"
+    })
+      +headerCel({
+        header: "tunnel",
+        headerTunnel: true
+      })
+
+  div(data-e-switch-toggle-name="header" )
+    +demo({
+      desc :"Header Tunnel pour le type Tunnel connecté"
+    })
+      +headerCelConnect({
+        header: "tunnelConnect",
+        headerTunnel: true
+      })
+
+
+
+  <button type="button"  data-e-switch-toggle="header">switch HeaderCel</button>

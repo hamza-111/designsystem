@@ -1,0 +1,30 @@
+include resultSearch
+
++demo({
+  desc: "moteur et resultat"
+})
+  +resultSearch
+
++demo({
+  desc: "tab avec 2 onglets"
+})
+  +resultSearchTabs
+
+
++demo({
+  desc: "bloc contenu de la FAQ"
+})
+  +resultSearchContent({
+    type : "faq"
+  })
+
++demo({
+  desc: "resultat de recherche, NOTE : limité jusqu'a 150 caracteres"
+})
+  +resultSearchContent({
+    type : "result"
+  })
++demo({
+  desc: "warning"
+})
+  +resultSearchContent

@@ -1,0 +1,65 @@
+mixin foyerSimilaireV2(data)
+  - var data   = data || {}
+  - var img   = data.img || "cas1.jpg"
+
+  //.c-foyerSimilaireV2
+  .c-foyerSimilaireV2.u-margin-b-110
+    .c-foyerSimilaireV2__header
+      .c-foyerSimilaireV2__head.u-margin-t-70.u-margin-small-t-60
+        h2.c-foyerSimilaireV2__title Félicitations, vous faites partie des foyers 
+            span.c-foyerSimilaireV2__title--eco les plus économes
+        //p.c-foyerSimilaireV2__desc Estimation annuelle réalisée en comparant les foyers similaires au vôtre, selon les critères que vous avez renseignés.
+    .c-foyerSimilaireV2__main
+      .c-foyerSimilaireV2__info
+        .c-foyerSimilaireV2__haut
+          p.c-foyerSimilaireV2__para Pour aller encore plus loin, découvrez les gestes faciles à adopter, pièce par pièce, pour <b> limiter votre consommation et réduire votre facture. </b>
+
+          +btnWrapper.u-theme-genBlue.c-btnWrapper--alignRight.c-btnWrapper--fullOnMobile.u-margin-t-30.u-margin-small-t-30.u-textBold
+            +baseBtn({
+              text: 'Mes éco-gestes'
+            })
+
+        //- ul.c-foyerSimilaireV2__list
+        //-   li Adresse du logement : 92000, Nanterre
+        //-   li Type du logement : maison
+        //-   li Superficie du logement : 36m2
+        //-   li Nombre d’occupant(s) : 3
+        //- a(href="" alt="").c-foyerSimilaireV2__repeat Recommencer la simulation
+
+      .c-foyerSimilaireV2__graph
+        .c-foyerSimilaireV2__graphMain
+          img(src= "../images/contrib/"+img alt="").c-foyerSimilaireV2__img
+          span.c-foyerSimilaireV2__graph__top.c-foyerSimilaireV2--grey
+            span FOYERS MOYENS 
+            span 1000 kWh
+          span.c-foyerSimilaireV2__graph__bottom.u-textBold
+            span.c-foyerSimilaireV2--green 672 <small class="c-foyerSimilaireV2--typoSmall">kWh</small>
+            span.c-foyerSimilaireV2__graph--small Consommation annuelle de votre foyer
+          span.c-foyerSimilaireV2__graph__left.u-textBold
+            span FOYERS 
+            span ÉCONOMES
+            span.c-foyerSimilaireV2--green  800 kWh
+          span.c-foyerSimilaireV2__graph__right.c-foyerSimilaireV2--grey 
+            span FOYERS
+            span CONSOMMATEURS
+            span 1400 kWh
+    .c-foyerSimilaireV2__hr
+    .c-foyerSimilaireV2__footPara.u-textBold.u-textCenter.u-textItalic
+      p Cette comparaison est effectuée sur la base de votre consommation annuelle : 672 kWh. 
+      p Elle tient compte de votre zone climatique, votre tarif et des informations que vous avez renseignées :
+    ul.c-foyerSimilaireV2__listFooter.u-textItalic
+      li adresse du logement : 92000, Nanterre
+      li type du logement : maison
+      li superficie du logement : 36m²
+      li nombre d’occupant(s) : 3
+    //a(href="").c-foyerSimilaireV2__link Retour à Activ'Conso
+    +btnWrapper.u-theme-genBlue.c-btnWrapper--fullOnMobile.u-margin-t-50.u-margin-small-t-50.u-textBold.c-foyerSimilaireV2__linkRevert
+      +baseBtn({
+      text: "Retour à Activ'Conso",
+      secondary : true
+      }).c-foyerSimilaireV2__link
+
+      +baseBtn({
+      text: "Recommencer la simulation",
+      secondary : true
+      })

@@ -1,0 +1,35 @@
+include ecm
+
+.c-wysiwyg
+  h1.u-textCenter Composant Ecm etape 1
+
++demo({
+  desc: `- méthode pour lancer la validation sur un button type='button'. $0.eFormValidation.checkValidation()
+  - méthode pour lancer declenché les modals $0.eModal.open()
+  NOTE : $0 correspond à l'élément ciblé. pour la validation ciblé le formulaire ayant l'attribut **data-e-form-validation**`
+})
+  +ecm({ "step" : 1})
+
+
+.c-wysiwyg.u-margin-t-50
+  h1.u-textCenter.u-margin-t-50 Composant Ecm etape 2
++demo({
+  desc: "ecm step2"
+})
+  +ecm({ "step" : 2})
+
+
+.c-wysiwyg.u-margin-t-50
+  h1.u-textCenter.u-margin-t-50 Composant Ecm page erreur
++demo({
+  desc: "page Error"
+})
+
+  .c-ecm.l-wrapper--large
+    +textImage({
+      imgLarge : "../images/contrib/image-erreur-cut.jpg",
+      imgSmall : "../images/contrib/image-erreur-cut.jpg"
+    }).c-textImage--right
+      h2.u-heading-2 OUPS
+      p Une erreur est survenue ! <br> Merci de réessayer dans quelques minutes à partir du mail reçu.
+

@@ -1,0 +1,58 @@
+mixin formContactReclamation(data)
+  - var data = data || {}
+  - var id   = data.id || ""
+
+  fieldset.c-formContactReclamation.c-formContact__separator.u-padding-spacer(
+    data-e-formcontact-block={id: id}
+  )
+    .l-wrapper--medium.u-textCenter
+      h3.u-heading-3.u-margin-b-30 Concernant votre contestation
+      p.u-heading-4 Nous avez-vous déjà contacté à ce sujet&nbsp;?
+
+    .l-wrapper.l-wrapper--small
+      div(data-e-field-validation={validations: {valueMissing: 'Champ obligatoire'}})
+        +choiceWrapperMat.c-choiceWrapperMat--hAlign.c-choiceWrapperMat--vAlign(
+          data-e-formmat-swap='{"name": "reclamation"}'
+        )
+          +radioMat({
+            label: 'Oui',
+            name:  'DEJA_CONTACTE',
+            id:    "contact-reclamation-radio1",
+            value: "oui",
+            required: true
+          })
+          +radioMat({
+            label: 'Non',
+            name:  'DEJA_CONTACTE',
+            id:    "contact-reclamation-radio2",
+            value: "non"
+          })
+
+        +fieldInfo({
+          typeMessage: 'error',
+          input:       true,
+          noDemo:      true
+        })(data-e-field-validation-error)
+
+      fieldset(
+        data-e-formmat-swap-name="reclamation"
+        data-e-formmat-swap-target='["oui"]'
+        hidden disabled
+      )
+        +selectMat({
+          label:    'Votre derniere demande a été faite',
+          name:     'DATE_RECLA',
+          id:       'contact-reclamation-time',
+          required: true,
+          dataValidation: {
+            validations: {
+              valueMissing: 'Champ obligatoire'
+            }
+          }
+        })
+          option(value="1mois") 1 mois
+          option(value="3mois") Moins de 3 mois
+          option(value="6mois") Moins de 6 mois
+          option(value="9mois") Moins de 9 mois
+          option(value="12mois") 12 mois
+          option(value="plus1an") Plus d'un an

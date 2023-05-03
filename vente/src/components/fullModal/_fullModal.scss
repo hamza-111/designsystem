@@ -1,0 +1,54 @@
+@import 'fullModalHeader/fullModalHeader';
+
+$fullModal-shrink: 43px;
+
+.c-fullModal {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling : touch;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  &.is-opened {
+    visibility: visible;
+    opacity: 1;
+    overflow-y: auto;
+    bottom: 0;
+    min-height: 100%;
+    padding-top: 90px;
+
+    @include media(">=small"){
+      padding-top: 130px;
+    }
+  }
+
+  .c-legalMention {
+    border-top: 1px solid $grey-light;
+  }
+}
+
+.c-fullModal__main {
+  flex-grow: 1;
+}
+
+@include media("<small") {
+  .c-fullModal__footer {
+    padding-bottom: 10px;
+  }
+}
+
+// hack for IE : annule le display flex qui crée des anomalies
+@media all and (-ms-high-contrast:none){
+  .c-fullModal {
+    display: block;
+  }
+}

@@ -1,0 +1,29 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+include ../components/relverIndex/relverIndex
+
+
+//- Main variables
+block variables
+  - var title = "relver index"
+  - var bodyClass       = "u-bg-grey-light"
+  - var description     = ""
+  - var noBg     = true
+  - var noHeaderFooter  = true
+  - var headerCel       = 'full'
+  - var wrapperSite     = "l-wrapper--main"
+  - var main          = "mainFull u-bg-white"
+  - var footer          = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  .l-row.u-padding-t-40
+    .l-col-md-12.u-padding-h-10
+      +relverIndex()

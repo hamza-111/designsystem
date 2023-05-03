@@ -1,0 +1,14 @@
+// TODO : rendre variable générique a plus de 2 couleurs
+
+mixin titleV2(data)
+  - var data        = data || {}
+  - var titleBlue   = data.titleBlue || 'Nous vous expliquons la répartition'
+  - var titleBlack  = data.titleBlack || 'de votre facture de Gaz Naturel'
+  - var blue        = data.blue || 'u-color-genBlue'
+  - var black        = data.black || 'u-color-black'
+
+  // .c-titleV2
+  .c-titleV2.u-textCenter
+    h2.u-heading-1.u-textBold.c-titleV2__textTop(class=blue)!=titleBlue
+      span.u-heading-1.c-titleV2__textDown(class=black)!=titleBlack
+  // END .c-titleV2

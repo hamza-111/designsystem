@@ -1,0 +1,40 @@
+.c-select {
+  position: relative;
+  width: 100%;
+
+  select {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    appearance: none;
+    border: 1px solid $grey-medium;
+    padding: 10px;
+    padding-right: 40px;
+    background-color: transparent;
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    z-index: 0;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+  }
+
+  .ie9 & {
+    // On cache la flêche native par la notre
+    select {
+      padding-right: 15px;
+    }
+
+    .icon {
+      background: $white;
+      z-index: -1;
+    }
+  }
+}

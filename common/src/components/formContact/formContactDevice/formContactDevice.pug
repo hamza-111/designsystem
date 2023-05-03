@@ -1,0 +1,132 @@
+mixin formContactDevice(data)
+  - var data = data || {}
+  - var id = data.id || ""
+
+  fieldset.c-formContactDevice.l-wrapper--medium(
+    data-e-formcontact-block={id: id}
+  )
+    h3.u-heading-4 Quel appareil utilisez-vous&nbsp;? (optionnel)
+
+    +choiceWrapperMat.c-choiceWrapperMat--hAlign(
+      data-e-formmat-swap='{"name": "device"}'
+    )
+      +radioMat({
+        label: 'Un ordinateur',
+        id:    'ordinateur',
+        name:  'TYPE_APPAREIL',
+        value: 'ordinateur'
+      })
+      +radioMat({
+        label: 'Tablette',
+        id:    'tablette',
+        name:  'TYPE_APPAREIL',
+        value: 'tablette'
+      })
+      +radioMat({
+        label: 'Téléphone',
+        id:    'telephone',
+        name:  'TYPE_APPAREIL',
+        value: 'telephone'
+      })
+
+
+    fieldset.u-margin-t-30(
+      data-e-formmat-swap-name="device"
+      data-e-formmat-swap-target='["ordinateur"]'
+      hidden disabled
+    )
+      h3.u-heading-4 Précisez votre appareil
+
+      div(data-e-field-validation={validations: {valueMissing: 'Champ obligatoire'}})
+        +choiceWrapperMat.c-choiceWrapperMat--hAlign
+          +radioMat({
+            label:    'Mac',
+            id:       'mac',
+            name:     'APPAREIL_PRECISION',
+            value:    'mac',
+            required: true
+          })
+          +radioMat({
+            label: 'Windows',
+            id:    'windows',
+            name:  'APPAREIL_PRECISION',
+            value: 'windows'
+          })
+          +radioMat({
+            label: 'Autre / ne sais pas',
+            id:    'autre',
+            name:  'APPAREIL_PRECISION',
+            value: 'autre'
+          })
+        +fieldInfo({
+          typeMessage: 'error',
+          input:       true,
+          noDemo:      true
+        })(data-e-field-validation-error)
+
+    fieldset.u-margin-t-30(
+      data-e-formmat-swap-name="device"
+      data-e-formmat-swap-target='["tablette", "telephone"]'
+      hidden disabled
+    )
+      h3.u-heading-4 Précisez votre appareil
+
+      div(data-e-field-validation={validations: {valueMissing: 'Champ obligatoire'}})
+        +choiceWrapperMat.c-choiceWrapperMat--hAlign
+          +radioMat({
+            label:    'iOS',
+            id:       'ios',
+            name:     'APPAREIL_PRECISION',
+            value:    'ios',
+            required: true
+          })
+          +radioMat({
+            label: 'Android',
+            id:    'android',
+            name:  'APPAREIL_PRECISION',
+            value: 'android'
+          })
+          +radioMat({
+            label: 'Windows Phone',
+            id:    'windows-phone',
+            name:  'APPAREIL_PRECISION',
+            value: 'windows-phone'
+          })
+          +radioMat({
+            label: 'Autre / ne sais pas',
+            id:    'autre-nomad',
+            name:  'APPAREIL_PRECISION',
+            value: 'autre-nomad'
+          })
+        +fieldInfo({
+          typeMessage: 'error',
+          input:       true,
+          noDemo:      true
+        })(data-e-field-validation-error)
+
+    div
+      +column({
+        colConfig: '50-50',
+        spaced: true
+      })
+        .c-column__col
+          +selectMat({
+            label: 'Navigateur (optionnel)',
+            id:    'contact-device-browser',
+            name:  'TYPE_NAVIGATEUR'
+          })
+            option(value="") Choisissez dans la liste
+            option(value="chrome") Chrome
+            option(value="firefox") Firefox
+            option(value="internet-explorer") Internet Explorer
+            option(value="edge") Edge
+            option(value="safari") Safari
+            option(value="opera") Opera
+            option(value="Autre") Autre / ne sais pas
+
+      +inputMat({
+        label:       'URL de la page concernée (optionnel)',
+        placeholder: 'Ex: https://particuliers.engie.fr/',
+        id:          'contact-device-url',
+        name:        'PAGE'
+      })

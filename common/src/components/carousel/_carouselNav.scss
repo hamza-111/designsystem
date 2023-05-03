@@ -1,0 +1,89 @@
+ /**
+ * carousel nav:
+ * `.c-carouselNav.c-carouselNav--arrowDots` - Navigation compacte pour le carousel avec chevron et dots (http://kenwheeler.github.io/slick)
+ *
+ *     @example
+ *     .c-carousel(data-slick='{"arrows":true,"dots":true,"slidesToShow":1,"slidesToScroll":1,"adaptiveHeight":true}' data-slick-singlenav)
+ *       .c-carousel__slide slide 1
+ *       .c-carousel__slide slide 1
+ *       .c-carousel__slide slide 3
+ *     .c-carouselNav.c-carouselNav--arrowDots(data-slick-nav)
+ *       .c-carouselNav__wrapper
+ *         .c-carouselNav__arrows(data-slick-arrows)
+ *         .c-carouselNav__dots(data-slick-dots)
+ */
+
+.c-carouselNav--arrowDots {
+  text-align: center;
+
+  .c-carouselNav__wrapper {
+    display: inline-block;
+    position: relative;
+    padding: 0 40px; // écart entre les dots et les arrows
+  }
+
+  .slick-prev,
+  .slick-next {
+    background: transparent;
+    width: auto;
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+
+    button {
+      display: block; // inline-block ajoute un espace en bas
+      color: $black;
+      font-size: 1.8rem;
+      width: auto;
+      left: auto;
+      position: relative;
+      transform: translateY(0);
+
+      .icon {
+        display: block; // inline-block ajoute un espace en bas
+      }
+    }
+  }
+
+  .slick-dots {
+    transform: scale(.8);
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    li {
+      margin: 2px;
+    }
+
+    .c-carousel__dot {
+      color: $black !important;
+    }
+  }
+}
+
+
+.c-carouselHome {
+  .slick-dots {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 15px;
+
+    li {
+      width: 12px;
+      height: 12px;
+      margin: 0 3px;
+      cursor: pointer;
+
+      @include hover-focus-active() {
+        .c-carousel__dot {
+          border-width: 6px;
+        }
+      }
+    }
+  }
+
+  .slick-dots li.slick-active .c-carousel__dot {
+    border-width: 6px;
+  }
+}

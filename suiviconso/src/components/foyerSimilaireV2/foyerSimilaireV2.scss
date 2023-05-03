@@ -1,0 +1,441 @@
+$greenDegrade: #58A814;
+$orangeDegrade: #FB7431;
+$redOrangeDegrade: #FF4800;
+
+.c-foyerSimilaireV2--greenDegrade {
+    color: #58A814;
+}
+
+.c-foyerSimilaireV2--orangeDegrade {
+    color: #FB7431;
+}
+
+.c-foyerSimilaireV2__haut {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.c-foyerSimilaireV2__para {
+    line-height: 2.2rem;
+    width: 313px;
+    text-align: right;
+}
+
+.c-foyerSimilaireV2--redOrangeDegrade {
+    color: #FF4800;
+}
+
+.c-foyerSimilaireV2--typoSmall {
+    font-size: 55%;
+}
+
+.c-foyerSimilaireV2__graph--small {
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+.c-foyerSimilaireV2 {
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    background: url("../images/contrib/angle3.jpg") left top, url("../images/contrib/angle4.jpg") right top;
+    background-repeat: no-repeat;
+    position: relative;
+    top: -10px;
+    background-size: 238px 208px;
+}
+
+.c-foyerSimilaireV2__header {
+    display: flex;
+    width: calc( 100% - 340px );
+    justify-content: center;
+    margin: 0 auto 55px;
+}
+
+.c-foyerSimilaireV2__main {
+    display: flex;
+    padding: 0 100px;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    @media screen and (min-width : 1024px) and (max-width:1170px) {
+        padding: 0 3%;
+    }
+}
+
+.c-foyerSimilaireV2__hr {
+    width: calc( 100% - 200px);
+    height: 1px;
+    display: block;
+    background-color: rgba(153,153,153,0.6);
+    margin: 35px auto 30px;
+}
+
+.c-foyerSimilaireV2__info {
+    width: 340px;
+    margin-top: 80px;
+}
+
+
+.c-foyerSimilaireV2__title {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.c-foyerSimilaireV2__head {
+    text-align: center;
+}
+
+.c-foyerSimilaireV2 > img {
+    width: 240px;
+}
+
+.c-foyerSimilaireV2__desc {
+    font-size: 1.6rem;
+    padding: 10px 0 0;
+    width: calc( 100% - 300px );
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (max-width : 1130px) {
+        padding: 10px 0 0;
+    }
+}
+
+.c-foyerSimilaireV2__list {
+    margin-top: 60px;
+    color: #424242;
+    font-style: italic;
+}
+
+.c-foyerSimilaireV2__repeat {
+    margin-top: 20px;
+    font-weight: bold;
+    display: block;
+}
+
+.c-foyerSimilaireV2--grey {
+    color:#b9b9b9;
+}
+
+.c-foyerSimilaireV2--green {
+    color: #58A814;
+}
+
+.c-foyerSimilaireV2__img {
+    width: 313px;
+    height: 278px;
+}
+
+.c-foyerSimilaireV2__graphMain {
+    position: relative;
+    padding: 50px;
+    font-weight: bold;
+}
+
+.c-foyerSimilaireV2__graph {
+    display: flex;
+    justify-content: center;
+    width: 560px;
+}
+
+.c-foyerSimilaireV2__graphMain span span {
+    display: block;
+    text-align: center;
+}
+
+.c-foyerSimilaireV2__graph__top {
+    position: absolute;
+    top: 0;
+    left: 140px;
+}
+
+.c-foyerSimilaireV2__graph__bottom {
+    position: absolute;
+    bottom: 4px;
+    left: 124px;
+    width: 167px;
+}
+
+.c-foyerSimilaireV2__graph__bottom .c-foyerSimilaireV2--green {
+    font-size: 2.8rem;
+}
+
+.c-foyerSimilaireV2__graph__left {
+    position: absolute;
+    left: -55px;
+    top: 150px;
+}
+
+.c-foyerSimilaireV2__graphMain span.c-foyerSimilaireV2__graph__left span {
+    text-align: right;
+}
+
+.c-foyerSimilaireV2__graph__right {
+    position: absolute;
+    right: -115px;
+    top: 150px;
+}
+
+.c-foyerSimilaireV2__graphMain span.c-foyerSimilaireV2__graph__right span {
+    text-align: left;
+}
+
+.c-foyerSimilaireV2__footPara {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+}
+
+.c-foyerSimilaireV2__listFooter {
+    color: #424242;
+    display: flex;
+    justify-content: center;
+    line-height: 1.9rem;
+    font-size: 1.4rem;
+    @include media(">small", "<=medium") {
+        display: block;
+        text-align: center;
+    }
+}
+
+.c-foyerSimilaireV2__title--eco {
+    color: #58A814;
+}
+
+.c-foyerSimilaireV2__title--inf-moy {
+    color: #81980B;
+}
+
+.c-foyerSimilaireV2__title--sup-moy {
+    color: #EBA601;
+}
+
+.c-foyerSimilaireV2__title--conso {
+    color: #FB7431;
+}
+
+@include media(">small", "<=medium") {
+    .c-foyerSimilaireV2__listFooter li {
+        display: inline-block;
+    }
+}
+
+.c-foyerSimilaireV2__listFooter li::before {
+    content: "•";
+    margin: 0 8px;
+    color: #424242;
+}
+
+
+.c-foyerSimilaireV2__listFooter li:first-child::before {
+    display: none;
+}
+
+.c-btnWrapper .c-foyerSimilaireV2__link.c-baseBtn.c-baseBtn--secondary {
+    border: none !important;
+}
+
+@include media("<=medium") {
+
+    .c-foyerSimilaireV2 {
+        background-image: none;
+    }
+
+    .c-foyerSimilaireV2__info {
+        margin-top: 0;
+    }
+
+    .c-foyerSimilaireV2__haut .c-btnWrapper--fullOnMobile {
+        justify-content: flex-start;
+    }
+
+    .c-foyerSimilaireV2__info {
+        width: 100%;
+    }
+
+    .c-foyerSimilaireV2__haut {
+        align-items: flex-start;
+    }
+
+    .c-foyerSimilaireV2__para {
+        text-align: left;
+        width: auto;
+    }
+
+    .c-foyerSimilaireV2__header {
+        width: 100%;
+        padding-left: 100px;
+        justify-content: left;
+    }
+
+    .c-foyerSimilaireV2__head {
+        padding: 0 0;
+    }
+
+    .c-foyerSimilaireV2__desc {
+        width: 540px;
+        line-height: 2.2rem;
+    }
+
+    .c-foyerSimilaireV2 > img {
+        display: none;
+        font-weight: bold;  
+    }
+
+    .c-foyerSimilaireV2__head {
+        text-align: left;
+    }
+
+    // .c-foyerSimilaireV2__title span {
+    //     display: block;
+    // }
+
+    .c-foyerSimilaireV2__main {
+        flex-direction: column-reverse;
+        padding: 0 100px;
+    }
+
+    .c-foyerSimilaireV2__graph {
+        width: 100%;
+        margin-bottom: 50px;
+        margin-left: -20px;
+    }
+
+    .c-foyerSimilaireV2__header {
+        margin-bottom: 50px;
+    }
+}
+
+@include media ("<small") {
+    .c-foyerSimilaireV2__header {
+        padding-left: 12px;
+    }
+
+    .c-foyerSimilaireV2__title {
+        line-height: 2.8rem;;
+    }
+
+    .c-foyerSimilaireV2__graphMain span span {
+        line-height: 1.4rem;
+    }
+
+    .c-foyerSimilaireV2__listFooter {
+        flex-direction: column;
+    }
+
+    
+
+    .c-foyerSimilaireV2__listFooter li:first-child::before {
+        flex-direction: column;
+        display: inline;
+    }
+
+    .c-foyerSimilaireV2__footPara {
+        text-align: left !important;
+        font-size: 1.35rem;
+        margin-bottom: 5px;
+    }
+
+    .c-foyerSimilaireV2__linkRevert {    
+        flex-direction: column-reverse;
+        display: flex !important;
+    }
+
+    .c-foyerSimilaireV2__haut .c-btnWrapper--fullOnMobile {
+        width: 100%;
+    }
+
+    .c-foyerSimilaireV2__graphMain {
+        padding: 0;
+        font-size: 1.1rem;
+    }
+
+    .c-foyerSimilaireV2__img {
+        width: 150px;
+    }
+
+    .c-foyerSimilaireV2__hr {
+        width: 100%;
+        padding: 0 12px;
+        text-align: center;
+    }
+
+    .c-foyerSimilaireV2__main {
+        padding: 0 12px;
+    }
+
+    .c-foyerSimilaireV2__desc {
+        width: 100%;
+    }
+
+    .c-foyerSimilaireV2__graph__top {
+        top: -35px;
+        left: 30px;
+    }
+
+    .c-foyerSimilaireV2__graph__bottom {
+        bottom: -33px;
+        left: 8px;
+        width: 140px;
+    }
+
+    .c-foyerSimilaireV2__graph__bottom .c-foyerSimilaireV2--green {
+        font-size: 1.8rem;
+    }
+
+    .c-foyerSimilaireV2__graph--small {
+        font-size: 1.2rem;
+    }
+
+    .c-foyerSimilaireV2__graph__left {
+        left: -75px;
+        top: 40px;
+    }
+
+    .c-foyerSimilaireV2__graph__right {
+        position: absolute;
+        left: 160px;
+        top: 40px;
+        right: initial;
+    }
+
+    .c-foyerSimilaireV2__graph {
+        margin: 20px 0 60px 0;
+        width: auto;
+        display: flex;
+        align-self: center;
+        left: -4%;
+        position: relative;
+        
+    }
+}
+
+@media screen and (max-width : 350px) {
+    .c-foyerSimilaireV2__img {
+        width: 120px;
+    }
+
+    .c-foyerSimilaireV2__graph__top {
+        top: -33px;
+        left: 15px;
+    }
+
+    .c-foyerSimilaireV2__graph__right {
+        left: 130px;
+    }
+
+    .c-foyerSimilaireV2__graph__bottom {
+        bottom: -33px;
+        left: 3px;
+        width: 120px;
+    }
+
+    .c-foyerSimilaireV2__graph__bottom .c-foyerSimilaireV2--green {
+        font-size: 1.6rem;
+    }
+
+    .c-foyerSimilaireV2__graph--small {
+        font-size: 1rem;
+    }
+}

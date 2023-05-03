@@ -1,0 +1,426 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../../../common/src/components/pictoBlock/pictoBlock
+
+//- Main variables
+block variables
+  - var title          = "connect-issue 02"
+  - var page           = "app"
+  - var bodyClass      = ""
+  - var description    = ""
+  - var noHeaderFooter = true
+  - var headerCel      = 'title'
+  - var footerLight    = true
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  #cel.c-headerLightCelPush.u-margin-small-t-35
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Récupérer votre email de connexion
+
+      p.u-textCenter.u-margin-b-40.u-margin-small-b-30
+        | Pour récupérer votre email de connexion, veuillez renseigner les informations ci-dessous. Vous pourrez ensuite les modifier si nécessaires.
+
+      form(data-e-form-validation).c-formMat.u-margin-b-40.u-margin-small-b-40
+        .l-wrapper--small
+          h3.u-heading-4.u-textCenter
+            | Saisissez votre email de connexion
+          +inputMat({
+            label:       'Référence Client',
+            type:        "tel",
+            id:          "refClient",
+            pattern:     '^[0-9]*$',
+            maxlength:   '10',
+            name:        "refClient",
+            required:    true,
+            placeholder: 'Ex : 12345678',
+            dataValidation: {
+              validations: {
+                patternMismatch: 'patternMismatch: champs composé seulement de chiffres',
+                valueMissing: 'champs obligatoire'
+              }
+            }
+          })
+
+          +inputMat({
+            label: 'Votre nom',
+            type: "text",
+            id: "name",
+            name: "name",
+            required: true,
+            placeholder: 'Indiquez votre nom',
+            dataValidation: true
+          })
+
+          +inputMat({
+            label:       'Code Postal',
+            type:        "tel",
+            id:          "cp",
+            pattern:     'cp',
+            name:        "cp",
+            required:    true,
+            maxlength:   "5",
+            placeholder: '75018',
+            dataValidation: {
+              validations: {
+                patternMismatch: 'champs composé seulement de chiffres',
+                valueMissing: 'champs obligatoire'
+              }
+            }
+          })(data-e-foreign-target)
+
+          p.u-textRight
+            button(data-e-foreign-toggle='{"id":{"name":"cp", "pattern1":"^[0-9]{5}$", "pattern2":"^[A-Za-z0-9]*", "maxlength1":"5", "maxlength2":"10" }}' type='button').u-buttonReset.u-link.u-link--revert.u-fontSize-tiny
+              span(data-e-switch-toggle="foreignCp" data-e-switch-toggle-name="foreignCp") Foreign address
+              span(data-e-switch-toggle="foreignCp" data-e-switch-toggle-name="foreignCp" hidden) Adresse française?
+
+        +btnWrapper().u-theme-green.u-margin-t-40.u-margin-small-t-40.c-btnWrapper--fullOnMobile
+          +baseBtn({
+            button: true,
+            text: 'Valider'
+          })(type="submit" data-e-form-validation-submit).c-baseBtn--large
+
+    .l-wrapper--huge
+      +btnWrapper().c-btnWrapper--alignLeft.u-theme-green
+        +baseBtn({
+          text: "Retour",
+          iconLeft: "icon-chevron-left",
+          empty: true
+        })
+
+
+    // step 2 : "Email de connexion trouvé"
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Email de connexion trouvé
+
+      p.u-textCenter.u-margin-b-20.u-margin-small-b-20
+        | Votre email actuel est :
+
+      form.c-formMat.u-margin-b-40.u-margin-small-b-40
+        .l-wrapper--medium
+          +pictoBlock({
+            iconName: 'icon-contact-mail2',
+            email: true,
+            topToLeft: true
+          }).is-valid.l-wrapper--small
+            p.u-color-grey Email
+            p
+              b johndoe@wanadoo.com
+
+        +btnWrapper().u-theme-green.u-margin-t-40.u-margin-small-t-40.c-btnWrapper--fullOnMobile.c-btnWrapper--reverse
+          +baseBtn({
+            text: 'Me connecter'
+          }).c-baseBtn--large
+          +baseBtn({
+            text: 'Modifier mes identifiants',
+            secondary: true
+          }).c-baseBtn--large
+
+
+    // step 3 : "VOTRE COMPTE EST BLOQUE"
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Sécurité avant de changer vos identifiants
+
+      p.u-textCenter.u-margin-b-30.u-margin-small-b-30.u-padding-h-30 Un code de validation vous sera envoyé par SMS sur votre téléphone portable depuis votre email :
+
+      .l-wrapper--medium.u-bg-grey-light.u-textCenter.u-padding-v-30.u-margin-b-40.u-margin-small-b-40
+        form(data-e-form-validation).c-formMat.u-margin-small-b-20
+          +pictoBlock({
+            absoluLeft: true,
+            iconName: 'icon-phone2',
+            topToLeft: true
+          }).l-wrapper--small
+            +inputMat({
+              label:          'Téléphone',
+              type:           "tel",
+              id:             "tel",
+              pattern:        'tel',
+              name:           "tel",
+              required:       true,
+              maxlength:      "10",
+              placeholder:    '06 11 13 55 07',
+              dataValidation: true
+            })(data-e-foreign-target)
+
+          p.l-wrapper--small.u-textRight
+              button(data-e-foreign-toggle='{"id":{"name":"cp", "pattern1":"^[0-9]{5}$", "pattern2":"^[A-Za-z0-9]*", "maxlength1":"5", "maxlength2":"10" }}' type='button').u-buttonReset.u-link.u-link--revert.u-fontSize-tiny
+                span(data-e-switch-toggle-name="foreignCp" aria-hidden="false" data-e-switch-toggle="foreignCp") > Foreign tel
+                span(data-e-switch-toggle-name="foreignCp" aria-hidden="true" data-e-switch-toggle="foreignCp" hidden) > tel française
+
+          +btnWrapper().u-theme-green.u-margin-t-40.u-margin-small-t-40.c-btnWrapper--fullOnMobile
+            +baseBtn({
+              button: true,
+              text: 'Recevoir le code'
+            })(type="submit" data-e-form-validation-submit).c-baseBtn--large
+
+    .l-wrapper--huge
+      +btnWrapper().c-btnWrapper--alignLeft.u-theme-green
+        +baseBtn({
+          text: "Retour",
+          iconLeft: "icon-chevron-left",
+          empty: true
+        })
+
+
+    // step 3 : "VOTRE COMPTE EST BLOQUE - VALID"
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Sécurité avant de changer vos identifiants
+
+      p.u-textCenter.u-margin-b-30.u-margin-small-b-30.u-padding-h-30 Un code de validation vous sera envoyé par SMS sur votre téléphone portable depuis votre email :
+
+      .l-wrapper--medium.u-bg-grey-light.u-textCenter.u-padding-v-30.u-margin-b-30
+        form(data-e-form-validation).c-formMat
+          +pictoBlock({
+            absoluLeft: true,
+            iconName: 'icon-phone2',
+            topToLeft: true
+          }).u-margin-b-30.u-margin-small-b-30.l-wrapper--small
+            +inputMat({
+              label:          'Téléphone',
+              type:           "tel",
+              id:             "tel",
+              pattern:        'tel',
+              name:           "tel",
+              required:       true,
+              maxlength:      10,
+              placeholder:    '06 11 13 55 07',
+              dataValidation: true
+            })
+
+            p.u-textRight.l-wrapper--small.u-textRight
+              button(data-e-foreign-toggle='{"id":{"name":"cp", "pattern1":"^[0-9]{5}$", "pattern2":"^[A-Za-z0-9]*", "maxlength1":"5", "maxlength2":"10" }}' type='button').u-buttonReset.u-link.u-link--revert.u-fontSize-tiny
+                span(data-e-switch-toggle-name="foreignCp" aria-hidden="false" data-e-switch-toggle="foreignCp") > Foreign tel
+                span(data-e-switch-toggle-name="foreignCp" aria-hidden="true" data-e-switch-toggle="foreignCp" hidden) > tel française
+
+          p.u-textCenter 2 tentatives restantes
+
+          +btnWrapper().u-theme-green.u-margin-t-40.u-margin-small-t-40.c-btnWrapper--fullOnMobile
+            +baseBtn({
+              text: 'Valider'
+            })(type="submit" data-e-form-validation-submit).c-baseBtn--large
+
+    .l-wrapper--huge
+      +btnWrapper().c-btnWrapper--alignLeft.u-theme-green
+        +baseBtn({
+          text: "Retour",
+          iconLeft: "icon-chevron-left",
+          empty: true
+        })
+
+
+    // step 4 : "Saisissez le code de validation"
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Saisissez le code de validation
+      +fieldInfo({
+        typeMessage: 'success',
+        icon: 'icon-thin_check'
+      })
+        p Un code de validation vous a bien été envoyé par SMS
+
+
+      p.u-textCenter.u-margin-t-40.u-margin-small-t-30
+        strong Renseignez le code à 4 chiffres qui vous a été envoyé
+
+      +inputMat({
+        label:          'Code de validation',
+        type:           "Tel",
+        id:             "codeValidation",
+        name:           "codeValidation",
+        required:       true,
+        placeholder:    'Ex : 1234',
+        dataValidation: true
+      }).l-wrapper--small
+
+      form.c-formMat
+        +btnWrapper().u-theme-green.c-btnWrapper--fullOnMobile.u-margin-v-40.u-margin-small-v-40
+          +baseBtn({
+            text: 'Valider',
+            button: true,
+          }).c-baseBtn--large
+
+        .l-wrapper--medium.u-bg-grey-light.u-textCenter.u-padding-v-30.u-margin-b-40.u-margin-small-b-40
+          strong Vérifiez vos SMS pour voir si vous avez reçu le code de validation
+
+          +btnWrapper().u-theme-green.c-btnWrapper--fullOnMobile.u-margin-t-40
+            +baseBtn({
+              text: " Je ne l'ai pas recu",
+              button: true,
+              secondary: true,
+              countDown: true,
+            })(disabled data-e-countDown).c-baseBtn--large
+
+    .l-wrapper--huge
+      +btnWrapper().c-btnWrapper--alignLeft.u-theme-green
+        +baseBtn({
+          text: "Retour",
+          iconLeft: "icon-chevron-left",
+          empty: true
+        })
+
+
+    // step 4-1 avec btn loader : "Saisissez le code de validation"
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Saisissez le code de validation
+
+      +fieldInfo({
+        typeMessage: 'success',
+        icon: 'icon-thin_check'
+      })
+        p Un code de validation vous a bien été envoyé par SMS
+
+      p.u-textCenter.u-margin-t-40.u-margin-small-t-30
+        strong Renseignez le code à 4 chiffres qui vous a été envoyé
+
+      +inputMat({
+        label:          'Code de validation',
+        type:           "Tel",
+        id:             "codeValidation",
+        name:           "codeValidation",
+        required:       true,
+        placeholder:    'Ex : 1234',
+        dataValidation: true
+      }).l-wrapper--small
+
+      form.c-formMat
+        +btnWrapper().u-theme-green.c-btnWrapper--fullOnMobile.u-margin-v-40.u-margin-small-v-40
+          +baseBtn({
+            text: 'Valider',
+            button: true,
+          }).c-baseBtn--large
+
+        .l-wrapper--medium.u-bg-grey-light.u-textCenter.u-padding-v-30.u-margin-b-40.u-margin-small-b-40
+          strong Vérifiez vos SMS pour voir si vous avez reçu le code de validation
+
+          +btnWrapper().u-theme-green.c-btnWrapper--fullOnMobile.u-margin-t-40.u-margin-small-t-40
+            +baseBtn({
+              text: " Je ne l'ai pas recu",
+              button: true,
+              secondary: true,
+              decompte: true,
+            })(disabled data-e-count).c-baseBtn--large
+
+    .l-wrapper--huge
+      +btnWrapper().c-btnWrapper--alignLeft.u-theme-green
+        +baseBtn({
+          text: "Retour",
+          iconLeft: "icon-chevron-left",
+          empty: true
+        })
+
+
+    // step 5 : "Vos identifiants sont mis à jour !"
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Vos identifiants sont mis à jour !
+
+      p.u-textCenter.u-margin-b-20.u-margin-small-b-20
+        | Votre email de connexion :
+
+      form.c-formMat.u-margin-b-40.u-margin-small-b-40
+        .l-wrapper--medium.u-margin-b-20.u-margin-b-small-20
+          // - fontIcone letter
+          +pictoBlock({
+            iconName: 'icon-contact-mail2',
+            email: true,
+            topToLeft: true
+          })
+            p.u-color-grey Email
+            p
+              b johndoe@wanadoo.com
+
+        .l-wrapper--medium.u-textCenter
+          p Vous pouvez dès à présent accéder à votre Espace Client en toute tranquilité :)
+
+        +btnWrapper().u-theme-green.u-margin-t-40.c-btnWrapper--fullOnMobile
+          +baseBtn({
+            text: 'me connecter',
+            button: true
+          }).c-baseBtn--large
+
+
+    // step 7 : "Modifiez vos identifiants pour votre Espace Client"
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Modifiez vos identifiants pour votre Espace Client
+
+      p.u-textCenter.u-margin-b-10.u-margin-small-b-10
+        | Choisissez l’adresse email vous voulez utiliser.
+
+      +formMat()(data-e-form-validation).c-formMat.u-margin-b-40.u-margin-small-b-40
+        .l-wrapper--small
+          +inputMat({
+            label:          'Email',
+            type:           "email",
+            id:             "email",
+            pattern:        'email',
+            name:           "email",
+            required:       true,
+            placeholder:    'Ex : nom@gmail.com',
+            dataValidation:  true
+          })
+
+        .u-theme-magenta.u-textBold.u-margin-h-40.u-margin-small-h-40.u-margin-v-30.u-margin-small-v-30
+          +checkboxMat({
+            label: 'Modifier votre mot de passe',
+            id: "checkboxMat2"
+          })(data-e-switch-toggle="initMdp").c-checkboxMat--link.u-textBold
+
+        .l-wrapper--medium.u-bg-grey-light.u-textCenter.u-margin-b-30.u-padding-h-30.u-padding-v-30(data-e-switch-toggle-name="initMdp" aria-hidden="false")
+          p Votre ancien mot de passe sera conservé. Nous vous conseillons de le modifier pour plus de sécurité.
+
+        fieldset(data-e-switch-toggle-name="initMdp" aria-hidden="true" disabled hidden)
+          .l-wrapper--small
+            +inputMat({
+              label:       "Mot de passe",
+              type:        "password",
+              id:          "password",
+              pattern:     "password",
+              name:        "password",
+              required:    true,
+              minlength:   8,
+              maxlength:   20,
+              placeholder: 'Entrer votre mot de passe',
+              check:       true,
+              dataValidation: {
+                  validations: {
+                    tooLong:      '',
+                    tooShort:     '',
+                    valueMissing: 'champs obligatoire'
+                  }
+              }
+            })(data-e-help-password)
+
+          .l-wrapper--medium.u-bg-grey-light.u-padding-a-0.u-margin-t-30.u-margin-small-t-30
+            +passwordHelper.l-wrapper--small.u-padding-v-15
+
+        +fieldInfo({
+          typeMessage: 'error'
+        })
+         p salut ici le message d'erreur
+
+        +btnWrapper().u-theme-green.u-margin-t-40.c-btnWrapper--fullOnMobile
+          +baseBtn({
+            button: true,
+            text: 'Valider'
+          })(data-e-form-validation-submit type="button" data-e-btn-valid).c-baseBtn--large
+
+    .l-wrapper--huge
+      +btnWrapper().c-btnWrapper--alignLeft.u-theme-green
+        +baseBtn({
+          text: "Retour",
+          iconLeft: "icon-chevron-left",
+          empty: true
+        })

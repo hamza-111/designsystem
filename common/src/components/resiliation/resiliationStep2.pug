@@ -1,0 +1,106 @@
+include ../formMat/formMat
+include ../infoBlock/infoBlock
+
+mixin resiliation-step2
+
+  .c-resiliation.l-wrapper(class="u-margin-h-110")
+    fieldset.resiliation-step1
+      h2.u-heading-2(class="u-margin-t-50 u-margin-b-20 u-color-genBlue") 2. Mon contrat      
+      strong Référence Client" 
+        // .c-toolTip
+        button.c-toolTip(type='button', data-e-modal-open='label')
+          span.c-toolTip__icon.u-theme-bg.u-theme-bg-hover ?
+        // END .c-toolTip
+
+
+      .l-wrapper--small.l-wrapper--left
+        +inputMat({
+          type: "tel",
+          id: "refClient",
+          pattern: '^[0-9]*$',
+          maxlength: '10',
+          name: "refClient",
+          required: true,
+          placeholder: 'Ex : 000 000 000',
+          dataValidation: {
+            typing: true,
+            validations: {
+              patternMismatch: 'champs composé seulement de chiffres',
+              valueMissing: 'Champs obligatoire'
+            }
+          }
+        }).u-padding-t-10
+
+      p.u-margin-t-40 
+        strong Je possède un contrat Gaz Tarif Réglementé*
+        // .c-toolTip
+        button.c-toolTip(type='button', data-e-modal-open='label2')
+          span.c-toolTip__icon.u-theme-bg.u-theme-bg-hover ?
+        // END .c-toolTip
+
+      .l-wrapper--small.l-wrapper--left
+        +inputMat({
+          id: "date-picke-required",
+          type : 'date',
+          pattern: "date",
+          required:       true,
+          dataValidation: true,
+          placeholder: '07/07/2017',
+          iconRight: 'icon-big-calendar',
+          flatpickr: {
+            minDate: -5
+          }
+        }).c-inputMat--datepicker.u-padding-t-10
+        span.c-inputMat__datePikerInfo j+1
+    
+      .c-infoBlock--bleu
+        p.u-padding-l-50 Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sapiente voluptate perferendis ipsum doloribus consequuntur quam nostrum excepturi dolorem enim blanditiis id sed molestiae, odio delectus harum repellat quidem? Harum.
+      
+      p.u-margin-t-40 
+        strong Avez vous toujours acces au logement ?*
+
+      +choiceWrapperMat.c-choiceWrapperMat--hAlign(class="u-padding-t-20")
+        +radioMat({
+          label: 'Oui',
+          id: "step1label3",
+          name: 'step1label2'
+        })
+        +radioMat({
+          label: 'None',
+          id: "step1label4",
+          name: 'step1label2'
+        })
+
+      p.u-margin-t-40 
+        strong Avez vous toujours acces au logement ?*
+        // .c-toolTip
+        button.c-toolTip(type='button', data-e-modal-open='label3')
+          span.c-toolTip__icon.u-theme-bg.u-theme-bg-hover ?
+        // END .c-toolTip
+
+      .l-wrapper--small.l-wrapper--left
+        +inputMat({
+          type: "tel",
+          id: "releveCompte",
+          pattern: '^[0-9]*$',
+          name: "refClient",
+          required: true,
+          placeholder: 'Ex : 000 000 000',
+          dataValidation: {
+            typing: true,
+            validations: {
+              patternMismatch: 'champs composé seulement de chiffres',
+              valueMissing: 'Champs obligatoire'
+            }
+          }
+        }).u-padding-t-10
+      //- END Blockform
+
+
+      +btnWrapper().u-theme-genBlue.u-margin-t-40.c-btnWrapper--fullOnMobile.c-btnWrapper--alignLeft
+        +baseBtn({
+          text: 'Suivant',
+          button: true
+        })(type="button").c-baseBtn--large
+
+

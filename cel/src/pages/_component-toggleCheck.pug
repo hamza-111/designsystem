@@ -1,0 +1,23 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title          = "toggleCheck"
+  - var page           = ""
+  - var bodyClass      = ""
+  - var description    = "Module toggleCheck"
+  - var noHeaderFooter = true
+  - var demoMode       = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  include ../../../common/src/components/toggleCheck/demo

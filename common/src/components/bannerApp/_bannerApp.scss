@@ -1,0 +1,41 @@
+.c-bannerApp {
+  background-color: $genBlue;
+  padding: 2% 3%;
+  color: $white;
+  display: flex;
+  align-items: center;
+}
+
+.c-bannerApp__close {
+  @extend %reset-style-button;
+  margin-right: 2%;
+  color: $white;
+}
+
+.c-bannerApp__text {
+  font-size: 0.8em;
+  margin-left: 3%;
+  line-height: 1.4;
+  width: 100%;
+}
+
+.c-bannerApp__logo {
+  max-width: 60px;
+}
+
+.c-bannerApp__open {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $genBlue;
+  background-color: $white;
+  padding: 3px 10px;
+  border-radius: 15px;
+  margin-left: 2%;
+}
+
+@include media(">small") {
+  .c-bannerApp {
+    display: none;
+  }
+}
+

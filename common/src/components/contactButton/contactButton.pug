@@ -1,0 +1,41 @@
+mixin contactButton(data)
+  - var data        = data || {}
+  - var isLink      = (data.isLink === false) ? false : true
+  - var link        = data.link || "#"
+
+  - var iconClass   = data.iconClass || 'long-arrow-right'
+  - var label       = data.label || "Je me fais rappeler"
+  - var phone       = data.phone || "01 36 65 65 65"
+  - var type        = data.type || false
+  - var target      = data.target || "contactButtonPhone"
+
+  // .c-contactButton
+  .c-contactButton.u-theme-coral
+    case type
+      when 'phone'
+        button.c-contactButton__button.u-hideSmall.u-theme-bg.u-theme-bg-hover(
+          data-e-toggle='{"target": "'+ target +'"}'
+          type="button"
+        )
+          span.c-contactButton__content
+            span.c-contactButton__label!=label
+            span.c-contactButton__picto.icon(class="icon-" + iconClass)
+
+        .c-contactButton__hiddenTarget(data-e-toggle-target=target)
+          p.c-contactButton__button!=label
+          span.c-contactButton__phone.u-theme-color!=phone
+
+      when 'webcallback'
+      when 'chat'
+      when 'link'
+      default
+        +linkLongArrow({
+          text: label,
+          icon: iconClass
+        }).u-theme-bg.u-theme-bg-hover
+
+    p.c-contactButton__paragraph
+      | Un conseiller vous rappelle gratuitement.
+      br
+      | Service disponible du lundi au vendredi de 9h à 18h
+  // END .c-contactButton

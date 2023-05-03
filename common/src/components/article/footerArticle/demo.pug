@@ -1,0 +1,41 @@
+include footerArticle
+
+.c-wysiwyg
+  h2 Footer Article
+
++demo({
+  desc: "Composant Footer Article"
+})
+  +footerArticle
+    +userReview
+      p Cet article vous a-t-il-été utile ?
+
+
+.c-wysiwyg
+  h2 Footer Article : pagination
+
++demo({
+  desc: `
+    Sur le premier ou dernier article, la navigation vers l'article suivant/précédent est inutile<br/>
+    Supprimer l'élément <code>c-footerArticleLink</code> superflu
+  `
+})
+  +footerArticle({
+    noPrev: true
+  })
+    +userReview
+      p Cet article vous a-t-il-été utile ?
+
+
+.c-wysiwyg
+  h2 Footer Article : message de validation
+
++demo({
+  desc: "Message de feed-back"
+})
+  +footerArticle
+    +pictoBlock({
+      iconName: 'icon-thin_check',
+        iconClasses: 'u-fontSize-30 u-margin-r-15'
+    }).u-color-success
+      p: b Votre vote a bien été pris en compte

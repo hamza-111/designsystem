@@ -1,0 +1,32 @@
+include ../linkLongArrow/linkLongArrow
+
+mixin quickAccess(data)
+  // .c-quickAccess
+  .l-wrapper--huge.u-padding-spacer
+    nav.c-quickAccess.u-bg-grey-light
+      .c-quickAccess__title
+        h2.u-textBold.u-fontSize-large Accéder rapidement
+        p.u-textNormal aux services de l'espace client
+
+        +linkLongArrow({
+          inlineText: true
+        })(class="u-theme-color u-theme-color-hover")
+
+      ul.c-quickAccess__group
+        li.c-quickAccess__item
+          +baseBtn({
+            text: "Consulter/payer ma facture"
+          }).c-baseBtn--fullOnMobile
+        li.c-quickAccess__item
+          +baseBtn({
+            text: "Communiquer mon relevé de compteur"
+          }).c-baseBtn--fullOnMobile
+        li.c-quickAccess__item
+          +baseBtn({
+            text: "Opter pour la mensualisation"
+          }).c-baseBtn--fullOnMobile
+        li.c-quickAccess__item
+          +baseBtn({
+            text: "Créer mon espace client"
+          }).c-baseBtn--fullOnMobile
+  // end .c-quickAccess

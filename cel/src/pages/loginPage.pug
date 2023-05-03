@@ -1,0 +1,64 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../../../common/src/components/siteHeaderV2/siteHeaderV2
+include ../../../common/src/components/stickyContact/stickyContact
+include ../../../common/src/components/contactBar/contactBar
+include ../../../common/src/components/advantages/advantages
+
+//- Main variables
+block variables
+  - var title         = "Login page"
+  - var page          = "login page"
+  - var mainPadding   = "u-padding-t-120 u-padding-t-20-medium"
+  - var description   = "Ici c'est la Login Page !"
+
+
+//- Page content
+block content
+
+  +stickyContact
+
+  +login("disconnected")
+
+  +modal({
+    target: '{"target": "modal-welcome", "autoStart": 1, "overlayClose": false }',
+    noCloseBtn: true,
+    size: "c-modal__content--large"
+  })
+    +column({
+      colConfig: '33-66'
+    })
+      .c-column__col.c-column__col--45.u-hideSmall
+        p.u-textCenter
+          img(src="../images/contrib/00-popin-redirection.gif" alt="")
+
+      .c-column__col.c-column__col--55
+          .c-wysiwyg
+            img.c-modal__logoGaz(src="../images/logo_tarif_reglemente.svg" alt="logo").u-hideMediumUp
+            h3
+              | Vous avez été redirigé
+              br
+              | sur le site Gaz Tarif Réglementé.
+            p Depuis janvier 2018, les bénéficiaires du gaz naturel au tarif réglementé d’Engie bénéficient désormais d’un site internet dédié avec leur Espace Client : <a href="#">gaz-tarif-reglemente.fr</a>
+            p Pour accéder à vos factures et votre contrat, il est nécessaire de saisir une nouvelle fois vos identifiants. Gagnez du temps lors de votre prochaine connexion en enregistrant le site à vos favoris
+            p
+              strong  Vos identifiants de connexion restent identiques.
+
+          p.u-textCenter.u-margin-h-70
+            a.u-link.u-link--arrow.u-link--fullLarge(href="#" data-e-modal-close) Je me connecte à mon nouvel espace client
+
+          p.u-margin-h-70.u-margin-t-30
+            i Astuce&nbsp;: Ajoutez cette page à vos favoris afin de faciliter vos connexions ultérieures.
+
+
+  .c-wysiwyg.u-padding-t-60
+    h2.u-textCenter Pourquoi mon Espace Client a-t-il changé d’adresse ?
+
+    p.u-textCenter
+      | à partir de janvier 2018, les bénéficiaires du gaz au tarif réglementé ont désormais leur propre site internet, ainsi qu’un Espace Client dédié.
+      | Nous pourrons ainsi vous proposer des services et conseils réservés aux clients Gaz Tarif Réglementé.
+
+  +advantages

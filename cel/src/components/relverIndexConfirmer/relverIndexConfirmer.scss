@@ -1,0 +1,327 @@
+.c-relverIndexConfirmer--style::after {
+  content:"";
+  display: block;
+  height: 5px;
+  background-color: $blue;
+  width: 80px;
+}
+
+.c-relverIndexConfirmer sup {
+  padding-left: 5px;
+}
+
+.c-relverIndexConfirmer .c-relverIndexResultat__details sup {
+  padding-left: 0.5px;
+}
+
+.c-relverIndexConfirmer--style {
+  font-weight: bold !important;
+}
+
+.c-relverIndexConfirmer__imgIndex {
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.c-relverIndexConfirmer__imgIndex img {
+  margin-right: 20px;
+}
+
+.c-relverIndexConfirmer__desc {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.c-relverIndexConfirmer__yourIndex {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.c-relverIndexConfirmer__desc h2 {
+  font-weight: bold;
+  bottom: 10px;
+  position: absolute;
+  font-size: 1.8rem;
+}
+.c-relverIndexConfirmer__fieldInfo {
+  //color : #006699;
+  color: $blue;
+}
+
+.c-relverIndexConfirmer .c-fieldInfo.u-bg-genBlue-light {
+  background-color: #cbebfb7a;
+}
+
+.c-fieldInfo .c-relverIndexConfirmer__fieldInfo .icon {
+  margin-bottom: 0;
+  position: relative;
+  bottom: -5px;
+}
+
+.c-fieldInfo .c-relverIndexConfirmer__fieldInfo span {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.c-relverIndexConfirmer__para {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  
+}
+
+//resultat
+.c-relverIndexResultat__img {
+  background-color: #cbebfb7a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+.c-relverIndexResultat__img img {
+  display: block;
+  @include media ("<small") {
+    display: none;
+  }
+}
+.c-relverIndexResultat--style {
+  padding: 0;
+  color: black;
+  display: inline-block;
+  font-weight: bold !important;
+  font-size: 1.8rem;
+  @include media ("<=small") {
+    margin-top: 40px !important;
+  }
+}
+
+.c-relverIndexResultat__price {
+  width: calc(50% - 10px);
+  margin-right: 10px;
+  border: 1px $genBlue-light solid;
+  display: inline-block;
+}
+
+.c-relverIndexResultat__toggle {
+  width: 100%;
+  border: 1px $genBlue-light solid;
+  display: inline-block;
+}
+
+.c-relverIndexResultat__euro {
+  background-color: white;
+  padding: 20px 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.c-relverIndexResultat__euro .icon {
+  font-size: 3rem;
+  color: $genBlue;
+}
+
+.c-relverIndexResultat__euro span {
+  font-weight: bold;
+}
+
+.c-relverIndexResultat__number {
+  background-color: $genBlue-light;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  font-weight: bold;
+
+}
+.c-relverIndexResultat__result {
+  display: inline-flex;
+  width: 100%;
+  align-items: end;
+}
+
+.c-relverIndexResultat__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-relverIndexResultat__title {
+  padding-top: 10px;
+}
+
+.c-relverIndexResultat__title::after {
+  content: '';
+  width: 200px;
+  height: 1px;
+  background-color: #c9edff;
+  display: inline-block;
+  position: relative;
+  left: 6px;
+  margin-top: 10px;
+}
+
+.c-relverIndexResultat__title  .icon {
+  font-size: 3rem;
+  color: $blue;
+}
+
+.c-relverIndexResultat__title span {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+span.c-relverIndexResultat__priceToggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  font-size: 3rem;
+  font-weight: bold;
+  align-items: end;
+}
+
+.c-relverIndexResultat__toggle .c-toggleBox {
+  background-color: $blue;
+}
+
+.c-relverIndexResultat__toggle .c-toggleBox .c-toggleBox__btn {
+  color: white;
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+}
+
+.c-relverIndexResultat__toggle .c-toggleBox .c-toggleBox__content {
+  background-color: white;
+}
+
+.c-relverIndexResultat__detailBlock {
+  border-bottom: 1px $genBlue solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.c-relverIndexResultat__detailsBlue {
+  background-color: #cbebfb7a;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.c-relverIndexResultat__detailsWhite {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.c-toggleBox__content .c-wysiwyg {
+  color: black;
+  font-size: 1.6rem;
+}
+.c-relverIndexResultat__detailsTitle {
+  font-weight: bold;
+  background-color: white;
+  padding: 10px 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.c-relverIndexConfirmer .c-fieldInfo {
+  padding: 10px 20px 20px 20px;
+}
+
+@include media ("<small") {
+
+  .c-relverIndex .c-btnWrapper--fullOnMobile{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .c-fieldInfo .c-relverIndexConfirmer__fieldInfo .icon {
+    margin-bottom: 0;
+    position: relative;
+    bottom: -5px;
+    left: -16px;
+  }
+  .c-fieldInfo .c-relverIndexConfirmer__fieldInfo b {
+    position: relative;
+    left: -13px;
+  }
+  .c-fieldInfo .c-relverIndexConfirmer__fieldInfo span {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+    position: relative;
+  }
+
+  .c-relverIndexConfirmer .c-btnWrapper--fullOnMobile{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .c-relverIndexResultat__priceSmall.u-hide {
+    display: block !important;
+  }
+
+  .c-relverIndexConfirmer .c-btnWrapper--fullOnMobile .c-baseBtn, .c-relverIndex .c-btnWrapper--fullOnMobile .c-baseBtn  {
+    margin-bottom: 15px !important;
+  }
+
+  .c-relverIndexResultat__img {
+    padding: 0 10px;
+  }
+
+  .c-relverIndexResultat__img span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .c-relverIndexResultat__priceSmall span {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .c-relverIndexResultat__img span:first-child {
+    display: flex;
+    @include media ("<=small") {
+      display: block;
+    }
+  }
+
+  .c-relverIndexResultat__price {
+    display: none;
+  }
+
+  .c-relverIndexResultat__toggle {
+    width: 100%;
+  }
+
+}
+
+.c-relverIndexResultat--linkretour {
+  width:100%;
+  display: block;
+  text-align: center;
+  @include media ("<=small") {
+    margin-top: 30px;
+  }
+}

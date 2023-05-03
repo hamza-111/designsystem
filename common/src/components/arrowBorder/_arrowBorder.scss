@@ -1,0 +1,85 @@
+// arrowBorder :
+.c-arrowBorder {
+  position: relative;
+  padding: 30px 10px;
+  border: 6px solid;
+  border-color: $venteBlue-light;
+
+  &:before,
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -6px);
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border-style: solid;
+    border-color: transparent;
+  }
+
+  &:before {
+    border-width: 24px;
+    border-top: 19px solid;
+    border-top-color: $venteBlue-light;
+  }
+
+  &:after {
+    border-width: 12px;
+    border-top: 10px solid $white;
+  }
+}
+
+.c-arrowBorder--arrowOutset {
+  padding: 20px 10px;
+
+  &:before,
+  &:after {
+    border-color: transparent;
+  }
+
+  &:before {
+    top: -32px;
+    border-bottom: 19px solid;
+    border-bottom-color: $venteBlue-light;
+  }
+
+  &:after {
+    top: -14px;
+    border-bottom: 10px solid $white;
+  }
+}
+
+.c-arrowBorder--magenta {
+  border-color: $magenta-light;
+
+  &:before {
+    border-top-color: $magenta-light;
+  }
+
+  &.c-arrowBorder--arrowOutset:before {
+    border-top-color: transparent;
+    border-bottom-color: $magenta-light;
+  }
+}
+
+@include media('>=small'){
+  .c-arrowBorder {
+    padding: 40px 20px 30px;
+  }
+
+  .c-arrowBorder--arrowOutset {
+    padding: 30px 20px;
+  }
+
+  .l-wrapper--small {
+    .c-arrowBorder,
+    .c-arrowBorder--arrowOutset,
+    &.c-arrowBorder,
+    &.c-arrowBorder--arrowOutset {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

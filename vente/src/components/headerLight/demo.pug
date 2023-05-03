@@ -1,0 +1,22 @@
+style.
+  .demoMode .c-headerLight {
+    position: static;
+    transform: none;
+  }
+
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant headerLight
+
++demo({
+  desc: ''
+}).demoMode
+  +headerLight
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant headerLight avec overlay de déconnexion
+
++demo({
+  desc: ''
+}).demoMode
+  +headerLight({
+    floatingModal: true
+  })

@@ -1,0 +1,115 @@
+.c-stickyContact {
+  width: 100%;
+  bottom: 0;
+  z-index: 10;
+  position: fixed;
+
+  //surcharge [contactElement]
+  .c-contactElement {
+    width: 100%;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .c-contactElement--unavailable  {
+    &.c-contactElement__picto,
+    .c-contactElement__picto {
+      background-color: $grey !important;
+    }
+  }
+
+  .c-contactElement__content {
+    display: none;
+    padding-right: 0;
+
+    &.is-opened {
+      display: table-cell;
+    }
+  }
+
+  .c-contactElement__text {
+    padding: 20px 30px;
+  }
+
+  .c-contactElement__title {
+    min-height: 0;
+  }
+
+  .c-contactElement__icon {
+    padding-top: 20px;
+  }
+
+  .c-contactElement__picto {
+    @extend %reset-style-button;
+    width: 100%; //100% firefox
+    float: none;
+    display: block;
+    text-align: center;
+    font-size: 4rem;
+    background-color: $genBlue;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 6;
+    position: relative;
+
+    .icon {
+      color: $white;
+    }
+  }
+}
+
+.c-stickyContact__container {
+  background-color: $white;
+}
+
+.c-stickyContact__close {
+  @extend %reset-style-button;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+
+  .icon {
+    padding: 5px;
+  }
+}
+
+
+@include media(">=small") {
+  .c-stickyContact {
+    top: 300px;
+    width: auto;
+    max-width: 320px;
+    bottom: inherit;
+
+    .c-contactElement__content {
+      max-width: inherit;
+
+      &.is-opened {
+        padding-right: 50px;
+      }
+    }
+
+    .c-contactElement__picto {
+      width: 50px;
+      min-height: 50px;
+      height: 100%;
+      padding-left: 5px;
+      padding-right: 5px;
+
+      &.is-active {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+@include media(">=large") {
+  .c-stickyContact {
+    .c-contactElement__picto {
+      margin-bottom: 0;
+    }
+  }
+}

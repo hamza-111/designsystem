@@ -1,0 +1,22 @@
+include headerArticle
+
+.c-wysiwyg
+  h2 Header Article
+
++demo({
+  desc: "retirer  l'attribut <code>data-e-header-article-pagination</code> pour ne pâs lancé le JS header / Footer"
+})
+  +headerArticle
+
+.c-wysiwyg
+  h2 Header Article : pagination
+
++demo({
+  desc: `
+    Sur le premier ou dernier article, la navigation vers l'article suivant/précédent est inutile<br/>
+    Vider l'élément <code>c-headerArticle__pagination</code> de son bouton <code>c-headerArticle__paginationButton</code> et lui retirer les classes <code>-theme-bg u-theme-bg-hover</code>
+  `
+})
+  +headerArticle({
+    noPrev: true
+  })

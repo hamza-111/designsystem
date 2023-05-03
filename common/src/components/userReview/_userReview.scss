@@ -1,0 +1,30 @@
+.c-userReview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-userReview__text {
+  margin-bottom: 20px;
+}
+
+.c-userReview__vote {
+  margin-bottom: 10px;
+}
+
+@include media('>medium'){
+  .c-userReview {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .c-userReview__text {
+    margin-bottom: 0;
+  }
+
+  .c-userReview__vote {
+    margin-bottom: 0;
+    margin-left: 25px;
+  }
+}

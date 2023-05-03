@@ -1,0 +1,14 @@
+.c-connexionSocialModal__links a {
+  display: block;
+  margin: 15px 0;
+}
+
+.c-connexionSocialModal__desc span span {
+  display: block;
+}
+
+@include media("<=small") {
+  .c-connexionSocialModal__desc span span {
+    display: inline;
+  }
+}

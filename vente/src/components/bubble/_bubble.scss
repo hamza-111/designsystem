@@ -1,0 +1,240 @@
+$bubble-size: 134px;
+$bubble-space: 14px;
+
+$bubble-size-small: 112px;
+
+@keyframes buzzBubble {
+  1% { transform: rotate(2deg); }
+  3% { transform: rotate(0deg); }
+  5% { transform: rotate(2deg); }
+  7% { transform: rotate(0deg); }
+  9% { transform: rotate(2deg); }
+  11% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.c-bubble {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1px $bubble-space/2;
+  width: $bubble-size;
+  font-size: 16px;
+  color: $black;
+
+  .is-waiting & {
+    animation: buzzBubble 8s ease infinite;
+    animation-delay: 4s;
+    transform-origin: center 150%;
+  }
+}
+
+.c-bubble__input {
+  position: absolute;
+  float: left;
+  margin: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.c-bubble__label {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: $bubble-size;
+  height: $bubble-size;
+  border-radius: 50%;
+  cursor: pointer;
+  color: $genBlue;
+  transition: all .2s ease-in-out;
+
+  // Effets au hover
+  .c-bubble__input + & {
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: $grey-light;
+      transform: scale(.9) translate(0%, 0%) translatez(-10px);
+      transform-origin: center center;
+      transition: all .2s ease-in-out;
+    }
+
+    @include hover-focus-active {
+      color: $white;
+
+      &:after {
+        background-color: $genBlue;
+        transform: scale(1) translate(0%, 0%) translatez(-10px);
+      }
+    }
+  }
+
+  // Effets au input checked et au focus :
+  .c-bubble__input:checked + &,
+  .c-bubble__input:focus + & {
+    cursor: default;
+    color: $white;
+    transform: translatez(10px);
+
+    &:after {
+      opacity: 1;
+      background-color: $genBlue;
+      transform: scale(1) translate(0%, 0%) translatez(-10px);
+    }
+  }
+}
+
+.c-bubble__icon,
+.c-bubble__text {
+  height: $bubble-size/2;
+  z-index: 1;
+  position: relative;
+}
+
+.c-bubble__icon.iconVente {
+  font-size: 54px;
+  padding-top: 5px;
+  line-height: 1.2;
+}
+
+.c-bubble__text {
+  padding: 0 15px 15px;
+  line-height: 1em;
+  font-size: 1.4rem;
+}
+
+// arrow sous la bulle en cas d'info
+.c-bubble__label--withInfo {
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(2px);
+    border-style: solid;
+    border-width: 12px;
+    border-color: transparent;
+    border-top-color: $grey-light;
+    border-bottom-width: 0;
+    transition: all .2s ease-in-out;
+  }
+
+  @include hover-focus-active {
+    &:before {
+      opacity: 1;
+      border-top-color: $indigo;
+      transform: translateX(-50%) translateY(10px);
+    }
+  }
+}
+
+.c-bubble__info {
+  position: relative;
+  margin: 15px -60px 0;
+  color: $grey;
+  line-height: 1.2;
+  font-size: 1.3rem;
+}
+
+
+/* Mobile et tablette only : */
+@include media("<=medium") {
+  [class*="c-bubble--"] .c-bubble__label--withInfo:before,
+  [class*="c-bubble--"] .c-bubble__info {
+      display: none;
+  }
+}
+
+/* Desktop et tablette : layout dimensions : */
+@include media(">=small") {
+  $bubble-size: 174px;
+  $bubble-space: 35px;
+
+  .c-bubble {
+    margin: $bubble-space/2;
+  }
+
+  .c-bubble {
+    width: $bubble-size;
+  }
+
+  .c-bubble__label {
+    width: $bubble-size;
+    height: $bubble-size;
+  }
+
+  .c-bubble__icon,
+  .c-bubble__text {
+    height: $bubble-size/2;
+  }
+
+  .c-bubble__icon.iconVente {
+    font-size: 65px;
+    line-height: inherit;
+  }
+
+  .c-bubble__text {
+    padding: 0 20px 20px;
+    font-size: 1.5rem;
+  }
+}
+
+
+/* Desktop  */
+@include media(">medium") {
+  .c-bubble__label--withInfo {
+    &:before {
+      opacity: 0;
+      border-top-color: $indigo;
+    }
+
+    @include hover-focus-active {
+      & + .c-bubble__info {
+        opacity: 1;
+      }
+    }
+  }
+
+  .c-bubble__info {
+    opacity: 0;
+    margin: 20px -40px 0;
+    font-size: 1.4rem;
+    transition: transform .4s ease-in-out,
+                opacity .4s ease-in-out;
+  }
+}
+
+
+// Thème estimation :
+.u-theme-indigo {
+  .c-bubble__label {
+    color: $indigo;
+
+    // Effets au hover
+    &:not(:checked) {
+      &:after {
+        background-color: $grey-light;
+      }
+
+      @include hover-focus-active {
+        &:after {
+          background-color: $indigo;
+        }
+      }
+    }
+  }
+
+    // Effets au input checked
+  .c-bubble__input:checked + .c-bubble__label {
+    color: $white;
+    &:after {
+      background-color: $indigo;
+    }
+  }
+}

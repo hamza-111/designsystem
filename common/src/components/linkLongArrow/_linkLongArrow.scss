@@ -1,0 +1,133 @@
+.c-linkLongArrow {
+  @extend %reset-style-button;
+  display: block;
+  height: 100%;
+  padding: 6px 15px;
+  position: relative;
+  z-index: 1;
+  color: $white;
+  text-decoration: none;
+  text-align: left;
+  transition: color 0.2s ease-in-out,
+              background-color 0.2s ease-in-out;
+
+  &.u-bg-white,
+  &.u-bg-grey-light {
+    color: $black;
+  }
+
+  @include hover-focus-active() {
+    // bouton noir avec hover grey-light -> couleur $black
+    &.u-bg-black-after {
+      color: $black;
+    }
+  }
+
+  &.c-linkLongArrow--reverse {
+    direction: rtl;
+
+    .c-linkLongArrow__text {
+      direction: ltr;
+      padding-right: 0;
+    }
+
+    .c-linkLongArrow__icon {
+      text-align: left;
+    }
+  }
+
+
+  // specific sizes
+  .icon-external-link,
+  .icon-download {
+    font-size: 0.65em;
+  }
+}
+
+.c-linkLongArrow__content {
+  display: table;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.c-linkLongArrow__text,
+.c-linkLongArrow__icon {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+}
+
+.c-linkLongArrow__text {
+  width: 100%;
+  padding-right: 5px;
+}
+
+.c-linkLongArrow__icon {
+  min-width: 30px;
+  font-size: 1.5em; //
+  line-height: 1.4;
+  text-align: right;
+}
+
+
+//--inline
+.c-linkLongArrow--inline {
+  padding: 0;
+  display: inline-block;
+  height: auto;
+
+  .c-linkLongArrow__content,
+  .c-linkLongArrow__text {
+    display: inline;
+  }
+
+  .c-linkLongArrow__icon {
+    display: inline-block;
+  }
+
+  .c-linkLongArrow__text {
+    width: auto;
+    margin-right: 5px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+
+  @include hover-focus-active() {
+    .c-linkLongArrow__text {
+      border-color: inherit;
+    }
+  }
+}
+
+//--inline Button
+.c-linkLongArrow--inlineBtn {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 15px;
+
+  .c-linkLongArrow__text {
+    width: auto;
+    padding-right: 15px;
+  }
+
+  .c-linkLongArrow__icon {
+    min-width: 0;
+    line-height: inherit;
+  }
+}
+
+
+@include media(">=small") {
+  .c-linkLongArrow--inline {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .c-linkLongArrow--inlineBtn {
+    .c-linkLongArrow__text {
+      padding-right: 25px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.c-radioInteger {
+  display: flex;
+}
+
+.c-radioInteger__field {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c-radioInteger span.c-radioMat__check.u-theme-bg.u-theme-color {
+  width: 70px;
+  height: 40px;
+  border-radius: 20px;
+  border-color: $genBlue;
+  text-align: center;
+  line-height: 40px;
+  color: $genBlue;
+}
+
+.c-radioInteger span.c-radioMat {
+  display: inline-block;
+}
+
+.c-radioInteger label.c-radioMat__label.c-radioMat__labelPadding {
+  width: 70px;
+  height: 40px;
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.c-radioInteger .c-radioMat__field:checked ~ .c-radioMat__label .c-radioMat__check {
+  background-color: $genBlue;
+  border-color: $genBlue;
+  box-shadow: none;
+  color: $white;
+}
+
+@include media ('<=small') {
+  .c-radioInteger {
+    flex-direction: column;
+  }
+}

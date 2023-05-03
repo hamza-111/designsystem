@@ -1,0 +1,42 @@
+.c-coupDePouce__Ban {
+    margin-top: 40px;
+    h2 { font-weight: 700;}
+
+    .c-coupDePouce__BanNote {
+        font-size: 3.0rem;
+    }
+
+    .c-rating-block {
+        font-size: 1.6rem;
+    }
+    
+
+}
+
+.c-coupDePouceReview {
+    position: relative;
+    .c-espritService-review__content { 
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+
+    .c-espritService-reviewMiniText { 
+        margin-top: 0;
+    }
+
+    .c-espritService-comments2__avis {
+        position: relative;
+    }
+
+    .c-rating-block { font-size: 2rem;}
+}
+
+.c-coupDePouceReview {
+    background-color: #F2F2F2;
+}
+
+.c-coupDePouceReview__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}

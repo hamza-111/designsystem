@@ -1,0 +1,24 @@
+mixin formContactClientAccess(data)
+  - var data = data || {}
+  - var id = data.id || ""
+
+
+  +arrowBorder({
+    outset: true
+  }).l-wrapper--medium
+    fieldset.c-formContactClientAccess(
+      data-e-formcontact-block={id: id}
+    )
+      h3.u-heading-4.l-wrapper--medium.u-textCenter.u-margin-b-15 Accéder depuis votre Espace Client, c'est plus simple&nbsp;!
+      p.u-textCenter Vous pouvez modifier directement dans votre Espace Client depuis la rubrique<br/> <strong>"Mon Profil > Votre mode de paiement > Changer votre mode de paiement"</strong>
+
+    +btnWrapper.c-btnWrapper--fullOnMobile.u-margin-t-25.u-margin-small-t-25
+      +baseBtn({
+        text: "Je n'ai pas d'espace client",
+        button: true,
+        secondary: true,
+      })
+      +baseBtn({
+        text: "Accéder à mon espace client",
+        linkUrl: ""
+      })

@@ -1,0 +1,253 @@
+// COULEURS NORMALES
+$u-colors-map: (
+  grey:    $grey,
+  black:   $black,
+  white:   $white,
+  genBlue: $genBlue,
+  green:   $green,
+  magenta: $magenta,
+  coral:   $coral,
+  greenMint : $green-mint,
+  greenPersian : $green-persian,
+  blue : $blue,
+  greenSuccess : $green-success,
+  blackZero:   $blackZero,
+  redZero : $redZero,
+  redError : $error-bg,
+  pingSea : $ping-sea,
+  greyBaaast : $grey-baaast,
+  blueBayoux : $blue-bayoux,
+  orangeAmbr : $orange-amber,
+  orangeBaaast : $orange-baaast,
+  greenBaaast : $green-baaast
+);
+
+$u-colors-hover-map: (
+  grey:    $grey-medium,
+  black:   $grey-light,
+  white:   $grey-medium,
+  genBlue: $genBlue-hover,
+  green:   $green-hover,
+  magenta: $magenta-hover,
+  coral:   $coral-hover,
+  greenMint : $green-mint-hover,
+  greenPersian : $green-persian-hover,
+  blue : $blue-hover,
+  greenSuccess : $green-hover,
+  blackZero:   $blackZero-hover,
+  redZero : $redZero-hover,
+  redError : $error-bg,
+  pingSea : $ping-sea-hover,
+  greyBaaast : $grey-baaast-hover,
+  blueBayoux : $blue-bayoux-hover,
+  orangeAmbr : $orange-amber-hover,
+  orangeBaaast : $orange-baaast-hover,
+  greenBaaast : $green-baaast-hover
+);
+
+@each $name, $value in $u-colors-map {
+  %bg-#{$name} { background-color: $value; }
+  %bg-hover-#{$name} { background-color: map-get($u-colors-hover-map, $name); }
+  %color-#{$name} { color: $value; }
+  %color-hover-#{$name} { color: map-get($u-colors-hover-map, $name); }
+
+  .u-bg-#{$name} {
+    @extend %bg-#{$name} !optional;
+
+    &.u-bg-hover {
+      @include hover-focus-active() {
+        @extend %bg-hover-#{$name} !optional;
+        @if $name == black { color: $black; }
+      }
+    }
+  }
+
+  .u-bg-#{$name}-after {
+    &:after {
+      @extend %bg-#{$name} !optional;
+    }
+
+    &.u-bg-after-hover {
+      @include hover-focus-active() {
+        &:after {
+          @extend %bg-hover-#{$name} !optional;
+        }
+      }
+    }
+  }
+
+  .u-color-#{$name} {
+    &.u-color-hover {
+      @include hover-focus-active() {
+        @extend %color-hover-#{$name} !optional;
+        @if $name == black { color: $white; }
+      }
+    }
+
+    &, &-before:before {
+      @extend %color-#{$name} !optional;
+    }
+
+    &-hover, &-hover-before:before { // Pour les pictos
+      @extend %color-hover-#{$name} !optional;
+    }
+  }
+}
+
+
+// COULEURS MEDIUM
+$u-colors-medium-map: (
+  grey:    $grey-medium2,
+  genBlue: $genBlue-medium,
+  green:   $green-hover
+);
+
+@each $name, $value in $u-colors-medium-map {
+  %bg-#{$name}-medium { background-color: $value; }
+  %color-#{$name}-medium { color: $value; }
+
+  .u-bg-#{$name}-medium {
+    @extend %bg-#{$name}-medium !optional;
+  }
+
+  .u-color-#{$name}-medium {
+    &, &-before:before {
+      @extend %color-#{$name}-medium !optional;
+    }
+  }
+}
+
+
+// COULEURS LIGHT
+$u-colors-light-map: (
+  grey:    $grey-light,
+  genBlue: $genBlue-light
+);
+$u-colors-light-hover-map: (
+  grey: $grey-medium
+);
+
+@each $name, $value in $u-colors-light-map {
+  %bg-#{$name}-light { background-color: $value; }
+  %bg-hover-#{$name}-light { background-color: map-get($u-colors-light-hover-map, $name); }
+
+  .u-bg-#{$name}-light {
+    @extend %bg-#{$name}-light !optional;
+
+    &.u-bg-hover {
+      @include hover-focus-active() {
+        @extend %bg-hover-#{$name}-light !optional;
+      }
+    }
+  }
+}
+
+
+// COULEURS THEME
+$colors-map: (
+  genBlue: $genBlue,
+  green:   $green,
+  coral:   $coral
+);
+$colors-hover-map: (
+  genBlue: $genBlue-hover,
+  green:   $green-hover,
+  coral:   $coral-hover
+);
+
+@each $name, $value in $colors-map {
+  %bg-#{$name} { background-color: $value; }
+  %bg-hover-#{$name} { background-color: map-get($colors-hover-map, $name); }
+  %color-#{$name} { color: $value; }
+  %color-hover-#{$name} { color: map-get($colors-hover-map, $name); }
+
+  %theme-#{$name}-slick-arrow {
+    .slick-prev button,
+    .slick-next button {
+      color: $value;
+      opacity: .5;
+
+      @include hover-focus-active() {
+        opacity: 1;
+      }
+    }
+  }
+
+  .u-theme-#{$name},
+  [class*="u-theme-"] .u-theme-#{$name} {
+    &.u-theme-color-before:before,
+    .u-theme-color-before:before {
+      @extend %color-#{$name} !optional;
+    }
+
+    .u-theme-color {
+      @extend %color-#{$name} !optional;
+    }
+
+    .u-theme-color-hover {
+      @include hover-focus-active() {
+        @extend %color-hover-#{$name} !optional;
+      }
+    }
+
+    .u-theme-bg {
+      @extend %bg-#{$name} !optional;
+    }
+
+    .u-theme-bg-hover {
+       @include hover-focus-active() {
+         @extend %bg-hover-#{$name} !optional;
+       }
+    }
+
+    .u-theme-bg-before {
+      &:before {
+         @extend %bg-#{$name} !optional;
+      }
+    }
+
+    .u-theme-bg-after {
+      @include hover-focus-active() {
+        &:after {
+          @extend %bg-hover-#{$name} !optional;
+        }
+      }
+    }
+
+    &.c-pushSection {
+      @extend %theme-#{$name}-slick-arrow !optional;
+    }
+
+    &.c-pushSection {
+      @extend %theme-#{$name}-slick-arrow !optional;
+    }
+  }
+}
+
+
+// effet de survol universel (opacity)
+.u-bg-after {
+  &:after { opacity: 0; }
+
+  @include hover-focus-active() {
+    &:after {
+      background-color: black;
+      opacity: 0.30;
+    }
+  }
+}
+
+
+// EXTRA
+.u-gb-greyMedium2 { background-color: $grey-medium2; }
+.u-bg-genBlue { background-color: $genBlue; }
+.u-color-greyMedium2 { color: $grey-medium2; }
+.u-color-textGrey { color: $text-grey; }
+
+.u-bg-orange { background-color: $orange; }
+.u-color-orange { color: $orange; }
+.u-color-orange-hover { color: $orange-dark; }
+
+.u-color-success { color: $valid-color; }
+.u-color-error { color: $error-color; }
+.u-color-warning { color: $warning-color; }

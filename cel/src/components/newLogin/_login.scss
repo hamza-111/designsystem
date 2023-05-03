@@ -1,0 +1,152 @@
+@import "loginHighlight/loginHighlight";
+@import "loginAccess/loginAccess";
+@import "loginInfo/loginInfo";
+
+.c-login {
+  min-height: 150px;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+
+  .c-formMat {
+    padding: 0;
+  }
+}
+
+.c-login__access {
+  background-color: $white;
+}
+
+.c-loginInfo {
+  background: no-repeat center;
+  height: 579px;
+  padding: 61px 15px 0;
+  background-size: cover;
+}
+
+.c-login__contentWrapper--verticalSpace {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.c-login__content {
+  padding: 0;
+  background-color: $white;
+}
+
+.c-login__btnWrapper {
+  margin: 30px auto 0;
+
+  .c-socialBtn {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.c-login__panels {
+  position: relative;
+}
+
+.c-login__panel {
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+
+  .js &:not(.is-active) { // only when JS
+    position: absolute;
+    opacity: 0.01;
+    z-index: -1;
+  }
+}
+
+.c-login__inputs {
+  margin: 0 auto 20px;
+}
+
+.c-login__mentions {
+  color: $grey;
+  a {
+    color: $grey;
+  }
+}
+
+
+@include media("<small") {
+  .c-login__inputs {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .c-login__btnWrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+
+@include media(">=small") {
+  .c-login {
+    .u-heading-1 {
+      font-size: 2.5rem !important;
+    }
+  }
+
+  .c-login__contentWrapper {
+    margin: 0 auto;
+    padding: 0 30px;
+
+    &--verticalSpace {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  .c-login__btnWrapper {
+    width: 260px;
+
+    &--larger {
+      width: 280px;
+    }
+  }
+
+  .c-login__content {
+    background:$white no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .c-login__inputs {
+    width: 320px;
+  }
+
+  .c-login__access {
+    min-height: 665px;
+  }
+  .c-login__access, .c-loginInfo{
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    width: 48%;
+    max-width: 500px;
+  }
+
+  .c-loginInfo {
+    background: none;
+    margin-left: 3%;
+    margin-top: 30px;
+    padding: 0;
+  }
+}
+
+@include media(">=small", "<=medium") {
+  .c-loginInfo {
+    padding: 0 7%;
+  }
+  .c-login__content {
+    padding: 60px 15px;
+  }
+}

@@ -1,0 +1,51 @@
+.c-promoBanner {
+  color: $white;
+  padding: 5px 15px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  &.u-bg-coral {
+    background-color: $coral;
+  }
+}
+
+.c-promoBanner__wrapper {
+  white-space: nowrap;
+}
+
+.c-promoBanner__item {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  font-size: 1.4rem;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  white-space: normal;
+
+  &:nth-child(2) {
+    margin-left: -4px;
+    transform: translateX(-100%);
+  }
+
+  &:nth-child(3) {
+    margin-left: -4px;
+    transform: translateX(-200%);
+  }
+
+  &.is-active {
+    opacity: 1;
+  }
+}
+
+
+@include media('>=small') {
+  .c-promoBanner {
+    padding: 10px 15px;
+  }
+
+  .c-promoBanner__item {
+    font-weight: $font-bold;
+    font-size: 1.6rem;
+  }
+}

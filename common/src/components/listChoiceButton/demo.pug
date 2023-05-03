@@ -1,0 +1,64 @@
+include listChoiceButton
+include ../pictoBlock/pictoBlock
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant listChoiceButton
+
++demo({
+  desc: "Composant listChoiceButton"
+})
+  +listChoiceButton({
+    text: "75015 PARIS",
+    title: "24 rue de la Tour Maubourg"
+  })
+
+  +listChoiceButton({
+    text: "75015 PARIS",
+    title: "24 rue de la Tour Maubourg"
+  })
+
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Avec icone et couleur sur texte
++demo({
+  desc: `
+    - Ajouter la classe <code>c-listChoiceButton--themeColor</code> aux éléments devant reprendre la couleur du thème courant<br/>
+    - Ajouter la classe <code>c-listChoiceButton--inactive</code> à l'élément <code>listChoiceButton</code> pour la version non cliquable
+    - Optionnel : mettre les composant dans un div container avec la classe <code>c-listChoiceButtonWrapper</code> ( pour y mettre un spinner par exemple )
+    `
+})
+  // DIV avec thème pour démo, ne pas reprendre !
+  +listChoiceButton({
+    iconName: "icon-bold-madame",
+    title: "Sophie Laroche",
+    text: "Référence client : 24568512<br/>Adresse de facturation : 102 Avenue Aristide Briand, 94000 Cachan",
+    isInactive: true
+  })
+    .c-listChoiceButton__mailConfirm
+      .c-listChoiceButton__mailConfirmMessage
+        p Activez votre Espace en cliquant sur le lien qui vous a été envoyé à
+        +pictoBlock({
+          iconName: 'icon-contact-mail2',
+          iconClasses: 'u-fontSize-60',
+          topToLeft: true,
+          alignLeft: true
+        })
+          p johndoe@wanadoo.com
+      +btnWrapper.c-listChoiceButton__mailConfirmButton.u-theme-green
+        +baseBtn({
+          text: "Renvoyer le lien"
+        })
+
+  +listChoiceButton({
+    iconName: "icon-bold-monsieur",
+    colorTitle: true,
+    title: "Sebastien Laroche",
+    text: "Référence client : 24568512<br/>Adresse de facturation : 102 Avenue Aristide Briand, 94000 Cachan",
+    isLink: true
+  })
+
+  +listChoiceButton({
+    iconName: "icon-bold-cotitulaire",
+    colorTitle: true,
+    title: "Sophie et Sebastien Laroche",
+    text: "Référence client : 24568512<br/>Adresse de facturation : 102 Avenue Aristide Briand, 94000 Cachan",
+    isLink: true
+  })

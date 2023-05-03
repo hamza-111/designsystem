@@ -1,0 +1,159 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/faq/faq
+include ../components/column/column
+include ../components/accordion/accordion
+include ../components/wysiwyg/wysiwyg
+
+//- Main variables
+block variables
+  - var title         = "pageFAQ Article"
+  - var page          = ""
+  - var bodyClass     = ""
+  - var description   = "Ici c'est la page FAQ !"
+  - var wrapperSite = "l-wrapper--siteFull"
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  +breadcrumb
+  .c-faq
+
+    +searchFAQ()
+
+    +column({
+      colConfig: '33-66'
+    }).u-padding-h-50.u-padding-b-30
+      .c-column__col
+        //- .c-faq__title FAQ
+        .c-faq__subTitle Questions / réponses&nbsp;:
+        +menuFAQ
+          +menuItemFAQ({
+            text:"Les question fréquentes",
+          })
+
+          +menuItemFAQ({
+            text:"Factures et Paiements",
+            sub: true,
+            toggle: "rubriqueFAQ"
+          })
+            +menuItemSubFAQSub({
+              toggleSub: "sousFacture",
+              toggle: "rubriqueFAQFacture",
+              txt : "Ma Facture"
+            })
+              +menuItemSubFAQ()
+                | Comment lire ma facture
+              +menuItemSubFAQ()
+                | Mes index de consommation
+              +menuItemSubFAQ()
+                | Facture en ligne
+            +menuItemSubFAQ()
+              | Modalités de paiements
+
+          +menuItemFAQ({
+            text:"Mon Espace Client",
+            sub: true,
+            toggle: "rubriqueFAQ2"
+          })
+            +menuItemSubFAQ()
+              | rubrique1
+
+            +menuItemSubFAQ()
+              | rubrique2
+
+            +menuItemSubFAQ()
+              | rubrique3
+
+            +menuItemSubFAQ()
+              | rubrique4
+
+            +menuItemSubFAQ()
+              | rubrique5
+
+          +menuItemFAQ({
+            text:"Offres et tarifs",
+            sub: true,
+            toggle: "rubriqueFAQ3"
+          })
+            +menuItemSubFAQ()
+              | Facture
+            +menuItemSubFAQ()
+              | Modalités de paiements
+
+          +menuItemFAQ({
+            text:"Mon installation et mon compteur"
+          })
+
+          +menuItemFAQ({
+            text:"Déménagement"
+          })
+
+          +menuItemFAQ({
+            text:"Economie d'énergie"
+          })
+
+          +menuItemFAQ({
+            text:"Chaudière gaz naturel"
+          })
+
+          +menuItemFAQ({
+            text:"Chauffage électrique"
+          })
+
+          +menuItemFAQ({
+            text:"Mon activité professionnelle"
+          })
+
+          +menuItemFAQ({
+            text:"Contact"
+          })
+
+          +menuItemFAQ({
+            text:"À propos de Gaz Tarif Réglementé ?"
+          })
+
+      .c-column__col
+        //- +accordeonFAQ.c-faq__blockMarge
+        .c-faq__colRight.u-margin-b-40
+          h1.c-articleFAQ__title Lire et comprendre ma facture de gaz 
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nobis, cumque non atque dolore debitis blanditiis ut iste dolorum ea harum laboriosam, totam voluptatum sed dolores voluptate eligendi voluptas. Provident.
+        +accordion({
+            alone: true
+          })
+            +accordion-tab('tab1', {
+                opened: true,
+                tag: 'h2'
+              })
+              span.c-accordion__label Pourquoi suis-je facturé en kWh ?
+              span.icon.icon-chevron-right
+            +accordion-panel('tab1')
+              +wysiwyg
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus similique assumenda repudiandae minima nisi ea, placeat aperiam delectus aut neque quos accusamus omnis quod veniam, magni, nesciunt ducimus eligendi consequuntur!
+
+            +accordion-tab('tab2', {
+                tag: 'h2'
+              })
+              span.c-accordion__label Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur esse nesciunt doloribus quo ex doloremque, beatae asperiores tempore laudantium officia assumenda 
+              span.icon.icon-chevron-right
+            +accordion-panel('tab2')
+              +wysiwyg
+                p Lorem ipsum dolor sit amet, <a href="#inside">consectetur adipisicing</a> elit. Doloribus similique assumenda repudiandae minima nisi ea, placeat aperiam delectus aut neque quos accusamus omnis quod veniam, magni, nesciunt ducimus eligendi consequuntur!
+
+            +accordion-tab('tab3', {
+                tag: 'h2'
+              })
+              span.c-accordion__label Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa cupiditate consequatur sapiente reprehenderit mollitia distinctio odit maiores voluptate corporis officia quidem beatae reiciendis illo, dolore non, id nostrum! Placeat, quae!
+              span.icon.icon-chevron-right
+            +accordion-panel('tab3')
+              +wysiwyg
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus similique assumenda repudiandae minima nisi ea, placeat aperiam delectus aut neque quos accusamus omnis quod veniam, magni, nesciunt ducimus eligendi consequuntur!
+
+                a(href="#next") consectetur adipisicing

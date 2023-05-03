@@ -1,0 +1,24 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+include ../components/herohpv2/herohpv2
+
+
+//- Main variables
+block variables
+  - var title          = "herohpv2"
+  - var page           = ""
+  - var bodyClass      = ""
+  - var description    = ""
+  - var noHeaderFooter = true
+  - var demoMode       = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  include ../components/herohpv2/demo

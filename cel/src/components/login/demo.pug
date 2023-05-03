@@ -1,0 +1,20 @@
+include login
+
+.c-wysiwyg
+  h2 Composant Login
+
++demo({
+  desc: "ajouter la classe <code>is-loading</code> sur <code>button[type=submit]</code> pour afficher le spinner"
+})
+  +login("disconnected")
+
++demo({
+  desc: "Pour afficher un layer d'attente, mettre en <code>display: block</code> l'élément ayant la classe <code>c-spinner--full</code>"
+})
+  +login("disconnected", 'loader')
+
++demo()
+  +login("logged")
+
++demo()
+  +login("loginNoAccount")

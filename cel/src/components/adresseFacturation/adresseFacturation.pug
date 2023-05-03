@@ -1,0 +1,150 @@
+mixin adresseFacturation(data)
+	- data = data || {}
+
+	//.c-adresseFacturation
+	.c-adresseFacturation&attributes(attributes)
+		 
+		h1.u-heading-1.u-textCenter.u-padding-v-20 Modifier votre adresse de facturation
+		.l-wrapper--largeMedium
+			p.u-textCenter Le formulaire ci-dessous vous permet de définir une nouvelle adresse de facturation
+		.l-wrapper--largeMedium
+			+formMat()(data-e-form-validation='{"switchBtnState": true}')
+				.l-row
+					.l-col-medium-4
+						+inputMat({
+							required: false,
+							type : 'text',
+							label : 'Numéro',
+							placeholder: 'N° de la rue',
+							pattern: '^[A-Za-z0-9]*',
+							check: true,
+							dataValidation: {
+								typing: true,
+								validations: {
+									patternMismatch: 'Veuillez renseigner un n° de rue',
+									valueMissing: 'Veuillez renseigner un n° de rue'
+								}
+							}
+						})
+
+					.l-col-medium-8
+
+						+inputMat({
+							label: 'Voie *',
+							type: "text",
+							id: "voie",
+							name: "voie",
+							pattern: '^[^@&"()!_$*€£`+=\/;?#]+$',
+							maxlength : 60,
+							placeholder: 'Nom de la rue',
+							check: true,
+							required: true,
+							dataValidation: {
+								typing: true,
+								validations: {
+									patternMismatch: 'Veuillez saisir une valeur valide pour le champ « Rue »',
+									valueMissing: 'Veuillez renseigner le champ « Rue »',
+								}
+							}
+						})
+
+				.l-row
+					.l-col-medium-6
+						+inputMat({
+							type : 'text',
+							label : "Complément d'adresse",
+							placeholder: 'Informations suplémentaires',
+							check: true,
+							dataValidation: {
+								typing: true,
+								validations: {
+									patternMismatch: "Veuillez saisir une valeur valide pour le champ « Complément d'adresse »"
+								}
+							}
+						})
+						
+					.l-col-medium-4
+
+						+inputMat({
+							label: 'Étage',
+							type: "text",
+							id: "voie",
+							name: "voie",
+							pattern: '^[A-Za-z0-9]*',
+							maxlength : 60,
+							placeholder: 'N° étage',
+							check: true,
+							required: false,
+							dataValidation: {
+								typing: true,
+								validations: {
+									patternMismatch: 'Veuillez saisir une valeur valide pour le champ « Etage »',
+									valueMissing: 'Veuillez renseigner le champ « Étage »'
+								}
+							}
+						})
+				.l-row
+					.l-col-medium-6
+						+inputMat({
+							type : 'text',
+							label : "Lieu dit",
+							placeholder: 'Nom du lieu dit',
+							pattern: '^[^@&"()!_$*€£`+=\/;?#]+$',
+							check: true,
+							dataValidation: {
+								typing: true,
+								validations: {
+									patternMismatch: 'Veuillez saisir une valeur valide pour le champ « Lieu dit »'
+								}
+							}
+						})
+				.l-row
+					.l-col-medium-5
+						+inputMat({
+							label:       'Code Postal *',
+							type:        "tel",
+							id:          "cp",
+							pattern:     'cp',
+							name:        "cp",
+							check: 			true,
+							required:    true,
+							maxlength:   "5",
+							placeholder: 'N° Code Postal',
+							dataValidation: {
+								typing : true,
+								validations: {
+									patternMismatch: 'Veuillez saisir une valeur valide pour le champ « Code postal »',
+									valueMissing: 'Veuillez renseigner le champ « Code postal »'
+								}
+							}
+						})
+
+					.l-col-medium-7
+						+inputMat({
+							type : 'text',
+							label : "Commune *",
+							placeholder: 'Nom de la ville',
+							required:    true,
+							check: true,
+							disabled: true,
+							dataValidation: {
+								typing: true,
+								validations: {
+									valueMissing: 'Veuillez renseigner le champ « Commune »'
+								}
+							}
+						})
+
+				.l-row.u-margin-t-30
+					.l-col-medium-12
+						+btnWrapper.u-theme-genBlue
+							+baseBtn({
+								text: "J'annule le changement",
+								button : true,
+								empty : true
+							})
+
+							+baseBtn({
+								text: 'Je valide mon adresse',
+								submit : true
+							}).c-baseBtn--push(type="submit" data-e-form-validation-submit)

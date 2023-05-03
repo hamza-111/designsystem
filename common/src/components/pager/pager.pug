@@ -1,0 +1,90 @@
+mixin pager(data)
+  - var data = data || {}
+  - var id = data.id || 'pager'
+
+  // .c-pager
+  nav.c-pager(role="navigation" aria-label="Pagination")
+    ul.c-pager__list
+      li.c-pager__page
+        a.c-pager__link.c-pager__link--arrow(href="#" rel="prev" title="Page précédente")
+          span.icon.icon-chevron-left
+
+      li.c-pager__page
+        a.c-pager__link(href="#") 1
+      li.c-pager__page
+        a.c-pager__link(href="#" rel="prev") 2
+      li.c-pager__page
+        p.c-pager__link.c-pager__link--current(aria-label="Page courante") 3
+      li.c-pager__page
+        a.c-pager__linkt(href="#" rel="next") 4
+      li.c-pager__page
+        a.c-pager__link(href="#") 5
+
+      li.c-pager__page
+        a.c-pager__link.c-pager__link--arrow(href="#" rel="next" title="Page suivante")
+          span.icon.icon-chevron-right
+
+    p.c-pager__total /15
+  // end .c-pager
+
+
+mixin pagerBtn(data)
+  - var data = data || {}
+  - var id = data.id || 'pager'
+
+  // .c-pager
+  .c-pager(role="navigation" aria-label="Pagination" data-e-pager)
+    ul.c-pager__list
+      li.c-pager__page
+        button.c-pager__link.c-pager__link--arrow(type="button" rel="prev" aria-label="Page précédente")
+          span.icon.icon-chevron-left
+
+      li.c-pager__page
+        button.c-pager__link(type="button" ) 1
+      li.c-pager__page
+        button.c-pager__link(type="button" rel="prev") 2
+      li.c-pager__page
+        p.c-pager__link.c-pager__link--current(aria-label="Page courante") 3
+      li.c-pager__page
+        button.c-pager__link(type="button" rel="next") 4
+      li.c-pager__page
+        button.c-pager__link(type="button") 5
+
+      li.c-pager__page
+        button.c-pager__link.c-pager__link--arrow(type="button" rel="next" aria-label="Page suivante")
+          span.icon.icon-chevron-right
+
+    p.c-pager__total /15
+  // end .c-pager
+
+
+
+mixin pagerBtnTpl(data)
+  - var data = data || {}
+  - var id = data.id || 'pager'
+
+  //- avec templateEngine.js
+  ul.c-pager__list
+    | [% if (this.currentPage !== 1) { %]
+    li.c-pager__page
+      button.c-pager__link.c-pager__link--arrow(type="button" rel="prev" aria-label="Page précédente")
+        span.icon.icon-chevron-left
+    | [% } %]
+
+    | [% for (var i = this.indexFirst; i <= this.indexLast; i++) { %]
+    |   [% if (i === this.currentPage) { %]
+    li.c-pager__page
+      p.c-pager__link.c-pager__link--current(aria-label="Page courante") [% i %]
+    |   [% } else { %]
+    li.c-pager__page
+      button.c-pager__link(type="button") [% i %]
+    |   [% } %]
+    | [% } %]
+
+    | [% if (this.currentPage < this.numberOfPage) { %]
+    li.c-pager__page
+      button.c-pager__link.c-pager__link--arrow(type="button" rel="next" aria-label="Page suivante")
+        span.icon.icon-chevron-right
+    | [% } %]
+
+  p.c-pager__total /[% this.numberOfPage %]

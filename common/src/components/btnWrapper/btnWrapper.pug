@@ -1,0 +1,14 @@
+include baseBtn/baseBtn
+
+mixin btnWrapper(data)
+  - var data   = data || {}
+  - var isSpan = data.isSpan || false
+
+  // .c-btnWrapper
+  if isSpan
+    span.c-btnWrapper&attributes(attributes)
+      block
+  else
+    .c-btnWrapper&attributes(attributes)
+      block
+  // end .c-btnWrapper

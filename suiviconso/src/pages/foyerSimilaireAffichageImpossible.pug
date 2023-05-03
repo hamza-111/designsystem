@@ -1,0 +1,39 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/foyerSimilaireV2/foyerSimilaireV2
+
+//- Main variables
+block variables
+  - var title = "affichage impossible Foyers similaires"
+  - var page            = ""
+  - var bodyClass       = "l-wrapper--foyerSimilaireNoView"
+  - var description     = ""
+  - var noHeaderFooter  = true
+  - var headerCel       = "fullGradient"
+  - var wrapperSite     = "l-wrapper--siteFull"
+  - var footer          = true
+  - var main          = "large"
+  - var noBg          = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  .c-foyerSimilaire.c-foyerSimilaire--noView.u-margin-b-110
+    .c-foyerSimilaire__content
+      .c-foyerSimilaire__content__left
+        h1.u-heading-2 Affichage de résultat impossible
+
+        p Nous n’avons pas assez d’historique de consommations à ce jour pour effectuer une comparaison avec des foyers similaires. Cela sera possible <b>dès 12 mois de consommation.</b> 
+        p.u-margin-t-10 En attendant, retrouvez les éco-gestes pour optimiser votre consommation.
+
+      div(class="c-btnWrapper u-theme-genBlue c-btnWrapper--alignLeft c-btnWrapper--fullOnMobile u-margin-t-30 u-margin-small-t-30 u-textBold")
+        button(class="c-baseBtn u-theme-bg u-theme-bg-hover" type="button") <span class="c-baseBtn__content">Mes éco-gestes</span>  
+
+      a(href="#").u-link retour       

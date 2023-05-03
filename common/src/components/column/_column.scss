@@ -1,0 +1,146 @@
+$column-space: 20px;
+
+.c-column__col {
+  min-height: 1%;
+  box-sizing: content-box; // pour utiliser les padding en mode spaced
+
+  .c-contactElement {
+    border: none;
+  }
+}
+
+// pour espacer verticalement les cellules sur mobile
+@include media("<small") {
+  .c-column__col + .c-column__col {
+    margin-bottom: 15px;
+  }
+}
+
+@include media("<=medium") {
+  .c-column.c-column--noGut {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@include media(">=small") {
+  .c-column {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .c-column--vCenter {
+    align-items: center;
+  }
+
+  .c-column--100 {
+    & > .c-column__col {
+      width: 100%;
+    }
+  }
+
+  .c-column--50-50 {
+    & > .c-column__col {
+      width: 50%;
+    }
+
+    &.c-column--spaced > .c-column__col {
+      width: calc(50% - #{$column-space} / 2);
+      &:nth-child(2) {
+        padding-left: $column-space;
+      }
+    }
+  }
+
+  .c-column--33-66 {
+    & > .c-column__col:nth-child(1) {
+      width: 33.3333%;
+    }
+    & > .c-column__col:nth-child(2) {
+      width: 66.6666%;
+    }
+
+    &.c-column--spaced > .c-column__col:nth-child(1) {
+      width: calc(33.3333% - #{$column-space} / 2);
+    }
+    &.c-column--spaced > .c-column__col:nth-child(2) {
+      width: calc(66.6666% - #{$column-space} / 2);
+      padding-left: $column-space;
+    }
+  }
+
+  .c-column--66-33 {
+    & > .c-column__col:nth-child(1) {
+      width: 66.6666%;
+    }
+    & > .c-column__col:nth-child(2) {
+      width: 33.3333%;
+    }
+
+    &.c-column--spaced > .c-column__col:nth-child(1) {
+      width: calc(66.6666% - #{$column-space} / 2);
+    }
+    &.c-column--spaced > .c-column__col:nth-child(2) {
+      width: calc(33.3333% - #{$column-space} / 2);
+      padding-left: $column-space;
+    }
+  }
+
+  .c-column--33-33-33 {
+    & > .c-column__col {
+      width: 33.3333%;
+    }
+
+    &.c-column--spaced > .c-column__col {
+      width: calc(33.3333% - #{$column-space} * 2 / 3);
+      &:not(:first-child) {
+        padding-left: $column-space;
+      }
+    }
+  }
+
+  .c-column--25-25-25-25 {
+    & > .c-column__col {
+      width: 25%;
+    }
+
+    &.c-column--spaced > .c-column__col {
+      width: calc(25% - #{$column-space} * 3 / 4);
+      &:not(:first-child) {
+        padding-left: $column-space;
+      }
+    }
+  }
+
+  .c-column--50-50_25-25-25-25 {
+    & > .c-column__col {
+      width: 50%;
+    }
+
+    &.c-column--spaced > .c-column__col {
+      width: calc(50% - #{$column-space} / 2);
+      &:nth-child(2),
+      &:nth-child(4) {
+        padding-left: $column-space;
+      }
+    }
+  }
+}
+
+@include media(">medium") {
+  // pour le moment que des colonnes 25% en desktop, donc on rassemble
+  .c-column--50-50_25-25-25-25,
+  .c-column--100_25-25-25-25 {
+    & > .c-column__col {
+      width: 25%;
+    }
+
+    &.c-column--spaced > .c-column__col {
+      width: calc(25% - #{$column-space} * 3 / 4);
+      &:not(:first-child) {
+        padding-left: $column-space;
+      }
+    }
+  }
+}

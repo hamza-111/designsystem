@@ -1,0 +1,88 @@
+// DEBUG STYLES
+// Exemple de Media queries
+[data-debug] {
+  body {
+    &:before {
+      content: "small";
+      position: fixed;
+      transform: translateZ(0);
+      top: 0;
+      left: 0;
+      z-index: 10000;
+      background: rgba(255, 0, 0 , 0.2);
+      padding: 2px 4px;
+      font-size: 1.2rem;
+    }
+  }
+
+  @include media(">small") {
+    body {
+      &:before {
+        content: "medium";
+      }
+    }
+  }
+
+  @include media(">medium") {
+    body {
+      &:before {
+        content: "large";
+      }
+    }
+  }
+
+  @include media(">large") {
+    body {
+      &:before {
+        content: "huge";
+      }
+    }
+  }
+
+  @media print {
+    body {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  // debug unsecure target blank
+  %warning-debug {
+    outline: 3px solid red;
+    &:hover:before {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      height: auto;
+      text-align: center;
+      top: initial;
+      background: red;
+    }
+  }
+
+  a[target="_blank"]:not([rel*="noopener"]):not([rel*="noreferrer"]) {
+    @extend %warning-debug;
+    &:hover:before {
+      content: 'Un lien en target="_blank" doit avoir un attribut rel="noopener noreferrer"';
+    }
+  }
+
+  img:not([alt]) {
+    @extend %warning-debug;
+    &:hover:before {
+      content: "Il manque un attribut alt. Il peut être vide si la description n'est pas utile, mais il doit être présent";
+    }
+  }
+
+  button:not([type]) {
+    @extend %warning-debug;
+    &:hover:before {
+      content: "Il manque peut être le type de bouton (attention, par défaut, il est 'submit')";
+    }
+  }
+
+}
+

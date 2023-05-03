@@ -1,0 +1,110 @@
+.c-blocCumul {
+  padding: 30px;
+  width: 100%;
+  display: block;
+  background: $white;
+  position: relative;
+}
+
+.c-blocCumul--height {
+  height: 274px;
+}
+
+.c-blocCumul--positionRelative {
+  position: relative;
+}
+
+.c-blocCumul__h2 {
+  font-size: 2rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.c-blocCumul__popin {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+
+}
+
+.c-blocCumul__main {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.c-blocCumul--green {
+  color: #4bd9a8;
+}
+
+.c-blocCumul__date {
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: block;
+}
+
+.c-blocCumul__numberKwh {
+  font-size: 4.5rem;
+  font-weight: normal;
+}
+
+.c-blocCumul__Kwh {
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.c-blocCumul__chevron {
+  font-size: 2rem;
+  text-align: center;
+  min-width: 180px;
+  color: $blackZero
+}
+
+.c-blocCumul__yearChevron {
+  display: flex;
+}
+
+.icon.c-blocCumul__chevronRight, .icon.c-blocCumul__chevronLeft {
+  display: block;
+}
+
+.l-col-medium-5 .c-blocCumul__year, .l-col-medium-6 .c-blocCumul__year {
+  min-width: 380px;
+  text-align: center;
+}
+
+.l-col-medium-6 .c-blocCumul__chevron, .l-col-medium-5 .c-blocCumul__chevron, .l-col-medium-4 .c-blocCumul__chevron, .l-col-medium-3 .c-blocCumul__chevron {
+  transform: rotate(90deg);
+}
+
+@include media ("<=small") {
+  .c-blocCumul__main {
+    flex-direction: column; 
+  }
+
+  .c-blocCumul--height {
+    height: auto;
+  }
+  
+  .c-blocCumul__year, .c-blocCumul__chevron {
+    margin: 15px 0;
+  }
+
+  .c-blocCumul__numberKwh {
+    font-size: 6rem;
+  }
+
+  .c-blocCumul__chevron {
+    transform: rotate(90deg);
+    min-width: auto;
+  }
+
+  .l-col-medium-5 .c-blocCumul__year, .l-col-medium-6 .c-blocCumul__year {
+    min-width: auto;
+    text-align: initial;
+  }
+}

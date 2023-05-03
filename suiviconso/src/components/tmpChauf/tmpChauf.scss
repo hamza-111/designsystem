@@ -1,0 +1,165 @@
+.c-tmpChauf {
+  background-color: white;
+  display: flex;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background-position: bottom right;
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  height: 300px;
+}
+
+.c-tmpChauf__right {
+  position: absolute;
+  width: 40%;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.c-tmpChauf__left {
+  padding: 35px 0 35px 30px;
+  position: relative;
+  left: 0;
+  width: 60%;
+  z-index: 1;
+}
+
+.c-tmpChauf__title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 3.4rem;
+  margin-bottom: 24px;
+}
+
+.c-tmpChauf__para {
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+.c-tmpChauf.c-tmpChauf__full .c-tmpChauf__para {
+  width: 60%;
+}
+
+.c-tmpChauf__right picture {
+  height: 100% !important;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  align-items: end;
+}
+
+.c-tmpChauf__right img {
+  position: relative;
+  bottom: 0;
+  height: 100% !important;
+}
+
+.c-tmpChauf__progChauff {
+  background-image: url('../images/contrib/chauffage-echarpe.jpg');
+}
+
+.c-tmpChauf__ecoGest {
+  background-image: url("../images/contrib/maisonLG.jpg");
+}
+
+.c-tmpChauf__full.c-tmpChauf__progChauff {
+  background-image: url("../images/contrib/chauffage-echarpeFull.jpg");
+}
+
+.c-tmpChauf__full.c-tmpChauf__ecoGest {
+  background-image: url("../images/contrib/maisonLGfull.jpg");
+  background-size: 45% 90%
+}
+
+.c-tmpChauf--btn {
+  position: absolute;
+  bottom: 35px;
+}
+
+@include media (">=small", "<=medium") {
+  .c-tmpChauf__para {
+    width: 80%;
+  }
+
+  .c-tmpChauf {
+    height: 295px;
+  }
+
+  .c-tmpChauf.c-tmpChauf__full .c-tmpChauf__para {
+    width: 80%;
+  }
+
+  .c-tmpChauf__title {
+    width: 260px;
+  }
+
+  .c-tmpChauf__progChauff {
+    background-image: url('../images/contrib/chauffage-echarpe.jpg');
+  }
+  
+  .c-tmpChauf__ecoGest {
+    background-image: url("../images/contrib/maisonLG.jpg");
+  }
+  
+  .c-tmpChauf__full.c-tmpChauf__progChauff {
+    background-image: url("../images/contrib/chauffage-echarpe.jpg");
+  }
+  
+  .c-tmpChauf__full.c-tmpChauf__ecoGest {
+    background-image: url("../images/contrib/maisonLG.jpg");
+    background-size: 50% 100%
+  }
+}
+
+@include media ("<small") {
+  .c-tmpChauf__left, .c-tmpChauf__right, .c-tmpChauf.c-tmpChauf__full .c-tmpChauf__para {
+    width: 100%;
+    position: initial;
+  }
+
+  .c-tmpChauf__left {
+    padding: 30px;
+    padding-bottom: 180px;
+  }
+
+  .c-tmpChauf__full.c-tmpChauf__ecoGest {
+    background-size: 100%;
+  }
+
+  .c-tmpChauf {
+    flex-direction: column;
+    height: auto;
+    background-position: bottom;
+    background-size: 100%;
+  }
+
+  .c-tmpChauf__title {
+    font-size: 2rem;
+    line-height: 2.7rem;
+    width: 260px;
+  }
+
+  .c-tmpChauf__progChauff {
+    background-image: url('../images/contrib/chauffage-echarpeMobile.jpg');
+  }
+  
+  .c-tmpChauf__ecoGest {
+    background-image: url("../images/contrib/maisonLGmobile.jpg");
+  }
+  
+  .c-tmpChauf__full.c-tmpChauf__progChauff {
+    background-image: url("../images/contrib/chauffage-echarpeMobile.jpg");
+  }
+  
+  .c-tmpChauf__full.c-tmpChauf__ecoGest {
+    background-image: url("../images/contrib/maisonLGmobile.jpg");
+  }
+
+  .c-tmpChauf--btn {
+    position: initial;
+  }
+  
+}

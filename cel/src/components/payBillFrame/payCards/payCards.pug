@@ -1,0 +1,23 @@
+
+include ../../arrowSeparator/arrowSeparator
+
+mixin payCards(data)
+  - var data = data || {}
+
+  // .c-payCards
+  .c-payCards
+    .c-payCards__acceptedCards
+      div.c-payCards__acceptedCardsIcon.icon.icon-cadenas2
+      div.c-payCards__acceptedCardsText
+        p Paiement sécurisé
+        p Cartes acceptées
+
+    +arrowSeparator
+
+    ul.c-payCards__cardList
+      li.c-payCards__card
+        img(src="../images/mastercard_logo.svg" alt="MasterCard" height="30")
+      li.c-payCards__card
+        img(src="../images/visa_logo.svg" alt="VISA" height="30")
+      li.c-payCards__card
+        img(src="../images/carte-bancaire_logo.svg" alt="Carte Bancaire" height="30")

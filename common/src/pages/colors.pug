@@ -1,0 +1,80 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title = "Demo"
+  - var page = ""
+  - var bodyClass = ""
+  - var description = ""
+  - var noHeaderFooter = true
+  - var demoMode = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  .c-wysiwyg: H2 Couleurs normales
+  +demo()
+    div(style="display: flex;")
+      .u-bg-grey.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-black.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-white.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-magenta.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-genBlue.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-green.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-coral.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-greenPersian.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-greenMint.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-blackZero.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-greenBaaast.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-orangeBaaast.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-orangeAmbr.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-blueBayoux.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-greyBaaast.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-pingSea.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-redZero.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+      .u-bg-blue.u-bg-hover(style="flex-grow: 1; padding: 30px;")
+
+
+    .u-color-grey.u-color-hover .u-color-grey
+    .u-color-black.u-color-hover .u-color-black
+    .u-color-white.u-color-hover .u-color-white
+    .u-color-magenta.u-color-hover .u-color-magenta
+    .u-color-genBlue.u-color-hover .u-color-genBlue
+    .u-color-green.u-color-hover .u-color-green
+    .u-color-coral.u-color-hover .u-color-coral
+    .u-color-greenPersian.u-color-hover .u-color-greenPersian
+    .u-color-greenMint.u-color-hover .u-color-greenMint
+    .u-color-blackZero.u-color-hover .u-color-blackZero
+    .u-color-greenBaaast.u-color-hover .u-color-greenBaaast
+    .u-color-orangeBaaast.u-color-hover .u-color-orangeBaaast
+    .u-color-orangeAmbr.u-color-hover .u-color-orangeAmbr
+    .u-color-blueBayoux.u-color-hover .u-color-blueBayoux
+    .u-color-greyBaaast.u-color-hover .u-color-greyBaaast
+    .u-color-pingSea.u-color-hover .u-color-pingSea
+    .u-color-redZero.u-color-hover .u-color-redZero
+    .u-color-blue.u-color-hover .u-color-blue
+
+
+  .c-wysiwyg: H2 Couleurs medium
+  +demo()
+    div(style="display: flex;")
+      .u-bg-grey-medium(style="flex-grow: 1; padding: 30px;")
+      .u-bg-genBlue-medium(style="flex-grow: 1; padding: 30px;")
+
+    .u-color-grey-medium .u-color-grey-medium
+    .u-color-genBlue-medium .u-color-genBlue-medium
+
+
+  .c-wysiwyg: H2 Couleurs light
+  +demo()
+    div(style="display: flex;")
+      .u-bg-grey-light(style="flex-grow: 1; padding: 30px;")
+      .u-bg-genBlue-light(style="flex-grow: 1; padding: 30px;")

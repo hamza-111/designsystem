@@ -1,0 +1,120 @@
+@import "blockLinksApps/blockLinksApps";
+
+.c-blockLinks__wysiwyg {
+  position: relative;
+  padding-right: 0;
+  padding-left: 0;
+
+  .c-wysiwyg {
+    padding-bottom: 30px;
+    border-bottom: 1px solid $grey-light;
+  }
+}
+
+.c-blockLinks__bottomLinks {
+  margin-bottom: 15px;
+  // effet de hover subtile
+  .u-theme-color:after {
+    opacity: .1;
+  }
+}
+
+.c-blockLinks__block {
+  padding: 15px;
+}
+
+.c-blockLinks__title {
+  font-weight: $font-bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.c-blockLinks__block--files {
+  .c-blockLinks__title {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .c-wysiwyg {
+    padding: 15px;
+  }
+
+  .c-linkLongArrow {
+    display: inline-block;
+    padding: 5px 0;
+
+    @include hover-focus-active() {
+      .c-linkLongArrow__text {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .c-linkLongArrow__icon {
+    vertical-align: top;
+    font-size: 1.7em;
+  }
+}
+
+.c-blockLinks__block--links {
+  .c-blockLinks__title {
+    text-align: center;
+    color: $white;
+  }
+
+  .c-blockLinks__item {
+    position: relative;
+
+    @include hover-fx();
+
+    @include hover-focus-active() {
+      @include hover-fx-active();
+    }
+  }
+
+  .c-linkLongArrow {
+    border-top: 1px solid;
+  }
+}
+
+
+@include media(">=small") {
+  .c-blockLinks:not(.c-blockLinks--full) {
+    .c-blockLinks__wysiwyg {
+      .c-wysiwyg,
+      .c-blockLinks__bottomLinks {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .c-blockLinks__wysiwyg {
+    padding-right: 40px;
+
+    .c-wysiwyg {
+      border-bottom: none;
+    }
+  }
+
+  .c-blockLinks__block--links {
+    padding: 15px;
+  }
+
+
+  .c-blockLinks--full {
+    .c-blockLinks__wysiwyg {
+      padding-right: 0;
+    }
+
+    .c-blockLinks__group {
+      font-size: 0;
+    }
+
+    .c-blockLinks__item {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      font-size: 1.5rem;
+    }
+  }
+}

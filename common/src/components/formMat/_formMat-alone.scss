@@ -1,0 +1,117 @@
+button.is-disabled {
+  opacity: 0.5;
+}
+
+
+// diverses surcharges dans c-formMat
+.c-formMat {
+  .c-wysiwyg {
+    // parceque la créa...
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  .c-greyWrapper {
+    padding: 15px;
+  }
+}
+
+
+.c-inputMat,
+.c-selectMat,
+.c-uploadMat,
+.c-uploadMat2 {
+  .c-fieldInfo {
+    display: none;
+    width: 100%;
+  }
+
+  &.is-error {
+    .c-fieldInfo { display: block; }
+  }
+
+  &.is-disabled {
+    cursor: not-allowed !important;
+  }
+}
+
+
+// ligne de validation*
+.c-inputMat__inputLine,
+.c-selectMat__inputLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform .2s ease-in-out;
+  z-index: 9;
+
+  .c-inputMat__field:focus ~ &,
+  .c-selectMat__select:focus ~ &,
+  .is-success &,
+  .is-error &,
+  .is-warn & {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  .c-inputMat__field:focus ~ &,
+  .c-selectMat__select:focus ~ & {
+    background-color: $genBlue-hover !important;
+  }
+  .is-success & { background-color: $valid-color !important; }
+  .is-error & { background-color: $error-color !important; }
+  .is-warn & { background-color: $starYellow !important; }
+}
+// END - ligne de validation
+
+
+// Labels
+.c-inputMat__label,
+.c-selectMat__label {
+  position: absolute;
+  color: $text-grey;
+  top: -40px;
+  left: 0;
+  font-size: 1.6rem;
+  font-weight: Bold;
+
+  .c-selectMat__select:focus ~ &,
+  .c-inputMat__select:focus ~ & {
+    color: $genBlue-hover;
+  }
+
+  .is-success & { color: $valid-color !important; }
+  .is-error & { color: $error-color !important; }
+  .is-warn & { color: $starYellow !important; }
+  .is-disabled & { color: $grey-medium2; }
+}
+// END - Labels
+
+
+// colonnes spécifiques au formulaires
+@include media(">=small") {
+  .c-formMat {
+    .c-column--50-50 {
+      &.c-column--spaced > .c-column__col {
+        width: calc(50% - 60px / 2);
+
+        &:nth-child(2) {
+          padding-left: 60px;
+        }
+      }
+    }
+
+    .c-column--100 {
+      .c-column__col {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}

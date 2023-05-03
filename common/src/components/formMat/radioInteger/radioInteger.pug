@@ -1,0 +1,39 @@
+mixin radioInteger(data)
+  - var data   = data || {}
+  - var id        = data.id || "salut"
+  - var name        = data.name || "salut"
+  - var p        = data.p || 5
+  - var label          = data.label || "Lorem ipsum"
+  - var dataValidation  = data.dataValidation || false
+  - var n = 0
+  - var required       = data.required || false
+  - var value          = data.value || "radio value"
+
+  // .c-radioInteger
+  .c-radioInteger(
+    data-e-field-validation=dataValidation ? dataValidation : false
+  )
+    while n < p
+      // .c-radioMat
+      span.u-hide= n++
+      span.c-radioMat(
+        data-e-field-validation=dataValidation ? dataValidation : false
+      )&attributes(attributes)
+        input.c-radioMat__field(
+          type="radio"
+          id=id+n 
+          name=name
+          value=value
+          required=required
+        )
+        label.c-radioMat__label(for=id+n, class='c-radioMat__labelPadding')
+          span.c-radioMat__check.u-theme-bg.u-theme-color!=n
+            if n === 5
+              | ou +
+
+          if dataValidation
+            +fieldInfo({
+              typeMessage: 'error',
+              input: true
+            })(data-e-field-validation-error)
+      // end .c-radioMat

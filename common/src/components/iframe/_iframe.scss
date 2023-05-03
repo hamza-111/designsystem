@@ -1,0 +1,21 @@
+// iframe fluide
+.c-iframe__wrapper {
+  iframe {
+    width: 100%;
+  }
+}
+
+.no-ios .c-iframe__wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+
+  &.is-fluid {
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
+  }
+}

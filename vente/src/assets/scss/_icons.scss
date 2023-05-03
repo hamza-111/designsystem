@@ -1,0 +1,98 @@
+@font-face {
+  font-display: swap;
+  font-family: 'iconsVente';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/iconsVente.woff2') format('woff2'),
+       url('../fonts/iconsVente.woff') format('woff'),
+       url('../fonts/iconsVente.ttf') format('truetype');
+}
+
+.iconVente {
+  display: inline-block;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: none;
+
+  &:before {
+    font-family: 'iconsVente' !important;
+    speak: none;
+    display: inline;
+  }
+}
+
+$icons: (
+  appart: '\EA01',
+    change-offer: '\EA02',
+    client-no: '\EA03',
+    client-yes: '\EA04',
+    connect-no: '\EA05',
+    connect-yes: '\EA06',
+    contract: '\EA07',
+    door: '\EA08',
+    elec-gaz: '\EA09',
+    elec: '\EA0A',
+    gaz: '\EA0B',
+    home-lock: '\EA0C',
+    home: '\EA0D',
+    house: '\EA0E',
+    identity-lock: '\EA0F',
+    identity: '\EA10',
+    man: '\EA11',
+    move-follow: '\EA12',
+    move: '\EA13',
+    multiple-persons: '\EA14',
+    no-commitment: '\EA15',
+    terminate: '\EA16',
+    woman: '\EA17',
+    client-undefined: '\EA18',
+    horraire: '\EA19',
+    hp-hc: '\EA1A',
+    maison-loupe: '\EA1B',
+    maison-main: '\EA1C',
+    maison-secondaire: '\EA1D'
+);
+
+@each $name, $icon in $icons {
+  .iconVente-#{$name}:before {
+    content: $icon;
+  }
+
+  @if $name == "download" {
+    .u-link--download:after {
+      content: $icon;
+    }
+  }
+
+  @if $name == "external-link" {
+    .u-link--externalLink:after {
+      content: $icon;
+    }
+  }
+
+  @if $name == "long-arrow-right" {
+    .u-link--arrow:after {
+      content: $icon;
+    }
+  }
+
+  @if $name == "check" {
+    .u-list__item--check:before {
+      content: $icon;
+    }
+  }
+
+
+  /**
+ * #{$name}:
+ * `.iconVente-#{$name}`
+ *
+ *     @example
+ *     .iconVente.iconVente-#{$name}
+ */
+
+}

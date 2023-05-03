@@ -1,0 +1,102 @@
+include carouselArticle/carouselArticle
+
+mixin carouselHome(data)
+  - var data      = data || {}
+  - var autoplay  = data.autoplay || false
+  - var mode      = data.mode || 'slide'
+  - var imgSmall  = data.imgSmall || '../images/contrib/home_carrou_contrib_small.jpg'
+  - var imgMedium = data.imgMedium || '../images/contrib/home_carrou_contrib_large.jpg'
+
+  // .c-carouselHome
+     .c-carousel- -zoom (sans espace) sur .c-carousel + fade: true = transition avec zoom
+  section.c-carouselHome
+    .c-carouselHome__mobile.u-hideMediumUp(data-slick-mobile-replace="carouselHome")
+      // Image: 640 x 626 (très compressée !)
+      +img({
+          alt: "Lorem",
+          interchange: {
+            smallOnly: imgSmall
+          }
+        }).c-carouselHome__img
+
+      +carouselArticle({
+        mobile: true
+      })
+
+    +carousel({
+      id: 'carouselHome',
+      mode: mode,
+      home: true,
+      settings: {
+        mobileFirst: false,
+        arrows: true,
+        dots: true,
+        speed: 1000,
+        autoplay: autoplay,
+        autoplaySpeed: 3000,
+        fade: mode === 'slide' ? false : true,
+        draggable: true,
+        infinite: false,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: 'unslick'
+          }
+        ]
+      }
+    }).u-hideSmall
+      +carouselHomeSlide({
+        imgLoad: true,
+        themeColor: 'orange'
+      })
+        p Avec l'offre Confort Connecté, faites jusqu'à 15% d'économies de gaz<sup>(1)</sup> :
+        ul
+          li
+            span.u-list-puce.u-list__item.u-theme-color-before Thermostat connecté Netatmo by Gaz Tarif Réglementé à 99€ TTC<sup>(2)</sup>
+          li
+            span.u-list-puce.u-list__item.u-theme-color-before Gaz à prix fixe, révisable à la baisse pendant 3 ans<sup>(3)</sup>
+          li
+            span.u-list-puce.u-list__item.u-theme-color-before Le tout sans coupure d’énergie
+
+      +carouselHomeSlide({
+        img: '../images/contrib/home_carrou_contrib_large2.jpg',
+        themeColor: 'green'
+      })
+      +carouselHomeSlide({
+        img: '../images/contrib/home_carrou_contrib_large3.jpg',
+        themeColor: 'purple'
+      })
+  // end .c-carouselHome
+
+
+mixin carouselHomeSlide(data)
+  - var data       = data || {}
+  - var img        = data.img || '../images/contrib/home_carrou_contrib_large1.jpg'
+  - var imgLoad    = data.imgLoad || false
+  - var themeColor = data.themeColor || 'orange'
+
+  .c-carousel__slide
+    // Image: 1240 x 473
+    if imgLoad
+      +img({
+          alt: "Lorem",
+          interchange: {
+            medium: img
+          }
+        }).c-carouselHome__img
+    else
+      img(src="" data-slick-img-src=img alt="Lorem").c-carouselHome__img
+
+    .c-carouselHome__content&attributes(attributes)
+      +carouselArticle({
+        promo: "JUSQU'A 100€ DE BON D'ACHAT",
+        themeColor: themeColor,
+        text: `
+        <p>Avec l'offre Confort Connecté, faites jusqu'à 15% d'économies de gaz<sup>(1)</sup>&nbsp;:</p>
+        <ul>
+          <li><span class="u-list-puce u-list__item u-theme-color-before">Thermostat connecté Netatmo by Gaz Tarif Réglementé à 99€ TTC<sup>(2)</sup></span></li>
+          <li><span class="u-list-puce u-list__item u-theme-color-before">Gaz à prix fixe, révisable à la baisse pendant 3 ans<sup>(3)</sup></span></li>
+          <li><span class="u-list-puce u-list__item u-theme-color-before">Le tout sans coupure d’énergie</span></li>
+        </ul>
+        `
+      })

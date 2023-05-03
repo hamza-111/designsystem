@@ -1,0 +1,23 @@
+mixin foyerSimilaireNoResult(data)
+  - var data   = data || {}
+  //.c-foyerSimilaire
+
+  .c-foyerSimilaireNoResult
+    h2.c-foyerSimilaireNoResult__title.icon.icon-danger Affichage de résultat impossible
+
+    p.c-foyerSimilaireNoResult__text Vous avez un historique de moins de 12 mois, vous pourrez utiliser l’outil de comparaison à partir de votre prochain relevé prévu le :
+    
+    .c-foyerSimilaireNoResult__wrap.u-padding-h-30.u-padding-t-30
+      .c-foyerSimilaireNoResult__wrapContent
+        span.c-foyerSimilaireNoResult__text 12 février 2019
+
+        +btnWrapper.c-btnWrapper--alignLeft.u-theme-genBlue.u-margin-t-50
+          +baseBtn({
+            text: 'retour',
+            secondary: true
+          })
+
+      span
+        img(src="../images/contrib/foyerSimilairenoResut.png" alt="foyer de base").c-foyerSimilaireNoResult__img
+      
+

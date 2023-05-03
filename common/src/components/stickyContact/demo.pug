@@ -1,0 +1,19 @@
+include stickyContact
+
+.c-wysiwyg
+  h2 Sticky contact : avec lien
+
++demo()
+  +stickyContact({
+    link: true,
+    opened: true
+  })
+
+
+.c-wysiwyg
+  h2 Sticky contact : sans lien, avec bouton phone
+
++demo()
+  +stickyContact({
+    unavailable: true
+  })

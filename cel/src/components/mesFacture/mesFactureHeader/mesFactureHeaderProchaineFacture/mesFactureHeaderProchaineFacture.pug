@@ -1,0 +1,30 @@
+mixin mesFactureHeaderProchaineFacture(data)
+  - var data                = data || {}
+  - var img                 = data.img || "prochaineFacture1.jpg"
+  - var txtTitre            = data.txtTitre || "MA PROCHAINE"
+  - var txtTitreBold        = data.txtTitreBold || "FACTURE"
+  - var prochaineFacture    = data.prochaineFacture || false
+
+  //.c-mesFactureHeaderProchaineFacture
+  .c-mesFactureHeaderProchaineFacture(style="background-image:url(../images/contrib/"+ img +");")
+    .c-mesFactureHeaderProchaineFacture__title
+      .c-mesFactureHeaderProchaineFacture__titleNormal!=txtTitre
+      .c-mesFactureHeaderProchaineFacture__titleBold!=txtTitreBold
+    if prochaineFacture
+      .c-mesFactureHeaderProchaineFacture__paiementType Par prélèvement
+    .c-mesFactureHeaderProchaineFacture__label Vers le : 12/01/2019
+    
+      if !prochaineFacture 
+        +toolTip({
+          target:  "#",
+          info: true
+        })(data-e-modal-open='prochaineFacture')
+        +modal({
+          target: '{"target": "prochaineFacture"}'
+        }).u-padding-a-40
+          .u-margin-b-40 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut amet perspiciatis animi sit aliquam exercitationem ad culpa
+    if !prochaineFacture
+      a(href="#").c-mesFactureHeaderProchaineFacture__link
+        span Justificatif de domicile
+        span.icon.icon-telechargement-facture
+

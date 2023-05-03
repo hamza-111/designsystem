@@ -1,0 +1,46 @@
+.c-miniPushTextImage {
+  position: relative;
+  padding: 0 0 20px;
+  text-align: center;
+}
+
+.c-miniPushTextImage__title {
+  margin-bottom: 10px;
+}
+
+.c-miniPushTextImage__infos,
+.c-miniPushTextImage__img {
+  margin-bottom: 20px;
+}
+
+.c-miniPushTextImage__img {
+  text-align: center;
+}
+
+@include media(">=small") {
+  .c-miniPushTextImage {
+    text-align: left;
+  }
+
+  .c-miniPushTextImage__img {
+    margin: 0;
+  }
+}
+
+.c-miniPushTextImage__text{
+  margin-top: auto;
+}
+
+// THEMES
+.c-miniPushTextImage--orangeSunset {
+  .c-miniPushTextImage__title {
+    color: $coral;
+  }
+
+  .u-link {
+    background-color: $coral;
+    @include hover-focus-active() {
+      background-color: $coral-hover;
+    }
+  }
+}

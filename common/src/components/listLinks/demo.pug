@@ -1,0 +1,35 @@
+include listLinks
+
+.c-wysiwyg
+  h2 Liste lien: image petites
++demo()
+  +listLinks({
+    hasTitle: true,
+    isImage: true,
+    length: 1,
+    html: "<p>Lorem ipsum text text kawabunga remplir fill the gap taper clavier ecriture ne lisez pas souriez</p>"
+  })
+
+
+.c-wysiwyg
+  h2 Liste lien: image large
++demo({
+  desc: "Ajout de la classe <code>c-listLinks__group--sizeLarge</code> sur l'élément <code>c-listLinks__group</code>"
+})
+  +listLinks({
+    hasTitle: true,
+    isImage: true,
+    imgSize: 'large',
+    length: 1,
+    html: "<p>Lorem ipsum text text kawabunga remplir fill the gap taper clavier ecriture ne lisez pas souriez</p>"
+  })
+
+
+.c-wysiwyg
+  h2 Liste lien (sans description): picto
++demo()
+  +listLinks({
+    hasTitle: true,
+    isImage: false,
+    length: 2
+  })

@@ -1,0 +1,60 @@
+include ../../../../common/src/components/titleV2/titleV2
+
+mixin blocCumul(data)
+  - var data   = data || {}
+  - var titre  = data.titre || false
+  - var erreur = data.erreur || false
+  - var targetModal = data.targetModal || "targetCumul"
+  - var textOrange        = data.textOrange  || "Lorem ipsum amet sid ipsum comparum"
+  - var textBlack        = data.textBlack  || "not enough donatut felichitate ergosum humanum est"
+  - var cumul       = data.cumul || false
+
+  //c-blocCumul
+  .c-blocCumul(class=cumul?"c-blocCumul--height" : " ")
+
+    if erreur
+      +msgErreurGraph().c-blocCumul--positionRelative
+
+    else if titre
+      .u-color-orangeBaaast.c-blocCumul__h2!=textOrange
+      .u-color-blackZero.c-blocCumul__h2!=textBlack
+
+    else 
+      .c-blocCumul__popin
+        +toolTipV2({
+          themeColor: 'u-theme-magenta'
+        })(data-e-modal-open=targetModal)
+
+        +modal({
+          target: '{"target":"' + targetModal +'"}'
+        }).u-padding-a-40
+
+          +wysiwyg
+            p Lorem ipsum dolor sit amet, elit.Placeat aperiam delectus aut neque quos accusamus omnis quod veniam, magni, nesciunt ducimus eligendi consequuntur!
+            h2 Listes
+            ul
+              li: span.u-list__item Liste 'carré'
+              li: span.u-list__item Liste 'carré'
+              li: span.u-list__item
+              a.u-link.u-link--externalLink(href="#" target="_blank" rel="noopener noreferrer") Lien externe
+              li
+              ul
+                li: span.u-list__item.u-list__item--check Liste 'check'
+                li: span.u-list__item.u-list__item--check Liste 'check'
+      .c-blocCumul__main
+        .c-blocCumul__year.c-blocCumul--green
+          span.c-blocCumul__date Sept.2017 - Sept.2018
+          span.c-blocCumul__numberKwh 9080
+            span.c-blocCumul__Kwh kWh
+        .c-blocCumul__chevron
+          .c-blocCumul__chevronRight.icon.icon-right-arrow
+          .c-blocCumul__chevronLeft.icon.icon-left-arrow
+        .c-blocCumul__year.u-color-genBlue
+          span.c-blocCumul__date Sept.2017 - Sept.2018
+          span.c-blocCumul__numberKwh 9080
+            span.c-blocCumul__Kwh kWh
+
+
+      
+
+        

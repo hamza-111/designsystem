@@ -1,0 +1,83 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title         = "Etape3 Contrat - Finale"
+  - var page          = "tel"
+  - var bodyClass     = ""
+  - var description   = "Module étape 3"
+  - var noHeaderFooter = true
+  //- var headerLight   = true
+  - var footerLight   = true
+
+//- CSS (haut) pour cette page
+block CSS
+  link(rel="stylesheet" href="../css/tel.css")
+
+//- JS (bas) pour cette page
+block JS
+  script(src="../js/bas/demo.js")
+
+
+//- Page content
+block content
+  #telv3.c-headerLightPush
+    +headerLight({
+      finalMessage: true
+    })
+
+    +stickyDock
+
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-t-40.u-margin-small-t-40.u-margin-b-10.u-margin-small-b-10 Merci Philippe !
+      p.u-textCenter.u-margin-b-40.u-margin-small-b-40: strong Votre demande a bien été prise en compte
+
+    .l-wrapper--medium
+      p.u-textCenter Vous allez recevoir votre contrat signé par email dans les plus brefs délais.
+
+    .l-wrapper--large
+      .u-bg-grey-light.u-textCenter.u-margin-v-40.u-margin-small-v-40.u-padding-a-30
+        p.u-textCenter.u-margin-b-20.u-margin-small-b-20: strong Vous pouvez également télécharger les documents suivants :
+
+        +btnWrapper().u-theme-genBlue.c-btnWrapper--fullOnMobile
+          +baseBtn({
+            text: "Télécharger mon contrat",
+            iconRight: "icon-bold-download",
+            empty: true
+          })
+          +baseBtn({
+            text: "Télécharger le récapitulatif",
+            iconRight: "icon-bold-download",
+            empty: true
+          })
+          +baseBtn({
+            text: "Télécharger mon mandat",
+            iconRight: "icon-bold-download",
+            empty: true
+          })
+
+    .l-wrapper--medium.u-padding-t-40
+      h2.u-heading-2.u-textCenter.u-margin-b-20.u-margin-small-b-20 Découvrez le service
+
+    .l-wrapper--large.u-margin-b-40.u-margin-small-b-40
+      +selectOptions()
+        +selectOptionBlock({
+          iconUrl: "../images/contrib/icon-garantie-electromenager.svg",
+          iconAlt: "Dépannage",
+          bgOnHover: true
+        })
+          h3.c-selectOptionBlock__title.u-heading-3.u-margin-b-10.u-theme-color Dépannage Gaz et Electricité Express
+          p <strong>Une assistance téléphonique 24/24h, 7j/7</strong> en cas de fuites d’eau, d’engorgement ou de problèmes sur votre installation de gaz naturel et d'électricité.
+
+
+    .l-wrapper--huge.u-padding-t-10
+      +btnWrapper().c-btnWrapper--fullOnMobile.c-btnWrapper--alignLeft.u-margin-v-40.u-margin-small-v-40
+        +baseBtn({
+          text: "Retour à l'accueil",
+          iconLeft: "icon-chevron-left",
+          empty: true
+        })

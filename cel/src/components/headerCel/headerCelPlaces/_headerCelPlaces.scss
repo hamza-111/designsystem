@@ -1,0 +1,150 @@
+@import "headerCelPlacesItem/headerCelPlacesItem";
+
+.c-headerCelPlaces {
+  position: absolute;
+  left: 50%;
+  width: 220px;
+  margin-left: -110px;
+}
+
+.c-headerCelPlaces__list {
+  max-height: 100%;
+  transform: translateZ(0);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c-headerCelPlaces__bottom {
+  padding: 15px;
+  text-align: center;
+}
+
+.c-headerCelPlaces__link {
+  color: $genBlue;
+}
+
+.c-headerCelPlaces__btn {
+  @extend %reset-style-button;
+  display: flex;
+  align-items: center;
+  font-weight: $font-bold;
+  cursor: pointer;
+  width: auto;
+  margin: 0 auto;
+  max-width: 100%;
+
+  .c-headerCelPlaces__address {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+
+  .icon {
+    transform: rotateZ(90deg);
+    font-size: 2.5rem;
+    will-change: transform;
+    transition: transform .2s ease-in-out;
+    margin-left: auto;
+    color: $genBlue;
+  }
+
+  &.is-active {
+    .icon {
+      transform: rotateZ(270deg);
+    }
+  }
+
+  .c-spinner {
+    margin: 0 auto;
+  }
+}
+
+.c-headerCelPlaces__layer {
+  background-color: $white;
+}
+
+
+@include media("<=small") {
+  .c-headerCelPlaces {
+    top: 18px;
+    position: absolute;
+    left: 123px;
+    width: 93%;
+    margin-left: -110px;
+  }
+
+  .c-headerCelPlaces__layer .c-headerCelLayer__content{
+    margin-top: 0;
+  }
+
+  .c-headerCelLayer__content {
+    margin-top: 0 !important;
+  }
+
+  .c-headerCelPlaces__address {
+    font-weight: normal;
+  }
+  
+
+  .c-headerCelPlaces__list {
+    padding-right: 15px;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 850px) {
+  .c-headerCelPlaces {
+      margin-left: -250px !important;
+  }
+}
+@include media(">small") {
+  .c-headerCelPlaces {
+    z-index: 1000;
+    width: 398px;
+    top: 18px;
+    margin-left: -198px;
+    font-size: 1.3rem;
+  }
+
+  .c-headerCelPlaces__btn {
+    outline: none;
+    padding-left: 5px;
+
+    &:focus {
+      background-color: $grey-medium;
+    }
+  }
+
+  .c-headerCelPlaces__layer {
+    left: -60px;
+    right: -60px;
+    margin-top: 10px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.14);
+    border: 1px solid $grey-medium;
+
+    .c-headerCelLayer__content {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+    }
+  }
+
+  .c-headerCelPlaces__list {
+    overflow: auto;
+    max-height: 235px;
+  }
+}
+
+@include media("<=medium") {
+  .c-headerCelLayer__content {
+    margin-top: 140px;
+  }
+}
+
+@include media(">medium") {
+  .c-headerCelLayer__content {
+    margin-top: 0;
+  }
+}

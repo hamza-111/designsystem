@@ -1,0 +1,22 @@
+mixin miniPushTextImage(data)
+  - data   = data || {}
+  - title  = data.title || "Vous déménagez?"
+  - text   = data.text || "Nous sommes le 1er fournisseur de gaz en France avec près de 8 millions de clients gaz"
+  - loader = data.loader || false
+  - backgroundColor = data.backgroundColor || ""
+
+  .c-miniPushTextImage&attributes(attributes)
+    if loader
+      +spinner().c-spinner--full
+
+    +column({
+      colConfig: '50-50',
+      spaced: true
+    })
+      .c-miniPushTextImage__img.c-column__col
+        img(src="../images/contrib/synthese-maj_03.jpg" alt="visuel de demenagement")
+
+      .c-miniPushTextImage__text.c-column__col
+        h2.c-miniPushTextImage__title.u-heading-3!=title
+        p.c-miniPushTextImage__infos!=text
+        a(href="#").u-link.u-link--arrow.u-theme-bg.u-theme-bg-hover Faire ma demande

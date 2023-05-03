@@ -1,0 +1,24 @@
+include contactButton
+
+.c-wysiwyg
+  h2 Contact button : webcallback, chat, link
+
++demo()
+  +contactContainer()
+    .c-contactContainer__item
+      +contactButton({
+        target: "contactButton1",
+        label: "webcallback, chat, link"
+      })
+
+
+.c-wysiwyg
+  h2 Contact button : phone
+
++demo()
+  +contactContainer()
+    .c-contactContainer__item
+      +contactButton({
+        type: 'phone',
+        target: "contactButton2"
+      })

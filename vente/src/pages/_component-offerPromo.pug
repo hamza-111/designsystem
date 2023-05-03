@@ -1,0 +1,25 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title          = "offerPromo"
+  - var page           = ""
+  - var bodyClass      = ""
+  - var description    = ""
+  - var noHeaderFooter = true
+  - var demoMode       = true
+
+
+//- CSS (haut) pour cette page
+block CSS
+  link(rel="stylesheet" href="../css/tel.css")
+
+
+//- Page content
+block content
+
+  include ../../../common/src/components/offerPromo/demo

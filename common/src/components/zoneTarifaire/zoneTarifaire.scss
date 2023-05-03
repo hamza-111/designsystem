@@ -1,0 +1,687 @@
+//- zoneTarifaire
+.c-zoneTarifaire { 
+  background-color: $grey-light;
+
+  .c-formMat {
+    padding-bottom: 0px;
+  }
+
+  .c-fieldInfo {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+}
+
+.c-zoneTarifaire__desc {
+  font-size: 1.6rem;
+  padding: 8px;
+  font-weight: 400;
+  @include media("<medium", ">small") {
+    font-size: 1.6rem;
+  } 
+}
+
+.c-zoneTarifaire_titreTableau {
+  font-family: 'open sans';
+  margin-bottom: 30px;
+  @media #{$large} {
+    padding-left: 16%;
+  }
+}
+
+.c-zoneTarifaire_zoneIcon {
+  font-family: 'open sans';
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 2.4rem;
+  line-height: 3.3rem;
+  color: $black;
+  span {
+   color: #009DE9; 
+  }
+}
+
+.c-zoneTarifaire__cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-zoneTarifaire_zone {
+  background: url(../images/contrib/formeLogo.svg) no-repeat -17px -6px;
+  background-size: 134%;
+  height: 100px;
+  width: 100px;
+  margin: 0 0 0 20px;
+  color: white;
+  font-size: 2.1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-zoneTarifaire__ctaNewSearch {
+  margin-right: 30px;
+}
+
+.c-zoneTarifaire__fieldInfos {
+  color: $genBlue;
+  font-size: 1.8rem;
+  text-align: center;
+
+  a {
+    font-size: 1.5rem;
+  }
+}
+
+.c-zoneTarifaire__board {
+  display: flex;
+}
+
+.c-zoneTarifaire__boardRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &.cut {
+    word-break: break-word;
+    hyphens: auto;
+    padding:0 20px;
+  }
+
+  .icon {
+    font-size: 3.5rem;
+    color: $genBlue;
+  }
+}
+
+.c-zoneTarifaire__lightText {
+  display: block;
+  margin-top: 5px;
+
+  b {
+    font-size: 1.5rem;
+  }
+  span {
+    font-size: 1.1rem;
+    font-weight: 100;
+  }
+}
+
+.c-zoneTarifaire__boardColLeft {
+  min-width: 105px;
+  width: 25%;
+  // font-size: 1.3rem;
+
+  .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border {
+    font-size: 1.5rem;
+  }
+
+  .c-zoneTarifaire__boardRow {
+    background-color: $genBlue;
+    color: white;
+    font-weight: bold;
+    height: 70px;
+
+    &:first-child {
+      background-color: $genBlue;
+      color: white;
+      font-weight: bold;
+      height: 70px;
+    }
+  }
+
+  .c-zoneTarifaire__boardRow--border {
+    border-top: 8px solid $genBlue;
+    border-bottom: 8px solid $genBlue;
+    height: 86px;
+    font-size: 1.8rem;
+  }
+}
+
+
+.c-zoneTarifaire__boardColRight {
+  width: 75%;
+
+  .c-zoneTarifaire__boardRow {
+    background-color: #fff;
+    color: black;
+    height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+
+    &:first-child {
+      background-color: $genBlue;
+      color: white;
+      font-weight: bold;
+      height: 70px;
+    }
+  }
+
+  .c-zoneTarifaire__boardRow--border {
+    border-top: 8px solid  $grey-light;
+    border-bottom: 8px solid  $grey-light;
+    height: 86px;
+    font-size: 1.8rem;
+    font-weight: bold
+  }
+}
+
+@include media("<small") {
+  .c-zoneTarifaire__blocBoard {
+    margin: 40px 0;
+  }
+
+  .c-zoneTarifaire__cta {
+    flex-direction: column;
+  }
+
+  .c-zoneTarifaire__ctaNewSearch {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .c-zoneTarifaire__board {
+    margin-bottom: 40px;
+  }
+}
+
+
+@include media(">small") {
+  .c-inputMat, .c-selectMat {
+    width: 315px;
+    margin: 0 auto;
+  }
+
+  .c-zoneTarifaire__board {
+    width: 100%;
+  }
+  
+
+  .c-zoneTarifaire__boardColLeft {
+    .c-zoneTarifaire__layout {
+      display: none;
+    }
+
+    .c-zoneTarifaire__layout:first-child {
+      display: block;
+    }
+  }
+
+  .c-zoneTarifaire__boardColRight {
+    width: 100%;
+    .c-zoneTarifaire__boardRow:first-child {
+      border-left: 1px solid white;
+    }
+  }
+
+  .c-zoneTarifaire__blocBoard {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  
+    // > * {
+    //   flex: 0 100%;
+    // }
+
+    
+    .c-zoneTarifaire--first {
+      width: 150%;
+
+      .c-zoneTarifaire__boardColLeft {
+        width: 70%;
+      }
+    }
+
+    .c-zoneTarifaire--secondary {
+      .c-zoneTarifaire__boardColLeft { display: none;}
+    }
+  }
+}
+
+@media ( min-width: 768px) and (max-width : 1024px)  {
+  .c-inputMat, .c-selectMat {
+    width: auto;
+  }
+  .c-zoneTarifaire__blocBoard.v2 .c-zoneTarifaire__boardColRight {
+    margin-right: 11px;
+  }
+
+  .c-zoneTarifaire a.c-baseBtn.c-baseBtn--secondary.u-theme-color {padding:8px 5%;}
+
+  .c-zoneTarifaire__lightText {
+    display: block;
+    margin-top: 5px;
+    padding: 0 3px;
+  }
+
+  .c-zoneTarifaire__blocBoard.v2 .c-zoneTarifaire__boardColRight .c-zoneTarifaire__boardRow:first-child {
+    height: 136px!important;
+  }
+}
+
+//- zoneTarifaire V2
+.c-zoneTarifaire__boardColLeft .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2,
+.c-zoneTarifaire__boardColLeft .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3,
+.c-zoneTarifaire__boardColLeft .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 {
+  @media #{$small} {
+    text-align: right;
+    padding: 16px 16px 16px 0px;
+    justify-content: flex-end;
+  }
+}
+
+.c-zoneTarifaire__blocBoard.v2 .c-zoneTarifaire__boardColRight .c-zoneTarifaire__boardRow {
+  font-weight: 400;
+}
+
+.c-zoneTarifaire__blocBoard.v2 {
+  font-family: 'Open Sans', sans-serif;
+
+  .c-zoneTarifaire__boardRow-c1 {
+    font-weight: 600;
+    height: 105px;
+  }
+  .c-zoneTarifaire__boardRow-c2 {
+    font-weight: 600;
+    height: 80px;
+  }
+  .c-zoneTarifaire__boardRow-c3 {
+    font-weight: 600;
+    height: 153px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 0 0 8px 8px;
+    .c-baseBtn  {min-height: 40px;}
+  }
+
+  .c-zoneTarifaire__layout {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .c-zoneTarifaire__boardRow--border {
+    border-top: 1px solid  #d0d0d0;
+    border-bottom: 1px solid  #d0d0d0;
+  }
+
+  .c-zoneTarifaire__boardColRight {
+    max-width: 230px;
+    @media #{$small} {
+      max-width: 100%;
+      width: 50%;
+    }
+  }
+
+  .c-zoneTarifaire__lightText {
+    b {
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 2.7rem;
+    }
+
+    span {
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 22px;
+      font-weight: 400;
+    }
+  }
+
+  .c-zoneTarifaire__boardColRight .c-zoneTarifaire__boardRow {
+    font-size: 1.6rem;
+  }
+
+  .c-zoneTarifaire__boardColRight .c-zoneTarifaire__boardRow:first-child {
+    border-left: 1px solid white;
+    // background: background: rgb(28,149,216);
+    background: linear-gradient(188deg, rgba(28,149,216,1) 0%, rgba(12,92,175,1) 100%);
+    height: 114px;
+    border-radius: 8px 8px 0 0;
+    align-items: baseline;
+  }
+
+  .c-zoneTarifaire__boardColLeft .c-zoneTarifaire__boardRow:first-child {
+    background-color: transparent;
+    color: $black;
+    font-weight: bold;
+    height: 114px;
+  }
+
+  .c-zoneTarifaire__boardColLeft .c-zoneTarifaire__boardRow {
+    background-color: transparent;
+    color: $black;
+  }
+  
+  .c-zoneTarifaire__boardColRight .c-zoneTarifaire__boardRow--border {
+    font-weight: 400;
+  }
+
+  .c-zoneTarifaire__lightText b {
+    font-size: 2rem;
+    display: block;
+    margin: 16px 0 11px 0;
+  }
+
+  .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 {
+    padding-top: 0;
+    padding-bottom: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  @media #{$large} {
+    
+    .c-zoneTarifaire__board.c-zoneTarifaire--secondary {
+      max-width: 230px;
+    }
+    .c-zoneTarifaire__boardColRight {
+      margin-right: 11px; // confirmé cette marge ????
+    }
+  }
+  
+}
+
+.c-zoneTarifaire__blocBoard.v2.bis {
+  
+  .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c0 {
+    height: 61px;
+    font-weight: 600;
+    border-bottom: 1px solid #d0d0d0;
+  }
+  
+  .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 {
+    height: 68px;
+  }
+
+  .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 {
+    height: 90px; 
+    font-weight: 400;
+    font-size: 1.6rem;
+    flex-direction: column;
+    b {font-weight: 700;}
+  }
+
+  .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3 {
+    height: 68px;
+    line-height: 2.1rem;
+  }
+  .c-zoneTarifaire__boardColRight .c-zoneTarifaire__boardRow:first-child {
+    height: 61px!important;
+  }
+
+  @media #{$large} {
+    .c-zoneTarifaire__boardColRight, .c-zoneTarifaire__board.c-zoneTarifaire--secondary {
+      max-width: 180px;
+    }
+
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2.c-zoneTarifaire__Zone {
+      flex-direction: row;
+    }
+    .c-zoneTarifaire__itemZone {
+      border-right: 1px solid #d0d0d0;
+      display: flex;
+      flex-direction: column;
+      padding: 8px 10px;
+      &:last-child { border-right: 0;}
+    }
+
+    .c-zoneTarifaire__lightText b {
+      font-size: 2rem;
+      display: block;
+      margin: 11px 0 11px 0;
+    }
+
+    .c-zoneTarifaire--first {
+      width: 100%;
+      max-width: 390px;
+    }
+    .c-zoneTarifaire--first .c-zoneTarifaire__boardColLeft {
+      width: auto;
+      margin-right: 0;
+    }
+    .c-zoneTarifaire__board.c-zoneTarifaire--secondary.c-zoneTarifaire--secondarybis {
+      max-width: 544px;
+    }
+    .c-zoneTarifaire__board.c-zoneTarifaire--secondary.c-zoneTarifaire--secondarybis .c-zoneTarifaire__boardColRight {
+      width: 100%;
+      max-width: 544px;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width : 1200px)  {
+    .c-zoneTarifaire__itemZone {
+      padding: 15px 6px;
+    }
+
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 {
+      height: 120px;
+      font-weight: 400;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width : 1024px)  {
+    .c-zoneTarifaire__boardColRight .c-zoneTarifaire__boardRow:first-child{
+      height: 61px!important;
+    }
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3 {
+      height: 88px!important;
+    }
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 {
+      height: 188px!important; 
+      font-weight: 400;
+      flex-direction: column;
+      b {font-weight: 600;}
+    }
+
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2.c-zoneTarifaire__Zone {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .c-zoneTarifaire__itemZone {
+      display: flex;
+      flex-direction: column;
+      padding: 6px;
+      border-right: 1px solid #d0d0d0;
+      width: 30%;
+    }
+
+    .c-zoneTarifaire__boardColRight.c-zoneTarifaire__layout {
+      max-width: 400px!important;
+    }
+    .c-zoneTarifaire__boardColLeft {
+      min-width: 105px;
+      width: 40%;
+    }
+        .c-zoneTarifaire__itemZone:nth-child(3n+3) {
+        border-right: 0;
+      }
+  }
+
+  @media #{$small} {
+  
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 {
+      height: 188px; 
+      font-weight: 400;
+      flex-direction: column;
+      b {font-weight: 600;}
+    }
+
+    .c-zoneTarifaire__desc {
+      font-size: 1.4rem;
+    }
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3,
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c0,
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 {
+      font-size: 1.4rem;
+    }
+
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3.c-zoneTarifaire--tarif span {
+      font-size: 1.6rem!important;
+    }
+
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3.c-zoneTarifaire--tarif {
+      justify-content: center;
+    }
+
+    .c-zoneTarifaire__boardRow-c2bis {
+      justify-content: center;
+      font-size: 1.4rem!important;  
+    }
+
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 {
+      font-size: 1.4rem!important;  
+    }
+
+    .c-zoneTarifaire__boardColLeft {
+      min-width: 105px;
+      width: 50%;
+    }
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c0 { 
+      text-align: right;
+      display: flex;
+      padding-right: 16px;
+      justify-content: end;
+    }
+    
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 {
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .c-zoneTarifaire__itemZone {
+      display: flex;
+      flex-direction: column;
+      padding: 1px 6px;
+      width: 50%;
+      border-right: 1px solid #d0d0d0;
+      margin-bottom: 6px;
+      &:nth-child(1n+4) {
+        border-right: 0;
+      }
+    }
+
+    .c-zoneTarifaire__blocBoard.v2 .c-zoneTarifaire__lightText b {
+      margin: 10px 0 10px 0;
+    }
+
+    .c-zoneTarifaire__blocBoard.v2 .c-zoneTarifaire__lightText b {
+      margin: 10px 0;
+    }
+
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3 {
+      text-align: right;
+      justify-content: flex-end;
+      flex-direction: revert;
+    }
+
+    .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2.c-zoneTarifaire__boardRow-c2bis {
+      text-align: right;
+      justify-content: flex-end;
+      flex-direction: revert;
+      
+      p {
+        flex-direction: column;
+        display: flex;
+        text-align: right;
+      }
+    }
+  }
+}
+
+// tableau des prox 3
+.c-zoneTarifaire__blocBoard__switchBtn.c-btnWrapper {
+  margin-bottom: 34px;
+  @media #{$small} {
+  padding-left: 0;
+  }
+  .c-baseBtn {
+    width: 59px!important;
+    height: 32px!important;
+    min-height: 32px!important;
+    color: black!important;
+    background-color: white!important;
+    padding: 0!important;
+    border-radius: 4px;
+    &.is-active {
+      background-color:#00AAFF!important;
+      color:white!important;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+} 
+
+.c-zoneTarifaire__blocBoard.v2.v2--3bis {
+
+  .c-zoneTarifaire__boardColRight .c-zoneTarifaire__boardRow:first-child,
+  .c-zoneTarifaire__boardColLeft .c-zoneTarifaire__boardRow:first-child {
+    height: 80px;
+  }
+
+  .c-zoneTarifaire__board.c-zoneTarifaire--secondary {
+    max-width: none;
+    width: 100%;
+    max-width: 307px;
+  }
+  .c-zoneTarifaire__boardRow {
+    align-items: center!important;
+  }
+  .c-zoneTarifaire__lightText b {
+    margin: 0;
+  }
+  
+  .c-zoneTarifaire__boardRow-c3 {
+    height: 80px;
+  }
+  .c-zoneTarifaire__boardColRight {
+    max-width: 307px;
+  }
+
+  @media (min-width: 768px) and (max-width : 1024px)  {
+    .c-zoneTarifaire__boardColLeft .c-zoneTarifaire__boardRow:first-child {
+      height: 136px;
+    }
+
+    .c-zoneTarifaire__boardRow {
+      font-size: 1.4rem!important;
+    }
+  }
+  @media #{$small} {
+    .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 {
+      justify-content: right;
+      flex-direction: row;
+    }
+    .c-zoneTarifaire__boardRow {
+
+      padding: 0 5px;
+    }
+    .c-zoneTarifaire__boardColLeft.c-zoneTarifaire__layout .c-zoneTarifaire__boardRow {
+      text-align: right;
+      padding-right: 15px;
+    }
+    .c-zoneTarifaire__boardColRight {
+      max-width: 100%;
+      width: 60%;
+    }
+
+    .c-zoneTarifaire__boardColLeft {
+      min-width: 105px;
+       width: 40%;
+    }
+    .c-zoneTarifaire__boardRow-c3, .c-zoneTarifaire__boardColRight .c-zoneTarifaire__boardRow:first-child,
+    .c-zoneTarifaire__boardColLeft .c-zoneTarifaire__boardRow:first-child {
+      height: 114px;
+    }
+    .c-zoneTarifaire__board.c-zoneTarifaire--secondary {
+      max-width: none;
+    }
+  }
+}

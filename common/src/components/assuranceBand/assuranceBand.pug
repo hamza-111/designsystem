@@ -1,0 +1,126 @@
+include ../headSection/headSection
+
+mixin assuranceBand(data)
+  - var data       = data || {}
+  - var pictoColor = data.pictoColor || false
+  - var pictoFont  = data.pictoFont || false
+  - var picture    = data.picture || false
+  - var pictureTEL    = data.pictureTEL || false
+
+  if pictoFont
+    // .c-assuranceBand (font icon)
+    .c-assuranceBand.c-assuranceBand--hasBorder.u-padding-spacer
+      .c-assuranceBand__wrapper.u-bg-grey-light.u-padding-a-20
+        .c-assuranceBand__elem
+          span.c-assuranceBand__picto.icon.icon-elec2
+          span.c-assuranceBand__text Elec verte
+        .c-assuranceBand__elem
+          span.c-assuranceBand__picto.icon.icon-sansengage
+          span.c-assuranceBand__text Sans engagement
+        .c-assuranceBand__elem
+          span.c-assuranceBand__picto.icon.icon-suividemenage
+          span.c-assuranceBand__text Suivi d'emménagement
+    // END .c-assuranceBand
+
+
+  else if picture
+    // .c-assuranceBand (picto en couleur)
+    .c-assuranceBand.c-assuranceBand--pictoColor.c-assuranceBand--arrow.u-padding-spacer
+      .u-bg-grey-light.u-padding-v-40.u-padding-h-20
+        if block
+          block
+        else
+          +headSection({
+            title: "Suivez l’évolution de la création de votre Espace Client&nbsp;: ",
+            noLink: true
+          }).l-wrapper--large
+        .c-assuranceBand__wrapper
+          .c-assuranceBand__elem
+            img.c-assuranceBand__img(src="../images/contrib/01-Page-enmenagement_01.jpg" alt="")
+            p.c-assuranceBand__number <strong> 1/ </strong>
+            p Demande de souscription <br/>prise en compte
+          .c-assuranceBand__arrow.icon.icon-carousel-next
+          .c-assuranceBand__elem
+            img.c-assuranceBand__img(src="../images/contrib/01-Page-enmenagement_02.jpg" alt="")
+            p.c-assuranceBand__number <strong> 2/ </strong>
+            p Activation<br/> de votre contrat
+          .c-assuranceBand__arrow.icon.icon-carousel-next
+          .c-assuranceBand__elem.c-assuranceBand__elem--grey
+            img.c-assuranceBand__img(src="../images/contrib/01-Page-enmenagement_01-gris.jpg" alt="")
+            p.c-assuranceBand__number <strong> 3/ </strong>
+            p Contrat activé <br/>Accès à votre Espace Client
+    // END .c-assuranceBand
+
+  else if pictureTEL
+    // .c-assuranceBand (picture TEL)
+    .c-assuranceBand.c-assuranceBand--pictoColor.c-assuranceBand--arrow.u-padding-spacer
+      .u-bg-grey-light.u-padding-v-40.u-padding-h-20
+        if block
+          block
+        else
+          +headSection({
+            title: "Suivez l’évolution de la création de votre Espace Client&nbsp;: ",
+            noLink: true
+          }).l-wrapper--large
+        .c-assuranceBand__wrapper
+          .c-assuranceBand__elem
+            img.c-assuranceBand__img(src="../images/contrib/01-Page-enmenagement_01.jpg" alt="")
+            p.c-assuranceBand__number <strong> 1/ </strong>
+            p Demande de souscription <br/>prise en compte
+          .c-assuranceBand__arrow.icon.icon-carousel-next
+          .c-assuranceBand__elem
+            img.c-assuranceBand__img(src="../images/contrib/01-Page-enmenagement_02.jpg" alt="")
+            p.c-assuranceBand__number <strong> 2/ </strong>
+            p Activation<br/> de votre contrat
+          .c-assuranceBand__arrow.icon.icon-carousel-next
+          .c-assuranceBand__elem
+            img.c-assuranceBand__img(src="../images/contrib/01-Page-enmenagement_01.jpg" alt="")
+            p.c-assuranceBand__number <strong> 3/ </strong>
+            p Contrat activé <br/>Accès à votre Espace Client
+          .c-assuranceBand__arrow.icon.icon-carousel-next
+          .c-assuranceBand__elem
+            img.c-assuranceBand__img(src="../images/contrib/01-Page-enmenagement_01.jpg" alt="")
+            p.c-assuranceBand__number <strong> 3/ </strong>
+            p Contrat activé <br/>Accès à votre Espace Client            
+    // END .c-assuranceBand    
+
+  else if pictoColor
+    // .c-assuranceBand (picto en couleur)
+    .c-assuranceBand.c-assuranceBand--pictoColor.u-padding-spacer
+      .u-bg-grey-light.u-padding-v-40.u-padding-h-20
+        if block
+          block
+        else
+          +headSection({
+            title: "L’Espace Client vous permet de",
+            noLink: true
+          })
+        .c-assuranceBand__wrapper
+          .c-assuranceBand__elem
+            img.c-assuranceBand__img(src="../images/contrib/factures.png" alt="Suivre ma consommation")
+            p Télécharger mes factures
+          .c-assuranceBand__elem
+            img.c-assuranceBand__img(src="../images/contrib/payer.png" alt="Suivre ma consommation")
+            p Payer en ligne
+          .c-assuranceBand__elem
+            img.c-assuranceBand__img(src="../images/contrib/conso.png" alt="Suivre ma consommation")
+            p Suivre ma consommation
+          .c-assuranceBand__elem
+            img.c-assuranceBand__img(src="../images/contrib/gerer.png" alt="Suivre ma consommation")
+            p Gérer mon contrat
+    // END .c-assuranceBand
+
+  else
+    // .c-assuranceBand (images SVG)
+    .c-assuranceBand.c-assuranceBand--hasBorder.l-wrapper--huge.u-padding-spacer
+      .c-assuranceBand__wrapper.u-bg-grey-light.u-padding-a-20
+        .c-assuranceBand__elem
+          img.c-assuranceBand__img(src="../images/contrib/elec2.svg" alt="Electricité écologique" width="50")
+          span.c-assuranceBand__text Elec verte
+        .c-assuranceBand__elem
+          img.c-assuranceBand__img(src="../images/contrib/sansengage.svg" alt="Chaine brisée" width="50")
+          span.c-assuranceBand__text Sans engagement
+        .c-assuranceBand__elem
+          img.c-assuranceBand__img(src="../images/contrib/suividemenage.svg" alt="Camionette de déménagement" width="50")
+          span.c-assuranceBand__text Suivi d'emménagement
+    // END .c-assuranceBand

@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+
+
+
+// IMPORT de COMMON
+@import "../../../../common/src/assets/scss/variables";
+@import "variables"; // variables propres à CEL
+@import "../../../../common/src/assets/scss/mixins";
+@import "../../../../common/src/assets/scss/reset";
+@import "../../../../common/src/assets/scss/base";
+
+/***
+ * Iconfonts:
+ */
+@import "../../../../common/src/assets/scss/icons";
+
+/***
+ * Layout:
+ */
+@import "../../../../common/src/layout/global";
+
+/***
+ * Components:
+ */
+@import "../../components/cel";
+
+
+/***
+ * Utilities:
+ */
+@import "../../../../common/src/utilities/global";
+
+// DEBUG STYLES
+@import "../../../../common/src/assets/scss/debug";

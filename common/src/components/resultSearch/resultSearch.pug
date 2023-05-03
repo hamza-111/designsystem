@@ -1,0 +1,103 @@
+include ../siteHeaderV2/searchBar/searchBar
+include ../btnWrapper/btnwrapper
+include ../tabs/tabs
+
+
+mixin resultSearch
+  .c-resultSearch__searchBar
+    form
+      .c-resultSearch__searchBar__inputs
+        input.c-resultSearch__searchBar__input(type="text" placeholder="Lorem ipsum")
+        button.c-resultSearch__searchBar__submit(type="submit" title="lancer la recherche").c-resultSearch__searchBar__icon.icon.icon-lens
+  
+  .c-resultSearch__result Résultats de recherche pour : <i>"Payer ma facture"</i>
+
+
+mixin resultSearchTabs
+  // .c-tabs
+  section(data-e-tabs='{"mobileSlide": false, "sameHeight": false}').c-resultSearchTabs
+    ul.c-resultSearchTabs__listeTabs
+      li.c-resultSearchTabs__tab
+        a(href='#panel1', data-e-tabs-link='').c-resultSearchTabs__link (5) FAQ
+      li.c-resultSearchTabs__tab
+        a(href='#panel2', data-e-tabs-link='').c-resultSearchTabs__link (0) Article
+    div
+      // .c-tabs__panel
+      #panel1(data-e-tabs-panel='').c-resultSearchTabs__panel
+        div
+          +resultSearchContent({
+            type : "faq"
+          })
+
+      #panel2(data-e-tabs-panel='').c-resultSearchTabs__panel
+        div
+          +resultSearchContent({
+            type : "result"
+          })  
+
+
+
+mixin resultSearchitemResult 
+  .c-resultSearchContent__item 
+    a(href='#').c-resultSearchContent__itemImg
+      img(src="../images/contrib/VISUEL-demenage.png" alt="")
+    .c-resultSearchContent__itemContent
+      h2.c-resultSearchContent__itemTitle
+        a(href='#') Cillum dolore eu fugiat nulla pariatur
+      span.c-resultSearchContent__itemText Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam... 
+        a(href="#").c-resultSearchContent__itemLink Lire +
+      
+      
+
+
+
+mixin resultSearchContent(data)
+  - var data = data || {}
+  - var type = data.type || "warning"
+
+  .l-wrapper.c-resultSearchContent.u-bg-grey-light.u-padding-h-50.u-padding-v-20
+
+    case type
+      when "warning"
+        .c-wysiwyg.u-padding-b-50.u-padding-h-20
+          p.u-textCenter Aucun article ne correspond à votre recherche. <br/>
+            | Consultez nos questions fréquentes sur le sujet ou lancez une autre recherche.
+        +btnWrapper
+          +baseBtn({
+            text: 'Aide et contact',
+          })
+      
+      when "faq"
+        .c-resultSearchContent__faq.u-padding-v-50
+
+          .c-resultSearchContent__bloc
+            .c-resultSearchContent__blocText
+
+              p <i>Les résultats les plus pertinents de notre FAQ</i>
+
+              ul.c-resultSearchContent__faqList.u-padding-b-50
+                li 
+                  a(href="#") Qu’est-ce que l’offre Gaz tarif réglementé ?
+                li 
+                  a(href="#") Comment souscrire à l’offre Gaz tarif réglementé ?
+                li 
+                  a(href="#") Où trouver ma référence client ?
+                li 
+                  a(href="#") Comment puis-je contacter le service client en langue des signes ?
+                li 
+                  a(href="#") Comment souscrire à l’offre Gaz tarif réglementé ?u’est-ce que l’offre Gaz tarif réglementé ?
+
+            img(src="../images/contrib/00-HP-evolution-resultats-de-recherches.jpg" alt="").c-resultSearchContent__faqImg
+
+          +btnWrapper
+            +baseBtn({
+              text: 'Voir tous les résultats sur notre FAQ',
+            })
+
+      when "result"
+        +resultSearchitemResult
+        +resultSearchitemResult
+        +resultSearchitemResult
+        +resultSearchitemResult
+        +resultSearchitemResult
+        +resultSearchitemResult

@@ -1,0 +1,46 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/eTip/eTip
+
+//- Main variables
+block variables
+  - var title          = "connect-issue 02"
+  - var page           = "app"
+  - var bodyClass      = ""
+  - var description    = ""
+  - var noHeaderFooter = true
+  - var headerCel      = 'title'
+  - var footerLight    = true
+  - var demoMode       = true
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  #cel.c-headerLightCelPush.u-margin-small-t-35
+
+    h2.u-heading-2.u-textCenter Sous composant eTip__infoFacture
+
+    +demo
+      +eTip({
+        step : 3
+      }).l-wrapper--large
+
+    h2.u-heading-2.u-textCenter Sous composant selectOptions
+    +demo
+      +selectOptions({
+        noTheme: true
+      }).l-wrapper--large.u-margin-v-30
+        +selectOptionBlock({
+          fontIcon: "icon-mensualisation",
+          textButton : "Lorem ipsuim"
+        })
+          h3.c-selectOptionBlock__title.u-heading-3.u-margin-b-10.u-theme-color my Title
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis a esse fuga! Repellat unde officiis minima qui in! Corrupti, quasi atque laudantium quisquam illum nemo animi harum modi! Quia, atque.
+

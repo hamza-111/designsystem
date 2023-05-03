@@ -1,0 +1,50 @@
+@import "label/label";
+@import "select/select";
+@import "input/input";
+
+
+.c-form__field {
+  margin-bottom: 15px;
+
+  &.has-error {
+    .c-form__feedback:not(:empty) {
+      padding: 5px;
+      margin-top: 15px;
+      background-color: $error-bg;
+      color: $error-color;
+    }
+  }
+}
+
+
+// - css for tel 
+
+.c-formBlocItem, .c-form__BlocItem {
+  display: flex;
+  align-items: center;
+
+  .c-radioMat { margin-right: 10px!important; }
+
+  .icon { 
+    color: $genBlue;
+    font-size: 6rem; 
+    margin-right: 10px;
+    
+    &.icon-homeTR {
+      font-size: 4rem;
+    }
+  }
+}
+
+
+@include media("<=medium") {
+  .c-formBlocItem {
+    width: 100%;
+  }
+}
+
+@include media(">=medium") {
+  .c-formBlocItem {
+    width: 50%;
+  }
+}

@@ -1,0 +1,31 @@
+mixin connexionSocialModal(data)
+
+  - var data = data || {}
+
+  //.c-connexionSocialModal
+  .c-connexionSocialModal
+    .l-wrapper--medium
+      h2.u-heading-2.u-textBold.u-textCenter.u-margin-b-30.u-margin-small-t-30 Modification de votre mode de connexion
+      .c-connexionSocialModal__icon.u-textCenter
+        .icon.icon-compte-bloque.u-fontSize-70
+      p.u-textCenter.u-margin-t-40.u-margin-b-20 L'accès à votre Espace Client avec un compte Facebook ou Google n'est plus pris en charge. 
+      p.u-textCenter.u-margin-b-20.c-connexionSocialModal__desc <b>Pour votre prochaine connexion </b> <span> sur le site ou l'application, utilisez votre <span> e-mail de connexion et votre mot de passe.</span></span>
+    .l-wrapper--medium
+      .c-pictoBlock.is-valid
+        .c-pictoBlock__icon
+          .icon.icon-contact-mail2.u-color-greyMedium2.u-fontSize-70
+          .c-pictoBlock__validIcon.icon.icon-thin_check
+        .c-pictoBlock__content
+          p.u-color-grey E-mail de connexion
+          p
+            b pp.300300300.engie@yopmail.com
+      +btnWrapper().u-theme-genBlue.u-margin-t-30.u-margin-small-t-20
+        +baseBtn({
+          button: true,
+          text: "J'ai compris",
+          hasLoader: true
+        })
+      .c-connexionSocialModal__links.u-textCenter.u-margin-v-30.u-margin-small-v-30
+        a(href="" alt="").u-color-genBlue Mot de passe oublié ? 
+        a(href="" alt="").u-color-genBlue Modifier mon e-mail de connexion ? 
+      

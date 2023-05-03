@@ -1,0 +1,16 @@
+mixin pictoLink(data)
+  - data            = data || {}
+  - text            = data.text || 'Lorem ipsum'
+  - picto           = data.picto || 'icon-camera'
+  - textUnderline   = data.textUnderline || false
+  - pictoAlignRight = data.pictoAlignRight || false
+
+  // .c-pictoLink
+  a.c-pictoLink(
+    href="#"
+    class=textUnderline ? 'c-pictoLink--textDecoration' : ''
+    class=pictoAlignRight ? 'c-pictoLink--iconRight' : ''
+  )&attributes(attributes)
+    span.c-pictoLink__icon.icon.u-theme-color(class=picto)
+    span.c-pictoLink__text.u-theme-color!=text
+  // end .c-pictoLink

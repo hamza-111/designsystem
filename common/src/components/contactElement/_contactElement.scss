@@ -1,0 +1,138 @@
+.c-contactElement {
+  @extend %reset-style-button;
+  text-decoration: none;
+  color: $black;
+  background-color: $white;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  transition: all 0.4s ease;
+  padding: 15px;
+  overflow: hidden;
+  transform: translateZ(0); // fix overflow: hidden issue on Chrome
+  outline: 1px solid $grey-medium2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &.c-contactElement--unavailable {
+    .icon {
+      color: $grey;
+    }
+  }
+
+  .c-btnWrapper {
+    margin-top: 10px;
+  }
+}
+
+// Cacher le webcallback (à la place de u-hide qui a un !important)
+.c-contactElement--hide {
+  display: none;
+}
+
+.c-contactElement__content {
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.c-contactElement__picto {
+  font-size: 5.8rem;
+  line-height: 0.7;
+  transition: all 0.4s ease-in-out;
+  color: $coral;
+  margin-bottom: 15px;
+
+  @include media(">=small", "<=medium") {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.c-contactElement__text {
+  display: block;
+
+  .c-contactElement--noLink & {
+    width: 100%;
+  }
+}
+
+.c-contactElement__title {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.c-contactElement__button {
+  @extend %reset-style-button;
+  color: $coral;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  margin: 0 auto 10px;
+  border-bottom-color: inherit;
+  line-height: 1.5;
+  display: block;
+
+  &.is-active {
+    display: none;
+  }
+}
+
+.c-contactElement__phone {
+  color: $coral;
+  display: inline-block;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  border-bottom: 1px solid transparent;
+}
+
+.c-contactElement__subtitle {
+  margin-top: 5px;
+}
+
+.c-contactElement__legend {
+  font-size: 1.1rem;
+  display: block;
+}
+
+.c-contactElement__icon {
+  color: $coral;
+  font-size: 3.6rem;
+  min-width: 30px;
+  width: 35px;
+  padding-left: 5px;
+  padding-right: 15px;
+  transition: all 0.4s ease;
+  position: relative;
+  line-height: 0.5;
+  float: right;
+}
+
+
+@include media(">=small") {
+  .c-contactElement {
+    padding: 60px 30px;
+
+    .c-btnWrapper {
+      margin-top: 25px;
+    }
+  }
+
+  .c-contactElement__title {
+    min-height: 45px;
+  }
+
+  .js .c-contactElement__phone {
+    display: none;
+
+    &.c-contactElement__phone--isVisible {
+      display: block;
+    }
+
+    &.is-opened {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "serviceNonActive/serviceNonActive";
+@import "autreService/autreService";
+@import "serviceItem/serviceItem";
+@import "serviceActive/serviceActive";
+
+.mesOption .c-siteFooter {
+  padding: 50px 0 0 0;
+  background: white;
+}
+
+@include media("<=large") {
+  .mesOption .c-siteFooter {
+    padding: initial;
+    background: none;
+  }
+}
+

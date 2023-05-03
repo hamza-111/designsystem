@@ -1,0 +1,347 @@
+include ../formMat/formMat
+include ../infoBlock/infoBlock
+include ../column/column
+
+mixin resiliation-step3
+
+  .c-resiliation.l-wrapper(class="u-margin-h-110")
+    fieldset.resiliation-step1
+      h2.u-heading-2(class="u-margin-t-50 u-margin-b-20 u-color-genBlue") 3. Mes coordonnées
+      
+      .u-heading-3.u-color-genBlue.u-margin-b-20.u-margin-t-40 Êtes-vous titulaire du contrat ?
+      
+      .l-wrapper
+        +choiceWrapperMat.c-choiceWrapperMat--hAlign
+          +radioMat({
+            label: 'oui',
+            id: "titulaire_oui",
+            name: 'estTitulaire'
+          })
+          +radioMat({
+            label: 'non',
+            id: "titulaire_non",
+            name: 'estTitulaire'
+          })
+      fieldset 
+        h2.u-heading-3.u-color-genBlue.u-margin-b-20.u-margin-t-40 Coordonnées du titulaire de contrat
+
+        +selectMat({
+          label: 'Civilité*',
+          name:'civiliteTitulaire'
+        })
+          option(value="") je selectionne une réponse
+          option(value="valeur1") M.
+          option(value="valeur2") Mme
+          option(value="valeur3") M. et Mme
+          option(value="valeur4") Mlle
+
+        div.c-wrapForm
+          +inputMat({
+            label: 'Nom*',
+            type: "text",
+            id: "nomTitulaire",
+            name: "nomTitulaire",
+            required: true,
+            placeholder: 'ex : dupont',
+            dataValidation: true
+          })
+
+          +inputMat({
+            label: 'Prénom*',
+            type: "text",
+            id: "prenomTitulaire",
+            name: "prenomTitulaire",
+            required: true,
+            placeholder: 'ex : Micel',
+            dataValidation: true
+          })
+
+        div.c-wrapForm
+          +inputMat({
+            type : 'email',
+            label: 'Adresse e-mail*',
+            placeholder: 'Saisissez votre email',
+            id:'email',
+            name: 'email',
+            required: true,
+            pattern: 'email',
+            dataValidation: {
+              typing: false,
+              validations: {
+                customError: 'Erreur type customError',
+                patternMismatch: 'format de mail incorrect',
+                valueMissing: 'Champs obligatoire'
+              }
+            }
+          })
+
+          +inputMat({
+            type : 'email2',
+            label: 'confirmation adresse e-mail*',
+            placeholder: 'Saisissez votre email',
+            id:'email2',
+            name: 'email2',
+            required: true,
+            pattern: 'email2',
+            dataValidation: {
+              typing: false,
+              validations: {
+                customError: 'Erreur type customError',
+                patternMismatch: 'format de mail incorrect',
+                valueMissing: 'Champs obligatoire'
+              }
+            }
+          })
+
+        div.c-wrapForm
+          +inputMat({
+            type : 'tel',
+            label: 'Téléphone 1*',
+            placeholder: 'Exemple : 0665xxxx',
+            required: true,
+            name:'tel',
+            id:'tel',
+            toolTipLabel: "label",
+            pattern: "tel",
+            dataValidation: {
+              validations: {
+                patternMismatch: 'patternMismatch: Format incorrect'
+              }
+            }
+          })
+
+          +inputMat({
+            type : 'tel',
+            label: 'Téléphone 2',
+            placeholder: 'Exemple : 0165xxxx',
+            maxlength: 5,
+            name:'tel',
+            id:'tel',            
+            pattern: "tel",
+            dataValidation: {
+              validations: {
+                patternMismatch: 'patternMismatch: Format incorrect'
+              }
+            }
+          })
+
+      fieldset 
+        h2.u-heading-3.u-color-genBlue.u-margin-b-20.u-margin-t-40 Adresse du logement à résilier
+
+        div.c-wrapForm
+          +inputMat({
+            label: 'N° rue*',
+            type: "text",
+            id: "numRue_resilier",
+            name: "numRue_resilier",
+            required: true,
+            placeholder: 'ex : 11',
+            dataValidation: true
+          })
+        
+          +checkboxMat({
+            label: 'Mon adresse ne comporte pas de numéro de rue',
+            id: "nonNumeroRue_resilier",
+            name: 'nonNumeroRue_resilier'
+          }).checkboxMat--right  
+
+        div.c-wrapForm
+          +inputMat({
+            label: 'Rue*',
+            type: "text",
+            id: "rue_resilier",
+            name: "rue_resilier",
+            required: true,
+            placeholder: 'ex : 11',
+            dataValidation: true
+          })
+
+          +inputMat({
+            label: 'information complémentaires*',
+            type: "text",
+            id: "infoRue_resilier",
+            name: "infoRue_resilier",
+            required: true,
+            placeholder: 'batiment, étageé appartement',
+            dataValidation: true
+          })
+        div.c-wrapForm
+          +inputMat({
+            label: 'Code Postal*',
+            type: "cp",
+            id: "cp_resilier",
+            name: "cp_resilier",
+            required: true,
+            placeholder: 'ex : 75018',
+            dataValidation: true
+          })
+
+          +inputMat({
+            label: 'Ma commune*',
+            type: "text",
+            id: "commune_resilier",
+            name: "commune_resilier",
+            required: true,
+            placeholder: '',
+            dataValidation: true
+          })
+
+      fieldset 
+        h2.u-heading-3.u-color-genBlue.u-margin-b-20.u-margin-t-40 Rendez-vous de coupure gaz dans le logement à résilier
+
+        p Pour des raisons de sécurité, l’accès au compteur est nécessaire pour que le technicien du distributeur effectue la coupure du gaz.
+
+        h2.u-heading-3.u-color-genBlue.u-margin-b-20.u-margin-t-40 Adresse de facturation
+
+        +choiceWrapperMat.c-choiceWrapperMat--hAlign
+          +radioMat({
+            label: 'France',
+            id: "titulaire_oui",
+            name: 'estTitulaire'
+          })
+          +radioMat({
+            label: 'Etranger',
+            id: "titulaire_non",
+            name: 'estTitulaire'
+          })
+
+
+        +selectMat({
+          label: 'Civilité*'
+        })
+          option(value="") je selectionne une réponse
+          option(value="valeur1") M.
+          option(value="valeur2") Mme
+          option(value="valeur3") M. et Mme
+          option(value="valeur4") Mlle
+
+        div.c-wrapForm
+          +inputMat({
+            label: 'Nom*',
+            type: "text",
+            id: "nomTitulaire",
+            name: "nomTitulaire",
+            required: true,
+            placeholder: 'ex : dupont',
+            dataValidation: true
+          })
+
+          +inputMat({
+            label: 'Prénom*',
+            type: "text",
+            id: "prenomTitulaire",
+            name: "prenomTitulaire",
+            required: true,
+            placeholder: 'ex : Micel',
+            dataValidation: true
+          })
+
+        div.c-wrapForm
+          +inputMat({
+            label: 'N° rue*',
+            type: "text",
+            id: "numRue_resilier",
+            name: "numRue_resilier",
+            required: true,
+            placeholder: 'ex : 11',
+            dataValidation: true
+          })
+        
+          +checkboxMat({
+            label: 'Mon adresse ne comporte pas de numéro de rue',
+            id: "nonNumeroRue_resilier",
+            name: 'nonNumeroRue_resilier'
+          }).checkboxMat--right  
+
+        div.c-wrapForm
+          +inputMat({
+            label: 'Rue*',
+            type: "text",
+            id: "nomRue_resilier",
+            name: "nomRue_resilier",
+            required: true,
+            placeholder: 'ex : 11',
+            dataValidation: true
+          })
+
+          +inputMat({
+            label: 'information complémentaires*',
+            type: "text",
+            id: "nomRue_resilier",
+            name: "nomRue_resilier",
+            required: true,
+            placeholder: 'batiment, étageé appartement',
+            dataValidation: true
+          })
+
+
+      
+        .c-cityMat(
+          data-e-citymat='{"url": "https://particuliers.engie.fr/sloca-ws/distributeur/recherchecommunes/", "wrongZipMessage": "Le code postal ne semble pas correct"}'
+        ).c-form__BlocItem
+          +inputMat({
+            label:        'Code postal',
+            id:           "contact-cp",
+            name:         "CODE_POSTAL",
+            maxlength:    5,
+            pattern:      "cp",
+            required:     true,
+            autoComplete: 'off',
+            placeholder:  'Ex: 75002',
+            dataValidation: {
+              validations: {
+                valueMissing:    'Champs obligatoire',
+                patternMismatch: 'Format incorrect'
+              }
+            }
+          })(data-e-citymat-zip)
+
+          +selectMat({
+            label:       'Commune',
+            id:          "contact-commune",
+            name:        "COMMUNE",
+            placeholder: 'Ex: Votre commune',
+            disabled:    true
+          })(data-e-citymat-city)
+            option(value="") Votre commune
+
+          +inputMat({
+            label:       'Commune',
+            id:          "contact-commune",
+            name:        "COMMUNE",
+            placeholder: 'Ex: Votre commune',
+            disabled:    true,
+            required:    true,
+            dataValidation: {
+              validations: {
+                valueMissing: 'Champs obligatoire'
+              }
+            }
+          })(data-e-citymat-city-fallback hidden)
+
+
+        h2.u-heading-3.u-color-genBlue.u-margin-b-20.u-margin-t-40 Pour faciliter le traitement de votre dossier, vous pouvez laisser un message à votre conseiller.
+
+
+
+        +textareaMat({
+          label:          'Un label',
+          id:             'textareaMat1',
+          name:           'textareaMat',
+          dataValidation: true,
+          maxlength:      220,
+          dataValidation: true,
+          required:       true
+            })
+
+    fieldset.c-formContactUpload.l-wrapper(
+      data-e-formcontact-block={id: id}
+    )
+      +uploadMat2({
+        id: 'contact-upload-file',
+        name: 'contact-upload-file',
+        maxSize: 1048576,
+        accept: "image/jpeg, image/tiff, application/pdf",
+        dataValidation: true
+      })
+    

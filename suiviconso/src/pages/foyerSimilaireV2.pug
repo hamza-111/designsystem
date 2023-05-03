@@ -1,0 +1,27 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/foyerSimilaireV2/foyerSimilaireV2
+
+//- Main variables
+block variables
+  - var title = "Foyers similaires"
+  - var page            = ""
+  - var bodyClass       = ""
+  - var description     = ""
+  //- - var noHeaderFooter  = true
+  - var headerCel       = "fullGradient"
+  - var wrapperSite     = "l-wrapper--siteFull"
+  - var footer          = true
+  - var main          = "large"
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  +foyerSimilaireV2()

@@ -1,0 +1,3206 @@
+@charset "UTF-8";
+
+@import "../../../../common/src/assets/scss/variables";
+
+/* ------------------------------------------------------------------------
+ *
+ * 	SIPS, Worldline e-payment Services
+ *  Main Styles
+ *  12/2013
+ *
+ -------------------------------------------------------------------------*/
+
+.extend-client::after {
+  content: " Société Générale";
+}
+
+
+/* ------------------------------ RESET ---------------------------- */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+article,
+aside,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+figure,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+
+/* --- FONT FACE DECLARATIONS --- */
+
+@font-face {
+  font-display: swap;
+  font-family: 'StagBook';
+  src: url(/load-resource/css/stag-book-webfont.eot?loc=1);
+  /* IE9 Compat Modes */
+  src: url(/load-resource/css/stag-book-webfont.eot?loc=1&#iefix) format("embedded-opentype"), url(/load-resource/css/stag-book-webfont.woff?loc=1) format("woff"), url(/load-resource/css/stag-book-webfont.ttf?loc=1) format("truetype"), url(/load-resource/css/stag-book-webfont.svg?loc=1#svgFontName) format("svg");
+  /* Legacy iOS */
+}
+
+html {
+  // overflow-y: scroll;
+}
+
+article,
+aside,
+figure,
+figcaption,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+}
+
+body {
+  font: 100%/1.3 Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: $black;
+  background: #FFF;
+  -webkit-text-size-adjust: 100%;
+  /* iPhone */
+}
+
+h1 {
+  display: inline-block;
+}
+
+h1 img {
+  width: 100px;
+}
+
+h2 {
+  font: 1.3em Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #c92727;
+  background: transparent;
+  margin: 2em 0 0.5em;
+}
+
+@media screen and (min-width: 1000px) {
+  h2 {
+    margin-top: 0;
+  }
+}
+
+h3 {
+  font: 1em Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #c92727;
+  background: transparent;
+  margin-bottom: 1em;
+  clear: both;
+}
+
+p,
+li,
+dt,
+dd {
+  font-size: 0.75em;
+}
+
+ul,
+ol {
+  padding-left: 21px;
+}
+
+li {
+  line-height: 1.3;
+  padding: 3px 0;
+}
+
+li li {
+  font-size: 100%;
+}
+
+li dt,
+li dd {
+  font-size: 100%;
+}
+
+td p,
+td li {
+  font-size: 100%;
+}
+
+p+ul {
+  margin: 0.5em 0;
+}
+
+code {
+  font-size: 120%;
+}
+
+a,
+a:link {
+  color: $black;
+  background: transparent;
+}
+
+a:visited {
+  color: #333333;
+  background: transparent;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+abbr {
+  border-bottom: 1px dashed #808080;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  display: none;
+}
+
+img {
+  max-width: 100%;
+  border: 0;
+}
+
+div.panel h3 {
+  color: #FFF;
+}
+
+.customMessage1,
+.customMessage2 {
+  clear: both;
+}
+
+#threeDsAfter {
+  display: none;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* --------------------------------- WALLET ---------------------------------- */
+
+
+/* --------------------------------------------------------------------------- */
+
+#wallet_body aside {
+  display: none;
+}
+
+#wallet_body #main:not(:only-child) {
+  float: none;
+}
+
+#wallet_body #wrapper {
+  padding: 0;
+}
+
+#wallet_body ul.k-actions.on-list {
+  width: auto;
+}
+
+#wallet_body .k-actions.on-list li {
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 8%;
+}
+
+#wallet_body .k-choice legend {
+  //margin: 0.5em 0;
+  padding: 0.5em 0;
+  width: 100%;
+  font-size: 12px;
+}
+
+#wallet_body .k-error-messages {
+  margin-bottom: 1px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+#wallet_body .k-confirm-messages {
+  margin-bottom: 1px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+#wallet_body .stressed {
+  margin-left: 1%;
+}
+
+#wallet_body h1 {
+  color: #074e72;
+}
+
+#wallet_body .paymentMeanBrandLogo {
+  vertical-align: middle;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* ----------------------------- PAGE STRUCTURE ------------------------------ */
+
+
+/* --------------------------------------------------------------------------- */
+
+#container {
+  max-width: 1366px;
+  // min-width: 300px;
+  margin: 0 auto;
+}
+
+header[role=banner] {
+  position: relative;
+  padding: 0 5%;
+  margin: 0 auto;
+  border-bottom: 2px solid $black;
+}
+
+header[role=banner] h1::before {
+  content: url(/load-resource/images/logo.svg?loc=1);
+}
+
+header {
+  background: #FFF;
+}
+
+#wrapper {
+  position: relative;
+  background: #FFF;
+  padding: 0;
+}
+
+#wrapper::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+#main,
+aside[role=complementary] {
+  clear: both;
+  margin: 0 auto;
+}
+
+#main {
+  padding-top: 0em;
+}
+
+#main+aside[role=complementary] {
+  padding-top: 0em;
+}
+
+
+/*--- FOOTER ---*/
+
+footer[role=contentinfo] {
+  display: none;
+}
+
+footer[role=contentinfo] p {
+  font-size: 0.55em;
+  text-align: center;
+}
+
+footer[role=contentinfo] p:nth-child(2) {
+  margin: 0.5em 0 1em;
+}
+
+footer[role=contentinfo] p.secured-by {
+  /*background: url(/load-resource/images/logo_securedby.svg?loc=1) no-repeat center center;
+    padding-top: 3em;*/
+}
+
+p.baseline {
+  font-weight: bold;
+  color: #c92727;
+  background: transparent;
+  margin-bottom: 5px;
+}
+
+p.k-copyright {
+  color: #808080;
+  background: transparent;
+}
+
+@media screen and (min-width: 1000px) {
+  #wrapper {
+    padding: 0;
+  }
+  #main:not(:only-child),
+  aside[role=complementary] {
+    clear: none;
+    min-width: 0;
+    padding: 5.5em 0 0;
+  }
+  #main:not(:only-child) {
+    float: right;
+    width: 65%;
+  }
+  aside[role=complementary] {
+    float: left;
+    width: 30%;
+    background: #f3f3f3;
+    padding: 0;
+    margin-top: 5.5em;
+  }
+  #main+aside[role=complementary] {
+    padding-top: 0;
+  }
+  footer[role=contentinfo] {
+    display: table;
+    width: 100%;
+  }
+  footer[role=contentinfo] p {
+    display: table-cell;
+    width: 30%;
+    text-align: left;
+    vertical-align: top;
+    padding: 0 1em;
+  }
+  footer[role=contentinfo] p:nth-child(2) {
+    width: auto;
+    text-align: center;
+    margin: 0;
+  }
+  footer[role=contentinfo] p:last-child {
+    width: 30%;
+    text-align: right;
+  }
+}
+
+#main h2 {
+  margin-top: 0;
+  float: left;
+}
+
+@media screen and (min-width: 1000px) {
+  #main h2 {
+    margin-top: 0;
+  }
+}
+
+aside[role=complementary] {
+  overflow: hidden;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* --------------------------------- FORMS ----------------------------------- */
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* --- DEFAULTS --- */
+
+fieldset {
+  clear: both;
+  margin-bottom: 1em;
+}
+
+fieldset p {
+  padding: 0.5em 0;
+  margin: 0.5em 0;
+  border-top: 0;
+}
+
+legend {
+  font-size: 0.85em;
+  font-weight: bold;
+  color: $black;
+  background: transparent;
+  padding: 0 0 1em;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+
+/* General inputs */
+
+input {
+  font-family: "Droid Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  padding: 10px 0.3em;
+  margin: 0 0 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  box-shadow: none;
+  transition: box-shadow 0.5s;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  background: #FFF;
+  border: none;
+  vertical-align: -0.2em;
+
+  &:disabled {
+    opacity: .5;
+  }
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border: 1px solid $genBlue;
+}
+
+input[type=text]:disabled,
+input[type=text]:disabled:hover {
+  font-style: italic;
+  color: $black;
+  background: #CCC;
+  border-color: #CCC;
+  cursor: default;
+}
+
+select {
+  font-size: 120%;
+  padding: 0;
+  border-radius: 0;
+  border: 1px solid #ccc;
+  height: 30px;
+}
+
+textarea {
+  font-size: 120%;
+  padding: 0 0 2px 2px;
+  border-radius: 0;
+  border: 1px solid #ccc;
+}
+
+[placeholder] {
+  font-style: italic;
+}
+
+
+/* Input comments */
+
+input:focus+[role="tooltip"] {
+  display: block;
+}
+
+[role="tooltip"] {
+  display: none;
+  line-height: 1.1;
+  color: #FFF;
+  background: #cdcdcd;
+  padding: 0.4em 0.6em 0.4em;
+  border-radius: 0;
+  margin: 0 0 0.5em;
+}
+
+
+/* --------- BUTTONS BAR --------- */
+
+.k-buttons-bar {
+  position: relative;
+  clear: both;
+  text-align: left;
+  border: none;
+
+  li {
+    display: inline;
+    font-size: 0.95em;
+    list-style-type: none;
+  }
+
+  p {
+    display: inline;
+  }
+
+  div.secondaryButtons {
+    font-size: 0.70em;
+    display: inline;
+    margin-left: 10px;
+  }
+
+  @media screen and (max-width: 554px) {
+    padding-bottom: 50px;
+    text-align: center;
+  }
+}
+
+
+/* Submit actions */
+input[type=button],
+input[type=submit] {
+  display: inline-block;
+  font-weight: $font-bold;
+  font-size: 18px;
+  color: #FFF;
+  background-color: $green;
+  padding: 20px 30px;
+  margin: 0;
+  border-radius: 0;
+  border: 1px solid $green;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: #FFF;
+    background-color: $green-hover;
+    border: 1px solid $green-hover;
+  }
+
+  &:disabled {
+    text-shadow: none;
+    color: #808080;
+    background-color: #CCC;
+    box-shadow: none;
+    cursor: default;
+  }
+}
+
+
+/* Optional actions */
+input[type=button].optional,
+input[type=submit].optional {
+  color: #FFF;
+  background-color: #808080;
+  transition: background-color .2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: #FFF;
+    background-color: #c92727;
+  }
+}
+
+input[readonly] {
+  border: none;
+}
+
+
+/* Reset Actions */
+input[type=button].reset,
+input[type=reset] {
+  display: inline-block;
+  font-size: 130%;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  background-color: #808080;
+  padding: 0.4em 1.3em 0.5em;
+  margin: 0.5em;
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+
+/* Hover/Focus */
+input[type=button].reset:hover,
+input[type=reset]:hover,
+a.k-button.reset:hover {
+  color: #FFF;
+  background-color: #c92727;
+}
+
+input[type=button]:focus,
+input[type=reset]:focus,
+a.k-button.reset:focus {
+  color: #FFF;
+  background-color: #c92727;
+}
+
+input#aliasfield,
+#cardNumberField {
+  min-width: 260px;
+}
+
+
+/* --------- LINK BUTTONS --------- */
+a[role=button],
+a[role=button]:link,
+a[role=button]:visited,
+a.bt-submit,
+a.bt-reset {
+  display: inline-block;
+  font-size: 18px;
+  text-decoration: none;
+  color: $green;
+  background-color: $white;
+  padding: 20px 30px;
+  margin: 0;
+  border-radius: 0;
+  border: 1px solid;
+}
+
+a.bt-reset,
+a.bt-submit,
+a[role=button] {
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    color: $green-hover;
+    background-color: $grey-light;
+  }
+}
+
+
+a.bt-submit,
+a.bt-submit:link,
+a.bt-submit:visited {
+  color: #FFF;
+  background-color: #c92727;
+}
+
+
+/* ------------------------- FOR TOUCH EVENTS ------------------------------- */
+
+html.flexNav-touch input:not([type=submit]),
+html.flexNav-touch input:not([type=reset]),
+html.flexNav-touch select,
+html.flexNav-touch textarea {
+  font-size: 130%;
+  max-width: 83%;
+}
+
+
+/* -------------------------- ERROR FIELD WITH COMMENT --------------------- */
+
+
+/* Field error */
+input.k-field-error {
+  color: #FFF;
+  background-color: #C00;
+}
+
+label.k-field-error {
+  color: #C00;
+  background-color: #FFF;
+}
+
+
+/* Contextual field error message */
+.k-contextual-error {
+  display: block;
+  font-size: 90%;
+  color: #C00;
+  background: transparent;
+  padding-left: 5px;
+  vertical-align: 4px;
+  margin-top: .5em;
+}
+
+.k-contextual-error:before {
+  content: "? ";
+  font-size: 120%;
+  vertical-align: top;
+}
+
+
+/* -------------------------- CONFIRMATION MESSAGES ------------------------ */
+
+.k-confirm-messages {
+  clear: both;
+  text-align: center;
+  color: #363;
+  background-color: rgba(207, 237, 214, 0.3);
+  background-image: -moz-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(207, 237, 214, 0.4) 5px, rgba(207, 237, 214, 0.4) 20px);
+  background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(207, 237, 214, 0.4) 5px, rgba(207, 237, 214, 0.4) 20px);
+  background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(207, 237, 214, 0.4) 5px, rgba(207, 237, 214, 0.4) 20px);
+  background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(207, 237, 214, 0.4) 5px, rgba(207, 237, 214, 0.4) 20px);
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(207, 237, 214, 0.4) 5px, rgba(207, 237, 214, 0.4) 20px);
+  padding: 0.5em;
+  margin: 1.5em 0;
+}
+
+.k-confirm-messages h3 {
+  color: #363;
+  background: rgba(207, 237, 214, 0.5);
+  margin: 0 0 0.5em;
+}
+
+.k-confirm-messages h3::before {
+  content: "\2611 \00A0 ";
+  font-size: 150%;
+}
+
+.k-confirm-messages .content {
+  background: rgba(207, 237, 214, 0.5);
+  padding: 0.5em;
+}
+
+.k-confirm-messages p {
+  display: block;
+  font-size: 1.1em;
+}
+
+.k-confirm-messages li {
+  list-style-position: inside;
+  font-size: 1.1em;
+}
+
+
+/* -------------------------- ERROR MESSAGES ------------------------ */
+
+.k-error-messages {
+  clear: both;
+  text-align: center;
+  color: #C00;
+  background-color: #FFF;
+  background-image: -moz-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(243, 214, 214, 0.4) 5px, rgba(243, 214, 214, 0.4) 20px);
+  background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(243, 214, 214, 0.4) 5px, rgba(243, 214, 214, 0.4) 20px);
+  background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(243, 214, 214, 0.4) 5px, rgba(243, 214, 214, 0.4) 20px);
+  background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(243, 214, 214, 0.4) 5px, rgba(243, 214, 214, 0.4) 20px);
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(243, 214, 214, 0.4) 5px, rgba(243, 214, 214, 0.4) 20px);
+  padding: 0.5em;
+  margin-bottom: 2em;
+}
+
+.k-error-messages h3 {
+  font-size: 1.5em;
+  color: #C00;
+  background: rgba(243, 214, 214, 0.5);
+  padding: 0.5em;
+  margin: 0 0 0.5em;
+}
+
+.k-error-messages h3::before {
+  display: block;
+  content: "\26A0 \00A0 ";
+  font: 2em "DejaVu Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.k-error-messages .content {
+  background: rgba(243, 214, 214, 0.5);
+  padding: 0.5em;
+}
+
+.k-error-messages p {
+  display: block;
+  font-size: 1.1em;
+}
+
+.k-error-messages li {
+  list-style-position: inside;
+  font-size: 1.1em;
+}
+
+
+/* -------------------------- GROUP OF CHOICES ------------------------ */
+
+
+/* In a fieldset */
+
+.k-choice {
+  //margin-top: 0.5em;
+}
+
+.k-choice legend {
+  width: 100%;
+  font-size: 0.75em;
+  padding: 0.5em 0;
+  margin: 0.5em 0;
+  border-top: 0 solid gray;
+}
+
+.k-choice label {
+  display: inline-block;
+  font-weight: normal;
+}
+
+.k-choice label+label {
+  padding-left: 1em;
+}
+
+.k-choice p {
+  padding: 0;
+  margin-top: 0;
+  border: none;
+}
+
+
+/* Exceptions to paragraphs */
+
+p.k-choice {
+  background: #FFF;
+  padding: 0.5em 1em;
+  margin: 1em 5%;
+}
+
+
+/* --------------- CONTEXTUAL HELP ---------------- */
+
+a[role=button].k-field-help,
+a[role=button]:link.k-field-help,
+a[role=button]:visited.k-field-help {
+  display: inline-block;
+  color: #FFF;
+  background: $genBlue;
+  padding: 3px 10px;
+  margin: 3px 10px;
+  vertical-align: top;
+}
+
+a[role=button].k-field-help img,
+a[role=button]:link.k-field-help img,
+a[role=button]:visited.k-field-help img {
+  display: none;
+}
+
+a[role=button].k-field-help:focus {
+  box-shadow: 0 0 5px #c92727;
+}
+
+
+/* ------------ MEDIA QUERIES ------------ */
+
+@media screen and (min-width: 650px) {
+  .k-buttons-bar {
+    clear: none;
+    text-align: right;
+  }
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* ----------------------------------- TABLES -------------------------------- */
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* --- Payment schedule --- */
+
+#instalmentSchedule {
+  position: relative;
+  padding-top: 2em;
+  top: 1.7em;
+  background-color: #c92727;
+}
+
+#instalmentSchedule .contentTab {
+  max-height: 239px;
+  overflow: auto;
+  margin-bottom: 2.2em;
+}
+
+#instalmentSchedule table {
+  width: 100%;
+}
+
+#instalmentSchedule caption {
+  font-size: 75%;
+  position: absolute;
+  top: -1.7em;
+  width: 100%;
+  text-align: center;
+}
+
+#instalmentSchedule th.amount {
+  min-width: 80px;
+  width: 20%;
+}
+
+#instalmentSchedule th.period {
+  min-width: 90px;
+  width: 30%;
+}
+
+#instalmentSchedule th.amount div {
+  min-width: 80px;
+  width: 17.5%;
+}
+
+#instalmentSchedule th.period div {
+  min-width: 90px;
+  width: 27.5%;
+}
+
+#instalmentSchedule th.ref div {
+  width: 44%;
+}
+
+#instalmentSchedule th {
+  height: 0;
+  line-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: transparent;
+  border: none;
+}
+
+#instalmentSchedule th div {
+  position: absolute;
+  top: 0;
+  font-size: 95%;
+  color: white;
+  font-weight: normal;
+  font-family: "Droid Sans", StagBook, "Lucida Bright", Georgia, serif;
+  text-align: center;
+  padding: .5% 1%;
+  white-space: normal;
+  line-height: 1em;
+}
+
+#instalmentSchedule+div {
+  font-size: 0.75em;
+}
+
+@media screen and (min-width: 480px) {
+  #instalmentSchedule th div {
+    line-height: .9em;
+  }
+}
+
+#instalmentSchedule td {
+  background-color: #f3f3f3;
+  font-size: 70%;
+  padding: .2em 1%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#instalmentSchedule td:first-child {
+  text-align: right;
+}
+
+#instalmentSchedule tr {
+  border-top: 1px solid gray;
+}
+
+#instalmentSchedule tr:first-child {
+  border-top: none;
+}
+
+#instalmentSchedule td {
+  border-left: 1px solid #DDDDDD;
+}
+
+#instalmentSchedule td:first-child {
+  border-left: none;
+}
+
+@media screen and (min-width: 375px) {
+  #instalmentSchedule th.ref div {
+    width: 47%;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  #instalmentSchedule th.ref div {
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  #instalmentSchedule .contentTab {
+    max-height: 256px;
+  }
+  #instalmentSchedule th.ref div {
+    width: 48%;
+  }
+  #instalmentSchedule th div {
+    font-size: 0.95em;
+  }
+  #instalmentSchedule td {
+    font-size: 0.75em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #instalmentSchedule th div {
+    padding: .45em 1%;
+  }
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* ---------------------------------- UTILITIES ------------------------------ */
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* ---- VENDOR LOGO ----- */
+
+p.vendor {
+  background: #FFF;
+  padding-bottom: 1rem;
+}
+
+
+/* ---- MULTIPLE STEPS ----- */
+
+ol.k-form-steps {
+  display: flex;
+  -moz-display: flex;
+  -webkit-display: flex;
+  flex-flow: row;
+  -webkit-flex-flow: row;
+  flex-direction: row;
+  position: relative;
+  clear: both;
+  counter-reset: step;
+  padding: 0;
+  margin: 2em 0 0;
+}
+
+ol.k-form-steps li {
+  position: relative;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  list-style-type: none;
+  font: 0.65em/1 Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-align: center;
+  color: #b3b3b3;
+  background: #eeeeee;
+  padding: 0.5em 0.7em;
+  margin: 10px 5px 0 0;
+}
+
+ol.k-form-steps li::before {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.6em;
+  font-size: 1.3em;
+  content: counter(step);
+  counter-increment: step;
+  text-align: center;
+  color: #eeeeee;
+  background: #cccccc;
+  margin: 0 auto 5px;
+  border-radius: 1.5em;
+  vertical-align: middle;
+}
+
+ol.k-form-steps li.past {
+  color: gray;
+  background: #eeeeee;
+}
+
+ol.k-form-steps li.past::before {
+  color: #eeeeee;
+  background: gray;
+}
+
+ol.k-form-steps li.active {
+  color: #c92727;
+  border: 1px solid #eeeeee;
+}
+
+ol.k-form-steps li.active::before {
+  color: #eeeeee;
+  background: #c92727;
+}
+
+@media screen and (min-width: 520px) {
+  ol.k-form-steps li {
+    font-size: 0.95em;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  ol.k-form-steps {
+    margin: 0 0 2em;
+  }
+  ol.k-form-steps li {
+    margin-top: 0;
+  }
+}
+
+
+/* Exception */
+
+#main:only-child ol.k-form-steps {
+  margin-top: -1em;
+}
+
+
+/* ------- MODAL ------- */
+
+.k-modal {
+  float: left;
+  width: 90%;
+  padding: 2em 5% 1em;
+  margin: 2em 0;
+  border: 1px solid gray;
+}
+
+.k-modal .modal-body .k-buttons-bar {
+  display: none;
+}
+
+.k-modal .modal-body p.close {
+  display: none;
+}
+
+.k-modal .overlay {
+  display: none;
+  position: absolute;
+  display: block;
+  float: none;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  z-index: 1001;
+}
+
+.k-modal.active {
+  position: absolute;
+  display: block;
+  float: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0;
+  margin: 0;
+  border: none;
+  z-index: 1000;
+}
+
+.k-modal.active .overlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.k-modal.active .modal-body {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 90%;
+  background: #FFF;
+  margin-left: -45%;
+  border-radius: 5px;
+  box-shadow: 0 0 3px $black;
+  z-index: 1010;
+}
+
+.k-modal.active .modal-body h3 {
+  padding: 1rem 1rem;
+  margin: 0;
+}
+
+.k-modal.active .modal-body div.content {
+  padding: 1rem;
+}
+
+.k-modal.active .modal-body>p {
+  font-size: 0.65em;
+  line-height: 1.5;
+}
+
+.k-modal.active .modal-body ul.list-images {
+  margin: 1em 10% 0;
+}
+
+.k-modal.active .modal-body .k-buttons-bar {
+  display: block;
+  padding: 0;
+}
+
+.k-modal.active .modal-body p.close {
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: -1.2em;
+  width: auto;
+  font-size: 1em;
+}
+
+.k-modal.active .modal-body p.close a,
+.k-modal.active .modal-body p.close a:link,
+.k-modal.active .modal-body p.close a:visited {
+  display: block;
+  width: 2.2em;
+  height: 2.2em;
+  line-height: 2.2em;
+  text-align: center;
+  color: #FFF;
+  background: #c92727;
+  text-decoration: none;
+  border-radius: 2.2em;
+}
+
+@media screen and (min-width: 650px) {
+  .k-modal.active .modal-body {
+    width: 70%;
+    margin-left: -35%;
+  }
+  .k-modal.active .modal-body h3 {
+    font-size: 1.5em;
+  }
+  .k-modal.active .modal-body>p {
+    font-size: 0.85em;
+  }
+}
+
+
+/* --- LIST OF ACTIONS --- */
+
+ul.k-actions {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.k-actions img {
+  vertical-align: bottom;
+}
+
+ul.k-actions a[role=button],
+ul.k-actions a[role=button]:link,
+ul.k-actions a[role=button]:visited {
+  padding: 5px;
+  margin: 0;
+  border: 1px solid #808080;
+}
+
+ul.k-actions.on-list {
+  position: absolute;
+  width: 3em;
+  top: 0;
+  right: 10px;
+  text-align: right;
+  z-index: 5;
+}
+
+
+/* Parent Container */
+
+.with-action {
+  position: relative;
+}
+
+
+/* --- LIST OF IMAGES --- */
+
+ul.list-images {
+  list-style-type: none;
+  padding: 0;
+  margin: 1em 0;
+}
+
+ul.list-images li {
+  margin: 0.5em 0;
+}
+
+
+/* --- ASIDE DATA --- */
+
+aside.transaction-data {
+  display: none;
+}
+
+
+/* Important aside data */
+
+div.main-data {
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #FFF;
+  background: gray;
+  padding: 0.5em 5%;
+}
+
+div.main-data h3 {
+  font-size: 0.91em;
+  color: $black;
+  margin: 0.1em 0 0.2em;
+}
+
+div.main-data dl {
+  display: table-row;
+  font-weight: bold;
+}
+
+div.main-data dt,
+div.main-data dd {
+  display: table-cell;
+  font-size: 0.8em;
+}
+
+div.main-data dt {
+  padding-right: 1em;
+}
+
+div.main-data dd.amount {
+  font-size: 1em;
+}
+
+div.main-data dd#amount {
+  font-size: 13.6px;
+}
+
+div.main-data::before {
+  position: absolute;
+  bottom: -5px;
+  right: 5%;
+  margin-right: .7em;
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: gray;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+
+
+/* --- DATA SHEET --- */
+
+dl.data-sheet {
+  padding: 0 1em;
+}
+
+@media screen and (min-width: 1000px) {
+  dl.data-sheet {
+    display: block !important;
+  }
+}
+
+dl.data-sheet dt,
+dl.data-sheet dd {
+  font-size: 0.75em;
+}
+
+dl.data-sheet dd {
+  font-weight: bold;
+  padding-bottom: 0.8em;
+  margin: 0.3em 0 0.8em;
+  border-bottom: 1px dotted #808080;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1195px) {
+  dl.data-sheet dd {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (min-width: 650px) and (max-width: 999px) {
+  dl.data-sheet dt,
+  dl.data-sheet dd {
+    float: left;
+    width: 50%;
+  }
+}
+
+dl.data-sheet dt.amount {
+  display: none;
+}
+
+dl.data-sheet dt#amount {
+  display: none;
+}
+
+dl.data-sheet dd.amount {
+  /*font-size: 1.1em;
+    font-weight: bolder;*/
+  display: none;
+}
+
+dl.data-sheet dd#amount {
+  /*font-size: 1.1em;
+    font-weight: bolder;*/
+  display: none;
+}
+
+span.transactionShowMore {
+  position: absolute;
+  right: .2em;
+  top: .06em;
+  height: 1.4em;
+  width: 1.4em;
+  text-align: center;
+  line-height: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 999px) {
+  span.transactionShowMore {
+    display: block;
+  }
+  dl.data-sheet {
+    display: none;
+  }
+}
+
+
+/* --- INTRODUCTORY MESSAGES --- */
+
+.k-intro {
+  margin-bottom: 1em;
+  clear: left;
+  font-size: 0.85em;
+}
+
+
+/* --- IMPORTANT MESSAGES --- */
+
+div.message {
+  float: left;
+  width: 100%;
+  padding-top: 0.3em;
+  margin: 1em 0 0;
+}
+
+div.message p {
+  max-width: 50em;
+  font-size: 0.7em;
+  line-height: 1.4;
+}
+
+div.message strong.stressed {
+  display: block;
+  font-size: 120%;
+  line-height: 1.2;
+  padding-bottom: 1em;
+}
+
+@media screen and (min-width: 650px) {
+  div.message {
+    width: 100%;
+  }
+}
+
+#zoneCoBadgingMessage div.message {
+  border-top: none;
+  padding-top: 0;
+}
+
+#zoneCoBadgingMessage div.message p {
+  margin-top: -1em;
+}
+
+
+/* --- INFO BLOCKS --- */
+
+.k-info-block {
+  margin-bottom: 1em;
+}
+
+.k-info-block h3 {
+  /* color: $secondary_txt;
+    background: $secondary_clr;
+    padding: 0.5em;
+    margin: 0; */
+  display: none;
+}
+
+.k-info-block dl {
+  color: $black;
+  background: #eeeeee;
+  padding: 0.6em 1em;
+  clear: both;
+}
+
+.k-info-block dd {
+  font-weight: bold;
+  padding: 0 0 0.6em;
+  margin: 0.3em 0 0.6em;
+  border-bottom: 1px dotted #808080;
+}
+
+@media screen and (min-width: 650px) {
+  .k-info-block {
+    padding-top: 0.5em;
+    margin: 2em 0 3em;
+    border-top: 4px solid gray;
+  }
+  .k-info-block h3 {
+    color: #c92727;
+    background: #FFF;
+    padding: 0 0 1em;
+  }
+  .k-info-block dl {
+    background: #FFF;
+    padding: 0;
+  }
+  .k-info-block dt,
+  .k-info-block dd {
+    float: left;
+    width: 30%;
+    padding-bottom: 0.3em;
+    margin: 0 0 0.6em;
+    border-bottom: 1px solid #CCC;
+  }
+  .k-info-block dd {
+    width: 70%;
+  }
+  .k-info-block+.message+.k-buttons-bar {
+    margin-top: 5em;
+  }
+  .k-info-block+.message {
+    margin-top: 1rem;
+  }
+}
+
+
+/* --- LANGUAGE CHOICE --- */
+
+form.k-language p {
+  position: absolute;
+  top: 8px;
+  right: 5%;
+  width: 17em;
+  font-size: 0.7em;
+  text-align: right;
+  z-index: 50;
+}
+
+form.k-language select {
+  color: $black;
+  background: #FFF;
+}
+
+
+/* Used with languageFlag plugin */
+
+ul.k-language {
+  position: absolute;
+  top: 12px;
+  right: 5%;
+  width: 15.5em;
+  text-align: right;
+  z-index: 50;
+}
+
+ul.k-language li {
+  display: inline-block;
+}
+
+ul.k-language button {
+  cursor: pointer;
+}
+
+ul.k-language button img {
+  vertical-align: -1px;
+}
+
+ul.k-language button:hover::after,
+ul.k-language button:focus::after {
+  position: absolute;
+  top: -8px;
+  right: 0;
+  content: "";
+  font-size: 0.7em;
+  text-transform: uppercase;
+  color: $black;
+}
+
+ul.k-language button[lang=de]:hover::after,
+ul.k-language button[lang=de]:focus::after {
+  content: "Deutsch Version";
+}
+
+ul.k-language button[lang=en]:hover::after,
+ul.k-language button[lang=en]:focus::after {
+  content: "English Version";
+}
+
+ul.k-language button[lang=fr]:hover::after,
+ul.k-language button[lang=fr]:focus::after {
+  content: "Version Française";
+}
+
+ul.k-language button[lang=es]:hover::after,
+ul.k-language button[lang=es]:focus::after {
+  content: "Versión española";
+}
+
+ul.k-language button[lang=ne]:hover::after,
+ul.k-language button[lang=ne]:focus::after {
+  content: "Nederlandse versie";
+}
+
+
+/* --- LEGAL INFO --- */
+
+#legal-info .content {
+  overflow: auto;
+  max-width: 100%;
+  height: 500px;
+}
+
+
+/* --- LIST OF CARDS --- */
+
+#zoneCoBadgingLogo {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 1.5em;
+}
+
+ul.list-of-cards {
+  text-align: center;
+  padding-left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+ul.list-of-cards li {
+  display: inline-block;
+  width: 50px;
+  list-style-type: none;
+  padding: 0 5px;
+  vertical-align: middle;
+  margin-bottom: .5em;
+}
+
+@media screen and (min-width: 650px) {
+  ul.list-of-cards {
+    float: right;
+    width: auto;
+    margin-bottom: 1em;
+  }
+}
+
+fieldset p.picto-field,
+fieldset div.picto-field {
+  margin-top: 0;
+  border: none;
+}
+
+fieldset div.picto-field {
+  font-size: .75em;
+  padding: 0.5em 0;
+  margin-bottom: 0.5em;
+}
+
+p.picto-field,
+div.picto-field,
+ul.list-of-cards-CbVisa {
+  display: inline-block;
+}
+
+ul.list-of-cards-CbVisa {
+  display: none;
+}
+
+ul.list-of-cards-CbVisa li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+  margin-right: .4em;
+  margin-left: .3em;
+  width: 40px;
+  height: auto;
+}
+
+ul.list-of-cards-CbVisa li img {
+  vertical-align: middle;
+  margin-top: 3px;
+}
+
+
+/* --- MOZAIC --- */
+
+a.mozaic {
+  font-size: .824em;
+  display: block;
+  text-align: center;
+  background: none;
+  margin: .5em 0 .5em .4em;
+  padding: 1px 2px 1px 2px;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+  width: 98%;
+  max-width: 46.6em;
+}
+
+a.mozaic,
+a.mozaic:link,
+a.mozaic:visited {
+  text-decoration: none;
+}
+
+a.mozaic:hover,
+a.mozaic:focus,
+a.mozaic:active {
+  border: 1px solid #a40800;
+}
+
+a.mozaic ul {
+  list-style-type: none;
+  overflow: hidden;
+  display: table;
+  width: 100%;
+  padding: 0;
+}
+
+a.mozaic ul li {
+  display: table-cell;
+  vertical-align: middle;
+  height: 72px;
+  line-height: 72px;
+  padding: 0;
+}
+
+a.mozaic ul li img {
+  vertical-align: middle;
+  width: 51px;
+  height: auto;
+}
+
+ul.mozaic {
+  list-style-type: none;
+  overflow: hidden;
+  width: 100%;
+  max-width: 39.4em;
+  padding: 0;
+  margin: .5em 0;
+}
+
+ul.mozaic li {
+  float: left;
+  vertical-align: middle;
+  height: 72px;
+  line-height: 72px;
+  margin: 0 .4em;
+  width: 23.4%;
+  padding: 0;
+  margin-bottom: .8em;
+}
+
+ul.mozaic li a {
+  border: 1px solid #cccccc;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+ul.mozaic li a:hover,
+ul.mozaic li a:focus,
+ul.mozaic li a:active {
+  border: 1px solid #a40800;
+}
+
+ul.mozaic li a img {
+  vertical-align: middle;
+  width: 51px;
+  height: auto;
+}
+
+a.mozaic.item_10 ul,
+a.mozaic.item_11 ul,
+a.mozaic.item_12 ul,
+a.mozaic.item_12 ul {
+  display: block;
+  text-align: center;
+}
+
+a.mozaic.item_10 ul li,
+a.mozaic.item_11 ul li,
+a.mozaic.item_12 ul li,
+a.mozaic.item_13 ul li {
+  display: inline-block;
+}
+
+a.mozaic.item_10 li,
+a.mozaic.item_11 li,
+a.mozaic.item_12 li,
+a.mozaic.item_13 li {
+  height: 52px;
+  line-height: 52px;
+}
+
+a.mozaic.item_10 ul li,
+a.mozaic.item_11 ul li,
+a.mozaic.item_12 ul li {
+  padding: 0 3%;
+}
+
+a.mozaic.item_13 ul li {
+  padding: 0 2%;
+}
+
+@media screen and (max-width: 699px) {
+  a.mozaic.item_9 ul {
+    display: block;
+    text-align: center;
+  }
+  a.mozaic.item_9 ul li {
+    display: inline-block;
+    padding: 0 4%;
+    height: 52px;
+    line-height: 52px;
+  }
+}
+
+@media screen and (max-width: 612px) {
+  a.mozaic.item_8 ul {
+    display: block;
+    text-align: center;
+  }
+  a.mozaic.item_8 ul li {
+    display: inline-block;
+    padding: 0 6%;
+    height: 52px;
+    line-height: 52px;
+  }
+}
+
+@media screen and (max-width: 608px) {
+  a.mozaic.item_13 ul li {
+    display: inline-block;
+    padding: 0 3%;
+  }
+}
+
+@media screen and (max-width: 586px) {
+  a.mozaic.item_11 ul li {
+    padding: 0 2%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  a.mozaic ul {
+    display: block;
+    text-align: center;
+  }
+  a.mozaic ul li {
+    display: inline-block;
+    padding: 0 7%;
+  }
+  a.mozaic.item_7 ul li,
+  a.mozaic.item_4 ul li {
+    padding: 0 6.5%;
+    height: 52px;
+    line-height: 52px;
+  }
+  a.mozaic.item_6 ul li,
+  a.mozaic.item_5 ul li {
+    height: 52px;
+    line-height: 52px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  a.mozaic.item_9 ul li {
+    padding: 0 7%;
+  }
+  a.mozaic.item_10 ul li {
+    padding: 0 3%;
+  }
+}
+
+@media screen and (max-width: 508px) {
+  a.mozaic.item_7 ul li {
+    padding: 0 4%;
+  }
+  a.mozaic.item_4 ul li {
+    padding: 0 11%;
+  }
+}
+
+@media screen and (max-width: 495px) {
+  a.mozaic.item_11 ul li {
+    padding: 0 4%;
+  }
+}
+
+@media screen and (max-width: 348px) {
+  #zoneCoBadgingLogo {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  a.mozaic.item_7 ul li:nth-child(4),
+  a.mozaic.item_7 ul li:nth-child(6) {
+    padding: 0 4% 0 15%;
+  }
+  a.mozaic.item_7 ul li:nth-child(5),
+  a.mozaic.item_7 ul li:nth-child(7) {
+    padding: 0 15% 0 4%;
+  }
+}
+
+@media screen and (max-width: 323px) {
+  a.mozaic.item_3 ul li {
+    height: 52px;
+    line-height: 52px;
+  }
+}
+
+
+/* --- ORIENTATION AIDS --- */
+
+div.k-orientation-aid p {
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+div.k-orientation-aid a,
+div.k-orientation-aid a:link,
+div.k-orientation-aid a:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: $black;
+  background: #FFF;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0;
+}
+
+div.k-orientation-aid a::before {
+  content: "\25C2 \00A0";
+}
+
+p.go-back {
+  position: relative;
+  top: -1rem;
+  text-align: right;
+}
+
+
+/* ---- LOADER ---- */
+
+.loader {
+  position: relative;
+  font: 1.3em Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-align: center;
+  padding: 0.3rem 0 30px;
+  margin: 2rem;
+  border-top: 3px solid gray;
+}
+
+.loader::before {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: gray;
+  margin-left: -15px;
+  border-radius: 15px;
+  -webkit-animation: load 1s linear 0s infinite alternate;
+  -moz-animation: load 1s linear 0s infinite alternate;
+  -o-animation: load 1s linear 0s infinite alternate;
+  animation: load 1s linear 0s infinite alternate;
+}
+
+.loader::after {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: #c92727;
+  margin-left: -15px;
+  border-radius: 15px;
+  -webkit-animation: loadL 1s linear 0s infinite alternate;
+  -moz-animation: loadL 1s linear 0s infinite alternate;
+  -o-animation: loadL 1s linear 0s infinite alternate;
+  animation: loadL 1s linear 0s infinite alternate;
+}
+
+@keyframes load {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 55%;
+  }
+}
+
+@-webkit-keyframes load {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 55%;
+  }
+}
+
+@-ms-keyframes load {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 55%;
+  }
+}
+
+@-o-keyframes load {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 55%;
+  }
+}
+
+@-moz-keyframes load {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 55%;
+  }
+}
+
+@keyframes loadL {
+  from {
+    left: 55%;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@-webkit-keyframes loadL {
+  from {
+    left: 55%;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@-ms-keyframes loadL {
+  from {
+    left: 55%;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@-o-keyframes loadL {
+  from {
+    left: 55%;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@-moz-keyframes loadL {
+  from {
+    left: 55%;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+
+/* --- GENERAL STYLES --- */
+
+
+/* --- Back to link --- */
+
+a.back-to::after {
+  content: " à l'accueil";
+}
+
+
+/* Stressed text */
+
+.stressed {
+  color: $genBlue;
+  background: transparent;
+}
+
+
+/* Hides content from display */
+
+.k-no-display {
+  position: absolute;
+  overflow: hidden;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+}
+
+div#surchargeSummaryListOfCards {
+  display: none;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* --------------------------------- EDITORIAL ------------------------------- */
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* -------- ARTICLES -------- */
+
+article.k-article h2 {
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+
+article.k-article h3 {
+  font: 1.6em/1.2 Arial, "Helvetica Neue", Helvetica, sans-serif;
+  margin: 1.5em 0 1em;
+}
+
+article.k-article p {
+  font-size: 0.7em;
+  line-height: 1.5;
+  margin-bottom: 0.8em;
+}
+
+article.k-article li {
+  font-size: 0.7em;
+}
+
+article.k-article li li {
+  font-size: 100%;
+}
+
+article.k-article dl {
+  margin: 1em;
+}
+
+article.k-article dt {
+  font-family: "Droid Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+article.k-article dt,
+article.k-article dd {
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+
+article.k-article .content {
+  max-width: 45em;
+}
+
+
+/* -------- FOOTNOTES -------- */
+
+section.footnote {
+  float: left;
+  width: 100%;
+  padding: 1em 0;
+  margin-top: 1em;
+  border-top: 1px dotted #808080;
+}
+
+section.footnote p {
+  font-size: 0.6em;
+  color: #555;
+  background: #FFF;
+  margin: 0 0.5em 0.8em;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* ----------------------------- PAYMENT MODULE ------------------------------ */
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* ---- GENERAL ---- */
+
+
+/* ---- TRANSACTION DATA FORM ---- */
+
+#captureCardForm {
+  position: relative;
+  margin-top: 0;
+  legend {
+    font-size: 18px;
+  }
+  .k-choice legend {
+    font-size: 12px;
+  }
+}
+
+#threeDsBefore {
+  display: none;
+}
+
+#captureCardDetailsH2Title,
+.list-of-cards {
+  display: none;
+}
+
+#captureCardForm div.card-data {
+  border-top: 0 solid gray;
+  margin-top: .4em;
+}
+
+@media screen and (min-width: 650px) {
+  #captureCardForm div.card-data {
+    float: left;
+    width: 48%;
+    min-width: 316px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  #captureCardForm div.conditional {
+    float: none;
+    width: 48%;
+    min-width: 316px;
+  }
+}
+
+@media screen and (min-width: 740px) {
+  #captureCardForm div.conditional {
+    float: right;
+    padding: 0;
+    margin-top: .4em;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #captureCardForm div.conditional {
+    float: none;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  #captureCardForm div.conditional {
+    float: right;
+    margin-top: .4em;
+  }
+}
+
+#captureCardForm div.conditional .k-choice {
+  margin-bottom: 0;
+}
+
+#captureCardForm div.conditional #aliasBlock {
+  margin: 0;
+}
+
+@media screen and (min-width: 1000px) {
+  #captureCardForm {
+    margin-top: 0;
+  }
+}
+
+#captureCardForm div.card-data p:first-child {
+  border-top: none;
+}
+
+@media screen and (min-width: 650px) {
+  #captureCardForm #aliasBlock {
+    width: 95%;
+    padding: 0.5em 2.5% 0 0;
+    margin-top: 0em;
+  }
+  #captureCardForm fieldset.k-choice {
+    margin: 0;
+  }
+  #captureCardForm fieldset.k-choice legend {
+    margin-top: 0;
+  }
+}
+
+#aliasBlock {
+  color: $black;
+  padding: 0.5em 0.8em 0 0;
+  border: none;
+}
+
+
+/* Fields */
+
+#cvvfield {
+  width: 60px;
+}
+
+a[role=button].k-field-help.k-modal-trigger {
+  background: $genBlue;
+  opacity: 1;
+  border-radius: 30px;
+  padding: 3px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 10px;
+  &::before {
+    content: '?';
+  }
+}
+
+
+/* Method of payment */
+
+.method-choice {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.method-choice li {
+  display: inline;
+}
+
+.method-choice a,
+.method-choice a:link,
+.method-choice a:visited {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 23%;
+  height: 50px;
+  text-align: center;
+  padding: 10px;
+  margin: 0 1% 1rem 0;
+  border: 1px solid #CCC;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.method-choice a img,
+.method-choice a:link img,
+.method-choice a:visited img {
+  margin: 0 auto;
+}
+
+.method-choice a:hover {
+  border: 1px solid #c92727;
+}
+
+.method-choice input {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -8px;
+}
+
+.method-choice input[type=checkbox]:focus,
+.method-choice input[type=radio]:focus {
+  outline: none;
+}
+
+.method-choice table {
+  height: 100%;
+}
+
+.method-choice td {
+  vertical-align: middle;
+}
+
+
+/* ---- SAFETY INFO ---- */
+
+div.safety-info {
+  padding: 1em 5% 0;
+  margin-bottom: 1em;
+}
+
+p.threeDSLogo {
+  text-align: center;
+}
+
+@media screen and (min-width: 650px) {
+  p.threeDSLogo {
+    text-align: left;
+  }
+}
+
+p.threeDSLogo img {
+  width: 15%;
+  margin-right: 1em;
+}
+
+
+/* ---- CRYPTOGRAMS - PRESENTATION OF CARDS ---- */
+
+#crypto-info ul.list-images {
+  margin-top: 2em;
+}
+
+#crypto-info ul.list-images li {
+  position: relative;
+}
+
+#crypto-info ul.list-images li:nth-child(1) {
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+
+#crypto-info ul.list-images li:nth-child(2) {
+  -moz-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -webkit-transform: rotate(8deg);
+  transform: rotate(8deg);
+  top: -20px;
+  z-index: 30;
+}
+
+#crypto-info ul.list-images li:nth-child(3) {
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  -webkit-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  top: -30px;
+  z-index: 35;
+}
+
+#cvvHelpText {
+  display: none;
+}
+
+@media screen and (min-width: 570px) {
+  ul.list-images li {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 970px) {
+  #crypto-info ul.list-images {
+    float: left;
+    width: 100%;
+    margin: 2em 0;
+  }
+  #crypto-info ul.list-images li {
+    position: static;
+    float: left;
+    width: 30%;
+    margin: 0 10px;
+  }
+  #crypto-info ul.list-images li:nth-child(1) {
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    -webkit-transform: none;
+    transform: none;
+  }
+  #crypto-info ul.list-images li:nth-child(2) {
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    -webkit-transform: none;
+    transform: none;
+  }
+  #crypto-info ul.list-images li:nth-child(3) {
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+
+/* ---- CARD CHOICE FORM ---- */
+
+.walletPaymentMeansLogos {
+  display: none;
+}
+
+#walletSelectionForm {
+  position: relative;
+
+  > h2:nth-child(2),
+  .on-list > li:first-child,
+  .crypto-data {
+    display: none;
+  }
+
+  .on-list {
+    a[role=button] {
+      border: 0;
+      background: none;
+    }
+
+    img {
+      width: 20px;
+      color: $genBlue;
+    }
+  }
+  .k-choice label {
+    padding: 0 0 0 30px;
+    width: 70%;
+  }
+}
+
+#back,
+#walletSelectionForm .bt-reset.optional {
+  position: absolute;
+  bottom: 15px;
+  padding: 0;
+  font-size: 15px;
+  background: none;
+  transition: color .2s ease-in-out;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  border: none;
+
+  &:hover {
+    color: $green-hover;
+  }
+
+  @media screen and (min-width: 555px) {
+    width: auto;
+    bottom: inherit;
+    left: inherit;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
+
+@media screen and (max-width: 479px) {
+  input#aliasfield,
+  #cardNumberField {
+    width: 200px;
+  }
+
+  #walletSelectionForm {
+    .k-buttons-bar {
+      //padding-bottom: 50px;
+    }
+  }
+}
+
+#walletSelectionForm legend {
+  border-bottom: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  padding: 0 0 20px 0;
+}
+
+#walletSelectionForm strong:not(.stressed) {
+  display: block;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+div.card-choice,
+div.currency-choice {
+  padding: 15px;
+  border-bottom: 1px solid #CCC;
+}
+
+div.card-choice p,
+div.currency-choice p {
+  color: $black;
+  background: #fff;
+}
+
+div.card-choice p.crypto-data,
+div.currency-choice p.crypto-data,
+div.card-choice p.info-data,
+div.currency-choice p.info-data {
+  min-height: 0;
+  background: transparent;
+  padding: 0.7em 0 0 2em;
+}
+
+div.card-choice p.crypto-data input,
+div.currency-choice p.crypto-data input,
+div.card-choice p.info-data input,
+div.currency-choice p.info-data input {
+  width: 2em;
+}
+
+div.card-choice .inline-thumb,
+div.currency-choice .inline-thumb {
+  vertical-align: bottom;
+}
+
+@media screen and (min-width: 650px) {
+  #walletSelectionForm ul.k-actions.on-list {
+    width: auto;
+  }
+  #walletSelectionForm ul.k-actions.on-list li {
+    display: inline-block;
+  }
+  #walletSelectionForm strong:not(.stressed) {
+    display: inline;
+  }
+  div.card-choice p,
+  div.currency-choice p {
+    min-height: 0;
+  }
+}
+
+#change-card-data p+p {
+  margin-top: 1rem;
+}
+
+
+/* ----------------------- CURRENCY CHOICE FORM ------------------- */
+
+#currencySelectionForm {
+  position: relative;
+  padding-top: 10px;
+}
+
+#currencySelectionForm fieldset.k-choice legend {
+  padding-top: 2rem;
+  border: none;
+}
+
+#currencySelectionForm fieldset.k-choice label {
+  display: block;
+}
+
+#currencySelectionForm fieldset.k-choice strong {
+  float: right;
+}
+
+.info-data {
+  font-size: 0.7em;
+}
+
+
+/* ----------------------- KEY PAD WIDGET ------------------- */
+
+.inlineKeypad legend {
+  width: 100%;
+  font-size: 0.75em;
+  padding: 0.5em 0;
+  margin: 0.5em 0;
+  border-top: 1px solid gray;
+}
+
+.keypad-row {
+  text-align: center;
+  background: #eeeeee;
+  padding: 0.3rem;
+  border-bottom: 4px solid #FFF;
+}
+
+.keypad-row button {
+  font-size: 130%;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  background-color: #FFF;
+  padding: 0.3em 0.5em;
+  margin: 0.5em;
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.keypad-row button:hover {
+  color: #FFF;
+  background-color: #c92727;
+}
+
+.keypad-row::after {
+  position: relative;
+  left: 50%;
+  top: 12px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  content: "";
+  background: #FFF;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#cardNumberBlock {
+  text-align: center;
+  background: #eeeeee;
+  border: none;
+  position: relative;
+}
+
+#cardNumberBlock button {
+  background: #CCC;
+  padding: 2px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+#cardNumberBlock button img {
+  vertical-align: bottom;
+}
+
+#card-owner {
+  width: 15rem;
+}
+
+
+/* ---------------------- CAPTCHA ---------------------- */
+
+#captcha-block legend {
+  width: 100%;
+  font-size: 0.75em;
+  padding: 0.5em 0;
+  margin: 0 0 0.5em;
+  border-top: 1px solid gray;
+}
+
+#captcha-block legend+p {
+  border: none;
+}
+
+#captchaField img {
+  display: block;
+  vertical-align: bottom;
+  margin-bottom: 0.5rem;
+}
+
+#captchaField_input {
+  width: 5em;
+}
+
+#refreshCaptchaImg {
+  vertical-align: middle;
+}
+
+.error-banner {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #F00;
+  border: 1px solid #F00;
+  background: url(/load-resource/images/erroricon.gif?loc=1) no-repeat 8px center;
+  padding: 15px 10px 15px 35px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  display: none;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* -------------------------------- INVOICE MODULE --------------------------- */
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* --- SIGNIN PAGE --- */
+
+#signInForm {
+  position: relative;
+  margin-bottom: 2em;
+}
+
+#signInForm legend {
+  padding: 0 3em 1em 0;
+}
+
+#signInForm .k-modal-trigger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+}
+
+
+/* --- SEND BY EMAIL FORM --- */
+
+#send2friend {
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  color: $black;
+  background: #eeeeee;
+  padding: 0.6em;
+  margin: 1rem 0;
+}
+
+#send2friend p {
+  font-size: 0.7em;
+}
+
+#send2friend p:first-of-type {
+  margin-bottom: 0.5rem;
+}
+
+#send2friend label {
+  display: inline-block;
+}
+
+#send2friend input[type=email] {
+  max-width: 20em;
+}
+
+#send2friend input[type=submit] {
+  position: relative;
+  top: -2px;
+  font-size: 100%;
+  padding: 0.4em 1.3em;
+  margin: 0;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* --------------------------------- CUSTOM ---------------------------------- */
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* Include here below all style declarations you wish to modify for your interface */
+
+header[role=banner] h1::before {
+  content: url(/load-resource/images/logo_SG.png?loc=1);
+}
+
+p.vendor {
+  height: 80px;
+  background: url(/load-resource/images/commercant.png?loc=1) no-repeat transparent;
+  position: absolute;
+  width: 205px;
+  right: 3%;
+  z-index: 1000;
+}
+
+
+/* Main Block top border */
+
+#main:only-child {
+  border-top: 4px solid #c92727;
+}
+
+#main> {
+  h2:first-child,
+  h3:nth-child(2) {
+    display: none;
+  }
+}
+
+header[role="banner"] {
+  border-bottom: 0;
+}
+
+
+/* Main Transaction Info - Top bar */
+
+div.main-data {
+  display: none;
+}
+
+div.main-data dl {
+  color: $black;
+}
+
+#merchantName {
+  color: $black;
+  text-shadow: none;
+}
+
+#signInForm .k-modal-trigger {
+  display: none;
+}
+
+
+/* Language choice */
+
+form.k-language select {
+  color: $black;
+}
+
+ul.k-language button:hover::after,
+ul.k-language button:focus::after {
+  color: $black;
+}
+
+[role="tooltip"] {
+  color: $black;
+  background: #EEE;
+}
+
+p.vendor {
+  top: 0.5rem;
+}
+
+form#captureAccountForm label {
+  display: inline;
+  margin-right: 1em;
+}
+
+@media screen and (min-width: 1000px) {
+  footer[role=contentinfo] p {
+    display: inherit;
+    width: inherit;
+    text-align: center;
+    vertical-align: inherit;
+    padding: 0;
+  }
+  footer[role=contentinfo] p:last-child {
+    width: inherit;
+    text-align: center;
+  }
+}
+
+.preprod {
+  text-align: center !important;
+  margin: 0 !important;
+  border-bottom: 2px solid white;
+  font-weight: bold;
+}
+
+.preprod.k-error-messages {
+  clear: both;
+  text-align: center;
+  color: #C00;
+  background-color: #FFF;
+  background-image: -moz-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(243, 214, 214, 0.4) 5px, rgba(243, 214, 214, 0.4) 20px);
+  background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(243, 214, 214, 0.4) 5px, rgba(243, 214, 214, 0.4) 20px);
+  background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(243, 214, 214, 0.4) 5px, rgba(243, 214, 214, 0.4) 20px);
+  background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(243, 214, 214, 0.4) 5px, rgba(243, 214, 214, 0.4) 20px);
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(243, 214, 214, 0.4) 5px, rgba(243, 214, 214, 0.4) 20px);
+  padding: 0.5em;
+  margin-bottom: 2em;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+/* ------------------------------- PRINT STYLES --------------------------- */
+
+
+/* --------------------------------------------------------------------------- */
+
+@media print {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    page-break-after: avoid;
+  }
+  figure {
+    page-break-inside: avoid;
+  }
+  h1::before {
+    font: 12px Arial, "Helvetica Neue", Helvetica, sans-serif;
+    content: "Société Générale";
+  }
+  h2 {
+    font-size: 18px;
+  }
+  h2:first-of-type {
+    text-align: center;
+  }
+  /* --- CONTENT NOT TO PRINT --- */
+  #main,
+  .k-buttons-bar,
+  div.message,
+  ol.k-form-steps,
+  .k-language,
+  #send2friend,
+  h1 img {
+    display: none;
+  }
+  /* --- GENERAL --- */
+  aside[role=complementary] {
+    float: none;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 20px;
+    border-top: 4px solid #999;
+  }
+  aside[role=complementary] h2 {
+    font-size: 18px;
+  }
+  div.main-data {
+    position: static;
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 1px solid #999;
+  }
+  div.main-data #merchantName {
+    font-family: "Droid Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: $black;
+    margin: 0 0 0.5em;
+    text-shadow: none;
+    font-size: 0.75em;
+  }
+  div.main-data #amount {
+    font-size: 0.75em;
+  }
+  div.main-data::before {
+    display: none;
+  }
+  .k-info-block {
+    padding: 0;
+    margin: 0;
+  }
+  .k-info-block dl {
+    padding: 0;
+    margin: 20px 0;
+  }
+  .k-info-block dd {
+    padding-bottom: 7px;
+    border-bottom: 1px solid #CCC;
+  }
+  /* --- INVOICE ONLY --- */
+  #invoice #main {
+    display: block;
+  }
+  #invoice aside[role=complementary] {
+    display: none;
+  }
+  /* --- Payment schedule --- */
+  #main.print {
+    display: block;
+  }
+  #main.print .customMessage1,
+  #main.print .customMessage2,
+  #main.print h2,
+  #main.print .k-confirm-messages,
+  #main.print .customMessage3,
+  #main.print .k-buttons-bar {
+    display: none;
+  }
+  #instalmentSchedule {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    top: inherit;
+    background-color: transparent;
+  }
+  #instalmentSchedule .contentTab {
+    max-height: inherit;
+    overflow: auto;
+    margin-bottom: 1em;
+  }
+  #instalmentSchedule caption {
+    position: relative;
+    top: inherit;
+    margin-top: .7em;
+    margin-bottom: .9em;
+  }
+  #instalmentSchedule thead {
+    background-color: #3a7cad;
+  }
+  #instalmentSchedule thead th {
+    height: auto;
+    line-height: inherit;
+    color: #FFF;
+  }
+  #instalmentSchedule th.period,
+  #instalmentSchedule th.amount,
+  #instalmentSchedule th.ref {
+    width: auto;
+    min-width: inherit;
+  }
+  #instalmentSchedule th div {
+    position: relative;
+    top: inherit;
+    padding: .5em 1%;
+  }
+  #instalmentSchedule th.period div,
+  #instalmentSchedule th.amount div,
+  #instalmentSchedule th.ref div {
+    width: auto;
+    min-width: inherit;
+  }
+}

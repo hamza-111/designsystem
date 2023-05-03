@@ -1,0 +1,76 @@
+include accordion
+include ../wysiwyg/wysiwyg
+
+.c-wysiwyg
+  h2 ACCORDEON
+
++demo()
+  +accordion({
+    alone: true
+  })
+    +accordion-tab('tab1', {
+        opened: true,
+        tag: 'h2'
+      })
+      span.c-accordion__label.u-fontSize-large Tab 1
+      span.icon.icon-chevron-right
+    +accordion-panel('tab1')
+      +wysiwyg
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus similique assumenda repudiandae minima nisi ea, placeat aperiam delectus aut neque quos accusamus omnis quod veniam, magni, nesciunt ducimus eligendi consequuntur!
+
+    +accordion-tab('tab2', {
+        tag: 'h2'
+      })
+      span.c-accordion__label.u-fontSize-large Tab 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      span.icon.icon-chevron-right
+    +accordion-panel('tab2')
+      +wysiwyg
+        p Lorem ipsum dolor sit amet, <a href="#inside">consectetur adipisicing</a> elit. Doloribus similique assumenda repudiandae minima nisi ea, placeat aperiam delectus aut neque quos accusamus omnis quod veniam, magni, nesciunt ducimus eligendi consequuntur!
+
+    +accordion-tab('tab3', {
+        tag: 'h2'
+      })
+      span.c-accordion__label.u-fontSize-large Tab 3
+      span.icon.icon-chevron-right
+    +accordion-panel('tab3')
+      +wysiwyg
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus similique assumenda repudiandae minima nisi ea, placeat aperiam delectus aut neque quos accusamus omnis quod veniam, magni, nesciunt ducimus eligendi consequuntur!
+
+        a(href="#next") consectetur adipisicing
+
+.c-wysiwyg
+  h2 ACCORDEON sans CSS
+
++demo({
+  desc: "accrodeon sans style et avec l'option <code>multiselectable :false</code> "
+})
+  +accordion({
+    alone: false,
+    settings : '{"multiselectable": false}'
+  })
+    +accordion-tab('tab1', {
+        opened: true,
+        tag: 'h2'
+      })
+      span Tab 1
+
+    +accordion-panel('tab1')
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus similique assumenda repudiandae minima nisi ea, placeat aperiam delectus aut neque quos accusamus omnis quod veniam, magni, nesciunt ducimus eligendi consequuntur!
+
+    +accordion-tab('tab2', {
+        tag: 'h2'
+      })
+      span Tab 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+    +accordion-panel('tab2')
+      p Lorem ipsum dolor sit amet, <a href="#inside">consectetur adipisicing</a> elit. Doloribus similique assumenda repudiandae minima nisi ea, placeat aperiam delectus aut neque quos accusamus omnis quod veniam, magni, nesciunt ducimus eligendi consequuntur!
+
+    +accordion-tab('tab3', {
+        tag: 'h2'
+      })
+      span Tab 3
+
+    +accordion-panel('tab3')
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus similique assumenda repudiandae minima nisi ea, placeat aperiam delectus aut neque quos accusamus omnis quod veniam, magni, nesciunt ducimus eligendi consequuntur!
+
+      a(href="#next") consectetur adipisicing

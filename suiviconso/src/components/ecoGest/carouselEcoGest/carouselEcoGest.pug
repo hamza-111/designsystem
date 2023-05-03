@@ -1,0 +1,150 @@
+include ../../../../../common/src/components/carousel/carousel
+include ../itemEcoGest/itemEcoGest
+
+mixin carouselEcoGest(data)
+  - var data = data || {}
+  - var vide = data.vide || false
+  - var anchor = data.anchor || "tab"
+
+  // c-carouselEcoGest
+  .c-carouselEcoGest&attributes(attributes)
+    .c-carouselEcoGes__slideContainer
+      +carousel({
+            singleNav: 'c-carouselNav--arrowDots',
+            settings: {
+              autoplay: false,
+              infinite : false,
+              arrows:         true,
+              dots:           false,
+              slidesToShow:   6,
+              prevArrow: '<div class="slick-prev"><button type="button"><span class="icon icon-carousel-prev"></span><span class="u-visibilityHidden">Précédent</span></button></div>',
+              nextArrow: '<div class="slick-next"><button type="button"><span class="icon icon-carousel-next"></span><span class="u-visibilityHidden">Suivant</span></button></div>',
+              slidesToScroll: 3,
+              adaptiveHeight: false,
+              mobileFirst : true,
+              centerMode: false,
+              centerPadding: '20px',
+              responsive: [
+                {
+                  breakpoint: 1025,
+                  settings: {
+                    slidesToShow: 6,
+                    draggable : false,
+                    infinite : false,
+                    slidesToScroll: 3,
+                    dots: false
+                  }
+                },
+                {
+                  breakpoint: 767,
+                  settings: {
+                    slidesToShow: 3,
+                    infinite : true,
+                    slidesToScroll: 2,
+                    arrows: false,
+                    centerPadding: '100px',
+                    centerMode: true
+                  }
+                },
+                {
+                  breakpoint: 400,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite : true,
+                    arrows: false,
+                    centerPadding: '100px',
+                    centerMode: true
+                  }
+                },
+                {
+                  breakpoint: 360,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite : true,
+                    arrows: false,
+                    centerPadding: '85px',
+                    centerMode: true
+                  }
+                },
+                {
+                  breakpoint: 320,
+                  settings: {
+                    slidesToShow: 1,
+                    infinite : true,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    centerPadding: '60px',
+                    centerMode: true
+                  }
+                },
+                {
+                  breakpoint: 0,
+                  settings: {
+                    slidesToShow: 1,
+                    infinite : true,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    centerPadding: '10px',
+                    centerMode: true
+                  }
+                }
+
+              ]
+            }
+          })( class=!vide?'':'u-hide' ).c-tabs__pannels.l-wrapper--large
+
+            +itemEcoGest({
+              active : " ",
+              tab : anchor+"1"
+            })
+
+            +itemEcoGest({
+              tab : anchor+"2"
+            })
+
+            +itemEcoGest({
+              active : " ",
+              tab : anchor+"3"
+            })
+
+            +itemEcoGest({
+              active : " ",
+              tab : anchor+"4"
+            })
+
+            +itemEcoGest({
+              active : " ",
+              tab : anchor+"5"
+            })
+
+            +itemEcoGest({
+              active : " ",
+              tab : anchor+"6"
+            })
+
+            +itemEcoGest({
+              active : " ",
+              tab : anchor+"7"
+            })
+
+            +itemEcoGest({
+              active : " ",
+              tab : anchor+"8"
+            })
+
+            +itemEcoGest({
+              active : " ",
+              tab : anchor+"9"
+            })
+
+            +itemEcoGest({
+              active : " ",
+              tab : anchor+"10"
+            })
+
+            +itemEcoGest({
+              active : " ",
+              tab : anchor+"11"
+            })

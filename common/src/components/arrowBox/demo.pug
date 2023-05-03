@@ -1,0 +1,126 @@
+include arrowBox
+include ../formMat/radioSwitchMat/radioSwitchMat
+
+//- +adressBox
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant arrowBox
+
++demo({
+  desc: `
+    - Flèche en bas par défaut<br/>
+    - Ajouter au composant <code>c-arrowBox</code> la classe <code>c-arrowBox--largePadding</code> pour des marges internes larges
+  `
+})
+  +arrowBox({
+    largePadding: true
+  }).u-textCenter
+    div
+      img(src='../images/contrib/vente_map.png' alt="")
+
+    p.u-margin-small-t-10.u-margin-t-20: strong 24 rue Denfert-Rochereau, 75014 Paris
+
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant avec thème bleu flèche en haut
+
++demo({
+  desc: `
+    - Ajout de couleur du thème en ajoutant les classes <code>u-theme-bg</code> et <code>u-theme-color</code> sur <code>c-arrowBox</code> pour positionner la flèche en haut du bloc<br/>
+    - Ajout de la classe <code>c-arrowBox--arrowTop</code> sur <code>c-arrowBox</code> pour positionner la flèche en haut du bloc<br/>
+    - Encore en plus, ajouter la classe <code>c-arrowBox--arrowDirLeft</code> ou <code>c-arrowBox--arrowDirRight</code> pour positionner la flèche à gauche ou à droite
+  `
+})
+  +arrowBox({
+    hasTheme: true
+  }).c-arrowBox--arrowTop
+    | Flèche en haut
+
+  .u-margin-t-30
+
+  +arrowBox({
+    hasTheme: true
+  }).c-arrowBox--arrowTop.c-arrowBox--arrowDirLeft
+    | Flèche à gauche
+
+  .u-margin-t-30
+
+  +arrowBox({
+    hasTheme: true
+  }).c-arrowBox--arrowTop.c-arrowBox--arrowDirRight
+    | Flèche à droite
+
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant avec thème custom
+
++demo({
+  desc: `Ajout de thème en ajoutant la classe prévue au composant <code>c-arrowBox</code>`
+})
+  +arrowBox({
+    customTheme: 'magentaLight'
+  }).c-arrowBox--arrowTop
+    | Magenta Light
+
+  .u-margin-t-30
+
+  +arrowBox({
+    customTheme: 'genBlueLight'
+  }).c-arrowBox--arrowTop
+    | Genblue Light
+
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant bloc d'image
+
++demo({
+  desc: `
+    - Ajout d'espace destiné à une image à gauche du composant en ajoutant la classe <code>c-arrowBox--imageLeft</code><br/>
+    OU<br/>
+    - Ajout d'espace destiné à une image à droite du composant en ajoutant la classe <code>c-arrowBox--imageRight</code><br/>
+    L'image de background est assurée par l'attribut <code>data-ab-interchange</code> (voir HTML)
+  `
+})
+  +arrowBox({
+    imgLeft: "[../images/contrib/illu-facture-mobile.png, small], [../images/contrib/illu-facture-desktop.png, medium]"
+  }).c-arrowBox--arrowTop
+    p Vous recevrez tous les deux mois une facture sur la base de vos consommations.
+    p Le montant sera prélevé 14 jours après la date d'émission de votre facture.
+
+  .u-margin-t-30
+
+  +arrowBox({
+    imgRight: "[../images/contrib/ill-mensualisation-mobile.png, small], [../images/contrib/ill-mensualisation-desktop.png, medium]"
+  }).c-arrowBox--arrowTop
+    p Vous recevrez tous les deux mois une facture sur la base de vos consommations.
+    p Le montant sera prélevé 14 jours après la date d'émission de votre facture.
+
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Flèche adaptée au switch
+
++demo({
+  desc: 'En plus de <code>c-arrowBox--arrowTop</code> ajouter la classe <code>c-arrowBox--switchLeft</code> ou <code>c-arrowBox--switchRight</code> au composant <code>c-arrowBox</code>'
+})
+
+div.u-textCenter
+  +radioSwitchMat({
+    label1: 'Mensuel',
+    label2: 'Tous les deux mois',
+    id1: 'switchMat1',
+    id2: 'switchMat2',
+    name: 'checkboxMat',
+    theme: 'genBlue'
+  })
+  +arrowBox({
+    hasTheme: true
+  }).c-arrowBox--arrowTop.c-arrowBox--switchLeft.u-margin-t-15
+    |  Je maîtrise mon budget, mes paiements sont lissés sur 11 mois !<br> Estimation de mes mensualités : 65€ <sup>TTC</sup> / mois
+
+div.u-textCenter.u-margin-small-t-40.u-margin-t-40
+  +radioSwitchMat({
+    label1: 'Mensuel',
+    label2: 'Bimensuel',
+    id1: 'switchMat3',
+    id2: 'switchMat4',
+    name: 'checkboxMat2',
+    theme: 'genBlue'
+  })
+  +arrowBox({
+    hasTheme: true
+  }).c-arrowBox--arrowTop.c-arrowBox--switchRight.u-margin-t-15
+    |  Je maîtrise mon budget, mes paiements sont lissés sur 11 mois !<br> Estimation de mes mensualités : 65€ <sup>TTC</sup> / mois

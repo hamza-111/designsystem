@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+@import "variables";
+@import "mixins";
+
+$colors-promo-map: (
+  orange:  $orange,
+  red:     $red,
+
+  genBlue: $genBlue, // principal
+  green:   $green, // principal
+);
+
+#CQ {
+  A,
+  SPAN,
+  DIV {
+    @import "../../utilities/scss/color";
+  }
+
+  // pour visualiser le bug des styles appliqués par le RTE
+  [style*="tahoma"] {
+    background-color: rgba(255, 0, 0, 0.5);
+  }
+
+  .x-color-palette {
+    a {
+      border-color: #ddd;
+
+      span {
+        padding: 12px !important;
+        display: block !important;
+      }
+    }
+
+    @each $name, $value in $colors-promo-map {
+      .#{$name} {
+        background-color: map-get($colors-promo-map, $name);
+      }
+
+      .u-bg-#{$name} {
+        background-color: map-get($colors-promo-map, $name);
+      }
+    }
+  }
+
+  .u-list__item:before {
+    left: 20px;
+  }
+
+  .cui-rte-scd-table {
+    width: 100%;
+    table-layout: fixed;
+  }
+}

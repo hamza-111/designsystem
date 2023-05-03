@@ -1,0 +1,42 @@
+
+mixin btnGraph(data)
+  - var data = data||{}
+  - var gazPar = data.gazPar || false
+  - var target = data.target || "graph"
+  - var text = data.text || "Bientôt disponible"
+  - var newds = data.newds || false 
+
+  // .c-btnGraph
+  .c-btnGraph#scMonoGazpar_idFilters(class=newds ? "c-btnGraph--ds" : "")
+    span.c-btnGraph__topTitre Comprendre
+    .c-btnGraph__allComponent
+      .c-btnGraph__allTitle
+        span.c-btnGraph__downTitre L'évolution 
+          span de ma consommation
+
+        +toolTipV2()(data-e-modal-open=target).c-btnGraph--tooltipSurcharge
+        +modal({
+            target: '{"target": "'+target+'"}'
+        })
+      .c-btnGraph__allBtn#scMonoGazpar_idFiltreUnit
+          if !gazPar
+            button.c-btnGraph__detail#scMonoGazpar_btn_Filtre_kWh.c-btnGraph__active(type="button")
+              span mois
+              
+            button.c-btnGraph__detail#scMonoGazpar_btn_Filtre_kWh( type="button" data-e-tooltipPopper={"text":''+text +'' , "position" : "bottom"})
+              span jour
+
+            .c-btnGraph__separation
+
+          if !gazPar
+            button.c-btnGraph__detail#scMonoGazpar_btn_Filtre_kWh.c-btnGraph__active(type="button")
+              span kwh
+            button.c-btnGraph__detail#scMonoGazpar_btn_Filtre_m3(type="button")
+              span m<sup>3</sup>
+            button.c-btnGraph__detail#scMonoGazpar_btn_Filtre_euro(type="button")
+              span euros
+          else
+            button.c-btnGraph__detail#scMonoGazpar_btn_Filtre_kWh.c-btnGraph__active(type="button")
+              span kWh
+            button.c-btnGraph__detail#scMonoGazpar_btn_Filtre_m3(type="button")
+              span m<sup>3</sup>

@@ -1,0 +1,166 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title         = "demo etape 2: Offres"
+  - var page          = "tel"
+  - var bodyClass     = ""
+  - var description   = "Module étape 2"
+  - var noHeaderFooter = true
+  //- var headerLight   = true
+  - var footerLight   = true
+
+//- CSS (haut) pour cette page
+block CSS
+  link(rel="stylesheet" href="../css/tel.css")
+
+//- JS (bas) pour cette page
+block JS
+  script(src="../js/bas/demo.js")
+
+
+//- Page content
+block content
+  #telv3.c-headerLightPush
+    +headerLight
+    +timeLine({
+      type:  "progressBar",
+      currentStep: 2,
+      stepWording: ['Critères', 'Offres', 'Souscription', 'Validation']
+    })
+
+    +stickyDock
+
+    div(data-e-side-menu-wrapper)
+
+      +sideMenu({
+        settings: {
+          target: 'menuFilter',
+          sideContent: 'contentFilter',
+          preventScroll: true,
+          classToOpen: 'is-tunnelFilter-open',
+          classToClose: 'is-tunnelFilter-close',
+          runsOnDesktop: false
+        }
+      }).c-tunnelFilterSideMenu.u-bg-grey-light
+        .l-wrapper--large.u-padding-h-15
+          +tunnelFilter({
+            sideMenuTarget: 'menuFilter'
+          })
+            +dropdownNav
+              +dropdownElem({
+                contentText: "Je déménage",
+                iconName: 'iconVente-move',
+                hasArrow: true,
+                settings: {
+                  target: 'dropdown1'
+                }
+              })
+                +dropdownElem({
+                  contentText: "Je change d'offre",
+                  iconName: 'iconVente-change-offer'
+                })
+
+              +dropdownElem({
+                contentText: "Electricité et gaz",
+                iconName: 'iconVente-elec-gaz',
+                hasArrow: true,
+                settings: {
+                  target: 'dropdown2'
+                }
+              })
+                +dropdownElem({
+                  contentText: "Electricité",
+                  iconName: 'iconVente-elec'
+                })
+                +dropdownElem({
+                  contentText: "Gaz",
+                  iconName: 'iconVente-gaz'
+                })
+
+              +dropdownElem({
+                contentText: "Un appartement",
+                iconName: 'iconVente-appart',
+                hasArrow: true,
+                settings: {
+                  target: 'dropdown3'
+                }
+              })
+                +dropdownElem({
+                  contentText: "Une maison",
+                  iconName: 'iconVente-home'
+                })
+
+      .c-sideMenuSibling.l-wrapper--large(data-e-side-menu-content='contentFilter')
+        .u-margin-b-20.u-margin-t-40
+          h2.u-heading-2.u-textCenter.u-margin-b-40
+            +tunnelFilterButton({
+              buttonTarget: 'menuFilter',
+              openButton: true,
+              iconName: 'icon-menu-critere'
+            }).u-hideLargeUp
+            | Choisir mon offre
+
+          p.u-textCenter.u-margin-b-10.u-margin-small-b-10.u-fontSize-small
+            | J'ai un compteur communiquant <span class="u-textUppercase">Linky</span><sup>TM</sup>
+            = " "
+            +toolTip({
+              labelText: "Qu'est ce que c'est",
+              labelClass: 'u-hideSmall',
+              valignMid: true,
+              modalTarget: 'modal1'
+            }).u-margin-l-10.u-margin-small-l-0
+          +modal({
+            target: '{"target": "modal1"}'
+          })
+
+          p.u-textCenter
+            +radioSwitchMat({
+              label1: 'Oui',
+              label2: 'Non / Ne sais pas',
+              id1: 'linky-yes',
+              id2: 'linky-no',
+              name: 'asLinky',
+              theme: 'genBlue'
+            })
+
+        .u-margin-b-20
+          +estimationBox({
+            settings: {
+              target: "estimationMod"
+            }
+          })
+
+        .u-margin-b-20
+          +offer({
+            promo: true
+          })
+            +priceDetail({
+              toggleSettings: {
+                target: "detail-1"
+              }
+            })
+
+        .u-margin-b-25
+          +offer({
+            name: "Elec"
+          })
+            +priceDetail({
+              fullElec: true,
+              toggleSettings: {
+                target: "detail-2"
+              }
+            })
+
+        .u-margin-b-25
+          p.u-textCenter.u-color-grey
+            | Opter pour le
+            = " "
+            a.u-link.u-link--revert.u-color-grey(href="#") Tarif Règlementé
+
+        .u-margin-b-40
+          +assuranceBand

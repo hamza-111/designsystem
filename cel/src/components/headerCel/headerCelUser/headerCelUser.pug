@@ -1,0 +1,30 @@
+include ../../../../common/src/components/btnWrapper/btnWrapper
+
+
+mixin headerCelUser
+  // .c-headerCelUser
+  .c-headerCelUser
+    button.c-headerCelUser__btn(
+      type="button"
+      data-e-toggle='{"target": "headerCel-userDetail", "autoClose": true, "blockScroll": true}'
+    )
+      p.c-headerCelUser__name.u-hideSmall Jean-François & Marie-Françoise
+      span.icon.icon-identity
+
+    +headerCelLayer({target: "headerCel-userDetail"}).c-headerCelLayer--desktop.c-headerCelUser__layer(data-e-toggle-target='headerCel-userDetail')
+      .u-hideMediumUp
+        span.icon.icon-identity.c-headerCelUser__layerIcon
+        p.c-headerCelUser__layerName Jean-François & Marie-Françoise
+
+      p Ref. Client&nbsp;: 68769234
+      p N° contrat&nbsp;:
+        = " "
+        a(href="#") 68769234
+
+      +btnWrapper
+        +baseBtn({
+          text: 'Déconnexion',
+          secondary: true
+        })
+  // END .c-headerCelUser
+

@@ -1,0 +1,73 @@
+include eTipFormIBAN/eTipFormIBAN
+include ../../../../common/src/components/selectOptions/selectOptions
+
+mixin eTipInfo(data)
+  - var data = data || {}
+  - var title = data.title || "Votre titre"
+  - var texte = data.texte || "Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+
+  .l-wrapper.u-textCenter
+    p.u-color-grey
+      span.icon.icon-cadenas-ferme.u-margin-r-15
+      | Paiement en ligne 100% sécurisé
+    h1.u-heading-2.u-margin-v-30!=title
+    p.u-fontSize-large!=texte
+
+mixin eTip(data)
+  - var data = data || {}
+  - var step = data.step || 0
+
+  .c-eTip
+    if step === 1
+      +eTipInfo({
+        title: "Sélectionnez l(IBAN sur lequel vous souhaitez être prélevé le XX/XX/XXXX pour :",
+        texte: "Votre dernière facture du XX/XX/XXXX : 39,57€ TTC"
+      })
+
+      +formMat()(data-e-form-validation='{"switchBtnState": false}').u-margin-t-40
+        +eTipFormIBAN().l-wrapper--medium
+
+    else if step === 2
+
+      +eTipInfo({
+        title: "Consultation et signature de votre montant SEPA pour :",
+        texte: "Votre dernière facture du XX/XX/XXXX : 39,57€ TTC"
+      })
+
+      +formMat()(data-e-form-validation='{"switchBtnState": true}').u-margin-b-40
+
+        +btnWrapper()
+          +baseBtn({
+            text: "consultez le mandat",
+            iconRight: "icon-bold-download",
+            empty: true
+          })
+
+        p.u-color-grey.u-margin-v-30.u-textCenter Votre date de prélèvement est prévue pour le XX/XX/XXXX
+
+        .c-eTip__wrapperGrey
+          +checkboxMat({
+            label: 'Vous autorisez Gaz Tarif Réglementé à réaliser des prélèvements sur votre compte bancaire en signant une demande d’autorisation de prélèvement que vous transmettez à votre banque via le mandat de prélèvement SEPA.',
+            id: "checkboxMat2",
+            required: true,
+            dataValidation: true
+          }).l-wrapper--large
+
+        +btnWrapper().u-theme-genBlue
+          +baseBtn({
+            text: "Accepter et valider"
+          })(type="submit" data-e-form-validation-submit).u-margin-t-30
+
+    else if step === 3
+
+      .c-eTip__infoFacture.l-wrapper--large.u-margin-v-30
+        strong Facture de Juillet 2018: 39,57 € FR76 xx5 xx86 xx90 xxx3
+
+        +btnWrapper()
+          +baseBtn({
+            text: "consultez le mandat",
+            iconRight: "icon-bold-download",
+            empty: true
+          })
+
+

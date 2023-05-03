@@ -1,0 +1,57 @@
+include iframe
+
+.c-wysiwyg
+  h2 Iframe: desktop + tablette + mobile
+
++demo({
+  desc: 'when: <code>["smallOnly", "mediumOnly", "large"]</code>, classes: <code>u-hideMediumu u-hideSmall</code>'
+})
+  +iframe({
+    newBp: ["smallOnly", "mediumOnly", "large"]
+  })
+
+
+.c-wysiwyg
+  h2 Iframe: desktop + tablette
+
++demo({
+  desc: 'when: <code>["mediumOnly", "large"]</code>, classes: <code>u-hideMediumu</code>'
+})
+  +iframe({
+    newBp: ["mediumOnly", "large"]
+  })
+
+
+.c-wysiwyg
+  h2 Iframe: desktop + mobile
+
++demo({
+  desc: 'when: <code>["smallOnly", "large"]</code>, classes: <code>u-hideSmall</code>'
+})
+  +iframe({
+    newBp: ["smallOnly", "large"]
+  })
+
+
+.c-wysiwyg
+  h2 Iframe: desktop
+
++demo({
+  desc: 'when: <code>["large"]</code>'
+})
+  +iframe({
+    newBp: ["large"]
+  })
+
+
+.c-wysiwyg
+  h2 Iframe: avec script "iFrameResize"
+
++demo({
+  desc: 'when: <code>["smallOnly", "mediumOnly", "large"]</code>, classes: <code>u-hideMediumu u-hideSmall</code>'
+})
+  +iframe({
+    newBp: ["smallOnly", "mediumOnly", "large"],
+    notFluid: true,
+    src: 'https://lacarte.demenagez-moi.com/iframe/engie?enablejsapi=1&origin=https://cqpublish-lb-svc-itt-engie.tbscg.com'
+  })

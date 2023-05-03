@@ -1,0 +1,24 @@
+mixin headerCelSearch
+  // .c-headerCelSearch
+  form(action="/" method="get").c-headerCelSearch
+    label.c-headerCelSearch__btn(
+      for="search"
+      data-e-toggle='{"target": "headerCel-search", "autoClose": true, "blockScroll": true}'
+      tabindex="0"
+    )
+      span.icon.icon-lens
+        span.u-visibilityHidden Rechercher
+
+    +headerCelLayer({target: "headerCel-search"}).c-headerCelSearch__layer
+      .c-headerCelSearch__field
+        input#search.c-headerCelSearch__input(
+          data-e-search
+          autocapitalize="off"
+          placeholder="Tapez vos mot-clés de recherche"
+        )
+        button(type="submit").c-headerCelSearch__btn
+          span.icon.icon-lens(data-e-search-target-on)
+            span.u-visibilityHidden Rechercher
+          span.c-headerCelSearch__btnLabel.u-hide(data-e-search-target-off) OK
+  // END .c-headerCelSearch
+

@@ -1,0 +1,32 @@
+mixin quickAccess2(data)
+  - var data    = data || {}
+  - var textBig = data.textBig || false
+
+  // .c-quickAccess2
+    image mobile: 640px * 540px (très compressée)
+    image desktop: 1240px * 270px
+  nav.c-quickAccess2
+    .c-quickAccess2__title(
+      data-ab-interchange="[empty.bg, default], [../images/contrib/bdhero-garantie-electro-menager-mobile.jpg, small], [../images/contrib/bdhero-garantie-electro-menager.jpg, medium]"
+    )
+      .c-wysiwyg(class=textBig ? "c-quickAccess2__titleBig" : "")
+        p Bienvenue <br> sur le nouveau site <br>Gaz Tarif Réglementé&nbsp;!
+
+    ul.c-quickAccess2__group
+      li.c-quickAccess2__item
+        a(href="#").c-quickAccess2__itemLink
+          span.icon.icon-budget4
+          span.c-quickAccess2__text Comprendre ma consommation
+      li.c-quickAccess2__item
+        a(href="#").c-quickAccess2__itemLink
+          span.icon.icon-budget4
+          span.c-quickAccess2__text Payer ma facture
+      li.c-quickAccess2__item
+        a(href="#").c-quickAccess2__itemLink
+          span.icon.icon-budget4
+          span.c-quickAccess2__text Communiquer mon relevé de compteur
+      li.c-quickAccess2__item
+        a(href="#").c-quickAccess2__itemLink
+          span.icon.icon-budget4
+          span.c-quickAccess2__text Communiquer mon relevé de compteur
+  // END - .c-quickAccess2

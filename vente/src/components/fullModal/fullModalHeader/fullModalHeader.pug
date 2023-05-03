@@ -1,0 +1,31 @@
+mixin fullModalHeader(data)
+  - var data        = data || {}
+  - var onlyTitle = data.onlyTitle || false
+
+  // .c-fullModalHeader
+  header.c-fullModalHeader(class=onlyTitle ? 'c-fullModalHeader--noTimeLine' : '')
+    .c-fullModalHeader__top
+      button.c-fullModalHeader__btn.c-fullModalHeader__btn--reset(
+        type="button"
+        data-e-modal-open='reinit-estim'
+      )
+        .icon.icon-spinner11
+        span.c-fullModalHeader__btnLabel Recommencer
+      // Modale de réinitialisation à trouver dans la page de démo car header en position fixe
+
+      h1.c-fullModalHeader__title Estimation de votre budget
+
+      button.c-fullModalHeader__btn.c-fullModalHeader__btn--close(
+        type="button"
+        data-e-fullModal-demo-close
+      )
+        .icon.icon-close
+        .u-visibilityHidden Fermer l'estimation
+
+    if !onlyTitle
+      +timeLine({
+        type:  "progressBar",
+        currentStep: 2,
+        stepWording: ['Situation', 'Consommation', 'Fin']
+      })
+  // END .c-fullModalHeader

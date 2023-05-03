@@ -1,0 +1,23 @@
+mixin linkLongArrow(data)
+  - var data          = data || {}
+  - var link          = data.link || "#"
+  - var positionText  = (data.positionText === "center" ? "u-textCenter" : data.positionText === "right" ? "u-textRight" : "" )
+  - var text          = data.text || "Lorem ipsum text"
+  - var inlineText    = data.inlineText === true  ? 'c-linkLongArrow--inline' : false
+  - var inlineBtn     = data.inlineBtn === true  ? 'c-linkLongArrow--inlineBtn' : false
+  - var reverse       = data.reverse === true  ? 'c-linkLongArrow--reverse' : false
+  - var icon          = data.icon || "long-arrow-right"
+  - var type          = data.type || "link"
+
+  // .c-linkLongArrow
+  if type === "link"
+    a.c-linkLongArrow(href=link class=inlineText class=inlineBtn class=reverse)&attributes(attributes)
+      span.c-linkLongArrow__content
+        span.c-linkLongArrow__text(class=positionText)!=text
+        span.c-linkLongArrow__icon.icon(class="icon-"+icon)
+  else
+    button.c-linkLongArrow(type="submit" class=inlineText class=inlineBtn class=reverse)&attributes(attributes)
+      span.c-linkLongArrow__content
+        span.c-linkLongArrow__text(class=positionText)!=text
+        span.c-linkLongArrow__icon.icon(class="icon-"+icon)
+  // .c-linkLongArrow

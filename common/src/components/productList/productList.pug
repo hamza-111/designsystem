@@ -1,0 +1,64 @@
+include ../carousel/carousel
+include ../headSection/headSection
+
+mixin productList(data)
+
+  - var data   = data || {}
+  - var noLink = data.noLink || false
+
+  .c-productList.l-wrapper--large.u-padding-spacer
+    +headSection({
+      title: "Quels sont les produits couverts par la Garantie Gaz Tarif Réglementé?",
+      noLink: true
+    })
+
+    .c-wyzywig.c-productList__contribText
+      p.u-fontSize-medium Tous les équipements blancs <strong>achetés neufs âgés de moins de 7 ans</strong>
+        |  situés au domicile du client, dont la valeur d'achat d'origine est comprise entre
+        |  <strong>100€ TTC et 5,000€ TTC.</strong>
+
+    +carousel({
+      id: carouselID,
+      delayed: true,
+      mode: "slide",
+      settings: {
+        infinite: false,
+        mobileFirst: true,
+        arrows: false,
+        dots: true,
+        speed: 600,
+        draggable: true,
+        initialSlide: 1,
+        focusOnSelect: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '60px',
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: 'unslick'
+          }
+        ]
+      }
+    }).c-productList__content
+      block
+
+    if !noLink
+      +btnWrapper().c-btnWrapper--fullOnMobile.u-theme-green
+        +baseBtn({
+          text: 'Lorem ipsum'
+        })
+  // end .c-sproductList
+
+
+mixin productListItem(data)
+  - var data   = data || {}
+  - var imgUrl = data.imgUrl || ""
+  - var titre  = data.titre || "titre"
+
+  .c-productList__item
+    img.c-productList__img(src="../images/" + imgUrl alt="" width="180")
+    h3.c-productList__itemTitle!= titre
+
+    block

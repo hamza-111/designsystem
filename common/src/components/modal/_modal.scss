@@ -1,0 +1,268 @@
+$modalMargin : 4%;
+
+$themeMap : (
+  genBlue: $genBlue,
+  green:   $green,
+  coral:   $coral,
+  error : $error-color
+);
+@each $name, $value in $themeMap {
+
+  .c-modal--#{$name} {
+    border-top: 6px $value solid;
+  }
+
+  .c-modal__iconTheme--#{$name} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 25px 0 15px;
+  }
+
+  .c-modal__iconTheme--#{$name} .c-modal__icon {
+    color: $value;
+    font-size: 4rem;
+  }
+
+  .c-modal__content.c-modal__iconTheme--#{$name} {
+    padding: 40px;
+    padding-top: 0;
+  }
+}
+
+.c-modal__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// des modificateurs sur la popin TBD
+
+.modal--popInTbd__topModal {
+  width: 45%;
+  margin: auto;
+}
+
+.modal--popInTbd__Text, .modal--popInTbd__titre {
+  text-align: center;
+}
+
+.modal--popInTbd__Text {
+  font-size: 1.6rem;
+}
+
+@include media ("<medium") {
+  .modal--popInTbd__topModal {
+    width: 60%;
+  }
+}
+
+@include media ("<=small") {
+  .modal--popInTbd__topModal {
+    width: 90%;
+  }
+}
+
+// Classe à injecter sur le body :
+.no-scroll {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.c-modal {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch; /* hack for too slow scroll on iOS */
+  transition: opacity 0.3s ease-in-out;
+
+  iframe {
+    width: 100%;
+    height: 400px;
+    display: block;
+    margin-top: 50px;
+  }
+
+  .u-link--fullLarge {
+    width: 100%;
+  }
+  //for modal loginPage
+  .c-column__col.c-column__col--55 {
+    .c-wysiwyg {
+      padding: 30px 15px;
+    }
+  }
+
+  .c-modal__logoGaz {
+    height: 72px;
+    margin: -7px auto 30px;
+    display: block;
+  }
+}
+
+.c-modal--hasPadding {
+  padding: 50px 20px 30px;
+  @include media(">small") {
+    padding: 50px;
+  }
+}
+
+// Fond de couleur :
+.c-modal__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Modal :
+.c-modal__content {
+  margin-bottom: 50px;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  min-height: 300px;
+  background: $white;
+  transform: translateY(-25%) perspective(500px) translateZ(25px);
+  transition: all 0.3s ease-in-out;
+  text-align: left;
+
+  .is-active & {
+    transform: translateY(0) perspective(500px) translateZ(0);
+  }
+}
+
+.is-lastItem {
+  opacity: 0;
+}
+// Bouton de fermeture :
+.c-modalCloseButton {
+  @extend %reset-style-button;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+  color: $grey;
+}
+
+.c-modalCloseButton--lg.c-modalCloseButton  {
+  width: 32px;
+  height: 32px;
+}
+
+@each $name, $value in $themeMap {
+  .c-modal--theme .c-modal__iconTheme--#{$name} {
+    padding: 16px 0 0;
+  }
+
+  .c-modal--theme .c-modal__iconTheme--#{$name} .c-modal__icon {
+    background-color: white;
+    color: $value;
+    font-size: 4rem;
+  }
+}
+.c-modalCloseButton__text {
+  margin-left: 20px;
+}
+
+.c-modalCloseButton__picto.icon {
+  font-weight: bold;
+}
+
+.c-modalCloseButton--lg .c-modalCloseButton__picto.icon {
+  font-weight: normal;
+  font-size: 3.2rem;
+}
+
+
+@include media(">small"){
+  .c-modal {
+    iframe {
+      margin-top: 0;
+    }
+
+    .c-column__col.c-column__col--45 {
+      width: 45%;
+    }
+
+    .c-column__col.c-column__col--55 {
+      width: 55%;
+
+      .c-wysiwyg {
+        padding: 70px 75px 20px 72px;
+      }
+    }
+  }
+
+  .c-modal__overlay {
+    overflow-y: scroll;
+    padding-top: $modalMargin;
+    background: rgba($black, .7);
+    text-align: center;
+  }
+
+  .c-modal__content {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: visible;
+    width: 600px;
+    height: auto;
+    max-width: 100%;
+    min-height: 300px;
+    border-radius: 0 0 6px 6px;
+
+    .c-modal--large & {
+      width: 800px;
+    }
+
+    &.c-modal__content--large {
+      width: 1050px;
+    }
+
+    &.c-modal__content--medium {
+      width: 700px;
+    }
+    
+    &.c-modal__content--small {
+      width: 500px;
+    }
+  }
+
+  .c-modalCloseButton {
+    position: absolute;
+    transform: translate(30px, -30px);
+    color: $grey;
+  }
+}
+
+@include media ("<=small") {
+  .c-modal__overlay {
+    overflow-y: scroll;
+    padding: 10% 15px;
+    background: rgba(51, 51, 51, 0.7);
+    text-align: center;
+  }
+  .c-modalCloseButton {
+    top: 12px;
+    right: 12px;
+  }
+}

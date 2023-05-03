@@ -1,0 +1,72 @@
+.c-textareaMat {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+  padding-top: 50px;
+  text-align: left;
+
+  .c-fieldInfo {
+    display: none;
+  }
+
+  &.is-error {
+    .c-fieldInfo {
+      display: block;
+    }
+  }
+}
+
+.c-textareaMat__wrap {
+  position: relative;
+}
+
+.c-textareaMat__field {
+  position: relative;
+  display: block;
+  z-index: 10;
+  border: 1px solid $starGrey;
+  border-radius: 0;
+  width: 100%;
+  height: 80px;
+  box-shadow: none;
+  appearance: none;
+  background: transparent;
+  font-size: 1.6rem;
+  text-align: left;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.c-textareaMat__label {
+  position: absolute;
+  top: -27px;
+  left: 0;
+  font-size: 1.4rem;
+  color: $text-grey;
+
+  .c-textareaMat__field:focus ~ & {
+    color: $genBlue;
+  }
+
+  .is-success & { color: $valid-color !important; }
+  .is-error & { color: $error-color !important; }
+}
+
+.c-textareaMat__counter {
+  display: block;
+  margin-top: 5px;
+  font-size: 1.2rem;
+}
+
+
+@include media(">=small") {
+  .c-textareaMat__field {
+    height: 120px;
+
+    &[maxlength] {
+      height: 99px;
+    }
+  }
+}

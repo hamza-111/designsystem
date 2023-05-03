@@ -1,0 +1,69 @@
+include ../serviceItem/serviceItem
+
+mixin serviceNonActive()
+
+  //service Non Active
+  .c-serviceNonActive
+    .l-wrapper.l-wrapper--main
+        h2.u-heading-2.c-serviceNonActive__titre Ces options peuvent vous intéresser :
+        .c-serviceNonActive__items
+        
+            +serviceItem({
+                prix : "3.11 € / ans",
+                titre : "Date de réglement personnalisée",
+                para : "Exit les fins de mois difficiles, choisissez votre date de paiement* !",
+                display : true,
+                btn : true,
+                img : "home_carrou_contrib_large1.jpg"
+            })
+
+            +serviceItem({
+                titre : "Facture en ligne",
+                para : "Une solution rapide, facile et pratique pour en finir avec la paperasse*.",
+                display : true,
+                btn : true,
+                img : "error404-large.jpg"
+            })
+
+            +serviceItem({
+                prix : "5 € / ans",
+                titre : "Assurance facture",
+                para : "Exit les fins de mois difficiles, choisissez votre date de paiement* !",
+                display : true,
+                btn : true,
+                img : "home_carrou_contrib_large1.jpg"
+            })
+
+            +serviceItem({
+                prix : "3.11 € / ans",
+                titre : "Entretien chaudière",
+                para : "Exit les fins de mois difficiles, choisissez votre date de paiement* !",
+                display : true,
+                btn : true,
+                img : "home_carrou_contrib_large1.jpg"
+            })
+            +serviceItem({
+                prix : "3.11 € / ans",
+                titre : "Traveaux",
+                para : "Exit les fins de mois difficiles, choisissez votre date de paiement* !",
+                display : true,
+                btn : true,
+                img : "bdhero-garantie-electro-menager.jpg"
+            })
+
+            +serviceItem({
+                titre : "Diagnostic Sécurité",
+                para : "Notre partenaire Qualigaz contrôle l’état de votre installation de gaz naturel*",
+                display : true,
+                btn : true,
+                img : "home_carrou_contrib_large1.jpg"
+            })
+
+            +serviceItem({
+                prix : "5 € / mois",
+                titre : "Garantie électroménager",
+                para : "Soyez zen, votre électroménager est garanti jusqu’à 7 ans*",
+                display : true,
+                btn : true,
+                img : "table.jpg"
+            })

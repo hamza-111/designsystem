@@ -1,0 +1,48 @@
+include ../etapier/etapier
+
+mixin headerCelNav(data)
+
+  - var data         = data || {}
+  - var etapier      = data.etapier || false
+  // .c-headerCelNav
+  +headerCelLayer({target: "headerCel-nav"})(data-e-toggle-target='headerCel-nav').c-headerCelNav
+    .c-headerCel__mask( data-e-maskCalc="data-e-maskCalc")
+      //- p.c-headerCelNav__welcomMsg Bonjour Simon et Camille
+      if etapier
+        +etapier({
+          progessBar: 100,
+          header : true,
+          current:3,
+          obj: {1: 'choix de mode de paiement', 2: 'paiement', 3: 'confirmation de paiement'}
+        }).c-etapier__header.u-hideMediumUp
+
+        +timeLine({
+          type:  "tunnel",
+          currentStep: 3,
+          stepWording: ['choix de mode de paiement', 'paiement', 'confirmation de paiement']
+        }).u-theme-indigo(style="position: relative; top: 0;").u-hideMediumDown
+
+      else
+        nav#siteNav.c-headerCelNav__wrapper(role="navigation" aria-label="menu principal")
+          //span.c-headerCelNav__name.u-hideLargeUp Bonjour Mme CHAUDHRY
+          ul.c-headerCelNav__list
+            li.c-headerCelNav__item
+              a.c-headerCelNav__itemLink.is-active(href="#") Tableau de bord
+            li.c-headerCelNav__item
+              a.c-headerCelNav__itemLink(href="#") Mes factures
+            li.c-headerCelNav__item
+              a.c-headerCelNav__itemLink(href="#") Suivi conso
+            li.c-headerCelNav__item
+              a.c-headerCelNav__itemLink(href="#") Mes options
+            li.c-headerCelNav__item
+              a.c-headerCelNav__itemLink(href="#") Mon profil
+            //- li.c-headerCelNav__item
+            //-   a.c-headerCelNav__itemLink(href="#") Mes demandes
+            //- li.c-headerCelNav__item
+            //-   a.c-headerCelNav__itemLink(href="#") Autre rubrique
+
+          p.c-headerCelNav__layerBtn
+            a.u-hideLargeUp Aller à l'accueil Gaz Tarif Réglementé
+      .c-headerCel__maskClose(data-e-toggle-close="headerCel-nav")
+    // END .c-headerCelNav
+

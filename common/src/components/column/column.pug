@@ -1,0 +1,76 @@
+mixin column(data)
+  - var data      = data || {}
+  - var spaced    = data.spaced
+  - var vCenter   = data.vCenter || false
+  - var colConfig = data.colConfig || '50-50'
+  - var wrapper   = data.wrapper || false
+
+  .c-column(
+    class=spaced ? "c-column--spaced" : ""
+    class=vCenter ? "c-column--vCenter" : ""
+    class="c-column--"+ colConfig
+    class=wrapper ? "l-wrapper--"+ wrapper : ""
+  )&attributes(attributes)
+    if block
+      block
+    else
+      case colConfig
+        when '100'
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+
+        when '50-50'
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+        when '33-66'
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+        when '66-33'
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+        when '33-33-33'
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+
+        when '25-25-25-25'
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+
+        when '50-50_25-25-25-25'
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+
+        when '100_25-25-25-25'
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.
+          .c-column__col
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eum omnis qui ab assumenda animi quibusdam nostrum iste harum maxime at repellendus praesentium dicta fuga eligendi voluptatum, molestias ad placeat.

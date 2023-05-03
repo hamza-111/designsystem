@@ -1,0 +1,43 @@
+.c-pushPromo__content {
+  position: relative;
+}
+
+.c-pushPromo__image img {
+  width: 100%;
+}
+
+.c-pushPromo__catchBlock {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 12% 20px;
+  text-align: center;
+}
+
+.c-pushPromo__title {
+  margin-bottom: 20px;
+  font-size: $font-21;
+  font-weight: $font-bold;
+}
+
+.c-pushPromo__textContent.c-wysiwyg p {
+  margin-bottom: 1em;
+}
+
+.c-pushPromo__cta {
+  padding: 50px 20px;
+}
+
+@include media(">=small"){
+  .c-pushPromo__catchBlock {
+    padding: 50px;
+    text-align: left;
+
+    .c-pushPromo--twoColumns & {
+      padding-right: 0;
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+include pictoLink
+
+.c-wysiwyg
+  h2 pictoLink
+
++demo({
+  desc: "Ajouter la classe <code>c-pictoLink--noTextDecoration</code> pour retirer le soulignement de texte"
+})
+  +pictoLink({
+    text: 'Sans soulignement du texte',
+    picto: 'icon-camera'
+  }).u-theme-genBlue
+
+  +pictoLink({
+    text: 'Avec soulignement du texte',
+    picto: 'icon-camera',
+    textUnderline: true
+  }).u-theme-genBlue
+
+.c-wysiwyg
+  h2 Alignement de l'icône :
+
++demo({
+  desc: "Ajouter la classe <code>c-pictoLink--iconRight</code> pour ferrer l'icône à droite"
+})
+  +pictoLink({
+    text: 'un lien',
+    picto: 'icon-camera'
+  }).u-theme-magenta
+
+  +pictoLink({
+    text: 'un lien',
+    picto: 'icon-camera',
+    pictoAlignRight: true
+  }).u-theme-magenta

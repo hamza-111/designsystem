@@ -1,0 +1,51 @@
+include ../../combobox/combobox
+
+mixin searchFAQ(data)
+  - var data = data || {}
+  - var isLoading = data.isLoading || false
+
+  // .c-searchFAQ
+  form(
+    action="/"
+    data-e-combobox='{"url": "../fake/searchFAQ.json", "limit": 3}'
+    data-e-search
+    method="GET"
+  ).c-searchFAQ.l-wrapper--huge.u-theme-genBlue
+
+    +combobox
+    //- label(for="searchFAQ") Vous avez une question?
+
+    //- img(src="../images/bgsearchFAQ.png" alt="").c-searchFAQ__img
+
+    .c-searchFAQ__content
+      //label.c-searchFAQ__label(for="searchFAQ") Vous avez une question?
+      h1.c-searchFAQ__title.u-textCenter Nous répondons à toutes vos questions
+      .c-searchFAQ__form
+        input(
+          placeholder="Saisissez ici un ou plusieurs mots-clés…"
+          id="searchFAQ"
+          name="searchFAQ"
+          autocomplete="off"
+          data-e-combobox-input
+        ).c-searchFAQ__field
+        button(type="submit").c-searchFAQ__btn
+          if isLoading
+            +spinner.u-color-white
+          else
+            svg(class="c-searchFAQ__iconLens" fill="#fff" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve")
+              g(id="deconnexion")
+              g( id="user")
+              g( id="userconnecter")
+              g( id="loupe")
+                path( class="st0" d="M34.9,37.6l-8.3-8.3c-0.8-0.8-0.8-2,0-2.8l0,0c0.8-0.8,2-0.8,2.8,0l8.3,8.3c0.8,0.8,0.8,2,0,2.8l0,0 C36.9,38.4,35.6,38.4,34.9,37.6z")
+                path( class="st0" d="M18,2C9.2,2,2,9.2,2,18s7.2,16,16,16s16-7.2,16-16S26.8,2,18,2z M18,30c-6.6,0-12-5.4-12-12S11.4,6,18,6 s12,5.4,12,12S24.6,30,18,30z")
+              g( id="fermer")
+              g( id="menu")        
+            span Rechercher
+
+      //- .c-searchFAQ__combobox.u-hide(data-e-combobox-listBlock)
+      //-   p.c-searchFAQ__listTitle Suggestions&nbsp;:
+      //-   ul.c-searchFAQ__list(data-e-combobox-list)
+      
+      p.c-searchFAQ__link Exemples de recherche : «<a href="#">Déménagement</a>»,  «<a href="#">Comment relever mon compteur</a>», «<a href="#">Justificatif de domicile</a>» …
+  // END .c-searchFAQ

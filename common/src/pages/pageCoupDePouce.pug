@@ -1,0 +1,41 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/espritService/espritService
+include ../components/paging/paging
+
+
+
+//- Main variables
+block variables
+  - var title         = "Coup de pouce isolation"
+  - var page          = "Coup de pouce isolation"
+  - var bodyClass     = "CPI"
+  - var description   = "Coup de pouce isolation"
+
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  .c-coupDePouce.u-margin-h-40
+    +coupDePouceBan
+
+    +coupDePouceCommentaire
+
+    ul.c-coupDePouceReview__list
+      +coupDePouceReview
+      +coupDePouceReview
+      +coupDePouceReview
+      +coupDePouceReview
+
+    +paging({
+      demoState: '1'
+    }).u-margin-v-50
+
+
+    p.u-textCenter.u-margin-b-40 Après une procédure de contrôle, vos commentaires et notes seront publiés sur ce site en toute transparence

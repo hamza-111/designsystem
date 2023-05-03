@@ -1,0 +1,89 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title         = "demo etape 2: Panier"
+  - var page          = "tel"
+  - var bodyClass     = ""
+  - var description   = "Module étape 2"
+  - var noHeaderFooter = true
+  //- var headerLight   = true
+  - var footerLight   = true
+
+//- CSS (haut) pour cette page
+block CSS
+  link(rel="stylesheet" href="../css/tel.css")
+
+//- JS (bas) pour cette page
+block JS
+  script(src="../js/bas/demo.js")
+
+
+//- Page content
+block content
+  #telv3.c-headerLightPush
+    +headerLight
+    +timeLine({
+      type:  "progressBar",
+      currentStep: 2,
+      stepWording: ['Critères', 'Offres', 'Souscription', 'Validation']
+    })
+
+    +stickyDock
+
+    .l-wrapper--large
+      .u-margin-b-20.u-margin-t-40
+        h2.u-heading-2.u-textCenter.u-margin-b-40 Mon panier
+
+      p.u-color-grey.u-textBold.u-margin-b-10.u-margin-small-b-10 Mon offre
+
+      .u-margin-b-40
+        +offer({
+          promo: true,
+          edit: true
+        })
+
+      +selectOptions({
+        title: "Pour plus de sérénité, vous pouvez choisir des options",
+        hasBorder: true
+      }).u-margin-b-40
+        +selectOptionBlock({
+          hasCheckbox: true,
+          iconUrl: "../images/contrib/icon-garantie-electromenager.svg",
+          priceValue: "4",
+          inputId: "input5",
+          inputLabel: "Assurance Facture",
+          bgOnHover: true,
+          espritService: true
+        })
+          h3.c-selectOptionBlock__title.u-heading-3.u-margin-b-10.u-theme-color Assurance Facture
+          p <strong>Assurance Facture, c'est la garantie du paiement de vos factures d’énergie</strong> en cas de perte d’emploi, incapacité de travail, perte totale et irréversible d’autonomie décès accidentel.
+
+        +selectOptionBlock({
+          hasCheckbox: true,
+          iconUrl: "../images/contrib/icon-garantie-electromenager.svg",
+          priceValue: "4,99",
+          inputId: "input6",
+          inputLabel: "Dépannage Gaz et Electricité Express",
+          bgOnHover: true,
+          espritService: true
+        })
+          h3.c-selectOptionBlock__title.u-heading-3.u-margin-b-10.u-theme-color Dépannage Gaz et Electricité Express
+          p <strong>Une assistance téléphonique 24/24h, 7j/7</strong> en cas de fuites d’eau, d’engorgement ou de problèmes sur votre installation de gaz naturel et d'électricité.
+
+      .u-margin-b-30
+        +codePromo
+
+      +btnWrapper().u-theme-jadeGreen.c-btnWrapper--fullOnMobile
+        +baseBtn({
+          text: "Souscrire plus tard",
+          secondary: true,
+          iconRight: "icon-bold-save"
+        }).c-baseBtn--large
+        +baseBtn({
+          text: "Valider mon panier"
+        }).c-baseBtn--large

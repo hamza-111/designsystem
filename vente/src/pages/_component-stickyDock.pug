@@ -1,0 +1,28 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title         = "stickyDock"
+  - var page          = ""
+  - var bodyClass     = ""
+  - var description   = ""
+  - var noHeaderFooter = true
+  - var demoMode      = true
+
+//- CSS (haut) pour cette page
+block CSS
+  link(rel="stylesheet" href="../css/vente.css")
+
+
+//- Page content
+block content
+  .c-wysiwyg
+    h2 stickyDock
+  +demo()
+    +stickyDock({
+      options: ['cart', 'callback', 'callback-ko']
+    }).u-theme-genBlue

@@ -1,0 +1,62 @@
+include ../headSection/headSection
+
+mixin bubbleSelect(data)
+  - var data  = data || {}
+  - var title = data.title || false
+  - var intro = data.intro || false
+
+  // .c-bubbleSelect
+  section.c-bubbleSelect&attributes(attributes)
+    if title
+      +headSection({
+        noLink: true,
+        title: title
+      })
+
+    if intro
+      p.u-textCenter.u-margin-b-15!=intro
+
+    .c-bubbleSelect__selectorWrapper
+      block
+  // end .c-bubbleSelect
+
+
+mixin bubbleSelectElem(data)
+  - var data       = data || {}
+  - var text       = data.text || 'Un texte dans une bubble'
+  - var inputID    = data.inputID || 'htmlID'
+  - var inputValue = data.inputValue || 'htmlID'
+  - var radioName  = data.radioName || 'radioName'
+  - var info       = data.info || false
+  - var picto      = data.picto || 'iconVente-client-no'
+
+  - var checked    = data.checked || false
+
+  // .c-bubbleSelectElem
+  //-
+    - la variable 'inputID' permet d'attribuer une même valeur à l'attribut 'for' du label et l'attribut 'id' de l'input
+    - la variable 'inputValue' permet d'attribuer une valeur à l'attribut 'value' de l'input
+    - la variable 'radioName' permet d'attribuer une même valeur à l'attribut 'name' des différents inputs du même champs de formulaire radio
+    - la variable 'toggleTarget' permet d'utiliser le toggle pour utiliser le toggle et assigner un attribut data-e-toggle
+
+  .c-bubbleSelectElem(class=info ? "c-bubbleSelectElem--withInfo" : "")&attributes(attributes)
+    input.c-bubbleSelectElem__input(
+      type='radio'
+      name=radioName
+      id=inputID
+      checked=checked
+      value=inputValue
+    )
+    label.c-bubbleSelectElem__label(for=inputID)
+      .c-bubbleSelectElem__icon.icon(class=picto)
+      .c-bubbleSelectElem__text!=text
+  // end .c-bubbleSelectElem
+
+
+mixin bubbleSelect__elemLabel(data)
+  - var data = data || {}
+
+  // .c-bubbleSelect__elemLabel
+  .c-bubbleSelect__elemLabel
+    block
+  // end .c-bubbleSelect__elemLabel

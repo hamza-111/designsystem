@@ -1,0 +1,178 @@
+// espace pour le header sticky dans l'application
+
+.c-headerLightCel {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  background: $genBlue;
+  color: $white;
+
+  html:not(.no-scroll) & {
+    transition: transform .4s ease;
+    will-change: transform;
+    transform: translateY(0);
+
+    &.is-small {
+      transform: translateY(-20px);
+      .c-headerLightCel__logo {
+        // opacity: 0;
+        height: 40px;
+      }
+
+      .c-headerLightCel__title { margin-top: 15px;}
+    }
+  }
+}
+
+.c-headerLightCel__wrapper {
+  margin: 0 auto;
+  max-width: 1240px;
+  min-height: 60px;
+}
+
+.c-headerLightCel__logo {
+  text-align: center;
+  opacity: 1;
+  transition: opacity .3s ease;
+  padding: 5px 0;
+}
+
+.c-headerLightCel__logoLink {
+  @extend %reset-style-button;
+  display: block;
+  width: 100%;
+
+  img {
+    height: 45px;
+  }
+}
+
+.c-headerLightCel__connect {
+  position: absolute;
+  right: 20px;
+  bottom: 7px;
+  font-size: 2em;
+  text-align: right;
+  a {
+    color: inherit;
+  }
+}
+
+.c-headerLightCel__title {
+  text-align: center;
+  padding: 0;
+}
+
+// headerCelUser
+.c-headerLightCel {
+  .c-headerCelUser {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    display: flex;
+    height: 100%;
+  }
+
+  .c-headerLightCel__title + .c-headerCelUser {
+    top: 0;
+    bottom: 0;
+    height: auto;
+  }
+
+  .c-headerCelUser__name {
+    color: $white;
+  }
+}
+
+.c-siteHeaderCel__logoImg {
+  height: 25px;
+  display: block;
+  margin: 0 auto;
+
+  .cls-1 { fill: $genBlue; }
+  .cls-2 { fill: $white; }
+}
+
+.c-siteHeaderCel__logoImg--invert {
+  .cls-1 { fill: $white; }
+  .cls-2 { fill: $genBlue; }
+}
+
+@include media("<small"){
+  .c-headerLightCel {height: 90px;}
+  .c-headerLightCel__title { text-align: left;}
+  .c-headerLightCel__wrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  .c-headerLightCel__logo { width: 70px;}
+
+  .c-siteHeaderCel__logoImg {
+    height: 50px;
+    margin: 0 auto;
+  }
+}
+
+@include media(">=small"){
+  // espace pour le header sticky dans l'application
+  .c-headerLightCelPush {
+    padding-top: 60px;
+  }
+
+  .c-headerLightCel {
+    position: relative;
+  }
+
+  .c-headerLightCel__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .c-headerLightCel__logo,
+  .c-headerLightCel__connect {
+    width: 160px;
+    display: block;
+    padding: 8px 15px 12px;
+  }
+
+  .c-headerLightCel__connect {
+    text-align: right;
+  }
+
+  .c-headerLightCel__logoLink {
+    img {
+      height: auto;
+    }
+  }
+
+  .c-headerLightCel__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    max-width: 40%;
+    max-height: 100%;
+    padding: 5px;
+    transform: translate(-50%, -50%);
+
+    font-weight: $font-bold;
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  .c-headerLightCel__connect {
+    margin-left: auto;
+    position: static;
+    font-size: 1.5rem;
+  }
+
+  .c-siteHeaderCel__logoImg {
+    height: 50px;
+    margin: 0;
+  }
+}

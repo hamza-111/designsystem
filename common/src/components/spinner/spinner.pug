@@ -1,0 +1,15 @@
+mixin spinner(data)
+  - var data = data || {}
+  - var mode = data.mode || false
+  - var medium = data.medium || false
+
+  // c-spinner
+  span.c-spinner(
+    class=mode==='lock'?'c-spinner--lock':''
+  )&attributes(attributes)
+    if mode !== 'lock'
+      span.c-spinner__container
+        span.c-spinner__firstArk
+        if !medium
+          span.c-spinner__secondArk
+  // end c-spinner

@@ -1,0 +1,88 @@
+.c-itemEcoGest {
+  width: 190px;
+  height: 245px !important;
+  background: $white;
+  border-radius: 20px;
+  border: 1px solid $white;
+}
+
+.c-itemEcoGest__fixSlick {
+  text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 5px 7px 5px;
+  height: 245px !important;
+  width: 100%;
+  position: relative;
+}
+
+.c-itemEcoGest__title {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.c-itemEcoGest__force { 
+  font-size: 1.2rem; 
+  margin-right: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.c-itemEcoGest__info {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 90px;
+  width: 100%;
+  align-self: center;
+}
+
+.c-itemEcoGest__iconNumber .c-itemEcoGest__number{
+  font-size: 1.8rem;
+  color: #fff;
+  z-index: 2;
+  position: relative;
+  left: 0;
+  top: 5px;
+  font-weight: bold;
+}
+
+.c-itemEcoGest__iconNumber {
+  position: relative;
+  width: 27px;
+  height: 27px;
+}
+
+.c-itemEcoGest__iconNumber::before {    
+  font-size: 7rem;
+  color: #54dda3;
+  position: absolute;
+  top: -19px;
+  left: -21px;
+  z-index: 0;
+}
+
+.c-itemEcoGestActive.c-itemEcoGest {
+  border: 1px $green-persian solid;
+}
+
+.c-itemEcoGestActive .c-itemEcoGest__title {
+  color: $green-baaast;
+}
+
+.c-itemEcoGestActive button.c-btn {
+  color: $green-persian;
+  background: $white;
+}
+
+.c-itemEcoGest__fixSlick button.c-btn {
+  margin-left: 0;
+  margin-right: 0;
+  width: 90%;
+}
+
+.c-itemEcoGestActive button.c-btn:hover, .c-itemEcoGestActive button.c-btn:active, .c-itemEcoGestActive button.c-btn:focus {
+  background: white !important;
+}

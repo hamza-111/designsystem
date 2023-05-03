@@ -1,0 +1,16 @@
+mixin offerPrice(data)
+  - var data    = data || {}
+  - var noEstim = data.noEstim || false
+
+  // c-offerPrice
+  .c-offerPrice(class=noEstim ? 'c-offerPrice--notEstimation' : '')
+    if !noEstim
+      p.c-offerPrice__title.u-heading-4.u-color-genBlue Prix estimé
+
+    p.c-offerPrice__detail
+      span.c-offerPrice__price 117€ <sup>TTC</sup>&nbsp;
+      span.c-offerPrice__rate /mois
+    p.c-offerPrice__detail2
+      span.c-offerPrice__price2 soit 1404€ <sup>TTC</sup>&nbsp;
+      span.c-offerPrice__rate2 /an
+  // END c-offerPrice

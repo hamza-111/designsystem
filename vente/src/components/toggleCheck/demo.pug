@@ -1,0 +1,49 @@
+//- +toggleCheck
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px;") Composant toggleCheck
+
++demo({
+  desc: `
+    Utilise le switch-toggle<br>
+    Pour le bon fonctionnement du toggle :<br>
+    - Attribuer un attribut <code>data-e-switch-toggle</code> à <code>c-toggleCheckElem__checkBox</code> et <code>c-toggleCheckElem__title</code><br>
+    - Attribuer un attribut <code>data-e-switch-toggle-name</code> , <code>aria-hidden</code> à true ou false aux deux contenus à échanger à l'intérieur de <code>c-toggleCheckElem__content</code> et enfin un attribut <code>hidden</code> sur celui à masquer par défaut<br>
+    - <code>data-e-switch-toggle</code> et <code>data-e-switch-toggle-name</code> doivent avoir la même valeur`
+})
+  +toggleCheck
+    +toggleCheckElem({
+      labelTitle: "Je choisis le prélèvement automatique",
+      checkBoxId: "pvmauto",
+      toggleTarget: 'demo1'
+    })
+      div(data-e-switch-toggle-name='demo1' aria-hidden='false')
+        p.l-toggleCheckPadding <strong>Mensuel</strong> ou <strong>tous les deux mois</strong>
+        .u-margin-t-15.u-padding-a-15.u-bg-grey-light.u-textCenter Vous recevrez vos factures par courrier mais elle ne sera pas accessible via l’espace client Gaz Tarif Réglementé
+
+      div(data-e-switch-toggle-name='demo1' aria-hidden='true' hidden)
+        p.l-toggleCheckPadding <strong>Mensuel</strong> ou <strong>tous les deux mois</strong>
+        .u-margin-t-15.u-padding-a-15.u-bg-venteBlue-medium.u-textCenter Vous réglerez vos factures par Carte Bleue, TIP ou chèque tous les 2 mois
+
+    +toggleCheckElem({
+      labelTitle: "Je choisis la facture en ligne",
+      checkBoxId: "fal",
+      toggleTarget: 'demo2'
+    })
+      div(data-e-switch-toggle-name='demo2' aria-hidden='false')
+        p.l-toggleCheckPadding <strong>Plus écologique</strong> : n’imprimez que celles dont vous avez besoin !<br><strong>Plus simple</strong> : stockez dans votre espace client Gaz Tarif Réglementé pendant 5 ans.
+        .u-margin-t-15.u-padding-a-15.u-bg-grey-light.u-textCenter Vous recevrez vos factures par courrier mais elle ne sera pas accessible via l’espace client Gaz Tarif Réglementé
+      div(data-e-switch-toggle-name='demo2' aria-hidden='true' hidden)
+        p.l-toggleCheckPadding <strong>Plus écologique</strong> : n’imprimez que celles dont vous avez besoin !<br><strong>Plus simple</strong> : stockez dans votre espace client Gaz Tarif Réglementé pendant 5 ans.
+        .u-margin-t-15.u-padding-a-15.u-bg-venteBlue-medium.u-textCenter Vous réglerez vos factures par Carte Bleue, TIP ou chèque tous les 2 mois
+
+    +toggleCheckElem({
+      labelTitle: "Avec bandeau de promo",
+      checkBoxId: "fat",
+      toggleTarget: 'demo3',
+      hasBanner: 'Service gratuit'
+    })
+      div(data-e-switch-toggle-name='demo3' aria-hidden='false')
+        p.l-toggleCheckPadding <strong>Plus écologique</strong> : n’imprimez que celles dont vous avez besoin !<br><strong>Plus simple</strong> : stockez dans votre espace client Gaz Tarif Réglementé pendant 5 ans.
+        .u-margin-t-15.u-padding-a-15.u-bg-grey-light.u-textCenter Vous recevrez vos factures par courrier mais elle ne sera pas accessible via l’espace client Gaz Tarif Réglementé
+      div(data-e-switch-toggle-name='demo3' aria-hidden='true' hidden)
+        p.l-toggleCheckPadding <strong>Plus écologique</strong> : n’imprimez que celles dont vous avez besoin !<br><strong>Plus simple</strong> : stockez dans votre espace client Gaz Tarif Réglementé pendant 5 ans.
+        .u-margin-t-15.u-padding-a-15.u-bg-venteBlue-medium.u-textCenter Vous réglerez vos factures par Carte Bleue, TIP ou chèque tous les 2 mois

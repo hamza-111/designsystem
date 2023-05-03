@@ -1,0 +1,72 @@
+include ../../formMat/checkboxMat/checkboxMat
+include ../../arrowBox/arrowBox
+include ../../espritService/espritService-note/espritService-note
+
+mixin selectOptionBlock(data)
+  - var data          = data || {}
+  - var inputId       = data.inputId || "input-id"
+  - var inputLabel    = data.inputLabel || "Le label"
+  - var iconUrl       = data.iconUrl || false
+  - var iconAlt       = data.iconAlt || ""
+  - var fontIcon      = data.fontIcon || "icon-cat"
+  - var priceValue    = data.priceValue || "4"
+  - var hasCheckbox   = data.hasCheckbox || false
+  - var espritService = data.espritService || false
+  - var bgOnHover     = data.bgOnHover || false
+  - var textButton    = data.textButton || 'En savoir plus'
+
+  //- La variable "fontIcon" permet d'utiliser la fonte "icons" pour contribuer un picto, "iconUrl" sert uniquement au besoin spécifique de VENTE qui préfèrent contribuer une image
+
+  // c-selectOptionBlock
+  .c-selectOptionBlock(
+    class=hasCheckbox ? 'c-selectOptionBlock--hasCheckbox' : ''
+    class=bgOnHover ? 'c-selectOptionBlock--bgOnHover' : ''
+  )
+    .c-selectOptionBlock__main
+      .c-selectOptionBlock__check
+        if hasCheckbox
+          +checkboxMat({
+            label: inputLabel,
+            id: inputId,
+            labelIsHidden: true
+          }).c-selectOptionBlock__checkbox
+
+        .c-selectOptionBlock__icon.u-hideSmall
+          if iconUrl
+            img(src=iconUrl alt=iconAlt)
+          else
+            span.icon(class=fontIcon)
+
+
+        //img.c-selectOptionBlock__icon.u-hideSmall(src=iconUrl alt=iconAlt)
+
+      if hasCheckbox
+        .c-selectOptionBlock__content
+          .c-selectOptionBlock__description
+            block
+
+          .c-selectOptionBlock__sideBlock.c-selectOptionBlock__price.c-selectOptionBlock__sideBlock--alignTop.u-theme-color
+            strong!=priceValue
+              | €&nbsp;<sup>TTC</sup>/mois
+      else
+        .c-selectOptionBlock__content
+          .c-selectOptionBlock__description
+            block
+
+          +btnWrapper().c-btnWrapper--fullOnMobile.c-selectOptionBlock__sideBlock.u-theme-green
+            +baseBtn({
+              text: textButton
+            })
+    // end .c-selectOptionBlock__main
+
+    // Pour démo vente :
+    if espritService
+      +arrowBox({
+        hasTheme: 'u-theme-genBlue'
+      }).c-arrowBox--arrowTop.c-arrowBox--arrowDirLeft.c-selectOptionBlock__aside
+        +espritService-note({
+          rate: 4,
+          title: "300 000 clients l’ont déjà choisie !",
+          avisLink: true
+        })
+  // end c-selectOptionBlock

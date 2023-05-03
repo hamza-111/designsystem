@@ -1,0 +1,29 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base-standalone
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title = "Footer"
+  - var page = ""
+  - var bodyClass = ""
+  - var description = ""
+
+
+//- CSS only for that page
+block CSS
+  link(rel="stylesheet" href="../css/footer.css")
+
+
+//- JS only for that page
+block JS
+  script(src="../js/bas/footer.js")
+
+
+//- Page content
+block content
+  //- div englobant le footer sur l'ancien site
+  .parbase.footer
+    +siteFooter()

@@ -1,0 +1,75 @@
+.c-socialBtn {
+  margin-bottom: 10px;
+  text-decoration: none;
+  display: table;
+  min-height: 40px;
+  padding: 0 0;
+
+  .icon {
+    display: table-cell;
+    vertical-align: middle;
+    width: 45px;
+    min-height: 50px;
+    text-align: center;
+
+    &:before {
+      font-size: 3.5rem;
+    }
+  }
+  .c-linkLongArrow__content {
+      min-height: 40px;
+  }
+}
+
+.c-socialBtn__text {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: 10px 8px;
+  border-left: 1px solid;
+  width: calc(100% - 45px);
+}
+
+.c-socialBtn--facebook {
+  transition: all 0.2s ease-in-out;
+  margin-right: 2%;
+  color: $white;
+  background-color: $facebook;
+  border: 1px solid $facebook;
+
+  .c-socialBtn__text {
+    border-color: $grey;
+  }
+
+  &:hover {
+    background-color: $facebook-hover;
+  }
+}
+
+
+.c-socialBtn--google {
+  transition: all 0.2s ease-in-out;
+  color: $grey;
+  border: 1px solid $grey-medium;
+
+  .icon {
+    background: url(../images/logos/google-icon.svg) no-repeat center center;
+    background-size: 24px;
+  }
+
+  .c-socialBtn__text {
+    border-color: $grey-medium;
+  }
+
+  &.u-bg-after {
+    @include hover-focus-active() {
+      &:after {
+        opacity: 0.1;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: $grey-light;
+  }
+}

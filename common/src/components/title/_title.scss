@@ -1,0 +1,16 @@
+.c-title__text {
+  text-align: center;
+  padding: 15px 0 30px;
+  font-size: 2.4rem;
+  font-weight: $font-bold;
+  line-height: normal;
+}
+
+
+@include media(">=small") {
+  .c-title__text {
+    padding: 10px 0 40px;
+    font-size: 3rem;
+    line-height: normal;
+  }
+}

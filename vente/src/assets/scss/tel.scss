@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+// imports variables, mixins
+@import "../../../../common/src/assets/scss/variables";
+@import "../../../../common/src/assets/scss/mixins";
+@import "../../assets/scss/variables";
+
+
+// imports COMMON
+@import "../../../common/src/components/offerPromo/offerPromo";
+@import "../../../common/src/components/selectOptions/selectOptions";
+@import "../../../common/src/components/loginFeedback/loginFeedback";
+@import "../../../common/src/components/toggleCheck/toggleCheck";
+@import "../../../common/src/components/choiceBox/choiceBox";
+
+
+// imports VENTE
+@import "../../components/headerLight/headerLight";
+@import "../../components/bubble/bubble";
+@import "../../components/bubbleList/bubbleList";
+@import "../../components/addressBox/addressBox";
+@import "../../components/flatTabs/flatTabs";
+@import "../../components/offer/offer";
+@import "../../components/estimationCta/estimationCta";
+@import "../../components/codePromo/codePromo";
+@import "../../components/promoBanner/promoBanner";
+@import "../../components/tunnelFilter/tunnelFilter";
+@import "../../components/dropdownNav/dropdownNav";
+@import "../../components/miniBubbleList/miniBubbleList";

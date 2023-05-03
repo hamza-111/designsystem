@@ -1,0 +1,367 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+
+//- Main variables
+block variables
+  - var title         = "Estimation"
+  - var page          = "estimation"
+  - var bodyClass     = ""
+  - var description   = "Demo de la page d'estimation"
+  - var noHeaderFooter = true
+
+//- CSS (haut) pour cette page
+block CSS
+  link(rel="stylesheet" href="../css/estimation.css")
+
+//- JS (bas) pour cette page
+block JS
+  script(src="../js/bas/demo.js")
+
+
+//- Page content
+block content
+  #estimation.u-theme-indigo
+    button(type="button" data-e-fullModal-demo-open) Open
+    +fullModal
+      +modal({
+        target: '{"target": "reinit-estim",  "preventBodyScroll": false}'
+      }).c-modal--hasPadding
+        .u-textCenter
+          h2.u-heading-2 Êtes-vous sûr de vouloir recommencer votre estimation?
+          p.u-margin-v-40.u-margin-small-v-40 Cette action effacera votre progression actuelle et vous recommencerez le parcours depuis le début.
+          +btnWrapper().u-theme-indigo
+            +baseBtn({
+              text: 'Recommencer',
+              button: true
+            })
+
+      // STEP bubble 1
+      .c-formStep.u-margin-t-70.u-margin-small-t-40.is-active
+        +bubbleList({
+          headingSize: 2
+        }).is-waiting
+          +bubble({inputID: 'bubble_1', radioName: 'bubbleList_demo1', picto: 'iconVente-client-yes'})
+          +bubble({inputID: 'bubble_2', radioName: 'bubbleList_demo1', picto: 'iconVente-client-no'})
+          +bubble({inputID: 'bubble_3', radioName: 'bubbleList_demo1', picto: 'iconVente-client-undefined'})
+
+      // STEP bubble 2
+      .c-formStep
+        +bubbleList({
+          headingSize: 2
+        })
+          +bubble({inputID: 'bubble_11', radioName: 'bubbleList_demo2', picto: 'iconVente-elec'})
+          +bubble({inputID: 'bubble_12', radioName: 'bubbleList_demo2', picto: 'iconVente-gaz'})
+          +bubble({inputID: 'bubble_13', radioName: 'bubbleList_demo2', picto: 'iconVente-elec-gaz', info: "Un seul contrat pour 2 énergies, <br>plus de simplicité, <br>moins de démarches"})
+
+      // STEP address 1
+      .c-formStep
+        .u-textCenter
+          h3.u-heading-2 Votre adresse
+
+          .u-margin-small-t-20.u-margin-t-20
+            img(src='../images/estimation/pastille-adresse.svg' alt="" width="175" height="175")
+
+          .l-wrapper--small
+            +inputMat({
+              id: 'autocomplete1',
+              label: 'Adresse',
+              autoComplete: true,
+              required: true,
+              placeholder: 'Ex: 26 rue Cauchy, 75008 Paris'
+            }).c-inputMat--suggest.u-margin-b-40
+
+          +btnWrapper()
+            +baseBtn({
+              text: 'Continuer',
+              button: true,
+              submit: true
+            })
+
+      // STEP address 2
+      .c-formStep
+        .u-textCenter
+          h3.u-heading-2 Votre adresse
+
+          .u-margin-small-t-20.u-margin-t-20
+            img(src='../images/estimation/pastille-adresse.svg' alt="" width="175" height="175")
+
+          .l-wrapper--small
+            .l-row.l-row--noSideGut
+              .l-col-small-12
+                +inputMat({
+                  id: 'voie',
+                  label: 'Voie',
+                  required: true,
+                  placeholder: 'Ex: 26 rue Cauchy'
+                })
+
+            .l-row.l-row--noSideGut
+              .l-col-small-12.l-col-medium-6
+                +inputMat({
+                  id: 'codepostal',
+                  label: 'Code postal',
+                  required: true,
+                  placeholder: 'Ex: 75008'
+                })
+
+              .l-col-small-12.l-col-medium-6
+                +inputMat({
+                  id: 'ville',
+                  label: 'Ville',
+                  required: true,
+                  placeholder: 'Ex: Paris'
+                })
+
+          +btnWrapper().u-margin-t-40.u-margin-small-t-40
+            +baseBtn({
+              text: 'Continuer',
+              button: true,
+              submit: true
+            })
+
+      // STEP Linky
+      .c-formStep
+        .u-textCenter
+          h3.u-heading-2 Votre compteur électrique est-il semblable à celui-ci?
+
+          .u-margin-small-t-30.u-margin-t-30
+            img(src='../images/estimation/compteur_linky.svg' alt="Illustration compteur Linky")
+
+          .l-wrapper--small
+            +selectEmpty.u-margin-t-25.u-margin-small-t-25.u-margin-b-15
+
+            .u-margin-b-30.u-margin-small-b-30.u-fontSize-tiny.u-color-grey
+              p Nous allons estimer votre budget mensuel sur la base d’un comptage simple.
+
+            +toolTip({
+              labelText: "C’est quoi Linky ?",
+              modalTarget: 'linky'
+            })
+
+            +modal({
+              target: '{"target": "linky", "preventBodyScroll": false}'
+            }).c-modal--hasPadding
+              .u-textCenter
+                img.u-margin-b-20.u-margin-small-t-40.u-margin-small-b-40(src='../images/estimation/compteur_linky.svg' alt="Compteur Linky")
+                p Linky&trade; est un compteur nouvelle génération dit "communicant" : il peut recevoir et envoyer des informations sans l'intervention physique d'un technicien.
+
+          +btnWrapper().u-margin-t-40.u-margin-small-t-40
+            +baseBtn({
+              text: 'Continuer',
+              button: true,
+              submit: true
+            })
+
+      // STEP Occupants logement
+      .c-formStep
+        .u-textCenter
+          h3.u-heading-2 Combien êtes-vous à occuper ce logement ?
+
+          .u-margin-small-t-30.u-margin-t-30
+            img(src='../images/estimation/family-icon.svg' alt="Illustration compteur Linky" width="136" height="136")
+
+          .l-wrapper--small
+            +moreLessInput.u-theme-indigo.u-margin-t-20.u-margin-small-t-20
+
+          +btnWrapper().u-margin-t-40.u-margin-small-t-40
+            +baseBtn({
+              text: 'Continuer',
+              button: true,
+              submit: true
+            })
+
+      // STEP Surface logement
+      .c-formStep
+        .u-textCenter
+          h3.u-heading-2 La surface de votre logement est de
+
+          .u-margin-small-t-30.u-margin-t-30
+            img(src='../images/estimation/surface_logement.svg' alt="Illustration compteur Linky" width="175" height="175")
+
+          .l-wrapper--small
+            .l-row.l-row--noSideGut
+              .l-col-small-6.l-push-small-3
+                +inputMat({
+                  id: 'surface',
+                  label: 'Surface en mètres carrés',
+                  required: true,
+                  placeholder: 'Ex: 50',
+                  textRight: 'm<sup>2</sup>',
+                  float: true,
+                  hiddenLabel: true
+                })(data-e-float-label).c-inputMat--float
+
+          +btnWrapper().u-margin-t-40.u-margin-small-t-40
+            +baseBtn({
+              text: 'Continuer',
+              button: true,
+              submit: true
+            })
+
+      // STEP Conso gaz
+      .c-formStep
+        .u-textCenter
+          h3.u-heading-2 Quelle est votre consommation annuelle de gaz ?
+
+          .u-margin-small-t-30.u-margin-t-30
+            img(src='../images/estimation/gaz-icon.svg' alt="Flamme gaz" width="175" height="175")
+
+          .l-wrapper--small
+            .l-row.l-row--noSideGut
+              .l-col-small-6.l-push-small-3
+                +inputMat({
+                  id: 'consoGaz',
+                  label: 'Quelle est votre consommation annuelle de gaz naturel ?',
+                  required: true,
+                  placeholder: 'Ex: 120',
+                  textRight: 'm<sup>2</sup>',
+                  float: true,
+                  hiddenLabel: true
+                })(data-e-float-label).c-inputMat--float
+
+          +btnWrapper().u-margin-t-40.u-margin-small-t-40
+            +baseBtn({
+              text: 'Continuer',
+              button: true,
+              submit: true
+            })
+
+      // STEP Conso élec
+      .c-formStep
+        .u-textCenter
+          h3.u-heading-2 Quelle est votre consommation annuelle électrique ?
+
+          .u-margin-small-t-30.u-margin-t-30
+            img(src='../images/estimation/elec-icon.svg' alt="Electricité ouverte" width="175" height="175")
+
+          .l-wrapper--small
+            .l-row.l-row--noSideGut
+              .l-col-small-6
+                +inputMat({
+                  id: 'consoElecHP',
+                  label: 'Heures pleines',
+                  required: true,
+                  placeholder: 'Ex: 120',
+                  textRight: 'kWh'
+                })
+
+              .l-col-small-6
+                +inputMat({
+                  id: 'consoElecHC',
+                  label: 'Heures creuses',
+                  required: true,
+                  placeholder: 'Ex: 120',
+                  textRight: 'kWh'
+                })
+
+          +btnWrapper().u-margin-t-40.u-margin-small-t-40
+            +baseBtn({
+              text: 'Continuer',
+              button: true,
+              submit: true
+            })
+
+      // STEP Puissance compteur élec
+      .c-formStep
+        .u-textCenter
+          h3.u-heading-2 Quelle est la puissance de votre compteur d’électricité ?
+
+          .l-wrapper--small.u-margin-v-20.u-margin-small-v-20.u-color-grey
+            p Nous allons estimer votre budget mensuel sur la base d’un comptage simple.
+
+          .l-wrapper--small
+            .l-row.l-row--noSideGut
+              .l-col-small-8.l-push-small-2
+                +selectMat({
+                  label: 'En kWh'
+                })
+
+          +btnWrapper().u-margin-t-40.u-margin-small-t-40
+            +baseBtn({
+              text: 'Continuer',
+              button: true,
+              submit: true
+            })
+
+      // STEP HP / HC
+      .c-formStep.u-margin-t-70.u-margin-small-t-40
+        +bubbleList({
+          title: "Avez-vous l’option Heures Pleines / Heures Creuses ?",
+          headingSize: 2
+        }).is-waiting
+          +bubble({inputID: 'hp', radioName: 'heures_pleines', picto: 'iconVente-client-yes', text: "Oui, J’ai l’option"})
+          +bubble({inputID: 'hc', radioName: 'heures_creuses', picto: 'iconVente-client-yes', text: "Non, Je ne l’ai pas"})
+
+        .u-textCenter
+          span.u-color-grey.u-link.u-link--revert(data-e-modal-open='hp-hc') En savoir plus ?
+
+        +modal({
+          target: '{"target": "hp-hc", "preventBodyScroll": false}'
+        }).c-modal--hasPadding
+          .u-textCenter
+            img.u-margin-b-20.u-margin-small-t-40.u-margin-small-b-40(src='../images/estimation/facture.svg' alt="Compteur Linky")
+            p Vous trouverez votre consommation heures pleines et heures creuses sur votre facture ou bien directement sur votre compteur électrique.
+
+      // STEP Puissance utilisation gaz (custom radio)
+      .c-formStep
+        .u-textCenter
+          h3.u-heading-2 Vous utilisez du gaz pour :
+
+          +multiChoice.u-margin-t-30.u-margin-small-t-30
+            +multiChoiceInput({
+              inputID: 'radiateur',
+              inputName: 'usegazfor',
+              inputLabel: 'Chauffage individuel',
+              imageUrl: "../images/estimation/picto-radiateur.svg"
+            })
+            +multiChoiceInput({
+              inputID: 'four',
+              inputName: 'usegazfor',
+              inputLabel: 'Cuisine',
+              imageUrl: "../images/estimation/picto-four.svg"
+            })
+            +multiChoiceInput({
+              inputID: 'baignoire',
+              inputName: 'usegazfor',
+              inputLabel: 'Eau chaude',
+              imageUrl: "../images/estimation/picto-baignoire.svg",
+              disabled: true
+            })
+
+          +btnWrapper().u-margin-t-40.u-margin-small-t-40
+            +baseBtn({
+              text: 'Continuer',
+              button: true,
+              submit: true
+            })
+
+  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, enim obcaecati facilis cum nihil, quibusdam at sunt quam, amet nisi doloremque asperiores. Totam distinctio doloremque quia aspernatur odio sed dolorum!
+  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, enim obcaecati facilis cum nihil, quibusdam at sunt quam, amet nisi doloremque asperiores. Totam distinctio doloremque quia aspernatur odio sed dolorum!
+  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, enim obcaecati facilis cum nihil, quibusdam at sunt quam, amet nisi doloremque asperiores. Totam distinctio doloremque quia aspernatur odio sed dolorum!
+  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, enim obcaecati facilis cum nihil, quibusdam at sunt quam, amet nisi doloremque asperiores. Totam distinctio doloremque quia aspernatur odio sed dolorum!
+  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, enim obcaecati facilis cum nihil, quibusdam at sunt quam, amet nisi doloremque asperiores. Totam distinctio doloremque quia aspernatur odio sed dolorum!
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.
+  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda id laborum fuga illum maiores amet ducimus beatae error reiciendis, impedit unde illo at minus nam modi enim dolore ullam quam.

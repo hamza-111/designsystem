@@ -1,0 +1,309 @@
+.c-searchFAQ__img {
+  position: absolute;
+  left :0;
+}
+
+.c-searchFAQ__link {
+  font-size: 1.6rem;
+  text-align: center;
+  color: white;
+  @media #{$small} {
+    display: none;
+  }
+
+}
+
+.c-searchFAQ__link a { 
+  font-weight: 100;
+  color: white;}
+
+.c-searchFAQ {
+  // background-color:#0C5CAF;
+  background:#0C5CAF url(../images/contrib/bgsearchFAQ.png) no-repeat center 8px;
+  position: relative;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 202px;
+  @media #{$smallMediumOnly} {
+    background-image: none;
+  }
+  .c-combobox {
+    transition: background-color 0.2s ease-in-out;
+    @include hover-focus-active() {
+      color: $genBlue;
+    }
+  }
+
+  .c-combobox + .c-combobox {
+    border-top: 1px dotted $black;
+  }
+
+  .c-combobox__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .c-searchFAQ__title {
+    color: white;
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 4.3rem!important;
+    
+    @media #{$small} {
+      font-size: 2.4rem;
+      line-height: 3.2rem!important;
+    }
+  }
+}
+
+.c-searchFAQ__list {
+  border-top: 1px dotted $black;
+}
+
+.c-searchFAQ__content {
+  padding: 16px;
+  margin: 0 auto;
+  width: 100%;
+  @media #{$smallMediumOnly} {
+    padding:16px ;
+  }
+
+}
+
+.c-searchFAQ__form {
+  max-width: 792px;
+  margin: 24px auto 16px;
+  background: $white;
+  display: flex;
+  height: 60px;
+  border-radius: 8px;
+  @media #{$smallMediumOnly} {
+    max-width: 100%;
+  }
+}
+
+.c-searchFAQ__field {
+  width: 100%;
+  appearance: none;
+  background: transparent;
+  border: none;
+  margin: 0;
+  line-height: 100%;
+  font-size: 2rem;
+  color: $grey;
+  @media #{$small} {
+    padding: 0 16px;
+  }
+  &::-ms-clear {
+    display: none;
+  }
+
+  @include placeholder() {
+    color: $grey;
+    font-size: 2.0rem;
+  }
+
+  &::placeholder {
+    font-size: 2rem;
+    @media #{$small} {
+      font-size: 1.6rem;
+    }
+  }
+  &:hover::placeholder {
+    color: $genBlue;
+  }
+  
+
+  &:focus,
+  .is-opened & {
+    outline: none;
+    border-bottom: 0px solid $genBlue;
+  }
+
+  &:focus::placeholder {
+    color: white;
+  }
+  &:focus {
+    color: #333;
+  }
+
+}
+
+input.c-searchFAQ__field:placeholder {
+  font-size: 2rem;
+}
+.c-searchFAQ__btn {
+  position: relative;
+  @extend %reset-style-button;
+  border-radius: 0px 6px 6px 0px;
+  width: 190px;
+  color: white;
+  text-align: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease-in-out;
+  background-color: #009DE9;
+  display: flex;
+  align-items: center;
+  @media #{$large} {
+    padding-right:24px ;
+  }
+  &:focus {
+    border: 3px solid #ccc;
+  }
+
+  &:hover {
+    background-color: #2AB0F1;
+  }
+  @media #{$small} {
+    width: 69px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include hover-focus-active() {
+    outline: none;
+    background-color: none;
+  }
+
+  .c-spinner {
+    display: inline-block;
+    @media #{$small} {
+      margin: 17px;
+    }
+  }
+  span {
+    color: white;
+    font-size: 2rem;
+    @media #{$small} {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.c-searchFAQ__combobox {
+  position: absolute;
+  z-index: 1;
+  padding: 10px;
+  background: $white;
+  border: 1px solid $genBlue;
+  border-top: none;
+  width: calc(100% - 40px );
+
+  &::first-child {
+    border: 1px solid $genBlue
+  }
+}
+
+.c-searchFAQ__listTitle {
+  font-weight: bold;
+  color: $black;
+  padding-top: 5px;
+}
+
+@include media("<=small") {
+  .c-searchFAQ__content {
+    width: 100%;
+  }
+
+  .c-searchFAQ {
+    .c-combobox__link { padding: 20px 0; }
+  }
+
+  .c-searchFAQ__iconLens {
+    height: 23px;
+    margin: 0;
+    width: 23px;
+  }
+
+  .c-searchFAQ__img { display: none; }
+  .c-searchFAQ__label { display: none; }
+  .c-searchFAQ { margin-bottom: 0; }
+  .c-searchFAQ__list { margin-top: 15px; }
+
+
+}
+
+
+@include media(">=small") {
+  .c-searchFAQ {
+    //margin-bottom: 64px;
+    .c-combobox__link { padding: 20px 0; }
+  }
+
+  .c-searchFAQ__label {
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+  .c-searchFAQ__content {
+    .c-searchFAQ__label {
+      color: $genBlue;
+      font-size: 3.2rem;
+      font-family: arial;
+      font-weight: bold;
+    }
+  }
+
+  .c-searchFAQ__iconLens {
+    height: 22px;
+    margin: 14px 8px 15px 20px;
+    width: 22px;
+  }
+
+  .c-searchFAQ__form {
+    height: 60px;
+  }
+
+  .c-searchFAQ__field {
+    font-size: 2rem;
+    padding: 0 24px;
+
+    @include placeholder() {
+      font-size: 1.8rem;
+    }
+
+    &:hover::placeholder {
+      color: $genBlue;
+    }
+    
+    &:focus::placeholder {
+      color: white;
+    }
+    
+  }
+
+  .c-searchFAQ__combobox {
+    padding: 0 25px;
+  }
+
+  .c-searchFAQ__list {
+    margin-top: 30px;
+  }
+
+  .c-searchFAQ__listTitle {
+    font-size: 1.5rem;
+    padding-top: 30px;
+  }
+}
+
+@include media(">=medium") {
+  .c-searchFAQ {
+    //height: 200px;
+  }
+  .c-searchFAQ__content {
+    position: relative;
+    width: 100%;
+  }
+}
+
+@include media (">small" , "<=medium") {
+  .c-searchFAQ__content {
+    top: 0;
+  }
+
+  .c-faq .u-padding-t-110 {
+    padding-top: 5%;
+  }
+}

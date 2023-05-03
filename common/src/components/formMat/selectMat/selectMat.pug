@@ -1,0 +1,43 @@
+mixin selectMat(data)
+  - var data           = data || {}
+  - var label          = data.label || "Lorem ipsum"
+  - var id             = data.id || false
+  - var name           = data.name || false
+  - var dataValidation = data.dataValidation || false
+  - var required       = data.required || false
+  - var disabled       = data.disabled || false
+  - var hiddenLabel    = data.hiddenLabel || false
+
+  // .c-selectMat
+  span.c-selectMat(
+    data-e-field-validation=dataValidation ? dataValidation : false
+    class=disabled ? "is-disabled" : false
+  )&attributes(attributes)
+    .c-selectMat__wrap
+      select.c-selectMat__select(
+        id=id
+        name=name
+        required=required
+        disabled=disabled
+      )
+        if block
+          block
+        else
+          option(value="") Option 0
+          option(value="1") Option 1
+          option(value="2") Option 2
+          option(value="3") Option 3
+          option(value="4") Option 4
+
+      label.c-inputMat__label(
+        for=id
+        class=hiddenLabel ? 'u-visibilityHidden' : ''
+      )!=label
+      .c-selectMat__inputLine
+
+    if dataValidation
+      +fieldInfo({
+        typeMessage: 'error',
+        input: true
+      })(data-e-field-validation-error)
+  // end .c-selectMat

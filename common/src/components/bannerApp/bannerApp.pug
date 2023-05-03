@@ -1,0 +1,25 @@
+mixin bannerApp()
+  // .c-bannerApp
+  div(data-e-bannerapp)
+
+  script(data-tpl="bannerApp" type="text/template")
+    .c-bannerApp
+      button.c-bannerApp__close(data-e-bannerapp-close type="button")
+        span.u-visibilityHidden Fermer la bannière de téléchargement de l'application
+        span.icon.icon-close
+
+      img.c-bannerApp__logo(
+        src="../images/contrib/logoEngie_banner.png"
+        alt="l'application Gaz Tarif Réglementé"
+      )
+
+      p.c-bannerApp__text
+        span Gaz Tarif Réglementé
+        br
+        span Votre espace client dans la poche
+
+      a.c-bannerApp__open(
+        href='[% this.url %]'
+        title="Ouvrir l'application"
+      ) Ouvrir
+  // end .c-bannerApp

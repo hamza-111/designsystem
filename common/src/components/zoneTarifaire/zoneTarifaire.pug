@@ -1,0 +1,345 @@
+include ../formMat/formMat
+include ../btnWrapper/btnWrapper
+include ../fieldInfo/fieldInfo
+
+mixin zoneTarifaire(data)
+  - var data = data || {}
+
+  .c-zoneTarifaire.u-padding-a-50
+    h2.u-heading-3.u-textCenter Ma zone tarifaire
+
+    +formMat()(data-e-form-validation='{"switchBtnState": false}').l-wrapper
+      +inputMat({
+        type : 'tel',
+        label: 'code postal',
+        placeholder: 'Ex: 75017',
+        maxlength: 5,
+        pattern: "cp",
+        required: true,
+        dataValidation: {
+          validations: {
+            patternMismatch: 'patternMismatch: Format incorrect',
+            valueMissing: 'Champs obligatoire'
+          }
+        }
+      })
+
+      +inputMat({
+        label: 'ma commune',
+        type: "text",
+        id: "name",
+        name: "commune",
+        required: true,
+        placeholder: 'Ex: Paris',
+        disabled: true
+      })
+
+      +btnWrapper.u-theme-genBlue.u-margin-t-40
+        +baseBtn({
+          text: 'trouver',
+          button: true
+        })(type="submit" data-e-form-validation-submit)
+
+
+      +fieldInfo({
+        typeMessage: 'error'
+      })
+        p Notre service est actuellement indisponible. <br> Veuillez réessayer plus tard s’il vous plaît.
+
+      .c-zoneTarifaire__fieldInfos
+        p 
+          b Votre code postal correspond au territoire de desserte d’une ELD
+        a(href="#") En savoir plus sur les ELD
+
+        .c-zoneTarifaire_zoneIcon
+          p 
+            b Vous êtes en <span>zone 2</span>
+          //- p 
+          //-   b.u-fontSize-large Vous etes :
+          //- .c-zoneTarifaire_zone 
+          //-   span ZONE 1
+
+      //- +btnWrapper.u-theme-genBlue.u-margin-t-40
+      //-   +baseBtn({
+      //-     text: 'faire une nouvelle recherche',
+      //-     button: true,
+      //-     secondary: true
+      //-   })(type="submit" data-e-form-validation-submit)
+    
+    p.u-typoSize-22.u-textCenter.u-margin-b-30.c-zoneTarifaire_titreTableau Tarif de vente du gaz naturel TTC(*) au <b>1er septembre 2022</b> pour votre zone tarifaire
+    
+    +zoneTarifaireBlocBoardv2
+
+    p.u-colo-grey.u-textCenter.u-margin-v-10 TICGN comprise pour l’ensemble des clients (0,841 c€/kWh HT). Les consommations de gaz naturel ainsi que la TICGN sont soumises à la TVA au taux de 20% au 1er novembre 2022. Les abonnements sont soumis à la TVA au taux de 5,5% au 1er novembre 2022. L’acheminement est soumis à CTA (24,8 % de la part fixe du tarif de distribution)
+    <div class="c-btnWrapper u-theme-genBlue c-btnWrapper--fullOnMobile">
+      <button class="c-baseBtn c-baseBtn--secondary u-theme-color" id="idButtonFaireNouvelleRecherche" type="button">
+        <span class="c-baseBtn__content">Faire une nouvelle recherche</span>
+      </button>
+      <button class="c-baseBtn u-theme-bg u-theme-bg-hover" id="codePostalSubmit" type="submit">
+        <span class="c-baseBtn__content">Estimer votre budget annuel de gaz naturel</span>
+      </button>
+    </div>
+    //- +btnWrapper.u-theme-genBlue.u-margin-t-40.u-margin-b-70.c-zoneTarifaire__cta
+    //-   //- a(href="#").u-color-genBlue.c-zoneTarifaire__ctaNewSearch
+    //-   //-   span Faire une nouvelle recherche
+    //-   +baseBtn({
+    //-     text: 'faire une nouvelle recherche',
+    //-     button: true,
+    //-     secondary: true
+    //-   })(type="submit" data-e-form-validation-submit).c-zoneTarifaire__ctaNewSearch  
+    //-   +baseBtn({
+    //-     text: 'Estimer votre budget annuel de gaz naturel',
+    //-     button: true 
+    //-   })(type="submit" data-e-form-validation-submit)
+  
+
+mixin zoneTarifaireBlocBoardv2(data)
+  - var data = data || {}
+
+  .c-zoneTarifaire__blocBoard.v2&attributes(attributes)
+    .c-zoneTarifaire__board.c-zoneTarifaire--first
+      .c-zoneTarifaire__boardColLeft.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 Usage
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 Abonnement annuel
+        .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 Prix du gaz <br> centimes / kWh
+
+      .c-zoneTarifaire__boardColRight.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow 
+          span.c-zoneTarifaire__lightText
+            b Base <br> 
+            span moins de 1 000 kWh/an
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1
+          span.c-zoneTarifaire__desc cuisine
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 102,13 €
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3 
+          span 11,21 cts
+          
+          +baseBtn({
+            text: "voir l'évolution",
+            secondary: true,
+            button: false 
+          })
+        
+  
+    // - secondary
+    .c-zoneTarifaire__board.c-zoneTarifaire--secondary
+      .c-zoneTarifaire__boardColLeft.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow 
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 Usage
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 Abonnement annuel
+        .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 Prix du gaz <br> centimes / kWh
+
+      .c-zoneTarifaire__boardColRight.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow
+          span.c-zoneTarifaire__lightText
+            b B0 <br> 
+            span entre 1 000 kWh/an <br> et 6 000 kWh/an
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1
+          span.c-zoneTarifaire__desc cuisine <br> et eau chaude
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 102,13 €
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3
+          span 11,21 cts
+          +baseBtn({
+            text: "voir l'évolution",
+            secondary: true,
+            button: false 
+          })
+
+    .c-zoneTarifaire__board.c-zoneTarifaire--secondary
+      .c-zoneTarifaire__boardColLeft.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 Usage
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 Abonnement annuel
+        .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 Prix du gaz <br> centimes / kWh
+
+      .c-zoneTarifaire__boardColRight.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow 
+          span.c-zoneTarifaire__lightText
+            b B1 <br> 
+            span entre 6 000 kWh/an <br> et 30 000 kWh/an
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1
+          span.c-zoneTarifaire__desc chauffage <br>et eau chaude <br>et/ou cusine individuelle
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 249,75 €
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3
+          span 8,73 cts
+          +baseBtn({
+            text: "voir l'évolution",
+            secondary: true,
+            button: false 
+          })
+
+    .c-zoneTarifaire__board.c-zoneTarifaire--secondary
+      .c-zoneTarifaire__boardColLeft.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 Usage
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 Abonnement annuel
+        .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 Prix du gaz <br> centimes / kWh
+
+      .c-zoneTarifaire__boardColRight.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow
+          span.c-zoneTarifaire__lightText 
+            b B2 <br> 
+            span plus de 30 000 kWh/an
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 
+          span.c-zoneTarifaire__desc chauffage et/ou<br> eau chaude dans les <br>chaufferies moyennes
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 249,75 €
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3 
+          span 8,73 cts
+          +baseBtn({
+            text: "voir l'évolution",
+            secondary: true,
+            button: false 
+          })
+
+
+mixin zoneTarifaireBlocBoardv2bis(data)
+  - var data = data || {}
+
+  .c-zoneTarifaire__blocBoard.v2.bis&attributes(attributes)
+    .c-zoneTarifaire__board.c-zoneTarifaire--first
+      .c-zoneTarifaire__boardColLeft.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c0 Tarif
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 Types d’usages
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2.c-zoneTarifaire__boardRow-c2bis <p><b>Prix du gaz par <br> zone géographique </b> <span>centimes / kWh</span> </p>
+        .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 Abonnement annuel
+
+      .c-zoneTarifaire__boardColRight.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow 
+          span.c-zoneTarifaire__lightText
+            b Base
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1
+          span.c-zoneTarifaire__desc cuisson
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 <b>Zone 1 à 6</b> <span>11,21 cts</span>
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3.c-zoneTarifaire--tarif
+          span 102,09 €
+          
+  
+    // - secondary
+    .c-zoneTarifaire__board.c-zoneTarifaire--secondary
+      .c-zoneTarifaire__boardColLeft.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c0 Tarif
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 Types d’usages
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2.c-zoneTarifaire__boardRow-c2bis <p><b>Prix du gaz par <br> zone géographique </b> <span>centimes / kWh</span></p>
+        .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 Abonnement annuel
+
+      .c-zoneTarifaire__boardColRight.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow
+          span.c-zoneTarifaire__lightText
+            b B0
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1
+          span.c-zoneTarifaire__desc cuisson <br> et eau chaude
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 <b>Zone 1 à 6</b> <span>11,21 cts</span>
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3.c-zoneTarifaire--tarif
+          span 102,09 €
+
+    .c-zoneTarifaire__board.c-zoneTarifaire--secondary.c-zoneTarifaire--secondarybis
+      .c-zoneTarifaire__boardColLeft.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c0 Tarif
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 Types d’usages
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2.c-zoneTarifaire__boardRow-c2bis.c-zoneTarifaire__blocZone <p><b>Prix du gaz par <br> zone géographique </b> <span>centimes / kWh</span></p>
+        .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 Abonnement annuel
+
+      .c-zoneTarifaire__boardColRight.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow 
+          span.c-zoneTarifaire__lightText
+            b B1 ou B2i
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1
+          span.c-zoneTarifaire__desc chauffage et cuisson et/ou la production d'eau chaude
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2.c-zoneTarifaire__Zone
+          div.c-zoneTarifaire__itemZone <b>Zone 1</b> <span>8,73 cts</span>
+          div.c-zoneTarifaire__itemZone <b>Zone 2</b> <span>8,80 cts</span>
+          div.c-zoneTarifaire__itemZone <b>Zone 3</b> <span>8,87 cts</span>
+          div.c-zoneTarifaire__itemZone <b>Zone 4</b> <span>8,94 cts</span>
+          div.c-zoneTarifaire__itemZone <b>Zone 5</b> <span>9,01 cts</span>
+          div.c-zoneTarifaire__itemZone <b>Zone 6</b> <span>9,09 cts</span>
+          
+
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3.c-zoneTarifaire--tarif
+          span 249,86 €
+
+    //- .c-zoneTarifaire__board.c-zoneTarifaire--secondary
+    //-   .c-zoneTarifaire__boardColLeft.c-zoneTarifaire__layout
+    //-     .c-zoneTarifaire__boardRow
+    //-     .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 Usage
+    //-     .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 Abonnement annuel
+    //-     .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 Prix du gaz <br> centimes / kWh
+
+    //-   .c-zoneTarifaire__boardColRight.c-zoneTarifaire__layout
+    //-     .c-zoneTarifaire__boardRow
+    //-       span.c-zoneTarifaire__lightText 
+    //-         b B2
+    //-     .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c1 
+    //-       span.c-zoneTarifaire__desc chauffage et/ou<br> eau chaude dans les <br>chaufferies moyennes
+    //-     .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 249,75 €
+    //-     .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3 
+    //-       span 8,73 cts
+    //-       +baseBtn({
+    //-         text: "voir l'évolution",
+    //-         secondary: true,
+    //-         button: false 
+    //-       })
+
+
+
+
+mixin zoneTarifaireBlocBoardv3bis(data)
+  - var data = data || {}
+  
+  +btnWrapper().c-zoneTarifaire__blocBoard__switchBtn
+      +baseBtn({
+        text: 'TTC',
+        button:true
+      }).is-active
+      +baseBtn({
+        text: 'HTT',
+        button:true
+      })
+  
+  .c-zoneTarifaire__blocBoard.v2.v2--3bis&attributes(attributes)
+
+
+    .c-zoneTarifaire__board.c-zoneTarifaire--first
+      .c-zoneTarifaire__boardColLeft.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow Plage de consommation prévisionnelle
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 Abonnement annuel TTC
+        .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 Prix par kWh TTC
+
+      .c-zoneTarifaire__boardColRight.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow 
+          span.c-zoneTarifaire__lightText
+            b Jusqu’à <br>3 999 kWh /an
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 102,13 €
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3 
+          span 0,13 250 €
+        
+  
+    // - secondary
+    .c-zoneTarifaire__board.c-zoneTarifaire--secondary
+      .c-zoneTarifaire__boardColLeft.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow Plage de consommation prévisionnelle
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 Abonnement annuel
+        .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 Prix du gaz <br> centimes / kWh
+
+      .c-zoneTarifaire__boardColRight.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow
+          span.c-zoneTarifaire__lightText
+            b De 4 000 <br>à 29 999 kWh /an
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 249,86 €
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3
+          span 0,10 754 €  
+
+
+    .c-zoneTarifaire__board.c-zoneTarifaire--secondary
+      .c-zoneTarifaire__boardColLeft.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow Plage de consommation prévisionnelle
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 Abonnement annuel
+        .c-zoneTarifaire__boardRow.cut.c-zoneTarifaire__boardRow-c3 Prix du gaz <br> centimes / kWh
+
+      .c-zoneTarifaire__boardColRight.c-zoneTarifaire__layout
+        .c-zoneTarifaire__boardRow 
+          span.c-zoneTarifaire__lightText
+            b À partir de <br>30 000 kWh /an
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow--border.c-zoneTarifaire__boardRow-c2 249,75 €
+        .c-zoneTarifaire__boardRow.c-zoneTarifaire__boardRow-c3
+          span 0,10 754 € 

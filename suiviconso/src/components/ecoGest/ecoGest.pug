@@ -1,0 +1,22 @@
+include headerEcoGest/headerEcoGest
+include navAnchorEcoGest/navAnchorEcoGest
+include mainEcoGest/mainEcoGest
+
+mixin ecoGest
+  
+  +headerEcoGest()
+  +navAnchorEcoGest({
+    tab : "tabBienFait"
+  }).c-navAnchorEcoGest__active#nav1
+  +navAnchorEcoGest({
+    tab : "tabPlus",
+    plus : true
+  })#nav2
+  +navAnchorEcoGest({
+    tab : "tabCitoyen",
+    citoyen : true
+  })#nav3
+  +navAnchorEcoGest({
+    tab : "travaux",
+    travaux : true
+  })#nav4

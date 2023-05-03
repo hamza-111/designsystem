@@ -1,0 +1,12 @@
+include addressBoxItem/addressBoxItem
+
+mixin addressBox(data)
+  - var data  = data || {}
+
+  // .c-addressBox
+  .c-addressBox(data-e-addressBox='data-e-addressBox')&attributes(attributes)
+    h2.u-heading-1.u-margin-b-40.u-textCenter Ma nouvelle adresse
+
+    .c-addressBox__group
+      block
+  // end .c-addressBox

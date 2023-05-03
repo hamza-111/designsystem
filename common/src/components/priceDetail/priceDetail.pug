@@ -1,0 +1,153 @@
+mixin priceDetail(data)
+  - var data           = data || {}
+  - var toggleSettings = data.toggleSettings || false
+  - var target         = toggleSettings.target || false
+  - var fullElec       = data.fullElec || false
+
+  // .c-priceDetail
+  section.c-priceDetail&attributes(attributes)
+    button.c-priceDetail__btn.c-btnWrapper(
+      type="button"
+      data-e-toggle=toggleSettings
+    )
+      .c-priceDetail__btnFlex.c-baseBtn
+        span.c-priceDetail__label.c-priceDetail__label--off.c-baseBtn__content.u-theme-color Détail du prix
+        span.c-priceDetail__label.c-priceDetail__label--on.c-baseBtn__content.u-theme-color Masquer le détail du prix
+        span.icon.icon-chevron-top.u-theme-color
+
+    .c-priceDetail__content(data-e-toggle-target=target)
+      if block
+        block
+      else
+        .c-priceDetail__group(
+          class=fullElec ? "c-priceDetail__group--large" : ""
+        )
+          h4.c-priceDetail__title
+            span.icon.icon-elec2.u-hideSmall
+            | Electricité
+          ul.c-priceDetail__list
+            li.c-priceDetail__item
+              span.c-priceDetail__itemName Abonnement annuel
+              span.c-priceDetail__itemTTC 9.96€&nbsp;<sup>TTC</sup>
+              span.c-priceDetail__itemHT 8.32€&nbsp;<sup>HT</sup>
+            li.c-priceDetail__item
+              span.c-priceDetail__itemName KWh <span class="u-hideSmall">heures</span><span class="u-hideMediumUp">H</span> pleines
+              span.c-priceDetail__itemTTC 0.078€&nbsp;<sup>TTC</sup>
+              span.c-priceDetail__itemHT 0.062€&nbsp;<sup>HT</sup>
+            li.c-priceDetail__item
+              span.c-priceDetail__itemName KWh <span class="u-hideSmall">heures</span><span class="u-hideMediumUp">H</span> creuses
+              span.c-priceDetail__itemTTC 0.078€&nbsp;<sup>TTC</sup>
+              span.c-priceDetail__itemHT 0.062€&nbsp;<sup>HT</sup>
+            li.c-priceDetail__item
+              span.c-priceDetail__itemName KWh <span class="u-hideSmall">heures</span><span class="u-hideMediumUp">H</span> weekend
+              span.c-priceDetail__itemTTC 0.078€&nbsp;<sup>TTC</sup>
+              span.c-priceDetail__itemHT 0.062€&nbsp;<sup>HT</sup>
+            if fullElec
+              li.c-priceDetail__item
+                span.c-priceDetail__itemTotal Soit 605,00€&nbsp;<sup>TTC</sup>&nbsp;/&nbsp;an
+
+          if fullElec
+            ul.c-priceDetail__list.u-margin-l-40.u-margin-small-l-0.u-margin-small-t-20
+              li.c-priceDetail__item
+                | Consommation estimée
+              li.c-priceDetail__item
+                span.c-priceDetail__itemName KWh <span class="u-hideSmall">heures</span><span class="u-hideMediumUp">H</span> pleines
+                span.c-priceDetail__itemConso 1044&nbsp;KWh&nbsp;/an
+              li.c-priceDetail__item
+                span.c-priceDetail__itemName KWh <span class="u-hideSmall">heures</span><span class="u-hideMediumUp">H</span> creuses
+                span.c-priceDetail__itemConso 344&nbsp;KWh&nbsp;/an
+              li.c-priceDetail__item
+                span.c-priceDetail__itemName KWh <span class="u-hideSmall">heures</span><span class="u-hideMediumUp">H</span> weekend
+                span.c-priceDetail__itemConso 544&nbsp;KWh&nbsp;/an
+
+        if !fullElec
+          .c-priceDetail__group
+            h4.c-priceDetail__title
+              span.icon.icon-gaz3.u-hideSmall
+              | Gaz
+            ul.c-priceDetail__list
+              li.c-priceDetail__item
+                span.c-priceDetail__itemName Abonnement annuel
+                span.c-priceDetail__itemTTC 9.96€&nbsp;<sup>TTC</sup>
+                span.c-priceDetail__itemHT 8.32€&nbsp;<sup>HT</sup>
+              li.c-priceDetail__item
+                span.c-priceDetail__itemName KWh
+                span.c-priceDetail__itemTTC 0.078€&nbsp;<sup>TTC</sup>
+                span.c-priceDetail__itemHT 0.062€&nbsp;<sup>HT</sup>
+              li.c-priceDetail__item
+                span.c-priceDetail__itemTotal Soit 605,00€&nbsp;<sup>TTC</sup>&nbsp;/&nbsp;an
+  // END .c-priceDetail
+
+
+mixin priceDetail-tpl()
+  // .c-priceDetail
+  section.c-priceDetail&attributes(attributes)
+    button.c-priceDetail__btn.c-btnWrapper(
+      type="button"
+      data-e-toggle='{"target": "offerDetail"}'
+    )
+      .c-priceDetail__btnFlex.c-baseBtn
+        span.c-priceDetail__label.c-priceDetail__label--off.c-baseBtn__content.u-theme-color Détail du prix
+        span.c-priceDetail__label.c-priceDetail__label--on.c-baseBtn__content.u-theme-color Masquer le détail du prix
+        span.icon.icon-chevron-top.u-theme-color
+
+    .c-priceDetail__content(data-e-toggle-target="offerDetail")
+      | [% if (this.isElec || this.isDuo || this.isElecWE || isElecWEPlus) { %]
+      .c-priceDetail__group
+        h4.c-priceDetail__title
+          span.icon.icon-elec2.u-hideSmall
+          | Electricité
+        ul.c-priceDetail__list
+          li.c-priceDetail__item
+            span.c-priceDetail__itemName Abonnement annuel
+            span.c-priceDetail__itemTTC [% this.aboAnnuelElecTTCNonRemise %]€&nbsp;<sup>TTC</sup>
+            span.c-priceDetail__itemHT [% this.aboAnnuelElecHTNonRemise %]€&nbsp;<sup>HT</sup>
+
+          | [% if ((this.isElec || this.isDuo || isElecWEPlus) && !this.HPHC) { %]
+          li.c-priceDetail__item
+            span.c-priceDetail__itemName KWh
+            span.c-priceDetail__itemTTC [% this.prixkWhElecTTC %]€&nbsp;<sup>TTC</sup>
+            span.c-priceDetail__itemHT [% this.prixkWhElecHT %]€&nbsp;<sup>HT</sup>
+          | [% } %]
+
+          | [% if (this.HPHC || this.isElecWE) { %]
+          li.c-priceDetail__item
+            span.c-priceDetail__itemName KWh <span class="u-hideSmall">heures</span><span class="u-hideMediumUp">H</span> pleines
+            span.c-priceDetail__itemTTC [% this.prixkWhElecheurespleinesTTC %]€&nbsp;<sup>TTC</sup>
+            span.c-priceDetail__itemHT [% this.prixkWhElecHeuresPleinesHT %]€&nbsp;<sup>HT</sup>
+          li.c-priceDetail__item
+            span.c-priceDetail__itemName KWh <span class="u-hideSmall">heures</span><span class="u-hideMediumUp">H</span> creuses
+            span.c-priceDetail__itemTTC [% this.prixkWhElecHeuresCreusesTTC %]€&nbsp;<sup>TTC</sup>
+            span.c-priceDetail__itemHT [% this.prixkWhElecHeuresCreusesHT %]€&nbsp;<sup>HT</sup>
+
+          | [% if (this.isElecWE) { %]
+          li.c-priceDetail__item
+            span.c-priceDetail__itemName KWh <span class="u-hideSmall">heures</span><span class="u-hideMediumUp">H</span> weekend
+            span.c-priceDetail__itemTTC [% this.prixkWhElecHeuresWeTTC %]€&nbsp;<sup>TTC</sup>
+            span.c-priceDetail__itemHT [% this.prixkWhElecHeuresWeHT %]€&nbsp;<sup>HT</sup>
+          | [% } %]
+
+          | [% } %]
+      | [% } %]
+
+      | [% if (this.isGaz || this.isDuo) { %]
+      .c-priceDetail__group
+        h4.c-priceDetail__title
+          span.icon.icon-gaz3.u-hideSmall
+          | Gaz
+        ul.c-priceDetail__list
+          li.c-priceDetail__item
+            span.c-priceDetail__itemName Abonnement annuel
+            span.c-priceDetail__itemTTC [% this.aboAnnuelGazTTCNonRemise %]€&nbsp;<sup>TTC</sup>
+            span.c-priceDetail__itemHT [% this.aboAnnuelGazHTNonRemise %]€&nbsp;<sup>HT</sup>
+          li.c-priceDetail__item
+            span.c-priceDetail__itemName KWh
+            span.c-priceDetail__itemTTC [% this.prixkWhGazTTC %]€&nbsp;<sup>TTC</sup>
+            span.c-priceDetail__itemHT [% this.prixkWhGazHT %]€&nbsp;<sup>HT</sup>
+      | [% } %]
+
+      .c-priceDetail__group
+        .c-priceDetail__title
+        ul.c-priceDetail__list
+          li.c-priceDetail__item
+            span.c-priceDetail__itemTotal Soit [% this.budgettotalTTCEstime %]€&nbsp;<sup>TTC</sup>&nbsp;/&nbsp;an

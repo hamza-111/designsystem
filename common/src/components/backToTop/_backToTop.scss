@@ -1,0 +1,26 @@
+.c-backToTop {
+  position: fixed;
+  z-index: 70;
+  bottom: 0;
+  right: 15px;
+  width: 37px;
+  height: 25px;
+  text-align: center;
+  background: $grey;
+  display: block;
+  text-decoration: none;
+  color:white;
+  font-size: 1.8em;
+  will-change: transform;
+  transition: transform 0.4s ease-in-out;
+  transform: translateZ(0) translateY(100%);
+
+  &.is-active{
+    transform: translateZ(0) translateY(0);
+  }
+
+  @include media(">=small") {
+    display: none;
+  }
+}
+

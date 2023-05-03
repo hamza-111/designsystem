@@ -1,0 +1,55 @@
+.c-navigatorAbsolete {
+    width: 100%;
+    display: block;
+}
+
+.c-navigatorAbsolete__title, .c-navigatorAbsolete__icons {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-navigatorAbsolete__title span {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.c-navigatorAbsolete__title span.icon {
+    font-size: 4rem;
+    color: red;
+}
+
+.c-navigatorAbsolete__liens, .c-navigatorAbsolete__desc {
+    text-align: center;
+    width: 100%;
+}
+
+.c-navigatorAbsolete__icons span {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+}
+
+.c-navigatorAbsolete__icons span img{
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.c-navigatorAbsolete__icons span span {
+    width: 100%;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+@include media ("<=small") {
+  .c-navigatorAbsolete__icons span img {
+    width: 60px;
+    height: 60px;
+  }
+}

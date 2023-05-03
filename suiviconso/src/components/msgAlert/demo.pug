@@ -1,0 +1,51 @@
+h2 bloc message Alert
+
++demo({
+	desc: `
+		-   bloc message alert
+	`
+})
+
+	+msgAlert({
+		warnning: true,
+		releve : false
+	})
+
+h2 bloc message Alert
+
++demo({
+	desc: `
+		-   bloc reléve
+	`
+})
+
+	+msgAlert({
+		warnning: true,
+		releve : true
+	})
+
+h2 bloc message d'erreur
+
++demo({
+	desc: `
+		-   error
+	`
+})
+
+	+msgAlert({
+		border : false,
+		theme : "c-msgAlert__rouge"
+	})
+
+h2 bloc message d'erreur 2
+
++demo({
+	desc: `
+		-  error sans bordure
+	`
+})
+
+	+msgAlert({
+		border : " ",
+		theme : "c-msgAlert__rouge"
+	})

@@ -1,0 +1,14 @@
+mixin formContactUpload(data)
+  - var data = data || {}
+  - var id = data.id || ""
+
+  fieldset.c-formContactUpload.l-wrapper--medium(
+    data-e-formcontact-block={id: id}
+  )
+    +uploadMat2({
+      id: 'contact-upload-file',
+      name: 'contact-upload-file',
+      maxSize: 1048576,
+      accept: "image/jpeg, image/tiff, application/pdf",
+      dataValidation: true
+    })

@@ -1,0 +1,13 @@
+mixin greyWrapper(data)
+  - var data    = data || {}
+  - var padding = data.padding || false
+  - var wrapper = data.wrapper || false
+
+  // .c-greyWrapper
+  .c-greyWrapper(
+    class=padding ? 'c-greyWrapper--padding' : false
+    class=wrapper ? "l-wrapper--"+ wrapper : ""
+  )&attributes(attributes)
+    .l-wrapper--large
+      block
+  // END .c-greyWrapper

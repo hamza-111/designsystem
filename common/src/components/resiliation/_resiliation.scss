@@ -1,0 +1,119 @@
+.c-resiliation {
+
+  .step-app > .step-content {
+    border: 0;
+  }
+
+  .l-wrapper--left {
+    position: relative;
+  }
+
+  .c-form__fieldset.is-disabled {
+    opacity: 0.5;
+  }
+
+  .c-infoBlock__title:before {
+    content: 'i';
+    position: absolute;
+    top: 0;
+    left: -25px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    background-color: $genBlue;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-family: serif;
+  }
+
+  .c-inputMat__datePikerInfo {
+    position: absolute;
+    right: -63px;
+    top: 14px;
+  }
+
+  .c-cityMat {
+    .c-inputMat {
+      margin: 0;
+    }
+
+    .c-selectMat {
+      margin-bottom: 0;
+      margin-left: 40px;
+    }
+  }
+
+  @include media("<=medium") {
+    
+    .l-wrapper--left {
+      padding: 0;
+    }
+  }
+
+  @include media("<=medium") {
+    .c-form__fieldset {
+      width: 100%;
+      margin: 5px 0
+    }
+  }
+
+  @include media(">=medium") {
+    .c-form__fieldset {
+      width: 50%;
+    }
+
+    .c-toolTip {
+      margin-left: 10px;
+    }
+
+    .c-infoBlock__title:before {
+      left: 0;
+    }
+  }
+
+  .c-selectMat {
+    margin: 0;
+  }
+
+  .c-wrapForm {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    .c-inputMat {
+      margin: 0 40px 0 0;
+    }
+
+
+    @media #{$medium} {
+      .c-inputMat, .c-selectMat {
+        width: 42%;
+      }
+    }
+    @media #{$small} {
+      .c-inputMat, .c-selectMat {
+        width: 100%;
+        margin: 0 0px 0 0;
+
+      }      
+    }
+  }
+}
+
+.c-checkboxMat.checkboxMat--right {
+  width: 50%;
+  padding-top: 67px;
+  @media #{$small} {
+    width: 100%;
+  }
+}
+
+.c-column--noGut.c-column--fix {
+  height: 150px;
+  margin-top: 55px;
+}
+

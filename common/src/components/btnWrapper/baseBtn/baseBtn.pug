@@ -1,0 +1,112 @@
+
+mixin baseBtn(data)
+  - var data        = data || {}
+  - var addClassBtn = ''
+  - var button      = data.button || false
+  - var fakeButton  = data.fakeButton || false
+  - var submit      = data.submit || false
+
+  - var text          = data.text           || 'Un bouton'
+  - var iconLeft      = data.iconLeft       || false
+  - var iconRight     = data.iconRight      || false
+  - var iconOnly      = data.iconOnly       || false
+  - var hasLoader     = data.hasLoader      || false
+  - var secondary     = data.secondary      || false
+  - var empty         = data.empty          || false
+  - var countDown     = data.countDown      || false
+  - var countDuration = data.countDuration  || "25"
+  - var linkUrl       = data.linkUrl        || "#"
+
+
+  if secondary
+    - addClassBtn = 'c-baseBtn--secondary u-theme-color'
+  else if empty
+    - addClassBtn = 'c-baseBtn--empty'
+  else
+    - addClassBtn = 'u-theme-bg u-theme-bg-hover'
+
+  if hasLoader
+    - addClassBtn += ' c-baseBtn--hasLoader'
+
+  if countDown
+    - addClassBtn += ' has-countDown'
+
+  if iconOnly
+    - addClassBtn += ' c-baseBtn--iconOnly'
+
+  if button || submit
+    button.c-baseBtn(type=submit?'submit':'button' class=addClassBtn)&attributes(attributes)
+      +baseBtn-content({
+        text : text,
+        iconLeft : iconLeft,
+        iconOnly : iconOnly,
+        iconRight : iconRight,
+        hasLoader : hasLoader,
+        secondary : secondary,
+        empty : empty,
+        countDown : countDown,
+        countDuration : countDuration
+      })
+
+  else if fakeButton
+    span.c-baseBtn(class=addClassBtn)&attributes(attributes)
+      +baseBtn-content({
+        text : text,
+        iconLeft : iconLeft,
+        iconRight : iconRight,
+        hasLoader : hasLoader,
+        secondary : secondary,
+        empty : empty,
+        countDown : countDown,
+        countDuration : countDuration
+      })
+      if iconOnly
+        span.u-visibilityHidden!=text
+
+  else
+    a.c-baseBtn(href=linkUrl class=addClassBtn)&attributes(attributes)
+      +baseBtn-content({
+        text : text,
+        iconLeft : iconLeft,
+        iconOnly : iconOnly,
+        iconRight : iconRight,
+        hasLoader : hasLoader,
+        secondary : secondary,
+        empty : empty,
+        countDown : countDown,
+        countDuration : countDuration
+      })
+      if iconOnly
+        span.u-visibilityHidden!=text
+
+
+mixin baseBtn-content(data)
+  - var data = data || {}
+  - var text = data.text || 'Un bouton'
+  - var iconLeft = data.iconLeft || false
+  - var iconRight = data.iconRight || false
+  - var iconOnly  = data.iconOnly  || false
+  - var hasLoader = data.hasLoader || false
+  - var secondary = data.secondary || false
+  - var empty = data.empty || false
+  - var countDown = data.countDown || false
+  - var countDuration = data.countDuration || "25"
+
+  if iconLeft
+    span.c-baseBtn__iconLeft.icon(class=iconLeft)
+
+  if !iconOnly
+    span.c-baseBtn__content!=text
+
+  if countDown
+    span.c-btnBase__countDown
+      +spinner({
+        medium: true
+      }).c-spinner--threeQuarters
+      span.c-btnBase__timer(data-e-countdown-target)
+
+  if hasLoader
+    +spinner
+
+  if iconRight
+    span.c-baseBtn__iconRight.icon(class=iconRight)

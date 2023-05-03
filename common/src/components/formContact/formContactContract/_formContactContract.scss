@@ -1,0 +1,26 @@
+.c-formContactContract__smallTitle {
+  text-align: center;
+
+  .icon {
+    display: block;
+  }
+}
+
+
+@include media(">=small") {
+  .c-formContactContract__items {
+    display: flex;
+    justify-content: space-around;
+
+    & > * {
+      flex: 0 0 280px;
+    }
+  }
+
+  // .c-formContactContract__smallTitle {
+  //   .icon {
+  //     display: inline;
+  //     vertical-align: middle;
+  //   }
+  // }
+}

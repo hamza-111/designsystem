@@ -1,0 +1,79 @@
+mixin historiqueConsoGraph(data)
+  - var data             = data || {}
+  - var desactiver       = data.desactiver || false 
+
+  //c-historiqueConsoGraph
+  if desactiver
+    .c-historiqueConsoGraph.c-historiqueConsoGraph--gris
+      .icon.icon-csv-graph-new.c-historiqueConsoGraph__icon
+      .c-historiqueConsoGraph__text Télécharger l'historique de ma consommation
+
+  else
+    a.c-historiqueConsoGraph
+      .icon.icon-csv-graph-new.c-historiqueConsoGraph__icon
+      .c-historiqueConsoGraph__text Télécharger l'historique de ma consommation
+
+mixin historiqueConsoGraphV2(data)
+
+  .l-sectionHistoriqueConsoGraph.u-padding-a-15
+    .l-sectionHistoriqueConsoGraph__legend 
+      .l-sectionHistoriqueConsoGraph__legendLeft 
+        .c-sectionHistoriqueConsoGraph__legend
+          img(src="../images/contrib/abonnement.svg" alt="#").c-sectionHistoriqueConsoGraph__legendIMG
+
+          
+          //- svg#Calque_1(class="c-historiqueConsoGraph__legendIcone" xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', version='1.1', x='0px', y='0px', viewbox='0 0 16 16', style='enable-background:new 0 0 16 16;', xml:space='preserve')
+          //-   style(type='text/css').
+          //-     .st0-Abonnement{fill-rule:evenodd;clip-rule:evenodd;fill:#00AEFF;}
+          //-   path#Rectangle.st0-Abonnement(d='M3,0h10c1.7,0,3,1.3,3,3v10c0,1.7-1.3,3-3,3H3c-1.7,0-3-1.3-3-3V3C0,1.3,1.3,0,3,0z')
+          span Abonnement
+        
+        .c-sectionHistoriqueConsoGraph__legend
+          img(src="../images/contrib/taxe.svg" alt="#").c-sectionHistoriqueConsoGraph__legendIMG
+
+          //- svg#Calque_1(class="c-historiqueConsoGraph__legendIcone" xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', version='1.1', x='0px', y='0px', viewbox='0 0 16 16', style='enable-background:new 0 0 16 16;', xml:space='preserve')
+          //-   style(type='text/css').
+          //-     .st0-Taxes{fill-rule:evenodd;clip-rule:evenodd;fill:#EE8D8D;}
+          //-   path#Rectangle-Copy-2.st0-Taxes(d='M3,0h10c1.7,0,3,1.3,3,3v10c0,1.7-1.3,3-3,3H3c-1.7,0-3-1.3-3-3V3C0,1.3,1.3,0,3,0z')
+          span Taxes 
+        
+        .c-sectionHistoriqueConsoGraph__legend
+          img(src="../images/contrib/conso.svg" alt="#").c-sectionHistoriqueConsoGraph__legendIMG
+
+          //- svg#Calque_1(class="c-historiqueConsoGraph__legendIcone" xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', version='1.1', x='0px', y='0px', viewbox='0 0 16 16', style='enable-background:new 0 0 16 16;', xml:space='preserve')
+          //-   style(type='text/css').
+          //-     .st0-Consommation{fill-rule:evenodd;clip-rule:evenodd;fill:#54DDA3;}
+          //-   path#Rectangle.st0-Consommation(d='M3,0h10c1.7,0,3,1.3,3,3v10c0,1.7-1.3,3-3,3H3c-1.7,0-3-1.3-3-3V3C0,1.3,1.3,0,3,0z')
+          span Consommation
+      .l-sectionHistoriqueConsoGraph__legendRight
+        .c-sectionHistoriqueConsoGraph__legend
+          img(src="../images/contrib/meteo.svg" alt="#").c-sectionHistoriqueConsoGraph__legendIMG
+
+          //- svg#Calque_1(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', version='1.1', x='0px', y='0px', viewbox='0 0 37 9', style='enable-background:new 0 0 37 9;', xml:space='preserve')
+          //-   style(type='text/css').
+          //-     .st0-meteoLocale{fill:none;stroke:#FFC300;stroke-width:3;stroke-linecap:round;}
+          //-     .st1-meteoLocale{fill-rule:evenodd;clip-rule:evenodd;fill:#FFC300;}
+          //-   line#Line-3.st0-meteoLocale(x1='2', y1='4.5', x2='35.5', y2='4.5')
+          //-   circle#Oval.st1-meteoLocale(cx='19.5', cy='4.5', r='4.5')
+
+          span Méteo locale 
+        
+        .c-sectionHistoriqueConsoGraph__legend
+          img(src="../images/contrib/seuil.svg" alt="#").c-sectionHistoriqueConsoGraph__legendIMG
+
+          //- svg#Calque_1(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', version='1.1', x='0px', y='0px', viewbox='0 0 36 3', style='enable-background:new 0 0 36 3;', xml:space='preserve')
+          //-   style(type='text/css').
+          //-     .st0{fill-rule:evenodd;clip-rule:evenodd;fill:#D2B7D5;}
+          //-   path#Rectangle.st0(d='M30.1,0h4.4C35.3,0,36,0.7,36,1.5l0,0C36,2.3,35.3,3,34.5,3h-4.4c-0.8,0-1.5-0.7-1.5-1.5l0,0  C28.6,0.7,29.3,0,30.1,0z')
+          //-   path#Rectangle-Copy-3.st0(d='M20.6,0H25c0.8,0,1.5,0.7,1.5,1.5l0,0C26.5,2.3,25.8,3,25,3h-4.4c-0.8,0-1.5-0.7-1.5-1.5  l0,0C19.1,0.7,19.7,0,20.6,0z')
+          //-   path#Rectangle-Copy-20.st0(d='M11,0h4.4c0.8,0,1.5,0.7,1.5,1.5l0,0c0,0.8-0.7,1.5-1.5,1.5H11c-0.8,0-1.5-0.7-1.5-1.5  l0,0C9.5,0.7,10.2,0,11,0z')
+          //-   path#Rectangle-Copy-21.st0(d='M1.5,0h4.4c0.8,0,1.5,0.7,1.5,1.5l0,0C7.4,2.3,6.7,3,5.9,3H1.5C0.7,3,0,2.3,0,1.5l0,0  C0,0.7,0.7,0,1.5,0z')
+          
+          span seuil                                
+    
+    div
+      +pictoLink({
+        text: "Historique de ma consomation",
+        picto: 'icon-bold-download',
+        textUnderline: true
+      }).u-theme-genBlue

@@ -1,0 +1,62 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/headSection/headSection
+include ../components/pictoBlock/pictoBlock
+include ../components/separator/separator
+include ../components/pushLight/pushLight
+
+//- Main variables
+block variables
+  - var title         = "Formulaire : page de confirmation"
+  - var page          = "Formulaire : page de confirmation"
+  - var bodyClass     = ""
+  - var description   = "Formulaire : page de confirmation"
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  +breadcrumb()
+
+  .u-padding-spacer
+    .l-wrapper--large
+      .l-wrapper--medium.u-textCenter
+        +headSection({
+          title: "Merci Stéphanie&nbsp;!",
+          noLink: true
+        })
+        p.u-textBold Votre demande a bien été prise en compte
+
+        p.u-margin-t-40.u-margin-small-t-40
+          | Nous retroussons nos manches pour vous répondre sur mesure dans les plus brefs délais.
+          br
+          b Vous allez recevoir une réponse à l'adresse suivante :
+
+      .l-wrapper--medium.u-margin-t-20.u-margin-small-t-20.u-margin-b-40.u-margin-small-b-40
+        +pictoBlock({
+          iconName: 'icon-contact-mail2',
+          topToLeft: true,
+          email: true
+        }).is-valid
+          p.u-color-grey Email
+          p
+            b johndoe@wanadoo.com
+
+      +separator
+
+      +pushLight({
+        labelBtn: "Remplir ma demande"
+      }).u-margin-v-40.u-margin-small-v-40
+
+    .l-wrapper--huge
+      +btnWrapper.c-btnWrapper--alignLeft
+        +baseBtn({
+          text: "Retour au tableau de bord",
+          iconLeft: "icon-chevron-left",
+          empty: true
+        })

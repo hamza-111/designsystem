@@ -1,0 +1,30 @@
+mixin pushActu(data)
+
+  - var data = data|| {}
+  - var link = data.link || false
+  - var img = data.img || false
+  - var label = data.label || false
+  - var desktopImg = data.desktopImg || false
+  - var title = data.title || 'Actualité'
+  - var txt = data.txt || 'Le prix du gaz évolue. Consultez le prix dans votre commune.'
+  - var para = data.para || '<b>Durée de validité :</b> du 01/04/2022 au 30/04/2023'
+  - var bkg = data.bkg || 'pc-portable.png'
+  - var bkgMobile = data.bkgMobile || 'pc-portable-mobile.png'
+
+  //.c-pushActu
+  .c-pushActu.u-radius(style = desktopImg ? "" : "background-image:url(../images/contrib/"+ bkg +");")
+    .c-pushActu__head(class = desktopImg ? "c-pushActu__headFull" : "")
+      h2.c-pushActu__title!=title
+      if label
+        p.c-pushActu__desc!=para
+      p.c-pushActu__desc!=txt
+    .c-pushActu__bottom
+      +btnWrap.c-btnWrap--alignLeft
+        +btn({
+          text: "Je consulte le prix"
+        }).c-pushActu__btn
+      if link
+        a(href="#" alt="").c-pushActu__link Voir mon offre Gaz Tarif Réglementé <span class="icon icon-carousel-next"></span>
+      if img
+        .c-pushActu__img
+          img(src="../images/contrib/" + bkgMobile +"", alt="").u-hideMediumUp

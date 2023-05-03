@@ -1,0 +1,13 @@
+/**
+ * toggle:
+ * `toggle plugin` - Démo non fonctionnelle car dépendant du CSS (voir changment de classe dans l'inspecteur)
+ *
+ *     @example
+ *     button(
+ *       role="button"
+ *       data-e-toggle='{"target":"legal"}'
+ *     ) Mentions légales
+ *
+ *     div(data-e-toggle-target="legal")
+ *       p Lorem ipsum dolor sit amet, consectetur adipisicing elit
+ */

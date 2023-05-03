@@ -1,0 +1,67 @@
+.c-espritService-note {
+  a {
+    text-decoration: none;
+    color: $genBlue;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease-in-out;
+
+    @include hover-focus-active() {
+      border-color: inherit;
+    }
+  }
+}
+
+.c-espritService-note__title {
+  margin-bottom: 15px;
+  font-weight: $font-bold;
+}
+
+
+// composant note seul
+.c-espritService-note--alone {
+  padding: 15px;
+
+  .c-espritService-note__rate {
+    font-size: 3.4rem;
+  }
+}
+
+
+@include media(">=small") {
+  .c-espritService-note__title {
+    margin-bottom: 15px;
+  }
+
+
+  // composant note seul
+  .c-espritService-note--alone {
+    position: relative;
+    padding: 40px 25px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 25px;
+      right: 25px;
+      border-top: 1px solid $grey-medium;
+    }
+
+    .c-espritService-note__title,
+    .c-espritService-note__rating,
+    .c-espritService-note__detail {
+      display: inline-block;
+    }
+
+    .c-espritService-note__rate {
+      margin: 0 10px;
+      line-height: 1;
+      vertical-align: bottom;
+    }
+
+    .c-espritService-note__title {
+      font-size: 1.8rem;
+      margin-bottom: 0;
+    }
+  }
+}

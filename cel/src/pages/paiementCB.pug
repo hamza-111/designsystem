@@ -1,0 +1,32 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../components/confirmationPaiement/confirmationPaiement
+
+
+
+//- Main variables
+block variables
+  - var title       = "header + footer"
+  - var page        = ""
+  - var bodyClass   = ""
+  - var description = ""
+  //- var headerCel   = "fullGradient"
+  - var headerCel   = "etapier"
+  - var noHeaderFooter   = true
+  - var wrapperSite = "l-wrapper--siteFull"
+  - var noBg        = true
+  - var footer = true
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+
+  .c-headerLightCelPush.u-margin-small-t-35
+      +confirmationPaiement()
+

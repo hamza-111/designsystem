@@ -1,0 +1,65 @@
+.c-fieldInfo {
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: $black;
+
+  &.c-fieldInfo--inputMat {
+    color: $genBlue-hover;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  &.is-success  { color: $valid-color; }
+  &.is-error { color: $error-color; }
+  &.is-warn { color: $starYellow; }
+
+  .icon {
+    margin-bottom: 20px;
+  }
+}
+
+.c-fieldInfo__link {
+  color: $genBlue;
+  @extend %reset-style-button;
+}
+
+//.c-fieldInfoWarning
+.c-fieldInfoWarning {
+  width: 100%;
+  display: block;
+  background: white;
+  border: 1px #43B02A solid;
+}
+
+.c-fieldInfoWarning__title {
+  width: 100%;
+  background: #43B02A;
+  border: 1px #43B02A solid;
+  text-align: left;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.c-fieldInfoWarning__content {
+  padding: 10px;
+  font-size: 12px;
+  color: black;
+}
+
+//.c-fieldInfoWarningV3
+.c-fieldInfoWarningV3 {
+  background-color:$error-bg;
+  border-radius: 10px;
+  position: relative;
+  padding: 14px 11px 14px 60px;
+  .icon {
+    position: absolute;
+    left: 19px;
+    top: 11px;
+    color: $error-color;
+    font-size: 2.3rem;
+  }
+}

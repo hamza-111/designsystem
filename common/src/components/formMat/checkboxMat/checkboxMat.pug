@@ -1,0 +1,56 @@
+mixin checkboxMat(data)
+  - var data           = data || {}
+  - var label          = data.label || "Lorem ipsum"
+  - var id             = data.id || false
+  - var name           = data.name || false
+  - var labelTop       = data.labelTop || false
+  - var value          = data.value || "checkbox-value"
+  - var labelIsHidden  = data.labelIsHidden || false
+  - var dataValidation = data.dataValidation || false
+  - var required       = data.required || false
+  - var value          = data.value || "checkbox value"
+  - var switchMode     = data.switchMode || false
+  - var switchHide     = data.switchHide || false
+  - var checked        = data.checked || false
+
+  if switchMode
+    span(class=switchHide?'switchHide':'').c-checkboxMat.c-checkboxMat--switch
+      block
+      label.switch
+        input(type='checkbox' checked=checked)
+        span.slider.round
+
+  else
+
+
+    // .c-checkboxMat
+    span.c-checkboxMat(
+      data-e-field-validation=dataValidation ? dataValidation : false
+    )&attributes(attributes)
+      if labelTop
+        block
+      input.c-checkboxMat__field(
+        type="checkbox"
+        id=id
+        name=name
+        value=value
+        required=required
+      )
+      label.c-checkboxMat__label(for=id, class=labelIsHidden ? '' : 'c-checkboxMat__labelPadding')
+        span.c-checkboxMat__check.u-theme-bg.u-theme-color
+          svg(
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="9 14 30 30"
+            width="30"
+            height="30"
+          )
+            path(fill="none" d="M14 27.2l7 7 12-12")
+        span.c-checkboxMat__text.c-wysiwyg(class=labelIsHidden ? 'u-visibilityHidden' : '')!=label
+
+        if dataValidation
+          +fieldInfo({
+            typeMessage: 'error',
+            input: true
+          })(data-e-field-validation-error)
+    // end .c-checkboxMat
+

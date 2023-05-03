@@ -1,0 +1,39 @@
+include jauge
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px; text-align:center;") Page valorisation Jauge standar
+
++demo({desc:"jauge default, utiliser la classe <code>c-jauge--nth-5 </code>, <code>c-jauge--nth-6 </code> etc pour le niveau de la jauge active "})
+  .l-row
+    .l-col-medium-8
+      +jauge({
+        theme : false,
+        nth: 3
+      })
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px; text-align:center;") Page valorisation Jauge green
+
++demo({desc:"use class theme <code>c-jauge__theme--green</code>"})
+  .l-row
+    .l-col-medium-8
+      +jauge({
+        theme : "c-jauge__theme--green"
+      })
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px; text-align:center;") Page valorisation Jauge coral
+
++demo({desc:"use class theme <code>c-jauge__theme--coral</code>"})
+  .l-row
+    .l-col-medium-8
+      +jauge({
+        theme : "c-jauge__theme--coral",
+        nth: 7
+      })
+
+h2(style="font-size:2rem;font-weight:bold;margin:10px 0 20px; text-align:center;") Page valorisation Jauge blue
+
++demo({desc:"use class theme<code>c-jauge__theme--blue</code>"})
+  .l-row
+    .l-col-medium-8
+      +jauge({
+        theme : "c-jauge__theme--blue"
+      })

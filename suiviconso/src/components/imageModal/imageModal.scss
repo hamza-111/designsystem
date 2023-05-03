@@ -1,0 +1,28 @@
+.c-imageModal {
+    width: 100%;
+    text-align: center;
+    justify-content: flex-end;
+    background: white;
+    margin-bottom: 20px;
+}
+
+.c-imageModal__alignTooltip {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.c-imageModal--titre {
+    width: 100%;
+    display: block;
+    font-size: 2.1rem !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.c-imageModal__recadrageImage{
+    width: 100%;
+    display: block;
+}
+
+.c-imageModal--responsiveImage { max-width: 100%; }

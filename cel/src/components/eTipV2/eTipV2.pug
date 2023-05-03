@@ -1,0 +1,37 @@
+mixin eTipV2(data)
+  - var data = data || {}
+  - var eTip = data.eTip || false
+
+  //.c-eTipV2
+  .c-eTipV2
+    .c-eTipV2__header.u-textCenter
+      span.c-eTipV2__price 72,37€ <sup> TTC</sup>
+      p.u-margin-b-40.u-margin-t-10.c-eTipV2__spaceSmall Votre solde à régler avant le <b>12 octobre 2020</b>
+    .u-padding-v-20.u-bg-grey-light.u-textCenter
+      .l-wrapper--medium
+        span.c-eTipV2__paiementChoice Choisissez votre mode de paiement en ligne <b>100% sécurisé <span class="icon icon-cadenas-ferme u-margin-r-15"></span></b>
+        +btnWrapper().c-eTipV2--style
+          .c-eTipV2__e-tip(class = eTip ? "u-margin-r-0" : "")
+            +baseBtn({
+              text: "Par e-TIP"
+            })
+            span.c-eTipV2__e-tip--desc(class = eTip ? "u-margin-b-25" : "")
+              span Je serai débité le 27/10/21
+              img(src="../images/etip logo.svg" alt="")
+          if !eTip
+            .c-eTipV2__cb
+              +baseBtn({
+                text: "Par carte bancaire"
+              })
+              span.c-eTipV2__cb--desc
+                span Je serai débité immédiatement
+                .c-eTipV2__cb--descImgs
+                  img(src="../images/logos_cards.svg" alt="")
+
+        if eTip
+          .c-eTipV2__link 
+            a(href="").c-eTipV2__link--style.u-margin-t-25 Je préfère payer par carte bancaire
+
+    a(href="#").u-color-genBlue.c-eTipV2--linkretour.u-margin-t-30
+      span.icon-carousel-prev.icon
+      span Retour au tableau de bord

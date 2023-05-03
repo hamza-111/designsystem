@@ -1,0 +1,102 @@
+mixin etipIbanV2(data)
+  - var data = data || {}
+  - var modal = data.modal || false
+
+  //.c-etipIbanV2
+  .c-etipIbanV2&attributes(attributes)
+    span.c-etipIbanV2__price 72,37€ <sup>TTC</sup>
+    span.c-etipIbanV2__date Votre solde sera prélevé le <b> 20 octobre 2021</b>
+    span.c-etipIbanV2__desc Sélectionnez ou renseignez l’IBAN sur lequel effectuer le prélèvement
+
+    +modal({
+      theme : "genBlue",
+      icon : "icon-info-circleDS"
+    }).is-active
+      .u-padding-h-20.u-padding-b-20
+        h2.c-etipIbanV2__modalTitle.u-textBold.u-textCenter Cet IBAN n’est pas valide
+
+        p.u-textCenter.u-margin-t-20 Veuillez en créer un autre
+
+        +btnWrapper().u-margin-t-40.u-margin-small-t-40.u-theme-genBlue
+          +baseBtn({
+            text: 'Continuer',
+            button: false
+          }).u-padding-v-10
+
+    .c-eTipFormIBAN
+      +radioBlockMat({
+        label: 'IBAN',
+        id: "radioBlockMatBlock1",
+        name: 'multilineradioBlock',
+        blockMode: true,
+        dataValidation: true,
+        checked : true
+      })
+        | BANQUE POPULAIRE RIVES DE PARIS
+        br
+        | FR76 1020 xxxx xxxx xxxx xxxx xxx
+
+      +radioBlockMat({
+        label: 'IBAN',
+        id: "radioBlockMatBlock1",
+        name: 'multilineradioBlock',
+        blockMode: true,
+        dataValidation: true,
+        checked : true
+      })
+        | BANQUE POPULAIRE RIVES DE PARIS
+        br
+        | FR76 1020 xxxx xxxx xxxx xxxx xxx
+
+      +radioBlockMatEmpty
+        BANQUE POPULAIRE RIVES DE PARIS<br>
+        FR76 1020 xxxx xxxx xxxx xxxx xxx
+
+      +radioBlockMat({
+          label: 'Ajouter un nouvel IBAN',
+          id: "radioBlockMatBlock2",
+          name: 'multilineradioBlock',
+          blockMode: true,
+          dataValidation: true
+        })(data-e-field-validation-fildset).c-radioBlockMat--blockEmpty
+
+      +fieldInfoWarningV2
+      
+        fieldset.l-wrapper--small
+          +inputMat({
+            label: 'Nom du titulaire du compte',
+            type: "text",
+            id: "nom-titu2",
+            name: "nom-titu2",
+            required: true,
+            placeholder: 'Ex : Martinez',
+            dataValidation: true,
+          })
+
+          +inputMat({
+            label: 'Votre IBAN',
+            type: "text",
+            id: "user-iban2",
+            name: "user-iban2",
+            iban: true,
+            placeholder: 'Ex : FR 1235 1231 1231 1231',
+            check: true,
+            required: true,
+            dataValidation: {
+              validations: {
+                valueMissing: 'Champ obligatoire'
+              }
+            }
+          })
+
+
+      +btnWrapper().u-margin-t-40.u-margin-small-t-40.u-theme-genBlue
+        +baseBtn({
+          text: 'Valider',
+          button: true
+        })(type="submit" data-e-form-validation-submit).u-padding-v-10
+      
+      a(href="#").u-color-genBlue.c-eTipV2--linkretour.u-margin-t-20
+        span.icon-carousel-prev.icon
+        span Retour au choix du mode de paiement
+

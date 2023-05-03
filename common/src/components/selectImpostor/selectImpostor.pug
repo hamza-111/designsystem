@@ -1,0 +1,24 @@
+mixin selectImpostor(data)
+  - var data    = data || {}
+  - var text = data.text || "Toutes les thématiques"
+  - var settings = data.settings || false
+  - var target = settings.target || false
+
+  // .c-selectImpostor
+  .c-selectImpostor
+    button.c-selectImpostor__currentOption(
+      type="button"
+      data-e-toggle=settings
+    )=text
+    ul.c-selectImpostor__optionList(data-e-toggle-target=target)
+      block
+  // ! end .c-selectImpostor
+
+
+mixin selectImpostorOption(data)
+  - var data = data || {}
+  - var text = data.text || {}
+
+  //- .c-selectImpostorOption
+  li.c-selectImpostor__option
+    a(href="#")=text

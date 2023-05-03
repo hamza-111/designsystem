@@ -1,0 +1,281 @@
+//----------------------
+//- DO NOT EDIT
+extends pug-partials/base
+//----------------------
+
+include ../../../common/src/components/pictoBlock/pictoBlock
+
+
+//- Main variables
+block variables
+  - var title          = "connect-issue"
+  - var page           = "app"
+  - var bodyClass      = ""
+  - var description    = ""
+  - var noHeaderFooter = true
+  - var headerCel      = 'title'
+  - var footerLight    = true
+
+//- JS only for that page
+block JS
+
+
+//- Page content
+block content
+  #cel.c-headerLightCelPush.u-margin-small-t-35
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Vous avez des difficultés à vous connecter&nbsp;?
+
+      p.u-textCenter.u-margin-b-40.u-margin-small-b-30
+        | Si vous voulez réinitialiser votre mot de passe, récupérer ou modifier votre email de connexion, vous êtes au bon endroit.
+
+      +formMat()(data-e-form-validation).c-formMat.u-margin-b-40.u-margin-small-b-40
+        .l-wrapper--small
+          h3.u-heading-4.u-textCenter
+            | Saisissez votre email de connexion
+          +inputMat({
+              type : 'email',
+              label: 'email',
+              placeholder: 'Saisissez votre email',
+              required: true,
+              pattern:'email',
+              dataValidation: {
+                validations: {
+                  patternMismatch: 'format de mail incorrect',
+                  valueMissing: 'champs obligatoire'
+                }
+              }
+          })
+
+        +btnWrapper().u-theme-green.u-margin-t-40.u-margin-small-t-40.c-btnWrapper--reverse.c-btnWrapper--fullOnMobile
+          +baseBtn({
+            button: true,
+            text: 'Valider',
+            secondary: true
+          })(type="submit" data-e-form-validation-submit).c-baseBtn--large
+          +baseBtn({
+            text: 'Récupérer/modifier mon Email'
+          }).c-baseBtn--large
+
+    .l-wrapper--huge
+      +btnWrapper().c-btnWrapper--alignLeft.u-theme-green
+        +baseBtn({
+          text: "Retour",
+          iconLeft: "icon-chevron-left",
+          empty: true
+        })
+
+
+    //
+      case2 : "VOTRE COMPTE EST BLOQUE"
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Vous avez des difficultés à vous connecter&nbsp;?
+
+      .u-margin-b-40.u-textCenter
+        .icon.icon-compte-bloque.u-color-greyMedium2.u-fontSize-70.u-margin-b-20.u-margin-small-b-20
+        p Votre compte est bloqué !
+        p
+          strong Votre compte se débloquera automatiquement dans 24h.
+
+      p.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Si vous voulez souhaitez le débloquer maintenant, nous vous invitons à réinitialiser votre mot de passe.
+
+      form.c-formMat.u-margin-b-40.u-margin-small-b-40
+        +btnWrapper().u-theme-green.u-margin-t-40.u-margin-small-t-40.c-btnWrapper--fullOnMobile
+          +baseBtn({
+            text: 'Réinitialiser votre mot de passe'
+          }).c-baseBtn--large
+
+    .l-wrapper--huge
+      +btnWrapper().c-btnWrapper--alignLeft.u-theme-green
+        +baseBtn({
+          text: "Retour",
+          iconLeft: "icon-chevron-left",
+          empty: true
+        })
+
+
+    //
+      case3 : "VOTRE COMPTE EST BLOQUE, réinitialiser"
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Vous avez des difficultés à vous connecter&nbsp;?
+
+      p.u-textCenter.u-margin-b-40.u-margin-small-b-30
+        | Si vous voulez réinitialiser votre mot de passe, récupérer ou modifier votre email de connexion, vous êtes au bon endroit.
+
+      form.c-formMat.u-margin-b-40.u-margin-small-b-40
+        .l-wrapper--small
+          h3.u-heading-4.u-textCenter
+            | Saisissez votre email de connexion
+
+          +inputMat({
+            label: 'Email',
+            type: "email",
+            id: "email",
+            pattern: 'email',
+            name: "email",
+            required: true,
+            placeholder: 'Ex : nom@gmail.com',
+            dataValidation: {
+              typing: false,
+              validations: {
+                patternMismatch: "Le format de votre adresse email est incorrect. Merci de fournir une adresse au format valide comme par exemple&nbsp;: nom@gmail.com",
+                valueMissing: 'champs obligatoire'
+              }
+            }
+          })
+
+        +btnWrapper().u-theme-green.u-margin-t-40.u-margin-small-t-40.c-btnWrapper--reverse.c-btnWrapper--fullOnMobile
+          +baseBtn({
+            text: 'Valider'
+          }).c-baseBtn--large
+          +baseBtn({
+            text: 'Récupérer/modifier mon Email',
+            secondary: true
+          }).c-baseBtn--large
+
+    .l-wrapper--huge
+      +btnWrapper().c-btnWrapper--alignLeft.u-theme-green
+        +baseBtn({
+          text: "Retour",
+          iconLeft: "icon-chevron-left",
+          empty: true
+        })
+
+
+    //
+      case4 : "Vous n’avez pas finalisé la création de votre Espace Client"
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Vous n’avez pas finalisé la création de votre Espace Client de votre Espace Client
+
+      p.u-textCenter.u-margin-b-20.u-margin-small-b-20
+        | Vous n’avez pas encore activé votre espace client depuis votre email :
+
+      form.c-formMat.u-margin-b-40.u-margin-small-b-40
+        .l-wrapper--medium
+          +pictoBlock({
+            iconName: 'icon-contact-mail2',
+            email: true,
+            topToLeft: true
+          })
+            p.u-color-grey Email
+            p
+              b johndoe@wanadoo.com
+
+        +btnWrapper().u-theme-green.u-margin-t-40.u-margin-small-t-40.c-btnWrapper--fullOnMobile
+          +baseBtn({
+            text: 'modifer cet Email',
+            secondary: true
+          }).c-baseBtn--large
+          +baseBtn({
+            text: 'Renvoyer le lien',
+            secondary: true
+          }).c-baseBtn--large
+
+
+    //
+      case5 : "Vous n’avez pas finalisé la création de votre Espace Client"
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Consultez votre boite mail
+
+      p.u-textCenter.u-margin-b-20.u-margin-small-b-20
+        | Un lien sécurisé vous permettra de réinitialiser votre mot de passe.
+
+      form.c-formMat.u-margin-b-40.u-margin-small-b-40
+        .l-wrapper--medium
+          // - fontIcone letter
+          +pictoBlock({
+            iconName: 'icon-contact-mail2',
+            email: true,
+            topToLeft: true
+          }).is-valid
+            p.u-color-grey Emailll
+            p
+              b johndoe@wanadoo.com
+
+        .l-wrapper--small
+
+        +btnWrapper().u-theme-green.u-margin-t-40.u-margin-small-t-40.c-btnWrapper--fullOnMobile
+          +baseBtn({
+            text: 'Renvoyer le lien',
+            secondary: true
+          }).c-baseBtn--large
+
+
+    //
+      case6 : "Choisissez un nouveau mot de passe"
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Choisissez un nouveau mot de passe
+
+      +formMat()(data-e-form-validation).c-formMat.u-margin-b-40.u-margin-small-b-40
+        .l-wrapper--small
+
+          +inputMat({
+            label: "Mot de passe",
+            type: "password",
+            id: "password",
+            pattern: "password",
+            name: "password",
+            required: true,
+            minlength:8,
+            maxlength:20,
+            placeholder: 'Entrer votre mot de passe',
+            check: true,
+            dataValidation: {
+                validations: {
+                  tooLong:      '',
+                  tooShort:     '',
+                  patternMismatch: '',
+                  valueMissing:     'champs obligatoire'
+                }
+            }
+          })(data-e-help-password)
+
+        .l-wrapper--medium.u-bg-grey-light.u-padding-a-0.u-margin-t-30.u-margin-small-t-30
+          +passwordHelper.l-wrapper--small.u-padding-v-15
+
+        +btnWrapper().u-theme-green.u-margin-t-40.u-margin-small-t-40.c-btnWrapper--fullOnMobile
+          +baseBtn({
+            button: true,
+            text: 'Valider'
+          })(type="submit" data-e-form-validation-submit ).c-baseBtn--large
+
+
+    //
+      case 7 : "Votre mot de passe est mis à jour ! "
+    .l-wrapper--medium
+      h2.u-heading-2.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Votre mot de passe est mis à jour !
+
+      .u-textCenter.u-margin-b-20.u-textCenter
+        .icon.icon-password-init.u-color-greyMedium2.u-fontSize-70
+
+      p.u-textCenter.u-margin-b-40.u-margin-small-b-40
+        | Vous pouvez accéder à votre espace client avec votre nouveau mot de passe.
+
+      +fieldInfo({
+        typeMessage: 'success',
+        icon: 'icon-thin_check'
+      })
+        p Salut le message a bien été validé
+
+      +fieldInfo({
+        typeMessage: 'error',
+        icon: 'icon-close'
+      })
+        p Salut le message n'est pas bon
+
+
+      form.c-formMat.u-margin-b-40
+        .l-wrapper--small
+          +btnWrapper().u-theme-green.u-margin-t-40.u-margin-small-t-40.c-btnWrapper--fullOnMobile
+            +baseBtn({
+              text: 'Me reconnecter',
+              button: true
+            }).c-baseBtn--large

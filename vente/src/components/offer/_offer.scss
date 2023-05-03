@@ -1,0 +1,258 @@
+@import 'offerPrice/offerPrice';
+
+$offer-transition-speed: 0.3s;
+$offer-transition-easing: ease-in-out;
+
+@keyframes offer-rotate-out {
+  0%{
+	  transform: rotateX(0deg);
+  }
+  100%{
+	  transform: rotateX(90deg);
+  }
+}
+
+@keyframes offer-rotate-in {
+  0%{
+	  transform: rotateX(90deg);
+  }
+  100%{
+	  transform: rotateX(0deg);
+  }
+}
+
+.c-offer {
+  perspective: 1000px;
+  backface-visibility: visible;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+
+  &.is-removing {
+    .c-offer__wrapper {
+      animation: offer-rotate-out 0.3s ease-in forwards;
+    }
+  }
+
+  &.is-adding {
+    .c-offer__wrapper {
+      animation: offer-rotate-in 0.2s ease-out forwards;
+    }
+  }
+}
+
+.c-offer--recap  {
+  .c-offer__main {
+    border: 6px solid $grey-light;
+    background-color: $white;
+  }
+}
+
+.c-offer__wrapper {
+  transform-origin: center center;
+}
+
+.c-offer__main {
+  background-color: $grey-light;
+  transition: transform $offer-transition-speed $offer-transition-easing;
+}
+
+.c-offer__img .icon {
+  font-size: 10rem;
+  color: $grey;
+}
+
+.c-offer__infos {
+  padding: 15px;
+}
+
+.c-offer__title {
+  margin-bottom: 5px;
+  font-size: $font-18;
+  font-weight: $font-bold;
+}
+
+.c-offer__subTitle {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-weight: $font-bold;
+}
+
+.c-offer__text {
+  margin-top: 10px;
+}
+
+.c-offer--shopList {
+  background-color: $grey-light;
+  position: relative;
+  overflow: hidden;
+}
+
+.c-offer__edit {
+  display: flex;
+  text-align: center;
+  margin-left: auto;
+
+  .icon {
+    font-size: 2.9rem;
+    width: 100%;
+  }
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.c-offer__editSwitch {
+  @extend %reset-style-button;
+  cursor: pointer;
+  color: $genBlue;
+  outline: none;
+  transition: background-color $offer-transition-speed $offer-transition-easing;
+
+  @include hover-focus-active() {
+    color: $genBlue-hover;
+  }
+}
+
+.c-offer__editBtn {
+  @extend %reset-style-button;
+  background-color: $genBlue;
+  color: $white;
+  width: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  transition: transform $offer-transition-speed $offer-transition-easing;
+  text-decoration: none;
+}
+
+
+@include media('<small') {
+  .c-offer--recap {
+    text-align: center;
+
+    .c-offer__infos {
+      padding-top: 5px;
+    }
+
+    .c-offerPrice {
+      text-align: center;
+    }
+  }
+
+  .c-offer--shopList {
+    &.is-active {
+      .c-offer__main {
+        transform: translateX(-50px) translateZ(0);
+      }
+
+      .c-offer__editBtn {
+        transform: translateX(-50px) translateZ(0);
+      }
+    }
+
+    .c-offer__main {
+      padding-right: 50px;
+    }
+  }
+
+  .c-offer__edit {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+  }
+}
+
+.c-offer .c-offerPromo {
+  display: inline-flex;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+  background-color: $grey-medium;
+  transition: background-color .3s;
+}
+
+
+@include media('>=small') {
+  .c-offer__main {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+
+    .u-list__item:not([class*="u-margin-"]) {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    .c-offerPromo {
+      margin-top: 10px;
+    }
+  }
+
+  .c-offer--shopList {
+    &.is-active {
+      .c-offer__editBtn {
+        transform: translateX(-100px) translateZ(0);
+      }
+    }
+  }
+
+  .c-offer__img,
+  .c-offer__aside {
+    flex-shrink: 0;
+  }
+
+  .c-offer__infos {
+    margin-left: 30px;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  .c-offer__aside {
+    margin-left: 30px;
+    width: 180px;
+
+    .c-btnWrapper {
+      text-align: left;
+    }
+  }
+
+  .c-offer__edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 70px;
+  }
+}
+
+
+@include media('>medium') {
+  .c-offer__main {
+    padding: 30px 70px 30px 35px;
+    transition: all $offer-transition-speed $offer-transition-easing;
+
+    .c-offer--recap & {
+      padding: 30px 35px;
+    }
+  }
+
+  .c-offer:not(.c-offer--recap):hover {
+    .c-offer__main,
+    .c-offer__editSwitch {
+      background-color: $venteBlue-light;
+    }
+
+    .c-priceDetail,
+    .c-offerPromo {
+      background-color: $venteBlue-medium;
+    }
+  }
+}

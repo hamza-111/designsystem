@@ -1,0 +1,31 @@
+include arrowBorder
+
+h2.u-heading-2.u-margin-b-30.u-margin-small-b-30 arrowBorder
+
++demo({
+  desc: "Composant arrowBorder"
+})
+  +arrowBorder
+    p Kikoo
+
+
+h2.u-heading-2.u-margin-b-30.u-margin-small-b-30 Flèche à l'extérieur (outset) :
+
++demo({
+  desc: "Ajouter au composant la classe <code>c-arrowBorder--arrowOutset</code>"
+})
+  +arrowBorder({
+    outset: true
+  })
+    p Kikoo
+
+
+h2.u-heading-2.u-margin-b-30.u-margin-small-b-30 arrowBorder thème magenta :
+
++demo({
+  desc: "Ajouter au composant la classe <code>c-arrowBorder--magenta</code>"
+})
+  +arrowBorder({
+    magenta: true
+  })
+    p Kikoo

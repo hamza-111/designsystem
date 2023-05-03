@@ -1,0 +1,37 @@
+.c-facebookMessenger {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @include media(">=small") {
+    display: none;
+  }
+}
+
+.c-facebookMessenger__link {
+  display: block;
+  text-decoration: none;
+  color: $black;
+}
+
+.c-facebookMessenger__picto {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 30px;
+
+  @include media(">=small", "<=medium") {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  &:before {
+    font-size: 3.8rem;
+    color: $facebookMessenger;
+  }
+}
+
+.c-facebookMessenger__content {
+  display: table-cell;
+  vertical-align: middle;
+}

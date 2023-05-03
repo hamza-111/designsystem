@@ -1,0 +1,102 @@
+include ../formMat/formMat
+include ../headSection/headSection
+include ../bubbleSelect/bubbleSelect
+include ../modal/modal
+include ../img/img
+include ../wysiwyg/wysiwyg
+include ../column/column
+include ../separator/separator
+include ../loginFeedback/loginFeedback
+include ../arrowBorder/arrowBorder
+include ../pictoBlock/pictoBlock
+include ../pushLight/pushLight
+
+include formContactClient/formContactClient
+include formContactSelect/formContactSelect
+include formContactLogged/formContactLogged
+include formContactReclamation/formContactReclamation
+include formContactMessage/formContactMessage
+include formContactUpload/formContactUpload
+include formContactUserInfos/formContactUserInfos
+include formContactContract/formContactContract
+include formContactIban/formContactIban
+include formContactExtra/formContactExtra
+include formContactPayment/formContactPayment
+include formContactDevice/formContactDevice
+include formContactClientAccess/formContactClientAccess
+include formContactSuccess/formContactSuccess
+
+
+mixin formContact()
+  // .c-formContact
+  .c-formContact(data-e-formcontact hidden)
+    +formContactLogged
+
+    +formMat(
+      data-e-form-validation={switchBtnState: false}
+      action="../fake/formContact-resp.json"
+      method="POST"
+    )
+      +headSection({
+        title: "Contactez nos conseillers par email",
+        noLink: true
+      })
+
+      +formContactClient
+
+      +formContactSelect
+
+      fieldset.c-formContact__main(
+        data-e-formcontact-main
+        disabled
+        hidden
+      )
+        +formContactReclamation({id: "04"})
+
+        +formContactContract({id: "05"})
+
+        +formContactIban({id: "06"})
+
+        .u-padding-spacer.c-formContact__separator
+          +formContactMessage({id: "08"})
+          +formContactUpload({id: "09"})
+
+        +formContactExtra({id: "10"})
+          +formContactPayment({id: "10-a"})
+          +separator('marge')
+          +formContactDevice({id: "10-b"})
+
+        +formContactUserInfos({id: "11"})
+
+        script.
+          formContactRecatpchaCallback = function() {
+            grecaptcha.render('formContact-recaptcha', {
+              'sitekey': '6Lc3iB0UAAAAAIKUlKhz9cd2sPPevX5mOaAbS0ai',
+              'callback': E.formContact.sendForm
+            });
+          };
+
+        .l-wrapper--medium(
+          data-e-formcontact-server-error
+          hidden
+        )
+          +fieldInfo({
+            typeMessage: 'error'
+          }).c-wysiwyg
+            p
+              | Un problème technique empêche l'envoi de votre message, merci de réessayer ultérieurement. En attendant vous pouvez
+              = " "
+              a.u-link.u-theme-color.u-theme-color-hover(href="#") consultez notre FAQ.
+
+        input(type="hidden" name="ID_TMS" data-e-formcontact-tms)
+        input(type="hidden" name="ID_COOKIE_GA" data-e-formcontact-ga)
+
+        +btnWrapper().u-theme-green.c-btnWrapper--fullOnMobile.l-wrapper--large
+          +baseBtn({
+            text:      "Envoyer ma demande",
+            hasLoader: true,
+            submit:    true
+          })#formContact-recaptcha.c-baseBtn--large(data-e-form-validation-submit)
+
+  +formContactSuccess
+  // END - .c-formContact
